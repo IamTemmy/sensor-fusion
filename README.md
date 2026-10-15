@@ -1,21 +1,17 @@
-# Last Lift
+# Last Lift — extraction edition
 
-A fictional multiplayer museum heist built with OpenAI in ChatGPT Work. This repository retains the Sensor Fusion name until the owner renames it; that earlier game remains in Git history.
+A fictional four-minute multiplayer museum heist built with OpenAI in ChatGPT Work. The repository and public URL retain the old Sensor Fusion name. Prior prototypes remain in Git history; current rules are below.
 
-## Play
+1–4 humans, up to four total thieves with independent rival bots. Walk onto small loot to collect it; three items fit in a bag. Tap the isometric floor for an authoritative path, hold WASD/arrows or the phone pad, E to work a station, Q to smoke, Escape to stop. Shift-click a floor tile to throw a decoy; the ordinary Decoy button lures a nearby guard to your own location.
 
-2–4 thieves, or one human with Echo. Four-minute runs on a shared museum map. Move with arrows/WASD or the pad. E / Grab interacts with an adjacent exhibit. Two players carry each exhibit to the southwest lift; either carrier moves the pair. Avoid red guard sight tiles and use your two decoys for seven seconds of distraction.
+The vault needs different thieves working Security and Vault simultaneously for four seconds. The helper gets 40% automatically when that cold bag banks, including if the helper already escaped. The carrier gets 60%. Go Hot voids that contract and permits a 100% payout only at the roof hatch. A recovered cold vault bag retains its helper; a recovered hot bag stays hot. Recovering your own helper's share as carrier gives you the full bag. The roof accepts bags containing hot loot; ordinary loot uses the lift.
 
-At the lift each carrier secretly chooses Split or Steal. Both Split: half each. One Steal: thief gets all as hot loot, which can only be banked at the distant northeast rooftop. Both Steal: that exhibit is lost, both are stunned five seconds, alarm rises 25. Inaction defaults to Split after 15 seconds. Departures and resolved deals are public. Escape banks the bag and ends that player's participation. Deadline catches everyone still inside. Highest escaped bankroll wins; ties share victory. No real money.
+Lift doors open for eight seconds every thirty. In the final thirty seconds, the last window is the final ten seconds. Banking protects money while you keep playing; riding out ends your part. At closure, unbanked value is confiscated. Highest banked money wins, including ties. No real money.
 
-Echo walks to a waiting human carrier and helps. Echo initially splits; its retaliatory personality may steal after an earlier betrayal. If all other thieves have left, a remaining thief can call Porter once; Porter always splits. Roles are temporary partnerships, not fixed teams.
+Guards patrol, investigate decoys, chase for five seconds, and search. Capture requires adjacency on two consecutive guard steps. Smoke blocks sight. Capture drops the whole bag and holds a thief for eight seconds; banked value is safe. All rivals obey the same capture and pickup rules. Loyal honors deals, Opportunist may go hot, Magpie prioritizes loose bags. Bot goals are based on public state.
 
 ## Development
 
-Node >=22.13. `npm run install:ci`, `npm run dev`; apply the retained D1 migrations for local use. `npm test`, `npm run typecheck`, `npm run build`.
+Node >=22.13. `npm run install:ci`, `npm test`, `npm run typecheck`, `npm run build`. Retained Sites/D1 room API uses revision compare-and-swap for serialized actions and token-based reconnect. Room version5 rejects older rooms. Source artwork is original SVG/CSS, not third-party game assets.
 
-The server validates cardinal movement, collisions, two-carrier ownership, private choices, payouts, timers and escape. D1 optimistic concurrency serializes room mutations. Clients poll; this is a deliberate grid-step prototype, not a twitch shooter. Production uses the existing Sites project and URL. Old Sensor Fusion rooms cannot be resumed.
-
-## Review / limitations
-
-See docs/STATUS.md and issue #1. Use exact SHAs in [CODEX]/[CLAUDE] reviews. No concurrent edits. This is a first playable heist, not a submission-approved game. Real-phone controls, network latency and human betrayal incentives need playtesting.
+Read docs/STATUS.md for verification limits. Issue #1 coordinates exact-SHA Claude reviews; Codex owns implementation. Archived sensor scenarios/specs are not current game instructions.
