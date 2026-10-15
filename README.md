@@ -1,27 +1,21 @@
-# Sensor Fusion
+# Last Lift
 
-A ChatGPT Work-built multiplayer prototype for the Handshake AI Skills Studio challenge.
+A fictional multiplayer museum heist built with OpenAI in ChatGPT Work. This repository retains the Sensor Fusion name until the owner renames it; that earlier game remains in Git history.
 
-## Run
+## Play
 
-Node 24 recommended. Install with `npm run install:ci`, generate/apply local D1 migrations per the Sites starter, and run `npm run dev`. The hosted deployment provisions D1 and applies tracked migrations.
+2–4 thieves, or one human with Echo. Four-minute runs on a shared museum map. Move with arrows/WASD or the pad. E / Grab interacts with an adjacent exhibit. Two players carry each exhibit to the southwest lift; either carrier moves the pair. Avoid red guard sight tiles and use your two decoys for seven seconds of distraction.
 
-## Check
+At the lift each carrier secretly chooses Split or Steal. Both Split: half each. One Steal: thief gets all as hot loot, which can only be banked at the distant northeast rooftop. Both Steal: that exhibit is lost, both are stunned five seconds, alarm rises 25. Inaction defaults to Split after 15 seconds. Departures and resolved deals are public. Escape banks the bag and ends that player's participation. Deadline catches everyone still inside. Highest escaped bankroll wins; ties share victory. No real money.
 
-`npm test` checks game invariants and private projections. `npm run typecheck` checks TypeScript. `npm run build` produces a Cloudflare Worker bundle via Vinext.
+Echo walks to a waiting human carrier and helps. Echo initially splits; its retaliatory personality may steal after an earlier betrayal. If all other thieves have left, a remaining thief can call Porter once; Porter always splits. Roles are temporary partnerships, not fixed teams.
 
-## Playtest
+## Development
 
-Create a room, share its code, and join in a second browser or device. No game account is required. The host can add a bot and start alone. Open How to play for rules. Play a full session, refresh during a round, and check that your seat returns. Compare observations or pledges between devices; private bids and sensor feeds must remain private until intentionally shared or revealed.
+Node >=22.13. `npm run install:ci`, `npm run dev`; apply the retained D1 migrations for local use. `npm test`, `npm run typecheck`, `npm run build`.
 
-## Scope and limitations
+The server validates cardinal movement, collisions, two-carrier ownership, private choices, payouts, timers and escape. D1 optimistic concurrency serializes room mutations. Clients poll; this is a deliberate grid-step prototype, not a twitch shooter. Production uses the existing Sites project and URL. Old Sensor Fusion rooms cannot be resumed.
 
-Read [current status](docs/STATUS.md). This is an initial vertical slice, not a submission-ready release. Tests are not a substitute for real-device and human playtesting.
+## Review / limitations
 
-## Review
-
-Use issue #1 with `[CODEX]` / `[CLAUDE]` and exact commit SHAs. Implementation owner: Codex in ChatGPT Work. Claude provides independent review. No concurrent implementation edits on main.
-
-## Provenance
-
-UI artwork is original SVG/CSS written for this project. Runtime dependencies are recorded in package.json and the lockfile; retained Sites starter components preserve their license notices. No third-party game assets or live AI calls. Educational content is simplified and must pass source review before final submission.
+See docs/STATUS.md and issue #1. Use exact SHAs in [CODEX]/[CLAUDE] reviews. No concurrent edits. This is a first playable heist, not a submission-approved game. Real-phone controls, network latency and human betrayal incentives need playtesting.
