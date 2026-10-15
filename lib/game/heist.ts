@@ -62,7 +62,7 @@ export function intent(r:Room,id:string,a:any,now:number){const s=r.seats.find(s
  if(a.type==='removeBot'){if(r.phase!=='lobby')throw Error('Only before the heist.');const b=r.seats.find(b=>b.id===a.seatId&&b.bot);if(!b)throw Error('Choose a bot.');r.seats=r.seats.filter(s=>s.id!==b.id);return;}
  if(a.type==='start'){if(r.phase!=='lobby'||r.seats.length<2)throw Error('Bring a partner or add Echo.');start(r,now);return;}
  if(a.type==='rematch'){if(r.phase!=='finished')throw Error('Finish this heist first.');r.replay++;r.round++;start(r,now);return;}
- if(r.phase!=='playing'||s.status!=='inside')throw Error('You are out of this heist.');if(a.round!==r.round)throw Error('This action belongs to an old heist.');
+ if(r.phase!=='playing'||s.status!=='inside')throw Error('You are out of this heist.');if(a.round!==r.round)throw Error('This action belongs to an old heist.');if(now<s.stun&&['escape','decoy','porter'].includes(a.type))throw Error('Recovering. Wait for the stun to clear.');
  if(a.type==='move'){if(!Number.isInteger(a.dx)||!Number.isInteger(a.dy)||Math.abs(a.dx)+Math.abs(a.dy)!==1)throw Error('Choose one direction.');if(now-s.last<180)return;move(r,s,s.x+a.dx,s.y+a.dy,now);}
  else if(a.type==='interact')interact(r,s,now);
  else if(a.type==='drop')drop(r,s);
