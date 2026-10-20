@@ -17,3 +17,7 @@ Intentional deviations: no global slow-motion or surprise closing corridor; thes
 ## October 20 — Noise Thieves v9 review candidate
 
 See `docs/playtests/noise-v9.md` and its JSON simulation results. Replay client reset/epoch and real local RAF driver regression; timed rescues; smaller van; Help pause; spectator/end-job; dropped/recoverable loot; three layouts; optional safe practice; readable scream/jackpot/team labels. Co-op goal is now$1800 (practice$500), exposed in UI. 43 tests/typecheck/build passed. Rival balance targets remain OPEN (naive75%, noise65%; lockdown95–100%). Browser DOM replay and real-device networking remain unverified. New rooms required (schema3). Do not interpret headless policy wins as measured human difficulty.
+
+## October 20 — Noise Thieves v10 interaction repairs
+
+See `docs/playtests/noise-v10.md` and simulation JSON. Exact safe rectangle; bounded guard search; silent capture drops; 3s release protection; safe rescues; automatic plate fetch; F art passing only; crossing sensors and rival alarm planting; two-stage practice; desktop HUD outside arena. 52 tests and typecheck pass. Browser/manual replay unavailable. Balance remains OPEN: co-op policies both 100% wins; rival naive60%, noise55%. Do not claim human playtesting or balance success.
