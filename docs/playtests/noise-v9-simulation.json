@@ -1,0 +1,90 @@
+{
+  "seeds": "1001–1020",
+  "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream. Not a human skill benchmark. All wins strict; ties not wins.",
+  "results": [
+    {
+      "mode": "coop",
+      "policy": "naive",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.25,
+      "meanBank": 1395,
+      "minBank": 0,
+      "maxBank": 2300,
+      "bankStdDev": 618,
+      "lockdownRate": 0.85,
+      "meanCatches": 8.25,
+      "meanHumanAlarms": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "naive",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.4,
+      "meanBank": 1535,
+      "minBank": 500,
+      "maxBank": 2300,
+      "bankStdDev": 538,
+      "lockdownRate": 0.9,
+      "meanCatches": 8.85,
+      "meanHumanAlarms": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "noise",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.85,
+      "meanBank": 2085,
+      "minBank": 800,
+      "maxBank": 2300,
+      "bankStdDev": 513,
+      "lockdownRate": 0.55,
+      "meanCatches": 3.85,
+      "meanHumanAlarms": 3.8
+    },
+    {
+      "mode": "coop",
+      "policy": "noise",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.85,
+      "meanBank": 2110,
+      "minBank": 800,
+      "maxBank": 2300,
+      "bankStdDev": 470,
+      "lockdownRate": 0.55,
+      "meanCatches": 3.85,
+      "meanHumanAlarms": 3.9
+    },
+    {
+      "mode": "duos",
+      "policy": "naive",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.75,
+      "meanBank": 1295,
+      "minBank": 500,
+      "maxBank": 2300,
+      "bankStdDev": 584,
+      "lockdownRate": 0.95,
+      "meanCatches": 5.7,
+      "meanHumanAlarms": 0
+    },
+    {
+      "mode": "duos",
+      "policy": "noise",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.65,
+      "meanBank": 1520,
+      "minBank": 0,
+      "maxBank": 3500,
+      "bankStdDev": 732,
+      "lockdownRate": 1,
+      "meanCatches": 3.6,
+      "meanHumanAlarms": 2.55
+    }
+  ]
+}
