@@ -1,17 +1,23 @@
-# Last Lift — extraction edition
+# Noise Thieves
 
-A fictional four-minute multiplayer museum heist built with OpenAI in ChatGPT Work. The repository and public URL retain the old Sensor Fusion name. Prior prototypes remain in Git history; current rules are below.
+**Steal the art. Steal the alarm.** A 90-second cooperative museum heist: capture sound, throw it away from your crew, bank the loot, and escape. First playable prototype built with OpenAI for Temmy's multiplayer challenge exploration.
 
-1–4 humans, up to four total thieves with independent rival bots. Walk onto small loot to collect it; three items fit in a bag. Tap the isometric floor for an authoritative path, hold WASD/arrows or the phone pad, E to work a station, Q to smoke, Escape to stop. Shift-click a floor tile to throw a decoy; the ordinary Decoy button lures a nearby guard to your own location.
+This repository keeps its original `sensor-fusion` name at the user's request. The active game is Noise Thieves. Earlier Sensor Fusion / Last Lift modules are retained as historical source, not the active experience. Blackout is a separate repository and is unchanged.
 
-The vault needs different thieves working Security and Vault simultaneously for four seconds. The helper gets 40% automatically when that cold bag banks, including if the helper already escaped. The carrier gets 60%. Go Hot voids that contract and permits a 100% payout only at the roof hatch. A recovered cold vault bag retains its helper; a recovered hot bag stays hot. Recovering your own helper's share as carrier gives you the full bag. The roof accepts bags containing hot loot; ordinary loot uses the lift.
-
-Lift doors open for eight seconds every thirty. In the final thirty seconds, the last window is the final ten seconds. Banking protects money while you keep playing; riding out ends your part. At closure, unbanked value is confiscated. Highest banked money wins, including ties. No real money.
-
-Guards patrol, investigate decoys, chase for five seconds, and search. Capture requires adjacency on two consecutive guard steps. Smoke blocks sight. Capture drops the whole bag and holds a thief for eight seconds; banked value is safe. All rivals obey the same capture and pickup rules. Loyal honors deals, Opportunist may go hot, Magpie prioritizes loose bags. Bot goals are based on public state.
+- Play: https://sensor-fusion-temmy.iamtemmy.chatgpt.site
+- Design, controls, limitations: [docs/NOISE-THIEVES.md](docs/NOISE-THIEVES.md)
+- Coordination / reviews: issue #1
 
 ## Development
 
-Node >=22.13. `npm run install:ci`, `npm test`, `npm run typecheck`, `npm run build`. Retained Sites/D1 room API uses revision compare-and-swap for serialized actions and token-based reconnect. Room version5 rejects older rooms. Source artwork is original SVG/CSS, not third-party game assets.
+Node 22.13+, pnpm. Use the existing Sites build setup.
 
-Read docs/STATUS.md for verification limits. Issue #1 coordinates exact-SHA Claude reviews; Codex owns implementation. Archived sensor scenarios/specs are not current game instructions.
+```sh
+npm test
+npm run typecheck
+npm run build
+```
+
+The current page is `app/page.tsx`. Simulation and canvas drawing are `lib/noise/engine.ts` and `lib/noise/draw.ts`. Online rooms use `/api/noise` with the existing D1 schema. Local solo mode runs the same engine without network delay. Online movement is predicted locally and reconciled with authoritative state; HTTP polling responsiveness requires two-device verification before expanding the prototype.
+
+Original procedural canvas artwork and synthesized sounds; no external assets or runtime LLM dependency.

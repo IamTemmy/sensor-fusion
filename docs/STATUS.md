@@ -1,11 +1,5 @@
-# Last Lift extraction edition — October 15, 2026
+# Noise Thieves — first playable
 
-User authorized replacing the passive two-carrier board with an isometric action heist. Implemented: independent thieves; eight solo valuables and one contract vault ($4,500 total); physical hot-bag betrayal, drop/recovery, same capture rules for humans/bots; 8s holding; 40/60 helper contract; lift pulses and final window; smoke/local guard-luring decoy; four guard modes; autonomous rival goals; original isometric SVG, optional follow view, interpolated actors, hold keys/pad and tap-to-path, opt-in synthesized audio.
+Updated October 20, 2026 UTC. User approved Noise Thieves in the sensor-fusion repo. New landing page, canvas action scene, sound-capture heist engine, helper bot, and room-code API now replace Last Lift on the main route. Last Lift source and tests remain for history; Blackout is untouched.
 
-Contract decision: helper shares pay automatically even after escape and survive cold-bag transfer. Go Hot irrevocably voids the share. Recovered cold bag banked by its own helper pays that thief the whole value. Banked money is never penalized. All value is accounted for as unbanked, banked or confiscated. Early departure never blocks other solo actions.
-
-11 rule/invariant tests and TypeScript pass. Verification covers map connectivity, authority, projection secrecy, pickup ownership, vault timing, 40/60 settlement and idempotence, hot transfer/roof restriction, capture parity/banked preservation, smoke/decoy, lift boundaries, disconnect and rematch. Exact build/publication evidence and SHA are posted in issue #1.
-
-Limits: request-driven 200ms simulation with catch-up bounded to two seconds after >4s gaps, 500ms client polling, 200/400ms movement and 400/600ms guard steps. No supported WebSocket/DO declaration found in installed Sites references; no unverified deployment binding added. Rendered actors interpolate authoritative snapshots; no claims of measured phone latency or twitch precision. No browser-control skill is available; interactive phone/browser QA remains outstanding. Guard chase target tracking is deliberately simple, fixed map and bot goals need human playtesting. Bot avoidance can stall at guarded corridors; no claim of optimal AI or finished balance. Four thieves, no fixed teams/multiple floors/guns/door locks.
-
-Review priorities: multi-client races, delayed path reconciliation, fair capture, vault grief/recovery rules, autonomous rival usefulness, whether Go Hot is worth its extra risk, phone movement and labels.
+See [NOISE-THIEVES.md](NOISE-THIEVES.md) for controls, architecture, acceptance checks, and limitations. This is a prototype to validate fun, not a finished competition entry. Online HTTP/D1 responsiveness and browser/phone feel remain explicit review gates. Exact publication SHA and GitHub review request are recorded in issue #1.
