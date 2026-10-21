@@ -1,0 +1,155 @@
+{
+  "units": "world units; actual steer/move path length, van center to target; 100 units/s carrying",
+  "layouts": [
+    {
+      "layout": 0,
+      "rows": [
+        {
+          "target": "Mint moon",
+          "x": 210,
+          "y": 100,
+          "mint": 434,
+          "violet": 800,
+          "amber": 353,
+          "spread": 447
+        },
+        {
+          "target": "Violet moon",
+          "x": 750,
+          "y": 100,
+          "mint": 800,
+          "violet": 434,
+          "amber": 353,
+          "spread": 447
+        },
+        {
+          "target": "The scream",
+          "x": 480,
+          "y": 120,
+          "mint": 601,
+          "violet": 600,
+          "amber": 54,
+          "spread": 547
+        },
+        {
+          "target": "Blue idol",
+          "x": 480,
+          "y": 340,
+          "mint": 429,
+          "violet": 428,
+          "amber": 274,
+          "spread": 155
+        },
+        {
+          "target": "Plate",
+          "x": 480,
+          "y": 440,
+          "mint": 396,
+          "violet": 396,
+          "amber": 374,
+          "spread": 22
+        }
+      ]
+    },
+    {
+      "layout": 1,
+      "rows": [
+        {
+          "target": "Mint moon",
+          "x": 230,
+          "y": 210,
+          "mint": 363,
+          "violet": 825,
+          "amber": 289,
+          "spread": 536
+        },
+        {
+          "target": "Violet moon",
+          "x": 730,
+          "y": 210,
+          "mint": 825,
+          "violet": 407,
+          "amber": 289,
+          "spread": 536
+        },
+        {
+          "target": "The scream",
+          "x": 480,
+          "y": 140,
+          "mint": 586,
+          "violet": 584,
+          "amber": 74,
+          "spread": 512
+        },
+        {
+          "target": "Blue idol",
+          "x": 480,
+          "y": 340,
+          "mint": 429,
+          "violet": 428,
+          "amber": 274,
+          "spread": 155
+        },
+        {
+          "target": "Plate",
+          "x": 480,
+          "y": 440,
+          "mint": 396,
+          "violet": 396,
+          "amber": 374,
+          "spread": 22
+        }
+      ]
+    },
+    {
+      "layout": 2,
+      "rows": [
+        {
+          "target": "Mint moon",
+          "x": 230,
+          "y": 390,
+          "mint": 184,
+          "violet": 655,
+          "amber": 419,
+          "spread": 471
+        },
+        {
+          "target": "Violet moon",
+          "x": 730,
+          "y": 390,
+          "mint": 655,
+          "violet": 184,
+          "amber": 419,
+          "spread": 471
+        },
+        {
+          "target": "The scream",
+          "x": 480,
+          "y": 240,
+          "mint": 493,
+          "violet": 490,
+          "amber": 174,
+          "spread": 319
+        },
+        {
+          "target": "Blue idol",
+          "x": 480,
+          "y": 340,
+          "mint": 425,
+          "violet": 425,
+          "amber": 274,
+          "spread": 151
+        },
+        {
+          "target": "Plate",
+          "x": 480,
+          "y": 440,
+          "mint": 403,
+          "violet": 403,
+          "amber": 374,
+          "spread": 29
+        }
+      ]
+    }
+  ]
+}

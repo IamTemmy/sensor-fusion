@@ -25,3 +25,6 @@ See `docs/playtests/noise-v10.md` and simulation JSON. Exact safe rectangle; bou
 ## October21 — Noise Thieves v11
 
 Rescuer protection/retreat (40-seed engine regression); own crew vans and symmetric rival routes (max31u three-crew spread);25% straggler penalty;15s Last Call; cumulative stars and per-layout device record; one-piece slower Fetch; through-wall hearing and genuine Sneak; moving-carrier alarm planting + bot ambushes; layout-specific sensors; bounded action footer.63 tests and typecheck pass. See docs/playtests/noise-v11.md for180-match results. Co-op one-star difficulty target NOT MET; browser UI/real devices remain unverified. Do not claim balance complete.
+
+## v12 rivals map rebuild
+Three mirrored wing geometries, seeded equal wing loot, distinct patrols, separated crew vans. 66 tests pass. See docs/playtests/noise-v12.md for 180-match simulation and route distances. Co-op star distribution and three-crew fairness remain unmet; no browser playtest claimed.
