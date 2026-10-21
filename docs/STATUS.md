@@ -21,3 +21,7 @@ See `docs/playtests/noise-v9.md` and its JSON simulation results. Replay client 
 ## October 20 — Noise Thieves v10 interaction repairs
 
 See `docs/playtests/noise-v10.md` and simulation JSON. Exact safe rectangle; bounded guard search; silent capture drops; 3s release protection; safe rescues; automatic plate fetch; F art passing only; crossing sensors and rival alarm planting; two-stage practice; desktop HUD outside arena. 52 tests and typecheck pass. Browser/manual replay unavailable. Balance remains OPEN: co-op policies both 100% wins; rival naive60%, noise55%. Do not claim human playtesting or balance success.
+
+## October21 — Noise Thieves v11
+
+Rescuer protection/retreat (40-seed engine regression); own crew vans and symmetric rival routes (max31u three-crew spread);25% straggler penalty;15s Last Call; cumulative stars and per-layout device record; one-piece slower Fetch; through-wall hearing and genuine Sneak; moving-carrier alarm planting + bot ambushes; layout-specific sensors; bounded action footer.63 tests and typecheck pass. See docs/playtests/noise-v11.md for180-match results. Co-op one-star difficulty target NOT MET; browser UI/real devices remain unverified. Do not claim balance complete.

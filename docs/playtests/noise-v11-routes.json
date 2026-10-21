@@ -1,0 +1,155 @@
+{
+  "units": "world units; actual steer/move path length, van center to target; 100 units/s carrying",
+  "layouts": [
+    {
+      "layout": 0,
+      "rows": [
+        {
+          "target": "Golden echo",
+          "x": 480,
+          "y": 90,
+          "mint": 436,
+          "violet": 436,
+          "amber": 449,
+          "spread": 13
+        },
+        {
+          "target": "Moon vase",
+          "x": 480,
+          "y": 180,
+          "mint": 351,
+          "violet": 351,
+          "amber": 359,
+          "spread": 8
+        },
+        {
+          "target": "The scream",
+          "x": 480,
+          "y": 280,
+          "mint": 259,
+          "violet": 259,
+          "amber": 259,
+          "spread": 0
+        },
+        {
+          "target": "Blue idol",
+          "x": 480,
+          "y": 350,
+          "mint": 199,
+          "violet": 199,
+          "amber": 189,
+          "spread": 10
+        },
+        {
+          "target": "Plate",
+          "x": 480,
+          "y": 420,
+          "mint": 149,
+          "violet": 150,
+          "amber": 119,
+          "spread": 31
+        }
+      ]
+    },
+    {
+      "layout": 1,
+      "rows": [
+        {
+          "target": "Golden echo",
+          "x": 480,
+          "y": 90,
+          "mint": 436,
+          "violet": 436,
+          "amber": 449,
+          "spread": 13
+        },
+        {
+          "target": "Moon vase",
+          "x": 480,
+          "y": 180,
+          "mint": 351,
+          "violet": 351,
+          "amber": 359,
+          "spread": 8
+        },
+        {
+          "target": "The scream",
+          "x": 480,
+          "y": 280,
+          "mint": 259,
+          "violet": 259,
+          "amber": 259,
+          "spread": 0
+        },
+        {
+          "target": "Blue idol",
+          "x": 480,
+          "y": 350,
+          "mint": 199,
+          "violet": 199,
+          "amber": 189,
+          "spread": 10
+        },
+        {
+          "target": "Plate",
+          "x": 480,
+          "y": 420,
+          "mint": 149,
+          "violet": 150,
+          "amber": 119,
+          "spread": 31
+        }
+      ]
+    },
+    {
+      "layout": 2,
+      "rows": [
+        {
+          "target": "Golden echo",
+          "x": 480,
+          "y": 90,
+          "mint": 436,
+          "violet": 436,
+          "amber": 449,
+          "spread": 13
+        },
+        {
+          "target": "Moon vase",
+          "x": 480,
+          "y": 180,
+          "mint": 351,
+          "violet": 351,
+          "amber": 359,
+          "spread": 8
+        },
+        {
+          "target": "The scream",
+          "x": 480,
+          "y": 280,
+          "mint": 259,
+          "violet": 259,
+          "amber": 259,
+          "spread": 0
+        },
+        {
+          "target": "Blue idol",
+          "x": 480,
+          "y": 350,
+          "mint": 199,
+          "violet": 199,
+          "amber": 189,
+          "spread": 10
+        },
+        {
+          "target": "Plate",
+          "x": 480,
+          "y": 420,
+          "mint": 149,
+          "violet": 150,
+          "amber": 119,
+          "spread": 31
+        }
+      ]
+    }
+  ]
+}
