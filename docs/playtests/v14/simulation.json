@@ -1,0 +1,195 @@
+{
+  "seeds": "1001–1020",
+  "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
+  "results": [
+    {
+      "mode": "coop",
+      "policy": "naive",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.8,
+      "meanBank": 1960,
+      "minBank": 1000,
+      "maxBank": 2100,
+      "bankStdDev": 299,
+      "lockdownRate": 0.8,
+      "meanCatches": 3.65,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.2,
+        0,
+        0.8,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "naive",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.75,
+      "meanBank": 1886.25,
+      "minBank": 825,
+      "maxBank": 2100,
+      "bankStdDev": 396,
+      "lockdownRate": 0.9,
+      "meanCatches": 4.1,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.25,
+        0,
+        0.75,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "noise",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.85,
+      "meanBank": 2020,
+      "minBank": 1500,
+      "maxBank": 2100,
+      "bankStdDev": 191,
+      "lockdownRate": 0.8,
+      "meanCatches": 3.4,
+      "meanHumanAlarms": 5.45,
+      "starRates": [
+        0.15,
+        0,
+        0.85,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "fetch",
+      "echo": "repeated-fetch",
+      "n": 20,
+      "winRate": 1,
+      "meanBank": 2100,
+      "minBank": 2100,
+      "maxBank": 2100,
+      "bankStdDev": 0,
+      "lockdownRate": 0.95,
+      "meanCatches": 3.35,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "teamwork",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.7,
+      "meanBank": 2282.5,
+      "minBank": 825,
+      "maxBank": 3300,
+      "bankStdDev": 827,
+      "lockdownRate": 1,
+      "meanCatches": 6.35,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.3,
+        0,
+        0.35,
+        0.35
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "duos",
+      "policy": "naive",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.55,
+      "meanBank": 1400,
+      "minBank": 400,
+      "maxBank": 1900,
+      "bankStdDev": 342,
+      "lockdownRate": 1,
+      "meanCatches": 1.85,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.75,
+        0.25,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 1
+    },
+    {
+      "mode": "duos",
+      "policy": "noise",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.55,
+      "meanBank": 1330,
+      "minBank": 400,
+      "maxBank": 1900,
+      "bankStdDev": 278,
+      "lockdownRate": 1,
+      "meanCatches": 2.05,
+      "meanHumanAlarms": 2.45,
+      "starRates": [
+        0.9,
+        0.1,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 1
+    },
+    {
+      "mode": "duos",
+      "policy": "fetch",
+      "echo": "repeated-fetch",
+      "n": 20,
+      "winRate": 0.75,
+      "meanBank": 1530,
+      "minBank": 400,
+      "maxBank": 2500,
+      "bankStdDev": 468,
+      "lockdownRate": 0.95,
+      "meanCatches": 2.15,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.65,
+        0.35,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 4
+    },
+    {
+      "mode": "duos",
+      "policy": "teamwork",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.6,
+      "meanBank": 1938.75,
+      "minBank": 900,
+      "maxBank": 3100,
+      "bankStdDev": 719,
+      "lockdownRate": 1,
+      "meanCatches": 4.45,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.45,
+        0.55,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 10
+    }
+  ]
+}

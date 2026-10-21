@@ -1,4 +1,4 @@
-function fixture(g:Game){g.layout=0;g.walls=WALLS;g.plate={x:730,y:155};g.loot.forEach((l,i)=>{Object.assign(l,[{x:205,y:320},{x:440,y:285},{x:835,y:120},{x:810,y:470}][i]);l.home={x:l.x,y:l.y};l.locked=i===2;});}
+function fixture(g:Game){g.layout=0;g.walls=WALLS;g.plate={x:730,y:155};g.loot.forEach((l,i)=>{Object.assign(l,[{x:205,y:320},{x:440,y:285},{x:835,y:120},{x:810,y:470}][i]);l.home={x:l.x,y:l.y};l.locked=i===2;if(i===0)l.value=500;});}
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {create,add,setup,command,advance,action,input,clear,move,sight,steer,distance,view,EXIT,DURATION,WALLS,type Game} from '../lib/noise/engine.ts';

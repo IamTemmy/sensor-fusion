@@ -31,3 +31,6 @@ Three mirrored wing geometries, seeded equal wing loot, distinct patrols, separa
 
 ## v13 arena identity
 Distinct open Gallery, rotational shelving Archive, plus-hub Crossroads; separated plate/jackpot, six committed SVG diagrams. 69 tests pass, 180 simulated matches. All two-crew route differences <40u (max19u). Three crews retained with explicit unbalanced lobby warning. See docs/playtests/noise-v13.md for measurements and unverified human-play limits.
+
+## v14 seeded content and events
+Fixed v13 arenas; $3,300/5–6-piece seeded jobs; weighted carry speed; one announced event; patrol pools/plate return tuning; Follow bodyguard; label cleanup. Two rival crews only (2v2/3v3). Crates omitted. 75 tests/typecheck pass. Solo optimistic bound63.6%; stationary plate averages2.1–3.0 catches/90s. See [full report](playtests/noise-v14.md) and18 SVG maps. Fetch still reliably clears normal co-op loot; browser access policy blocked hands-on QA. No claim of final balance or manual testing.

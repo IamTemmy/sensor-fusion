@@ -1,6 +1,6 @@
 import {writeFileSync,mkdirSync} from 'node:fs';
 import {create,add,configure,setup,RIVAL_LAYOUTS,RIVAL_REINFORCEMENTS,PEDESTALS,mirrorPoint,rotatePoint,vanFor,steer,move,distance,thiefWalls,type Game,type Vec} from '../lib/noise/engine.ts';
-const dir='docs/playtests/v13';mkdirSync(dir,{recursive:true});
+const dir=process.env.NOISE_AUDIT_DIR||'docs/playtests/v13';mkdirSync(dir,{recursive:true});
 function job(layout:number,rival:boolean){for(let seed=1;;seed++){const g=create('AUDIT',1000,seed);for(let i=0;i<(rival?4:2);i++)add(g,'P'+i,''+i);if(rival)configure(g,'duos');setup(g);if(g.layout===layout)return g;}}
 function length(g:Game,team:number,t:Vec){const walls=thiefWalls(g,{team}),p={...vanFor(g,team)};let total=0;for(let i=0;i<6000&&distance(p,t)>1;i++){const old={...p},n=steer(p,t,walls),d=distance(p,n);if(!d)break;move(p,(n.x-p.x)/d,(n.y-p.y)/d,.01,Math.min(100,d/.01),walls);total+=distance(old,p);}if(distance(p,t)>1)throw Error(`unreachable ${g.layout} ${team} ${JSON.stringify(t)}`);return Math.round(total);}
 const report=[];

@@ -11,7 +11,7 @@ test('all layouts: separated plate/jackpot, clear non-rectangular distinct patro
  }
 });
 test('actual navigation distances: every wing pair and shared objective has <40-unit two-crew spread',()=>{
- const report=JSON.parse(execFileSync(process.execPath,['--experimental-strip-types','scripts/audit-noise-v13.ts'],{encoding:'utf8'}));
+ const report=JSON.parse(execFileSync(process.execPath,['--experimental-strip-types','scripts/audit-noise-v13.ts'],{encoding:'utf8',env:{...process.env,NOISE_AUDIT_DIR:'/tmp/noise-v13-regression'}}));
  for(const m of report)for(const r of m.rows)assert.ok(r.spread<40,JSON.stringify(r));
 });
 test('all three wing pairs appear across seeded matches on each layout',()=>{

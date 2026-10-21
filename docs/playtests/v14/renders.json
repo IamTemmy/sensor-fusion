@@ -1,0 +1,146 @@
+[
+  {
+    "file": "coop-0-0.svg",
+    "mode": "coop",
+    "layout": 0,
+    "seed": 1,
+    "event": "curator",
+    "pieces": 5
+  },
+  {
+    "file": "coop-0-1.svg",
+    "mode": "coop",
+    "layout": 0,
+    "seed": 11,
+    "event": "shift",
+    "pieces": 5
+  },
+  {
+    "file": "coop-0-2.svg",
+    "mode": "coop",
+    "layout": 0,
+    "seed": 12,
+    "event": "curator",
+    "pieces": 5
+  },
+  {
+    "file": "coop-1-0.svg",
+    "mode": "coop",
+    "layout": 1,
+    "seed": 2,
+    "event": "vault",
+    "pieces": 6
+  },
+  {
+    "file": "coop-1-1.svg",
+    "mode": "coop",
+    "layout": 1,
+    "seed": 3,
+    "event": "vault",
+    "pieces": 5
+  },
+  {
+    "file": "coop-1-2.svg",
+    "mode": "coop",
+    "layout": 1,
+    "seed": 4,
+    "event": "blackout",
+    "pieces": 5
+  },
+  {
+    "file": "coop-2-0.svg",
+    "mode": "coop",
+    "layout": 2,
+    "seed": 6,
+    "event": "curator",
+    "pieces": 5
+  },
+  {
+    "file": "coop-2-1.svg",
+    "mode": "coop",
+    "layout": 2,
+    "seed": 7,
+    "event": "shift",
+    "pieces": 5
+  },
+  {
+    "file": "coop-2-2.svg",
+    "mode": "coop",
+    "layout": 2,
+    "seed": 8,
+    "event": "vault",
+    "pieces": 5
+  },
+  {
+    "file": "duos-0-0.svg",
+    "mode": "duos",
+    "layout": 0,
+    "seed": 1,
+    "event": "blackout",
+    "pieces": 5
+  },
+  {
+    "file": "duos-0-1.svg",
+    "mode": "duos",
+    "layout": 0,
+    "seed": 11,
+    "event": "shift",
+    "pieces": 5
+  },
+  {
+    "file": "duos-0-2.svg",
+    "mode": "duos",
+    "layout": 0,
+    "seed": 12,
+    "event": "vault",
+    "pieces": 5
+  },
+  {
+    "file": "duos-1-0.svg",
+    "mode": "duos",
+    "layout": 1,
+    "seed": 2,
+    "event": "vault",
+    "pieces": 6
+  },
+  {
+    "file": "duos-1-1.svg",
+    "mode": "duos",
+    "layout": 1,
+    "seed": 3,
+    "event": "shift",
+    "pieces": 6
+  },
+  {
+    "file": "duos-1-2.svg",
+    "mode": "duos",
+    "layout": 1,
+    "seed": 4,
+    "event": "vault",
+    "pieces": 6
+  },
+  {
+    "file": "duos-2-0.svg",
+    "mode": "duos",
+    "layout": 2,
+    "seed": 6,
+    "event": "vault",
+    "pieces": 5
+  },
+  {
+    "file": "duos-2-1.svg",
+    "mode": "duos",
+    "layout": 2,
+    "seed": 7,
+    "event": "shift",
+    "pieces": 5
+  },
+  {
+    "file": "duos-2-2.svg",
+    "mode": "duos",
+    "layout": 2,
+    "seed": 8,
+    "event": "blackout",
+    "pieces": 5
+  }
+]
