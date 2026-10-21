@@ -1,0 +1,125 @@
+[
+  {
+    "layout": 0,
+    "rows": [
+      {
+        "target": "own wing pair 1",
+        "mint": 362,
+        "violet": 362,
+        "spread": 0
+      },
+      {
+        "target": "own wing pair 2",
+        "mint": 316,
+        "violet": 314,
+        "spread": 2
+      },
+      {
+        "target": "own wing pair 3",
+        "mint": 126,
+        "violet": 126,
+        "spread": 0
+      },
+      {
+        "target": "idol",
+        "mint": 421,
+        "violet": 421,
+        "spread": 0
+      },
+      {
+        "target": "jackpot",
+        "mint": 562,
+        "violet": 556,
+        "spread": 6
+      },
+      {
+        "target": "plate",
+        "mint": 482,
+        "violet": 480,
+        "spread": 2
+      }
+    ]
+  },
+  {
+    "layout": 1,
+    "rows": [
+      {
+        "target": "own wing pair 1",
+        "mint": 335,
+        "violet": 335,
+        "spread": 0
+      },
+      {
+        "target": "own wing pair 2",
+        "mint": 312,
+        "violet": 312,
+        "spread": 0
+      },
+      {
+        "target": "own wing pair 3",
+        "mint": 94,
+        "violet": 94,
+        "spread": 0
+      },
+      {
+        "target": "idol",
+        "mint": 478,
+        "violet": 478,
+        "spread": 0
+      },
+      {
+        "target": "jackpot",
+        "mint": 569,
+        "violet": 550,
+        "spread": 19
+      },
+      {
+        "target": "plate",
+        "mint": 550,
+        "violet": 569,
+        "spread": 19
+      }
+    ]
+  },
+  {
+    "layout": 2,
+    "rows": [
+      {
+        "target": "own wing pair 1",
+        "mint": 330,
+        "violet": 330,
+        "spread": 0
+      },
+      {
+        "target": "own wing pair 2",
+        "mint": 210,
+        "violet": 210,
+        "spread": 0
+      },
+      {
+        "target": "own wing pair 3",
+        "mint": 90,
+        "violet": 90,
+        "spread": 0
+      },
+      {
+        "target": "idol",
+        "mint": 506,
+        "violet": 506,
+        "spread": 0
+      },
+      {
+        "target": "jackpot",
+        "mint": 624,
+        "violet": 623,
+        "spread": 1
+      },
+      {
+        "target": "plate",
+        "mint": 605,
+        "violet": 605,
+        "spread": 0
+      }
+    ]
+  }
+]

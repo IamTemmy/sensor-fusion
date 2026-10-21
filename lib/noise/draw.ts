@@ -10,10 +10,13 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  const circle=(x:number,y:number,r:number,c:string)=>{ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();};
  const text=(s:string,x:number,y:number,size=11,color='#93aaa9',align:CanvasTextAlign='left')=>{ctx.font=`${size>=16?'700':'500'} ${size}px ui-monospace, monospace`;ctx.textAlign=align;ctx.fillStyle=color;ctx.fillText(s,x,y);};
  // Architectural floor, brass inlays and pools of light stay fixed in world coordinates.
- rect(24,24,912,552,'#162b32');rect(320,24,300,366,'#1d303b');rect(640,24,296,552,'#25303b');
+ rect(24,24,912,552,g.crewMode==='coop'?'#162b32':['#192e35','#242838','#18332f'][g.layout]);
+ if(g.crewMode==='coop'){rect(320,24,300,366,'#1d303b');rect(640,24,296,552,'#25303b');}
+ else if(g.layout===1){rect(380,24,200,552,'#303041');}
+ else if(g.layout===2){rect(380,24,200,552,'#274438');rect(24,240,912,120,'#274438');}
  ctx.strokeStyle='#ffffff06';ctx.lineWidth=1;ctx.beginPath();for(let x=24;x<960;x+=40){ctx.moveTo(x,24);ctx.lineTo(x,576);}for(let y=24;y<600;y+=40){ctx.moveTo(24,y);ctx.lineTo(936,y);}ctx.stroke();
- ctx.strokeStyle='#8b86512a';ctx.strokeRect(42,42,240,510);ctx.strokeRect(338,42,264,330);ctx.strokeRect(658,42,260,510);
- text('01 / ECHO GALLERY',50,63,10,'#647e80');text('02 / THE ARCHIVE',345,63,10,'#647e80');text('03 / PRIVATE COLLECTION',660,63,10,'#7b8493');
+ if(g.crewMode==='coop'){text('01 / ECHO GALLERY',50,63,10,'#647e80');text('02 / THE ARCHIVE',345,63,10,'#647e80');text('03 / PRIVATE COLLECTION',660,63,10,'#7b8493');}
+ else{text(['ECHO GALLERY / OPEN HALL','NIGHT ARCHIVE / STACKS','CROSSROADS / CENTRAL HUB'][g.layout],40,43,10,'#a0b9b1');}
  for(const p of [{x:160,y:155},{x:470,y:270},{x:800,y:350}]){const light=ctx.createRadialGradient(p.x,p.y,0,p.x,p.y,200);light.addColorStop(0,'#94bd9d0a');light.addColorStop(1,'#94bd9d00');ctx.fillStyle=light;ctx.fillRect(p.x-200,p.y-200,400,400);}
  // Plate gates the jackpot, but never traps a thief in a room.
  const open=plateOpen(g);rect(plate.x-22,plate.y-18,44,36,open?'#b6f2d4':'#4a3d58',6);text(open?'OPEN':'HOLD',plate.x,plate.y+4,10,open?'#17352c':'#ddc1f2','center');ctx.strokeStyle=open?'#b6f2d4':'#ab8bba66';ctx.setLineDash([5,6]);ctx.beginPath();ctx.moveTo(plate.x+24,plate.y);ctx.lineTo(jackpot?.x||835,jackpot?.y||120);ctx.stroke();ctx.setLineDash([]);

@@ -28,3 +28,6 @@ Rescuer protection/retreat (40-seed engine regression); own crew vans and symmet
 
 ## v12 rivals map rebuild
 Three mirrored wing geometries, seeded equal wing loot, distinct patrols, separated crew vans. 66 tests pass. See docs/playtests/noise-v12.md for 180-match simulation and route distances. Co-op star distribution and three-crew fairness remain unmet; no browser playtest claimed.
+
+## v13 arena identity
+Distinct open Gallery, rotational shelving Archive, plus-hub Crossroads; separated plate/jackpot, six committed SVG diagrams. 69 tests pass, 180 simulated matches. All two-crew route differences <40u (max19u). Three crews retained with explicit unbalanced lobby warning. See docs/playtests/noise-v13.md for measurements and unverified human-play limits.
