@@ -1,0 +1,531 @@
+{
+  "engineHash": "4ca993977f5bc3b78517921a3fc8c27aade2e8e90ed5138a597841d9b21c930f",
+  "teamwork": [
+    {
+      "mode": "coop",
+      "scenario": "human-plate",
+      "n": 60,
+      "successes": 60,
+      "rate": 1,
+      "misses": []
+    },
+    {
+      "mode": "coop",
+      "scenario": "human-jackpot",
+      "n": 60,
+      "successes": 60,
+      "rate": 1,
+      "misses": []
+    },
+    {
+      "mode": "duos",
+      "scenario": "human-plate",
+      "n": 60,
+      "successes": 60,
+      "rate": 1,
+      "misses": []
+    },
+    {
+      "mode": "duos",
+      "scenario": "human-jackpot",
+      "n": 60,
+      "successes": 60,
+      "rate": 1,
+      "misses": []
+    }
+  ],
+  "spacing": {
+    "n": 40,
+    "naturalCaptures": 40,
+    "jointCaptures": 0,
+    "runs": [
+      {
+        "seed": 1,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 2,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 3,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 4,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 5,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 6,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 7,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 8,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 9,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 10,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 11,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 12,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 13,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 14,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 15,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 16,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 17,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 18,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 19,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 20,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 21,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 22,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 23,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 24,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 25,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 26,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 27,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 28,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 29,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 30,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 31,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 32,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 33,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 34,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 35,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 36,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 37,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 38,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 39,
+        "naturalCapture": true,
+        "echoCaught": false
+      },
+      {
+        "seed": 40,
+        "naturalCapture": true,
+        "echoCaught": false
+      }
+    ]
+  },
+  "carryingRescue": {
+    "n": 40,
+    "lost": 0,
+    "lossRate": 0,
+    "runs": [
+      {
+        "seed": 1,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 2,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 3,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 4,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 5,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 6,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 7,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 8,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 9,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 10,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 11,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 12,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 13,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 14,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 15,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 16,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 17,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 18,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 19,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 20,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 21,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 22,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 23,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 24,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 25,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 26,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 27,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 28,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 29,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 30,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 31,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 32,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 33,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 34,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 35,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 36,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 37,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 38,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 39,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      },
+      {
+        "seed": 40,
+        "natural": true,
+        "banked": true,
+        "lost": false,
+        "echoRescues": 1
+      }
+    ]
+  }
+}

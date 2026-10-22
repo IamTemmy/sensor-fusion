@@ -40,3 +40,7 @@ Rival wings each$200+$600; centre$1200+$500; fixed$3300. Budget conflict resolve
 
 ## v16 situational Echo and difficulty
 E closest-target priority; plate/capsule order repaired; reverse plate handoff; default Auto plus manual overrides; carried-art rescue decisions; widened rival centres with paired escape exits and serialized-navigation parity; canvas figurines/paintings/busts/crown-mask; caught/free/retreat indicators; Rookie/Normal/Pro with isolated records and forced Normal for human rival crews; far-side exhibit raids, no van raids.83 tests/typecheck pass.240/240 guard-free jackpot handoffs;0/40 carried-art losses in controlled natural-capture rescue probe.660 matches across three difficulties; co-op Auto wins100/95/75%, teamwork three-stars80/55/10%. Max audited route spread16.7u.24 renders inspected. Live browser/real-device feel remains unverified; see [v16 report](playtests/noise-v16.md).
+
+
+## Noise Thieves v17
+Difficulty ordering is now build-gated over 40 seeds per cell. Naive + Auto: co-op 90 / 62.5 / 42.5%; rivals 57.5 / 32.5 / 10%. Pro co-op remains above the ~30% target. Local sensor-only sneaking, Auto guard spacing, crew-only deduplicated callouts and art copy shipped. See docs/playtests/noise-v17.md for verification limits. No new gameplay systems or van raids.
