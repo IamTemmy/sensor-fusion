@@ -1,4 +1,4 @@
-import {command,advance,STEP,type Game,type Vec} from './engine.ts';
+import {command,advance,move,STEP,type Game,type Vec} from './engine.ts';
 /** The browser's local RAF driver. Match changes invalidate all old input timing. */
 export type LocalLoop={match:number;seq:number;elapsed:number};
 export const newLocalLoop=():LocalLoop=>({match:-1,seq:0,elapsed:0});
@@ -9,4 +9,10 @@ export function runLocalFrame(g:Game,loop:LocalLoop,deltaMs:number,dir:Vec,aim:V
  loop.elapsed+=Math.min(100,Math.max(0,deltaMs));
  const elapsed=Math.floor(loop.elapsed/STEP)*STEP;loop.elapsed-=elapsed;
  if(elapsed)advance(g,g.now+elapsed);
+}
+
+/** Reconciliation may not interpolate through a wall when an input burst ends. */
+export function reconcilePosition(p:Vec,authoritative:Vec,dt:number,walls:import('./engine.ts').Rect[]){
+ const d=Math.hypot(p.x-authoritative.x,p.y-authoritative.y);if(d>90){p.x=authoritative.x;p.y=authoritative.y;return;}
+ if(d<.1)return;move(p,(authoritative.x-p.x)/d,(authoritative.y-p.y)/d,Math.min(.05,Math.max(0,dt)),d*10,walls);
 }

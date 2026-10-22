@@ -1,0 +1,3842 @@
+{
+  "engineHash": "fea3cb17681668223ef6269d4a1de7e32005e584991556a7a178102a520d757c",
+  "fixture": "Normal, seeds 1–40 rescue; carrying uses the first 40 seeds with Echo free at capture (rejected setup seeds listed); 1–60 jackpot; 1–20 idle spacing. Human walks from spawn into closest live patrol, then stands still. Carrying variant equips Echo at the natural capture instant, keeping its actual position and all guards; all 40 begin the rescue decision holding art. Jackpot holder placed on plate; test both Echo at van and Echo 60u from plate; clock starts after grace with all guards active; no immunity or guard removal. Mid-job events disabled to isolate routing. Not an exact replica of Claude’s unavailable fixture.",
+  "spacing": {
+    "n": 20,
+    "maxReversals": 3,
+    "runs": [
+      {
+        "seed": 1,
+        "maxReversals": 1
+      },
+      {
+        "seed": 2,
+        "maxReversals": 0
+      },
+      {
+        "seed": 3,
+        "maxReversals": 0
+      },
+      {
+        "seed": 4,
+        "maxReversals": 0
+      },
+      {
+        "seed": 5,
+        "maxReversals": 1
+      },
+      {
+        "seed": 6,
+        "maxReversals": 2
+      },
+      {
+        "seed": 7,
+        "maxReversals": 3
+      },
+      {
+        "seed": 8,
+        "maxReversals": 3
+      },
+      {
+        "seed": 9,
+        "maxReversals": 1
+      },
+      {
+        "seed": 10,
+        "maxReversals": 1
+      },
+      {
+        "seed": 11,
+        "maxReversals": 2
+      },
+      {
+        "seed": 12,
+        "maxReversals": 1
+      },
+      {
+        "seed": 13,
+        "maxReversals": 1
+      },
+      {
+        "seed": 14,
+        "maxReversals": 1
+      },
+      {
+        "seed": 15,
+        "maxReversals": 3
+      },
+      {
+        "seed": 16,
+        "maxReversals": 2
+      },
+      {
+        "seed": 17,
+        "maxReversals": 1
+      },
+      {
+        "seed": 18,
+        "maxReversals": 1
+      },
+      {
+        "seed": 19,
+        "maxReversals": 1
+      },
+      {
+        "seed": 20,
+        "maxReversals": 2
+      }
+    ]
+  },
+  "rescue": {
+    "n": 40,
+    "captures": 40,
+    "successes": 35,
+    "medianMs": 2000,
+    "postRescueCaught": 2,
+    "runs": [
+      {
+        "seed": 1,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1560,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 2,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 3,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3440,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 4,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3400,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 5,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2440,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 6,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": true,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 7,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2320,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 8,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1640,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 9,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3640,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 10,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 11,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1800,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 12,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2000,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 13,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2000,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 14,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 15,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3480,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 16,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 17,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 18,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1600,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 19,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2480,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 20,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 21,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 22,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2320,
+        "echoCaught": true,
+        "artLost": false
+      },
+      {
+        "seed": 23,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2320,
+        "echoCaught": true,
+        "artLost": false
+      },
+      {
+        "seed": 24,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2000,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 25,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": true,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 26,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2320,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 27,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2320,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 28,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1680,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 29,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 30,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3440,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 31,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1800,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 32,
+        "layout": 1,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3440,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 33,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 34,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1960,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 35,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 36,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 37,
+        "layout": 2,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 38,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2000,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 39,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2000,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 40,
+        "layout": 0,
+        "loaded": false,
+        "carryingAtCapture": false,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3040,
+        "echoCaught": false,
+        "artLost": false
+      }
+    ]
+  },
+  "carrying": {
+    "n": 40,
+    "excludedSetupSeeds": [
+      6,
+      25
+    ],
+    "carryingAtCapture": 40,
+    "artLost": 1,
+    "runs": [
+      {
+        "seed": 1,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3000,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 2,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 3,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 4,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 5,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3320,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 7,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 8,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2040,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 9,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 10,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 11,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1880,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 12,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 13,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 14,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 15,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 16,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 17,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 18,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1640,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 19,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 20,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 11320,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 21,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 11240,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 22,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 23,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 24,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 26,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 27,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 28,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 3680,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 29,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 30,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 31,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 1800,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 32,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 11520,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 33,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 11240,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 34,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": true,
+        "ms": 2720,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 35,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 36,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 37,
+        "layout": 2,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 38,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 39,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": true
+      },
+      {
+        "seed": 40,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 41,
+        "layout": 0,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      },
+      {
+        "seed": 42,
+        "layout": 1,
+        "loaded": true,
+        "carryingAtCapture": true,
+        "echoWasCaughtAtCapture": false,
+        "caught": true,
+        "rescued": false,
+        "ms": null,
+        "echoCaught": false,
+        "artLost": false
+      }
+    ]
+  },
+  "jackpotNearCrew": {
+    "n": 60,
+    "pickups": 60,
+    "runs": [
+      {
+        "seed": 1,
+        "start": "crew",
+        "layout": 0,
+        "picked": 3200,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 793.4537341724229,
+          "y": 422.9603401456711
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 793.4537341724229,
+          "y": 422.9603401456711
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 2,
+        "start": "crew",
+        "layout": 1,
+        "picked": 1800,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 791.6625964806252,
+          "y": 425.5298174309828
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 791.6625964806252,
+          "y": 425.5298174309828
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 3,
+        "start": "crew",
+        "layout": 1,
+        "picked": 7840,
+        "everCaught": false,
+        "waitMs": 1680,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 793.8968752840908,
+          "y": 424.9784592112816
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 793.8968752840908,
+          "y": 424.9784592112816
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 4,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2280,
+        "everCaught": false,
+        "waitMs": 160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 862.1737147470068,
+          "y": 301.0961480517129
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 862.1737147470068,
+          "y": 301.0961480517129
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 5,
+        "start": "crew",
+        "layout": 1,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 6,
+        "start": "crew",
+        "layout": 2,
+        "picked": 960,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 697.9974866643545,
+          "y": 285.8547043513129
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 697.9974866643545,
+          "y": 285.8547043513129
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 7,
+        "start": "crew",
+        "layout": 2,
+        "picked": 3400,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 791.3605966630495,
+          "y": 428.71600271815015
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 791.3605966630495,
+          "y": 428.71600271815015
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 8,
+        "start": "crew",
+        "layout": 2,
+        "picked": 2040,
+        "everCaught": false,
+        "waitMs": 120,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 781.5932097287806,
+          "y": 431.3470255837663
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 781.5932097287806,
+          "y": 431.3470255837663
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 9,
+        "start": "crew",
+        "layout": 2,
+        "picked": 2160,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 793.919593411725,
+          "y": 134.74314007963858
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 793.919593411725,
+          "y": 134.74314007963858
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 10,
+        "start": "crew",
+        "layout": 2,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 11,
+        "start": "crew",
+        "layout": 0,
+        "picked": 6440,
+        "everCaught": false,
+        "waitMs": 1400,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 718.0430775246075,
+          "y": 374.79569055715467
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 718.0430775246075,
+          "y": 374.79569055715467
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 12,
+        "start": "crew",
+        "layout": 0,
+        "picked": 3080,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 862.1420916818146,
+          "y": 303.9270407042479
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 862.1420916818146,
+          "y": 303.9270407042479
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 13,
+        "start": "crew",
+        "layout": 0,
+        "picked": 760,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 787.6275113355073,
+          "y": 126.52859953636627
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 787.6275113355073,
+          "y": 126.52859953636627
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 14,
+        "start": "crew",
+        "layout": 0,
+        "picked": 5680,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 817.1417577141505,
+          "y": 424.92078736945217
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 817.1417577141505,
+          "y": 424.92078736945217
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 15,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2160,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 750.9277073019085,
+          "y": 307.9533474814471
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 750.9277073019085,
+          "y": 307.9533474814471
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 16,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2200,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 712.2485458001046,
+          "y": 286.12260638325785
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 712.2485458001046,
+          "y": 286.12260638325785
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 17,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2440,
+        "everCaught": false,
+        "waitMs": 880,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 821.8334327857963,
+          "y": 347.4210103198823
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 821.8334327857963,
+          "y": 347.4210103198823
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 18,
+        "start": "crew",
+        "layout": 1,
+        "picked": 3080,
+        "everCaught": false,
+        "waitMs": 440,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 830.1411530490078,
+          "y": 332.4943977223548
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 830.1411530490078,
+          "y": 332.4943977223548
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 19,
+        "start": "crew",
+        "layout": 1,
+        "picked": 4680,
+        "everCaught": false,
+        "waitMs": 200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 791.9213749129442,
+          "y": 428.9424282010653
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 791.9213749129442,
+          "y": 428.9424282010653
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 20,
+        "start": "crew",
+        "layout": 2,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 21,
+        "start": "crew",
+        "layout": 2,
+        "picked": 5160,
+        "everCaught": false,
+        "waitMs": 1240,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 726.677137966214,
+          "y": 283.45172726445026
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 726.677137966214,
+          "y": 283.45172726445026
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 22,
+        "start": "crew",
+        "layout": 2,
+        "picked": 5400,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 823.6809826899363,
+          "y": 336.1272218866586
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 823.6809826899363,
+          "y": 336.1272218866586
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 23,
+        "start": "crew",
+        "layout": 2,
+        "picked": 6480,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 790.8983331354252,
+          "y": 427.22659574271864
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 790.8983331354252,
+          "y": 427.22659574271864
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 24,
+        "start": "crew",
+        "layout": 0,
+        "picked": 2200,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 706.251068513516,
+          "y": 286.187349995813
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 706.251068513516,
+          "y": 286.187349995813
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 25,
+        "start": "crew",
+        "layout": 0,
+        "picked": 6960,
+        "everCaught": true,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.783069697613,
+          "y": 130.46327422793934
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.783069697613,
+          "y": 130.46327422793934
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 26,
+        "start": "crew",
+        "layout": 0,
+        "picked": 800,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 699.4128737982828,
+          "y": 283.68132286748653
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 699.4128737982828,
+          "y": 283.68132286748653
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 27,
+        "start": "crew",
+        "layout": 0,
+        "picked": 1920,
+        "everCaught": false,
+        "waitMs": 80,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 806.2142535358773,
+          "y": 424.9499649890118
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 806.2142535358773,
+          "y": 424.9499649890118
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 28,
+        "start": "crew",
+        "layout": 0,
+        "picked": 800,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 699.4128737982828,
+          "y": 283.68132286748653
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 699.4128737982828,
+          "y": 283.68132286748653
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 29,
+        "start": "crew",
+        "layout": 1,
+        "picked": 920,
+        "everCaught": false,
+        "waitMs": 120,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.8057102072796,
+          "y": 110.2384001502432
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.8057102072796,
+          "y": 110.2384001502432
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 30,
+        "start": "crew",
+        "layout": 1,
+        "picked": 5160,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 817.3268122531586,
+          "y": 422.6480977065044
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 817.3268122531586,
+          "y": 422.6480977065044
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 31,
+        "start": "crew",
+        "layout": 1,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 32,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2520,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 810.5728611172484,
+          "y": 422.32410761866544
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810.5728611172484,
+          "y": 422.32410761866544
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 33,
+        "start": "crew",
+        "layout": 2,
+        "picked": 2360,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 715.0438456953191,
+          "y": 283.246730912804
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 715.0438456953191,
+          "y": 283.246730912804
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 34,
+        "start": "crew",
+        "layout": 2,
+        "picked": 6520,
+        "everCaught": false,
+        "waitMs": 1280,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 791.2523734815568,
+          "y": 429.787927927864
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 791.2523734815568,
+          "y": 429.787927927864
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 35,
+        "start": "crew",
+        "layout": 2,
+        "picked": 1560,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 856.7732415371502,
+          "y": 304.7401625288522
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 856.7732415371502,
+          "y": 304.7401625288522
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 36,
+        "start": "crew",
+        "layout": 2,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 37,
+        "start": "crew",
+        "layout": 2,
+        "picked": 1760,
+        "everCaught": false,
+        "waitMs": 40,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 824.2445814036795,
+          "y": 335.99948716332545
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 824.2445814036795,
+          "y": 335.99948716332545
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 38,
+        "start": "crew",
+        "layout": 0,
+        "picked": 800,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 793.1245958466512,
+          "y": 145.9514426049155
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 793.1245958466512,
+          "y": 145.9514426049155
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 39,
+        "start": "crew",
+        "layout": 0,
+        "picked": 2080,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.9600962852517,
+          "y": 432.5639828035801
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.9600962852517,
+          "y": 432.5639828035801
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 40,
+        "start": "crew",
+        "layout": 0,
+        "picked": 1080,
+        "everCaught": false,
+        "waitMs": 200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 787.4673532333566,
+          "y": 108.90855062769323
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 787.4673532333566,
+          "y": 108.90855062769323
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 41,
+        "start": "crew",
+        "layout": 0,
+        "picked": 800,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 699.4128737982828,
+          "y": 283.68132286748653
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 699.4128737982828,
+          "y": 283.68132286748653
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 42,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2360,
+        "everCaught": false,
+        "waitMs": 1360,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 791.8079143667374,
+          "y": 139.80130520008635
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 791.8079143667374,
+          "y": 139.80130520008635
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 43,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2720,
+        "everCaught": false,
+        "waitMs": 200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 810.7870730019538,
+          "y": 422.1207173313179
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810.7870730019538,
+          "y": 422.1207173313179
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 44,
+        "start": "crew",
+        "layout": 1,
+        "picked": 1080,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 708.5099317843883,
+          "y": 285.83055950171575
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 708.5099317843883,
+          "y": 285.83055950171575
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 45,
+        "start": "crew",
+        "layout": 1,
+        "picked": 3000,
+        "everCaught": false,
+        "waitMs": 1120,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 862.4523287538603,
+          "y": 305.2293385048626
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 862.4523287538603,
+          "y": 305.2293385048626
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 46,
+        "start": "crew",
+        "layout": 1,
+        "picked": 11160,
+        "everCaught": true,
+        "waitMs": 520,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 677.6602722200539,
+          "y": 293.0830975089169
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 677.6602722200539,
+          "y": 293.0830975089169
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 47,
+        "start": "crew",
+        "layout": 2,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 48,
+        "start": "crew",
+        "layout": 2,
+        "picked": 2280,
+        "everCaught": false,
+        "waitMs": 80,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 753.2321050080384,
+          "y": 334.696310444416
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 753.2321050080384,
+          "y": 334.696310444416
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 49,
+        "start": "crew",
+        "layout": 2,
+        "picked": 3880,
+        "everCaught": false,
+        "waitMs": 2080,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 823.6999340320676,
+          "y": 332.99274739180294
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 823.6999340320676,
+          "y": 332.99274739180294
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 50,
+        "start": "crew",
+        "layout": 2,
+        "picked": 2320,
+        "everCaught": false,
+        "waitMs": 80,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 826.7175860634113,
+          "y": 353.41283273433294
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 826.7175860634113,
+          "y": 353.41283273433294
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 51,
+        "start": "crew",
+        "layout": 0,
+        "picked": 7920,
+        "everCaught": true,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 825.6560470185976,
+          "y": 336.91312746901906
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 825.6560470185976,
+          "y": 336.91312746901906
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 52,
+        "start": "crew",
+        "layout": 0,
+        "picked": 1840,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 807.3658238675263,
+          "y": 425.37211701666865
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 807.3658238675263,
+          "y": 425.37211701666865
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 53,
+        "start": "crew",
+        "layout": 0,
+        "picked": 2600,
+        "everCaught": false,
+        "waitMs": 1240,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 700.1022696181022,
+          "y": 284.4165885690904
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 700.1022696181022,
+          "y": 284.4165885690904
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 54,
+        "start": "crew",
+        "layout": 0,
+        "picked": 4280,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 791.742889649076,
+          "y": 424.69303225078284
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 791.742889649076,
+          "y": 424.69303225078284
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 55,
+        "start": "crew",
+        "layout": 0,
+        "picked": 3840,
+        "everCaught": false,
+        "waitMs": 1120,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 834.1302837432878,
+          "y": 324.7996628344498
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 834.1302837432878,
+          "y": 324.7996628344498
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 56,
+        "start": "crew",
+        "layout": 1,
+        "picked": 3520,
+        "everCaught": false,
+        "waitMs": 1120,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 793.9501375251613,
+          "y": 424.99151058880756
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 793.9501375251613,
+          "y": 424.99151058880756
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 57,
+        "start": "crew",
+        "layout": 1,
+        "picked": 3560,
+        "everCaught": false,
+        "waitMs": 1160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 862.6248567584624,
+          "y": 300.8703214823479
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 862.6248567584624,
+          "y": 300.8703214823479
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 58,
+        "start": "crew",
+        "layout": 1,
+        "picked": 760,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 790.6763342378304,
+          "y": 123.36929593153755
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 790.6763342378304,
+          "y": 123.36929593153755
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 59,
+        "start": "crew",
+        "layout": 1,
+        "picked": 2640,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 750.8614013838795,
+          "y": 308.0490513068496
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 750.8614013838795,
+          "y": 308.0490513068496
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 60,
+        "start": "crew",
+        "layout": 2,
+        "picked": 720,
+        "everCaught": false,
+        "waitMs": 0,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 786.2142140621709,
+          "y": 130.34850004741838
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      }
+    ]
+  },
+  "jackpot": {
+    "n": 60,
+    "pickups": 29,
+    "runs": [
+      {
+        "seed": 1,
+        "start": "van",
+        "layout": 0,
+        "picked": 8280,
+        "everCaught": false,
+        "waitMs": 3080,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 762.8607553044089,
+          "y": 483.73042050919685
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 762.8607553044089,
+          "y": 483.73042050919685
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 2,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2120,
+        "echoCaught": true,
+        "task": "wait-rescue",
+        "echo": {
+          "x": 237.9819099711837,
+          "y": 274.1690665336593
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 3,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 1360,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 226.34330902340798,
+          "y": 450.13664162013845
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 4,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 400,
+        "echoCaught": true,
+        "task": "jackpot",
+        "echo": {
+          "x": 406.93017032139966,
+          "y": 315.07800707136994
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 870,
+          "y": 350
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 5,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 800,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 634.684802524698,
+          "y": 502.1873771498652
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 6,
+        "start": "van",
+        "layout": 2,
+        "picked": 13440,
+        "everCaught": true,
+        "waitMs": 360,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 689.3939857218193,
+          "y": 288.0175804348192
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 689.3939857218193,
+          "y": 288.0175804348192
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 7,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 5360,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 537.2028998129127,
+          "y": 450.79498727186024
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 8,
+        "start": "van",
+        "layout": 2,
+        "picked": 11440,
+        "everCaught": false,
+        "waitMs": 1640,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 790.9970490524806,
+          "y": 428.97294027786154
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 790.9970490524806,
+          "y": 428.97294027786154
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 9,
+        "start": "van",
+        "layout": 2,
+        "picked": 11080,
+        "everCaught": false,
+        "waitMs": 5200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 805.8359182353012,
+          "y": 159.48048170192126
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 805.8359182353012,
+          "y": 159.48048170192126
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 10,
+        "start": "van",
+        "layout": 2,
+        "picked": 11000,
+        "everCaught": false,
+        "waitMs": 1800,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 837.7041183938596,
+          "y": 165.20417205560346
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 837.7041183938596,
+          "y": 165.20417205560346
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 11,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 6360,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 373.35999867489676,
+          "y": 443.44066154182445
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 12,
+        "start": "van",
+        "layout": 0,
+        "picked": 9280,
+        "everCaught": false,
+        "waitMs": 3320,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 828.6283707428895,
+          "y": 377.1745469904034
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 828.6283707428895,
+          "y": 377.1745469904034
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 13,
+        "start": "van",
+        "layout": 0,
+        "picked": 11680,
+        "everCaught": false,
+        "waitMs": 2560,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 814.7540456113757,
+          "y": 165.6620877217081
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 814.7540456113757,
+          "y": 165.6620877217081
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 14,
+        "start": "van",
+        "layout": 0,
+        "picked": 9000,
+        "everCaught": false,
+        "waitMs": 2400,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 760.7899122692816,
+          "y": 477.15532188525214
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 760.7899122692816,
+          "y": 477.15532188525214
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 15,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 480,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 372.6221219321078,
+          "y": 461.4169299311234
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 16,
+        "start": "van",
+        "layout": 1,
+        "picked": 8600,
+        "everCaught": false,
+        "waitMs": 4080,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 693.466842086596,
+          "y": 376.77186869550275
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 693.466842086596,
+          "y": 376.77186869550275
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 17,
+        "start": "van",
+        "layout": 1,
+        "picked": 13000,
+        "everCaught": false,
+        "waitMs": 2080,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 833.4901001721969,
+          "y": 325.38291924729026
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 833.4901001721969,
+          "y": 325.38291924729026
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 18,
+        "start": "van",
+        "layout": 1,
+        "picked": 10280,
+        "everCaught": false,
+        "waitMs": 1800,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 862.1514565816743,
+          "y": 304.3251434610243
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 862.1514565816743,
+          "y": 304.3251434610243
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 19,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 280.3575723232465,
+          "y": 458.99199914508085
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 20,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 1880,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 270.2856601341325,
+          "y": 303.7319375111054
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 21,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 920,
+        "echoCaught": true,
+        "task": "jackpot",
+        "echo": {
+          "x": 221.67354306474684,
+          "y": 218.4345306285469
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 22,
+        "start": "van",
+        "layout": 2,
+        "picked": 11160,
+        "everCaught": false,
+        "waitMs": 2200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 824.5618595029648,
+          "y": 365.0647910519917
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 824.5618595029648,
+          "y": 365.0647910519917
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 23,
+        "start": "van",
+        "layout": 2,
+        "picked": 9120,
+        "everCaught": false,
+        "waitMs": 2560,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 780.06501762409,
+          "y": 433.0732348842074
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 780.06501762409,
+          "y": 433.0732348842074
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 24,
+        "start": "van",
+        "layout": 0,
+        "picked": 8400,
+        "everCaught": false,
+        "waitMs": 3680,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 663.868329522271,
+          "y": 337.7533141486735
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 663.868329522271,
+          "y": 337.7533141486735
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 25,
+        "start": "van",
+        "layout": 0,
+        "picked": 11040,
+        "everCaught": false,
+        "waitMs": 3520,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 798.8404708356608,
+          "y": 148.58711114270096
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 798.8404708356608,
+          "y": 148.58711114270096
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 26,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2680,
+        "echoCaught": true,
+        "task": "jackpot",
+        "echo": {
+          "x": 484.4146796946284,
+          "y": 355.878289804598
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 27,
+        "start": "van",
+        "layout": 0,
+        "picked": 15000,
+        "everCaught": true,
+        "waitMs": 960,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 760.5419757385663,
+          "y": 477.26621811009767
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 760.5419757385663,
+          "y": 477.26621811009767
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 28,
+        "start": "van",
+        "layout": 0,
+        "picked": 6920,
+        "everCaught": false,
+        "waitMs": 920,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 661.3763293162299,
+          "y": 330.08254716156995
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 661.3763293162299,
+          "y": 330.08254716156995
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 29,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2440,
+        "echoCaught": true,
+        "task": "wait-rescue",
+        "echo": {
+          "x": 500.0349096332411,
+          "y": 314.7701399276908
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 30,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 4680,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 264.32846635396794,
+          "y": 371.2122943550195
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 31,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 1960,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 573.5518057802045,
+          "y": 314.06707725987025
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 32,
+        "start": "van",
+        "layout": 1,
+        "picked": 13400,
+        "everCaught": false,
+        "waitMs": 1600,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 817.0839069730675,
+          "y": 424.44102304924195
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 817.0839069730675,
+          "y": 424.44102304924195
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 33,
+        "start": "van",
+        "layout": 2,
+        "picked": 9920,
+        "everCaught": false,
+        "waitMs": 4120,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 685.1530349194019,
+          "y": 371.42942781149367
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 685.1530349194019,
+          "y": 371.42942781149367
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 34,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2480,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 258.1769781430582,
+          "y": 472.567377620027
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 35,
+        "start": "van",
+        "layout": 2,
+        "picked": 10160,
+        "everCaught": false,
+        "waitMs": 1600,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 856.6911961122165,
+          "y": 304.31162671205254
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 856.6911961122165,
+          "y": 304.31162671205254
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 36,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 600,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 445.1527882141384,
+          "y": 436.84231090584643
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 37,
+        "start": "van",
+        "layout": 2,
+        "picked": 9200,
+        "everCaught": false,
+        "waitMs": 1320,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 822.6940373861324,
+          "y": 346.08258383210415
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 822.6940373861324,
+          "y": 346.08258383210415
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 38,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 480,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 709.594204867763,
+          "y": 275.66367987879875
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 39,
+        "start": "van",
+        "layout": 0,
+        "picked": 14800,
+        "everCaught": true,
+        "waitMs": 400,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 764.2348253428222,
+          "y": 476.65007108891484
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 764.2348253428222,
+          "y": 476.65007108891484
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 40,
+        "start": "van",
+        "layout": 0,
+        "picked": 12360,
+        "everCaught": false,
+        "waitMs": 2200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 796.2660624064258,
+          "y": 148.94760930154462
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 796.2660624064258,
+          "y": 148.94760930154462
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 41,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 600,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 513.016509872954,
+          "y": 397.7026857923124
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 42,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 6160,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 230.89803153374552,
+          "y": 446.24135656995577
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 43,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 4520,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 408.3315144249867,
+          "y": 490.48284631208884
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 44,
+        "start": "van",
+        "layout": 1,
+        "picked": 12720,
+        "everCaught": false,
+        "waitMs": 3200,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 674.7272527214413,
+          "y": 301.45709397042185
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 674.7272527214413,
+          "y": 301.45709397042185
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 45,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 4480,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 280.21051732884735,
+          "y": 348.6176006986048
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 870,
+          "y": 350
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 46,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2640,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 380.95686119316525,
+          "y": 198.35087740095918
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 47,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 240,
+        "echoCaught": true,
+        "task": "jackpot",
+        "echo": {
+          "x": 177.6260289990523,
+          "y": 227.9748411972204
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 48,
+        "start": "van",
+        "layout": 2,
+        "picked": 10840,
+        "everCaught": false,
+        "waitMs": 1360,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 758.6255426640405,
+          "y": 321.85314611782417
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 758.6255426640405,
+          "y": 321.85314611782417
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 49,
+        "start": "van",
+        "layout": 2,
+        "picked": 13240,
+        "everCaught": false,
+        "waitMs": 2320,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 824.5492213532148,
+          "y": 335.60349855715486
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 824.5492213532148,
+          "y": 335.60349855715486
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 50,
+        "start": "van",
+        "layout": 2,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 240,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 685.9547985518635,
+          "y": 411.700315508852
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 870,
+          "y": 350
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 51,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 1080,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 616.1734455443922,
+          "y": 288.8277441694952
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 870,
+          "y": 350
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 52,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 560,
+        "echoCaught": true,
+        "task": "wait-rescue",
+        "echo": {
+          "x": 519.5014934780993,
+          "y": 396.7015355761418
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 53,
+        "start": "van",
+        "layout": 0,
+        "picked": 10400,
+        "everCaught": false,
+        "waitMs": 3520,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 663.7439645682358,
+          "y": 337.7606808691021
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 663.7439645682358,
+          "y": 337.7606808691021
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 54,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 6320,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 395.24658421356514,
+          "y": 453.4554145865437
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 55,
+        "start": "van",
+        "layout": 0,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 6560,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 267.1903688266485,
+          "y": 519.7587368509704
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 870,
+          "y": 350
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 56,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 3640,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 462.01742740535747,
+          "y": 486.08383596949926
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 810,
+          "y": 470
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 57,
+        "start": "van",
+        "layout": 1,
+        "picked": 12840,
+        "everCaught": false,
+        "waitMs": 4440,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 828.1552705896268,
+          "y": 330.3933682040409
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 828.1552705896268,
+          "y": 330.3933682040409
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 58,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2000,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 418.68833541024344,
+          "y": 392.37521338207586
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 835,
+          "y": 120
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 59,
+        "start": "van",
+        "layout": 1,
+        "picked": 0,
+        "everCaught": true,
+        "waitMs": 2280,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 614.9475670999451,
+          "y": 500.48681602779135
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 710,
+          "y": 330
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      },
+      {
+        "seed": 60,
+        "start": "van",
+        "layout": 2,
+        "picked": 13800,
+        "everCaught": true,
+        "waitMs": 720,
+        "echoCaught": false,
+        "task": "jackpot",
+        "echo": {
+          "x": 793.3364140683602,
+          "y": 133.45827266550663
+        },
+        "humanCaught": false,
+        "jack": {
+          "x": 793.3364140683602,
+          "y": 133.45827266550663
+        },
+        "plate": {
+          "x": 730,
+          "y": 155
+        }
+      }
+    ]
+  }
+}

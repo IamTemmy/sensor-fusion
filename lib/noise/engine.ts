@@ -65,7 +65,7 @@ export const RIVAL_REINFORCEMENTS:Vec[][]=[
  [{x:420,y:260},{x:480,y:210},{x:540,y:260},{x:540,y:340},{x:480,y:380},{x:420,y:340}]
 ].map(r=>r.map(widePoint));
 export const PEDESTALS:Vec[]=[{x:205,y:320},{x:250,y:90},{x:440,y:285},{x:530,y:330},{x:835,y:120},{x:810,y:470},{x:710,y:330},{x:870,y:350}];
-export type Thief=Vec&{id:string;name:string;bot:boolean;token?:string;dx:number;dy:number;aim:Vec;inputAt:number;lastSeq:number;ready:boolean;hand:string|null;stun:number;safe:number;escaped:boolean;captures:number;rescues:number;bank:number;cooldown:number;mode:'auto'|'follow'|'fetch'|'cover'|'plate';task?:string;announcedTask?:string;taskAt?:number;autoTarget?:string;decisionAt?:number;lastSeen:number;team:number;windup:number;bestThrow:number;rescueId:string|null;rescueAt:number;bottleId:string|null;bottleAt:number;sneak?:boolean;plateJob?:string;capturedBy?:string;retreatUntil?:number;penalty?:number;escapedAt?:number;ambushUntil?:number;calloutAt?:number;};
+export type Thief=Vec&{id:string;name:string;bot:boolean;token?:string;dx:number;dy:number;aim:Vec;inputAt:number;lastSeq:number;ready:boolean;hand:string|null;stun:number;safe:number;escaped:boolean;captures:number;rescues:number;bank:number;cooldown:number;mode:'auto'|'follow'|'fetch'|'cover'|'plate';task?:string;announcedTask?:string;taskAt?:number;autoTarget?:string;decisionAt?:number;lastSeen:number;team:number;windup:number;bestThrow:number;rescueId:string|null;rescueAt:number;bottleId:string|null;bottleAt:number;sneak?:boolean;plateJob?:string;capturedBy?:string;retreatUntil?:number;retreatPoint?:Vec;spacing?:boolean;avoidPoint?:Vec;avoidUntil?:number;penalty?:number;escapedAt?:number;ambushUntil?:number;calloutAt?:number;};
 export type Guard=Vec&{id:string;angle:number;mode:'patrol'|'investigate'|'chase';target:Vec;route:Vec[];way:number;attention:number;victim:string|null;luredUntil?:number;searchAt?:number;searchCenter?:Vec;retreatUntil?:number;};
 export type Loot=Vec&{id:string;name:string;value:number;holder:string|null;banked:boolean;bankedBy?:number;quietUntil?:number;home?:Vec;droppedAt?:number;recoverAt?:number;locked?:boolean;sealed?:boolean;claimed?:boolean;eventPiece?:boolean};
 export type Noise=Vec&{id:string;holder:string|null;expires:number;born:number;vx:number;vy:number;flight:number;kind:'alarm'|'capsule';source:string|null;attached?:string|null;thrownBy?:string;thrownAt?:number;counted?:boolean;heardBy?:string[];heardAt?:Record<string,number>;alerted?:boolean};
@@ -82,7 +82,7 @@ export function create(code:string,now=0,seed=13):Game{return {version:3,match:0
 export function add(g:Game,name:string,token:string,bot=false){if(g.phase!=='lobby')throw Error('This job has started. Join the next one.');if(g.seats.length>=6)throw Error('Crew full (six thieves).');const id='p'+(++g.serial);const s:Thief={id,name:name.trim().slice(0,18)||'Rookie',token:bot?undefined:token,bot,x:85+g.seats.length*30,y:485,dx:0,dy:0,aim:{x:500,y:300},inputAt:0,lastSeq:0,ready:false,hand:null,stun:0,safe:0,escaped:false,captures:0,rescues:0,bank:0,cooldown:0,mode:'auto',lastSeen:g.now,team:0,windup:0,bestThrow:0,rescueId:null,rescueAt:0,bottleId:null,bottleAt:0};if(g.crewMode!=='coop'){const count=g.crewMode==='trios'?2:Math.max(2,...g.seats.map(p=>p.team+1));s.team=Array.from({length:count},(_,i)=>i).sort((a,b)=>g.seats.filter(p=>p.team===a).length-g.seats.filter(p=>p.team===b).length)[0];}g.seats.push(s);if(!g.host)g.host=id;return s;}
 export function setup(g:Game){g.seats=g.seats.filter(s=>s.id!=='practice-rival');if(g.crewMode!=='coop'&&g.seats.some(s=>s.team>1)){g.crewMode=g.seats.length>4?'trios':'duos';g.seats.forEach((s,i)=>s.team=i%2);}g.phase='ready';g.events=[];g.noises=[];g.total=0;g.success=false;g.start=0;g.end=0;g.alert=0;g.boardingAt=0;g.honking=false;g.lockdown=false;g.alarmTip=false;g.finishReason='';g.finishedAt=undefined;g.jobEvent=undefined;g.lootTotal=undefined;g.match++;g.practiceStage=0;
  const previous=g.layout;g.layout=previous<0?Math.floor(random(g)*3):(previous+1+Math.floor(random(g)*2))%3;g.walls=LAYOUTS[g.layout];g.plate={x:730,y:155};
- g.seats.forEach((s,i)=>Object.assign(s,{x:80+i*28,y:495,dx:0,dy:0,hand:null,stun:0,safe:0,escaped:false,captures:0,rescues:0,bank:0,cooldown:0,ready:s.bot,lastSeq:0,inputAt:0,mode:'auto',windup:0,bestThrow:0,rescueId:null,rescueAt:0,bottleId:null,bottleAt:0,sneak:false,plateJob:undefined,capturedBy:undefined,retreatUntil:0,penalty:0,escapedAt:undefined,ambushUntil:0,calloutAt:undefined,task:undefined,announcedTask:undefined,taskAt:undefined,autoTarget:undefined,decisionAt:undefined}));
+ g.seats.forEach((s,i)=>Object.assign(s,{x:80+i*28,y:495,dx:0,dy:0,hand:null,stun:0,safe:0,escaped:false,captures:0,rescues:0,bank:0,cooldown:0,ready:s.bot,lastSeq:0,inputAt:0,mode:'auto',windup:0,bestThrow:0,rescueId:null,rescueAt:0,bottleId:null,bottleAt:0,sneak:false,plateJob:undefined,capturedBy:undefined,retreatUntil:0,retreatPoint:undefined,spacing:false,avoidPoint:undefined,avoidUntil:0,penalty:0,escapedAt:undefined,ambushUntil:0,calloutAt:undefined,task:undefined,announcedTask:undefined,taskAt:undefined,autoTarget:undefined,decisionAt:undefined}));
  g.loot=[{id:'art1',name:'Golden echo',value:500,x:205,y:320},{id:'art2',name:'Moon vase',value:800,x:440,y:285},{id:'art3',name:'The scream',value:1200,x:835,y:120},{id:'art4',name:'Blue idol',value:1000,x:810,y:470}].map(x=>({...x,holder:null,banked:false}));
  const spots=[...PEDESTALS];for(let i=spots.length-1;i>0;i--){const j=Math.floor(random(g)*(i+1));[spots[i],spots[j]]=[spots[j],spots[i]];}
  g.loot.forEach((l,i)=>{Object.assign(l,spots[i]);l.home={x:l.x,y:l.y};l.locked=l.value===1200;});
@@ -141,7 +141,7 @@ export function action(g:Game,s:Thief,type:string,aim?:Vec){if(g.phase!=='playin
  if(type==='drop'){drop(g,s);event(g,s.name+' put it down.','info',s);return;}
  if(type==='grab'){
   const target=interaction(g,s);
-  if(target.kind==='rescue'){if(s.rescueId!==target.id){s.rescueId=target.id!;s.rescueAt=g.now;const guard=g.guards.find(h=>h.id===g.seats.find(p=>p.id===target.id)?.capturedBy);if(guard)guard.retreatUntil=Math.max(guard.retreatUntil||0,g.now+2500);event(g,'Stay beside '+g.seats.find(p=>p.id===target.id)!.name+' for 1.5s to rescue.');}return;}
+  if(target.kind==='rescue'){if(s.rescueId!==target.id){s.rescueId=target.id!;s.rescueAt=g.now;const guard=g.guards.find(h=>h.id===g.seats.find(p=>p.id===target.id)?.capturedBy);if(guard)guard.retreatUntil=Math.max(guard.retreatUntil||0,g.now+2500);event(g,'Stay beside '+g.seats.find(p=>p.id===target.id)!.name+' for 1.2s to rescue.');}return;}
   if(target.kind==='noise'){const n=g.noises.find(n=>n.id===target.id)!;if(n.attached){const l=g.loot.find(l=>l.id===n.source);if(l)l.quietUntil=g.now+8000;n.attached=null;}else if(n.source){const l=g.loot.find(l=>l.id===n.source);if(l)l.quietUntil=g.now+8000;}n.holder=s.id;n.flight=0;n.vx=n.vy=0;n.kind='capsule';n.expires=g.now+10000;s.hand=n.id;if(!n.counted){s.captures++;n.counted=true;}s.windup=g.now+650;event(g,s.name+' stole the scream. Aim, then throw!','capture',s);return;}
   if(target.kind==='loot'){const l=g.loot.find(l=>l.id===target.id)!;l.holder=s.id;l.claimed=true;l.locked=false;l.droppedAt=undefined;l.recoverAt=undefined;s.hand=l.id;if(!l.quietUntil||l.quietUntil<=g.now){hush(g,l);alarm(g,s,l.id,s.id);}event(g,'The art screams! G drops it. An empty-handed partner can steal its scream.','info',s);return;}
   if(target.kind==='locked')event(g,'The Scream is locked. A teammate must hold the marked plate.');
@@ -167,10 +167,33 @@ export function botSneakNearSensor(g:Game,s:Thief,target:Vec){const next=steer(s
 function walk(g:Game,p:Vec,target:Vec,dt:number,speed:number){const seat=g.seats.find(s=>s===p);if(seat){const art=g.loot.find(l=>l.holder===seat.id);if(art)speed=Math.min(speed,carrySpeed(art.value));if(seat.bot&&!art)seat.sneak=botSneakNearSensor(g,seat,target);if(seat.sneak)speed*=.55;}const walls=g.guards.includes(p as Guard)?[...g.walls,...zones(g)]:thiefWalls(g,p as Thief);const next=steer(p,target,walls);const d=distance(p,next);if(g.seats.includes(p as Thief)){(p as Thief).dx=d>3?(next.x-p.x)/d:0;(p as Thief).dy=d>3?(next.y-p.y)/d:0;}if(d>3)move(p,(next.x-p.x)/d,(next.y-p.y)/d,dt,Math.min(speed,d/dt),walls);}
 function decoy(g:Game,s:Thief):Vec{const crew=g.seats.filter(p=>sameCrew(p,s)&&!p.escaped);const rivals=g.seats.filter(p=>!sameCrew(p,s)&&!p.escaped);const candidates=[{x:70,y:70},{x:250,y:70},{x:360,y:60},{x:570,y:350},{x:690,y:70},{x:890,y:520},...rivals.map(p=>({x:p.x,y:p.y}))].filter(p=>distance(p,vanFor(g,s.team))>100&&sight(s,p,g.walls)&&distance(s,p)>100);return candidates.sort((a,b)=>{const score=(p:Vec)=>Math.min(...crew.map(c=>distance(c,p)))+rivals.reduce((v,r)=>v+(distance(r,p)<100?(r.hand?220:120):0),0);return score(b)-score(a);})[0]||{x:Math.min(900,s.x+220),y:Math.max(50,s.y-180)};}
 export function rescueApproachUnsafe(g:Game,s:Thief,captive:Thief,h:Guard){
+ if((h.retreatUntil||0)>g.now)return false;
  if(!['auto','follow'].includes(s.mode)||h.id!==captive.capturedBy)return false;
  const near=Math.min(distance(h,captive),distance(h,s))<=40;
  const angle=Math.atan2(s.y-h.y,s.x-h.x)-h.angle;
  return near&&Math.cos(angle)>.45&&sight(h,s,g.walls);
+}
+function carryingRescueExposed(g:Game,s:Thief,captive:Thief){
+ // Check the loaded approach, channel and escape. A retreating captor is safe
+ // until its retreat actually ends; an empty-handed rescuer uses the immediate window.
+ const art=g.loot.find(l=>l.holder===s.id);if(!art)return false;
+ const speed=carrySpeed(art.value),traveller={x:s.x,y:s.y},patrols=g.guards.map(h=>({...h,target:{...h.target}}));
+ const home=vanFor(g,s.team),walls=thiefWalls(g,s),guardWalls=[...g.walls,...zones(g)];let channel=0;
+ for(let i=1;i<=35;i++){
+  const now=g.now+i*200,frame={...g,now};
+  const target=channel>=1200?home:captive;
+  if(channel<1200&&distance(traveller,captive)<35)channel+=200;
+  else{const n=steer(traveller,target,walls),d=distance(traveller,n);if(d>1)move(traveller,(n.x-traveller.x)/d,(n.y-traveller.y)/d,.2,Math.min(speed,d/.2),walls);}
+  for(const h of patrols){
+   const n=steer(h,h.target,guardWalls),d=distance(h,n),old={x:h.x,y:h.y};
+   if(d>1)move(h,(n.x-h.x)/d,(n.y-h.y)/d,.2,Math.min((h.retreatUntil||0)>now?120:62*tuning(g).speed,d/.2),guardWalls);
+   if(distance(old,h)>.1)h.angle=Math.atan2(h.y-old.y,h.x-old.x);
+   if(distance(h,h.target)<16){h.way=(h.way+1)%h.route.length;h.target=h.route[h.way];}
+   if((h.retreatUntil||0)<=now&&botDanger(frame,s,h,traveller))return true;
+  }
+  if(homeSafe(g,{...traveller,team:s.team}))return false;
+ }
+ return false;
 }
 function crewCall(g:Game,s:Thief,line:string){const text=s.name.toUpperCase()+': '+line;if(g.events.some(e=>e.text===text&&g.now-e.at<10000))return;event(g,text);g.events[g.events.length-1].team=s.team;}
 function botCall(g:Game,s:Thief,task:string,line:string){s.task=task;if(s.announcedTask===task)return;if(s.taskAt!==undefined&&g.now-s.taskAt<2500)return;s.announcedTask=task;s.taskAt=g.now;crewCall(g,s,line);}
@@ -181,45 +204,128 @@ export function approachExposed(g:Game,s:Vec,target:Vec){
   if(distance(p,target)<25)return false;const n=steer(p,target,g.walls),d=distance(p,n);if(d<1)return true;move(p,(n.x-p.x)/d,(n.y-p.y)/d,.2,Math.min(150,d/.2),g.walls);
  }return distance(p,target)>35;
 }
+/** Current sight is dangerous; retreating guards are deliberately non-threatening. */
+export function guardSees(g:Game,h:Guard,p:Vec,includeRetreat=false){if(!includeRetreat&&(h.retreatUntil||0)>g.now)return false;const d=distance(h,p),a=Math.atan2(p.y-h.y,p.x-h.x)-h.angle;return d<(h.luredUntil&&h.luredUntil>g.now?60:blackoutActive(g)?60:180*tuning(g).sight+45)&&(d<60||Math.cos(a)>Math.cos(.8))&&sight(h,p,g.walls);}
+function botDanger(g:Game,s:Thief,h:Guard,p:Vec,includeRetreat=false){
+ if(!includeRetreat&&(h.retreatUntil||0)>g.now)return false;
+ const art=g.loot.find(l=>l.holder===s.id),noise=g.noises.find(n=>n.attached===s.id);
+ const audible=art&&(!art.quietUntil||art.quietUntil<=g.now)&&g.now-(noise?.heardAt?.[h.id]??-Infinity)>8000;
+ return guardSees(g,h,p,includeRetreat)||!!audible&&distance(h,p)<(g.crewMode==='coop'&&difficultyOf(g)==='pro'?440:190);
+}
+export function coverPoint(g:Game,s:Thief,captor?:Guard):Vec{
+ if(!captor)return {x:s.x,y:s.y};
+ const candidates:Vec[]=[];for(const r of [35,60,90,120])for(let i=0;i<12;i++){const p={x:s.x+Math.cos(i*Math.PI/6)*r,y:s.y+Math.sin(i*Math.PI/6)*r};if(clear(p,13,thiefWalls(g,s))&&corridor(s,p,thiefWalls(g,s)))candidates.push(p);}
+ return candidates.sort((a,b)=>{const score=(p:Vec)=>distance(s,p)+(sight(captor,p,g.walls)?120:0)+(botDanger(g,s,captor,p,true)?500:0)+g.guards.filter(h=>h!==captor&&botDanger(g,s,h,p)).length*1000+(distance(p,captor.target)<80?200:0);return score(a)-score(b);})[0]||{x:s.x,y:s.y};
+}
+function moveToCover(g:Game,s:Thief,guard:Guard,dt:number,speed:number){
+ // Commit briefly to one cover point instead of choosing the opposite side every frame.
+ if(!s.avoidPoint||g.now>=(s.avoidUntil||0)){s.avoidPoint=coverPoint(g,s,guard);s.avoidUntil=g.now+400;}
+ if(distance(s,s.avoidPoint)>8)walk(g,s,s.avoidPoint,dt,speed);else{s.dx=0;s.dy=0;}
+}
+const patrolForecastMemo=new WeakMap<Game,{bucket:number;guards:Guard[]}>();
+function planningGuards(g:Game,rescue=false){
+ if(rescue)return g.guards.filter(h=>(h.retreatUntil||0)<=g.now);
+ const active=g.guards.filter(h=>(h.retreatUntil||0)<=g.now+(rescue?0:400));
+ const bucket=Math.floor(g.now/200);let forecast=patrolForecastMemo.get(g);
+ if(!forecast||forecast.bucket!==bucket){
+  const walls=[...g.walls,...zones(g)];const guards=g.guards.map(original=>{
+   const h={...original,target:{...original.target}};
+   for(let i=0;i<2;i++){const n=steer(h,h.target,walls),d=distance(h,n),old={x:h.x,y:h.y};if(d>1)move(h,(n.x-h.x)/d,(n.y-h.y)/d,.2,Math.min(h.mode==='patrol'?62*tuning(g).speed:103*tuning(g).speed,d/.2),walls);if(distance(old,h)>.1)h.angle=Math.atan2(h.y-old.y,h.x-old.x);if(h.mode==='patrol'&&distance(h,h.target)<16){h.way=(h.way+1)%h.route.length;h.target=h.route[h.way];}}
+   return h;
+  });forecast={bucket,guards};patrolForecastMemo.set(g,forecast);
+ }
+ return [...active,...forecast.guards.filter(h=>(h.retreatUntil||0)<=g.now+(rescue?0:400))];
+}
+type RouteResult={next:Vec;exposed:boolean;path:Vec[]};
+const routeMemo=new WeakMap<Game,{bucket:string;routes:Map<string,RouteResult>;risks:Map<string,number>}>();
+export function botRoute(g:Game,s:Thief,target:Vec):RouteResult{
+ const walls=thiefWalls(g,s),rescuing=g.seats.some(p=>p.stun>g.now&&distance(p,target)<1),active=planningGuards(g,rescuing);
+ const direct=()=>({next:steer(s,target,walls),exposed:false,path:[{x:s.x,y:s.y},target]});if(!active.length)return direct();
+ const seen=(p:Vec)=>active.some(h=>botDanger(g,s,h,p,true));
+ const lineSafe=(a:Vec,b:Vec)=>{const n=Math.max(1,Math.ceil(distance(a,b)/20));for(let i=1;i<=n;i++)if(seen({x:a.x+(b.x-a.x)*i/n,y:a.y+(b.y-a.y)*i/n}))return false;return true;};
+ const upcoming=g.guards.filter(h=>(h.retreatUntil||0)<=g.now+1200);const wayRisk=(p:Vec)=>upcoming.some(h=>distance(p,h.route[h.way]||h.target)<75);
+ if(corridor(s,target,walls)&&lineSafe(s,target)&&!Array.from({length:Math.max(1,Math.ceil(distance(s,target)/30))},(_,i)=>({x:s.x+(target.x-s.x)*(i+1)/Math.max(1,Math.ceil(distance(s,target)/30)),y:s.y+(target.y-s.y)*(i+1)/Math.max(1,Math.ceil(distance(s,target)/30))})).some(wayRisk))return {next:target,exposed:false,path:[s,target]};
+ const bucket=Math.floor(g.now/200)+':'+active.map(h=>h.id+':'+(h.retreatUntil||0)).join(',');let cache=routeMemo.get(g);if(!cache||cache.bucket!==bucket){cache={bucket,routes:new Map(),risks:new Map()};routeMemo.set(g,cache);}
+ const size=20,cols=48,rows=30,point=(k:number)=>({x:k%cols*size+10,y:Math.floor(k/cols)*size+10});
+ const nearest=(p:Vec)=>{const cx=Math.floor(p.x/size),cy=Math.floor(p.y/size),options:number[]=[];for(let y=cy-1;y<=cy+1;y++)for(let x=cx-1;x<=cx+1;x++){const k=y*cols+x;if(x>0&&x<cols-1&&y>0&&y<rows-1&&clear(point(k),13,walls)&&corridor(p,point(k),walls))options.push(k);}return options.sort((a,b)=>distance(p,point(a))-distance(p,point(b)))[0];};
+ const start=nearest(s),goal=nearest(target);if(start===undefined||goal===undefined)return {next:s,exposed:true,path:[]};
+ const key=`${s.team}:${s.hand||"empty"}:${start}:${goal}`;const saved=cache.routes.get(key);if(saved&&distance(s,saved.next)>8)return saved;
+ const risk=(k:number)=>{const riskKey=(s.hand||"empty")+":"+k;let cost=cache!.risks.get(riskKey);if(cost===undefined){const p=point(k);cost=(seen(p)?260:0)+upcoming.reduce((n,h)=>n+(distance(p,h.route[h.way]||h.target)<75?30:0),0);cache!.risks.set(riskKey,cost);}return cost;};
+ const open=[start],cost=new Map([[start,0]]),prev=new Map<number,number>(),closed=new Set<number>();let end=-1;
+ while(open.length){let best=0;for(let i=1;i<open.length;i++)if(cost.get(open[i])!+distance(point(open[i]),target)<cost.get(open[best])!+distance(point(open[best]),target))best=i;const k=open.splice(best,1)[0];if(closed.has(k))continue;closed.add(k);if(k===goal){end=k;break;}for(const delta of [1,-1,cols,-cols]){const n=k+delta,p=point(n);if(n<cols||n>=cols*(rows-1)||n%cols<1||n%cols>=cols-1||closed.has(n)||!clear(p,13,walls)||!corridor(point(k),p,walls))continue;const c=cost.get(k)!+20+risk(n);if(c<(cost.get(n)??Infinity)){cost.set(n,c);prev.set(n,k);open.push(n);}}}
+ if(end<0)return {next:s,exposed:true,path:[]};const nodes:number[]=[end];while(nodes[0]!==start)nodes.unshift(prev.get(nodes[0])!);const path=nodes.map(point);path.push(target);
+ let next=path.length>1&&corridor(s,path[1],walls)?path[1]:path[0];
+ const waypointCost=(p:Vec)=>upcoming.reduce((n,h)=>n+(distance(p,h.route[h.way]||h.target)<75?30:0),0);
+ for(let i=path.length-1;i>0;i--){
+  if(!corridor(s,path[i],walls)||!lineSafe(s,path[i]))continue;
+  const d=distance(s,path[i]),n=Math.max(1,Math.ceil(d/20));let shortcut=d;
+  for(let j=1;j<=n;j++)shortcut+=waypointCost({x:s.x+(path[i].x-s.x)*j/n,y:s.y+(path[i].y-s.y)*j/n})*d/n/20;
+  const planned=i*20+path.slice(1,i+1).reduce((sum,p)=>sum+waypointCost(p),0);
+  if(shortcut<=planned+5){next=path[i];break;}
+ }
+
+ // A bot already in danger may leave it; otherwise wait before entering a cone.
+ const exposed=!lineSafe(s,next)||path.slice(1).some(p=>seen(p));
+ const result={next,exposed,path};cache.routes.set(key,result);return result;
+}
+function guardedWalk(g:Game,s:Thief,target:Vec,dt:number,speed:number){
+ const route=botRoute(g,s,target),guards=planningGuards(g,g.seats.some(c=>c.stun>g.now&&distance(c,target)<1));
+ const n=Math.max(1,Math.ceil(distance(s,route.next)/20));let blocked=route.path.length===0;
+ for(let i=1;i<=n&&!blocked;i++)blocked=guards.some(h=>botDanger(g,s,h,{x:s.x+(route.next.x-s.x)*i/n,y:s.y+(route.next.y-s.y)*i/n},true));
+ if(blocked){s.dx=0;s.dy=0;const threat=guards.find(h=>botDanger(g,s,h,s,true));if(threat)moveToCover(g,s,threat,dt,speed);const capsule=g.noises.find(n=>n.holder===s.id);if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
+ walk(g,s,route.next,dt,speed);
+}
+
+
 function bot(g:Game,s:Thief,dt:number){if(s.escaped||s.stun>g.now)return;const crew=g.seats.filter(p=>sameCrew(p,s));const human=crew.find(x=>!x.bot&&!x.escaped);const partner=human||crew.find(p=>p.id!==s.id&&!p.escaped);const held=g.loot.find(l=>l.id===s.hand);const capsule=g.noises.find(n=>n.id===s.hand);const home=vanFor(g,s.team);s.sneak=false;const automatic=s.mode==='auto';const mode=automatic?((human||difficultyOf(g)!=='rookie')&&partner&&g.loot.some(l=>l.holder===partner.id)?'cover':'fetch'):s.mode;
- if(s.retreatUntil&&s.retreatUntil>g.now){walk(g,s,home,dt,165);return;}
+ if(s.retreatUntil&&s.retreatUntil>g.now&&s.retreatPoint){if(distance(s,s.retreatPoint)>10){walk(g,s,s.retreatPoint,dt,165);return;}s.retreatUntil=0;s.retreatPoint=undefined;}
  if(g.boardingAt||g.end-g.now<10000){walk(g,s,home,dt,150);if(homeSafe(g,s))action(g,s,'extract');return;}
  const captive=crew.find(x=>x.stun>g.now&&!x.escaped);
- if(captive){const exposed=approachExposed(g,s,captive)||g.guards.some(h=>rescueApproachUnsafe(g,s,captive,h));
+ if(captive){s.spacing=false;const exposed=botRoute(g,s,captive).exposed||!!held&&carryingRescueExposed(g,s,captive);
   if(held&&(distance(s,home)<distance(s,captive)||exposed)){botCall(g,s,'bank-rescue','Banking first, then coming for you');walk(g,s,home,dt,carrySpeed(held.value));return;}
   if(exposed){s.rescueId=null;if(automatic&&g.guards.some(h=>distance(h,s)<150&&sight(h,s,g.walls)))walk(g,s,home,dt,165);botCall(g,s,'wait-rescue','Waiting for the guard to clear');if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
-  botCall(g,s,'rescue','Coming to free '+captive.name);if(distance(s,captive)>32)walk(g,s,captive,dt,150);if(distance(s,captive)<40)action(g,s,'grab');return;
+  botCall(g,s,'rescue','Coming to free '+captive.name);if(distance(s,captive)>32)guardedWalk(g,s,captive,dt,165);if(distance(s,captive)<40)action(g,s,'grab');return;
  }
- if(automatic&&!held&&partner&&g.guards.some(h=>distance(h,partner)<150)&&distance(s,partner)<60){const d=distance(partner,home)||1;const back={x:partner.x+(home.x-partner.x)/d*80,y:partner.y+(home.y-partner.y)/d*80};if(clear(back,13,thiefWalls(g,s))){walk(g,s,back,dt,165);return;}}
  const plateLoot=g.loot.find(l=>l.locked&&!l.banked&&!l.holder&&!l.sealed);
  const plateHuman=crew.find(p=>!p.bot&&!p.escaped&&p.stun<=g.now&&distance(p,g.plate)<30);
  const atJack=plateLoot&&human&&distance(human,plateLoot)<70;
  if(!held&&plateLoot&&(plateHuman||atJack||mode==='plate')){
   if(capsule){if(g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
   s.bottleId=null;s.sneak=true;
-  if(plateHuman&&mode!=='plate'){s.plateJob=plateLoot.id;botCall(g,s,'jackpot','GOING FOR THE SCREAM');walk(g,s,plateLoot,dt,165);if(distance(s,plateLoot)<50&&interaction(g,s).kind==='loot')action(g,s,'grab');return;}
-  botCall(g,s,'hold-plate','Holding the plate. Grab the Scream');walk(g,s,g.plate,dt,165);return;
+  if(plateHuman&&mode!=='plate'){s.plateJob=plateLoot.id;botCall(g,s,'jackpot','GOING FOR THE SCREAM');guardedWalk(g,s,plateLoot,dt,165);if(distance(s,plateLoot)<50&&interaction(g,s).kind==='loot')action(g,s,'grab');return;}
+  botCall(g,s,'hold-plate','Holding the plate. Grab the Scream');guardedWalk(g,s,g.plate,dt,165);return;
  }
+ const pressure=automatic&&!held&&partner&&partner.stun<=g.now&&g.guards.some(h=>(h.retreatUntil||0)<=g.now&&distance(h,partner)<150);
+ s.spacing=!!pressure;
+ if(s.spacing&&partner){const gap=distance(s,partner),threat=g.guards.find(h=>guardSees(g,h,s));
+  // Escape a cone before closing the spacing gap; otherwise these goals fight at 100u.
+  if(threat){moveToCover(g,s,threat,dt,150);}
+  else if(gap<55||gap>100){const d=distance(partner,home)||1;const back={x:partner.x+(home.x-partner.x)/d*80,y:partner.y+(home.y-partner.y)/d*80};if(clear(back,13,thiefWalls(g,s))&&!botRoute(g,s,back).exposed)guardedWalk(g,s,back,dt,150);else{s.dx=0;s.dy=0;}}
+  else{s.dx=0;s.dy=0;}
+  if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));
+  const scream=g.noises.find(n=>n.attached===partner.id&&capturable(g,s,n));if(scream){if(s.bottleId!==scream.id){s.bottleId=scream.id;s.bottleAt=g.now;}if(g.now-s.bottleAt>=1000)action(g,s,'grab');}return;
+ }
+
  if(automatic)botCall(g,s,held?'bank':mode,held?'Taking this art home':mode==='cover'?'Covering your scream':'Looking for a safe exhibit');
 
  if(capsule&&mode==='follow'&&partner){const threat=g.guards.some(h=>distance(h,partner)<150&&sight(h,partner,g.walls));if(threat&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));else if(distance(s,partner)>45)walk(g,s,partner,dt,150);return;}
  if(capsule){const target=g.seats.filter(r=>r.team!==s.team&&!r.escaped&&!homeSafe(g,r)&&g.loot.some(l=>l.holder===r.id)&&distance(r,s)<270&&sight(s,r,g.walls)).sort((a,b)=>distance(s,a)-distance(s,b))[0];if(target&&g.now>=s.windup){const aim={x:target.x,y:target.y};crewCall(g,s,'Planting an alarm on '+target.name+'!');action(g,s,'throw',aim);return;}if(g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
  if(held){walk(g,s,home,dt,carrySpeed(held.value));return;}
- if(mode==='plate'){walk(g,s,g.plate,dt,145);return;}
+ if(mode==='plate'){guardedWalk(g,s,g.plate,dt,145);return;}
  const autonomous=!crew.some(p=>!p.bot),humanFirst=g.seats.some(p=>!p.bot&&p.captures>0);
  const carrier=autonomous&&difficultyOf(g)!=='rookie'&&g.seats.find(r=>r.team!==s.team&&!r.escaped&&!homeSafe(g,r)&&g.loot.some(l=>l.holder===r.id));
  if(carrier&&Math.floor((g.now-g.start)/6000)%3===1){const supply=g.noises.filter(n=>!n.holder&&n.flight<=0&&(!n.thrownBy||n.attached)&&distance(s,n)<220).sort((a,b)=>distance(s,a)-distance(s,b))[0];if(supply){if(!capturable(g,s,supply))walk(g,s,supply,dt,145);else{if(s.bottleId!==supply.id){s.bottleId=supply.id;s.bottleAt=g.now;}if(g.now-s.bottleAt>=700)action(g,s,'grab');}return;}else{const rivalHome=vanFor(g,carrier.team);walk(g,s,{x:(carrier.x+rivalHome.x)/2,y:Math.min(450,(carrier.y+rivalHome.y)/2)},dt,145);return;}}
  if(mode==='follow'&&partner&&g.guards.some(h=>distance(h,partner)<160&&sight(h,partner,g.walls))&&(s.calloutAt===undefined||g.now-s.calloutAt>6000)){s.calloutAt=g.now;botCall(g,s,'guard-warning','Guard closing in on '+partner.name+'!');}
  const n=g.noises.filter(n=>!n.holder&&(!n.thrownBy||n.attached)&&capturable(g,s,n)&&g.now-n.born>1400&&((mode==='follow'&&partner&&g.guards.some(h=>distance(h,partner)<160&&sight(h,partner,g.walls))&&distance(partner,n)<150)||(mode==='cover'&&partner&&distance(partner,n)<150)||(autonomous&&((partner&&distance(partner,n)<150)||g.seats.some(r=>r.team!==s.team&&!r.escaped&&r.hand&&distance(r,s)<400&&sight(s,r,g.walls))))||(humanFirst&&mode!=='follow'&&!n.attached&&crew.some(p=>p.hand&&distance(p,n)<100)))).sort((a,b)=>distance(a,s)-distance(b,s))[0];
- if(automatic&&partner&&mode==='cover'&&g.guards.some(h=>distance(h,partner)<150)&&distance(s,partner)<60){const d=distance(partner,home)||1;const back={x:partner.x+(home.x-partner.x)/d*80,y:partner.y+(home.y-partner.y)/d*80};if(clear(back,13,thiefWalls(g,s))){walk(g,s,back,dt,165);return;}}
+
  if(n){if(interaction(g,s).id!==n.id){walk(g,s,n,dt,150);return;}if(s.bottleId!==n.id){s.bottleId=n.id;s.bottleAt=g.now;}if(g.now-s.bottleAt>=1000)action(g,s,'grab');return;}s.bottleId=null;
- if(mode==='cover'&&partner){const danger=automatic&&g.guards.some(h=>distance(h,partner)<150);if(danger){const d=distance(partner,home)||1;const back={x:partner.x+(home.x-partner.x)/d*80,y:partner.y+(home.y-partner.y)/d*80};if(clear(back,13,thiefWalls(g,s)))walk(g,s,back,dt,150);}else if(distance(s,partner)>55)walk(g,s,partner,dt,150);return;}
+ if(mode==='cover'&&partner){if(distance(s,partner)>55)walk(g,s,partner,dt,150);return;}
  const jackpot=g.loot.find(l=>l.locked&&!l.banked&&!l.holder);
- if(autonomous&&difficultyOf(g)!=='rookie'&&jackpot&&(g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).length===0)){if(crew[0]?.id===s.id){walk(g,s,g.plate,dt,145);return;}walk(g,s,jackpot,dt,140);if(distance(s,jackpot)<50)action(g,s,'grab');return;}
+ if(autonomous&&difficultyOf(g)!=='rookie'&&jackpot&&(g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).length===0)){if(crew[0]?.id===s.id){guardedWalk(g,s,g.plate,dt,145);return;}guardedWalk(g,s,jackpot,dt,140);if(distance(s,jackpot)<50)action(g,s,'grab');return;}
  const fetch=mode==='fetch'||autonomous;const rivalSkill=tuning(g).rival;
- if(automatic&&!autonomous&&(s.decisionAt===undefined||g.now>=s.decisionAt)){s.decisionAt=g.now+700;s.autoTarget=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed&&!approachExposed(g,s,l)).sort((a,b)=>distance(a,s)-distance(b,s))[0]?.id;}
+ if(automatic&&!autonomous&&(s.decisionAt===undefined||g.now>=s.decisionAt)){s.decisionAt=g.now+700;s.autoTarget=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed&&!botRoute(g,s,l).exposed&&!botRoute(g,{...s,x:l.x,y:l.y},home).exposed).sort((a,b)=>distance(a,s)-distance(b,s))[0]?.id;}
  const l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed&&fetch&&(!automatic||autonomous||s.autoTarget===l.id)).sort((a,b)=>{const raid=autonomous&&difficultyOf(g)!=='rookie'&&((g.match+Number(s.id.slice(1)))%3===0)&&g.now-g.start<35000;const opponent=g.seats.find(p=>p.team!==s.team);const score=(l:Loot)=>distance(l,s)-(autonomous&&difficultyOf(g)==='rookie'&&crew[0]?.id===s.id&&Math.abs(l.x-480)<100?1000:0)-(raid&&opponent&&distance(l,vanFor(g,opponent.team))<300?450:0);return score(a)-score(b);})[0];
- if(l&&g.now-g.start>(autonomous?(difficultyOf(g)==='rookie'?5000:difficultyOf(g)==='normal'?8000:1000):12000)){if(autonomous&&difficultyOf(g)==='rookie'&&distance(s,l)<55&&Math.floor((g.now-g.start)/1000)%3===0)return;walk(g,s,l,dt,autonomous?145*rivalSkill:115);if(distance(l,s)<50)action(g,s,'grab');return;}
+ if(l&&g.now-g.start>(autonomous?(difficultyOf(g)==='rookie'?5000:difficultyOf(g)==='normal'?8000:1000):12000)){if(autonomous&&difficultyOf(g)==='rookie'&&distance(s,l)<55&&Math.floor((g.now-g.start)/1000)%3===0)return;guardedWalk(g,s,l,dt,autonomous?145*rivalSkill:115);if(distance(l,s)<50)action(g,s,'grab');return;}
  if(partner){const home=vanFor(g,s.team),d=distance(partner,home)||1;const receiving={x:partner.x+(home.x-partner.x)/d*38,y:partner.y+(home.y-partner.y)/d*38};const target=clear(receiving,13,thiefWalls(g,s))&&sight(partner,receiving,g.walls)?receiving:partner;if(distance(s,target)>12)walk(g,s,target,dt,150);}
 }
 function step(g:Game){const dt=STEP/1000;updateJobEvent(g);
@@ -229,14 +335,14 @@ function step(g:Game){const dt=STEP/1000;updateJobEvent(g);
   if(s.stun&&s.stun<=g.now){s.stun=0;s.safe=g.now+3000;event(g,s.name+' slipped free. Recover the dropped loot.','rescue',s);}
   const l=g.loot.find(l=>l.holder===s.id);if(l){l.x=s.x;l.y=s.y;if(homeSafe(g,s)){hush(g,l);l.banked=true;l.bankedBy=s.team;l.holder=null;s.hand=null;s.bank+=l.value;g.total+=l.value;if(s.bot&&s.mode==='fetch'&&g.seats.some(p=>!p.bot&&sameCrew(p,s))){s.mode='follow';botCall(g,s,'fetch-done','One piece delivered. Ask Fetch again for another.');}event(g,'$'+l.value+' secured. '+s.name+' delivered '+l.name+'.','bank',vanFor(g,s.team));}}
  }
- for(const s of g.seats){if(!s.rescueId)continue;const friend=g.seats.find(p=>p.id===s.rescueId);if(s.escaped||s.stun>g.now||!friend||friend.stun<=g.now||distance(s,friend)>45||!sight(s,friend,g.walls)){s.rescueId=null;continue;}const capturing=g.guards.find(h=>h.id===friend.capturedBy);if(capturing)capturing.retreatUntil=Math.max(capturing.retreatUntil||0,g.now+1000);if(g.now-s.rescueAt>=1500){s.safe=g.now+3000;s.retreatUntil=g.now+3000;friend.stun=0;friend.safe=g.now+3000;s.rescues++;s.rescueId=null;event(g,s.name+' freed '+friend.name+'!','rescue',friend);}}
+ for(const s of g.seats){if(!s.rescueId)continue;const friend=g.seats.find(p=>p.id===s.rescueId);if(s.escaped||s.stun>g.now||!friend||friend.stun<=g.now||distance(s,friend)>45||!sight(s,friend,g.walls)){s.rescueId=null;continue;}const capturing=g.guards.find(h=>h.id===friend.capturedBy);if(capturing)capturing.retreatUntil=Math.max(capturing.retreatUntil||0,g.now+1000);if(g.now-s.rescueAt>=1200){s.safe=g.now+3000;s.retreatUntil=g.now+1200;s.retreatPoint=coverPoint(g,s,capturing);friend.stun=0;friend.safe=g.now+3000;s.rescues++;s.rescueId=null;event(g,s.name+' freed '+friend.name+'!','rescue',friend);}}
  for(const l of g.loot){if(l.recoverAt&&g.now>=l.recoverAt&&!l.holder&&!l.banked&&l.home){hush(g,l);Object.assign(l,l.home);l.locked=l.value===1200;l.recoverAt=undefined;l.droppedAt=undefined;event(g,'Security returned '+l.name+' to its display.');}if(l.holder&&!l.banked&&!g.noises.some(n=>n.source===l.id&&n.attached)&&(!l.quietUntil||g.now>=l.quietUntil)){const carrier=g.seats.find(s=>s.id===l.holder)!;alarm(g,carrier,l.id,carrier.id);}}
  for(const n of g.noises){if(n.attached){const carrier=g.seats.find(s=>s.id===n.attached);if(carrier){n.x=carrier.x;n.y=carrier.y;}}else if(n.holder){const s=g.seats.find(s=>s.id===n.holder)!;n.x=s.x;n.y=s.y;if(g.now>=n.expires){n.holder=null;s.hand=null;n.expires=g.now+4000;n.born=g.now;event(g,'The bottled alarm burst!','catch',s);}}else if(n.flight>0){const p={x:n.x+n.vx*dt,y:n.y+n.vy*dt};if(clear(p,6,g.walls)){n.x=p.x;n.y=p.y;n.flight-=dt;}else n.flight=0;if(n.flight<=.2){const thrower=g.seats.find(s=>s.id===n.thrownBy);const unsafe=thrower&&g.seats.some(s=>sameCrew(s,thrower)&&!s.escaped&&distance(s,n)<100);if(n.flight<=0&&unsafe&&!g.training)g.alert=Math.min(100,g.alert+8);const rival=thrower&&g.seats.find(s=>!sameCrew(s,thrower)&&!s.escaped&&s.stun<=g.now&&!homeSafe(g,s)&&distance(s,n)<=40&&sight(s,n,g.walls));if(rival){n.flight=0;n.attached=rival.id;n.source=null;n.expires=g.now+15000;n.born=g.now;event(g,thrower!.name+' planted an alarm on '+rival.name+'!','land',rival);if(g.training&&!thrower!.bot)g.practiceStage=3;}else if(n.flight<=0)event(g,unsafe?'Too close! The noise landed near your crew.':'Distraction landed.','land',n);}}}
  g.noises=g.noises.filter(n=>n.expires>g.now);
  for(const guard of g.guards){let victim:Thief|undefined;
   if(g.now-g.start<12000&&(guard.id==='g-core'||guard.id==='g-pro'&&g.crewMode==='coop')){guard.x=guard.id==='g-core'?530:560;guard.y=90;guard.angle=-Math.PI/2;guard.mode='patrol';continue;}
   if(g.now-g.start<12000&&(guard.id==='g0'||(g.crewMode!=='coop'&&guard.id==='g1'))){guard.x=guard.id==='g1'?880:80;guard.y=guard.id==='g1'&&g.crewMode!=='coop'&&g.layout===1?540:60;guard.angle=guard.y>300?Math.PI/2:-Math.PI/2;guard.mode='patrol';continue;}
-  if(guard.retreatUntil&&guard.retreatUntil>g.now){guard.mode='patrol';guard.target=guard.route[guard.way];if(distance(guard,guard.target)<16){guard.way=(guard.way+1)%guard.route.length;guard.target=guard.route[guard.way];}walk(g,guard,guard.target,dt,120);continue;}
+  if(guard.retreatUntil&&guard.retreatUntil>g.now){guard.mode='patrol';guard.target=guard.route[guard.way];if(distance(guard,guard.target)<16){guard.way=(guard.way+1)%guard.route.length;guard.target=guard.route[guard.way];}const previous={x:guard.x,y:guard.y};walk(g,guard,guard.target,dt,120);if(distance(previous,guard)>.1)guard.angle=Math.atan2(guard.y-previous.y,guard.x-previous.x);continue;}
   for(const s of g.seats){if(s.escaped||s.stun>g.now||s.safe>g.now||homeSafe(g,s))continue;const d=distance(guard,s);const diff=Math.atan2(Math.sin(Math.atan2(s.y-guard.y,s.x-guard.x)-guard.angle),Math.cos(Math.atan2(s.y-guard.y,s.x-guard.x)-guard.angle));if(d<(blackoutActive(g)?60:(s.sneak?90:180)*tuning(g).sight)&&(!(guard.luredUntil&&guard.luredUntil>g.now)||d<45)&&(Math.abs(diff)<0.65||d<45)&&sight(guard,s,g.walls)){victim=s;break;}}
   const noise=g.noises.filter(n=>!n.holder&&!anySafe(g,n)&&(n.attached?g.now-(n.heardAt?.[guard.id]??-Infinity)>8000:!n.heardBy?.includes(guard.id)&&(n.heardBy?.length||0)<1)&&g.guards.filter(other=>distance(other,n)<=distance(guard,n)).length<=(n.attached?2:1)&&n.flight<=0&&g.now-n.born>900&&(n.attached?distance(n,guard)<(g.crewMode==='coop'&&difficultyOf(g)==='pro'?420:170):(distance(n,guard)<220||distance(n,guard)<420&&sight(guard,n,g.walls)))).sort((a,b)=>Number(Boolean(b.thrownBy&&!b.heardBy?.includes(guard.id)))-Number(Boolean(a.thrownBy&&!a.heardBy?.includes(guard.id)))||distance(a,guard)-distance(b,guard))[0];
   if(noise&&!noise.alerted){noise.alerted=true;if(!g.training)g.alert=Math.min(100,g.alert+(noise.attached?7:3));}
@@ -248,7 +354,7 @@ function step(g:Game){const dt=STEP/1000;updateJobEvent(g);
 
   const old={x:guard.x,y:guard.y};walk(g,guard,guard.target,dt,(guard.mode==='chase'?135:guard.mode==='investigate'?103:62)*(g.alert>=30?1.12:1)*tuning(g).speed);if(distance(old,guard)>0.1)guard.angle=Math.atan2(guard.y-old.y,guard.x-old.x);
   const caught=g.seats.find(s=>!s.escaped&&s.stun<=g.now&&s.safe<=g.now&&!homeSafe(g,s)&&distance(s,guard)<25&&sight(s,guard,g.walls));
-  if(caught){if(!g.training){drop(g,caught,true);g.noises=g.noises.filter(n=>n.attached!==caught.id);}caught.stun=g.now+(g.training?3000:6000);caught.rescueId=null;caught.capturedBy=guard.id;if(!g.training)g.alert=Math.min(100,g.alert+15);caught.dx=caught.dy=0;guard.mode='patrol';guard.attention=0;guard.retreatUntil=g.now+(distance(caught,g.plate)<30?36000:3500);guard.way=(guard.way+1)%guard.route.length;guard.target=guard.route[guard.way];event(g,CREW_NAMES[caught.team]+' · '+caught.name+' caught! Their crew can rescue them.','catch',caught);}
+  if(caught){if(!g.training){drop(g,caught,true);g.noises=g.noises.filter(n=>n.attached!==caught.id);}caught.stun=g.now+(g.training?3000:6000);caught.rescueId=null;caught.capturedBy=guard.id;if(!g.training)g.alert=Math.min(100,g.alert+15);caught.dx=caught.dy=0;guard.mode='patrol';guard.attention=0;guard.retreatUntil=g.now+(distance(caught,g.plate)<30?36000:4500);guard.way=(guard.way+1)%guard.route.length;guard.target=guard.route[guard.way];event(g,CREW_NAMES[caught.team]+' · '+caught.name+' caught! Their crew can rescue them.','catch',caught);}
  }
  for(const sensor of sensors(g)){const inside=g.seats.filter(p=>p.x>=sensor.x-12&&p.x<=sensor.x+sensor.w+12&&p.y>=sensor.y-12&&p.y<=sensor.y+sensor.h+12).map(p=>p.id);const entering=inside.filter(id=>!sensor.inside?.includes(id));sensor.inside=inside;if(sensor.cooldown>g.now)continue;const thief=g.seats.find(p=>entering.includes(p.id)&&!p.escaped&&p.stun<=g.now&&!homeSafe(g,p)&&p.x>=sensor.x-12&&p.x<=sensor.x+sensor.w+12&&p.y>=sensor.y-12&&p.y<=sensor.y+sensor.h+12&&(!p.sneak||g.loot.some(l=>l.holder===p.id)));if(thief){sensor.cooldown=g.now+6000;alarm(g,thief);g.alarmTip=true;event(g,thief.name+' tripped a sensor. Shift sneaks past empty-handed; art always trips it.');}}
  if(g.training&&g.loot.every(l=>l.banked)&&!g.practiceStage){g.practiceStage=1;g.seats.filter(s=>s.bot).forEach(s=>s.mode='follow');addPracticeRival(g);alarm(g,{x:175,y:440});event(g,'LESSON 2: E bottles the red alarm. Aim at Practice rival, then F to plant it.');}
