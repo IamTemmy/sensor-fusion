@@ -1,0 +1,3 @@
+'use client';
+import {useEffect,useState} from 'react';
+export default function Review(){const [spec,S]=useState<{w:number;h:number;state:string}|null>(null);useEffect(()=>{if(process.env.NODE_ENV!=='development')return;const q=new URLSearchParams(location.search);S({w:q.get('size')==='phone'?390:1280,h:q.get('size')==='phone'?844:720,state:q.get('state')||'home'});},[]);if(!spec)return <p>Visual review is available only in local development.</p>;return <div style={{width:spec.w,height:spec.h,background:'#08131e'}}><iframe title="Frozen visual review — not a live playtest" src={'/?visualReview='+spec.state} style={{width:spec.w,height:spec.h,border:0,display:'block'}}/></div>;}

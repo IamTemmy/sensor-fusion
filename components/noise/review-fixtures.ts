@@ -1,0 +1,15 @@
+// Development-only, frozen presentation fixtures. These are NOT playtest results.
+import {create,add,setup,configure,clear,event,type Game} from '../../lib/noise/engine';
+export function reviewFixture(state:string):Game{
+ let g=create('VISUAL',0,1);for(let seed=1;seed<50;seed++){g=create('VISUAL',0,seed);add(g,'Rookie','local');add(g,'Echo','echo',true);add(g,'Violet','violet',true);add(g,'Pip','pip',true);configure(g,'duos');setup(g);if(g.layout===0)break;}
+ g.phase='playing';g.start=0;g.now=32000;g.end=90000;g.alert=44;g.events=[];
+ const spots=[{x:450,y:300},{x:410,y:325},{x:520,y:330},{x:560,y:270}];
+ g.seats.forEach((s,i)=>{const target=spots[i];const options=[target,{x:target.x,y:target.y+40},{x:target.x,y:target.y-40}];const p=options.find(p=>clear(p,12,g.walls))||s;Object.assign(s,{x:p.x,y:p.y,team:i<2?0:1,aim:{x:580,y:300},bank:i===0?600:0});});g.total=600;
+ g.guards.slice(0,2).forEach((h,i)=>Object.assign(h,{x:480+i*90,y:220,angle:Math.PI/2,mode:'investigate'}));
+ const s=g.seats[0],loot=g.loot.find(l=>l.value!==1200)!;loot.holder=s.id;s.hand=loot.id;loot.x=s.x;loot.y=s.y;
+ g.noises=[{id:'visual-scream',x:s.x,y:s.y,attached:s.id,holder:null,expires:60000,born:31000,vx:0,vy:0,flight:0,kind:'alarm',source:loot.id}];
+ event(g,'ECHO: Covering your scream.');event(g,'Violet is closing in on the collection.');
+ if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can rescue them.','catch',s);g.events.at(-1)!.at-=80;}
+ if(state==='recap'){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
+ return g;
+}
