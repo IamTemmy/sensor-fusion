@@ -66,3 +66,11 @@ Shared idle safety checks every stationary bot state against 1.5s of all non-ret
 97 tests and TypeScript pass. Reconstructed fixed-seed Claude fixture (Normal, Auto, events on, spawn at 13s): 0/40 held-time Echo catches, 0/40 within 3s after release, 33/40 rescues. This reconstruction does NOT reproduce Claude's v19 baseline (ours 0/40, 30/40 rescues); actual original fixture still needed. Targeted approaching-patrol test fails v19 and passes v20. See `docs/playtests/noise-v20.md` and raw `v20/` results.
 
 240-match strict difficulty gate passes: co-op 97.5/72.5/22.5%; rivals 72.5/57.5/47.5% (Rookie/Normal/Pro). Absolute balance targets remain open. Managed-browser UI/command inspection now available and performed, with screenshot; sustained human movement/full manual match, mobile and two-device latency remain unverified.
+
+## October 22 — Noise Thieves v21
+
+Added Claude's exact script as scripts/verify-noise-v21.ts, asserted by tests/claude-fixture.test.ts. Reproduced v20 baseline exactly: held-time Echo catches 15/40, after-release 3/40, rescues 16/40. Final: 0/40, 4/40, 16/40 respectively; all three gates pass, but after-release is at the ceiling and one case worse than baseline. The supplied single 13,000ms advance is preserved, including the engine's existing 2s catch-up cap.
+
+Waiting now checks its own long forecast before returning; rescue approaches project Echo against all non-retreating guards. Reachable-cover selection, short escape commitments and rescue interruption preserve safety without jitter. Opening-grace guards no longer appear as active forecast threats. Autonomous rivals retain their previous roaming escape policy outside rescues. Their old startup inversion is corrected: Rookie 5s, Normal 3s (was 8s), Pro 1s. Guard strength, capture rules, rescue timing/protection, maps and loot stay unchanged.
+
+98/98 tests and TypeScript pass. Legacy natural-capture fixture: 37/40 rescues, median 2.44s, zero post-rescue catches. Unchanged 240-match difficulty gate passes: co-op 97.5/67.5/22.5%; rivals 65/62.5/50% (Rookie/Normal/Pro). The narrow rivals margin and absolute balance targets still need broader playtesting. No new browser/manual or two-device network verification in this release. Full report and raw seeds: docs/playtests/noise-v21.md and docs/playtests/v21/.
