@@ -1,0 +1,1734 @@
+{
+  "assumptions": "Solo has no teammate or rival holding the plate. Jackpot cannot be collected alone. Full values known; no guards or event penalties in route planner. Relaxed planner ignores walls and grants maximum pickup/banking reach, providing an optimistic upper bound, not a human win-rate estimate.",
+  "dangerFailures": 0,
+  "maxSoloFraction": 0.6363636363636364,
+  "plate": [
+    {
+      "layout": 0,
+      "coop": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "duos": [
+        2,
+        3,
+        2,
+        2,
+        3,
+        3,
+        2,
+        3
+      ],
+      "coopMean": 3,
+      "duosMean": 2.5
+    },
+    {
+      "layout": 1,
+      "coop": [
+        2,
+        2,
+        2,
+        2,
+        2,
+        3,
+        2,
+        2
+      ],
+      "duos": [
+        2,
+        2,
+        3,
+        2,
+        2,
+        3,
+        2,
+        3
+      ],
+      "coopMean": 2.125,
+      "duosMean": 2.375
+    },
+    {
+      "layout": 2,
+      "coop": [
+        3,
+        3,
+        2,
+        3,
+        2,
+        3,
+        3,
+        3
+      ],
+      "duos": [
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3,
+        3
+      ],
+      "coopMean": 2.75,
+      "duosMean": 3
+    }
+  ],
+  "runs": [
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 1,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 2,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 3,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 4,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 5,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 6,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 7,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 8,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 9,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 10,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 11,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 12,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 13,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 14,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 15,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 16,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 17,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 18,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 19,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 20,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 21,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 22,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 23,
+      "layout": 2,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 24,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 25,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 26,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 27,
+      "layout": 0,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 28,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 29,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [],
+      "mode": "coop",
+      "seed": 30,
+      "layout": 1,
+      "pieces": 5,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 360.0000000000022,
+          "violet": 360.0000000000022,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 260.09611268833623,
+          "violet": 260.0961126883366,
+          "spread": 3.410605131648481e-13
+        },
+        {
+          "target": "art3",
+          "mint": 566.8055727584776,
+          "violet": 572.5090442914861,
+          "spread": 5.703471533008496
+        },
+        {
+          "target": "art4",
+          "mint": 467.3865157985904,
+          "violet": 458.9999999999986,
+          "spread": 8.386515798591802
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 1,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 92.19544457292886,
+          "violet": 92.19544457292884,
+          "spread": 2.842170943040401e-14
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 362.9999999999985,
+          "violet": 362.99999999999903,
+          "spread": 5.115907697472721e-13
+        },
+        {
+          "target": "art3",
+          "mint": 569.9999999999976,
+          "violet": 557.267169294673,
+          "spread": 12.732830705324659
+        },
+        {
+          "target": "art4",
+          "mint": 512.9999999999985,
+          "violet": 512.9999999999986,
+          "spread": 1.1368683772161603e-13
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 2,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 92.19544457292886,
+          "violet": 92.19544457292884,
+          "spread": 2.842170943040401e-14
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 362.9999999999985,
+          "violet": 362.99999999999903,
+          "spread": 5.115907697472721e-13
+        },
+        {
+          "target": "art3",
+          "mint": 581.9999999999985,
+          "violet": 573.0000000000011,
+          "spread": 8.999999999997385
+        },
+        {
+          "target": "art4",
+          "mint": 521.9999999999991,
+          "violet": 506.9941295150413,
+          "spread": 15.005870484957768
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 3,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 329.48186278452926,
+          "violet": 329.48186278452965,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 281.9999999999988,
+          "violet": 281.999999999999,
+          "spread": 1.7053025658242404e-13
+        },
+        {
+          "target": "art3",
+          "mint": 557.4917025439447,
+          "violet": 555.0000000000003,
+          "spread": 2.4917025439443705
+        },
+        {
+          "target": "art4",
+          "mint": 506.9941295150403,
+          "violet": 522.0000000000055,
+          "spread": 15.005870484965158
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 4,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 329.48186278452926,
+          "violet": 329.48186278452965,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 281.9999999999988,
+          "violet": 281.999999999999,
+          "spread": 1.7053025658242404e-13
+        },
+        {
+          "target": "art3",
+          "mint": 581.9999999999985,
+          "violet": 573.0000000000011,
+          "spread": 8.999999999997385
+        },
+        {
+          "target": "art4",
+          "mint": 521.9999999999991,
+          "violet": 506.9941295150413,
+          "spread": 15.005870484957768
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 5,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 210,
+          "violet": 210,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 408,
+          "violet": 408,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 708.000000000001,
+          "violet": 713.9999999999953,
+          "spread": 5.999999999994316
+        },
+        {
+          "target": "art4",
+          "mint": 528.0000000000009,
+          "violet": 518.2929279673592,
+          "spread": 9.70707203264169
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 6,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 210,
+          "violet": 210,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 353.9999999999989,
+          "violet": 353.99999999999784,
+          "spread": 1.0800249583553523e-12
+        },
+        {
+          "target": "art3",
+          "mint": 708.000000000001,
+          "violet": 713.9999999999953,
+          "spread": 5.999999999994316
+        },
+        {
+          "target": "art4",
+          "mint": 528.0000000000009,
+          "violet": 518.2929279673592,
+          "spread": 9.70707203264169
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 7,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 210,
+          "violet": 210,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 353.9999999999989,
+          "violet": 353.99999999999784,
+          "spread": 1.0800249583553523e-12
+        },
+        {
+          "target": "art3",
+          "mint": 693.000000000001,
+          "violet": 689.9999999999956,
+          "spread": 3.000000000005457
+        },
+        {
+          "target": "art4",
+          "mint": 492.00000000000125,
+          "violet": 503.99999999999545,
+          "spread": 11.999999999994202
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 8,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 330,
+          "violet": 330,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 251.99999999999955,
+          "violet": 251.99999999999926,
+          "spread": 2.8421709430404007e-13
+        },
+        {
+          "target": "art3",
+          "mint": 669.0000000000009,
+          "violet": 674.9999999999956,
+          "spread": 5.999999999994657
+        },
+        {
+          "target": "art4",
+          "mint": 484.67252398779175,
+          "violet": 467.9999999999951,
+          "spread": 16.672523987796637
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 9,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 330,
+          "violet": 330,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 353.9999999999989,
+          "violet": 353.99999999999784,
+          "spread": 1.0800249583553523e-12
+        },
+        {
+          "target": "art3",
+          "mint": 708.000000000001,
+          "violet": 713.9999999999953,
+          "spread": 5.999999999994316
+        },
+        {
+          "target": "art4",
+          "mint": 528.0000000000009,
+          "violet": 518.2929279673592,
+          "spread": 9.70707203264169
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 10,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 297.0000000000006,
+          "violet": 297,
+          "spread": 6.252776074688882e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 260.09611268833623,
+          "violet": 260.0961126883366,
+          "spread": 3.410605131648481e-13
+        },
+        {
+          "target": "art3",
+          "mint": 519.0000000000015,
+          "violet": 527.9999999999974,
+          "spread": 8.999999999995907
+        },
+        {
+          "target": "art4",
+          "mint": 443.386515798593,
+          "violet": 431.99999999999847,
+          "spread": 11.38651579859453
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 11,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 123.00000000000072,
+          "violet": 123.00000000000088,
+          "spread": 1.5631940186722204e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 408,
+          "violet": 408,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 566.8055727584776,
+          "violet": 572.5090442914861,
+          "spread": 5.703471533008496
+        },
+        {
+          "target": "art4",
+          "mint": 467.3865157985904,
+          "violet": 458.9999999999986,
+          "spread": 8.386515798591802
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 12,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 123.00000000000072,
+          "violet": 123.00000000000088,
+          "spread": 1.5631940186722204e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 260.09611268833623,
+          "violet": 260.0961126883366,
+          "spread": 3.410605131648481e-13
+        },
+        {
+          "target": "art3",
+          "mint": 566.8055727584776,
+          "violet": 572.5090442914861,
+          "spread": 5.703471533008496
+        },
+        {
+          "target": "art4",
+          "mint": 467.3865157985904,
+          "violet": 458.9999999999986,
+          "spread": 8.386515798591802
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 13,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 123.00000000000072,
+          "violet": 123.00000000000088,
+          "spread": 1.5631940186722204e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 408,
+          "violet": 408,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 549.0000000000025,
+          "violet": 542.6395596730908,
+          "spread": 6.360440326911657
+        },
+        {
+          "target": "art4",
+          "mint": 444.00000000000034,
+          "violet": 455.38651579859527,
+          "spread": 11.386515798594928
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 14,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 329.48186278452926,
+          "violet": 329.48186278452965,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 362.9999999999985,
+          "violet": 362.99999999999903,
+          "spread": 5.115907697472721e-13
+        },
+        {
+          "target": "art3",
+          "mint": 569.9999999999976,
+          "violet": 557.267169294673,
+          "spread": 12.732830705324659
+        },
+        {
+          "target": "art4",
+          "mint": 512.9999999999985,
+          "violet": 512.9999999999986,
+          "spread": 1.1368683772161603e-13
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 15,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 302.35931472743675,
+          "violet": 302.3593147274374,
+          "spread": 6.252776074688882e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 362.9999999999985,
+          "violet": 362.99999999999903,
+          "spread": 5.115907697472721e-13
+        },
+        {
+          "target": "art3",
+          "mint": 557.4917025439447,
+          "violet": 555.0000000000003,
+          "spread": 2.4917025439443705
+        },
+        {
+          "target": "art4",
+          "mint": 506.9941295150403,
+          "violet": 522.0000000000055,
+          "spread": 15.005870484965158
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 16,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 92.19544457292886,
+          "violet": 92.19544457292884,
+          "spread": 2.842170943040401e-14
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 281.9999999999988,
+          "violet": 281.999999999999,
+          "spread": 1.7053025658242404e-13
+        },
+        {
+          "target": "art3",
+          "mint": 569.9999999999976,
+          "violet": 557.267169294673,
+          "spread": 12.732830705324659
+        },
+        {
+          "target": "art4",
+          "mint": 512.9999999999985,
+          "violet": 512.9999999999986,
+          "spread": 1.1368683772161603e-13
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 17,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 92.19544457292886,
+          "violet": 92.19544457292884,
+          "spread": 2.842170943040401e-14
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 422.3376498842086,
+          "violet": 422.337649884209,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "art3",
+          "mint": 557.4917025439447,
+          "violet": 555.0000000000003,
+          "spread": 2.4917025439443705
+        },
+        {
+          "target": "art4",
+          "mint": 506.9941295150403,
+          "violet": 522.0000000000055,
+          "spread": 15.005870484965158
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 18,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 329.48186278452926,
+          "violet": 329.48186278452965,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 422.3376498842086,
+          "violet": 422.337649884209,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "art3",
+          "mint": 569.9999999999976,
+          "violet": 557.267169294673,
+          "spread": 12.732830705324659
+        },
+        {
+          "target": "art4",
+          "mint": 512.9999999999985,
+          "violet": 512.9999999999986,
+          "spread": 1.1368683772161603e-13
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 19,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 330,
+          "violet": 330,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 408,
+          "violet": 408,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 693.000000000001,
+          "violet": 689.9999999999956,
+          "spread": 3.000000000005457
+        },
+        {
+          "target": "art4",
+          "mint": 492.00000000000125,
+          "violet": 503.99999999999545,
+          "spread": 11.999999999994202
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 20,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 210,
+          "violet": 210,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 353.9999999999989,
+          "violet": 353.99999999999784,
+          "spread": 1.0800249583553523e-12
+        },
+        {
+          "target": "art3",
+          "mint": 693.000000000001,
+          "violet": 689.9999999999956,
+          "spread": 3.000000000005457
+        },
+        {
+          "target": "art4",
+          "mint": 492.00000000000125,
+          "violet": 503.99999999999545,
+          "spread": 11.999999999994202
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 21,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 210,
+          "violet": 210,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 353.9999999999989,
+          "violet": 353.99999999999784,
+          "spread": 1.0800249583553523e-12
+        },
+        {
+          "target": "art3",
+          "mint": 708.000000000001,
+          "violet": 713.9999999999953,
+          "spread": 5.999999999994316
+        },
+        {
+          "target": "art4",
+          "mint": 528.0000000000009,
+          "violet": 518.2929279673592,
+          "spread": 9.70707203264169
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 22,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 90,
+          "violet": 90,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 353.9999999999989,
+          "violet": 353.99999999999784,
+          "spread": 1.0800249583553523e-12
+        },
+        {
+          "target": "art3",
+          "mint": 693.000000000001,
+          "violet": 689.9999999999956,
+          "spread": 3.000000000005457
+        },
+        {
+          "target": "art4",
+          "mint": 492.00000000000125,
+          "violet": 503.99999999999545,
+          "spread": 11.999999999994202
+        },
+        {
+          "target": "plate",
+          "mint": 389.99999999999886,
+          "violet": 390.00000000000534,
+          "spread": 6.480149750132114e-12
+        }
+      ],
+      "mode": "duos",
+      "seed": 23,
+      "layout": 2,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 360.0000000000022,
+          "violet": 360.0000000000022,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 476.3531048955105,
+          "violet": 476.3531048955105,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 566.8055727584776,
+          "violet": 572.5090442914861,
+          "spread": 5.703471533008496
+        },
+        {
+          "target": "art4",
+          "mint": 467.3865157985904,
+          "violet": 458.9999999999986,
+          "spread": 8.386515798591802
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 24,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 360.0000000000022,
+          "violet": 360.0000000000022,
+          "spread": 0
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 476.3531048955105,
+          "violet": 476.3531048955105,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 549.0000000000025,
+          "violet": 542.6395596730908,
+          "spread": 6.360440326911657
+        },
+        {
+          "target": "art4",
+          "mint": 444.00000000000034,
+          "violet": 455.38651579859527,
+          "spread": 11.386515798594928
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 25,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 123.00000000000072,
+          "violet": 123.00000000000088,
+          "spread": 1.5631940186722204e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 476.3531048955105,
+          "violet": 476.3531048955105,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 549.0000000000025,
+          "violet": 542.6395596730908,
+          "spread": 6.360440326911657
+        },
+        {
+          "target": "art4",
+          "mint": 444.00000000000034,
+          "violet": 455.38651579859527,
+          "spread": 11.386515798594928
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 26,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 297.0000000000006,
+          "violet": 297,
+          "spread": 6.252776074688882e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 476.3531048955105,
+          "violet": 476.3531048955105,
+          "spread": 0
+        },
+        {
+          "target": "art3",
+          "mint": 549.0000000000025,
+          "violet": 542.6395596730908,
+          "spread": 6.360440326911657
+        },
+        {
+          "target": "art4",
+          "mint": 444.00000000000034,
+          "violet": 455.38651579859527,
+          "spread": 11.386515798594928
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 27,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "shift"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 123.00000000000072,
+          "violet": 123.00000000000088,
+          "spread": 1.5631940186722204e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 260.09611268833623,
+          "violet": 260.0961126883366,
+          "spread": 3.410605131648481e-13
+        },
+        {
+          "target": "art3",
+          "mint": 519.0000000000015,
+          "violet": 527.9999999999974,
+          "spread": 8.999999999995907
+        },
+        {
+          "target": "art4",
+          "mint": 443.386515798593,
+          "violet": 431.99999999999847,
+          "spread": 11.38651579859453
+        },
+        {
+          "target": "plate",
+          "mint": 392.04591567825406,
+          "violet": 392.045915678254,
+          "spread": 5.684341886080802e-14
+        }
+      ],
+      "mode": "duos",
+      "seed": 28,
+      "layout": 0,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "curator"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 329.48186278452926,
+          "violet": 329.48186278452965,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 281.9999999999988,
+          "violet": 281.999999999999,
+          "spread": 1.7053025658242404e-13
+        },
+        {
+          "target": "art3",
+          "mint": 569.9999999999976,
+          "violet": 557.267169294673,
+          "spread": 12.732830705324659
+        },
+        {
+          "target": "art4",
+          "mint": 512.9999999999985,
+          "violet": 512.9999999999986,
+          "spread": 1.1368683772161603e-13
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 29,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "vault"
+    },
+    {
+      "fairness": [
+        {
+          "target": "cheap wing pair",
+          "mint": 329.48186278452926,
+          "violet": 329.48186278452965,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "valuable wing pair",
+          "mint": 422.3376498842086,
+          "violet": 422.337649884209,
+          "spread": 3.979039320256561e-13
+        },
+        {
+          "target": "art3",
+          "mint": 581.9999999999985,
+          "violet": 573.0000000000011,
+          "spread": 8.999999999997385
+        },
+        {
+          "target": "art4",
+          "mint": 521.9999999999991,
+          "violet": 506.9941295150413,
+          "spread": 15.005870484957768
+        },
+        {
+          "target": "plate",
+          "mint": 563.9070545265254,
+          "violet": 563.1651504925105,
+          "spread": 0.7419040340148513
+        }
+      ],
+      "mode": "duos",
+      "seed": 30,
+      "layout": 1,
+      "pieces": 6,
+      "total": 3300,
+      "upperBound": 2100,
+      "upperFraction": 0.6363636363636364,
+      "routePlannerHaul": 2100,
+      "event": "blackout"
+    }
+  ]
+}

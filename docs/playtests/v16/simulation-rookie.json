@@ -1,0 +1,238 @@
+{
+  "difficulty": "rookie",
+  "seeds": "1001–1020",
+  "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
+  "results": [
+    {
+      "mode": "coop",
+      "policy": "naive",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.8,
+      "meanBank": 1990,
+      "minBank": 1500,
+      "maxBank": 2100,
+      "bankStdDev": 221,
+      "lockdownRate": 0.55,
+      "meanCatches": 2.15,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.2,
+        0,
+        0.8,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "naive",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.8,
+      "meanBank": 1990,
+      "minBank": 1500,
+      "maxBank": 2100,
+      "bankStdDev": 221,
+      "lockdownRate": 0.65,
+      "meanCatches": 2.2,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.2,
+        0,
+        0.8,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "noise",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.1,
+      "meanBank": 1010,
+      "minBank": 300,
+      "maxBank": 2100,
+      "bankStdDev": 562,
+      "lockdownRate": 1,
+      "meanCatches": 5.9,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.9,
+        0,
+        0.1,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "fetch",
+      "echo": "repeated-fetch",
+      "n": 20,
+      "winRate": 1,
+      "meanBank": 2100,
+      "minBank": 2100,
+      "maxBank": 2100,
+      "bankStdDev": 0,
+      "lockdownRate": 0.4,
+      "meanCatches": 1.5,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "teamwork",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.95,
+      "meanBank": 3128.75,
+      "minBank": 1575,
+      "maxBank": 3300,
+      "bankStdDev": 410,
+      "lockdownRate": 0.95,
+      "meanCatches": 3.65,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.05,
+        0.15,
+        0,
+        0.8
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "coop",
+      "policy": "auto",
+      "echo": "auto",
+      "n": 20,
+      "winRate": 1,
+      "meanBank": 2100,
+      "minBank": 2100,
+      "maxBank": 2100,
+      "bankStdDev": 0,
+      "lockdownRate": 0.75,
+      "meanCatches": 2.05,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0,
+        0,
+        1,
+        0
+      ],
+      "runsWithBotPlants": 0
+    },
+    {
+      "mode": "duos",
+      "policy": "naive",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0.1,
+      "meanBank": 1400,
+      "minBank": 1000,
+      "maxBank": 2500,
+      "bankStdDev": 297,
+      "lockdownRate": 0.85,
+      "meanCatches": 0.75,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.9,
+        0.1,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 5
+    },
+    {
+      "mode": "duos",
+      "policy": "noise",
+      "echo": "follow",
+      "n": 20,
+      "winRate": 0,
+      "meanBank": 545,
+      "minBank": 0,
+      "maxBank": 800,
+      "bankStdDev": 285,
+      "lockdownRate": 1,
+      "meanCatches": 2.25,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        1,
+        0,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 13
+    },
+    {
+      "mode": "duos",
+      "policy": "fetch",
+      "echo": "repeated-fetch",
+      "n": 20,
+      "winRate": 0.35,
+      "meanBank": 1600,
+      "minBank": 1000,
+      "maxBank": 2500,
+      "bankStdDev": 395,
+      "lockdownRate": 0.85,
+      "meanCatches": 0.45,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.65,
+        0.35,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 5
+    },
+    {
+      "mode": "duos",
+      "policy": "teamwork",
+      "echo": "cover",
+      "n": 20,
+      "winRate": 0.7,
+      "meanBank": 2160,
+      "minBank": 1000,
+      "maxBank": 3100,
+      "bankStdDev": 571,
+      "lockdownRate": 0.8,
+      "meanCatches": 1.3,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.3,
+        0.7,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 7
+    },
+    {
+      "mode": "duos",
+      "policy": "auto",
+      "echo": "auto",
+      "n": 20,
+      "winRate": 0.25,
+      "meanBank": 1500,
+      "minBank": 1000,
+      "maxBank": 2500,
+      "bankStdDev": 387,
+      "lockdownRate": 0.95,
+      "meanCatches": 0.65,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.8,
+        0.2,
+        0,
+        0
+      ],
+      "runsWithBotPlants": 6
+    }
+  ]
+}

@@ -31,3 +31,5 @@
 .last-call{position:absolute;right:12px;bottom:115px;width:246px;padding:10px;background:#57313c;color:#ffe7b8;border:1px solid #ffb38d;border-radius:7px;font:700 12px monospace;z-index:2}
 .run-rating b{font-size:32px;letter-spacing:6px;color:#f1ce9d}.run-rating p{font-size:12px;margin:6px 0}.run-rating small{font:10px monospace;color:#b6f2d4}
 @media(max-width:800px){.active-heist .bottom-controls{grid-template-columns:64px minmax(0,1fr);gap:5px}.active-heist .keyboard-note{display:none}.active-heist .action-group{gap:3px}.active-heist .action{padding:3px;min-height:66px}.active-heist .thumbstick{width:60px;height:60px}.last-call{bottom:200px;right:8px}}
+
+.noise-app select{font:inherit;color:var(--ink);background:#152c35;border:1px solid #8ef2d255;border-radius:6px;padding:9px 12px;margin:8px;min-height:44px}.noise-app select:focus-visible{outline:2px solid var(--mint);outline-offset:3px}.echo-orders{flex-wrap:wrap;max-width:340px}
