@@ -1,0 +1,369 @@
+{
+  "n": 40,
+  "captures": 40,
+  "rescues": 30,
+  "heldCaught": 0,
+  "postCaught": 0,
+  "runs": [
+    {
+      "seed": 1,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 19880,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 2,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 16600,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 3,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 4,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 16600,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 5,
+      "layout": 1,
+      "capturedAt": 15400,
+      "releasedAt": 21400,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 6,
+      "layout": 2,
+      "capturedAt": 15320,
+      "releasedAt": 16880,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 7,
+      "layout": 2,
+      "capturedAt": 14880,
+      "releasedAt": 17040,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 8,
+      "layout": 2,
+      "capturedAt": 14800,
+      "releasedAt": 17040,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 9,
+      "layout": 2,
+      "capturedAt": 14880,
+      "releasedAt": 16480,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 10,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 11,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 12,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 20000,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 13,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 19800,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 14,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 19440,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 15,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 16600,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 16,
+      "layout": 1,
+      "capturedAt": 15040,
+      "releasedAt": 16640,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 17,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 16600,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 18,
+      "layout": 1,
+      "capturedAt": 14680,
+      "releasedAt": 16280,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 19,
+      "layout": 1,
+      "capturedAt": 14840,
+      "releasedAt": 16440,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 20,
+      "layout": 2,
+      "capturedAt": 14920,
+      "releasedAt": 17200,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 21,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 20080,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 22,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 20840,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 23,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 20840,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 24,
+      "layout": 0,
+      "capturedAt": 15200,
+      "releasedAt": 16800,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 25,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 26,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 27,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 28,
+      "layout": 0,
+      "capturedAt": 14960,
+      "releasedAt": 16560,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 29,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 16600,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 30,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 20840,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 31,
+      "layout": 1,
+      "capturedAt": 14560,
+      "releasedAt": 16360,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 32,
+      "layout": 1,
+      "capturedAt": 15000,
+      "releasedAt": 16960,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 33,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 19880,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 34,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 20040,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 35,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 36,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 37,
+      "layout": 2,
+      "capturedAt": 15000,
+      "releasedAt": 21000,
+      "rescued": false,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 38,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 20040,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 39,
+      "layout": 0,
+      "capturedAt": 15960,
+      "releasedAt": 17480,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    },
+    {
+      "seed": 40,
+      "layout": 0,
+      "capturedAt": 15000,
+      "releasedAt": 16600,
+      "rescued": true,
+      "heldCaught": false,
+      "postCaught": false
+    }
+  ]
+}

@@ -58,3 +58,11 @@ Natural rescue35/40, median2s, post-rescue Echo catches2/40; valid carrying-at-c
 All bot movement now uses guarded routing, including rejoin/follow/cover/receive, banking and rival interception. Cover fallback is checked; waiting avoids current cones and upcoming patrol waypoints. No new systems or difficulty constant changes. Existing 92 tests retained; three new regression checks. Actual self-release/free-Echo sample: 0/40 catches in the next 3s. Focused cone-rejoin test fails v18 and passes v19; natural fixture itself does NOT reproduce Claude's 15/40 baseline (v18 also 0/40). See `docs/playtests/noise-v19.md` for sampling and limitations.
 
 240-match difficulty gate: co-op 92.5/65/30%; rivals 65/57.5/50% (Rookie/Normal/Pro). Both strict orders pass; absolute rival difficulty targets remain unmet. Browser/mobile/real-device behavior and exact Claude fixture replication remain unverified.
+
+## October 22 — Noise Thieves v20
+
+Shared idle safety checks every stationary bot state against 1.5s of all non-retreating patrols, routes to an unexposed position, favors cover, and keeps short escape commitments. Safe rescue completion accounts for the protection it grants; reaching the van clears stale escape targets. All v19 movement gates retained; no game rules or difficulty constants changed.
+
+97 tests and TypeScript pass. Reconstructed fixed-seed Claude fixture (Normal, Auto, events on, spawn at 13s): 0/40 held-time Echo catches, 0/40 within 3s after release, 33/40 rescues. This reconstruction does NOT reproduce Claude's v19 baseline (ours 0/40, 30/40 rescues); actual original fixture still needed. Targeted approaching-patrol test fails v19 and passes v20. See `docs/playtests/noise-v20.md` and raw `v20/` results.
+
+240-match strict difficulty gate passes: co-op 97.5/72.5/22.5%; rivals 72.5/57.5/47.5% (Rookie/Normal/Pro). Absolute balance targets remain open. Managed-browser UI/command inspection now available and performed, with screenshot; sustained human movement/full manual match, mobile and two-device latency remain unverified.
