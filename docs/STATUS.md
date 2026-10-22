@@ -34,3 +34,6 @@ Distinct open Gallery, rotational shelving Archive, plus-hub Crossroads; separat
 
 ## v14 seeded content and events
 Fixed v13 arenas; $3,300/5–6-piece seeded jobs; weighted carry speed; one announced event; patrol pools/plate return tuning; Follow bodyguard; label cleanup. Two rival crews only (2v2/3v3). Crates omitted. 75 tests/typecheck pass. Solo optimistic bound63.6%; stationary plate averages2.1–3.0 catches/90s. See [full report](playtests/noise-v14.md) and18 SVG maps. Fetch still reliably clears normal co-op loot; browser access policy blocked hands-on QA. No claim of final balance or manual testing.
+
+## v15 wing value and slot variety
+Rival wings each$200+$600; centre$1200+$500; fixed$3300. Budget conflict resolved at48.5% wing value. Three deep pair/centre configurations; events20–65s; facing-captor Follow wait. Crates deferred.77 tests/typecheck pass; max audited route spread31.8u.24 rendered seed diagrams inspected.180 engine sims: rival teamwork60%, naive20%, noise15%; co-op Fetch95%, teamwork60% three-star. Noise advantage/manual browser/network QA still unverified. See [v15 report](playtests/noise-v15.md).

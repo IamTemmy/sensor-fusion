@@ -46,6 +46,12 @@ export const RIVAL_LAYOUTS=[
  {symmetry:'rotate',half:[{x:360,y:24,w:20,h:236},{x:360,y:340,w:20,h:236},{x:130,y:130,w:150,h:24},{x:80,y:240,w:140,h:24},{x:180,y:350,w:140,h:24},{x:440,y:220,w:80,h:20}],shared:[],slots:[{x:100,y:190},{x:280,y:290},{x:120,y:420}],jackpot:{x:510,y:450},idol:{x:480,y:300},plate:{x:450,y:150},sensors:[{x:360,y:274,w:20,h:52},{x:580,y:274,w:20,h:52}],patrol:[{x:80,y:90},{x:320,y:90},{x:320,y:190},{x:260,y:290},{x:80,y:300},{x:80,y:430},{x:340,y:430},{x:340,y:90}],centreRoute:[{x:410,y:170},{x:550,y:170},{x:550,y:300},{x:410,y:300},{x:410,y:430},{x:550,y:430},{x:550,y:300},{x:410,y:300}]},
  {symmetry:'mirror',half:[{x:180,y:140,w:200,h:100},{x:180,y:360,w:200,h:100},{x:380,y:24,w:20,h:120},{x:400,y:144,w:40,h:20},{x:380,y:420,w:20,h:156}],shared:[{x:440,y:400,w:80,h:20}],slots:[{x:100,y:180},{x:100,y:300},{x:100,y:420}],jackpot:{x:480,y:90},idol:{x:480,y:300},plate:{x:480,y:510},sensors:[{x:440,y:144,w:80,h:8},{x:380,y:270,w:8,h:60},{x:572,y:270,w:8,h:60}],patrol:[{x:100,y:100},{x:140,y:260},{x:340,y:280},{x:140,y:340},{x:150,y:490}],centreRoute:[{x:440,y:190},{x:520,y:260},{x:520,y:340},{x:480,y:380},{x:440,y:340},{x:440,y:260}]}
 ].map(m=>{const transform=m.symmetry==='rotate'?rotatePoint:mirrorPoint,rectTransform=m.symmetry==='rotate'?rotateRect:mirrorRect;return {...m,walls:[...WALLS.slice(0,4),...m.half,...m.half.map(rectTransform),...m.shared],routes:[m.patrol,m.patrol.map(transform),m.centreRoute]};});
+// Fixed architecture; content slots vary without moving walls or the shared plate.
+export const RIVAL_LOOT_SLOTS=[
+ {deep:[{x:100,y:100},{x:300,y:100},{x:200,y:270}],jack:[{x:470,y:120},{x:490,y:145},{x:470,y:170}],centre:[{x:490,y:340},{x:470,y:350},{x:490,y:365}]},
+ {deep:[{x:80,y:90},{x:305,y:215},{x:260,y:290}],jack:[{x:500,y:440},{x:510,y:450},{x:520,y:460}],centre:[{x:470,y:290},{x:480,y:300},{x:490,y:310}]},
+ {deep:[{x:100,y:100},{x:140,y:260},{x:340,y:280}],jack:[{x:470,y:70},{x:490,y:90},{x:470,y:110}],centre:[{x:490,y:270},{x:470,y:300},{x:490,y:330}]}
+];
 export const RIVAL_REINFORCEMENTS:Vec[][]=[
  [{x:380,y:350},{x:480,y:380},{x:580,y:350},{x:580,y:240},{x:380,y:240}],
  [{x:410,y:300},{x:480,y:280},{x:550,y:300},{x:550,y:430},{x:410,y:410}],
@@ -144,10 +150,16 @@ export function steer(a:Vec,b:Vec,walls:Rect[]=WALLS):Vec{if(corridor(a,b,walls)
  if(end<0)return a;const path:Vec[]=[];while(end!==-1){path.push({x:(end%cols)*size+20,y:Math.floor(end/cols)*size+20});end=prev.get(end)!;}return path.find(p=>corridor(a,p,walls))||a;}
 function walk(g:Game,p:Vec,target:Vec,dt:number,speed:number){const walls=g.guards.includes(p as Guard)?[...g.walls,...zones(g)]:thiefWalls(g,p as Thief);const next=steer(p,target,walls);const d=distance(p,next);if(g.seats.includes(p as Thief)){(p as Thief).dx=d>3?(next.x-p.x)/d:0;(p as Thief).dy=d>3?(next.y-p.y)/d:0;}if(d>3)move(p,(next.x-p.x)/d,(next.y-p.y)/d,dt,Math.min(speed,d/dt),walls);}
 function decoy(g:Game,s:Thief):Vec{const crew=g.seats.filter(p=>sameCrew(p,s)&&!p.escaped);const rivals=g.seats.filter(p=>!sameCrew(p,s)&&!p.escaped);const candidates=[{x:70,y:70},{x:250,y:70},{x:360,y:60},{x:570,y:350},{x:690,y:70},{x:890,y:520},...rivals.map(p=>({x:p.x,y:p.y}))].filter(p=>distance(p,vanFor(g,s.team))>100&&sight(s,p,g.walls)&&distance(s,p)>100);return candidates.sort((a,b)=>{const score=(p:Vec)=>Math.min(...crew.map(c=>distance(c,p)))+rivals.reduce((v,r)=>v+(distance(r,p)<100?(r.hand?220:120):0),0);return score(b)-score(a);})[0]||{x:Math.min(900,s.x+220),y:Math.max(50,s.y-180)};}
+export function rescueApproachUnsafe(g:Game,s:Thief,captive:Thief,h:Guard){
+ if(s.mode!=='follow'||h.id!==captive.capturedBy)return false;
+ const near=Math.min(distance(h,captive),distance(h,s))<=40;
+ const angle=Math.atan2(s.y-h.y,s.x-h.x)-h.angle;
+ return near&&Math.cos(angle)>.45&&sight(h,s,g.walls);
+}
 function bot(g:Game,s:Thief,dt:number){if(s.escaped||s.stun>g.now)return;const crew=g.seats.filter(p=>sameCrew(p,s));const human=crew.find(x=>!x.bot&&!x.escaped);const partner=human||crew.find(p=>p.id!==s.id&&!p.escaped);const held=g.loot.find(l=>l.id===s.hand);const capsule=g.noises.find(n=>n.id===s.hand);const home=vanFor(g,s.team);
  if(s.retreatUntil&&s.retreatUntil>g.now){walk(g,s,home,dt,165);return;}
  if(g.boardingAt||g.end-g.now<10000){walk(g,s,home,dt,150);if(homeSafe(g,s))action(g,s,'extract');return;}
- const captive=crew.find(x=>x.stun>g.now&&!x.escaped);if(captive){const danger=g.guards.some(guard=>(guard.retreatUntil||0)<=g.now&&distance(guard,captive)<140&&sight(guard,captive,g.walls));if(danger){s.rescueId=null;if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));else if(g.guards.some(guard=>distance(guard,s)<140&&sight(guard,s,g.walls)))walk(g,s,home,dt,165);return;}if(distance(s,captive)>32)walk(g,s,captive,dt,150);if(distance(s,captive)<40)action(g,s,'grab');return;}
+ const captive=crew.find(x=>x.stun>g.now&&!x.escaped);if(captive){const danger=g.guards.some(guard=>((guard.retreatUntil||0)<=g.now&&distance(guard,captive)<140&&sight(guard,captive,g.walls))||rescueApproachUnsafe(g,s,captive,guard));if(danger){s.rescueId=null;if(g.guards.some(h=>rescueApproachUnsafe(g,s,captive,h))){if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));else if(g.guards.some(guard=>distance(guard,s)<140&&sight(guard,s,g.walls)))walk(g,s,home,dt,165);return;}if(distance(s,captive)>32)walk(g,s,captive,dt,150);if(distance(s,captive)<40)action(g,s,'grab');return;}
  if(capsule&&s.mode==='follow'&&partner){const threat=g.guards.some(h=>distance(h,partner)<150&&sight(h,partner,g.walls));if(threat&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));else if(distance(s,partner)>45)walk(g,s,partner,dt,150);return;}
  if(capsule){const target=g.seats.filter(r=>r.team!==s.team&&!r.escaped&&!homeSafe(g,r)&&g.loot.some(l=>l.holder===r.id)&&distance(r,s)<270&&sight(s,r,g.walls)).sort((a,b)=>distance(s,a)-distance(s,b))[0];if(target&&g.now>=s.windup){const aim={x:target.x,y:target.y};event(g,s.name+': Planting an alarm on '+target.name+'!');action(g,s,'throw',aim);return;}if(g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
  if(held){walk(g,s,home,dt,carrySpeed(held.value));return;}
@@ -240,11 +252,18 @@ function setupVariety(g:Game){
  const make=(id:string,name:string,value:number,p:Vec,locked=false):Loot=>({id,name,value,...p,home:{...p},holder:null,banked:false,locked});
  g.loot=[make('art1','Pocket relic',cheap,left),make('art2','Pocket relic',cheap,right),make('art3',oldJack.name,1200,jack,true),make('art4','Grand exhibit',big,bigSpot),make('art5','Silver collection',mid,midSpot)];
  if(variant===2)g.loot.push(make('art6','Curator souvenir',200,extra));
+ if(rival){
+  const slots=RIVAL_LOOT_SLOTS[g.layout],available=slots.deep.filter(p=>distance(p,left)>=65),deep=available[Math.floor(random(g)*available.length)],c=Math.floor(random(g)*3);
+  // $1600 in equal wings, $1700 shared. Requested 40–45% is incompatible with minimum wing values.
+  jack=slots.jack[c];bigSpot=slots.centre[c];
+  g.loot=[make('art1','Pocket relic',200,left),make('art2','Pocket relic',200,right),make('art3',oldJack.name,1200,jack,true),make('art4','Contested collection',500,bigSpot),make('art5','Wing masterpiece',600,deep),make('art6','Wing masterpiece',600,transform(deep))];
+ }
+
  if(g.crewMode==='coop'&&g.guards.length<3){const route=[{x:710,y:115},{x:880,y:115},{x:880,y:510},{x:710,y:510}];g.guards.push({...g.guards[0],id:'g2',route,way:0,target:route[0],...route[0]});}
  const pool=patrolPool(g),alt=random(g)<.5,phase=random(g);g.guards.forEach((h,i)=>{const r=rival?pool[i<2?(alt?3+i:i):(random(g)<.5?2:5)]:pool[i%pool.length];placeOnRoute(h,r,(phase+(i===1&&rival?0:i*.31))%1);});
- const kind=(['blackout','shift','curator','vault'] as const)[Math.floor(random(g)*4)],at=35000+Math.floor(random(g)*10000);
+ const kind=(['blackout','shift','curator','vault'] as const)[Math.floor(random(g)*4)],at=20000+Math.floor(random(g)*45001);
  g.jobEvent={kind,at,until:at+(kind==='blackout'?8000:kind==='vault'?15000:1000),warned:false,started:false,ended:false};
- if(kind==='vault'){const l=g.loot.find(l=>l.id==='art5')!;l.sealed=true;l.eventPiece=true;}
+ if(kind==='vault'){const l=g.loot.find(l=>l.id===(rival?'art4':'art5'))!;l.sealed=true;l.eventPiece=true;}
 }
 export function updateJobEvent(g:Game){const e=g.jobEvent;if(!e||g.phase!=='playing')return;
  if(!e.warned&&g.now>=e.at-3000){e.warned=true;event(g,({blackout:'BLACKOUT',shift:'SHIFT CHANGE',curator:'CURATOR TRANSFER',vault:'SIDE VAULT'}[e.kind])+' IN 3 SECONDS','honk');}
