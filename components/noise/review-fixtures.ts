@@ -9,6 +9,8 @@ export function reviewFixture(state:string):Game{
  const s=g.seats[0],loot=g.loot.find(l=>l.value!==1200)!;loot.holder=s.id;s.hand=loot.id;loot.x=s.x;loot.y=s.y;
  g.noises=[{id:'visual-scream',x:s.x,y:s.y,attached:s.id,holder:null,expires:60000,born:31000,vx:0,vy:0,flight:0,kind:'alarm',source:loot.id}];
  event(g,'ECHO: Covering your scream.');event(g,'Violet is closing in on the collection.');
+ if(state==='centre'){s.hand=null;loot.holder=null;loot.x=loot.home?.x||270;loot.y=loot.home?.y||260;g.noises=[];}
+ if(state==='lobby')g.phase='lobby';
  if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can rescue them.','catch',s);g.events.at(-1)!.at-=80;}
  if(state==='recap'){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
  return g;

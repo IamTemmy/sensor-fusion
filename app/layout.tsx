@@ -1,3 +1,3 @@
 import './globals.css';
 export const metadata={title:'Noise Thieves — Steal the alarm',description:'A 90-second cooperative museum heist. Capture sound, throw trouble somewhere else, and get your crew out. Play with Echo or invite friends.'};
-export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}</body></html>;}
+export default function Layout({children}:{children:React.ReactNode}){return <html lang="en"><body>{children}<noscript><section><h1>Noise Thieves</h1><p>A moonlit museum heist for 1–6 players. Steal art, bottle its scream and throw noise to lure guards. Escape with Echo or friends before the van leaves. Enable JavaScript to play.</p></section></noscript></body></html>;}
