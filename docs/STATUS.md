@@ -52,3 +52,9 @@ Rescue1.2s/captor retreat4.5s, retreat-safe approach, loaded-trip exposure forec
 Natural rescue35/40, median2s, post-rescue Echo catches2/40; valid carrying-at-capture setups lose art1/40. Maximum spacing reversals3 per2s across20 seeds. Active guards: jackpot60/60 within15s when Echo starts beside the plate crew, but only29/60 from the van. The cross-museum75% target remains unmet. Exact Claude fixture replication and hands-on browser/mobile/network behavior remain unverified.
 
 240-match difficulty gate: co-op Rookie/Normal/Pro90/72.5/25%; rivals55/50/35%. Both orders pass; absolute rival Normal/Pro rates are easier than v17. Publication SHA and review request belong in issue#1 after successful release packaging.
+
+## October 22 — Noise Thieves v19
+
+All bot movement now uses guarded routing, including rejoin/follow/cover/receive, banking and rival interception. Cover fallback is checked; waiting avoids current cones and upcoming patrol waypoints. No new systems or difficulty constant changes. Existing 92 tests retained; three new regression checks. Actual self-release/free-Echo sample: 0/40 catches in the next 3s. Focused cone-rejoin test fails v18 and passes v19; natural fixture itself does NOT reproduce Claude's 15/40 baseline (v18 also 0/40). See `docs/playtests/noise-v19.md` for sampling and limitations.
+
+240-match difficulty gate: co-op 92.5/65/30%; rivals 65/57.5/50% (Rookie/Normal/Pro). Both strict orders pass; absolute rival difficulty targets remain unmet. Browser/mobile/real-device behavior and exact Claude fixture replication remain unverified.

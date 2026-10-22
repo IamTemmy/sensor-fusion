@@ -1,0 +1,3606 @@
+{
+  "runs": [
+    {
+      "seed": 16,
+      "layout": 1,
+      "capture": 14600,
+      "release": 20600,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 23,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 31,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 32,
+      "layout": 1,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 34,
+      "layout": 2,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 40,
+      "layout": 0,
+      "capture": 14360,
+      "release": 20360,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 45,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 59,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 64,
+      "layout": 2,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 89,
+      "layout": 2,
+      "capture": 16640,
+      "release": 22640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 95,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 99,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 101,
+      "layout": 2,
+      "capture": 14840,
+      "release": 20840,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 106,
+      "layout": 0,
+      "capture": 14680,
+      "release": 20680,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 110,
+      "layout": 1,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 111,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 117,
+      "layout": 2,
+      "capture": 14720,
+      "release": 20720,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 121,
+      "layout": 0,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 129,
+      "layout": 2,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 137,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 152,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 186,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 200,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 221,
+      "layout": 1,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 227,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 237,
+      "layout": 2,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 251,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 256,
+      "layout": 0,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 258,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 270,
+      "layout": 0,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 275,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 280,
+      "layout": 2,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 311,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 317,
+      "layout": 2,
+      "capture": 14680,
+      "release": 20680,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 325,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 326,
+      "layout": 1,
+      "capture": 14840,
+      "release": 20840,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 333,
+      "layout": 2,
+      "capture": 14400,
+      "release": 20400,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 353,
+      "layout": 1,
+      "capture": 16920,
+      "release": 22920,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 359,
+      "layout": 2,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 360,
+      "layout": 2,
+      "capture": 15880,
+      "release": 21880,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    }
+  ],
+  "other": [
+    {
+      "seed": 1,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 2,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 3,
+      "layout": 1,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 4,
+      "layout": 1,
+      "capture": 18360,
+      "release": 23360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 5,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 6,
+      "layout": 2,
+      "capture": 14440,
+      "release": 16680,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 7,
+      "layout": 2,
+      "capture": 14200,
+      "release": 19520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 8,
+      "layout": 2,
+      "capture": 14320,
+      "release": 17640,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 9,
+      "layout": 2,
+      "capture": 14440,
+      "release": 17320,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 10,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 11,
+      "layout": 0,
+      "capture": 14600,
+      "release": 16840,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 12,
+      "layout": 0,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 13,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 14,
+      "layout": 0,
+      "capture": 14600,
+      "release": 17000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 15,
+      "layout": 1,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 17,
+      "layout": 1,
+      "capture": 14360,
+      "release": 20360,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 18,
+      "layout": 1,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 19,
+      "layout": 1,
+      "capture": 14800,
+      "release": 17520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 20,
+      "layout": 2,
+      "capture": 14080,
+      "release": 17920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 21,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 22,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 24,
+      "layout": 0,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 25,
+      "layout": 0,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 26,
+      "layout": 0,
+      "capture": 14840,
+      "release": 17000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 27,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 28,
+      "layout": 0,
+      "capture": 14520,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 29,
+      "layout": 1,
+      "capture": 14600,
+      "release": 20600,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 30,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 33,
+      "layout": 2,
+      "capture": 14200,
+      "release": 17120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 35,
+      "layout": 2,
+      "capture": 14240,
+      "release": 17800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 36,
+      "layout": 2,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 37,
+      "layout": 2,
+      "capture": 14920,
+      "release": 17800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 38,
+      "layout": 0,
+      "capture": 14760,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 39,
+      "layout": 0,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 41,
+      "layout": 0,
+      "capture": 14720,
+      "release": 20720,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 42,
+      "layout": 1,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 43,
+      "layout": 1,
+      "capture": 14800,
+      "release": 20120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 44,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 46,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 47,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 48,
+      "layout": 2,
+      "capture": 14480,
+      "release": 20480,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 49,
+      "layout": 2,
+      "capture": 14440,
+      "release": 17080,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 50,
+      "layout": 2,
+      "capture": 14600,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 51,
+      "layout": 0,
+      "capture": 14240,
+      "release": 16400,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 52,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 53,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 54,
+      "layout": 0,
+      "capture": 14200,
+      "release": 18640,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 55,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 56,
+      "layout": 1,
+      "capture": 14600,
+      "release": 17520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 57,
+      "layout": 1,
+      "capture": 18720,
+      "release": 23920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 58,
+      "layout": 1,
+      "capture": 14240,
+      "release": 16520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 60,
+      "layout": 2,
+      "capture": 14080,
+      "release": 15960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 61,
+      "layout": 2,
+      "capture": 14720,
+      "release": 16960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 62,
+      "layout": 2,
+      "capture": 14760,
+      "release": 19560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 63,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 65,
+      "layout": 0,
+      "capture": 14320,
+      "release": 17360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 66,
+      "layout": 0,
+      "capture": 14600,
+      "release": 20600,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 67,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 68,
+      "layout": 0,
+      "capture": 14320,
+      "release": 16040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 69,
+      "layout": 1,
+      "capture": 14280,
+      "release": 20280,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 70,
+      "layout": 1,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 71,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 72,
+      "layout": 1,
+      "capture": 15160,
+      "release": 21160,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 73,
+      "layout": 1,
+      "capture": 14360,
+      "release": 20360,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 74,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 75,
+      "layout": 2,
+      "capture": 14200,
+      "release": 18840,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 76,
+      "layout": 2,
+      "capture": 14840,
+      "release": 18440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 77,
+      "layout": 2,
+      "capture": 14520,
+      "release": 20520,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 78,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 79,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 80,
+      "layout": 0,
+      "capture": 14720,
+      "release": 18840,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 81,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 82,
+      "layout": 0,
+      "capture": 18880,
+      "release": 22120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 83,
+      "layout": 1,
+      "capture": 14240,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 84,
+      "layout": 1,
+      "capture": 14240,
+      "release": 17160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 85,
+      "layout": 1,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 86,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16320,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 87,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 88,
+      "layout": 2,
+      "capture": 18720,
+      "release": 21760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 90,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 91,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 92,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 93,
+      "layout": 0,
+      "capture": 14160,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 94,
+      "layout": 0,
+      "capture": 14600,
+      "release": 16000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 96,
+      "layout": 1,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 97,
+      "layout": 1,
+      "capture": 14760,
+      "release": 17360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 98,
+      "layout": 1,
+      "capture": 14760,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 100,
+      "layout": 1,
+      "capture": 14120,
+      "release": 16120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 102,
+      "layout": 2,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 103,
+      "layout": 2,
+      "capture": 14120,
+      "release": 16560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 104,
+      "layout": 2,
+      "capture": 14240,
+      "release": 18920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 105,
+      "layout": 0,
+      "capture": 14600,
+      "release": 20600,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 107,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 108,
+      "layout": 0,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 109,
+      "layout": 0,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 112,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 113,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 114,
+      "layout": 2,
+      "capture": 14440,
+      "release": 17000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 115,
+      "layout": 2,
+      "capture": 14560,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 116,
+      "layout": 2,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 118,
+      "layout": 2,
+      "capture": 14440,
+      "release": 16800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 119,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 120,
+      "layout": 0,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 122,
+      "layout": 0,
+      "capture": 14760,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 123,
+      "layout": 1,
+      "capture": 14840,
+      "release": 16920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 124,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 125,
+      "layout": 1,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 126,
+      "layout": 1,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 127,
+      "layout": 1,
+      "capture": 14640,
+      "release": 17520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 128,
+      "layout": 2,
+      "capture": 14840,
+      "release": 17160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 130,
+      "layout": 2,
+      "capture": 14760,
+      "release": 17120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 131,
+      "layout": 2,
+      "capture": 14200,
+      "release": 19160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 132,
+      "layout": 0,
+      "capture": 14200,
+      "release": 17120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 133,
+      "layout": 0,
+      "capture": 14560,
+      "release": 16560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 134,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 135,
+      "layout": 0,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 136,
+      "layout": 0,
+      "capture": 14360,
+      "release": 17920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 138,
+      "layout": 1,
+      "capture": 14840,
+      "release": 16920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 139,
+      "layout": 1,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 140,
+      "layout": 1,
+      "capture": 14680,
+      "release": 17560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 141,
+      "layout": 2,
+      "capture": 14600,
+      "release": 20600,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 142,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 143,
+      "layout": 2,
+      "capture": 14240,
+      "release": 19760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 144,
+      "layout": 2,
+      "capture": 14200,
+      "release": 17440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 145,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 146,
+      "layout": 0,
+      "capture": 14560,
+      "release": 16600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 147,
+      "layout": 0,
+      "capture": 14240,
+      "release": 18760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 148,
+      "layout": 0,
+      "capture": 14480,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 149,
+      "layout": 0,
+      "capture": 14120,
+      "release": 19200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 150,
+      "layout": 1,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 151,
+      "layout": 1,
+      "capture": 14360,
+      "release": 17560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 153,
+      "layout": 1,
+      "capture": 14720,
+      "release": 20720,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 154,
+      "layout": 1,
+      "capture": 14600,
+      "release": 16000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 155,
+      "layout": 2,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 156,
+      "layout": 2,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 157,
+      "layout": 2,
+      "capture": 15640,
+      "release": 17960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 158,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 159,
+      "layout": 0,
+      "capture": 14160,
+      "release": 20160,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 160,
+      "layout": 0,
+      "capture": 14600,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 161,
+      "layout": 0,
+      "capture": 14600,
+      "release": 17160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 162,
+      "layout": 0,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 163,
+      "layout": 0,
+      "capture": 14040,
+      "release": 17200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 164,
+      "layout": 1,
+      "capture": 14040,
+      "release": 16000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 165,
+      "layout": 1,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 166,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 167,
+      "layout": 1,
+      "capture": 14240,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 168,
+      "layout": 2,
+      "capture": 14040,
+      "release": 15960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 169,
+      "layout": 2,
+      "capture": 14240,
+      "release": 16840,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 170,
+      "layout": 2,
+      "capture": 14760,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 171,
+      "layout": 2,
+      "capture": 14160,
+      "release": 20160,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 172,
+      "layout": 2,
+      "capture": 14760,
+      "release": 17480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 173,
+      "layout": 0,
+      "capture": 14440,
+      "release": 16920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 174,
+      "layout": 0,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 175,
+      "layout": 0,
+      "capture": 14040,
+      "release": 15960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 176,
+      "layout": 0,
+      "capture": 14200,
+      "release": 17600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 177,
+      "layout": 1,
+      "capture": 14360,
+      "release": 20360,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 178,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 179,
+      "layout": 1,
+      "capture": 14240,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 180,
+      "layout": 1,
+      "capture": 14920,
+      "release": 17400,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 181,
+      "layout": 1,
+      "capture": 14640,
+      "release": 16680,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 182,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16880,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 183,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 184,
+      "layout": 2,
+      "capture": 14800,
+      "release": 16400,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 185,
+      "layout": 2,
+      "capture": 14080,
+      "release": 16000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 187,
+      "layout": 0,
+      "capture": 18960,
+      "release": 23360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 188,
+      "layout": 0,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 189,
+      "layout": 0,
+      "capture": 14440,
+      "release": 18760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 190,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 191,
+      "layout": 1,
+      "capture": 14240,
+      "release": 16920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 192,
+      "layout": 1,
+      "capture": 14760,
+      "release": 17600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 193,
+      "layout": 1,
+      "capture": 14760,
+      "release": 17480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 194,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 195,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 196,
+      "layout": 2,
+      "capture": 14520,
+      "release": 20520,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 197,
+      "layout": 2,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 198,
+      "layout": 2,
+      "capture": 14440,
+      "release": 15960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 199,
+      "layout": 2,
+      "capture": 14720,
+      "release": 20720,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 201,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 202,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16080,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 203,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 204,
+      "layout": 1,
+      "capture": 14280,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 205,
+      "layout": 1,
+      "capture": 14120,
+      "release": 20120,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 206,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 207,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 208,
+      "layout": 1,
+      "capture": 14600,
+      "release": 16200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 209,
+      "layout": 2,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 210,
+      "layout": 2,
+      "capture": 14440,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 211,
+      "layout": 2,
+      "capture": 14240,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 212,
+      "layout": 2,
+      "capture": 14440,
+      "release": 16840,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 213,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 214,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 215,
+      "layout": 0,
+      "capture": 15120,
+      "release": 21120,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 216,
+      "layout": 0,
+      "capture": 14720,
+      "release": 20720,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 217,
+      "layout": 0,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 218,
+      "layout": 1,
+      "capture": 14240,
+      "release": 18280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 219,
+      "layout": 1,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 220,
+      "layout": 1,
+      "capture": 14520,
+      "release": 17000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 222,
+      "layout": 2,
+      "capture": 14440,
+      "release": 16600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 223,
+      "layout": 2,
+      "capture": 14120,
+      "release": 16040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 224,
+      "layout": 2,
+      "capture": 14320,
+      "release": 18760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 225,
+      "layout": 2,
+      "capture": 14400,
+      "release": 17640,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 226,
+      "layout": 2,
+      "capture": 14600,
+      "release": 17360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 228,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 229,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 230,
+      "layout": 0,
+      "capture": 14600,
+      "release": 16840,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 231,
+      "layout": 1,
+      "capture": 14440,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 232,
+      "layout": 1,
+      "capture": 14040,
+      "release": 15960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 233,
+      "layout": 1,
+      "capture": 14040,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 234,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 235,
+      "layout": 1,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 236,
+      "layout": 2,
+      "capture": 14280,
+      "release": 18120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 238,
+      "layout": 2,
+      "capture": 14800,
+      "release": 18240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 239,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 240,
+      "layout": 0,
+      "capture": 14480,
+      "release": 20480,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 241,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 242,
+      "layout": 0,
+      "capture": 14840,
+      "release": 17160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 243,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 244,
+      "layout": 0,
+      "capture": 14320,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 245,
+      "layout": 1,
+      "capture": 14840,
+      "release": 20840,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 246,
+      "layout": 1,
+      "capture": 14760,
+      "release": 20760,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 247,
+      "layout": 1,
+      "capture": 14720,
+      "release": 17480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 248,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 249,
+      "layout": 2,
+      "capture": 14200,
+      "release": 17160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 250,
+      "layout": 2,
+      "capture": 14760,
+      "release": 17000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 252,
+      "layout": 2,
+      "capture": 14840,
+      "release": 17560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 253,
+      "layout": 2,
+      "capture": 15120,
+      "release": 20760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 254,
+      "layout": 0,
+      "capture": 14440,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 255,
+      "layout": 0,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 257,
+      "layout": 0,
+      "capture": 14760,
+      "release": 16800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 259,
+      "layout": 1,
+      "capture": 14800,
+      "release": 19960,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 260,
+      "layout": 1,
+      "capture": 14840,
+      "release": 17200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 261,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 262,
+      "layout": 1,
+      "capture": 14200,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 263,
+      "layout": 2,
+      "capture": 14240,
+      "release": 20160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 264,
+      "layout": 2,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 265,
+      "layout": 2,
+      "capture": 15160,
+      "release": 18640,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 266,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 267,
+      "layout": 0,
+      "capture": 14680,
+      "release": 16720,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 268,
+      "layout": 0,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 269,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 271,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20560,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 272,
+      "layout": 1,
+      "capture": 14760,
+      "release": 17160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 273,
+      "layout": 1,
+      "capture": 14640,
+      "release": 16600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 274,
+      "layout": 1,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 276,
+      "layout": 2,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 277,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16360,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 278,
+      "layout": 2,
+      "capture": 14320,
+      "release": 16320,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 279,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 281,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16320,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 282,
+      "layout": 0,
+      "capture": 14440,
+      "release": 20440,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 283,
+      "layout": 0,
+      "capture": 14160,
+      "release": 16040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 284,
+      "layout": 0,
+      "capture": 14720,
+      "release": 17800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 285,
+      "layout": 1,
+      "capture": 14200,
+      "release": 18280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 286,
+      "layout": 1,
+      "capture": 14840,
+      "release": 17000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 287,
+      "layout": 1,
+      "capture": 14840,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 288,
+      "layout": 1,
+      "capture": 14120,
+      "release": 16120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 289,
+      "layout": 1,
+      "capture": 14320,
+      "release": 20320,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 290,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 291,
+      "layout": 2,
+      "capture": 14200,
+      "release": 18640,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 292,
+      "layout": 2,
+      "capture": 14840,
+      "release": 17600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 293,
+      "layout": 2,
+      "capture": 14280,
+      "release": 16640,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 294,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 295,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 296,
+      "layout": 0,
+      "capture": 14280,
+      "release": 18760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 297,
+      "layout": 0,
+      "capture": 14840,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 298,
+      "layout": 0,
+      "capture": 14840,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 299,
+      "layout": 1,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 300,
+      "layout": 1,
+      "capture": 14120,
+      "release": 17240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 301,
+      "layout": 1,
+      "capture": 14560,
+      "release": 20560,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 302,
+      "layout": 1,
+      "capture": 14760,
+      "release": 18080,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 303,
+      "layout": 2,
+      "capture": 14040,
+      "release": 20040,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 304,
+      "layout": 2,
+      "capture": 14440,
+      "release": 16240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 305,
+      "layout": 2,
+      "capture": 14600,
+      "release": 17200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 306,
+      "layout": 2,
+      "capture": 18840,
+      "release": 24080,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 307,
+      "layout": 2,
+      "capture": 14720,
+      "release": 20120,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 308,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 309,
+      "layout": 0,
+      "capture": 14800,
+      "release": 20800,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 310,
+      "layout": 0,
+      "capture": 14320,
+      "release": 16800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 312,
+      "layout": 1,
+      "capture": 14040,
+      "release": 20040,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 313,
+      "layout": 1,
+      "capture": 14120,
+      "release": 20120,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 314,
+      "layout": 1,
+      "capture": 14760,
+      "release": 16680,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 315,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 316,
+      "layout": 1,
+      "capture": 14600,
+      "release": 20600,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 318,
+      "layout": 2,
+      "capture": 14200,
+      "release": 17040,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 319,
+      "layout": 2,
+      "capture": 14720,
+      "release": 18240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 320,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 321,
+      "layout": 0,
+      "capture": 14840,
+      "release": 19000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 322,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16160,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 323,
+      "layout": 0,
+      "capture": 14080,
+      "release": 20080,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 324,
+      "layout": 0,
+      "capture": 14720,
+      "release": 17600,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 327,
+      "layout": 1,
+      "capture": 14240,
+      "release": 19760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 328,
+      "layout": 1,
+      "capture": 14600,
+      "release": 16200,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 329,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 330,
+      "layout": 2,
+      "capture": 14440,
+      "release": 16320,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 331,
+      "layout": 2,
+      "capture": 14560,
+      "release": 16800,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 332,
+      "layout": 2,
+      "capture": 14760,
+      "release": 18240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 334,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16280,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 335,
+      "layout": 0,
+      "capture": 14160,
+      "release": 20160,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 336,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16080,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 337,
+      "layout": 0,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 338,
+      "layout": 0,
+      "capture": 14200,
+      "release": 16520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 339,
+      "layout": 1,
+      "capture": 14240,
+      "release": 20240,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 340,
+      "layout": 1,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 341,
+      "layout": 1,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 342,
+      "layout": 1,
+      "capture": 14440,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 343,
+      "layout": 1,
+      "capture": 14760,
+      "release": 16680,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 344,
+      "layout": 2,
+      "capture": 14600,
+      "release": 16880,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 345,
+      "layout": 2,
+      "capture": 14440,
+      "release": 17240,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 346,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 347,
+      "layout": 2,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 348,
+      "layout": 0,
+      "capture": 14640,
+      "release": 20640,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 349,
+      "layout": 0,
+      "capture": 14200,
+      "release": 20200,
+      "rescued": false,
+      "selfReleased": true,
+      "echoFreeAtRelease": false,
+      "echoCaught": false
+    },
+    {
+      "seed": 350,
+      "layout": 0,
+      "capture": 14840,
+      "release": 17480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 351,
+      "layout": 0,
+      "capture": 14240,
+      "release": 16440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 352,
+      "layout": 0,
+      "capture": 14320,
+      "release": 18760,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 354,
+      "layout": 1,
+      "capture": 14840,
+      "release": 16920,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 355,
+      "layout": 1,
+      "capture": 14800,
+      "release": 17520,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 356,
+      "layout": 1,
+      "capture": 14600,
+      "release": 16000,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 357,
+      "layout": 2,
+      "capture": 14440,
+      "release": 17440,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    },
+    {
+      "seed": 358,
+      "layout": 2,
+      "capture": 14200,
+      "release": 16480,
+      "rescued": true,
+      "selfReleased": false,
+      "echoFreeAtRelease": true,
+      "echoCaught": false
+    }
+  ]
+}
