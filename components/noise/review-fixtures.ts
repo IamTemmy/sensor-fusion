@@ -12,6 +12,8 @@ export function reviewFixture(state:string):Game{
  if(['centre','coop','locked','open'].includes(state)){s.hand=null;loot.holder=null;loot.x=loot.home?.x||270;loot.y=loot.home?.y||260;g.noises=[];}
  if(state==='locked'||state==='open'){const j=g.loot.find(l=>l.locked)!;s.x=j.x;s.y=j.y+25;s.aim={x:j.x,y:j.y};if(state==='open'){g.seats[1].x=g.plate.x;g.seats[1].y=g.plate.y;}else{g.seats[1].x=s.x-65;g.seats[1].y=s.y;}}
  if(state==='hide'){const p=hidingSpots(g)[0];s.hand=null;loot.holder=null;g.noises=[];Object.assign(s,{x:p.x+30,y:p.y});g.guards[0].victim=s.id;g.guards[0].entered=true;}
+ if(state==='event'){g.jobEvent={kind:'shift',at:g.now-500,until:g.now+2000,flashUntil:g.now+2500,started:true,ended:false,warned:true};event(g,'SHIFT CHANGE · Guards switched routes.','honk');}
+ if(state==='van'){s.escaped=true;}
  if(state==='lobby')g.phase='lobby';
  if(state==='briefing')g.phase='ready';
  if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can rescue them.','catch',s);g.events.at(-1)!.at-=80;}

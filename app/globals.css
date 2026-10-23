@@ -201,3 +201,21 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .lobby-actions{grid-area:9/1/10/3}.noise-app .recap>.primary,.noise-app .recap>.secondary{grid-row:9}
 }
 @media(max-width:800px){.lobby-actions{display:grid;grid-template-columns:1fr 1fr;margin-top:12px}.lobby-actions>.primary{grid-column:1/-1;width:100%;margin:0}.noise-app .lobby .arena-cards img{height:66px}.noise-app .lobby .arena-cards article>div{padding:8px}.noise-app .lobby .arena-cards h3{font-size:13px}.noise-app .lobby .arena-cards p{font-size:13px!important}}
+
+/* v31: one right-hand column, including boarded-player status. */
+.crew-panel{position:absolute;right:14px;top:100px;bottom:112px;width:210px;display:flex;flex-direction:column;gap:10px;pointer-events:none;overflow:auto;z-index:12}
+.crew-panel>*{pointer-events:auto}.crew-panel .echo-orders,.crew-panel .pressure,.crew-panel .spectator,.crew-panel .radio{position:static!important;inset:auto!important;width:100%!important;max-width:none!important;transform:none!important;margin:0;flex:none;box-sizing:border-box}
+.crew-panel .radio{flex:1;min-height:80px;overflow:auto}.crew-panel .radio p{overflow-wrap:anywhere}.crew-panel .spectator{display:flex;flex-direction:column;gap:8px;font-size:14px}.banner-icon{color:#f8d88b;margin-right:10px}
+.event-banner,.event-banner.last-call{position:absolute;top:76px;left:50%;right:auto;transform:translateX(-50%);max-width:calc(100% - 32px);width:max-content;padding:10px 18px;background:#101d30f2;border:1px solid #b9995f;color:#fff0c9;border-radius:12px;z-index:25;font-size:15px;pointer-events:none}
+@media(max-width:700px){.crew-panel{top:92px;right:8px;bottom:auto;width:160px;max-height:190px}.crew-panel .radio,.crew-panel .pressure{display:none}.crew-panel .echo-orders button{font-size:12px}.crew-panel .spectator{font-size:12px;padding:8px}.event-banner,.event-banner.last-call{top:62px;font-size:12px;white-space:normal;width:calc(100% - 24px)}}
+
+.noise-app .active-heist .crew-panel .radio{max-height:none;height:auto;flex:1;min-height:100px}.noise-app .active-heist .crew-panel .radio p{display:block}
+.noise-app .active-heist .event-banner,.noise-app .active-heist .event-banner.last-call{top:66px;bottom:auto;left:50%;right:auto;width:max-content;max-width:calc(100% - 32px);transform:translateX(-50%)}
+.noise-app .error-toast{position:fixed;top:70px;bottom:auto;left:50%;transform:translateX(-50%);z-index:50}
+.noise-app .active-heist .context-tip{top:70px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:min(520px,calc(100% - 30px));z-index:24}
+.noise-app .active-heist:has(.event-banner) .context-tip{display:none}
+@media(max-width:700px){.noise-app .active-heist .event-banner,.noise-app .active-heist .context-tip{top:62px;font-size:12px;max-width:calc(100% - 24px)}.noise-app .active-heist .crew-panel .radio{display:none}.crew-panel{top:110px}}
+@media(max-width:700px){.noise-app .active-heist .crew-panel .pressure,.noise-app .active-heist .crew-panel .radio{display:none!important}.noise-app .active-heist .crew-panel{top:110px;max-height:200px}.noise-app .active-heist .crew-panel .echo-orders{height:auto;min-height:0}}
+
+.phone-alert{display:none}@media(max-width:700px){.phone-alert{display:flex;position:absolute;top:100px;left:80px;right:10px;gap:8px;align-items:center;font-size:12px;font-weight:800;color:#f5b2a6}.phone-alert meter{height:10px;flex:1;min-width:70px}}
+@media(max-width:700px){.noise-app .active-heist .crew-panel{top:88px}.phone-alert{top:70px}}
