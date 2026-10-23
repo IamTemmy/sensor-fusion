@@ -111,7 +111,7 @@ export function setup(g:Game){g.seats=g.seats.filter(s=>s.id!=='practice-rival')
  if(!g.training)g.guards.forEach((h,i)=>stageGuard(g,h,i,12000+Math.floor(i/2)*1800));
  event(g,'Grab the art. Steal its alarm. Get back to the van.');
 }
-export function hidingSpots(g:Game|View):Vec[]{return g.hideSpots||chooseHidingSpots(g);}
+export function hidingSpots(g:Game|View):Vec[]{return g.layout<0?[]:g.hideSpots||chooseHidingSpots(g);}
 function wallDistance(g:Game|View,p:Vec){return Math.min(...g.walls.map(w=>Math.hypot(Math.max(w.x-p.x,0,p.x-w.x-w.w),Math.max(w.y-p.y,0,p.y-w.y-w.h))));}
 // Sample real wall-aware return routes, rather than empty space along the top edge.
 export function hidingRoutePoints(g:Game|View):Vec[]{
@@ -122,9 +122,9 @@ export function hidingRoutePoints(g:Game|View):Vec[]{
  }
  return points;
 }
-export function arenaDefinition(g:Game|View){return g.crewMode==='coop'?AUTHORED_COOP[g.layout]:RIVAL_LAYOUTS[g.layout];}
+export function arenaDefinition(g:Game|View){const arenas=g.crewMode==='coop'?AUTHORED_COOP:RIVAL_LAYOUTS;return arenas[g.layout]||arenas[0];}
 export function vanFacing(g:Game|View,team:number){return vanFor(g,team).y<300?'north':'south';}
-function chooseHidingSpots(g:Game|View):Vec[]{return arenaDefinition(g).niches.map(p=>({x:p.x,y:p.y}));}
+function chooseHidingSpots(g:Game|View):Vec[]{return (arenaDefinition(g)?.niches||[]).map(p=>({x:p.x,y:p.y}));}
 export function nearbyHide(g:Game|View,s:Thief):Vec|undefined{return !s.escaped&&s.stun<=g.now&&!g.noises.some(n=>n.attached===s.id)&&g.now>=(s.hideCooldown||0)?hidingSpots(g).find((p,i)=>distance(s,p)<=40&&!g.seats.some(o=>o.id!==s.id&&o.hideId===i&&hidden(g,o))):undefined;}
 export function hidden(g:Game|View,s:Thief){return s.hideId!==undefined&&s.hiddenAt!==undefined&&g.now-s.hiddenAt<6000&&!g.noises.some(n=>n.attached===s.id)&&distance(s,hidingSpots(g)[s.hideId]||{x:-999,y:-999})<23;}
 function updateHiding(g:Game,s:Thief){
