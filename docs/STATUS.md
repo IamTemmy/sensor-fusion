@@ -1,3 +1,15 @@
+# Velmont: After Hours — architecture update
+
+October 23, 2026. Current candidate: v33 (the requested v32 architecture pass follows the already-shipped v32 rename). See [full map pack, self-check and validation](playtests/v33/README.md).
+
+Authored fixed rooms/gates/niches; alternate-route tests; outward vans; Tied up/Untie; consistent alarm wording; rivals stars; contextual recap; Echo van order and Auto boarding. Room schema 4 requires a new online crew. All 124 tests and the 240-game difficulty gate pass. Co-op 82.5/62.5/32.5; rivals 87.5/45/40. Maximum route spread 21.56. Rescue fixture 37/40, zero held/release-window captures. Freeze/lures pass.
+
+Still open: not every seeded sentry has a purpose-built physical alcove; exact centre-to-side 20% area comparison is not established. Optional ducts omitted. Physical phone/multi-device play remains unverified. Do not describe this as complete compliance with every architecture requirement.
+
+---
+
+## Historical status
+
 # Noise Thieves — first playable
 
 Updated October 20, 2026 UTC. User approved Noise Thieves in the sensor-fusion repo. New landing page, canvas action scene, sound-capture heist engine, helper bot, and room-code API now replace Last Lift on the main route. Last Lift source and tests remain for history; Blackout is untouched.

@@ -17,5 +17,5 @@ test('hide prompt is available at 40 units only for a quiet, free thief and avai
 });
 test('hiding is explained in the guide, action bar and first-time spotted tip',()=>{
  const ui=readFileSync('components/noise/presentation.tsx','utf8'),page=readFileSync('app/page.tsx','utf8'),draw=readFileSync('lib/noise/draw.ts','utf8');
- assert.match(ui,/Sneak into tall plants to hide\. Screaming art gives you away\./);assert.match(ui,/h\.victim===me\.id/);assert.match(ui,/\['hide','Spotted near cover!/);assert.match(page,/hidePrompt&&<kbd>SHIFT<\/kbd>/);assert.match(draw,/nearbyHide\(g,me\)/);
+ assert.match(ui,/Sneak into wall niches to hide\. Art with a sounding alarm gives you away\./);assert.match(ui,/h\.victim===me\.id/);assert.match(ui,/\['hide','Spotted near cover!/);assert.match(page,/hidePrompt&&<kbd>SHIFT<\/kbd>/);assert.match(draw,/nearbyHide\(g,me\)/);
 });

@@ -11,7 +11,7 @@ export async function POST(req:Request){try{
  }
  const code=String(a.code||'').toUpperCase();if(!/^[A-Z2-9]{6}$/.test(code))return reply({error:'Enter a six-character crew code.'},400);
  for(let attempt=0;attempt<8;attempt++){
-  const row=await env.DB!.prepare('SELECT state,revision,expires FROM rooms WHERE code=?').bind(code).first<{state:string;revision:number;expires:number}>();if(!row||row.expires<now)return reply({error:'Crew not found or expired.'},404);const g=JSON.parse(row.state) as Game;if(g.version!==3||!Array.isArray(g.noises))return reply({error:'That code belongs to an older game. Create a Velmont: After Hours crew.'},400);
+  const row=await env.DB!.prepare('SELECT state,revision,expires FROM rooms WHERE code=?').bind(code).first<{state:string;revision:number;expires:number}>();if(!row||row.expires<now)return reply({error:'Crew not found or expired.'},404);const g=JSON.parse(row.state) as Game;if(g.version!==4||!Array.isArray(g.noises))return reply({error:'That code belongs to an older game. Create a Velmont: After Hours crew.'},400);
   let s=g.seats.find(s=>!s.bot&&typeof a.token==='string'&&s.token===a.token),token=a.token;if(a.type!=='join'&&!s)return reply({error:'Seat unavailable. Join a new crew.'},401);
   if(a.type==='poll'&&g.phase!=='playing')return reply({token,view:view(g,s!.id)});
   advance(g,now);
