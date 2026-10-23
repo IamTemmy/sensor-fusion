@@ -1,7 +1,7 @@
 
 import {preloadSprites,sprite,paintedFloor,actorPose,artSpriteKey} from './sprites';
 import {artwork,drawArtwork,stackLabel,type LabelBox} from './artwork';
-import {hidden,hidingSpots,guardActive,staffDoors,blackoutActive,tuning,homeSafe,W,H,WALLS,EXIT,SAFE_ZONE,zones,zoneFor,vanFor,sensors,PLATE,plateOpen,interaction,distance,clear,type Game,type View,type Vec} from './engine';
+import {nearbyHide,hidden,hidingSpots,guardActive,staffDoors,blackoutActive,tuning,homeSafe,W,H,WALLS,EXIT,SAFE_ZONE,zones,zoneFor,vanFor,sensors,PLATE,plateOpen,interaction,distance,clear,type Game,type View,type Vec} from './engine';
 export type Camera={x:number;y:number;scale:number;w:number;h:number};
 export function camera(width:number,height:number,me?:Vec):Camera {const scale=width>=650?Math.min(width/W,height/H):Math.max(width/W,height/H);const w=width/scale,h=height/scale;if(width>=650)return {x:-(w-W)/2,y:-(h-H)/2,scale,w,h};return {x:Math.max(0,Math.min(W-w,(me?.x||W/2)-w/2)),y:Math.max(0,Math.min(H-h,(me?.y||H/2)-h/2)),scale,w,h};}
 export const COLORS=['#8ef2d2','#bdadff','#ffb974','#91c6ff','#f79cbb','#c2e082'];
@@ -42,7 +42,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  for(const x of [21,939])for(const y of [25,575])sprite(ctx,'plant',x,y,27,29);
  for(const x of [18,942])sprite(ctx,'art-bust',x,300,24,30);
  for(const door of staffDoors(g)){rect(door.x-22,door.y-13,44,26,'#253c50',3);ctx.strokeStyle='#d5b76a';ctx.strokeRect(door.x-22,door.y-13,44,26);text('STAFF',door.x,door.y+4,12,'#f7daa0','center');}
- for(const p of hidingSpots(g)){sprite(ctx,'plant',p.x,p.y-8,40,48);circle(p.x,p.y,23,'#8ef2d218');if(me&&distance(me,p)<70)text('SHIFT · HIDE',p.x,p.y+33,12,'#b1e8d2','center');}
+ const hideSpot=me?nearbyHide(g,me):undefined;for(const p of hidingSpots(g)){sprite(ctx,'plant',p.x,p.y-8,40,48);circle(p.x,p.y,23,'#8ef2d218');if(hideSpot&&distance(hideSpot,p)<1){ctx.save();ctx.strokeStyle='#bcffe9';ctx.lineWidth=2.5;ctx.beginPath();ctx.arc(p.x,p.y,27,0,Math.PI*2);ctx.stroke();ctx.restore();}}
  if(g.jobEvent?.flashUntil&&g.now<g.jobEvent.flashUntil){const e=g.jobEvent;ctx.save();ctx.setLineDash([6,6]);ctx.strokeStyle='#ffe29caa';ctx.lineWidth=2;
  if(e.kind==='shift')for(const h of g.guards.filter(h=>guardActive(g,h))){ctx.beginPath();h.route.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.stroke();}
  if(e.kind==='curator')for(const m of e.moves||[]){ctx.beginPath();ctx.moveTo(m.from.x,m.from.y);ctx.lineTo(m.to.x,m.to.y);ctx.stroke();text('MOVED',m.from.x,m.from.y,12,'#ffe29c','center');const f=reducedMotion?1:Math.min(1,(g.now-e.at)/800);circle(m.from.x+(m.to.x-m.from.x)*f,m.from.y+(m.to.y-m.from.y)*f,12,'#ffe29c88');}ctx.restore();}

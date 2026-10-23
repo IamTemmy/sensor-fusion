@@ -1,5 +1,5 @@
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
-import {create,add,setup,configure,clear,event,type Game} from '../../lib/noise/engine';
+import {hidingSpots,create,add,setup,configure,clear,event,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
  let g=create('VISUAL',0,1);for(let seed=1;seed<50;seed++){g=create('VISUAL',0,seed);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state!=='coop'){add(g,'Violet','violet',true);add(g,'Pip','pip',true);configure(g,'duos');}setup(g);if(g.layout===0)break;}
  g.phase='playing';g.start=0;g.now=32000;g.end=90000;g.alert=44;g.events=[];
@@ -11,6 +11,7 @@ export function reviewFixture(state:string):Game{
  event(g,'ECHO: Covering your scream.');event(g,state==='coop'?'The collection is still waiting.':'Violet is closing in on the collection.');
  if(['centre','coop','locked','open'].includes(state)){s.hand=null;loot.holder=null;loot.x=loot.home?.x||270;loot.y=loot.home?.y||260;g.noises=[];}
  if(state==='locked'||state==='open'){const j=g.loot.find(l=>l.locked)!;s.x=j.x;s.y=j.y+25;s.aim={x:j.x,y:j.y};if(state==='open'){g.seats[1].x=g.plate.x;g.seats[1].y=g.plate.y;}else{g.seats[1].x=s.x-65;g.seats[1].y=s.y;}}
+ if(state==='hide'){const p=hidingSpots(g)[0];s.hand=null;loot.holder=null;g.noises=[];Object.assign(s,{x:p.x+30,y:p.y});g.guards[0].victim=s.id;g.guards[0].entered=true;}
  if(state==='lobby')g.phase='lobby';
  if(state==='briefing')g.phase='ready';
  if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can rescue them.','catch',s);g.events.at(-1)!.at-=80;}
