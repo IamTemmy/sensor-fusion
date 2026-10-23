@@ -19,3 +19,6 @@ export function drawArtwork(ctx:CanvasRenderingContext2D,id:string,value:number,
  ctx.restore();}
 export type LabelBox={x:number;y:number;width:number;height:number};
 export function stackLabel(x:number,y:number,width:number,height:number,used:LabelBox[]):LabelBox{let box={x,y,width,height};while(used.some(p=>Math.abs(p.x-box.x)<(p.width+width)/2+5&&Math.abs(p.y-box.y)<(p.height+height)/2+4))box.y-=height+5;used.push(box);return box;}
+
+/** Keep pops local to their event; distant labels sharing x must never pull them across the arena. */
+export function stackPopLabel(x:number,y:number,width:number,height:number,used:LabelBox[]){return stackLabel(x,y-65,width,height,used);}

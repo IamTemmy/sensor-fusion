@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 const exec=promisify(execFile),levels=['rookie','normal','pro'];
 const engineHash=createHash('sha256').update(readFileSync('lib/noise/engine.ts')).update(readFileSync('lib/noise/arenas.ts')).digest('hex');
 const policyHash=createHash('sha256').update(readFileSync('scripts/simulate-noise-v17.ts')).digest('hex');
-const file='docs/playtests/v35/difficulty-matrix.json';let report;
+const file='docs/playtests/v36/difficulty-matrix.json';let report;
 try{report=JSON.parse(readFileSync(file,'utf8'));}catch{}
 if(report?.engineHash!==engineHash||report?.policyHash!==policyHash){
  const cells=await Promise.all(levels.map(async difficulty=>{

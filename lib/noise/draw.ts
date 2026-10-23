@@ -2,7 +2,7 @@ import {roomLabels} from './world-labels';
 import {drawRope} from './rope';
 
 import {preloadSprites,sprite,paintedFloor,actorPose,artSpriteKey} from './sprites';
-import {artwork,drawArtwork,stackLabel,type LabelBox} from './artwork';
+import {artwork,drawArtwork,stackLabel,stackPopLabel,type LabelBox} from './artwork';
 import {passTarget,emptyPost,arenaDefinition,vanFacing,guardSight,nearbyHide,hidden,hidingSpots,guardActive,staffDoors,blackoutActive,tuning,homeSafe,W,H,WALLS,EXIT,SAFE_ZONE,zones,zoneFor,vanFor,sensors,PLATE,plateOpen,interaction,distance,clear,type Game,type View,type Vec} from './engine';
 export type Camera={x:number;y:number;scale:number;w:number;h:number};
 export function camera(width:number,height:number,me?:Vec):Camera {const scale=width>=650?Math.min(width/W,height/H):Math.max(width/W,height/H);const w=width/scale,h=height/scale;if(width>=650)return {x:-(w-W)/2,y:-(h-H)/2,scale,w,h};return {x:Math.max(0,Math.min(W-w,(me?.x||W/2)-w/2)),y:Math.max(0,Math.min(H-h,(me?.y||H/2)-h/2)),scale,w,h};}
@@ -108,7 +108,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
   if(!reducedMotion)for(let i=0;i<12;i++){const a=i*Math.PI/6;circle(e.x+Math.cos(a)*f*65,e.y+Math.sin(a)*f*45,Math.max(.1,3*(1-f)),bank?'#ffe0a5':caught?'#ff6c7e':'#b5ffe1');}
   const amount=e.text.match(/^\$(\d+) secured/);const pop=e.text.startsWith('DISTRACTED ')?e.text:amount?'＋$'+amount[1]:caught?'TIED UP!':freed?'FREED!':e.text.startsWith('The art sets off an alarm!')?'✦':'';
   // Text starts above the actor and vanishes at 400ms, never covering their body.
-  if(pop&&age<400){ctx.save();ctx.globalAlpha=reducedMotion?1:1-age/500;text(pop,e.x,Math.min(e.y-65,...labels.filter(l=>Math.abs(l.x-e.x)<100).map(l=>l.y-28))-(reducedMotion?0:f*35),18,bank?'#ffe09d':caught?'#ff7c88':'#b7ffe2','center');ctx.restore();}
+  if(pop&&age<400){ctx.save();ctx.globalAlpha=reducedMotion?1:1-age/500;const size=Math.max(12/cam.scale,18);ctx.font=`400 ${size}px 'Bungee', Impact, sans-serif`;const box=stackPopLabel(e.x,e.y-(reducedMotion?0:f*35),ctx.measureText(pop).width,size,labels);text(pop,box.x,box.y,18,bank?'#ffe09d':caught?'#ff7c88':'#b7ffe2','center');ctx.restore();}
  }
  // Gradient edge adds atmosphere without obscuring game objects.
  const vignette=ctx.createRadialGradient(cam.x+cam.w/2,cam.y+cam.h/2,cam.h*.2,cam.x+cam.w/2,cam.y+cam.h/2,cam.w*.72);vignette.addColorStop(0,'#00000000');vignette.addColorStop(1,'#020a1644');ctx.fillStyle=vignette;ctx.fillRect(cam.x,cam.y,cam.w,cam.h);
