@@ -22,11 +22,11 @@ export const carrySpeed=(value:number)=>110-Math.max(0,Math.min(1300,value-200))
 export const COOP_GOAL=2600;
 export const LAYOUT_NAMES=['Echo Gallery','Night Archive','Crossroads'];
 export type Difficulty='rookie'|'normal'|'pro';
-export const DIFFICULTY={rookie:{speed:.95,sight:.9,rival:.55},normal:{speed:1.22,sight:1.15,rival:1.1275},pro:{speed:1.22,sight:1.15,rival:1.45}};
+export const DIFFICULTY={rookie:{speed:.95,sight:.9,rival:.55},normal:{speed:1.22,sight:1.15,rival:1.15},pro:{speed:1.22,sight:1.15,rival:1.45}};
 export const difficultyOf=(g:Game|View):Difficulty=>g.crewMode!=='coop'&&new Set(g.seats.filter(s=>!s.bot).map(s=>s.team)).size>1?'normal':g.difficulty||'normal';
-export const tuning=(g:Game|View)=>{const d=difficultyOf(g),t=DIFFICULTY[d];return g.crewMode==='coop'?{...t,speed:d==='rookie'?1.1:d==='normal'?1.1:1.5,sight:d==='rookie'?1.05:d==='normal'?1.05:1.3}:t;};
-export const guardSpeed=(g:Game|View,mode:Guard['mode'])=>mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?1.1:difficultyOf(g)==='normal'?1.4:2.1):tuning(g).speed;
-export const guardSight=(g:Game|View,h:Guard)=>h.mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?1.05:difficultyOf(g)==='normal'?1.25:1.65):tuning(g).sight;
+export const tuning=(g:Game|View)=>{const d=difficultyOf(g),t=DIFFICULTY[d];return g.crewMode==='coop'?{...t,speed:d==='rookie'?.85:d==='normal'?.95:1.25,sight:d==='rookie'?.85:d==='normal'?.95:1.15}:t;};
+export const guardSpeed=(g:Game|View,mode:Guard['mode'])=>mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?.85:difficultyOf(g)==='normal'?1.4:1.85):tuning(g).speed;
+export const guardSight=(g:Game|View,h:Guard)=>h.mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?.9:difficultyOf(g)==='normal'?1.25:1.5):tuning(g).sight;
 export type CrewMode='coop'|'duos'|'trios';
 export const CREW_NAMES=['MINT','VIOLET','AMBER'];
 export const WALLS:Rect[]=[{x:0,y:0,w:960,h:24},{x:0,y:576,w:960,h:24},{x:0,y:0,w:24,h:600},{x:936,y:0,w:24,h:600},
@@ -117,10 +117,22 @@ export function setup(g:Game){g.seats=g.seats.filter(s=>s.id!=='practice-rival')
 }
 export function hidingSpots(g:Game|View):Vec[]{return g.hideSpots||chooseHidingSpots(g);}
 function wallDistance(g:Game|View,p:Vec){return Math.min(...g.walls.map(w=>Math.hypot(Math.max(w.x-p.x,0,p.x-w.x-w.w),Math.max(w.y-p.y,0,p.y-w.y-w.h))));}
+// Sample real wall-aware return routes, rather than empty space along the top edge.
+export function hidingRoutePoints(g:Game|View):Vec[]{
+ const points:Vec[]=[];
+ for(const team of [...new Set(g.seats.map(s=>s.team))])for(const art of g.loot){
+  const p={...(art.home||art)},end=vanFor(g,team);
+  for(let i=0;i<160&&distance(p,end)>20;i++){points.push({...p});const q=steer(p,end,g.walls),d=distance(p,q)||1;move(p,(q.x-p.x)/d,(q.y-p.y)/d,.1,150,g.walls);}
+ }
+ return points;
+}
 function chooseHidingSpots(g:Game|View):Vec[]{
- const out:Vec[]=[],flip=g.layout===1?rotatePoint:mirrorPoint;
- const valid=(p:Vec)=>clear(p,22,g.walls)&&!anySafe(g,p)&&wallDistance(g,p)<=32&&g.guards.every(h=>!h.sentry||distance(p,h.sentry)>=120)&&out.every(q=>distance(p,q)>=120)&&g.loot.every(l=>distance(l,p)>45);
- for(let y=50;y<=550&&out.length<4;y+=20)for(let x=50;x<=910&&out.length<4;x+=20){const p={x,y};if(!valid(p))continue;if(g.crewMode==='coop')out.push(p);else{const q=flip(p);if(distance(p,q)>120&&valid(q))out.push(p,q);}}
+ const out:Vec[]=[],flip=g.layout===1?rotatePoint:mirrorPoint,route=hidingRoutePoints(g);
+ const useful=(p:Vec)=>g.loot.some(l=>distance(l.home||l,p)<=150)||route.some(q=>distance(q,p)<=150);
+ const valid=(p:Vec)=>clear(p,22,g.walls)&&!anySafe(g,p)&&wallDistance(g,p)<=32&&staffDoors(g).every(q=>distance(p,q)>=80)&&g.guards.every(h=>!h.sentry||distance(p,h.sentry)>=120)&&out.every(q=>distance(p,q)>=120)&&g.loot.every(l=>distance(l,p)>45)&&useful(p);
+ const candidates:Vec[]=[];for(let y=50;y<=550;y+=20)for(let x=50;x<=910;x+=20)candidates.push({x,y});
+ const targets=g.crewMode==='coop'?[{x:170,y:300},{x:790,y:300},{x:50,y:430},{x:910,y:430}]:[{x:170,y:300},{x:50,y:430}];
+ for(const target of targets){const sorted=[...candidates].sort((a,b)=>distance(a,target)-distance(b,target));const p=sorted.find(p=>valid(p)&&(g.crewMode==='coop'||(distance(p,flip(p))>=120&&valid(flip(p)))));if(p){out.push(p);if(g.crewMode!=='coop')out.push(flip(p));}}
  return out;
 }
 export function nearbyHide(g:Game|View,s:Thief):Vec|undefined{return !s.escaped&&s.stun<=g.now&&!g.noises.some(n=>n.attached===s.id)&&g.now>=(s.hideCooldown||0)?hidingSpots(g).find((p,i)=>distance(s,p)<=40&&!g.seats.some(o=>o.id!==s.id&&o.hideId===i&&hidden(g,o))):undefined;}
@@ -140,7 +152,9 @@ export function sentryRoutesClear(g:Game|View,posts:Vec[]=g.guards.flatMap(h=>h.
  return cells.every(p=>seen.has(key(p)));
 }
 function setupSentries(g:Game){
- const exhibits=g.loot.filter(l=>(l.value>=600||difficultyOf(g)==='pro'&&l.id==='art4')&&(difficultyOf(g)!=='rookie'||l.locked));
+ // Rookie co-op teaches routes before adding dedicated exhibit guards.
+ if(g.crewMode==='coop'&&difficultyOf(g)==='rookie'){g.guards=g.guards.filter(h=>h.id!=='g-extra');return;}
+ const exhibits=g.loot.filter(l=>(l.value>=600||difficultyOf(g)==='pro'&&l.id==='art4')&&(difficultyOf(g)!=='rookie'||l.locked)&&(g.crewMode!=='coop'||difficultyOf(g)!=='normal'||l.locked||l.value>=800));
  const assigned=new Map<string,Vec>(),posts:Vec[]=[];const flip=g.layout===1?rotatePoint:mirrorPoint;
  for(const [i,l] of exhibits.entries()){
   const partner=g.crewMode!=='coop'?exhibits.find(o=>o!==l&&o.value===l.value&&distance(o,flip(l))<1&&assigned.has(o.id)):undefined;

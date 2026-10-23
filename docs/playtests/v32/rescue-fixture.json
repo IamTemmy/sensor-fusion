@@ -1,0 +1,288 @@
+{
+  "heldCaught": 0,
+  "afterCaught": 1,
+  "rescued": 36,
+  "captures": 40,
+  "rows": [
+    {
+      "seed": 1,
+      "cap": 15480,
+      "free": 19320,
+      "ecap": 22320,
+      "rescues": 1
+    },
+    {
+      "seed": 2,
+      "cap": 15200,
+      "free": 17880,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 3,
+      "cap": 14720,
+      "free": 17440,
+      "ecap": 21800,
+      "rescues": 1
+    },
+    {
+      "seed": 4,
+      "cap": 15200,
+      "free": 17480,
+      "ecap": 24320,
+      "rescues": 1
+    },
+    {
+      "seed": 5,
+      "cap": 15200,
+      "free": 18320,
+      "ecap": 22480,
+      "rescues": 1
+    },
+    {
+      "seed": 6,
+      "cap": 15520,
+      "free": 17520,
+      "ecap": 26720,
+      "rescues": 1
+    },
+    {
+      "seed": 7,
+      "cap": 15520,
+      "free": 17520,
+      "ecap": 24360,
+      "rescues": 1
+    },
+    {
+      "seed": 8,
+      "cap": 15520,
+      "free": 17720,
+      "ecap": 26680,
+      "rescues": 1
+    },
+    {
+      "seed": 9,
+      "cap": 15520,
+      "free": 21520,
+      "ecap": -1,
+      "rescues": 0
+    },
+    {
+      "seed": 10,
+      "cap": 15520,
+      "free": 21520,
+      "ecap": 25240,
+      "rescues": 0
+    },
+    {
+      "seed": 11,
+      "cap": 15480,
+      "free": 20000,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 12,
+      "cap": 15200,
+      "free": 17160,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 13,
+      "cap": 15200,
+      "free": 17920,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 14,
+      "cap": 15200,
+      "free": 17480,
+      "ecap": 23880,
+      "rescues": 1
+    },
+    {
+      "seed": 15,
+      "cap": 15480,
+      "free": 20440,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 16,
+      "cap": 15480,
+      "free": 19920,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 17,
+      "cap": 15480,
+      "free": 19920,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 18,
+      "cap": 15200,
+      "free": 17560,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 19,
+      "cap": 15200,
+      "free": 17480,
+      "ecap": 20720,
+      "rescues": 1
+    },
+    {
+      "seed": 20,
+      "cap": 15520,
+      "free": 21520,
+      "ecap": -1,
+      "rescues": 0
+    },
+    {
+      "seed": 21,
+      "cap": 15320,
+      "free": 17520,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 22,
+      "cap": 14720,
+      "free": 17280,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 23,
+      "cap": 15520,
+      "free": 21520,
+      "ecap": -1,
+      "rescues": 0
+    },
+    {
+      "seed": 24,
+      "cap": 14720,
+      "free": 17480,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 25,
+      "cap": 14720,
+      "free": 18160,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 26,
+      "cap": 15480,
+      "free": 19280,
+      "ecap": 23600,
+      "rescues": 1
+    },
+    {
+      "seed": 27,
+      "cap": 15200,
+      "free": 17200,
+      "ecap": 20600,
+      "rescues": 1
+    },
+    {
+      "seed": 28,
+      "cap": 14720,
+      "free": 17520,
+      "ecap": 22000,
+      "rescues": 1
+    },
+    {
+      "seed": 29,
+      "cap": 15200,
+      "free": 17480,
+      "ecap": 24320,
+      "rescues": 1
+    },
+    {
+      "seed": 30,
+      "cap": 14720,
+      "free": 18160,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 31,
+      "cap": 15200,
+      "free": 17960,
+      "ecap": 24280,
+      "rescues": 1
+    },
+    {
+      "seed": 32,
+      "cap": 15480,
+      "free": 19920,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 33,
+      "cap": 14720,
+      "free": 17320,
+      "ecap": 23640,
+      "rescues": 1
+    },
+    {
+      "seed": 34,
+      "cap": 15520,
+      "free": 17720,
+      "ecap": 25440,
+      "rescues": 1
+    },
+    {
+      "seed": 35,
+      "cap": 14720,
+      "free": 17440,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 36,
+      "cap": 14720,
+      "free": 19320,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 37,
+      "cap": 15520,
+      "free": 17520,
+      "ecap": 27440,
+      "rescues": 1
+    },
+    {
+      "seed": 38,
+      "cap": 14720,
+      "free": 16960,
+      "ecap": -1,
+      "rescues": 1
+    },
+    {
+      "seed": 39,
+      "cap": 14720,
+      "free": 17480,
+      "ecap": 24720,
+      "rescues": 1
+    },
+    {
+      "seed": 40,
+      "cap": 15200,
+      "free": 17480,
+      "ecap": 20760,
+      "rescues": 1
+    }
+  ]
+}

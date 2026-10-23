@@ -1,8 +1,8 @@
-# Noise Thieves
+# Velmont: After Hours
 
 **Steal the art. Steal the alarm.** A 90-second cooperative museum heist: capture sound, throw it away from your crew, bank the loot, and escape. First playable prototype built with OpenAI for Temmy's multiplayer challenge exploration.
 
-This repository keeps its original `sensor-fusion` name at the user's request. The active game is Noise Thieves. Earlier Sensor Fusion / Last Lift modules are retained as historical source, not the active experience. Blackout is a separate repository and is unchanged.
+This repository keeps its original `sensor-fusion` name at the user's request. The active game is Velmont: After Hours. Earlier Sensor Fusion / Last Lift modules are retained as historical source, not the active experience. Blackout is a separate repository and is unchanged.
 
 - Play: https://sensor-fusion-temmy.iamtemmy.chatgpt.site
 - Design, controls, limitations: [docs/NOISE-THIEVES.md](docs/NOISE-THIEVES.md)

@@ -35,7 +35,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  // Plate gates the jackpot, but never traps a thief in a room.
  const open=plateOpen(g);if(!sprite(ctx,open?'plate-on':'plate-off',plate.x,plate.y,44,40)){rect(plate.x-22,plate.y-18,44,36,open?'#b6f2d4':'#4a3d58',6);}text(open?'OPEN':'HOLD',plate.x,plate.y+34,12,open?'#9af3cf':'#dac6f0','center');ctx.strokeStyle=open?'#b6f2d499':'#ab8bba55';ctx.setLineDash([5,6]);ctx.beginPath();ctx.moveTo(plate.x,plate.y);ctx.lineTo(jackpot?.x||835,jackpot?.y||120);ctx.stroke();ctx.setLineDash([]);
  // The lit loading bay retains the exact safe-zone geometry. Vans are outside the wall.
- for(const team of [...new Set(g.seats.map(s=>s.team))]){const v=vanFor(g,team),z=zoneFor(g,team),color=COLORS[team];rect(z.x,z.y,z.w,z.h,color+'35');ctx.strokeStyle=color;ctx.strokeRect(z.x,z.y,z.w,z.h);text('LOADING BAY',v.x,z.y-9,9,color,'center');}
+ for(const team of [...new Set(g.seats.map(s=>s.team))]){const v=vanFor(g,team),z=zoneFor(g,team),color=COLORS[team];rect(z.x,z.y,z.w,z.h,color+'35');ctx.strokeStyle=color;ctx.strokeRect(z.x,z.y,z.w,z.h);text('LOADING BAY',v.x,z.y+z.h-7,8,color+'99','center');}
  // Border ornament stays on solid outer-wall footprints, never across a route.
  for(const x of [80,300,650,880]){const light=ctx.createRadialGradient(x,32,2,x,32,85);light.addColorStop(0,'#ffd68130');light.addColorStop(1,'#ffd68100');ctx.fillStyle=light;ctx.fillRect(x-85,24,170,90);sprite(ctx,'sconce',x,28,18,32);}
  for(const x of [130,820]){sprite(ctx,'banner',x,20,18,32);sprite(ctx,'bench',x,580,60,18);}
