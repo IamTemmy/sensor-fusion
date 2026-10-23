@@ -137,3 +137,42 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .jackpot-banner{color:#ffe5a4;background:#3b2b1d;border-color:#f5c973;font-weight:800}
 .noise-app .last-call,.noise-app .event-banner,.noise-app .practice-tip{color:#fff0dd}
 .pressure>span:before{content:'◉';color:#f68d81;margin-right:5px;text-shadow:0 0 8px #ff6262}
+/* v26 — one museum material language, from the hideout to the getaway. */
+:root{--museum-panel:linear-gradient(145deg,#15283aef,#081525f5);--museum-border:#c7a76a66;--museum-glow:inset 0 1px 22px #f7cf7c0c,0 14px 40px #0005;--museum-gold:#f4cf7c;--museum-body:#eee9df}
+.noise-app .panel,.noise-app .guide-cards article,.noise-app .brief-steps>div,.noise-app .roster>div,.noise-app .arena-cards article,.noise-app .radio,.noise-app .pressure,.noise-app .context-tip,.noise-app .practice-tip,.noise-app .spectator{background:var(--museum-panel);border:1px solid var(--museum-border);box-shadow:var(--museum-glow);color:var(--museum-body);border-radius:14px}
+.noise-app p,.noise-app li,.noise-app .brief-note,.noise-app .brief-steps p,.noise-app .radio p,.noise-app .recap>p,.noise-app .run-rating p,.noise-app .team-results p{font-size:16px!important;line-height:1.45}
+.noise-app .primary,.noise-app .crew-code,.noise-app .action.capture{background:var(--museum-gold);color:#18202c}.noise-app .secondary,.noise-app .mode-picker button,.noise-app .home-modes button,.noise-app .guide-tabs button{background:#172d44;color:#f1e9db}
+.noise-app .mode-picker button.selected,.noise-app .guide-tabs button[aria-selected=true]{background:var(--museum-gold);color:#142235}
+.noise-app .join-row input,.noise-app input{background:#102238;border:1px solid var(--museum-border);color:#fff0d5;font-size:16px}
+.noise-app .error{background:#3b2231;border:1px solid #f6af9c;color:#fff1e8;border-radius:12px;padding:12px;font-size:16px;box-shadow:var(--museum-glow)}
+.noise-app .guide-cards h3{font-size:19px}.noise-app .guide-cards article{padding:12px}.noise-app .guide-cards .painted-guide{width:100%;height:120px}
+.noise-app .briefing{width:min(1050px,100%)}.noise-app .brief-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.noise-app .brief-steps .painted-guide{width:100%;height:115px}.noise-app .brief-steps strong{display:block;font-size:19px;line-height:1.2}.noise-app .brief-steps p{margin-bottom:0!important}
+.noise-app .painted-guide svg{margin:0;display:initial}.noise-app .guide ul{gap:12px 24px}
+.noise-app .recap{grid-auto-rows:min-content;align-content:start;gap:12px 26px}.noise-app .recap>.eyebrow,.noise-app .recap>h2,.noise-app .recap>p{grid-column:1}.noise-app .recap>.receipt{grid-column:2;grid-row:2/8}.noise-app .recap>.final-haul{grid-area:4/1;margin:0;padding:0}.noise-app .recap>.run-rating{grid-area:5/1}.noise-app .recap>.team-results{grid-area:6/1;display:flex;gap:8px;flex-wrap:wrap}.noise-app .team-results p{display:flex;gap:12px;align-items:center;border:1px solid;border-radius:10px;background:#091a2dcc;padding:9px 12px;margin:0;font-family:var(--display);font-size:13px!important}.team-results b{font-size:20px}
+.noise-app .recap>.pro-tip{grid-column:1/-1;border:1px solid var(--museum-border);background:#13273c;padding:9px 12px;border-radius:10px;font-size:16px}.pro-tip strong{font:12px var(--display);color:var(--museum-gold);margin-right:12px}
+.noise-app .recap-stars svg{width:52px;height:52px;filter:drop-shadow(0 3px 3px #0007)}.noise-app .recap-stars{display:flex;gap:8px;margin-bottom:4px}.noise-app .receipt>div{border-color:var(--museum-border);box-shadow:var(--museum-glow)}
+@media(min-width:801px){
+ .noise-app .active-heist{grid-template-columns:minmax(0,1fr) 200px;grid-template-rows:66px minmax(0,1fr) 80px}
+ .noise-app .active-heist .game-hud{padding:7px 20px}.noise-app .active-heist .clock{top:5px;left:50%}.noise-app .active-heist .haul b,.noise-app .active-heist .clock b{font-size:34px}.noise-app .hud-map{top:13px}
+ .noise-app .active-heist .echo-orders{right:10px;top:80px;width:180px}.noise-app .active-heist .pressure{right:10px;top:140px;width:180px;padding:10px;height:auto;gap:7px}
+ .noise-app .active-heist .radio{right:10px;top:250px;bottom:auto;max-height:calc(100% - 350px);width:180px;padding:10px}
+ .noise-app .active-heist .context-tip{right:10px;top:250px;width:180px}.noise-app .active-heist:has(.context-tip) .radio{top:400px;max-height:calc(100% - 490px)}
+ .noise-app .active-heist .bottom-controls{padding:6px 16px}.noise-app .action{min-height:58px}.noise-app .event-banner,.noise-app .last-call,.noise-app .jackpot-banner,.noise-app .practice-tip{right:10px;width:180px;bottom:87px}
+ .noise-app .lobby{width:min(1060px,100%)}.noise-app .lobby .roster{grid-template-columns:repeat(4,1fr)}
+}
+@media(max-width:800px){
+ .noise-app .home-scrim{padding:0 16px 14px;overflow:auto;display:flex;align-items:stretch}
+ .noise-app .hero-paint{height:440px;bottom:auto}.noise-app .hero-paint img{object-fit:cover;object-position:center 26%}
+ .noise-app .home-scrim:after{position:absolute;background:linear-gradient(180deg,#08122100 8%,#08122118 25%,#081221bd 40%,#081221f5 58%,#081221)}
+ .noise-app .home-copy{padding-top:195px;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:0;width:100%;max-width:none;min-height:100%}
+ .noise-app .home-copy .eyebrow{display:none}.noise-app .home-copy h1{font-size:37px;line-height:1.06;margin:8px 0}.noise-app .home-copy p{font-size:16px!important;margin:7px 0}.noise-app .feature-pills{margin:8px 0}.noise-app .home-setup{margin-top:6px}.noise-app .entry-buttons{margin:12px 0 9px}.noise-app .home-modes{margin-bottom:9px}.noise-app .join-row{margin-top:0}
+ .noise-app .brief-steps{grid-template-columns:1fr 1fr;gap:8px}.noise-app .brief-steps>div{display:block;padding:9px}.noise-app .brief-steps .painted-guide{width:100%;height:90px}.noise-app .brief-steps strong{font-size:17px}.noise-app .brief-steps p{font-size:16px!important;line-height:1.3}.noise-app .guide-cards .painted-guide{height:95px}.noise-app .guide-cards h3{font-size:17px}
+ .noise-app .recap-stars svg{width:48px;height:48px}.noise-app .recap>.team-results{display:flex;gap:7px}.noise-app .recap>.pro-tip{order:8}.noise-app .team-results b{font-size:17px}.noise-app .team-results p{font-size:12px!important;padding:7px 9px}
+}
+@media(max-width:800px) and (max-height:760px){.noise-app .home-copy{padding-top:105px}.noise-app .home-copy h1{font-size:31px}.noise-app .hero-paint{height:330px}.noise-app .home-copy p{margin:4px 0}.noise-app .feature-pills{margin:5px 0}.noise-app .entry-buttons{margin:8px 0}}
+@media(prefers-reduced-motion:reduce){.recap-stars span{animation:none!important}}
+.noise-app .error-toast{background:#3b2231;border:1px solid #f6af9c;color:#fff1e8;border-radius:12px;padding:12px;font-size:16px;box-shadow:var(--museum-glow)}
+@media(min-width:801px){.noise-app.is-game .topbar{height:50px}.noise-app .active-heist{grid-template-rows:60px minmax(0,1fr) 70px}.noise-app .active-heist .bottom-controls{padding:5px 16px}.noise-app .active-heist .action{min-height:52px}.noise-app .active-heist .thumbstick{width:54px;height:54px}.noise-app .active-heist .echo-orders{top:74px}.noise-app .active-heist .pressure{top:132px}.noise-app .active-heist .radio{top:244px}.noise-app .active-heist .event-banner,.noise-app .active-heist .last-call,.noise-app .active-heist .jackpot-banner,.noise-app .active-heist .practice-tip{bottom:77px}}
+@media(min-width:801px){.noise-app .recap>p:last-of-type{grid-column:1/-1}.noise-app .recap>.primary{grid-column:1;grid-row:10}.noise-app .recap>.secondary{grid-column:2;grid-row:10}}
+@media(max-width:800px){.noise-app .briefing>.primary{position:sticky;bottom:0;z-index:2;width:100%;box-shadow:0 -6px 18px #081525,0 4px 0 #060e18!important}.noise-app .brief-steps .painted-guide{height:75px}}
+.noise-app .crew-code small{color:#39414b}.noise-app .roster>div{font-size:16px}.noise-app .mode-picker button.selected{background:var(--museum-gold)!important;color:#152337!important}
