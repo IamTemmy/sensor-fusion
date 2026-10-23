@@ -6,7 +6,7 @@ test('v15 equal deep wing pairs, fixed budget, central separation and route fair
  const deep=[new Set(),new Set(),new Set()],centre=[new Set(),new Set(),new Set()];let early=false,late=false;
  for(let seed=1;seed<=120;seed++){
  const g=job(seed),m=RIVAL_LAYOUTS[g.layout],transform=m.symmetry==='rotate'?rotatePoint:mirrorPoint;
- assert.equal(g.loot.length,6);assert.equal(g.loot.reduce((v,l)=>v+l.value,0),3300);
+ assert.equal(g.loot.length,8);assert.equal(g.loot.reduce((v,l)=>v+l.value,0),4300);
  for(const [a,b] of [[g.loot[0],g.loot[1]],[g.loot[4],g.loot[5]]]){assert.equal(a.value,b.value);assert.deepEqual(transform(a),{x:b.x,y:b.y});assert.ok(Math.abs(routeLength(g,vanFor(g,0),a)-routeLength(g,vanFor(g,1),b))<40,JSON.stringify({seed,layout:g.layout,a,b,d0:routeLength(g,vanFor(g,0),a),d1:routeLength(g,vanFor(g,1),b)}));}
  assert.equal(g.loot[4].value,600);assert.equal(g.loot[0].value,200);
  for(const l of g.loot){assert.ok(clear(l,12,g.walls));if(l.value>300)for(const t of [0,1])assert.ok(routeLength(g,vanFor(g,t),l)>=250);}

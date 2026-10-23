@@ -1,0 +1,266 @@
+{
+  "engineHash": "de8b4f6536e43a740594c1eb0cf51688505d255183a00bf5b06f8ab9fca93f5a",
+  "policyHash": "fa7a275a54987586ce8c677064fd6e66a71a482ee98f17a54b517d95aa1f480d",
+  "seeds": "1001–1040",
+  "matches": 240,
+  "cells": [
+    {
+      "difficulty": "rookie",
+      "seeds": "1001–1040",
+      "engineHash": "de8b4f6536e43a740594c1eb0cf51688505d255183a00bf5b06f8ab9fca93f5a",
+      "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
+      "results": [
+        {
+          "byLayout": [
+            {
+              "layout": 0,
+              "n": 13,
+              "wins": 13
+            },
+            {
+              "layout": 1,
+              "n": 14,
+              "wins": 12
+            },
+            {
+              "layout": 2,
+              "n": 13,
+              "wins": 11
+            }
+          ],
+          "mode": "coop",
+          "policy": "auto",
+          "echo": "auto",
+          "n": 40,
+          "winRate": 0.9,
+          "meanBank": 3015,
+          "meanOther": 0,
+          "minBank": 2000,
+          "maxBank": 3100,
+          "bankStdDev": 237,
+          "lockdownRate": 0.95,
+          "meanCatches": 4.925,
+          "meanHumanAlarms": 0,
+          "starRates": [
+            0.1,
+            0.025,
+            0.875,
+            0
+          ],
+          "runsWithBotPlants": 0
+        },
+        {
+          "byLayout": [
+            {
+              "layout": 0,
+              "n": 13,
+              "wins": 12
+            },
+            {
+              "layout": 1,
+              "n": 14,
+              "wins": 10
+            },
+            {
+              "layout": 2,
+              "n": 13,
+              "wins": 9
+            }
+          ],
+          "mode": "duos",
+          "policy": "auto",
+          "echo": "auto",
+          "n": 40,
+          "winRate": 0.775,
+          "meanBank": 1725,
+          "meanOther": 1293.75,
+          "minBank": 1300,
+          "maxBank": 2400,
+          "bankStdDev": 304,
+          "lockdownRate": 0.75,
+          "meanCatches": 1.2,
+          "meanHumanAlarms": 0,
+          "starRates": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "runsWithBotPlants": 8
+        }
+      ]
+    },
+    {
+      "difficulty": "normal",
+      "seeds": "1001–1040",
+      "engineHash": "de8b4f6536e43a740594c1eb0cf51688505d255183a00bf5b06f8ab9fca93f5a",
+      "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
+      "results": [
+        {
+          "byLayout": [
+            {
+              "layout": 0,
+              "n": 13,
+              "wins": 10
+            },
+            {
+              "layout": 1,
+              "n": 14,
+              "wins": 11
+            },
+            {
+              "layout": 2,
+              "n": 13,
+              "wins": 9
+            }
+          ],
+          "mode": "coop",
+          "policy": "auto",
+          "echo": "auto",
+          "n": 40,
+          "winRate": 0.75,
+          "meanBank": 2808.75,
+          "meanOther": 0,
+          "minBank": 1950,
+          "maxBank": 3100,
+          "bankStdDev": 377,
+          "lockdownRate": 0.975,
+          "meanCatches": 6.075,
+          "meanHumanAlarms": 0,
+          "starRates": [
+            0.25,
+            0.175,
+            0.575,
+            0
+          ],
+          "runsWithBotPlants": 0
+        },
+        {
+          "byLayout": [
+            {
+              "layout": 0,
+              "n": 13,
+              "wins": 9
+            },
+            {
+              "layout": 1,
+              "n": 14,
+              "wins": 10
+            },
+            {
+              "layout": 2,
+              "n": 13,
+              "wins": 10
+            }
+          ],
+          "mode": "duos",
+          "policy": "auto",
+          "echo": "auto",
+          "n": 40,
+          "winRate": 0.725,
+          "meanBank": 1757.5,
+          "meanOther": 1212.5,
+          "minBank": 1300,
+          "maxBank": 2500,
+          "bankStdDev": 380,
+          "lockdownRate": 0.85,
+          "meanCatches": 1.85,
+          "meanHumanAlarms": 0,
+          "starRates": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "runsWithBotPlants": 3
+        }
+      ]
+    },
+    {
+      "difficulty": "pro",
+      "seeds": "1001–1040",
+      "engineHash": "de8b4f6536e43a740594c1eb0cf51688505d255183a00bf5b06f8ab9fca93f5a",
+      "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
+      "results": [
+        {
+          "byLayout": [
+            {
+              "layout": 0,
+              "n": 13,
+              "wins": 5
+            },
+            {
+              "layout": 1,
+              "n": 14,
+              "wins": 3
+            },
+            {
+              "layout": 2,
+              "n": 13,
+              "wins": 3
+            }
+          ],
+          "mode": "coop",
+          "policy": "auto",
+          "echo": "auto",
+          "n": 40,
+          "winRate": 0.275,
+          "meanBank": 2246.875,
+          "meanOther": 0,
+          "minBank": 1875,
+          "maxBank": 3100,
+          "bankStdDev": 334,
+          "lockdownRate": 1,
+          "meanCatches": 8.025,
+          "meanHumanAlarms": 0,
+          "starRates": [
+            0.725,
+            0.25,
+            0.025,
+            0
+          ],
+          "runsWithBotPlants": 0
+        },
+        {
+          "byLayout": [
+            {
+              "layout": 0,
+              "n": 13,
+              "wins": 7
+            },
+            {
+              "layout": 1,
+              "n": 14,
+              "wins": 6
+            },
+            {
+              "layout": 2,
+              "n": 13,
+              "wins": 4
+            }
+          ],
+          "mode": "duos",
+          "policy": "auto",
+          "echo": "auto",
+          "n": 40,
+          "winRate": 0.425,
+          "meanBank": 1415,
+          "meanOther": 1459.375,
+          "minBank": 1200,
+          "maxBank": 1900,
+          "bankStdDev": 221,
+          "lockdownRate": 0.925,
+          "meanCatches": 0.55,
+          "meanHumanAlarms": 0,
+          "starRates": [
+            1,
+            0,
+            0,
+            0
+          ],
+          "runsWithBotPlants": 1
+        }
+      ]
+    }
+  ]
+}

@@ -21,9 +21,9 @@ test('three genuinely different symmetric geometries and safe separated vans',()
  for(const m of RIVAL_LAYOUTS)for(const w of m.walls)assert.ok(m.walls.some(r=>r.x===960-w.x-w.w&&r.y===(m.symmetry==='rotate'?600-w.y-w.h:w.y)&&r.w===w.w&&r.h===w.h));
  const g=game(4);assert.ok(vanFor(g,0).x<150);assert.ok(vanFor(g,1).x>810);assert.ok(vanFor(g,2).y<100);
 });
-test('co-op valuable core is on the patrolled far wing, not reserved near-home sites',()=>{
+test('co-op valuable core spans the three rooms instead of clustering in the far wing',()=>{
  for(let seed=1;seed<=30;seed++){
  const g=create('COOP',0,seed);add(g,'Human','h');add(g,'Echo','b',true);setup(g);
- for(const l of g.loot.filter(l=>l.value===800||l.value===1000))assert.ok(l.x>=710);
+ for(const [min,max] of [[0,320],[320,640],[640,960]])assert.ok(g.loot.some(l=>l.x>=min&&l.x<max&&l.value>=500));
  }
 });

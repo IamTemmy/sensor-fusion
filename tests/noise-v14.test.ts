@@ -3,21 +3,21 @@ import assert from 'node:assert/strict';
 import {create,add,configure,setup,command,advance,updateJobEvent,routeLength,patrolPool,clear,distance,vanFor,mirrorPoint,rotatePoint,LOOT_TOTAL,carrySpeed,finish,blackoutActive,type Game} from '../lib/noise/engine.ts';
 const job=(seed=1,mode:'coop'|'duos'='duos')=>{const g=create('TEST',1000,seed);for(let i=0;i<(mode==='coop'?2:4);i++)add(g,'P'+i,'t'+i);configure(g,mode);setup(g);return g;};
 function live(g:Game){for(const s of g.seats)command(g,s.id,{type:'ready'});}
-test('fixed 3300 budget, 5–6 pieces, all value tiers, symmetric rivals and 250-unit danger rule across seeds',()=>{
+test('fixed 4300 budget, eight pieces, all value tiers, symmetric rivals and 250-unit danger rule across seeds',()=>{
  const counts=new Set();for(const mode of ['coop','duos'] as const)for(let seed=1;seed<=30;seed++){
- const g=job(seed,mode);counts.add(g.loot.length);assert.equal(g.loot.reduce((a,l)=>a+l.value,0),LOOT_TOTAL);assert.ok(g.loot.some(l=>l.value<=300));assert.ok(g.loot.some(l=>l.value>=500&&l.value<=800));assert.ok(g.loot.some(l=>!l.locked&&l.value>=(mode==='coop'?1000:600)));
+ const g=job(seed,mode);counts.add(g.loot.length);assert.equal(g.loot.reduce((a,l)=>a+l.value,0),LOOT_TOTAL);assert.ok(g.loot.some(l=>l.value<=300));assert.ok(g.loot.some(l=>l.value>=500&&l.value<=800));assert.ok(g.loot.some(l=>!l.locked&&l.value>=600));
  for(const l of g.loot.filter(l=>l.value>300))for(const team of [...new Set(g.seats.map(s=>s.team))])assert.ok(routeLength(g,vanFor(g,team),l)>=250);
  if(mode==='duos'){const [a,b]=g.loot;assert.deepEqual((g.layout===1?rotatePoint:mirrorPoint)(a),{x:b.x,y:b.y});assert.equal(a.value,b.value);assert.equal(a.sealed,b.sealed);}
- }assert.deepEqual([...counts].sort(),[5,6]);
+ }assert.deepEqual([...counts].sort(),[8]);
 });
-test('solo optimistic bound is 63.64% even with instantaneous travel; value-based carry speed decreases',()=>{
- for(let seed=1;seed<=30;seed++){const g=job(seed);const accessible=g.loot.filter(l=>!l.locked).reduce((a,l)=>a+l.value,0);assert.ok(accessible/LOOT_TOTAL<=.637);assert.ok(distance(g.plate,g.loot.find(l=>l.locked)!)>90);}
+test('eight-piece budget still reserves the jackpot for teamwork; carry speed decreases by value',()=>{
+ for(let seed=1;seed<=30;seed++){const g=job(seed);const accessible=g.loot.filter(l=>!l.locked).reduce((a,l)=>a+l.value,0);assert.equal(LOOT_TOTAL-accessible,1200);assert.ok(distance(g.plate,g.loot.find(l=>l.locked)!)>90);}
  assert.equal(carrySpeed(200),110);assert.equal(carrySpeed(1500),80);assert.ok(carrySpeed(1000)<carrySpeed(500));
 });
 test('each event warns 3s before, triggers once, preserves budget and ends; shift never teleports guards',()=>{
  for(const kind of ['blackout','shift','curator','vault'] as const){const g=job();live(g);g.jobEvent={kind,at:g.now+5000,until:g.now+5000+(kind==='blackout'?8000:kind==='vault'?15000:1000),started:false,ended:false,warned:false};if(kind==='vault'){g.loot[4].sealed=true;g.loot[4].eventPiece=true;}
  g.now=g.jobEvent.at-3001;updateJobEvent(g);assert.equal(g.jobEvent.warned,false);g.now++;updateJobEvent(g);assert.equal(g.jobEvent.warned,true);
- const routes=g.guards.map(h=>JSON.stringify(h.route));const before=g.guards.map(h=>({x:h.x,y:h.y}));g.now=g.jobEvent.at;updateJobEvent(g);assert.equal(g.jobEvent.started,true);if(kind==='shift'){assert.deepEqual(g.guards.map(h=>({x:h.x,y:h.y})),before);g.guards.forEach((h,i)=>assert.notEqual(JSON.stringify(h.route),routes[i]));}if(kind==='blackout')assert.equal(blackoutActive(g),true);if(kind==='vault')assert.equal(g.loot[4].sealed,false);
+ const routes=g.guards.map(h=>JSON.stringify(h.route));const before=g.guards.map(h=>({x:h.x,y:h.y}));g.now=g.jobEvent.at;updateJobEvent(g);assert.equal(g.jobEvent.started,true);if(kind==='shift'){assert.deepEqual(g.guards.map(h=>({x:h.x,y:h.y})),before);g.guards.forEach((h,i)=>h.sentry?assert.equal(JSON.stringify(h.route),routes[i]):assert.notEqual(JSON.stringify(h.route),routes[i]));}if(kind==='blackout')assert.equal(blackoutActive(g),true);if(kind==='vault')assert.equal(g.loot[4].sealed,false);
  const n=g.events.length;updateJobEvent(g);assert.equal(g.events.length,n);assert.equal(g.loot.reduce((a,l)=>a+l.value,0),LOOT_TOTAL);g.now=g.jobEvent.until;updateJobEvent(g);assert.equal(g.jobEvent.ended,true);assert.equal(blackoutActive(g),false);if(kind==='vault')assert.equal(g.loot[4].sealed,true);
  if(kind==='curator'){const [a,b]=g.loot;assert.deepEqual((g.layout===1?rotatePoint:mirrorPoint)(a),{x:b.x,y:b.y});}finish(g,'done');command(g,g.host,{type:'replay'});assert.equal(g.jobEvent?.started,false);
  }
