@@ -1,4 +1,4 @@
-// Authored museum rooms, doorways and recesses. Geometry is fixed between jobs.
+// Hand-authored fixed architecture: v35 L-returns and route-side recesses.
 export const AUTHORED_RIVALS = [
  {
   "symmetry": "mirror",
@@ -286,16 +286,10 @@ export const AUTHORED_RIVALS = [
     "h": 20
    },
    {
-    "x": 20,
-    "y": 398,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 20,
-    "y": 456,
-    "w": 38,
-    "h": 6
+    "x": 170,
+    "y": 400,
+    "w": 60,
+    "h": 14
    },
    {
     "x": 342,
@@ -310,16 +304,10 @@ export const AUTHORED_RIVALS = [
     "h": 6
    },
    {
-    "x": 902,
-    "y": 398,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 902,
-    "y": 456,
-    "w": 38,
-    "h": 6
+    "x": 730,
+    "y": 400,
+    "w": 60,
+    "h": 14
    },
    {
     "x": 580,
@@ -396,9 +384,9 @@ export const AUTHORED_RIVALS = [
   ],
   "niches": [
    {
-    "x": 50,
-    "y": 430,
-    "back": "left",
+    "x": 200,
+    "y": 440,
+    "back": "top",
     "kind": "planter"
    },
    {
@@ -408,9 +396,9 @@ export const AUTHORED_RIVALS = [
     "kind": "curtain"
    },
    {
-    "x": 910,
-    "y": 430,
-    "back": "right",
+    "x": 760,
+    "y": 440,
+    "back": "top",
     "kind": "planter"
    },
    {
@@ -462,12 +450,12 @@ export const AUTHORED_RIVALS = [
     "y": 55
    },
    {
-    "name": "CENTRE \u00b7 JACKPOT",
+    "name": "CENTRE · JACKPOT",
     "x": 480,
     "y": 190
    },
    {
-    "name": "CENTRE \u00b7 PLATE ROOM",
+    "name": "CENTRE · PLATE ROOM",
     "x": 480,
     "y": 540
    }
@@ -586,6 +574,10 @@ export const AUTHORED_RIVALS = [
     "y": 190
    },
    {
+    "x": 280,
+    "y": 215
+   },
+   {
     "x": 260,
     "y": 290
    },
@@ -595,11 +587,15 @@ export const AUTHORED_RIVALS = [
    },
    {
     "x": 80,
-    "y": 430
+    "y": 470
    },
    {
     "x": 280,
-    "y": 430
+    "y": 470
+   },
+   {
+    "x": 140,
+    "y": 470
    },
    {
     "x": 140,
@@ -612,6 +608,10 @@ export const AUTHORED_RIVALS = [
    {
     "x": 260,
     "y": 290
+   },
+   {
+    "x": 280,
+    "y": 215
    },
    {
     "x": 320,
@@ -766,16 +766,10 @@ export const AUTHORED_RIVALS = [
     "h": 8
    },
    {
-    "x": 20,
-    "y": 368,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 20,
-    "y": 426,
-    "w": 38,
-    "h": 6
+    "x": 170,
+    "y": 374,
+    "w": 16,
+    "h": 66
    },
    {
     "x": 302,
@@ -790,13 +784,13 @@ export const AUTHORED_RIVALS = [
     "h": 6
    },
    {
-    "x": 902,
-    "y": 168,
-    "w": 38,
-    "h": 6
+    "x": 774,
+    "y": 160,
+    "w": 16,
+    "h": 66
    },
    {
-    "x": 902,
+    "x": 620,
     "y": 226,
     "w": 38,
     "h": 6
@@ -804,12 +798,6 @@ export const AUTHORED_RIVALS = [
    {
     "x": 620,
     "y": 168,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 620,
-    "y": 226,
     "w": 38,
     "h": 6
    }
@@ -842,11 +830,15 @@ export const AUTHORED_RIVALS = [
     },
     {
      "x": 80,
-     "y": 430
+     "y": 470
     },
     {
      "x": 280,
-     "y": 430
+     "y": 470
+    },
+    {
+     "x": 140,
+     "y": 470
     },
     {
      "x": 140,
@@ -900,11 +892,15 @@ export const AUTHORED_RIVALS = [
     },
     {
      "x": 880,
-     "y": 170
+     "y": 130
     },
     {
      "x": 680,
-     "y": 170
+     "y": 130
+    },
+    {
+     "x": 820,
+     "y": 130
     },
     {
      "x": 820,
@@ -968,8 +964,8 @@ export const AUTHORED_RIVALS = [
   ],
   "niches": [
    {
-    "x": 50,
-    "y": 400,
+    "x": 210,
+    "y": 405,
     "back": "left",
     "kind": "planter"
    },
@@ -980,8 +976,8 @@ export const AUTHORED_RIVALS = [
     "kind": "curtain"
    },
    {
-    "x": 910,
-    "y": 200,
+    "x": 750,
+    "y": 195,
     "back": "right",
     "kind": "planter"
    },
@@ -1034,12 +1030,12 @@ export const AUTHORED_RIVALS = [
     "y": 545
    },
    {
-    "name": "CENTRE \u00b7 JACKPOT",
+    "name": "CENTRE · JACKPOT",
     "x": 480,
     "y": 480
    },
    {
-    "name": "CENTRE \u00b7 PLATE ROOM",
+    "name": "CENTRE · PLATE ROOM",
     "x": 480,
     "y": 110
    }
@@ -1213,18 +1209,6 @@ export const AUTHORED_RIVALS = [
     "h": 600
    },
    {
-    "x": 170,
-    "y": 140,
-    "w": 190,
-    "h": 100
-   },
-   {
-    "x": 170,
-    "y": 360,
-    "w": 190,
-    "h": 100
-   },
-   {
     "x": 360,
     "y": 24,
     "w": 20,
@@ -1253,18 +1237,6 @@ export const AUTHORED_RIVALS = [
     "y": 520,
     "w": 20,
     "h": 56
-   },
-   {
-    "x": 600,
-    "y": 140,
-    "w": 190,
-    "h": 100
-   },
-   {
-    "x": 600,
-    "y": 360,
-    "w": 190,
-    "h": 100
    },
    {
     "x": 580,
@@ -1303,52 +1275,52 @@ export const AUTHORED_RIVALS = [
     "h": 20
    },
    {
-    "x": 20,
-    "y": 398,
-    "w": 38,
-    "h": 6
+    "x": 170,
+    "y": 140,
+    "w": 190,
+    "h": 36
    },
    {
-    "x": 20,
-    "y": 456,
-    "w": 38,
-    "h": 6
+    "x": 170,
+    "y": 176,
+    "w": 126,
+    "h": 64
    },
    {
-    "x": 902,
-    "y": 398,
-    "w": 38,
-    "h": 6
+    "x": 170,
+    "y": 360,
+    "w": 126,
+    "h": 100
    },
    {
-    "x": 902,
-    "y": 456,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 322,
-    "y": 518,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 322,
-    "y": 576,
-    "w": 38,
-    "h": 6
+    "x": 296,
+    "y": 424,
+    "w": 64,
+    "h": 36
    },
    {
     "x": 600,
-    "y": 518,
-    "w": 38,
-    "h": 6
+    "y": 140,
+    "w": 190,
+    "h": 36
+   },
+   {
+    "x": 664,
+    "y": 176,
+    "w": 126,
+    "h": 64
+   },
+   {
+    "x": 664,
+    "y": 360,
+    "w": 126,
+    "h": 100
    },
    {
     "x": 600,
-    "y": 576,
-    "w": 38,
-    "h": 6
+    "y": 424,
+    "w": 64,
+    "h": 36
    }
   ],
   "routes": [
@@ -1425,28 +1397,28 @@ export const AUTHORED_RIVALS = [
   ],
   "niches": [
    {
-    "x": 50,
-    "y": 430,
+    "x": 328,
+    "y": 210,
+    "back": "left",
+    "kind": "curtain"
+   },
+   {
+    "x": 328,
+    "y": 390,
     "back": "left",
     "kind": "planter"
    },
    {
-    "x": 330,
-    "y": 550,
+    "x": 632,
+    "y": 210,
     "back": "right",
     "kind": "curtain"
    },
    {
-    "x": 910,
-    "y": 430,
+    "x": 632,
+    "y": 390,
     "back": "right",
     "kind": "planter"
-   },
-   {
-    "x": 630,
-    "y": 550,
-    "back": "left",
-    "kind": "curtain"
    }
   ],
   "rooms": [
@@ -1491,12 +1463,12 @@ export const AUTHORED_RIVALS = [
     "y": 55
    },
    {
-    "name": "CENTRE \u00b7 JACKPOT",
+    "name": "CENTRE · JACKPOT",
     "x": 480,
     "y": 190
    },
    {
-    "name": "CENTRE \u00b7 PLATE ROOM",
+    "name": "CENTRE · PLATE ROOM",
     "x": 480,
     "y": 540
    }
@@ -1591,18 +1563,6 @@ export const AUTHORED_COOP = [
     "h": 34
    },
    {
-    "x": 20,
-    "y": 398,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 20,
-    "y": 456,
-    "w": 38,
-    "h": 6
-   },
-   {
     "x": 320,
     "y": 308,
     "w": 38,
@@ -1637,13 +1597,19 @@ export const AUTHORED_COOP = [
     "y": 186,
     "w": 38,
     "h": 6
+   },
+   {
+    "x": 240,
+    "y": 406,
+    "w": 60,
+    "h": 14
    }
   ],
   "niches": [
    {
-    "x": 50,
-    "y": 430,
-    "back": "left",
+    "x": 270,
+    "y": 450,
+    "back": "top",
     "kind": "planter"
    },
    {
@@ -1814,18 +1780,6 @@ export const AUTHORED_COOP = [
     "h": 34
    },
    {
-    "x": 20,
-    "y": 398,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 20,
-    "y": 456,
-    "w": 38,
-    "h": 6
-   },
-   {
     "x": 320,
     "y": 308,
     "w": 38,
@@ -1860,13 +1814,19 @@ export const AUTHORED_COOP = [
     "y": 186,
     "w": 38,
     "h": 6
+   },
+   {
+    "x": 240,
+    "y": 406,
+    "w": 60,
+    "h": 14
    }
   ],
   "niches": [
    {
-    "x": 50,
-    "y": 430,
-    "back": "left",
+    "x": 270,
+    "y": 450,
+    "back": "top",
     "kind": "planter"
    },
    {
@@ -2031,18 +1991,6 @@ export const AUTHORED_COOP = [
     "h": 24
    },
    {
-    "x": 20,
-    "y": 398,
-    "w": 38,
-    "h": 6
-   },
-   {
-    "x": 20,
-    "y": 456,
-    "w": 38,
-    "h": 6
-   },
-   {
     "x": 320,
     "y": 308,
     "w": 38,
@@ -2077,13 +2025,19 @@ export const AUTHORED_COOP = [
     "y": 186,
     "w": 38,
     "h": 6
+   },
+   {
+    "x": 240,
+    "y": 406,
+    "w": 60,
+    "h": 14
    }
   ],
   "niches": [
    {
-    "x": 50,
-    "y": 430,
-    "back": "left",
+    "x": 270,
+    "y": 450,
+    "back": "top",
     "kind": "planter"
    },
    {

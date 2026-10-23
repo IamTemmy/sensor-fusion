@@ -1,0 +1,27 @@
+{
+  "lures": [
+    {
+      "gap": 130,
+      "control": {
+        "caught": true,
+        "heard": false
+      },
+      "throw": {
+        "caught": false,
+        "heard": true
+      }
+    },
+    {
+      "gap": 220,
+      "control": {
+        "caught": true,
+        "heard": false
+      },
+      "throw": {
+        "caught": false,
+        "heard": true
+      }
+    }
+  ],
+  "stalls": []
+}

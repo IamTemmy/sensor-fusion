@@ -1,0 +1,1926 @@
+{
+  "seeds": 40,
+  "maxSpread": 21.55812757411786,
+  "rows": [
+    {
+      "seed": 1,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 360,
+      "violet": 360,
+      "spread": 0
+    },
+    {
+      "seed": 1,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 1,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 524.1,
+      "violet": 524.1,
+      "spread": 0
+    },
+    {
+      "seed": 1,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 575.9,
+      "spread": 6
+    },
+    {
+      "seed": 1,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 468,
+      "violet": 459,
+      "spread": 9
+    },
+    {
+      "seed": 1,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 2,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 92.2,
+      "violet": 92.2,
+      "spread": 0
+    },
+    {
+      "seed": 2,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 363,
+      "violet": 363,
+      "spread": 0
+    },
+    {
+      "seed": 2,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 338.3,
+      "violet": 338.3,
+      "spread": 0
+    },
+    {
+      "seed": 2,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 2,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 2,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 3,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 92.2,
+      "violet": 92.2,
+      "spread": 0
+    },
+    {
+      "seed": 3,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 363,
+      "violet": 363,
+      "spread": 0
+    },
+    {
+      "seed": 3,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 489,
+      "violet": 489,
+      "spread": 0
+    },
+    {
+      "seed": 3,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 585,
+      "spread": 15.2
+    },
+    {
+      "seed": 3,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 522,
+      "violet": 507,
+      "spread": 15
+    },
+    {
+      "seed": 3,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 4,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 4,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 282,
+      "violet": 282,
+      "spread": 0
+    },
+    {
+      "seed": 4,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 489,
+      "violet": 489,
+      "spread": 0
+    },
+    {
+      "seed": 4,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 549,
+      "violet": 564,
+      "spread": 15
+    },
+    {
+      "seed": 4,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 525,
+      "violet": 503.4,
+      "spread": 21.6
+    },
+    {
+      "seed": 4,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 5,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 5,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 282,
+      "violet": 282,
+      "spread": 0
+    },
+    {
+      "seed": 5,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 434.5,
+      "violet": 434.5,
+      "spread": 0
+    },
+    {
+      "seed": 5,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 585,
+      "spread": 15.2
+    },
+    {
+      "seed": 5,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 522,
+      "violet": 507,
+      "spread": 15
+    },
+    {
+      "seed": 5,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 6,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 6,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 408,
+      "violet": 408,
+      "spread": 0
+    },
+    {
+      "seed": 6,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 291,
+      "violet": 291,
+      "spread": 0
+    },
+    {
+      "seed": 6,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 708,
+      "violet": 714,
+      "spread": 6
+    },
+    {
+      "seed": 6,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 528,
+      "violet": 518.3,
+      "spread": 9.7
+    },
+    {
+      "seed": 6,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 7,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 7,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 7,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 7,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 708,
+      "violet": 714,
+      "spread": 6
+    },
+    {
+      "seed": 7,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 528,
+      "violet": 518.3,
+      "spread": 9.7
+    },
+    {
+      "seed": 7,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 8,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 8,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 8,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 269.1,
+      "violet": 269.1,
+      "spread": 0
+    },
+    {
+      "seed": 8,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 8,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 8,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 9,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 9,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 252,
+      "violet": 252,
+      "spread": 0
+    },
+    {
+      "seed": 9,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 9,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 669,
+      "violet": 675,
+      "spread": 6
+    },
+    {
+      "seed": 9,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 484.7,
+      "violet": 468,
+      "spread": 16.7
+    },
+    {
+      "seed": 9,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 10,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 10,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 10,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 10,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 708,
+      "violet": 714,
+      "spread": 6
+    },
+    {
+      "seed": 10,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 528,
+      "violet": 518.3,
+      "spread": 9.7
+    },
+    {
+      "seed": 10,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 11,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 324,
+      "violet": 324,
+      "spread": 0
+    },
+    {
+      "seed": 11,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 11,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 429,
+      "violet": 429,
+      "spread": 0
+    },
+    {
+      "seed": 11,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 522,
+      "violet": 531,
+      "spread": 9
+    },
+    {
+      "seed": 11,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 444,
+      "violet": 432,
+      "spread": 12
+    },
+    {
+      "seed": 11,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 12,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 123,
+      "violet": 123,
+      "spread": 0
+    },
+    {
+      "seed": 12,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 408,
+      "violet": 408,
+      "spread": 0
+    },
+    {
+      "seed": 12,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 303,
+      "violet": 303,
+      "spread": 0
+    },
+    {
+      "seed": 12,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 575.9,
+      "spread": 6
+    },
+    {
+      "seed": 12,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 468,
+      "violet": 459,
+      "spread": 9
+    },
+    {
+      "seed": 12,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 13,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 123,
+      "violet": 123,
+      "spread": 0
+    },
+    {
+      "seed": 13,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 13,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 429,
+      "violet": 429,
+      "spread": 0
+    },
+    {
+      "seed": 13,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 575.9,
+      "spread": 6
+    },
+    {
+      "seed": 13,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 468,
+      "violet": 459,
+      "spread": 9
+    },
+    {
+      "seed": 13,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 14,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 123,
+      "violet": 123,
+      "spread": 0
+    },
+    {
+      "seed": 14,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 408,
+      "violet": 408,
+      "spread": 0
+    },
+    {
+      "seed": 14,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 14,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 552,
+      "violet": 545.7,
+      "spread": 6.3
+    },
+    {
+      "seed": 14,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 447,
+      "violet": 456,
+      "spread": 9
+    },
+    {
+      "seed": 14,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 15,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 15,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 363,
+      "violet": 363,
+      "spread": 0
+    },
+    {
+      "seed": 15,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 297,
+      "violet": 297,
+      "spread": 0
+    },
+    {
+      "seed": 15,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 15,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 15,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 16,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 302.4,
+      "violet": 302.4,
+      "spread": 0
+    },
+    {
+      "seed": 16,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 363,
+      "violet": 363,
+      "spread": 0
+    },
+    {
+      "seed": 16,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 489,
+      "violet": 489,
+      "spread": 0
+    },
+    {
+      "seed": 16,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 549,
+      "violet": 564,
+      "spread": 15
+    },
+    {
+      "seed": 16,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 525,
+      "violet": 503.4,
+      "spread": 21.6
+    },
+    {
+      "seed": 16,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 17,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 92.2,
+      "violet": 92.2,
+      "spread": 0
+    },
+    {
+      "seed": 17,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 282,
+      "violet": 282,
+      "spread": 0
+    },
+    {
+      "seed": 17,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 434.5,
+      "violet": 434.5,
+      "spread": 0
+    },
+    {
+      "seed": 17,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 17,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 17,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 18,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 92.2,
+      "violet": 92.2,
+      "spread": 0
+    },
+    {
+      "seed": 18,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 422.3,
+      "violet": 422.3,
+      "spread": 0
+    },
+    {
+      "seed": 18,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 297,
+      "violet": 297,
+      "spread": 0
+    },
+    {
+      "seed": 18,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 549,
+      "violet": 564,
+      "spread": 15
+    },
+    {
+      "seed": 18,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 525,
+      "violet": 503.4,
+      "spread": 21.6
+    },
+    {
+      "seed": 18,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 19,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 19,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 422.3,
+      "violet": 422.3,
+      "spread": 0
+    },
+    {
+      "seed": 19,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 297,
+      "violet": 297,
+      "spread": 0
+    },
+    {
+      "seed": 19,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 19,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 19,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 20,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 20,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 408,
+      "violet": 408,
+      "spread": 0
+    },
+    {
+      "seed": 20,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 291,
+      "violet": 291,
+      "spread": 0
+    },
+    {
+      "seed": 20,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 20,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 20,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 21,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 21,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 21,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 21,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 21,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 21,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 22,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 22,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 22,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 22,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 708,
+      "violet": 714,
+      "spread": 6
+    },
+    {
+      "seed": 22,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 528,
+      "violet": 518.3,
+      "spread": 9.7
+    },
+    {
+      "seed": 22,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 23,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 90,
+      "violet": 90,
+      "spread": 0
+    },
+    {
+      "seed": 23,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 23,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 23,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 23,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 23,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 24,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 360,
+      "violet": 360,
+      "spread": 0
+    },
+    {
+      "seed": 24,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 503.5,
+      "violet": 503.5,
+      "spread": 0
+    },
+    {
+      "seed": 24,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 269.1,
+      "violet": 269.1,
+      "spread": 0
+    },
+    {
+      "seed": 24,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 575.9,
+      "spread": 6
+    },
+    {
+      "seed": 24,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 468,
+      "violet": 459,
+      "spread": 9
+    },
+    {
+      "seed": 24,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 25,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 360,
+      "violet": 360,
+      "spread": 0
+    },
+    {
+      "seed": 25,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 503.5,
+      "violet": 503.5,
+      "spread": 0
+    },
+    {
+      "seed": 25,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 303,
+      "violet": 303,
+      "spread": 0
+    },
+    {
+      "seed": 25,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 552,
+      "violet": 545.7,
+      "spread": 6.3
+    },
+    {
+      "seed": 25,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 447,
+      "violet": 456,
+      "spread": 9
+    },
+    {
+      "seed": 25,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 26,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 123,
+      "violet": 123,
+      "spread": 0
+    },
+    {
+      "seed": 26,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 503.5,
+      "violet": 503.5,
+      "spread": 0
+    },
+    {
+      "seed": 26,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 429,
+      "violet": 429,
+      "spread": 0
+    },
+    {
+      "seed": 26,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 552,
+      "violet": 545.7,
+      "spread": 6.3
+    },
+    {
+      "seed": 26,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 447,
+      "violet": 456,
+      "spread": 9
+    },
+    {
+      "seed": 26,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 27,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 324,
+      "violet": 324,
+      "spread": 0
+    },
+    {
+      "seed": 27,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 503.5,
+      "violet": 503.5,
+      "spread": 0
+    },
+    {
+      "seed": 27,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 27,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 552,
+      "violet": 545.7,
+      "spread": 6.3
+    },
+    {
+      "seed": 27,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 447,
+      "violet": 456,
+      "spread": 9
+    },
+    {
+      "seed": 27,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 28,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 123,
+      "violet": 123,
+      "spread": 0
+    },
+    {
+      "seed": 28,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 28,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 28,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 522,
+      "violet": 531,
+      "spread": 9
+    },
+    {
+      "seed": 28,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 444,
+      "violet": 432,
+      "spread": 12
+    },
+    {
+      "seed": 28,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 29,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 29,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 282,
+      "violet": 282,
+      "spread": 0
+    },
+    {
+      "seed": 29,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 489,
+      "violet": 489,
+      "spread": 0
+    },
+    {
+      "seed": 29,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 29,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 29,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 30,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 30,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 422.3,
+      "violet": 422.3,
+      "spread": 0
+    },
+    {
+      "seed": 30,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 276,
+      "violet": 276,
+      "spread": 0
+    },
+    {
+      "seed": 30,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 569.8,
+      "violet": 585,
+      "spread": 15.2
+    },
+    {
+      "seed": 30,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 522,
+      "violet": 507,
+      "spread": 15
+    },
+    {
+      "seed": 30,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 31,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 302.4,
+      "violet": 302.4,
+      "spread": 0
+    },
+    {
+      "seed": 31,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 422.3,
+      "violet": 422.3,
+      "spread": 0
+    },
+    {
+      "seed": 31,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 31,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 31,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 31,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 32,
+      "layout": "Night Archive",
+      "objective": "cheap",
+      "mint": 329.5,
+      "violet": 329.5,
+      "spread": 0
+    },
+    {
+      "seed": 32,
+      "layout": "Night Archive",
+      "objective": "valuable",
+      "mint": 363,
+      "violet": 363,
+      "spread": 0
+    },
+    {
+      "seed": 32,
+      "layout": "Night Archive",
+      "objective": "mid",
+      "mint": 489,
+      "violet": 489,
+      "spread": 0
+    },
+    {
+      "seed": 32,
+      "layout": "Night Archive",
+      "objective": "jackpot",
+      "mint": 555,
+      "violet": 570,
+      "spread": 15
+    },
+    {
+      "seed": 32,
+      "layout": "Night Archive",
+      "objective": "contested",
+      "mint": 524.5,
+      "violet": 504,
+      "spread": 20.5
+    },
+    {
+      "seed": 32,
+      "layout": "Night Archive",
+      "objective": "plate",
+      "mint": 570,
+      "violet": 555,
+      "spread": 15
+    },
+    {
+      "seed": 33,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 33,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 33,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 429,
+      "violet": 429,
+      "spread": 0
+    },
+    {
+      "seed": 33,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 33,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 33,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 34,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 90,
+      "violet": 90,
+      "spread": 0
+    },
+    {
+      "seed": 34,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 34,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 34,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 669,
+      "violet": 675,
+      "spread": 6
+    },
+    {
+      "seed": 34,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 484.7,
+      "violet": 468,
+      "spread": 16.7
+    },
+    {
+      "seed": 34,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 35,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 330,
+      "violet": 330,
+      "spread": 0
+    },
+    {
+      "seed": 35,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 354,
+      "violet": 354,
+      "spread": 0
+    },
+    {
+      "seed": 35,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 35,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 35,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 35,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 36,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 36,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 408,
+      "violet": 408,
+      "spread": 0
+    },
+    {
+      "seed": 36,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 504,
+      "violet": 504,
+      "spread": 0
+    },
+    {
+      "seed": 36,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 669,
+      "violet": 675,
+      "spread": 6
+    },
+    {
+      "seed": 36,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 484.7,
+      "violet": 468,
+      "spread": 16.7
+    },
+    {
+      "seed": 36,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 37,
+      "layout": "Crossroads",
+      "objective": "cheap",
+      "mint": 210,
+      "violet": 210,
+      "spread": 0
+    },
+    {
+      "seed": 37,
+      "layout": "Crossroads",
+      "objective": "valuable",
+      "mint": 408,
+      "violet": 408,
+      "spread": 0
+    },
+    {
+      "seed": 37,
+      "layout": "Crossroads",
+      "objective": "mid",
+      "mint": 269.1,
+      "violet": 269.1,
+      "spread": 0
+    },
+    {
+      "seed": 37,
+      "layout": "Crossroads",
+      "objective": "jackpot",
+      "mint": 693,
+      "violet": 690,
+      "spread": 3
+    },
+    {
+      "seed": 37,
+      "layout": "Crossroads",
+      "objective": "contested",
+      "mint": 492,
+      "violet": 504,
+      "spread": 12
+    },
+    {
+      "seed": 37,
+      "layout": "Crossroads",
+      "objective": "plate",
+      "mint": 390,
+      "violet": 390,
+      "spread": 0
+    },
+    {
+      "seed": 38,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 324,
+      "violet": 324,
+      "spread": 0
+    },
+    {
+      "seed": 38,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 38,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 524.1,
+      "violet": 524.1,
+      "spread": 0
+    },
+    {
+      "seed": 38,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 552,
+      "violet": 545.7,
+      "spread": 6.3
+    },
+    {
+      "seed": 38,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 447,
+      "violet": 456,
+      "spread": 9
+    },
+    {
+      "seed": 38,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 39,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 324,
+      "violet": 324,
+      "spread": 0
+    },
+    {
+      "seed": 39,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 39,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 434.3,
+      "violet": 434.3,
+      "spread": 0
+    },
+    {
+      "seed": 39,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 552,
+      "violet": 545.7,
+      "spread": 6.3
+    },
+    {
+      "seed": 39,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 447,
+      "violet": 456,
+      "spread": 9
+    },
+    {
+      "seed": 39,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    },
+    {
+      "seed": 40,
+      "layout": "Echo Gallery",
+      "objective": "cheap",
+      "mint": 360,
+      "violet": 360,
+      "spread": 0
+    },
+    {
+      "seed": 40,
+      "layout": "Echo Gallery",
+      "objective": "valuable",
+      "mint": 260.1,
+      "violet": 260.1,
+      "spread": 0
+    },
+    {
+      "seed": 40,
+      "layout": "Echo Gallery",
+      "objective": "mid",
+      "mint": 434.3,
+      "violet": 434.3,
+      "spread": 0
+    },
+    {
+      "seed": 40,
+      "layout": "Echo Gallery",
+      "objective": "jackpot",
+      "mint": 522,
+      "violet": 531,
+      "spread": 9
+    },
+    {
+      "seed": 40,
+      "layout": "Echo Gallery",
+      "objective": "contested",
+      "mint": 444,
+      "violet": 432,
+      "spread": 12
+    },
+    {
+      "seed": 40,
+      "layout": "Echo Gallery",
+      "objective": "plate",
+      "mint": 392,
+      "violet": 392,
+      "spread": 0
+    }
+  ]
+}

@@ -6,7 +6,7 @@ import assert from 'node:assert/strict';
 const exec=promisify(execFile),levels=['rookie','normal','pro'];
 const engineHash=createHash('sha256').update(readFileSync('lib/noise/engine.ts')).update(readFileSync('lib/noise/arenas.ts')).digest('hex');
 const policyHash=createHash('sha256').update(readFileSync('scripts/simulate-noise-v17.ts')).digest('hex');
-const file='docs/playtests/v33/difficulty-matrix.json';let report;
+const file='docs/playtests/v35/difficulty-matrix.json';let report;
 try{report=JSON.parse(readFileSync(file,'utf8'));}catch{}
 if(report?.engineHash!==engineHash||report?.policyHash!==policyHash){
  const cells=await Promise.all(levels.map(async difficulty=>{
@@ -15,7 +15,7 @@ if(report?.engineHash!==engineHash||report?.policyHash!==policyHash){
    const result=JSON.parse(stdout);console.log(`${mode} ${difficulty}: ${(result.results[0].winRate*100).toFixed(1)}% complete`);return result;
   }));return {...parts[0],results:parts.flatMap(p=>p.results)};
  }));
- report={engineHash,policyHash,seeds:'1001–1040',matches:240,cells};mkdirSync('docs/playtests/v33',{recursive:true});writeFileSync(file,JSON.stringify(report,null,2)+'\n');
+ report={engineHash,policyHash,seeds:'1001–1040',matches:240,cells};mkdirSync('docs/playtests/v35',{recursive:true});writeFileSync(file,JSON.stringify(report,null,2)+'\n');
 }
 for(const mode of ['coop','duos']){
  const cells=levels.map(d=>report.cells.find(c=>c.difficulty===d).results.find(r=>r.mode===mode));
