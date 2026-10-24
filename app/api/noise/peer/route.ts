@@ -2,6 +2,7 @@ import {env} from 'cloudflare:workers';
 import {packet} from '../../../../lib/noise/network';
 import {endHost,mergeAdmissions,signalValid,validEnvelope,type PeerGame,type Envelope} from '../../../../lib/noise/peer-protocol';
 import {withRoomLock} from '../../../../lib/noise/room-lock';
+import {configuredIce,hostLeaseExpired} from '../../../../lib/noise/peer-policy';
 export const dynamic='force-dynamic';
 const reply=(x:unknown,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
 export async function POST(req:Request){try{
@@ -11,10 +12,11 @@ export async function POST(req:Request){try{
  return await withRoomLock(a.code,async()=>{for(let retry=0;retry<8;retry++){
  const row=await env.DB!.prepare('SELECT state,revision,expires FROM rooms WHERE code=?').bind(a.code).first<{state:string;revision:number;expires:number}>();if(!row||row.expires<now)return reply({error:'Crew expired'},404);
  let g=JSON.parse(row.state) as PeerGame;const p=g.peer,s=g.seats.find(s=>!s.bot&&s.token===a.token);if(!p||!s)return reply({error:'Seat unavailable'},401);const host=s.id===g.host;
- if(p.closed||now-p.heartbeat>12000){p.closed=true;endHost(g);}
+ if(p.closed||hostLeaseExpired(now,p.heartbeat,!!(g as PeerGame&{hostAway?:boolean}).hostAway)){p.closed=true;endHost(g);}
  if(host&&!p.closed){
   if(typeof a.lease!=='string'||a.lease.length>80)return reply({error:'Host lease required'},400);
   if(p.lease&&p.lease!==a.lease)return reply({error:'This host is already open in another tab.'},409);p.lease=a.lease;p.heartbeat=now;
+  if(typeof a.visibilityAway==='boolean'){(g as PeerGame&{hostAway?:boolean}).hostAway=a.visibilityAway;g.revision++;}
   if(a.close){p.closed=true;endHost(g);}
   else if(a.game){
    if(a.game.code!==g.code||a.game.version!==4||a.game.host!==g.host||!Array.isArray(a.game.seats)||a.game.seats.length>6)return reply({error:'Invalid host snapshot'},400);
@@ -28,6 +30,6 @@ export async function POST(req:Request){try{
   for(const e of (Array.isArray(a.messages)?a.messages:[]).slice(0,20) as Envelope[]){if(e.seat!==s.id||!validEnvelope(g,e))return reply({error:'Invalid seat input'},400);if(!p.acks.includes(e.id)&&!p.mail.some(x=>x.id===e.id)){if(p.mail.length>=256)return reply({error:'Host mailbox busy'},429);p.mail.push(e);}}
  }
  const result=await env.DB!.prepare('UPDATE rooms SET state=?,revision=? WHERE code=? AND revision=?').bind(JSON.stringify(g),row.revision+1,a.code,row.revision).run();if(!result.meta.changes)continue;
- return reply({closed:p.closed,...packet(g,s.id,a.arenaKey),...(host?{game:a.bootstrap?g:undefined,humans:g.seats.filter(s=>!s.bot),serial:g.serial,signals:p.signals,mail:p.mail}:{signal:p.signals[s.id],received:p.acks})});
+ return reply({...(a.bootstrap?{iceServers:configuredIce(env as unknown as Record<string,unknown>)}:{}),closed:p.closed,...packet(g,s.id,a.arenaKey),...(host?{game:a.bootstrap?g:undefined,humans:g.seats.filter(s=>!s.bot),serial:g.serial,signals:p.signals,mail:p.mail}:{signal:p.signals[s.id],received:p.acks})});
  }return reply({error:'Room busy'},409);});
  }catch(e){return reply({error:e instanceof Error?e.message:'Connection interrupted'},400);}}

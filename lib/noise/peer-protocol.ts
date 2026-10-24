@@ -16,7 +16,7 @@ export function validEnvelope(g:Game,e:Envelope){
 export class HostAuthority{
  game:Game;seen=new Set<string>();
  constructor(g:Game){this.game=structuredClone(g);delete (this.game as PeerGame).peer;}
- input(e:Envelope){if(!validEnvelope(this.game,e))return false;if(this.seen.has(e.id))return true;try{applyPacket(this.game,e.seat,e.payload);}catch{return false;}this.seen.add(e.id);if(this.seen.size>4096)this.seen.delete(this.seen.values().next().value!);return true;}
+ input(e:Envelope){if(!validEnvelope(this.game,e))return false;if(this.seen.has(e.id))return true;try{if((this.game as Game&{hostAway?:boolean}).hostAway&&e.payload.type==='input')return false;applyPacket(this.game,e.seat,e.payload);}catch{return false;}this.seen.add(e.id);if(this.seen.size>4096)this.seen.delete(this.seen.values().next().value!);return true;}
  tick(){advance(this.game,this.game.now+40);this.game.revision++;}
  snapshot(id:string,known?:string){return packet(this.game,id,known);}
 }

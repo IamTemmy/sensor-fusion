@@ -12,7 +12,7 @@ export class OnlinePrediction {
   const changed=!this.authoritative||v.code!==this.authoritative.code||v.match!==this.authoritative.match;
   const previous=this.positions();if(changed)this.reset();
   this.authoritative=copy(v);this.you=v.you;this.ack=ack;this.nextAction=Math.max(this.nextAction,ack);this.pending=this.pending.filter(a=>a.id>ack);
-  this.game=copy(v);this.clock=v.now+Math.min(300,Math.max(0,rtt/2));
+  this.game=copy(v);if((v as View&{hostAway?:boolean}).hostAway){this.clock=v.now;this.offsets.clear();return true;}this.clock=v.now+Math.min(300,Math.max(0,rtt/2));
   const target=this.clock;this.setInput();
   for(const a of this.pending){advance(this.game,Math.min(target,Math.max(this.game.now,a.at)));const s=this.game.seats.find(s=>s.id===this.you);if(s)action(this.game,s,a.action,a.aim);}
   advance(this.game,target);this.offsets.clear();
@@ -20,8 +20,8 @@ export class OnlinePrediction {
   return true;
  }
  setInput(){if(!this.game)return;const s=this.game.seats.find(s=>s.id===this.you);if(s){s.dx=this.dir.x;s.dy=this.dir.y;s.aim={...this.aim};s.sneak=this.sneak;s.inputAt=this.game.now;}}
- predict(a:string){if(!this.game||this.game.phase!=='playing')return;const item={id:++this.nextAction,action:a,aim:{...this.aim},at:this.game.now};this.pending.push(item);const s=this.game.seats.find(s=>s.id===this.you);if(s)action(this.game,s,a,item.aim);return item;}
- frame(ms:number,dir:Vec,aim:Vec,sneak=false){if(!this.game)return;this.dir=dir;this.aim=aim;this.sneak=sneak;this.setInput();const dt=Math.min(50,Math.max(0,ms));
+ predict(a:string){if(!this.game||this.game.phase!=='playing'||(this.game as Game&{hostAway?:boolean}).hostAway)return;const item={id:++this.nextAction,action:a,aim:{...this.aim},at:this.game.now};this.pending.push(item);const s=this.game.seats.find(s=>s.id===this.you);if(s)action(this.game,s,a,item.aim);return item;}
+ frame(ms:number,dir:Vec,aim:Vec,sneak=false){if(!this.game||(this.game as Game&{hostAway?:boolean}).hostAway)return;this.dir=dir;this.aim=aim;this.sneak=sneak;this.setInput();const dt=Math.min(50,Math.max(0,ms));
   // Never extrapolate indefinitely through an outage. The engine's 500ms human input expiry remains intact.
   this.clock=Math.min(this.clock+dt,(this.authoritative?.now||0)+750);
   advance(this.game,this.clock);
