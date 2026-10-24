@@ -20,7 +20,7 @@ export function applyPacket(g:Game,id:string,a:Record<string,any>){
  }net.acks[id]=ack;
 }
 export function packet(g:Game,id:string,known?:string){
- const v=view(g,id) as View&{net?:unknown};delete v.net;
+ const v=view(g,id) as View&{net?:unknown};delete v.net;delete (v as View&{peer?:unknown}).peer;
  const key=arenaKey(g);const {walls,plate,hideSpots,sensors,...dynamic}=v;
  return {protocol:2,arenaKey:key,ack:actionAck(g,id),view:{...dynamic,sensorState:(sensors||[]).map(s=>({id:s.id,cooldown:s.cooldown,inside:s.inside}))},...(known===key?{}:{arena:{walls,plate,hideSpots,sensors:(sensors||[]).map(({cooldown,inside,...s})=>s)}})};
 }
