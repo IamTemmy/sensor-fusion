@@ -286,3 +286,4 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .guide-v37 .basics-cards h3{font-size:14px;white-space:nowrap}
 @media(max-width:650px){.noise-app .guide-v37 .basics-cards article{min-height:155px}.noise-app .guide-v37 .basics-cards .painted-guide{height:66px}.noise-app .guide-v37 .basics-cards h3{font-size:14px}}
 .noise-app .guide-v37 .basics-cards .painted-guide{margin:0 auto}
+.connection-slow{position:fixed;top:52px;left:50%;transform:translateX(-50%);z-index:9;padding:5px 12px;border:1px solid #e4ba66;border-radius:8px;background:#302316ed;color:#ffe1a1;font:600 12px Arial;pointer-events:none}

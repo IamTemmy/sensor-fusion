@@ -1,0 +1,200 @@
+{
+  "url": "https://sensor-fusion-temmy.iamtemmy.chatgpt.site",
+  "at": "2026-10-24T01:33:44.635Z",
+  "method": "Two concurrent request lanes per client; 20s response window; injected latency is 150ms before send plus 150ms before delivery. No artificial server delay. Updates count fresh revisions.",
+  "runs": [
+    {
+      "clients": 2,
+      "addedRoundTripMs": 0,
+      "durationMs": 20000,
+      "room": "P9EY8X",
+      "perClient": [
+        {
+          "updatesPerSecond": 5.05,
+          "responsesPerSecond": 5.05,
+          "medianMs": 226.80853600000046,
+          "p90Ms": 699.1415850000012,
+          "maxMs": 3542.6523429999997,
+          "conflicts409": 3,
+          "casRetries": 102,
+          "stale": 0,
+          "averageResponseBytes": 4596,
+          "errors": {
+            "409": 3
+          }
+        },
+        {
+          "updatesPerSecond": 4.75,
+          "responsesPerSecond": 4.75,
+          "medianMs": 190.45362999999998,
+          "p90Ms": 807.9895629999992,
+          "maxMs": 4342.876722999999,
+          "conflicts409": 2,
+          "casRetries": 99,
+          "stale": 0,
+          "averageResponseBytes": 4680,
+          "errors": {
+            "409": 2
+          }
+        }
+      ]
+    },
+    {
+      "clients": 2,
+      "addedRoundTripMs": 300,
+      "durationMs": 20000,
+      "room": "LNL745",
+      "perClient": [
+        {
+          "updatesPerSecond": 3.45,
+          "responsesPerSecond": 3.45,
+          "medianMs": 462.9419629999975,
+          "p90Ms": 1011.5723799999978,
+          "maxMs": 1532.889353999999,
+          "conflicts409": 0,
+          "casRetries": 8,
+          "stale": 0,
+          "averageResponseBytes": 4402,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 3.15,
+          "responsesPerSecond": 3.15,
+          "medianMs": 463.8152330000012,
+          "p90Ms": 1032.7789369999991,
+          "maxMs": 3826.5924749999976,
+          "conflicts409": 0,
+          "casRetries": 12,
+          "stale": 0,
+          "averageResponseBytes": 4429,
+          "errors": {}
+        }
+      ]
+    },
+    {
+      "clients": 4,
+      "addedRoundTripMs": 0,
+      "durationMs": 20000,
+      "room": "XMR44C",
+      "perClient": [
+        {
+          "updatesPerSecond": 3,
+          "responsesPerSecond": 3.05,
+          "medianMs": 343.6798189999972,
+          "p90Ms": 1276.5411000000022,
+          "maxMs": 3784.203448,
+          "conflicts409": 5,
+          "casRetries": 92,
+          "stale": 1,
+          "averageResponseBytes": 5273,
+          "errors": {
+            "409": 5
+          }
+        },
+        {
+          "updatesPerSecond": 2.95,
+          "responsesPerSecond": 2.95,
+          "medianMs": 319.3081979999988,
+          "p90Ms": 1345.4194410000055,
+          "maxMs": 3420.5215300000054,
+          "conflicts409": 5,
+          "casRetries": 87,
+          "stale": 0,
+          "averageResponseBytes": 5208,
+          "errors": {
+            "409": 5
+          }
+        },
+        {
+          "updatesPerSecond": 1.5,
+          "responsesPerSecond": 1.5,
+          "medianMs": 484.44241200000397,
+          "p90Ms": 1499.5174430000043,
+          "maxMs": 3595.1868190000023,
+          "conflicts409": 1,
+          "casRetries": 76,
+          "stale": 0,
+          "averageResponseBytes": 5485,
+          "errors": {
+            "409": 1,
+            "The operation was aborted due to timeout": 1
+          }
+        },
+        {
+          "updatesPerSecond": 2.4,
+          "responsesPerSecond": 2.45,
+          "medianMs": 343.39405299999635,
+          "p90Ms": 1432.401595999996,
+          "maxMs": 5236.349665000002,
+          "conflicts409": 6,
+          "casRetries": 77,
+          "stale": 1,
+          "averageResponseBytes": 5151,
+          "errors": {
+            "409": 6
+          }
+        }
+      ]
+    },
+    {
+      "clients": 4,
+      "addedRoundTripMs": 300,
+      "durationMs": 20000,
+      "room": "NE5YUN",
+      "perClient": [
+        {
+          "updatesPerSecond": 1.95,
+          "responsesPerSecond": 1.95,
+          "medianMs": 607.690539999996,
+          "p90Ms": 2208.514743000007,
+          "maxMs": 4069.3318230000004,
+          "conflicts409": 1,
+          "casRetries": 51,
+          "stale": 0,
+          "averageResponseBytes": 5559,
+          "errors": {
+            "409": 1
+          }
+        },
+        {
+          "updatesPerSecond": 2,
+          "responsesPerSecond": 2,
+          "medianMs": 609.7099390000076,
+          "p90Ms": 2672.6105430000025,
+          "maxMs": 3824.3510839999944,
+          "conflicts409": 0,
+          "casRetries": 65,
+          "stale": 0,
+          "averageResponseBytes": 5672,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 2,
+          "responsesPerSecond": 2,
+          "medianMs": 595.3965989999997,
+          "p90Ms": 2531.0958790000004,
+          "maxMs": 4117.425904999996,
+          "conflicts409": 0,
+          "casRetries": 53,
+          "stale": 0,
+          "averageResponseBytes": 5683,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 1.9,
+          "responsesPerSecond": 1.9,
+          "medianMs": 617.2451489999949,
+          "p90Ms": 2350.065136999998,
+          "maxMs": 3596.3933560000005,
+          "conflicts409": 2,
+          "casRetries": 48,
+          "stale": 0,
+          "averageResponseBytes": 5371,
+          "errors": {
+            "409": 2
+          }
+        }
+      ]
+    }
+  ]
+}

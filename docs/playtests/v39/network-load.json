@@ -1,0 +1,183 @@
+{
+  "url": "https://sensor-fusion-temmy.iamtemmy.chatgpt.site",
+  "at": "2026-10-24T01:37:09.596Z",
+  "method": "Two concurrent request lanes per client; 20s response window; injected latency is 150ms before send plus 150ms before delivery. No artificial server delay. Updates count fresh revisions.",
+  "runs": [
+    {
+      "clients": 2,
+      "addedRoundTripMs": 0,
+      "durationMs": 20000,
+      "room": "CJVHR2",
+      "perClient": [
+        {
+          "updatesPerSecond": 3.6,
+          "responsesPerSecond": 3.6,
+          "medianMs": 383.6242409999977,
+          "p90Ms": 583.754151000001,
+          "maxMs": 3863.2080190000006,
+          "conflicts409": 0,
+          "casRetries": 19,
+          "stale": 0,
+          "averageResponseBytes": 4895,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 3.05,
+          "responsesPerSecond": 3.05,
+          "medianMs": 381.8770139999997,
+          "p90Ms": 984.3900460000004,
+          "maxMs": 3987.2181310000005,
+          "conflicts409": 0,
+          "casRetries": 44,
+          "stale": 0,
+          "averageResponseBytes": 5098,
+          "errors": {}
+        }
+      ]
+    },
+    {
+      "clients": 2,
+      "addedRoundTripMs": 300,
+      "durationMs": 20000,
+      "room": "U3M6FV",
+      "perClient": [
+        {
+          "updatesPerSecond": 3.2,
+          "responsesPerSecond": 3.2,
+          "medianMs": 486.033838000003,
+          "p90Ms": 929.0910130000011,
+          "maxMs": 1195.3486709999997,
+          "conflicts409": 0,
+          "casRetries": 2,
+          "stale": 0,
+          "averageResponseBytes": 4667,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 3.25,
+          "responsesPerSecond": 3.3,
+          "medianMs": 489.19100200000685,
+          "p90Ms": 1099.664557,
+          "maxMs": 1483.6715979999972,
+          "conflicts409": 0,
+          "casRetries": 1,
+          "stale": 1,
+          "averageResponseBytes": 4709,
+          "errors": {}
+        }
+      ]
+    },
+    {
+      "clients": 4,
+      "addedRoundTripMs": 0,
+      "durationMs": 20000,
+      "room": "L7CZQT",
+      "perClient": [
+        {
+          "updatesPerSecond": 2.3,
+          "responsesPerSecond": 2.3,
+          "medianMs": 607.46355700001,
+          "p90Ms": 2079.662774000004,
+          "maxMs": 3959.1366009999983,
+          "conflicts409": 0,
+          "casRetries": 36,
+          "stale": 0,
+          "averageResponseBytes": 5782,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 1.9,
+          "responsesPerSecond": 1.9,
+          "medianMs": 729.8309060000029,
+          "p90Ms": 2086.392257000007,
+          "maxMs": 3676.761993,
+          "conflicts409": 0,
+          "casRetries": 17,
+          "stale": 0,
+          "averageResponseBytes": 5751,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 1.4,
+          "responsesPerSecond": 1.4,
+          "medianMs": 914.9951880000008,
+          "p90Ms": 2467.1606759999995,
+          "maxMs": 3884.8553850000026,
+          "conflicts409": 0,
+          "casRetries": 5,
+          "stale": 0,
+          "averageResponseBytes": 5867,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 2.55,
+          "responsesPerSecond": 2.6,
+          "medianMs": 544.2229200000002,
+          "p90Ms": 1390.440091000004,
+          "maxMs": 3157.994455,
+          "conflicts409": 0,
+          "casRetries": 45,
+          "stale": 1,
+          "averageResponseBytes": 5771,
+          "errors": {}
+        }
+      ]
+    },
+    {
+      "clients": 4,
+      "addedRoundTripMs": 300,
+      "durationMs": 20000,
+      "room": "FA2TBE",
+      "perClient": [
+        {
+          "updatesPerSecond": 1.85,
+          "responsesPerSecond": 1.85,
+          "medianMs": 858.9160449999908,
+          "p90Ms": 1740.2475709999999,
+          "maxMs": 5702.762990000003,
+          "conflicts409": 0,
+          "casRetries": 25,
+          "stale": 0,
+          "averageResponseBytes": 6006,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 2.15,
+          "responsesPerSecond": 2.15,
+          "medianMs": 735.6044070000062,
+          "p90Ms": 1628.5877299999993,
+          "maxMs": 2320.0380589999986,
+          "conflicts409": 0,
+          "casRetries": 25,
+          "stale": 0,
+          "averageResponseBytes": 6037,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 1.5,
+          "responsesPerSecond": 1.5,
+          "medianMs": 690.1693280000036,
+          "p90Ms": 1647.0098409999919,
+          "maxMs": 2367.9343630000076,
+          "conflicts409": 0,
+          "casRetries": 9,
+          "stale": 0,
+          "averageResponseBytes": 5815,
+          "errors": {}
+        },
+        {
+          "updatesPerSecond": 2.3,
+          "responsesPerSecond": 2.3,
+          "medianMs": 644.5725870000024,
+          "p90Ms": 1614.4885849999991,
+          "maxMs": 2022.421691999989,
+          "conflicts409": 0,
+          "casRetries": 19,
+          "stale": 0,
+          "averageResponseBytes": 6053,
+          "errors": {}
+        }
+      ]
+    }
+  ]
+}
