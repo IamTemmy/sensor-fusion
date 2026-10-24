@@ -279,3 +279,10 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .guide-v37{position:relative;min-width:0}.noise-app .guide-v37 .help-close{position:absolute;right:22px;top:16px;width:auto;min-width:82px}.noise-app .guide-v37>h2{padding-right:90px;margin-right:0;min-height:35px}.noise-app .guide-v37 .guide-cards,.noise-app .guide-v37 .guide-tabs{min-width:0}.noise-app .guide-v37 .guide-cards p{font-size:16px}@media(max-width:650px){.noise-app .guide-v37 .help-close{right:10px;top:12px;min-width:65px}.noise-app .guide-v37>h2{padding-right:70px;min-height:48px}.noise-app .help-modal{overflow:hidden}}
 @media(max-width:650px){.noise-app .action-group:has(.exit) .action.capture{grid-column:auto}.noise-app .action-group:has(.exit){grid-template-rows:43px 48px;gap:5px}.noise-app .action-group:has(.exit) .action{min-height:0}.noise-app .action-group:has(.exit) .exit{min-height:48px}}
 @media(max-width:650px){.noise-app .action-group:has(.exit) .action:not(.exit){flex-direction:column;gap:0}.noise-app .action-group:has(.exit) .action:not(.exit) strong{font-size:9px;line-height:1.1;overflow-wrap:normal;max-height:22px;overflow:hidden}.noise-app .action-group:has(.exit) .action:not(.exit) kbd{font-size:10px;padding:0}}
+
+/* v38: matching illustrated card rows; gameplay is unchanged. */
+.noise-app .guide-v37 .basics-cards article{display:flex;flex-direction:column;align-items:flex-start;gap:4px}
+.noise-app .guide-v37 .basics-cards .painted-guide{width:100%;height:66px;flex-shrink:0}
+.noise-app .guide-v37 .basics-cards h3{font-size:14px;white-space:nowrap}
+@media(max-width:650px){.noise-app .guide-v37 .basics-cards article{min-height:155px}.noise-app .guide-v37 .basics-cards .painted-guide{height:66px}.noise-app .guide-v37 .basics-cards h3{font-size:14px}}
+.noise-app .guide-v37 .basics-cards .painted-guide{margin:0 auto}
