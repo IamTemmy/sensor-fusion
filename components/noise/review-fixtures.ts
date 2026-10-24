@@ -1,6 +1,8 @@
+import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {vanFor,hidingSpots,create,add,setup,configure,clear,event,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('practice-')){const g=create('VISUAL',0,1);g.training=true;add(g,'Rookie','local');add(g,'Echo','echo',true);setup(g);g.phase='playing';g.now=20000;preparePractice(g,Math.max(0,Math.min(6,Number(state.split('-')[1])-1)));if(state==='practice-2'){preparePractice(g,0);g.practiceStage=11;(g as any).lesson.step=1;g.seats[0].hand=g.loot[0].id;g.loot[0].holder=g.seats[0].id;g.seats[1].bot=true;}return g;}
  let g=create('VISUAL',0,1);for(let seed=1;seed<50;seed++){g=create('VISUAL',0,seed);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state!=='coop'){add(g,'Violet','violet',true);add(g,'Pip','pip',true);configure(g,'duos');}setup(g);if(g.layout===(state.includes('archive')?1:state.includes('crossroads')?2:0))break;}
  g.phase='playing';g.start=0;g.now=32000;g.end=90000;g.alert=44;g.events=[];
  const spots=[{x:450,y:300},{x:410,y:325},{x:520,y:330},{x:560,y:270}];

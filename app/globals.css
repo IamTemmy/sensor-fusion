@@ -287,3 +287,11 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 @media(max-width:650px){.noise-app .guide-v37 .basics-cards article{min-height:155px}.noise-app .guide-v37 .basics-cards .painted-guide{height:66px}.noise-app .guide-v37 .basics-cards h3{font-size:14px}}
 .noise-app .guide-v37 .basics-cards .painted-guide{margin:0 auto}
 .connection-slow{position:fixed;top:52px;left:50%;transform:translateX(-50%);z-index:9;padding:5px 12px;border:1px solid #e4ba66;border-radius:8px;background:#302316ed;color:#ffe1a1;font:600 12px Arial;pointer-events:none}
+
+/* v41: a persistent lesson rail on every viewport; no competing objective card. */
+.noise-app .is-practice .live-objective,.noise-app .is-practice .context-tip,.noise-app .is-practice .alarm-tip{display:none!important}
+.noise-app .is-practice .practice-tip{display:flex!important;position:absolute;top:auto;bottom:76px;left:12px;right:240px;width:auto;max-width:none;max-height:98px;align-items:center;gap:10px;padding:10px 14px;z-index:12;background:#112a36f5;color:#fff0cc;border:1px solid #d6b779;font:600 15px/1.3 Arial;overflow:auto}
+.noise-app .practice-tip b{font:12px var(--display);white-space:nowrap;color:#ffe1a0}.noise-app .practice-tip span{flex:1}.noise-app .practice-tip button{font-size:12px;white-space:nowrap;border:1px solid #b49b69;border-radius:7px;padding:7px}
+.noise-app .is-practice .clock b{white-space:nowrap;font-size:26px}.practice-complete{text-align:center;max-width:600px}.practice-complete .crew-portrait{width:100px;height:100px;margin:auto}.practice-complete button{margin:8px}
+@media(max-width:800px){.noise-app .is-practice .practice-tip{bottom:118px;left:8px;right:8px;max-height:98px;padding:8px;gap:7px;font-size:15px;display:grid!important;grid-template-columns:1fr auto}.noise-app .practice-tip span{grid-column:1 / -1;grid-row:2}.noise-app .practice-tip button{grid-column:2;grid-row:1;padding:4px 7px}.noise-app .is-practice .clock b{font-size:20px;letter-spacing:0;white-space:nowrap}}
+@media(max-width:600px){.noise-app .is-practice .clock b{font-size:17px;line-height:1.1}}
