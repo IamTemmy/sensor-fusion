@@ -1,0 +1,23 @@
+import {artwork} from './artwork.ts';
+import type {Game,View,Thief} from './engine.ts';
+type Scene=Game|View;
+export function botIntention(g:Scene,s:Thief){
+ if(s.escaped)return 'Aboard the van';
+ if(s.stun>g.now)return 'Tied up · needs help';
+ if(s.rescueId)return 'Untying a teammate';
+ if(g.loot.some(l=>l.holder===s.id))return s.task==='bank-rescue'?'Banking, then rescuing':'Taking art to the dock';
+ const tasks:Record<string,string>={'wait-rescue':'Waiting for a safe rescue',rescue:'Approaching a teammate',receive:'Ready for your pass',jackpot:'Fetching the jackpot','hold-plate':'Opening the jackpot','post-empty':'Taking the unguarded art',reroute:'Finding a safer route',van:'Heading to the van',cover:'Covering your alarm',fetch:'Looking for safe art',follow:'Staying with you','guard-warning':'Watching an approaching guard','fetch-done':'Delivered · staying with you'};
+ return tasks[s.task||'']||({auto:'Watching for the next job',cover:'Covering you',follow:'Staying with you',fetch:'Fetching art',plate:'Heading to the plate',van:'Heading to the van'}[s.mode]);
+}
+export function handStatus(g:Scene,s:Thief){
+ if(g.noises.some(n=>n.id===s.hand))return 'ALARM IN HAND · F throws';
+ if(g.loot.some(l=>l.id===s.hand))return g.noises.some(n=>n.attached===s.id)?'ART + ALARM · Partner grabs alarm':'QUIET ART · Bank or pass';
+ return 'HANDS FREE · E interacts';
+}
+/** Engine names remain stable; display the canvas identity in radio prose too. */
+export function displayEvent(g:Scene,text:string){
+ const names=[...g.loot].sort((a,b)=>b.name.length-a.name.length);let result=text;
+ for(const l of names){if(l.name&&result.includes(l.name)){result=result.replaceAll(l.name,artwork(l.id,l.value).name);break;}}
+ return result;
+}
+export function recentLure(g:Scene,guardId:string){return g.noises.find(n=>n.thrownBy&&!n.holder&&n.flight<=0&&n.heardBy?.includes(guardId)&&g.now-(n.heardAt?.[guardId]??-Infinity)<2500);}

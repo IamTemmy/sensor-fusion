@@ -295,3 +295,12 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .is-practice .clock b{white-space:nowrap;font-size:26px}.practice-complete{text-align:center;max-width:600px}.practice-complete .crew-portrait{width:100px;height:100px;margin:auto}.practice-complete button{margin:8px}
 @media(max-width:800px){.noise-app .is-practice .practice-tip{bottom:118px;left:8px;right:8px;max-height:98px;padding:8px;gap:7px;font-size:15px;display:grid!important;grid-template-columns:1fr auto}.noise-app .practice-tip span{grid-column:1 / -1;grid-row:2}.noise-app .practice-tip button{grid-column:2;grid-row:1;padding:4px 7px}.noise-app .is-practice .clock b{font-size:20px;letter-spacing:0;white-space:nowrap}}
 @media(max-width:600px){.noise-app .is-practice .clock b{font-size:17px;line-height:1.1}}
+/* v42: state, intention and cause/effect without extra panels. */
+.noise-app .bot-intention{display:block;font:600 13px/1.25 Arial,sans-serif;letter-spacing:0;text-transform:none;color:#b9f3dc;max-width:200px;margin-top:4px}
+.noise-app .action-group{position:relative;padding-top:16px}
+.noise-app .hand-state{position:absolute;top:0;right:0;font:700 12px/1 Arial,sans-serif;white-space:nowrap;color:#e9dcc0}
+.noise-app .hand-state.has-alarm{color:#ffb1a5}
+@media(max-width:800px){.noise-app .bot-intention{font-size:12px;max-width:170px}.noise-app .action-group{padding-top:16px}.noise-app .hand-state{font-size:11px}.noise-app .is-practice .practice-tip{overflow:visible;max-height:none}.noise-app .is-practice .practice-tip button{font-size:10px;padding:3px 5px}}
+.noise-app .echo-orders>button:first-child{display:grid;grid-template-columns:30px minmax(0,1fr);column-gap:7px;row-gap:2px;align-items:center;text-align:left}
+.noise-app .echo-orders>button:first-child>img,.noise-app .echo-orders>button:first-child>.portrait{grid-column:1;grid-row:1 / 3}
+.noise-app .bot-order-title{grid-column:2;font-size:12px;line-height:1.2}.noise-app .bot-intention{grid-column:2;margin:0;font-size:12px;line-height:1.2}
