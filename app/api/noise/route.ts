@@ -1,6 +1,5 @@
 import {env} from 'cloudflare:workers';
 import {create,add,command,advance,view,type Game} from '../../../lib/noise/engine';
-import {withRoomLock} from '../../../lib/noise/room-lock';
 import {applyPacket,packet} from '../../../lib/noise/network';
 import {enablePeer,type PeerGame} from '../../../lib/noise/peer-protocol';
 export const dynamic='force-dynamic';
@@ -14,14 +13,14 @@ export async function POST(req:Request){try{
   return reply({error:'Try creating the crew again.'},409);
  }
  const code=String(a.code||'').toUpperCase();if(!/^[A-Z2-9]{6}$/.test(code))return reply({error:'Enter a six-character crew code.'},400);
- return await withRoomLock(code,async()=>{for(let attempt=0;attempt<8;attempt++){
+ for(let attempt=0;attempt<8;attempt++){
   const row=await env.DB!.prepare('SELECT state,revision,expires FROM rooms WHERE code=?').bind(code).first<{state:string;revision:number;expires:number}>();if(!row||row.expires<now)return reply({error:'Crew not found or expired.'},404);const g=JSON.parse(row.state) as Game;if(g.version!==4||!Array.isArray(g.noises))return reply({error:'That code belongs to an older game. Create a Velmont: After Hours crew.'},400);
   let s=g.seats.find(s=>!s.bot&&typeof a.token==='string'&&s.token===a.token),token=a.token;if(a.type!=='join'&&!s)return reply({error:'Seat unavailable. Join a new crew.'},401);
   if(a.type==='poll'&&g.phase!=='playing')return response(g,s!.id,token);
   if(!(g as PeerGame).peer)advance(g,Math.max(g.now,Date.now()));
   if(a.type==='join'){token=crypto.randomUUID();s=add(g,String(a.name||'Rookie'),token);}else if(!(g as PeerGame).peer)applyPacket(g,s!.id,a);else if(a.type!=='poll')return reply({error:'Reconnect to the host transport.'},409);
-  g.revision=row.revision+1;const result=await env.DB!.prepare('UPDATE rooms SET state=?,revision=? WHERE code=? AND revision=?').bind(JSON.stringify(g),g.revision,code,row.revision).run();if(result.meta.changes)return response(g,s!.id,token,attempt);
+  g.revision++;const result=await env.DB!.prepare('UPDATE rooms SET state=?,revision=? WHERE code=? AND revision=?').bind(JSON.stringify(g),row.revision+1,code,row.revision).run();if(result.meta.changes)return response(g,s!.id,token,attempt);
   // Desynchronize cross-isolate writers rather than immediately colliding again.
   await new Promise(r=>setTimeout(r,8+Math.random()*24*(attempt+1))); 
- }return reply({error:'Room busy. Retrying…'},409);});
+ }return reply({error:'Room busy. Retrying…'},409);
  }catch(e){return reply({error:e instanceof Error?e.message:'Connection interrupted'},400);}}

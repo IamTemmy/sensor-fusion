@@ -1,7 +1,6 @@
 import {env} from 'cloudflare:workers';
 import {packet} from '../../../../lib/noise/network';
 import {endHost,mergeAdmissions,signalValid,validEnvelope,type PeerGame,type Envelope} from '../../../../lib/noise/peer-protocol';
-import {withRoomLock} from '../../../../lib/noise/room-lock';
 import {configuredIce,hostLeaseExpired} from '../../../../lib/noise/peer-policy';
 export const dynamic='force-dynamic';
 const reply=(x:unknown,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
@@ -9,7 +8,7 @@ export async function POST(req:Request){try{
  if(req.headers.get('origin')&&req.headers.get('origin')!==new URL(req.url).origin)return reply({error:'Origin rejected'},403);
  const raw=await req.text();if(raw.length>350000)return reply({error:'Message too large'},413);const a=JSON.parse(raw),now=Date.now();
  if(!/^[A-Z2-9]{6}$/.test(a.code||''))return reply({error:'Invalid room'},400);
- return await withRoomLock(a.code,async()=>{for(let retry=0;retry<8;retry++){
+ for(let retry=0;retry<8;retry++){
  const row=await env.DB!.prepare('SELECT state,revision,expires FROM rooms WHERE code=?').bind(a.code).first<{state:string;revision:number;expires:number}>();if(!row||row.expires<now)return reply({error:'Crew expired'},404);
  let g=JSON.parse(row.state) as PeerGame;const p=g.peer,s=g.seats.find(s=>!s.bot&&s.token===a.token);if(!p||!s)return reply({error:'Seat unavailable'},401);const host=s.id===g.host;
  if(p.closed||hostLeaseExpired(now,p.heartbeat,!!(g as PeerGame&{hostAway?:boolean}).hostAway)){p.closed=true;endHost(g);}
@@ -31,5 +30,5 @@ export async function POST(req:Request){try{
  }
  const result=await env.DB!.prepare('UPDATE rooms SET state=?,revision=? WHERE code=? AND revision=?').bind(JSON.stringify(g),row.revision+1,a.code,row.revision).run();if(!result.meta.changes)continue;
  return reply({...(a.bootstrap?{iceServers:configuredIce(env as unknown as Record<string,unknown>)}:{}),closed:p.closed,...packet(g,s.id,a.arenaKey),...(host?{game:a.bootstrap?g:undefined,humans:g.seats.filter(s=>!s.bot),serial:g.serial,signals:p.signals,mail:p.mail}:{signal:p.signals[s.id],received:p.acks})});
- }return reply({error:'Room busy'},409);});
+ }return reply({error:'Room busy'},409);
  }catch(e){return reply({error:e instanceof Error?e.message:'Connection interrupted'},400);}}
