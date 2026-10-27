@@ -1,5 +1,5 @@
 {
-  "engineHash": "5d365131986aef8c47f3d55075bc39743613f9186a2ecad51cf2e9cec5428e73",
+  "engineHash": "f581b89046cfd48628cb91b37cdeec7b3f6a960712811a00000f80238f446eb2",
   "policyHash": "fa7a275a54987586ce8c677064fd6e66a71a482ee98f17a54b517d95aa1f480d",
   "seeds": "1001–1040",
   "matches": 240,
@@ -7,7 +7,7 @@
     {
       "difficulty": "rookie",
       "seeds": "1001–1040",
-      "engineHash": "ede0dcce6049e70eba2f26732077639313dbafc9658f069699ef18bbf14f2dbf",
+      "engineHash": "7212457112bde20863104d1aa604403f74962179f625887c33bcb3904f22d790",
       "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
       "results": [
         {
@@ -93,7 +93,7 @@
     {
       "difficulty": "normal",
       "seeds": "1001–1040",
-      "engineHash": "ede0dcce6049e70eba2f26732077639313dbafc9658f069699ef18bbf14f2dbf",
+      "engineHash": "7212457112bde20863104d1aa604403f74962179f625887c33bcb3904f22d790",
       "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
       "results": [
         {
@@ -179,7 +179,7 @@
     {
       "difficulty": "pro",
       "seeds": "1001–1040",
-      "engineHash": "ede0dcce6049e70eba2f26732077639313dbafc9658f069699ef18bbf14f2dbf",
+      "engineHash": "7212457112bde20863104d1aa604403f74962179f625887c33bcb3904f22d790",
       "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
       "results": [
         {

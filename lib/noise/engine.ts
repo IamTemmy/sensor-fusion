@@ -24,7 +24,7 @@ export const COOP_GOAL=2600;
 export const LAYOUT_NAMES=['Echo Gallery','Night Archive','Crossroads'];
 export type Difficulty='rookie'|'normal'|'pro';
 export const DIFFICULTY={rookie:{speed:.95,sight:.9,rival:.42},normal:{speed:1.22,sight:1.15,rival:1.10},pro:{speed:1.22,sight:1.15,rival:1.65}};
-export const difficultyOf=(g:Game|View):Difficulty=>g.crewMode!=='coop'&&new Set(g.seats.filter(s=>!s.bot).map(s=>s.team)).size>1?'normal':g.difficulty||'normal';
+export const difficultyOf=(g:Game|View):Difficulty=>g.crewMode!=='coop'&&g.seats.some(s=>!s.bot&&s.team!==g.seats.find(p=>!p.bot)?.team)?'normal':g.difficulty||'normal';
 export const tuning=(g:Game|View)=>{const d=difficultyOf(g),t=DIFFICULTY[d];return g.crewMode==='coop'?{...t,speed:d==='rookie'?.78:d==='normal'?.96:1.0,sight:d==='rookie'?.80:d==='normal'?.95:1.0}:t;};
 export const guardSpeed=(g:Game|View,mode:Guard['mode'])=>mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?.85:difficultyOf(g)==='normal'?1.4:1.5):tuning(g).speed;
 export const guardSight=(g:Game|View,h:Guard)=>h.mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?.9:difficultyOf(g)==='normal'?1.25:1.3):tuning(g).sight;
@@ -230,8 +230,23 @@ export function steer(a:Vec,b:Vec,walls:Rect[]=WALLS):Vec{
  if(arena&&a.x>480){const transform=arena.symmetry==='rotate'?rotatePoint:mirrorPoint,rectTransform=arena.symmetry==='rotate'?rotateRect:mirrorRect;const normalized=walls===arena.walls?walls:[...arena.walls,...walls.filter(w=>!arena.walls.some(r=>same(w,r))).map(rectTransform)];return transform(steerRaw(transform(a),transform(b),normalized));}
  return steerRaw(a,b,walls);
 }
-function steerRaw(a:Vec,b:Vec,walls:Rect[]=WALLS):Vec{if(corridor(a,b,walls))return b;const size=20,cols=48,rows=30;const cell=(p:Vec)=>{const cx=Math.min(cols-2,Math.max(1,Math.floor(p.x/size))),cy=Math.min(rows-2,Math.max(1,Math.floor(p.y/size)));const options:Vec[]=[];for(let y=cy-1;y<=cy+1;y++)for(let x=cx-1;x<=cx+1;x++){const q={x:x*size+10,y:y*size+10};if(x>0&&x<cols-1&&y>0&&y<rows-1&&clear(q,13,walls)&&corridor(p,q,walls))options.push({x,y});}return options.sort((a,b)=>distance(p,{x:a.x*size+10,y:a.y*size+10})-distance(p,{x:b.x*size+10,y:b.y*size+10}))[0]||{x:cx,y:cy};};const start=cell(a),goal=cell(b),key=(x:number,y:number)=>y*cols+x;const q=[key(start.x,start.y)],prev=new Map<number,number>();prev.set(q[0],-1);let end=-1;for(let i=0;i<q.length;i++){const v=q[i],x=v%cols,y=Math.floor(v/cols);if(x===goal.x&&y===goal.y){end=v;break;}for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const nx=x+dx,ny=y+dy,k=key(nx,ny);if(nx<1||nx>=cols-1||ny<1||ny>=rows-1||prev.has(k)||!clear({x:nx*size+10,y:ny*size+10},13,walls))continue;prev.set(k,v);q.push(k);}}
- if(end<0)return a;const path:Vec[]=[];while(end!==-1){path.push({x:(end%cols)*size+10,y:Math.floor(end/cols)*size+10});end=prev.get(end)!;}return path.find(p=>corridor(a,p,walls))||a;}
+function steerRaw(a:Vec,b:Vec,walls:Rect[]=WALLS):Vec{if(corridor(a,b,walls))return b;const size=20,cols=48,rows=30;const cell=(p:Vec)=>{const cx=Math.min(cols-2,Math.max(1,Math.floor(p.x/size))),cy=Math.min(rows-2,Math.max(1,Math.floor(p.y/size)));const options:Vec[]=[];for(let y=cy-1;y<=cy+1;y++)for(let x=cx-1;x<=cx+1;x++){const q={x:x*size+10,y:y*size+10};if(x>0&&x<cols-1&&y>0&&y<rows-1&&clear(q,13,walls)&&corridor(p,q,walls))options.push({x,y});}return options.sort((a,b)=>distance(p,{x:a.x*size+10,y:a.y*size+10})-distance(p,{x:b.x*size+10,y:b.y*size+10}))[0]||{x:cx,y:cy};};const start=cell(a),goal=cell(b),key=(x:number,y:number)=>y*cols+x;
+ const graph=navigationGrid(walls),routeKey=key(start.x,start.y)+':'+key(goal.x,goal.y);let path=graph.paths.get(routeKey);
+ if(!path){const q=[key(start.x,start.y)],prev=new Map<number,number>();prev.set(q[0],-1);let end=-1;
+  for(let i=0;i<q.length;i++){const v=q[i],x=v%cols,y=Math.floor(v/cols);if(x===goal.x&&y===goal.y){end=v;break;}for(const [dx,dy] of [[1,0],[-1,0],[0,1],[0,-1]]){const nx=x+dx,ny=y+dy,k=key(nx,ny);if(nx<1||nx>=cols-1||ny<1||ny>=rows-1||prev.has(k)||!graph.clear[k])continue;prev.set(k,v);q.push(k);}}
+  path=[];while(end!==-1){path.push({x:(end%cols)*size+10,y:Math.floor(end/cols)*size+10});end=prev.get(end)!;}
+  if(graph.paths.size>=2048)graph.paths.delete(graph.paths.keys().next().value!);graph.paths.set(routeKey,path);
+ }
+ return path.find(p=>corridor(a,p,walls))||a;
+}
+// Geometry-only cache. No guard, danger, or decision result is cached here;
+// routes retain the exact BFS neighbour order and final line-of-sight checks.
+const navigationGrids=new Map<string,{clear:Uint8Array;paths:Map<string,Vec[]>}>();
+function navigationGrid(walls:Rect[]){
+ const key=walls.map(w=>`${w.x},${w.y},${w.w},${w.h}`).join(';');let grid=navigationGrids.get(key);if(grid)return grid;
+ grid={clear:new Uint8Array(48*30),paths:new Map()};for(let y=1;y<29;y++)for(let x=1;x<47;x++)grid.clear[y*48+x]=clear({x:x*20+10,y:y*20+10},13,walls)?1:0;
+ if(navigationGrids.size>=32)navigationGrids.delete(navigationGrids.keys().next().value!);navigationGrids.set(key,grid);return grid;
+}
 export function botSneakNearSensor(g:Game,s:Thief,target:Vec){const next=steer(s,target,thiefWalls(g,s));return sensors(g).some(z=>{const closest={x:Math.max(z.x,Math.min(z.x+z.w,s.x)),y:Math.max(z.y,Math.min(z.y+z.h,s.y))};const centre={x:z.x+z.w/2,y:z.y+z.h/2};return distance(s,closest)<50&&(inside(s,{x:z.x-14,y:z.y-14,w:z.w+28,h:z.h+28})||(next.x-s.x)*(centre.x-s.x)+(next.y-s.y)*(centre.y-s.y)>0);});}
 function walk(g:Game,p:Vec,target:Vec,dt:number,speed:number){const seat=g.seats.find(s=>s===p);if(seat){const art=g.loot.find(l=>l.holder===seat.id);if(art){speed=Math.min(speed,carrySpeed(art.value));if(seat.bot&&!g.seats.some(p=>p.team===seat.team&&!p.bot))speed*=difficultyOf(g)==='rookie'?.6:difficultyOf(g)==='pro'?1.1:1;}if(seat.bot&&!art)seat.sneak=botSneakNearSensor(g,seat,target);if(seat.sneak)speed*=.55;}const walls=g.guards.includes(p as Guard)?[...g.walls,...zones(g)]:thiefWalls(g,p as Thief);const next=steer(p,target,walls);const d=distance(p,next);if(seat?.bot&&d>3){const heading={x:(next.x-p.x)/d,y:(next.y-p.y)/d},reverse=seat.botHeading&&seat.botHeading.x*heading.x+seat.botHeading.y*heading.y<-.5;if(reverse&&g.now-(seat.turnAt??-Infinity)<360&&!g.guards.some(h=>guardActive(g,h)&&(h.retreatUntil||0)<=g.now&&distance(h,seat)<40)){seat.dx=seat.dy=0;return;}if(reverse)seat.turnAt=g.now;seat.botHeading=heading;}if(g.seats.includes(p as Thief)){(p as Thief).dx=d>3?(next.x-p.x)/d:0;(p as Thief).dy=d>3?(next.y-p.y)/d:0;}if(d>3)move(p,(next.x-p.x)/d,(next.y-p.y)/d,dt,Math.min(speed,d/dt),walls);}
 function decoy(g:Game,s:Thief):Vec{const crew=g.seats.filter(p=>sameCrew(p,s)&&!p.escaped);const rivals=g.seats.filter(p=>!sameCrew(p,s)&&!p.escaped);const candidates=[{x:70,y:70},{x:250,y:70},{x:360,y:60},{x:570,y:350},{x:690,y:70},{x:890,y:520},...rivals.map(p=>({x:p.x,y:p.y}))].filter(p=>distance(p,vanFor(g,s.team))>100&&sight(s,p,g.walls)&&distance(s,p)>100);return candidates.sort((a,b)=>{const score=(p:Vec)=>Math.min(...crew.map(c=>distance(c,p)))+rivals.reduce((v,r)=>v+(distance(r,p)<100?(r.hand?220:120):0),0);return score(b)-score(a);})[0]||{x:Math.min(900,s.x+220),y:Math.max(50,s.y-180)};}
@@ -274,12 +289,13 @@ export function approachExposed(g:Game,s:Vec,target:Vec){
  }return distance(p,target)>35;
 }
 /** Current sight is dangerous; retreating guards are deliberately non-threatening. */
-export function guardSees(g:Game,h:Guard,p:Vec,includeRetreat=false){if(!guardActive(g,h)||!includeRetreat&&(h.retreatUntil||0)>g.now)return false;const d=distance(h,p),a=Math.atan2(p.y-h.y,p.x-h.x)-h.angle;return d<(h.luredUntil&&h.luredUntil>g.now?60:blackoutActive(g)?60:180*guardSight(g,{...h,mode:'chase'})+45)&&(d<60||Math.cos(a)>Math.cos(.8))&&sight(h,p,g.walls);}
+export function guardSees(g:Game,h:Guard,p:Vec,includeRetreat=false){if(!guardActive(g,h)||!includeRetreat&&(h.retreatUntil||0)>g.now)return false;const d=distance(h,p);if(d>=279)return false;const a=Math.atan2(p.y-h.y,p.x-h.x)-h.angle;return d<(h.luredUntil&&h.luredUntil>g.now?60:blackoutActive(g)?60:180*guardSight(g,{...h,mode:'chase'})+45)&&(d<60||Math.cos(a)>Math.cos(.8))&&sight(h,p,g.walls);}
 function botDanger(g:Game,s:Thief,h:Guard,p:Vec,includeRetreat=false){
  if(!guardActive(g,h)||!includeRetreat&&(h.retreatUntil||0)>g.now)return false;
- const art=g.loot.find(l=>l.holder===s.id),noise=g.noises.find(n=>n.attached===s.id);
+ if(guardSees(g,h,p,includeRetreat))return true;
+ const art=g.loot.find(l=>l.holder===s.id);if(!art)return false;const noise=g.noises.find(n=>n.attached===s.id);
  const audible=art&&(!art.quietUntil||art.quietUntil<=g.now)&&g.now-(noise?.heardAt?.[h.id]??-Infinity)>8000;
- return guardSees(g,h,p,includeRetreat)||!!audible&&distance(h,p)<(g.crewMode==='coop'&&difficultyOf(g)==='pro'?440:190);
+ return !!audible&&distance(h,p)<(g.crewMode==='coop'&&difficultyOf(g)==='pro'?440:190);
 }
 export function coverPoint(g:Game,s:Thief,captor?:Guard):Vec{
  if(!captor)return {x:s.x,y:s.y};
@@ -399,7 +415,7 @@ export function idleSafety(g:Game,s:Thief,dt:number){
   const candidates:Vec[]=hidingSpots(g).filter(p=>distance(p,s)<200&&corridor(s,p,thiefWalls(g,s))&&reachable(p));
   for(let r=20;r<=(rescueContext?320:200);r+=20)for(let i=0;i<16;i++){const p={x:s.x+Math.cos(i*Math.PI/8)*r,y:s.y+Math.sin(i*Math.PI/8)*r};if(clear(p,13,thiefWalls(g,s))&&corridor(s,p,thiefWalls(g,s))&&(rescueContext?reachable(p):!unsafe(p)))candidates.push(p);}
   // Favor the nearest safe escape, with a small preference for solid cover.
-  candidates.sort((a,b)=>{const score=(p:Vec)=>(rescueContext?guards.reduce((n,h)=>n+(botDanger(g,s,h,p,true)?2000/(1+h.forecastMs/1500):0),0):0)+distance(s,p)+Math.max(0,90-Math.min(p.x-24,936-p.x,p.y-24,576-p.y))*12+(s.idlePoint?distance(p,s.idlePoint)*2:0)+g.guards.filter(h=>(h.retreatUntil||0)<=g.now&&sight(h,p,g.walls)).length*(rescueContext?120:12);return score(a)-score(b);});
+  const scored=new Map<Vec,number>();const score=(p:Vec)=>{const cached=scored.get(p);if(cached!==undefined)return cached;const value=(rescueContext?guards.reduce((n,h)=>n+(botDanger(g,s,h,p,true)?2000/(1+h.forecastMs/1500):0),0):0)+distance(s,p)+Math.max(0,90-Math.min(p.x-24,936-p.x,p.y-24,576-p.y))*12+(s.idlePoint?distance(p,s.idlePoint)*2:0)+g.guards.filter(h=>(h.retreatUntil||0)<=g.now&&sight(h,p,g.walls)).length*(rescueContext?120:12);scored.set(p,value);return value;};candidates.sort((a,b)=>score(a)-score(b));
   s.idlePoint=candidates[0];s.idleUntil=g.now+800;
  }
  s.dx=0;s.dy=0;s.rescueId=null;
@@ -418,7 +434,7 @@ function bot(g:Game,s:Thief,dt:number){
  if(!exempt&&g.now-(s.progressAt??g.now)>2800){
   if(!s.unstickTarget){const partner=g.seats.find(p=>p.team===s.team&&!p.bot&&!p.escaped);const choices:Vec[]=[...(partner?[partner]:[]),...g.loot.filter(l=>!l.banked&&!l.guardCarrier&&!l.flight&&!l.holder&&!l.sealed),vanFor(g,s.team)];
    const candidates:Vec[]=[];for(let radius=40;radius<=120;radius+=40)for(let i=0;i<12;i++){const p={x:s.x+Math.cos(i*Math.PI/6)*radius,y:s.y+Math.sin(i*Math.PI/6)*radius};if(clear(p,13,thiefWalls(g,s))&&corridor(s,p,thiefWalls(g,s)))candidates.push(p);}
-   const risk=(p:Vec)=>planningGuards(g).filter(h=>guardSees(g,h,p)).length+(botRoute(g,s,p).exposed?100:0);
+   const riskScores=new Map<Vec,number>();const risk=(p:Vec)=>{const known=riskScores.get(p);if(known!==undefined)return known;const value=planningGuards(g).filter(h=>guardSees(g,h,p)).length+(botRoute(g,s,p).exposed?100:0);riskScores.set(p,value);return value;};
    candidates.sort((a,b)=>risk(a)-risk(b)||Math.min(...choices.map(c=>distance(a,c)))-Math.min(...choices.map(c=>distance(b,c))));s.unstickTarget=candidates[0];s.unstickUntil=g.now+1800;s.rescueId=null;s.idlePoint=undefined;s.idleUntil=0;botCall(g,s,'reroute','Taking another route');
   }
   if(s.unstickTarget&&(s.unstickUntil||0)>g.now){const capsule=g.noises.find(n=>n.holder===s.id);if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));guardedWalk(g,s,s.unstickTarget,dt,s.hand?carrySpeed(g.loot.find(l=>l.id===s.hand)?.value||200):145,false);return;}

@@ -1,4 +1,4 @@
-/* A worker drives transport ticks while desktop rendering is backgrounded.
-   Browsers/OSes can still suspend workers; mobile hosts explicitly pause. */
-let timer;
-self.onmessage=e=>{if(e.data==='start'){clearInterval(timer);timer=setInterval(()=>self.postMessage('tick'),10);}else if(e.data==='stop'){clearInterval(timer);self.close();}};
+/* At most one outstanding main-thread tick: never build a message backlog
+   while AI, rendering, or a backgrounded browser delays the host. */
+let timer, pending=false;
+self.onmessage=e=>{if(e.data==='ack'){pending=false;return;}if(e.data==='start'){clearInterval(timer);pending=false;timer=setInterval(()=>{if(!pending){pending=true;self.postMessage('tick');}},10);}else if(e.data==='stop'){clearInterval(timer);self.close();}};
