@@ -21,3 +21,14 @@ export function displayEvent(g:Scene,text:string){
  return result;
 }
 export function recentLure(g:Scene,guardId:string){return g.noises.find(n=>n.thrownBy&&!n.holder&&n.flight<=0&&n.heardBy?.includes(guardId)&&g.now-(n.heardAt?.[guardId]??-Infinity)<2500);}
+
+/** Keep gameplay radio factual, short and unique over the last ten seconds. */
+export function radioEvents(g:Scene){
+ const seen=new Map<string,number>();return g.events.filter(e=>{
+  if(e.text.startsWith('The art sets off an alarm!')||e.text.startsWith('LESSON'))return false;
+  const key=e.text.split('. Shift sneaks')[0];const at=seen.get(key);seen.set(key,e.at);
+  return at===undefined||e.at-at>=10000;
+ }).slice(-3).map(e=>({...e,text:e.text.split('. Shift sneaks')[0]}));
+}
+
+export function normalArtSecured(g:Scene,team:number){const art=g.loot.filter(l=>l.value!==1200);return art.length>0&&art.every(l=>l.banked&&l.bankedBy===team);}

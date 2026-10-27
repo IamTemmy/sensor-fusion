@@ -1,4 +1,5 @@
 import {env} from 'cloudflare:workers';
+import {hostLeaseExpired} from '../../../lib/noise/peer-policy';
 import {create,add,command,advance,view,type Game} from '../../../lib/noise/engine';
 import {applyPacket,packet} from '../../../lib/noise/network';
 import {enablePeer,type PeerGame} from '../../../lib/noise/peer-protocol';
@@ -24,3 +25,13 @@ export async function POST(req:Request){try{
   await new Promise(r=>setTimeout(r,8+Math.random()*24*(attempt+1))); 
  }return reply({error:'Room busy. Retrying…'},409);
  }catch(e){return reply({error:e instanceof Error?e.message:'Connection interrupted'},400);}}
+
+/** Read-only saved-seat check: never advances or writes an online room. */
+export async function GET(req:Request){try{
+ const code=new URL(req.url).searchParams.get('crew')||'',token=req.headers.get('X-Crew-Token');
+ if(!/^[A-Z2-9]{6}$/.test(code)||!token)return reply({available:false});
+ const row=await env.DB!.prepare('SELECT state,expires FROM rooms WHERE code=?').bind(code).first<{state:string;expires:number}>();
+ if(!row||row.expires<Date.now())return reply({available:false});
+ const g=JSON.parse(row.state) as PeerGame;
+ return reply({available:g.version===4&&!g.peer?.closed&&(!g.peer||!hostLeaseExpired(Date.now(),g.peer.heartbeat,!!(g as PeerGame&{hostAway?:boolean}).hostAway))&&g.seats.some(s=>!s.bot&&s.token===token)});
+ }catch{return reply({available:false},503);}}

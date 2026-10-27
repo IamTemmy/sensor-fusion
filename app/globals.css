@@ -328,3 +328,35 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 @media(min-width:801px){.noise-app .lobby>.planning-sketch{grid-area:1/2/4/3;height:100%;min-height:88px;margin:0}.noise-app .lobby>h2{grid-area:2/1/3/2;font-size:25px}.noise-app .lobby>p:first-of-type{grid-area:3/1/4/2}.noise-app .lobby>.eyebrow{grid-area:1/1/2/2}}
 @media(max-width:800px){.planning-sketch{height:90px}.noise-app .planning-room .lobby{background:#0a1a2be0}}
 @media(min-width:801px){.noise-app .lobby>.planning-sketch{height:140px;min-height:0}.planning-sketch img{position:absolute;inset:0;object-fit:contain;background:#cabd9e}.noise-app .planning-room .lobby{max-height:calc(100dvh - 90px);overflow:auto}}
+/* v47: readable state, accessible menus, and stable overlays. */
+.noise-app .hero-wordmark{font:18px/1.2 var(--display);color:#f2d392;margin-bottom:14px}
+.noise-app .guide-v37{width:min(1080px,calc(100vw - 32px));height:min(650px,calc(100dvh - 28px));max-height:calc(100dvh - 28px);grid-template-rows:auto auto auto auto auto auto minmax(100px,1fr)}
+.noise-app .guide-v37 .guide-tabs{overflow-x:auto}.noise-app .guide-v37 .guide-tabs button{white-space:nowrap;flex:1;padding:8px}
+.noise-app .help-modal{z-index:1000}.noise-app .echo-orders{position:relative;overflow:visible!important}
+.noise-app .orders-popover{position:absolute;top:calc(100% + 8px);right:0;width:240px;z-index:40;padding:12px;background:#0b1b2dfc;border:2px solid #c5a064;border-radius:12px;box-shadow:0 10px 40px #0009;display:grid;gap:6px}
+.noise-app .orders-popover>b{font:14px var(--display);color:#ffe1a0;margin-bottom:4px}.noise-app .orders-popover>button{display:block;text-align:left;padding:10px 14px;min-height:40px;font-size:15px}.noise-app .orders-popover>button.selected{background:#bfeddb;color:#102433}
+.noise-app .live-objective,.noise-app .alarm-tip{display:none!important}
+.noise-app .jackpot-banner{top:85px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);max-width:60%;font-size:13px;pointer-events:none}
+.noise-app .context-tip{top:auto;bottom:94px;left:12px;right:260px;max-width:none;width:auto;z-index:15;font-size:15px}
+.noise-app .crew-panel{bottom:110px;min-height:0;display:flex;flex-direction:column;gap:12px}.noise-app .radio{flex:1;min-height:70px;overflow:auto;max-height:38vh}
+.noise-app .alert-thresholds{display:flex;justify-content:space-between;font:11px/1.3 Arial;color:#d8c697;gap:8px;margin:3px 0 8px}
+.noise-app .recap-hero-v34{height:auto;min-height:290px}.noise-app .recap-victory{padding-bottom:14px}.noise-app .recap-finish{position:static!important;margin:14px 0 0!important;font:600 14px/1.4 Arial;color:#c9d8dc}.noise-app .recap-summary-v34{position:relative;margin-top:12px;clear:both}
+.noise-app .alarm-count{font:600 13px/1.35 Arial;text-align:right;max-width:100px}.noise-app .award-goals>span{padding:4px 6px;border-radius:6px}.noise-app .award-goals>span.earned{background:#f5cd7214}
+.noise-app .invite-button{font-size:13px;padding:8px 12px;align-self:center}
+@media(max-width:800px){
+ .noise-app .orders-popover{position:fixed;top:auto;bottom:12px;left:12px;right:12px;width:auto;max-height:70dvh;overflow-y:auto;grid-template-columns:1fr 1fr;z-index:90;box-shadow:0 0 0 100vmax #02081388}.noise-app .orders-popover>b{grid-column:1/-1}.noise-app .orders-popover>button{min-height:50px}
+ .noise-app .context-tip{left:8px;right:8px;bottom:135px;padding:8px;max-height:88px;overflow:auto;font-size:14px}.noise-app .jackpot-banner{top:85px;max-width:90%;width:max-content;font-size:12px}
+ .noise-app .briefing{max-height:calc(100dvh - 30px);overflow:auto;padding-bottom:100px!important}.noise-app .briefing>.primary{position:sticky;bottom:-86px;margin-top:16px;width:100%;z-index:2}
+ .noise-app .hero-wordmark{font-size:16px;margin-bottom:8px}.noise-app .guide-v37{width:calc(100vw - 20px);height:calc(100dvh - 20px);max-height:calc(100dvh - 20px)}
+ .noise-app .guide-v37 .guide-cards article{display:flex!important;flex-direction:column!important;align-items:flex-start;min-height:145px;gap:4px}.noise-app .guide-v37 .guide-cards .painted-guide{width:100%!important;height:60px!important;margin:auto}.noise-app .guide-v37 .guide-cards h3{font-size:14px}.noise-app .guide-v37 .guide-cards p{font-size:16px}
+ .noise-app .recap-hero-v34{min-height:300px}.noise-app .recap-summary-v34{margin-top:8px}.noise-app .recap-finish{margin-top:12px!important}
+}
+.prep-tip{font:15px/1.4 Arial,sans-serif;color:#cfdbdf;padding:10px 12px;background:#091624;border-left:3px solid #d8b979;border-radius:5px}.prep-tip b{font:12px var(--display);color:#f2ce80;margin-right:8px}
+.noise-app .lobby>.prep-tip{grid-column:1/-1;margin:0}.noise-app .briefing>.prep-tip{margin:8px 0}
+/* Menus float above the radio without turning the entire panel into a scrollbox. */
+.noise-app .active-heist .crew-panel{overflow:visible}
+.noise-app .active-heist .crew-panel .echo-orders{position:relative!important}
+.noise-app .active-heist .crew-panel .radio{min-height:70px;max-height:35vh;flex:1;overflow:auto}
+.noise-app .active-heist .context-tip{top:auto!important;bottom:94px}
+@media(max-width:800px){.noise-app .active-heist .context-tip{bottom:135px!important}.noise-app .active-heist .crew-panel{bottom:auto}}
+@media(max-width:800px){.noise-app .recap-player .player-identity>span{white-space:normal;font-size:13px}.noise-app .recap-player .alarm-count{max-width:66px;font-size:12px;flex-shrink:0}.noise-app .recap-player{gap:8px}}

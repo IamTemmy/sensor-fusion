@@ -23,7 +23,7 @@ export const carrySpeed=(value:number)=>110-Math.max(0,Math.min(1300,value-200))
 export const COOP_GOAL=2600;
 export const LAYOUT_NAMES=['Echo Gallery','Night Archive','Crossroads'];
 export type Difficulty='rookie'|'normal'|'pro';
-export const DIFFICULTY={rookie:{speed:.95,sight:.9,rival:.42},normal:{speed:1.22,sight:1.15,rival:1.10},pro:{speed:1.22,sight:1.15,rival:1.65}};
+export const DIFFICULTY={rookie:{speed:.95,sight:.9,rival:.42},normal:{speed:1.22,sight:1.15,rival:1.14},pro:{speed:1.22,sight:1.15,rival:1.65}};
 export const difficultyOf=(g:Game|View):Difficulty=>g.crewMode!=='coop'&&g.seats.some(s=>!s.bot&&s.team!==g.seats.find(p=>!p.bot)?.team)?'normal':g.difficulty||'normal';
 export const tuning=(g:Game|View)=>{const d=difficultyOf(g),t=DIFFICULTY[d];return g.crewMode==='coop'?{...t,speed:d==='rookie'?.78:d==='normal'?.96:1.0,sight:d==='rookie'?.80:d==='normal'?.95:1.0}:t;};
 export const guardSpeed=(g:Game|View,mode:Guard['mode'])=>mode==='chase'&&g.crewMode==='coop'?(difficultyOf(g)==='rookie'?.85:difficultyOf(g)==='normal'?1.4:1.5):tuning(g).speed;
@@ -491,7 +491,14 @@ function botDecision(g:Game,s:Thief,dt:number){if(s.escaped||s.stun>g.now)return
  if(!held&&plateLoot&&(plateHuman||atJack||mode==='plate')){
   if(capsule){if(g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
   s.bottleId=null;s.sneak=true;
-  if(plateHuman&&mode!=='plate'){s.plateJob=plateLoot.id;botCall(g,s,'jackpot','GOING FOR THE JACKPOT');guardedWalk(g,s,plateLoot,dt,165);if(distance(s,plateLoot)<50&&interaction(g,s).kind==='loot')action(g,s,'grab');return;}
+  if(plateHuman&&mode!=='plate'){
+   // Do not abandon a plate job after bottling: secure a nearby safe alarm only
+   // when the jackpot approach is exposed, throw it, then resume the same job.
+   if(g.crewMode!=='coop'&&botRoute(g,s,plateLoot).exposed){
+    const bait=g.noises.filter(n=>!n.holder&&!n.attached&&n.flight<=0&&capturable(g,s,n)&&!planningGuards(g).some(h=>guardSees(g,h,s))).sort((a,b)=>distance(s,a)-distance(s,b))[0];
+    if(bait){botCall(g,s,'jackpot-decoy','Grabbing an alarm to clear the jackpot');if(capturable(g,s,bait))action(g,s,'grab');else guardedWalk(g,s,bait,dt,165);return;}
+   }
+   s.plateJob=plateLoot.id;botCall(g,s,'jackpot','GOING FOR THE JACKPOT');guardedWalk(g,s,plateLoot,dt,165);if(distance(s,plateLoot)<50&&interaction(g,s).kind==='loot')action(g,s,'grab');return;}
   botCall(g,s,'hold-plate','Holding the plate. Grab the jackpot');guardedWalk(g,s,g.plate,dt,165);return;
  }
  const pressure=automatic&&!held&&partner&&partner.stun<=g.now&&g.guards.some(h=>(h.retreatUntil||0)<=g.now&&distance(h,partner)<150);
@@ -543,6 +550,14 @@ function step(g:Game){const dt=STEP/1000;updateJobEvent(g);advanceArtFlights(g);
  for(const n of g.noises){if(n.attached){const carrier=g.seats.find(s=>s.id===n.attached);if(carrier){n.x=carrier.x;n.y=carrier.y;}}else if(n.holder){const s=g.seats.find(s=>s.id===n.holder)!;n.x=s.x;n.y=s.y;if(g.now>=n.expires){n.holder=null;s.hand=null;n.expires=g.now+4000;n.born=g.now;event(g,'The alarm burst!','catch',s);}}else if(n.flight>0){const p={x:n.x+n.vx*dt,y:n.y+n.vy*dt};if(clear(p,6,g.walls)){n.x=p.x;n.y=p.y;n.flight-=dt;}else n.flight=0;if(n.flight<=.2){const thrower=g.seats.find(s=>s.id===n.thrownBy);const unsafe=thrower&&g.seats.some(s=>sameCrew(s,thrower)&&!s.escaped&&distance(s,n)<100);if(n.flight<=0&&unsafe&&!g.training)g.alert=Math.min(100,g.alert+8);const rival=thrower&&g.seats.find(s=>!sameCrew(s,thrower)&&!s.escaped&&s.stun<=g.now&&!homeSafe(g,s)&&distance(s,n)<=40&&sight(s,n,g.walls));if(rival){n.flight=0;n.attached=rival.id;n.source=null;n.expires=g.now+15000;n.born=g.now;event(g,thrower!.name+' planted an alarm on '+rival.name+'!','land',rival);if(g.training&&!thrower!.bot)g.practiceStage=3;}else if(n.flight<=0)event(g,unsafe?'Too close! The alarm landed near your crew.':'Distraction landed.','land',n);}}}
  g.noises=g.noises.filter(n=>n.expires>g.now);
  for(const guard of g.guards){let victim:Thief|undefined;
+  // Loading docks are guard walls. Legacy routes/shift offsets can end inside
+  // one; never ask the navigator to reach a forbidden waypoint.
+  const guardWalls=[...g.walls,...zones(g)];
+  for(let skip=0;skip<guard.route.length&&!clear(guard.route[guard.way],13,guardWalls);skip++){
+   const blocked=guard.route[guard.way];guard.way=(guard.way+1)%guard.route.length;
+   if(distance(guard.target,blocked)<1)guard.target=guard.route[guard.way];
+  }
+
   if(!guardActive(g,guard)){if(g.now<(guard.entryAt||0))continue;guard.entered=true;guard.target=guard.route[guard.way];event(g,'Staff door opened. Security entering.','honk',guard);}
   if(guard.sentryArt){const exhibit=g.loot.find(l=>l.id===guard.sentryArt);if(!exhibit||exhibit.claimed||exhibit.banked||exhibit.holder){guard.sentry=undefined;guard.sentryArt=undefined;guard.sentryUntil=undefined;guard.attention=0;guard.target=guard.route[guard.way];}}
   if(guard.returnArt){const l=g.loot.find(l=>l.id===guard.returnArt);if(!l||l.banked||l.holder||l.flight||l.stashedAt!==undefined||l.droppedAt===undefined){guard.returnArt=undefined;}else if((guard.retreatUntil||0)<=g.now){const target=l.guardCarrier?l.home!:l;guard.mode='patrol';guard.victim=null;guard.target={...target};const before={x:guard.x,y:guard.y};walk(g,guard,target,dt,85);if(distance(before,guard)>.1)guard.angle=Math.atan2(guard.y-before.y,guard.x-before.x);if(!l.guardCarrier&&!l.flight&&distance(guard,l)<24){hush(g,l);l.guardCarrier=guard.id;event(g,'Security is returning '+l.name+'.','info',l);}if(l.guardCarrier){l.x=guard.x;l.y=guard.y;if(distance(guard,l.home!)<18){Object.assign(l,l.home);l.guardCarrier=undefined;l.droppedAt=undefined;l.recoverAt=undefined;l.locked=l.value===1200;guard.returnArt=undefined;event(g,'Security returned '+l.name+' to its display.','info',l);}}continue;}}

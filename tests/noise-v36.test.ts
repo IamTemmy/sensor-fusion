@@ -20,5 +20,5 @@ test('v36 eases only Rookie co-op patrol and sight; other levels and chase setti
  g.crewMode='coop';g.difficulty='rookie';assert.equal(tuning(g).speed,.78);assert.equal(tuning(g).sight,.80);assert.equal(guardSpeed(g,'chase'),.85);assert.equal(guardSight(g,h),.9);
  g.difficulty='normal';assert.equal(tuning(g).speed,.96);assert.equal(tuning(g).sight,.95);
  g.difficulty='pro';assert.equal(tuning(g).speed,1);assert.equal(tuning(g).sight,1);
- g.crewMode='duos';for(const [level,speed,sight,rival] of [['rookie',.95,.9,.42],['normal',1.22,1.15,1.10],['pro',1.22,1.15,1.65]] as const){g.difficulty=level;assert.deepEqual(tuning(g),{speed,sight,rival});}
+ g.crewMode='duos';for(const [level,speed,sight,rival] of [['rookie',.95,.9,.42],['normal',1.22,1.15,1.14],['pro',1.22,1.15,1.65]] as const){g.difficulty=level;assert.deepEqual(tuning(g),{speed,sight,rival});}
 });

@@ -19,7 +19,9 @@ export function reviewFixture(state:string):Game{
  if(state==='pass'){s.hand=null;loot.holder=null;g.noises=[];loot.flight={from:{x:410,y:420},to:{x:550,y:420},at:g.now-250,team:0,thrower:s.id};loot.x=480;loot.y=420;Object.assign(s,{x:410,y:420});Object.assign(g.seats[1],{x:550,y:420,hand:null});event(g,'ECHO: PASS!');}
  if(state.startsWith('dock')){if(state.includes('violet')){s.team=1;g.seats[2].team=0;}const dock=vanFor(g,s.team);Object.assign(s,{x:dock.x,y:dock.y,hand:null});loot.holder=null;loot.banked=true;g.noises=[];event(g,'$600 secured. Rookie delivered Last Sunset.','bank',dock);g.events.at(-1)!.at-=state==='dock'?80:1200;}
  if(state==='van'){s.escaped=true;}
- if(state==='lobby')g.phase='lobby';
+ if(state==='lobby'||state==='guest-lobby'){g.phase='lobby';if(state==='guest-lobby')g.host=g.seats[1].id;}
+ if(state==='last-call'){g.boardingAt=g.now-12000;g.end=g.now+3000;}
+ if(state==='blackout')g.jobEvent={kind:'blackout',at:g.now-1000,until:g.now+7000,warned:true,started:true,ended:false,flashUntil:g.now+2000};
  if(state==='briefing')g.phase='ready';
  if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can untie them.','catch',s);g.events.at(-1)!.at-=80;}
  if(state==='recap'){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
