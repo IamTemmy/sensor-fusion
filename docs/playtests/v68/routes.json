@@ -1,0 +1,1658 @@
+[
+  {
+    "id": "museum-0-2",
+    "name": "Echo Gallery",
+    "players": 2,
+    "guards": 5,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 170,
+        "y": 422,
+        "routes": [
+          {
+            "team": 0,
+            "length": 117,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 705,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 790,
+        "y": 436,
+        "routes": [
+          {
+            "team": 0,
+            "length": 702,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 108,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 95,
+        "routes": [
+          {
+            "team": 0,
+            "length": 593,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 578,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 480,
+        "y": 410,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 600,
+        "x": 140,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 861,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 600,
+        "x": 820,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 873,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 500,
+        "x": 330,
+        "y": 270,
+        "routes": [
+          {
+            "team": 0,
+            "length": 372,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 596,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 500,
+        "x": 660,
+        "y": 250,
+        "routes": [
+          {
+            "team": 0,
+            "length": 658,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 363,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 490,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 399,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 380,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-1-2",
+    "name": "Night Archive",
+    "players": 2,
+    "guards": 5,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 140,
+        "y": 410,
+        "routes": [
+          {
+            "team": 0,
+            "length": 111,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 735,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 810,
+        "y": 436,
+        "routes": [
+          {
+            "team": 0,
+            "length": 723,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 95,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 90,
+        "routes": [
+          {
+            "team": 0,
+            "length": 599,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 618,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 480,
+        "y": 330,
+        "routes": [
+          {
+            "team": 0,
+            "length": 429,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 429,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 600,
+        "x": 110,
+        "y": 100,
+        "routes": [
+          {
+            "team": 0,
+            "length": 410,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 972,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 600,
+        "x": 830,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 933,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 500,
+        "x": 280,
+        "y": 265,
+        "routes": [
+          {
+            "team": 0,
+            "length": 314,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 686,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 500,
+        "x": 800,
+        "y": 245,
+        "routes": [
+          {
+            "team": 0,
+            "length": 798,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 273,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 480,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 390,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 390,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-2-2",
+    "name": "Crossroads",
+    "players": 2,
+    "guards": 5,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 170,
+        "y": 404,
+        "routes": [
+          {
+            "team": 0,
+            "length": 132,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 708,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 810,
+        "y": 420,
+        "routes": [
+          {
+            "team": 0,
+            "length": 744,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 108,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 85,
+        "routes": [
+          {
+            "team": 0,
+            "length": 582,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 579,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 470,
+        "y": 430,
+        "routes": [
+          {
+            "team": 0,
+            "length": 387,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 408,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 600,
+        "x": 120,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 401,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 867,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 600,
+        "x": 830,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 899,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 500,
+        "x": 290,
+        "y": 280,
+        "routes": [
+          {
+            "team": 0,
+            "length": 303,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 693,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 500,
+        "x": 700,
+        "y": 300,
+        "routes": [
+          {
+            "team": 0,
+            "length": 651,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 270,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 480,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 390,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 390,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-0-4",
+    "name": "Echo Gallery",
+    "players": 4,
+    "guards": 5,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 170,
+        "y": 422,
+        "routes": [
+          {
+            "team": 0,
+            "length": 117,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 708,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 790,
+        "y": 436,
+        "routes": [
+          {
+            "team": 0,
+            "length": 702,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 108,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 95,
+        "routes": [
+          {
+            "team": 0,
+            "length": 611,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 578,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 480,
+        "y": 410,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 600,
+        "x": 140,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 405,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 861,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 600,
+        "x": 820,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 869,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 500,
+        "x": 330,
+        "y": 270,
+        "routes": [
+          {
+            "team": 0,
+            "length": 393,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 596,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 500,
+        "x": 660,
+        "y": 250,
+        "routes": [
+          {
+            "team": 0,
+            "length": 658,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 363,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 490,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 399,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 380,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-1-4",
+    "name": "Night Archive",
+    "players": 4,
+    "guards": 5,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 140,
+        "y": 410,
+        "routes": [
+          {
+            "team": 0,
+            "length": 111,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 735,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 810,
+        "y": 436,
+        "routes": [
+          {
+            "team": 0,
+            "length": 723,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 95,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 90,
+        "routes": [
+          {
+            "team": 0,
+            "length": 600,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 618,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 480,
+        "y": 330,
+        "routes": [
+          {
+            "team": 0,
+            "length": 429,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 429,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 600,
+        "x": 110,
+        "y": 100,
+        "routes": [
+          {
+            "team": 0,
+            "length": 411,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 938,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 600,
+        "x": 830,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 936,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 500,
+        "x": 280,
+        "y": 265,
+        "routes": [
+          {
+            "team": 0,
+            "length": 314,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 686,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 500,
+        "x": 800,
+        "y": 245,
+        "routes": [
+          {
+            "team": 0,
+            "length": 800,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 281,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 480,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 390,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 390,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-2-4",
+    "name": "Crossroads",
+    "players": 4,
+    "guards": 5,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 170,
+        "y": 404,
+        "routes": [
+          {
+            "team": 0,
+            "length": 132,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 708,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 810,
+        "y": 420,
+        "routes": [
+          {
+            "team": 0,
+            "length": 744,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 108,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 85,
+        "routes": [
+          {
+            "team": 0,
+            "length": 582,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 579,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 470,
+        "y": 430,
+        "routes": [
+          {
+            "team": 0,
+            "length": 387,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 408,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 600,
+        "x": 120,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 942,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 600,
+        "x": 830,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 899,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 500,
+        "x": 290,
+        "y": 280,
+        "routes": [
+          {
+            "team": 0,
+            "length": 303,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 723,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 500,
+        "x": 700,
+        "y": 300,
+        "routes": [
+          {
+            "team": 0,
+            "length": 651,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 270,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 480,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 390,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 390,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-0-6",
+    "name": "Echo Gallery",
+    "players": 6,
+    "guards": 7,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 170,
+        "y": 422,
+        "routes": [
+          {
+            "team": 0,
+            "length": 117,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 723,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 790,
+        "y": 436,
+        "routes": [
+          {
+            "team": 0,
+            "length": 705,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 108,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 95,
+        "routes": [
+          {
+            "team": 0,
+            "length": 611,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 578,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 480,
+        "y": 410,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 402,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 500,
+        "x": 140,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 858,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 500,
+        "x": 820,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 869,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 420,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 400,
+        "x": 330,
+        "y": 270,
+        "routes": [
+          {
+            "team": 0,
+            "length": 393,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 596,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 400,
+        "x": 660,
+        "y": 250,
+        "routes": [
+          {
+            "team": 0,
+            "length": 658,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 363,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art9",
+        "value": 200,
+        "x": 180,
+        "y": 490,
+        "routes": [
+          {
+            "team": 0,
+            "length": 92,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 690,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art10",
+        "value": 200,
+        "x": 780,
+        "y": 490,
+        "routes": [
+          {
+            "team": 0,
+            "length": 690,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 92,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 490,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 402,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 380,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-1-6",
+    "name": "Night Archive",
+    "players": 6,
+    "guards": 7,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 140,
+        "y": 410,
+        "routes": [
+          {
+            "team": 0,
+            "length": 111,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 735,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 810,
+        "y": 436,
+        "routes": [
+          {
+            "team": 0,
+            "length": 723,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 95,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 90,
+        "routes": [
+          {
+            "team": 0,
+            "length": 600,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 618,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 480,
+        "y": 330,
+        "routes": [
+          {
+            "team": 0,
+            "length": 429,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 429,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 500,
+        "x": 110,
+        "y": 100,
+        "routes": [
+          {
+            "team": 0,
+            "length": 410,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 1017,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 500,
+        "x": 830,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 935,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 414,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 400,
+        "x": 280,
+        "y": 265,
+        "routes": [
+          {
+            "team": 0,
+            "length": 314,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 686,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 400,
+        "x": 800,
+        "y": 245,
+        "routes": [
+          {
+            "team": 0,
+            "length": 798,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 279,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art9",
+        "value": 200,
+        "x": 180,
+        "y": 490,
+        "routes": [
+          {
+            "team": 0,
+            "length": 92,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 690,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art10",
+        "value": 200,
+        "x": 780,
+        "y": 490,
+        "routes": [
+          {
+            "team": 0,
+            "length": 690,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 92,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 480,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 393,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 390,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  },
+  {
+    "id": "museum-2-6",
+    "name": "Crossroads",
+    "players": 6,
+    "guards": 7,
+    "total": 4300,
+    "objectives": [
+      {
+        "id": "art1",
+        "value": 200,
+        "x": 170,
+        "y": 404,
+        "routes": [
+          {
+            "team": 0,
+            "length": 132,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 708,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art2",
+        "value": 200,
+        "x": 810,
+        "y": 420,
+        "routes": [
+          {
+            "team": 0,
+            "length": 744,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 108,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art3",
+        "value": 1200,
+        "x": 480,
+        "y": 85,
+        "routes": [
+          {
+            "team": 0,
+            "length": 675,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 690,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art4",
+        "value": 500,
+        "x": 470,
+        "y": 430,
+        "routes": [
+          {
+            "team": 0,
+            "length": 387,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 408,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art5",
+        "value": 500,
+        "x": 120,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 401,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 942,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art6",
+        "value": 500,
+        "x": 830,
+        "y": 110,
+        "routes": [
+          {
+            "team": 0,
+            "length": 899,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 414,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art7",
+        "value": 400,
+        "x": 290,
+        "y": 280,
+        "routes": [
+          {
+            "team": 0,
+            "length": 303,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 723,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art8",
+        "value": 400,
+        "x": 700,
+        "y": 300,
+        "routes": [
+          {
+            "team": 0,
+            "length": 651,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 270,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art9",
+        "value": 200,
+        "x": 180,
+        "y": 490,
+        "routes": [
+          {
+            "team": 0,
+            "length": 92,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 690,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "art10",
+        "value": 200,
+        "x": 780,
+        "y": 490,
+        "routes": [
+          {
+            "team": 0,
+            "length": 690,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 92,
+            "alternatives": 2
+          }
+        ]
+      },
+      {
+        "id": "plate",
+        "value": 0,
+        "x": 480,
+        "y": 500,
+        "routes": [
+          {
+            "team": 0,
+            "length": 393,
+            "alternatives": 2
+          },
+          {
+            "team": 1,
+            "length": 390,
+            "alternatives": 2
+          }
+        ]
+      }
+    ],
+    "sentryRoutesClear": true
+  }
+]

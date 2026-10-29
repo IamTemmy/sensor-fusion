@@ -360,3 +360,294 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .active-heist .context-tip{top:auto!important;bottom:94px}
 @media(max-width:800px){.noise-app .active-heist .context-tip{bottom:135px!important}.noise-app .active-heist .crew-panel{bottom:auto}}
 @media(max-width:800px){.noise-app .recap-player .player-identity>span{white-space:normal;font-size:13px}.noise-app .recap-player .alarm-count{max-width:66px;font-size:12px;flex-shrink:0}.noise-app .recap-player{gap:8px}}
+/* v48: a real touch viewport — the arena never sits behind the controls. */
+.brand-emblem{width:40px;height:40px;object-fit:contain;border-radius:9px;flex-shrink:0}
+.touch-summary{display:none}
+.noise-app[data-touch=true] .touch-summary{display:block;font:600 15px/1.5 Arial;color:#b8e8dc;margin:10px 0}
+.noise-app[data-touch=true] .desktop-only,.noise-app[data-touch=true] .keyboard-note,.noise-app[data-touch=true] .action kbd{display:none!important}
+@media(max-width:800px){
+ .noise-app .brand-emblem{width:30px;height:30px;border-radius:6px}
+ .noise-app .active-heist{display:grid!important;grid-template-columns:minmax(0,1fr)!important;grid-template-rows:104px minmax(0,1fr) 64px 142px!important;height:calc(100dvh - 54px);min-height:0;overflow:hidden}
+ .noise-app .active-heist>canvas{position:relative!important;inset:auto!important;grid-area:2/1/3/2!important;width:100%!important;height:100%!important;min-height:0;display:block;touch-action:none}
+ .noise-app .active-heist .game-hud{position:relative!important;inset:auto!important;grid-area:1/1/2/2!important;height:104px;min-height:0;padding:8px 12px!important;background:#0b192a}
+ .noise-app .active-heist .haul b,.noise-app .active-heist .clock b{font-size:27px!important}
+ .noise-app .active-heist .clock{top:7px;left:50%;transform:translateX(-50%)}
+ .noise-app .active-heist .hud-map{top:59px;left:12px}
+ .noise-app .active-heist .phone-alert{top:49px;left:12px;right:12px;font-size:10px}
+ .noise-app .active-heist .crew-panel{top:62px!important;right:8px;bottom:auto!important;width:158px;max-height:none;z-index:30}
+ .noise-app .active-heist .echo-orders>button:first-child{padding:5px 8px;min-height:32px;grid-template-columns:24px 1fr}
+ .noise-app .active-heist .echo-orders .bot-intention{display:none}
+ .noise-app .active-heist .echo-orders .crew-portrait{width:24px;height:28px}
+ .noise-app .active-heist .bottom-controls{grid-area:4/1/5/2!important;position:relative!important;inset:auto!important;height:142px;min-height:0;padding:12px 8px max(10px,env(safe-area-inset-bottom))!important;gap:10px;align-items:center}
+ .noise-app .active-heist .thumbstick{width:72px;height:72px;flex:0 0 72px;touch-action:none}
+ .noise-app .active-heist .action-group{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr));grid-auto-rows:42px;gap:6px;width:auto;min-width:0;flex:1;padding-top:16px;position:relative;align-content:center}
+ .noise-app .active-heist .action{padding:4px!important;min-width:0!important;min-height:42px!important;height:auto;font-size:12px;line-height:1.1;gap:0}
+ .noise-app .active-heist .action strong{font-size:11px!important;overflow-wrap:anywhere}
+ .noise-app .active-heist .hand-state{top:0;right:0;font-size:10px;line-height:1.1;max-width:100%;white-space:normal}
+ .noise-app .active-heist .action.exit{background:#edca7d;color:#102031;border-color:#fff0b5}
+ .noise-app .active-heist .context-tip,.noise-app .active-heist .practice-tip,.noise-app .active-heist .event-banner,.noise-app .active-heist .jackpot-banner{position:absolute!important;top:auto!important;bottom:142px!important;left:0!important;right:0!important;transform:none!important;width:100%!important;max-width:none!important;max-height:64px!important;min-height:0;padding:6px 10px!important;font-size:12px!important;line-height:1.25;border-radius:0;overflow:auto!important;box-sizing:border-box}
+ .noise-app .active-heist .context-tip button{display:inline-block;margin:0 0 0 8px;min-height:24px!important;padding:2px 7px!important}
+ .noise-app .active-heist .spectator{position:fixed!important;bottom:142px!important;left:0!important;right:0!important;top:auto!important;max-height:64px;overflow:auto;width:100%!important;border-radius:0;font-size:12px;padding:6px 10px;gap:2px}
+ .noise-app .active-heist .practice-tip{grid-template-columns:1fr auto!important;gap:3px!important}
+ .noise-app .active-heist .orders-popover{bottom:max(12px,env(safe-area-inset-bottom));max-height:70dvh}
+}
+@media(max-width:800px) and (max-height:500px){.noise-app .active-heist{grid-template-rows:72px minmax(0,1fr) 36px 94px!important}.noise-app .active-heist .game-hud{height:72px}.noise-app .active-heist .bottom-controls{height:94px!important}.noise-app .active-heist .action-group{grid-template-columns:repeat(5,minmax(0,1fr));grid-auto-rows:44px}.noise-app .active-heist .context-tip,.noise-app .active-heist .practice-tip,.noise-app .active-heist .event-banner,.noise-app .active-heist .jackpot-banner,.noise-app .active-heist .spectator{bottom:94px!important;max-height:36px!important}.noise-app .active-heist .crew-panel{top:8px!important}.noise-app .active-heist .hud-map{left:auto;right:12px;top:42px}.noise-app .active-heist .phone-alert{top:49px;right:85px}}
+
+@media(max-width:800px){.noise-app .active-heist .action-group:has(.exit){grid-template-rows:42px 42px!important}.noise-app .active-heist .action-group .action.exit{grid-column:2/4!important;grid-row:2!important;min-height:42px!important}.noise-app .active-heist .bottom-controls{display:flex!important}.noise-app .active-heist .action-group .action.exit strong{font-size:13px!important}}
+/* Jackpot is a content-sized notice, never a top-to-bottom overlay. */
+@media(min-width:801px){
+ .noise-app .active-heist .jackpot-banner{top:74px;bottom:auto;left:50%;right:auto;transform:translateX(-50%);width:max-content;max-width:calc(100% - 300px);height:fit-content;min-height:0;max-height:64px;align-self:start;overflow:hidden;padding:8px 14px;text-align:center;pointer-events:none}
+}
+
+/* Small heist notification; no geometry or timing changes. */
+.noise-app .active-heist .jackpot-banner{display:flex;align-items:center;justify-content:center;gap:10px;background:linear-gradient(115deg,#122b30f5,#0b1929f5);border:1px solid #e5c17b;border-left:4px solid #9fe6ce;box-shadow:0 4px 16px #0005;color:#ffe4a1;animation:jackpot-notice-in .22s ease-out}
+.jackpot-notice-icon{font-size:26px;line-height:1;color:#edcb80}
+.jackpot-banner strong{display:block;font:13px/1.2 var(--display);letter-spacing:.4px}
+.jackpot-banner small{display:block;font:12px/1.4 Arial;color:#d5e6df;margin-top:3px}
+.collection-note{display:flex;flex-direction:column;gap:3px;margin:8px 0 0;padding:7px 10px;border-left:3px solid #e8c476;background:#102430d9;font:13px/1.4 Arial;color:#cadbdc;max-width:440px}
+.collection-note b{color:#f5d78b}
+@keyframes jackpot-notice-in{from{opacity:0;filter:brightness(1.5)}to{opacity:1;filter:brightness(1)}}
+@media(prefers-reduced-motion:reduce){.noise-app .active-heist .jackpot-banner{animation:none}}
+
+/* HUD status never occupies museum canvas coordinates. */
+.noise-app .game-hud .jackpot-hud{position:absolute;top:7px;right:280px;display:flex;align-items:center;gap:7px;padding:5px 10px;border:1px solid #bca46a;border-radius:8px;background:#14302f;color:#f8dd9a;pointer-events:none;animation:jackpot-notice-in .2s ease-out}
+.jackpot-hud>span:first-child{font-size:25px}
+.jackpot-hud strong{display:block;font:12px/1.2 var(--display)}
+.jackpot-hud small{display:block;font:11px/1.3 Arial;color:#bce7d6}
+.noise-app .top-actions .music-toggle{min-width:30px;padding:0 8px}
+@media(max-width:800px){
+ .noise-app .topbar{gap:4px;padding-left:6px;padding-right:6px}
+ .noise-app .topbar .brand{gap:5px;letter-spacing:0;font-size:10px}
+ .noise-app .top-actions{gap:4px}
+ .noise-app .top-actions .icon-button{font-size:10px;padding:0 6px;min-width:28px}
+ .noise-app .active-heist .game-hud .jackpot-hud{top:60px;left:72px;right:172px;padding:3px;gap:0;border:none;background:transparent;min-height:30px}
+ .jackpot-hud>span:first-child,.jackpot-hud small{display:none}
+ .jackpot-hud strong{font-size:10px;line-height:1.2;color:#f4d38b}
+}
+@media(prefers-reduced-motion:reduce){.noise-app .game-hud .jackpot-hud{animation:none}}
+/* v48: a fixed briefing footer; all text scrolls above the CTA. */
+.noise-app .briefing{display:flex;flex-direction:column;max-height:calc(100dvh - 30px);overflow:hidden;padding:22px!important;gap:12px}
+.noise-app .briefing-scroll{overflow:auto;min-height:0;padding:0 4px 16px;scroll-padding-bottom:20px}
+.noise-app .briefing>.primary{position:static!important;flex:0 0 auto;margin:0!important;bottom:auto;width:100%;z-index:auto}
+.noise-app .invite-card{padding:16px;border:1px solid #bda16a;border-radius:12px;background:#102439ed;gap:12px}
+.noise-app .invite-card h2{font:24px/1.15 var(--display);margin:0;color:#f8d68b}
+.noise-app .invite-card p{font:15px/1.4 Arial;margin:0 0 8px;color:#d7e6e9}
+@media(max-width:800px){
+ .noise-app .briefing{max-height:calc(100dvh - 88px)!important;padding:14px!important;gap:10px}
+ .noise-app .briefing-scroll{padding-bottom:20px;overscroll-behavior:contain}
+ .noise-app .active-heist .action-group .action.exit{grid-column:auto!important;grid-row:auto!important;min-width:0!important;width:auto!important;height:42px!important;min-height:42px!important;padding:5px 4px!important}
+ .noise-app .active-heist .action-group .action.exit strong{font-size:12px!important}
+ .noise-app .active-heist .action-group:has(.exit){grid-template-columns:repeat(3,minmax(0,1fr))!important}
+ .noise-app .invite-card h2{font-size:22px}
+}
+/* Recap: one result hierarchy, stable awards and persistent replay controls. */
+.noise-app .recap-redesign{width:min(1180px,100%);max-height:100%;min-height:0;display:flex;flex-direction:column;margin:auto;background:#071522;overflow:hidden}
+.results-scroll{min-height:0;overflow-y:auto;overscroll-behavior:contain;scrollbar-width:thin}
+.results-hero{position:relative;isolation:isolate;min-height:235px;overflow:hidden}
+.results-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 40%;z-index:-2}
+.results-hero:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#071522f5,#071522b0 35%,transparent 70%),linear-gradient(0deg,#071522,transparent 35%);z-index:-1}
+.heist-recap-loss .results-art{filter:saturate(.5);opacity:.45}
+.results-victory{padding:22px 30px 12px;position:relative}.results-meta{font:700 11px/1.4 Arial;letter-spacing:1px;text-transform:uppercase;color:#b9ccd6}
+.noise-app .results-victory h2{font:clamp(28px,3.5vw,46px)/1.08 var(--display);text-transform:uppercase;margin:12px 0 10px;text-shadow:0 3px #071522}
+.results-caption{font:12px var(--display);letter-spacing:2px;color:#f4d18b}.results-haul{font:clamp(60px,6vw,86px)/1.1 var(--display);color:#ffda87;letter-spacing:-2px;font-variant-numeric:tabular-nums;text-shadow:0 4px #78532060}
+.results-outcome{display:inline-flex;align-items:center;gap:6px;min-height:26px;padding:3px 14px;margin-top:7px;border:1px solid #76d8bd;border-radius:30px;color:#9be9d2;background:#092b27;font:600 12px Arial}.results-outcome.missed{border-color:#b66977;color:#f6a8b1;background:#341e2a}
+.results-awards{margin:0 30px}.results-awards h3{font:13px var(--display);letter-spacing:1px;color:#efce86;margin:4px 0 4px}.noise-app .results-awards .recap-stars{position:relative;display:grid;grid-template-columns:repeat(3,1fr);justify-items:center;margin:0;gap:12px}.results-awards .recap-stars:before{content:'';position:absolute;top:50%;left:16.67%;right:16.67%;height:1px;background:#a98c4a}.results-awards .recap-stars span{position:relative;background:#071522;padding:0 8px}.noise-app .results-awards .recap-stars svg{width:38px;height:38px}
+.results-goals{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.results-goals>span{display:flex;align-items:center;justify-content:center;gap:7px;min-height:32px;padding:4px 8px;border:1px solid #354957;border-radius:7px;color:#9babb5;font:600 12px/1.3 Arial;text-align:center}.results-goals>span.earned{color:#fff0ce;background:#152831}.results-goals i{font-style:normal;color:#e7be66}
+.noise-app .results-note{height:36px;display:flex;align-items:center;justify-content:center;margin:0;font:12px/1.35 Arial;color:#aabdc8;text-align:center}.noise-app .results-note.jackpot-note{color:#f5d28c}
+.results-crews{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0 30px}.results-crews.cooperative{grid-template-columns:1fr}.results-crew{min-width:0;border-top:1px solid #3b505e;padding-top:9px}.results-crew h3{font:13px var(--display);color:var(--crew);margin:0 0 7px;display:flex;justify-content:space-between}.results-roster{display:grid;gap:7px}.cooperative .results-roster{grid-template-columns:repeat(2,minmax(0,1fr))}
+.results-player{display:grid;grid-template-columns:44px minmax(0,1fr) 110px;gap:10px;align-items:center;min-height:76px;padding:8px 10px;border:1px solid #304b5a;border-radius:9px;background:#0b202d}.results-player .crew-portrait{width:44px;height:50px;object-fit:cover;border-radius:7px;border:1px solid var(--crew)}.results-identity{min-width:0;display:grid;gap:3px}.results-identity b{font:13px var(--display);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.results-identity>span{font:14px Arial;color:#e4edf0}.results-penalty{font:10px/1.2 Arial;color:#f2a3ae;min-height:12px}.results-status{display:grid;justify-items:end;gap:6px}.results-status>span:last-child{font:11px/1.2 Arial;color:#bacbd4;white-space:nowrap}
+.result-badge{box-sizing:border-box;display:flex;align-items:center;justify-content:center;width:104px;height:28px;white-space:nowrap;border-radius:6px;border:1px solid #377566;color:#a0ead5;background:#103c34;font:700 10px/1 Arial}.result-badge.missed{border-color:#894956;background:#3b2330;color:#ffb1b8}
+.results-record-row{display:flex;align-items:center;gap:24px;margin:12px 30px;padding:9px 14px;border:1px solid #7d704c;border-radius:9px;background:linear-gradient(100deg,#102735,#091925)}.results-time{display:flex;align-items:center;gap:12px}.results-time>span{font:11px Arial;letter-spacing:.6px;color:#b6c8d4}.results-time>b{font:24px var(--display);color:#ffda87}.results-record-row .recap-record summary{border:0;padding:3px 10px}
+.results-footer{flex-shrink:0;display:flex;align-items:center;gap:12px;padding:14px 30px 18px;border-top:1px solid #334954;background:#071522;z-index:2}.results-tip{flex:1;min-width:0;font:11px/1.4 Arial;color:#b3c4ce}.results-tip strong{font:11px var(--display);color:#f4d18b;margin-right:7px}.results-footer .primary{min-width:245px;min-height:46px;font-size:20px}.results-footer .secondary{min-height:46px;font-size:12px}.results-footer .recap-wait{flex:1}
+@media(min-width:801px) and (max-height:780px){.results-hero{min-height:200px}.results-victory{padding-top:15px}.noise-app .results-victory h2{font-size:34px;margin:8px 0}.results-haul{font-size:64px}.results-player{min-height:64px;padding:5px 8px}.results-player .crew-portrait{height:42px;width:38px}.results-footer{padding-top:10px;padding-bottom:14px}.results-record-row{margin-top:8px;margin-bottom:8px}}
+@media(max-width:800px){.noise-app .recap-redesign{height:100%;max-height:100%;border:0;border-radius:0}.results-hero{min-height:292px}.results-art{height:170px;object-position:right center}.results-hero:after{background:linear-gradient(0deg,#071522 0%,#071522 43%,transparent 80%)}.results-victory{padding:140px 14px 10px;text-align:center}.results-meta{font-size:10px;letter-spacing:.5px}.noise-app .results-victory h2{font-size:27px;margin:8px 0}.results-caption{font-size:10px}.results-haul{font-size:53px}.results-outcome{font-size:11px;min-height:24px;margin-top:4px}.results-awards{margin:0 14px}.results-awards h3{text-align:center;font-size:12px}.noise-app .results-awards .recap-stars svg{width:32px;height:32px}.results-goals{gap:6px}.results-goals>span{font-size:10px;min-height:38px;padding:3px;gap:4px}.noise-app .results-note{height:52px;font-size:11px;line-height:1.35}.results-crews,.results-crews.cooperative{margin:0 14px;grid-template-columns:1fr;gap:12px}.cooperative .results-roster{grid-template-columns:1fr}.results-crew h3{font-size:12px}.results-player{grid-template-columns:36px minmax(0,1fr) 104px;gap:7px;min-height:66px;padding:6px 8px}.results-player .crew-portrait{width:36px;height:42px}.results-identity b{font-size:12px}.results-identity>span{font-size:13px}.results-penalty{font-size:9px}.results-status>span:last-child{font-size:10px}.results-record-row{margin:10px 14px;padding:8px 10px;gap:10px;justify-content:space-between}.results-time{display:grid;gap:3px}.results-time>span{font-size:10px}.results-time>b{font-size:22px}.results-record-row .recap-record summary{font-size:11px}.results-footer{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:10px 14px max(12px,env(safe-area-inset-bottom));box-shadow:0 -6px 20px #0004}.results-footer .primary{grid-column:1/-1;grid-row:1;min-width:0;min-height:44px;font-size:19px}.results-footer .secondary{grid-column:2;min-height:36px;font-size:10px}.results-tip{font-size:10px}.results-tip strong{font-size:10px}.results-footer .recap-wait{grid-column:1/-1;grid-row:1;text-align:center;font-size:12px}}
+/* Illustrated quick-start briefing. The footer never overlaps scrolling copy. */
+.noise-app .quick-brief-overlay{padding:18px;background:#030b159c;backdrop-filter:blur(5px)}
+.noise-app .panel.briefing.quick-brief{width:min(1040px,100%);max-height:100%!important;padding:0!important;gap:0;border:1px solid #687a806b;border-radius:18px;background:linear-gradient(145deg,#112635,#081725);overflow:hidden;display:flex;flex-direction:column}
+.quick-brief-scroll{overflow-y:auto;min-height:0;overscroll-behavior:contain;padding:24px 26px 0;scrollbar-width:thin;scroll-padding:16px}
+.quick-brief-heading{text-align:center}.quick-brief-kickers{display:flex;align-items:center;justify-content:center;gap:22px;font:700 11px/1.2 Arial;letter-spacing:1.2px;color:#b6d6e3}.quick-brief-kickers>span:first-child{padding:7px 15px;border:1px solid #62899a70;border-radius:20px;background:#143448}.quick-brief-kickers .brief-timer{display:flex;gap:5px;align-items:center;color:#f5d798;letter-spacing:.2px}
+.noise-app .quick-brief-heading h2{font:clamp(28px,3.3vw,43px)/1.12 var(--display);color:#f9db99;margin:15px 0 8px;text-transform:uppercase;letter-spacing:-.6px}
+.noise-app .quick-brief-tagline{font:500 19px/1.35 Arial;color:#c4dce6;margin:0}.noise-app .quick-brief-mode{font:500 13px/1.4 Arial;color:#9db9ca;margin:10px 0 20px}
+.quick-brief-steps{list-style:none;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:0;padding:0}.quick-brief-steps>li{position:relative;min-width:0;display:flex;flex-direction:column;padding:14px 14px 12px;border:1px solid color-mix(in srgb,var(--step-color) 48%,#173040);border-radius:13px;background:linear-gradient(155deg,#192f3b80,#081725c0)}
+.quick-step-number{align-self:flex-start;display:grid;place-items:center;width:28px;height:25px;border-radius:8px;background:var(--step-color);color:#0b2028;font:800 12px Arial}
+.noise-app .quick-brief-steps .painted-guide{width:100%;height:115px;margin:0 0 8px;flex-shrink:0}
+.noise-app .quick-brief-steps h3{font:700 19px/1.2 Arial;color:#f2f5f4;letter-spacing:-.3px;margin:0 0 7px;text-transform:none}.noise-app .quick-brief-steps p{font:400 14px/1.45 Arial;color:#b7ccd8;margin:0 0 15px;flex:1}
+.quick-step-control{min-height:36px;display:flex;gap:10px;align-items:center;color:var(--step-color);font:700 13px/1.25 Arial}.quick-step-control kbd,.quick-brief-controls kbd{font:700 12px/1 Arial;display:inline-grid;place-items:center;min-width:28px;min-height:28px;padding:5px 7px;border:1px solid #6e94a1;border-radius:5px;background:linear-gradient(#244252,#102433);color:#eef4f4;box-shadow:0 2px #020b13}
+.quick-brief-controls{display:flex;justify-content:center;align-items:center;gap:30px;padding:14px 0;margin-top:12px;border-top:1px solid #526c7b55;font:600 13px/1.4 Arial;color:#c0d5df}.quick-brief-controls>span{display:flex;align-items:center;gap:8px}
+.quick-brief-warning{display:flex;align-items:center;justify-content:center;gap:12px;padding:12px 16px;background:#122c3c;border:1px solid #526e7b;border-radius:10px;color:#f5d28b}.quick-brief-warning>svg{flex-shrink:0;width:23px;height:23px}.quick-brief-warning>div{display:flex;align-items:center;gap:16px;flex-wrap:wrap}.quick-brief-warning strong{font:700 14px/1.4 Arial}.quick-brief-warning span{font:400 12px/1.4 Arial;color:#bdd0da}
+.quick-brief-footer{display:flex;align-items:center;justify-content:space-between;gap:18px;flex-shrink:0;padding:16px 26px 20px;background:#0a1c29}.quick-more-rules{min-height:44px;padding:8px 0;color:#a7d5ea;font:600 14px Arial;text-decoration:underline;text-underline-offset:4px}.quick-more-rules span{margin-left:8px}.noise-app .quick-brief-footer .primary{min-height:48px;min-width:340px;padding:12px 24px;font:18px var(--display);margin:0}
+@media(min-width:801px) and (max-height:760px){.quick-brief-scroll{padding-top:16px}.noise-app .quick-brief-heading h2{font-size:33px;margin-top:10px}.noise-app .quick-brief-mode{margin-bottom:12px}.noise-app .quick-brief-steps .painted-guide{height:90px}.quick-brief-steps>li{padding:10px}.quick-brief-controls{padding:10px 0;margin-top:10px}.quick-brief-footer{padding-top:12px;padding-bottom:14px}.noise-app .quick-brief-steps p{margin-bottom:10px}}
+@media(max-width:800px){.noise-app .quick-brief-overlay{padding:8px}.noise-app .panel.briefing.quick-brief{max-height:100%!important;border-radius:13px}.quick-brief-scroll{padding:15px 12px 0}.quick-brief-kickers{gap:16px;font-size:10px}.quick-brief-kickers>span:first-child{padding:5px 10px}.noise-app .quick-brief-heading h2{font-size:25px;margin:12px 0 6px}.noise-app .quick-brief-tagline{font-size:13px}.noise-app .quick-brief-mode{font-size:12px;margin:7px 0 12px}.quick-brief-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}.quick-brief-steps>li{padding:9px;border-radius:10px}.quick-step-number{width:23px;height:21px;font-size:10px;border-radius:6px}.noise-app .quick-brief-steps .painted-guide{height:76px;margin:-10px 0 3px}.noise-app .quick-brief-steps h3{font-size:15px;margin:0 0 5px;letter-spacing:-.2px}.noise-app .quick-brief-steps p{font-size:12px;line-height:1.35;margin-bottom:8px}.quick-step-control{font-size:11px;min-height:28px;gap:5px;border-top:1px solid #46616e66;padding-top:6px}.quick-brief-controls{gap:5px 12px;flex-wrap:wrap;padding:9px 0;margin-top:10px;font-size:10px}.quick-brief-controls>span{display:inline}.quick-brief-warning{padding:9px 10px;gap:8px;align-items:flex-start}.quick-brief-warning>div{display:grid;gap:2px}.quick-brief-warning strong{font-size:12px}.quick-brief-warning span{font-size:11px}.quick-brief-warning>svg{width:20px;height:20px}.quick-brief-footer{padding:12px 12px max(14px,env(safe-area-inset-bottom));gap:8px}.quick-more-rules{font-size:12px;white-space:nowrap}.quick-more-rules span{margin-left:2px}.noise-app .quick-brief-footer .primary{min-width:0;flex:1;font-size:13px;padding:10px 8px;min-height:44px}}
+/* Celebration art retains its full top edge, fading behind the awards. */
+.results-scroll{position:relative;isolation:isolate}
+.results-backdrop{position:absolute;top:0;left:0;right:0;height:440px;overflow:hidden;z-index:-1;pointer-events:none}
+.results-backdrop .results-art{inset:auto;top:12px;right:0;width:100%;height:auto;object-fit:initial;object-position:initial;z-index:auto}
+.results-backdrop:after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,#071522f2 0%,#071522b8 32%,#07152215 65%),linear-gradient(180deg,#07152200 0%,#0715220d 42%,#071522b8 72%,#071522 100%)}
+.results-hero{isolation:auto;overflow:visible}.results-hero:after{display:none}
+.results-awards .recap-stars span{background:transparent}.results-goals>span{background:#071522b8}.results-goals>span.earned{background:#152831e8}
+.noise-app .results-footer .primary,.noise-app .results-footer .hideout-button{display:inline-flex;align-items:center;justify-content:center;min-height:52px;line-height:1.15;padding:12px 22px;border-radius:10px!important}
+.noise-app .results-footer .hideout-button{min-width:205px;gap:10px;color:#e1edf3;background:linear-gradient(165deg,#294558,#142b3d);border:1px solid #7490a0!important;box-shadow:inset 0 1px #c4e2ec30,0 4px #040e18!important;font:14px/1.15 var(--display)}
+.hideout-button svg{width:19px;height:19px;flex-shrink:0}.noise-app .results-footer .hideout-button:hover{background:linear-gradient(165deg,#365970,#1a3549);border-color:#b2d5e3!important}
+.movement-keys{display:inline-flex;align-items:center;gap:4px;vertical-align:middle;white-space:nowrap}.noise-app .movement-keys kbd{display:inline-grid;place-items:center;min-width:27px;height:29px;padding:4px 6px;margin:0;border:1px solid #7297a8;border-radius:5px;background:linear-gradient(#274759,#112637);box-shadow:0 2px #030b13,inset 0 1px #c7e5f526;font:700 12px/1 Arial;color:#f0f6f7}
+.tutorial-illustration{position:relative;display:flex;align-items:center;justify-content:center}.tutorial-illustration img{display:block;width:100%;height:100%;object-fit:contain}.tutorial-illustration.boarding-van img{padding-top:13px}.tutorial-illustration.boarding-van>span{position:absolute;top:0;right:10%;color:#ffe4a0;font:19px/1 var(--display)}
+@media(max-width:800px){.results-backdrop{height:365px}.results-backdrop .results-art{top:8px;width:auto;max-width:none;height:260px;right:0}.results-backdrop:after{background:linear-gradient(180deg,#07152200 0%,#07152208 20%,#071522da 49%,#071522 78%)}.noise-app .results-footer .hideout-button{min-width:0;min-height:42px;padding:8px 10px;font-size:10px;gap:5px}.noise-app .results-footer .primary{min-height:44px}.hideout-button svg{width:15px;height:15px}.tutorial-illustration.boarding-van>span{font-size:15px;right:7%}.tutorial-illustration.boarding-van img{padding-top:9px}}
+
+/* Give the illustrations the space previously spent on stacked labels. */
+.quick-step-number{position:absolute;top:10px;left:10px;z-index:1}
+.tutorial-illustration.boarding-van img{transform:scaleX(-1);padding-top:0}
+.noise-app .quick-brief-steps .taking-alarm{overflow:hidden}
+.noise-app .quick-brief-steps .taking-alarm img{height:150%;max-height:none;object-fit:contain;align-self:flex-start}
+.noise-app .results-footer .primary{gap:10px}.results-footer .primary svg{width:22px;height:22px;flex-shrink:0}
+.results-backdrop .results-art{top:clamp(-65px,-5vw,-40px)}
+@media(min-width:801px){
+ .quick-brief-scroll{padding:14px 20px 0}
+ .noise-app .quick-brief-heading h2{font-size:34px;margin:8px 0 5px}
+ .noise-app .quick-brief-tagline{font-size:16px}
+ .noise-app .quick-brief-mode{margin:6px 0 12px;font-size:12px}
+ .quick-brief-kickers>span:first-child{padding:5px 12px}
+ .quick-brief-steps>li{padding:10px 12px}
+ .noise-app .quick-brief-steps .painted-guide{height:145px;margin:0 0 7px}
+ .noise-app .quick-brief-steps h3{font-size:18px;margin-bottom:5px}
+ .noise-app .quick-brief-steps p{font-size:13px;line-height:1.35;margin-bottom:7px}
+ .quick-step-control{min-height:30px}
+ .quick-brief-controls{padding:8px 0;margin-top:8px}
+ .quick-brief-warning{padding:8px 12px}
+ .quick-brief-footer{padding:10px 20px 12px}
+ .noise-app .quick-brief-footer .primary{min-height:44px;padding:10px 20px}
+}
+@media(min-width:801px) and (max-height:720px){
+ .noise-app .quick-brief-steps .painted-guide{height:115px}
+ .noise-app .quick-brief-heading h2{font-size:28px}
+ .noise-app .quick-brief-tagline{display:none}
+}
+@media(max-width:800px){
+ .results-backdrop .results-art{top:-14px}
+ .noise-app .quick-brief-steps .painted-guide{height:100px;margin:0 0 5px}
+ .quick-brief-scroll{padding-top:10px}
+ .noise-app .quick-brief-heading h2{font-size:23px;margin:7px 0 5px}
+ .noise-app .quick-brief-tagline{display:none}
+ .noise-app .quick-brief-mode{margin:5px 0 9px}
+ .quick-brief-footer{padding-top:9px;padding-bottom:max(10px,env(safe-area-inset-bottom))}
+}
+
+/* Illustrated mode choices, sized independently from the small utility icons. */
+.noise-app .entry-tabs button{gap:10px;padding:6px 10px}
+.entry-character-art{display:block;width:86px;height:62px;object-fit:contain;flex-shrink:0}
+.entry-tabs button>span{min-width:0}
+@media(max-width:800px){.noise-app .entry-tabs button{gap:6px;padding:7px 6px}.entry-character-art{width:52px;height:45px}.entry-tabs b{font-size:11px}.entry-tabs small{font-size:11px}}
+
+/* Shared home layout: safe top/bottom space in both entry modes. */
+.noise-app .heist-menu{align-items:flex-start;padding:24px 3%;overflow-y:auto;overflow-x:hidden}
+.noise-app .heist-menu .home-copy{margin-block:auto;width:640px;max-width:58%;padding:0;flex-shrink:0}
+.noise-app .heist-menu h1{font-size:clamp(30px,3.1vw,46px);line-height:1.08;margin:0 0 9px}
+.noise-app .heist-menu .home-copy>p{font-size:16px;line-height:1.4;margin:0 0 16px}
+.job-menu{border-radius:12px;padding:16px 18px;box-shadow:0 12px 36px #0006}
+.noise-app .job-menu-heading h2{text-align:left;font-size:21px;color:#f6eedc;margin:0 0 5px}
+.noise-app .job-menu-heading p{font:14px/1.35 Arial;color:#bfcfd9;margin:0}
+.job-menu-heading{margin-bottom:13px}
+.noise-app .entry-tabs button{position:relative;flex-direction:column;gap:3px;padding:8px;min-height:112px;text-align:center;border:1px solid #587082;border-radius:8px;background:#10202e;color:#e7eef2;box-shadow:0 3px #030a12}
+.entry-tabs .entry-character-art{width:126px;max-width:100%;height:60px}
+.entry-tabs b{font-size:13px;line-height:1.3}.entry-tabs small{font-size:12px;margin-top:3px}
+.noise-app .entry-tabs button[aria-pressed=true]{background:linear-gradient(135deg,#123b40,#0d242f);border-color:#80ebd7;color:#f0fff9;box-shadow:inset 0 0 0 1px #80ebd7,0 0 14px #70e9ce18}
+.noise-app .entry-tabs button[aria-pressed=true] small{color:#c9e5df!important}
+.entry-tabs button[aria-pressed=true]:after{content:'✓';position:absolute;right:9px;top:8px;display:grid;place-items:center;width:19px;height:19px;border-radius:50%;background:#83ead4;color:#0b2929;font:800 12px Arial}
+.noise-app .friends-entry{padding:13px 0 0;gap:11px}
+.noise-app .friends-entry .name-field{max-width:none;width:100%;font:700 11px/1.3 Arial;letter-spacing:.5px;color:#c8dbe5}
+.noise-app .friends-entry .name-field input{width:100%;min-height:44px;padding:10px 12px;margin-top:6px;border:1px solid #5a7280;border-radius:8px;font:600 16px Arial;color:#f4f6f6}
+.noise-app .friends-entry .host-room{display:flex;flex-direction:column;align-items:center;gap:5px;padding:10px 14px;min-height:62px;border-radius:10px}
+.noise-app .host-room .host-room-title{margin:0;display:flex;align-items:center;justify-content:center;gap:10px;font:18px/1.2 var(--display)}
+.host-room-title svg{width:25px;height:22px}.host-room small{font:13px/1.2 Arial;color:#493819}
+.join-divider{display:flex;align-items:center;gap:12px;color:#a4b8c4;font:12px/1.4 Arial;text-align:center}
+.join-divider:before,.join-divider:after{content:'';flex:1;height:1px;background:#405666}
+.noise-app .friends-entry .join-row{display:grid;grid-template-columns:minmax(0,1fr) 108px;width:100%;max-width:none;gap:8px;margin:0;flex-wrap:nowrap}
+.noise-app .friends-entry .join-row input{width:100%;max-width:none;min-height:44px;padding:10px 12px;border:1px solid #5a7280;border-radius:8px;font:600 13px Arial;letter-spacing:.5px}
+.noise-app .friends-entry .join-row button{min-height:44px;padding:8px;border:1px solid #65c8bd;border-radius:8px;background:#164b50;color:#d7fff5;font:14px var(--display);box-shadow:0 3px #030c14}
+.noise-app .friends-entry .join-row button:disabled{opacity:.55}
+.noise-app .menu-footer{margin-top:10px}.noise-app .menu-footer button{min-height:36px}
+@media(min-width:801px) and (max-height:800px){
+ .noise-app .heist-menu{padding:20px 3%}
+ .noise-app .heist-menu h1{font-size:32px}
+ .noise-app .heist-menu .home-copy>p{font-size:14px;margin-bottom:10px}
+ .job-menu{padding:12px 15px}.job-menu-heading{margin-bottom:9px}.noise-app .job-menu-heading h2{font-size:18px}.noise-app .job-menu-heading p{font-size:12px}
+ .noise-app .entry-tabs button{min-height:96px;padding:6px}.entry-tabs .entry-character-art{height:48px;width:106px}
+ .mode-art{height:60px}.heist-options{margin:10px 0}.heist-options b{font-size:15px}.heist-options span{font-size:12px}
+ .noise-app .start-heist{min-height:44px;font-size:19px}.noise-app .menu-footer{margin-top:6px}
+}
+@media(max-width:800px){
+ .noise-app .heist-menu{display:block;padding:26px 12px 16px}
+ .noise-app .heist-menu .home-copy{width:100%;max-width:100%;padding:0;margin:0 auto}
+ .noise-app .heist-menu .hero-paint{height:330px;opacity:.6}
+ .noise-app .heist-menu:after{background:linear-gradient(180deg,#08122180,#081221d9 25%,#081221f5 60%)}
+ .noise-app .heist-menu h1{font-size:clamp(23px,6.5vw,32px);line-height:1.08;margin:0 0 8px}
+ .noise-app .heist-menu .home-copy>p{font-size:13px!important;line-height:1.4;margin:0 0 14px}
+ .job-menu{padding:12px 10px}.job-menu-heading{margin-bottom:10px}.noise-app .job-menu-heading h2{font-size:17px}.noise-app .job-menu-heading p{font-size:12px}
+ .noise-app .entry-tabs button{min-height:105px;padding:7px 4px;gap:4px}.entry-tabs .entry-character-art{width:106px;height:53px}.entry-tabs b{font-size:11px}.entry-tabs small{font-size:10px;line-height:1.3}
+ .entry-tabs button[aria-pressed=true]:after{width:15px;height:15px;right:5px;top:5px;font-size:10px}
+ .noise-app .heist-options button{padding-bottom:8px}.mode-art{height:58px}.heist-options b{font-size:13px}.heist-options span{font-size:11px;line-height:1.3}
+ .noise-app .friends-entry{gap:10px;padding-top:12px}.noise-app .host-room .host-room-title{font-size:16px}.host-room small{font-size:11px}.join-divider{font-size:11px;gap:8px}
+ .noise-app .friends-entry .join-row{grid-template-columns:minmax(0,1fr) 76px}.noise-app .friends-entry .join-row input{font-size:12px}.noise-app .friends-entry .join-row button{font-size:12px}
+ .noise-app .menu-footer{margin-top:8px;gap:12px}.noise-app .menu-footer button{font-size:12px;min-height:40px}
+}
+@media(max-width:800px) and (max-height:700px){.noise-app .heist-menu{padding-top:16px}.noise-app .heist-menu h1{font-size:23px}.noise-app .heist-menu .home-copy>p{margin-bottom:10px}.noise-app .entry-tabs button{min-height:92px}.entry-tabs .entry-character-art{height:43px}.job-menu-heading{margin-bottom:8px}}
+
+/* Museum viewport: one bounded grid. Controls and notices occupy their own rows. */
+.noise-app.is-playing{height:100dvh!important;min-height:0!important;max-height:100dvh;overflow:hidden;display:flex;flex-direction:column;padding:0!important}
+.noise-app.is-playing>.topbar{flex:0 0 54px;min-height:54px;height:54px;box-sizing:border-box}
+.noise-app.is-playing>.active-heist{flex:1;min-height:0!important;height:auto!important;margin:0!important;width:100%;border-radius:0;display:grid!important;grid-template-columns:minmax(0,1fr) 238px;grid-template-rows:76px minmax(0,1fr) 92px;overflow:hidden}
+.noise-app.is-playing .active-heist>canvas{grid-area:2/1/3/2!important;position:relative!important;inset:auto!important;display:block;width:100%!important;height:100%!important;min-width:0;min-height:0;align-self:stretch;box-sizing:border-box}
+.noise-app.is-playing .game-hud{grid-area:1/1/2/2!important;position:relative!important;inset:auto!important;height:76px!important;background:linear-gradient(180deg,#20303d,#0d1824)!important;border-bottom:1px solid #ba99644d;box-shadow:inset 0 1px #efcc8320}
+.noise-app.is-playing .bottom-controls{grid-area:3/1/4/3!important;position:relative!important;inset:auto!important;height:92px!important;box-sizing:border-box;background:linear-gradient(180deg,#1f2c38,#0b1420)!important;border-top:1px solid #bc9b6655}
+.noise-app.is-playing .haul,.noise-app.is-playing .clock{background:linear-gradient(160deg,#203542,#0c1722)!important;border:1px solid #c5a76a88!important;border-radius:6px!important;box-shadow:inset 0 0 0 2px #07111b,0 4px 12px #0006!important}
+.camera-toggle{pointer-events:auto;position:absolute;right:14px;top:23px;z-index:15;border:1px solid #a99260;border-radius:5px;background:#152b37;color:#ffe3ab;padding:8px 10px;font:700 11px Arial;min-height:32px}
+.noise-app.is-playing .crew-icons{display:none}
+.arena-plan-note{display:flex;gap:14px;align-items:center;padding:10px 12px;background:#081723;border:1px solid #bea06b66;border-radius:7px;margin:0 0 12px;font:12px/1.4 Arial;color:#c4d2dc}.arena-plan-note b{color:#f4d998;white-space:nowrap}
+@media(max-width:800px){
+ .noise-app.is-playing>.topbar{flex-basis:48px;height:48px;min-height:48px;padding:4px 8px!important}
+ .noise-app.is-playing .brand-emblem{height:26px;width:26px}.noise-app.is-playing .brand{font-size:12px}.noise-app.is-playing .brand-light{font-size:8px}.noise-app.is-playing .top-actions{gap:3px}.noise-app.is-playing .top-actions button{font-size:10px;padding:5px!important;min-height:30px}
+ .noise-app.is-playing>.active-heist{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:94px minmax(0,1fr) 48px calc(128px + env(safe-area-inset-bottom))!important}
+ .noise-app.is-playing .game-hud{grid-area:1/1/2/2!important;height:94px!important;padding:5px 8px!important}
+ .noise-app.is-playing .haul{max-width:135px!important;min-width:110px!important}.noise-app.is-playing .haul b,.noise-app.is-playing .clock b{font-size:23px!important}.noise-app.is-playing .haul span,.noise-app.is-playing .clock span{font-size:9px!important}
+ .noise-app.is-playing .clock{top:5px!important;width:94px!important;left:auto!important;right:8px;transform:none!important;margin:0!important}
+ .noise-app.is-playing .camera-toggle{top:58px;left:8px;right:auto;font-size:10px;padding:5px 9px;min-height:30px}
+ .noise-app.is-playing .hud-map{display:none!important}
+ .noise-app.is-playing .phone-alert{top:46px!important;left:10px;right:10px;font-size:9px!important}
+ .noise-app.is-playing .crew-panel{top:57px!important;right:8px!important;width:154px!important}
+ .noise-app.is-playing .bottom-controls{grid-area:4/1/5/2!important;height:auto!important;max-height:none!important;padding:9px 8px max(10px,env(safe-area-inset-bottom))!important;display:flex!important;gap:10px}
+ .noise-app.is-playing .thumbstick{width:76px!important;height:76px!important;flex:0 0 76px}
+ .noise-app.is-playing .action-group{padding-top:15px!important;grid-template-columns:repeat(3,minmax(0,1fr))!important;grid-auto-rows:42px!important;gap:5px!important}
+ .noise-app.is-playing .action{border-radius:6px!important}.noise-app.is-playing .action strong{font-size:10px!important}
+ .noise-app.is-playing .context-tip,.noise-app.is-playing .practice-tip,.noise-app.is-playing .event-banner,.noise-app.is-playing .jackpot-banner{grid-area:3/1/4/2!important;position:relative!important;inset:auto!important;align-self:stretch;margin:0!important;height:48px!important;max-height:48px!important;min-height:0!important;overflow:auto!important;z-index:10;border:0;border-top:1px solid #a9915e44;background:#112331;font-size:11px!important;box-sizing:border-box}
+ .noise-app.is-playing .spectator{position:fixed!important;bottom:calc(128px + env(safe-area-inset-bottom))!important;height:48px;max-height:48px}
+ .arena-plan-note{display:block;font-size:11px}.arena-plan-note b{display:block;margin-bottom:3px}
+}
+@media(max-width:950px) and (max-height:500px){
+ .noise-app.is-playing>.topbar{flex-basis:36px;height:36px;min-height:36px}
+ .noise-app.is-playing>.active-heist{grid-template-columns:minmax(0,1fr)!important;grid-template-rows:58px minmax(0,1fr) 28px 78px!important}
+ .noise-app.is-playing .game-hud{height:58px!important;grid-area:1/1/2/2!important}.noise-app.is-playing .bottom-controls{grid-area:4/1/5/2!important;height:78px!important;padding:3px 10px!important}
+ .noise-app.is-playing .thumbstick{height:56px!important;width:56px!important;flex-basis:56px}.noise-app.is-playing .action-group{grid-template-columns:repeat(5,minmax(0,1fr))!important;grid-template-rows:42px!important;padding-top:12px!important}.noise-app.is-playing .action-group .action.exit{grid-row:1!important;grid-column:auto!important}
+ .noise-app.is-playing .camera-toggle{top:8px;left:170px}.noise-app.is-playing .crew-panel{top:8px!important;right:115px!important}.noise-app.is-playing .phone-alert{top:44px!important}
+ .noise-app.is-playing .context-tip,.noise-app.is-playing .practice-tip,.noise-app.is-playing .event-banner,.noise-app.is-playing .jackpot-banner{height:28px!important;max-height:28px!important;grid-area:3/1/4/2!important;padding:3px 8px!important}
+}
+
+@media(max-width:800px){.noise-app.is-playing .crew-panel .echo-orders>button:first-child{height:32px!important;min-height:32px!important;padding:2px 6px!important}.noise-app.is-playing .crew-panel .echo-orders{margin:0!important}}
+/* Landscape phones use side controls, keeping their limited vertical space for the museum. */
+@media(max-width:950px) and (max-height:500px){
+ .noise-app.is-playing>.active-heist{grid-template-columns:82px minmax(0,1fr) 176px!important;grid-template-rows:58px minmax(0,1fr) 30px!important}
+ .noise-app.is-playing .game-hud{grid-area:1/1/2/4!important;padding:3px 8px!important}
+ .noise-app.is-playing .haul{min-width:128px!important;max-width:140px!important}.noise-app.is-playing .haul b{font-size:24px!important}.noise-app.is-playing .haul span{font-size:10px!important}
+ .noise-app.is-playing .clock{position:absolute!important;top:3px!important;left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:100px!important;margin:0!important}.noise-app.is-playing .clock b{font-size:23px!important}.noise-app.is-playing .clock span{font-size:9px!important}
+ .noise-app.is-playing .camera-toggle{left:160px!important;right:auto!important;top:10px!important;width:125px!important;font-size:10px!important}
+ .noise-app.is-playing .hud-map,.noise-app.is-playing .crew-panel .pressure,.noise-app.is-playing .crew-panel .radio,.noise-app.is-playing .live-objective,.noise-app.is-playing .keyboard-note,.noise-app.is-playing .action kbd{display:none!important}
+ .noise-app.is-playing .crew-panel{position:absolute!important;top:10px!important;right:8px!important;left:auto!important;bottom:auto!important;width:160px!important}
+ .noise-app.is-playing .crew-panel .echo-orders>button:first-child{height:32px!important;min-height:32px!important;padding:2px 6px!important;grid-template-columns:24px 1fr!important}.noise-app.is-playing .crew-panel .crew-portrait{width:24px!important;height:26px!important}.noise-app.is-playing .bot-intention{display:none!important}
+ .noise-app.is-playing .phone-alert{display:none!important}
+ .noise-app.is-playing .active-heist>canvas{grid-area:2/2/3/3!important}
+ .noise-app.is-playing .bottom-controls{display:contents!important}
+ .noise-app.is-playing .thumbstick{grid-area:2/1/3/2!important;align-self:end;justify-self:center;margin-bottom:16px;width:64px!important;height:64px!important}
+ .noise-app.is-playing .action-group{grid-area:2/3/3/4!important;align-self:end;display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;grid-template-rows:42px 42px 42px!important;width:168px!important;max-width:168px;min-width:0;padding:18px 6px 8px 0!important;gap:5px!important}
+ .noise-app.is-playing .action-group .action{min-height:42px!important;height:42px!important;min-width:0!important;padding:4px!important}.noise-app.is-playing .action strong{font-size:10px!important}.noise-app.is-playing .action-group .action.exit{grid-column:1/3!important;grid-row:3!important}
+ .noise-app.is-playing .hand-state{font-size:9px!important;line-height:1.1!important;top:0;right:5px;max-width:160px;white-space:normal}
+ .noise-app.is-playing .context-tip,.noise-app.is-playing .practice-tip,.noise-app.is-playing .event-banner,.noise-app.is-playing .jackpot-banner{grid-area:3/1/4/4!important;position:relative!important;inset:auto!important;width:100%!important;max-width:none!important;height:30px!important;max-height:30px!important;overflow:auto;font-size:11px!important}
+}
+
+.results-your-haul{color:#c7d8df;font-size:13px;line-height:1.4;margin:0 0 8px}.noise-app .results-victory h2{overflow-wrap:anywhere}

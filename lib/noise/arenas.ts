@@ -2128,3 +2128,63 @@ export const AUTHORED_COOP = [
   ]
  }
 ] as const;
+
+
+// Current museum plans: authored independently, with population-specific circulation.
+export type MuseumPoint={x:number;y:number};
+export type MuseumRect=MuseumPoint&{w:number;h:number};
+export type MuseumArena={id:string;name:string;capacity:2|4|6;theme:'sculpture'|'fossil'|'celestial';brief:string;walls:MuseumRect[];slots:MuseumPoint[];plate:MuseumPoint;routes:MuseumPoint[][];niches:(MuseumPoint&{back:string;kind:string})[];rooms:(MuseumPoint&{name:string})[];sensors:MuseumRect[];decor:(MuseumRect&{kind:string})[];doors:MuseumPoint[]};
+const pt=(x:number,y:number)=>({x,y});
+const box=(x:number,y:number,w:number,h:number)=>({x,y,w,h});
+export function museumArena(layout:number,players:number):MuseumArena{
+ const capacity:2|4|6=players<=2?2:players<=4?4:6;
+ const walls=[box(0,0,960,24),box(0,576,960,24),box(0,0,24,600),box(936,0,24,600)];
+ // Short partitions create loops, never full-height mirrored wings.
+ const plans=[
+  [box(210,180,100,26),box(350,80,24,120),box(580,170,150,26),box(250,340,24,100),box(440,275,110,50),box(690,340,90,24)],
+  [box(170,175,160,26),box(370,100,24,140),box(560,270,180,48),box(220,340,100,24),box(720,90,24,110),box(430,410,130,24)],
+  [box(220,110,24,110),box(400,160,140,26),box(670,190,120,26),box(330,330,26,100),box(510,300,90,55),box(700,390,24,80)]
+ ];
+ walls.push(...plans[layout].flatMap(r=>{
+  if(capacity===2&&r.w<40&&r.h>=100)return [{...r,h:r.h-35}];
+  if(capacity===6&&r.w>=130&&r.h<40)return [{...r,w:40},{...r,x:r.x+r.w-40,w:40}];
+  return [r];
+ }));
+ // Two physical laser emitters anchor a guarded shortcut; the outer loop stays open.
+ const laserY=[366,386,356][layout];walls.push(box(412,laserY,8,12),box(540,laserY,8,12));
+ // Duels have open sight lines; teams get extra cover, six thieves get cross-passages.
+ if(capacity===4)walls.push(...[box(110,275,70,22),box(800,300,22,85)]);
+ if(capacity===6)walls.push(...[box(130,260,24,65),box(810,280,70,24),box(350,480,80,20)]);
+ const slots=[
+  [pt(170,410),pt(790,430),pt(480,95),pt(480,410),pt(140,110),pt(820,110),pt(330,270),pt(660,250)],
+  [pt(140,410),pt(810,430),pt(480,90),pt(480,330),pt(110,100),pt(830,110),pt(280,265),pt(800,245)],
+  [pt(170,410),pt(810,420),pt(480,85),pt(470,430),pt(120,110),pt(830,110),pt(290,280),pt(700,300)]
+ ][layout];
+ // Two additional retrieval jobs for full crews; total value stays fixed in the engine.
+ if(capacity===6){slots.push(pt(180,490),pt(780,490));}
+ const plate=[pt(490,500),pt(480,500),pt(480,500)][layout];
+ const niches=[
+  [{...pt(280,230),back:'top',kind:'planter'},{...pt(305,390),back:'left',kind:'curtain'},{...pt(630,225),back:'top',kind:'curtain'},{...pt(750,395),back:'top',kind:'planter'}],
+  [{...pt(260,230),back:'top',kind:'curtain'},{...pt(270,390),back:'top',kind:'planter'},{...pt(690,345),back:'top',kind:'curtain'},{...pt(690,150),back:'right',kind:'planter'}],
+  [{...pt(190,180),back:'right',kind:'planter'},{...pt(300,390),back:'right',kind:'curtain'},{...pt(740,245),back:'top',kind:'curtain'},{...pt(755,430),back:'left',kind:'planter'}]
+ ][layout];
+ const anchors=[pt(80,80),pt(280,80),pt(80,300),pt(340,300),pt(400,60),pt(600,60),pt(880,80),pt(880,250),pt(650,400),pt(600,530),pt(350,530),pt(80,440)];
+ // Routes are waypoints: guard navigation follows collision-safe paths between them.
+ const routes=[[anchors[0],anchors[1],anchors[3],anchors[2]], [anchors[6],anchors[7],anchors[8],anchors[5]], [anchors[4],anchors[5],anchors[8],anchors[9],anchors[10],anchors[3]], [anchors[0],anchors[2],anchors[11],anchors[3]], [anchors[6],anchors[5],anchors[9],anchors[8]], [anchors[10],anchors[9],anchors[8],anchors[3]]];
+ const decor=[
+  [{...box(440,275,110,50),kind:'sculpture'}],
+  [{...box(560,270,180,48),kind:'fossil'}],
+  [{...box(510,300,90,55),kind:'orrery'}]
+ ][layout];
+ const name=['Echo Gallery','Night Archive','Crossroads'][layout];
+ return {id:`museum-${layout}-${capacity}`,name,capacity,theme:(['sculpture','fossil','celestial'] as const)[layout],brief:[
+  'A sculpture court splits the quick open crossing from the sheltered outer loop.',
+  'Circle the fossil hall, cut through the archive, or raid the distant collection.',
+  'Three collecting routes meet at the observatory. Watch the return crossings.'
+ ][layout],walls,slots,plate,routes,niches,decor,sensors:[box(420,laserY+2,120,8)],doors:[pt(80,40),pt(880,40),pt(480,40),pt(480,560)],rooms:[
+  {name:['SCULPTURE COURT','FOSSIL HALL','OBSERVATORY'][layout],x:490,y:230},
+  {name:'PORTRAIT WALK',x:130,y:260},{name:'RARE COLLECTION',x:820,y:190},
+  {name:'WEST PASSAGE',x:150,y:370},{name:'EAST PASSAGE',x:800,y:370},
+  {name:'MOON VAULT',x:480,y:60},{name:'CROSSING',x:470,y:450},{name:'SERVICE LOOP',x:300,y:520}
+ ]};
+}

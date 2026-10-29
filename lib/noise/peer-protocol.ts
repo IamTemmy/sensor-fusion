@@ -24,3 +24,15 @@ export function directReady(open:boolean,lastState:number,now:number){return ope
 export function signalValid(s:unknown):s is Signal{const x=s as Signal;return !!x&&typeof x.epoch==='string'&&x.epoch.length<100&&[x.offer,x.answer].every(d=>!d||(typeof d.sdp==='string'&&d.sdp.length<24000&&['offer','answer'].includes(d.type)))&&[x.offerIce,x.answerIce].every(cs=>!cs||(Array.isArray(cs)&&cs.length<=48&&cs.every(c=>!!c&&typeof c.candidate==='string'&&c.candidate.length<=2000)));}
 // D1 owns seat admission; a host snapshot must not erase a concurrent join or reuse its ID.
 export function mergeAdmissions(stored:Game,next:Game){const humans=stored.seats.filter(s=>!s.bot);next.seats=next.seats.filter(s=>s.bot||humans.some(h=>h.id===s.id));for(const h of humans){const ns=next.seats.find(s=>s.id===h.id);if(ns){ns.token=h.token;ns.bot=false;}else next.seats.push(structuredClone(h));}next.serial=Math.max(next.serial,stored.serial);return next;}
+
+/** Coalesce movement during relay stalls; retain one-shot commands and unacked actions. */
+export function queueRelayInput(mail:Envelope[],incoming:Envelope){
+ const movement=(e:Envelope)=>e.payload.type==='input'&&e.payload.protocol===2;
+ if(!movement(incoming))return [...mail,incoming];
+ const same=(e:Envelope)=>movement(e)&&e.seat===incoming.seat&&e.payload.match===incoming.payload.match;
+ const group=[...mail.filter(same),incoming];
+ const latest=group.reduce((a,b)=>a.payload.seq>b.payload.seq?a:b);
+ const actions=new Map<number,any>();
+ for(const e of group)for(const a of (Array.isArray(e.payload.actions)?e.payload.actions:[]).slice(0,16))if(Number.isSafeInteger(a.id)&&!actions.has(a.id))actions.set(a.id,a);
+ return [...mail.filter(e=>!same(e)),{...latest,payload:{...latest.payload,actions:[...actions.values()].sort((a,b)=>a.id-b.id).slice(0,16)}}];
+}

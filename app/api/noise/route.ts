@@ -33,5 +33,5 @@ export async function GET(req:Request){try{
  const row=await env.DB!.prepare('SELECT state,expires FROM rooms WHERE code=?').bind(code).first<{state:string;expires:number}>();
  if(!row||row.expires<Date.now())return reply({available:false});
  const g=JSON.parse(row.state) as PeerGame;
- return reply({available:g.version===4&&!g.peer?.closed&&(!g.peer||!hostLeaseExpired(Date.now(),g.peer.heartbeat,!!(g as PeerGame&{hostAway?:boolean}).hostAway))&&g.seats.some(s=>!s.bot&&s.token===token)});
+ return reply({available:g.version===4&&g.phase!=='finished'&&!g.peer?.closed&&(!g.peer||!hostLeaseExpired(Date.now(),g.peer.heartbeat,!!(g as PeerGame&{hostAway?:boolean}).hostAway))&&g.seats.some(s=>!s.bot&&s.token===token)});
  }catch{return reply({available:false},503);}}

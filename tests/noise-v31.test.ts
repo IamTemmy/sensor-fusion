@@ -3,11 +3,11 @@ import assert from 'node:assert/strict';
 import * as E from '../lib/noise/engine.ts';
 function job(seed=1,mode:E.CrewMode='duos',difficulty:E.Difficulty='normal'){const g=E.create('V31',0,seed);E.add(g,'Human','tok');E.configure(g,mode);E.fillCrews(g);g.difficulty=difficulty;E.setup(g);E.command(g,g.seats[0].id,{type:'ready'});return g;}
 function tick(g:E.Game,ms:number){for(let i=0;i<ms;i+=40)E.advance(g,g.now+40);}
-test('all sentry posts leave 30-unit-clear art-to-van routes; paired wing posts and wall cover',()=>{
+test('all sentry posts leave 30-unit-clear art-to-van routes; distinct posts and wall cover',()=>{
  for(const mode of ['coop','duos'] as const)for(const d of ['rookie','normal','pro'] as const)for(let seed=1;seed<=40;seed++){
  const g=job(seed,mode,d);assert.ok(E.sentryRoutesClear(g),`${mode}/${d}/${seed}`);
  const posts=g.guards.filter(h=>h.sentry);assert.equal(new Set(posts.map(h=>`${h.sentry!.x},${h.sentry!.y}`)).size,posts.length);
- if(mode==='duos'&&d!=='rookie'){const a=posts.find(h=>h.sentryArt==='art5')!,b=posts.find(h=>h.sentryArt==='art6')!;assert.ok(a.sentry!.x<336&&b.sentry!.x>624);assert.deepEqual(b.sentry,(g.layout===1?E.rotatePoint:E.mirrorPoint)(a.sentry!));}
+
  const spots=E.hidingSpots(g);assert.equal(spots.length,4);for(const p of spots){assert.ok(posts.every(h=>E.distance(p,h.sentry!)>=120));assert.ok(g.walls.some(w=>Math.hypot(Math.max(w.x-p.x,0,p.x-w.x-w.w),Math.max(w.y-p.y,0,p.y-w.y-w.h))<=32));}
  }
 });

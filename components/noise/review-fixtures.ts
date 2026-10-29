@@ -1,6 +1,6 @@
 import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
-import {vanFor,hidingSpots,create,add,setup,configure,clear,event,type Game} from '../../lib/noise/engine';
+import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
  if(state.startsWith('practice-')){const g=create('VISUAL',0,1);g.training=true;add(g,'Rookie','local');add(g,'Echo','echo',true);setup(g);g.phase='playing';g.now=20000;preparePractice(g,Math.max(0,Math.min(6,Number(state.split('-')[1])-1)));if(state==='practice-2'){preparePractice(g,0);g.practiceStage=11;(g as any).lesson.step=1;g.seats[0].hand=g.loot[0].id;g.loot[0].holder=g.seats[0].id;g.seats[1].bot=true;}return g;}
  let g=create('VISUAL',0,1);for(let seed=1;seed<50;seed++){g=create('VISUAL',0,seed);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state!=='coop'){add(g,'Violet','violet',true);add(g,'Pip','pip',true);configure(g,'duos');}setup(g);if(g.layout===(state.includes('archive')?1:state.includes('crossroads')?2:0))break;}
@@ -22,8 +22,14 @@ export function reviewFixture(state:string):Game{
  if(state==='lobby'||state==='guest-lobby'){g.phase='lobby';if(state==='guest-lobby')g.host=g.seats[1].id;}
  if(state==='last-call'){g.boardingAt=g.now-12000;g.end=g.now+3000;}
  if(state==='blackout')g.jobEvent={kind:'blackout',at:g.now-1000,until:g.now+7000,warned:true,started:true,ended:false,flashUntil:g.now+2000};
+ if(state==='status'){g.alert=0;}
+ if(state==='post-sign'){const d=staffDoors(g)[0];Object.assign(g.guards[0],{x:d.x,y:d.y+30,sentry:{x:d.x,y:d.y+30},entered:true,mode:'patrol',target:{x:d.x,y:d.y+30}});}
  if(state==='briefing')g.phase='ready';
  if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can untie them.','catch',s);g.events.at(-1)!.at-=80;}
- if(state==='recap'){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
+ if(['recap','recap-jackpot','recap-coop','recap-mixed'].includes(state)){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
+ if(state==='recap-loss'){g.seats=g.seats.filter(s=>s.team===0);g.phase='finished';g.crewMode='coop';g.success=false;g.total=600;g.seats.forEach(s=>{s.bank=s.id===g.seats[0].id?600:0;s.escaped=false;});g.finishedAt=g.start+90000;g.finishReason='The van has left.';}
+ if(state==="recap-jackpot"){g.total=2675;g.seats[0].bank=1275;g.seats[1].bank=1400;g.seats[2].bank=0;g.seats[3].bank=0;g.crewMode="coop";g.loot.find(l=>l.value!==1200)!.banked=false;}
+ if(state==='recap-coop'||state==='recap-jackpot'){g.crewMode='coop';g.seats=g.seats.filter(s=>s.team===0);}
+ if(state==='recap-mixed'){g.seats[3].escaped=false;g.seats[3].penalty=150;}
  return g;
 }

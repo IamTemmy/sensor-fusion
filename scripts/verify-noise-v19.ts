@@ -5,11 +5,11 @@ const go=(g:Game,s:Thief,p:Vec)=>{const n=steer(s,p,thiefWalls(g,s)),d=distance(
 export function releaseFixture(seed:number){
  const g=create('REJOIN',1000,seed),human=add(g,'Human','h'),echo=add(g,'Echo','e',true);setup(g);command(g,human.id,{type:'ready'});g.jobEvent=undefined;
  // Start both thieves in a seeded patrol area after onboarding grace; captures and
- // releases remain natural. Echo starts 160u away, with no immunity or forced stun.
+ // releases remain natural. Echo starts 320u away, with no immunity or forced stun.
  g.now=g.start+13000;const patrol=g.guards[seed%g.guards.length];
  const around=(p:Vec,r:number)=>Array.from({length:12},(_,i)=>({x:p.x+Math.cos((i+seed)*Math.PI/6)*r,y:p.y+Math.sin((i+seed)*Math.PI/6)*r}));
  const hp=around(patrol,100).find(p=>clear(p,13,thiefWalls(g,human)));
- if(hp){Object.assign(human,hp);const ep=around(hp,160).find(p=>clear(p,13,thiefWalls(g,echo)));if(ep)Object.assign(echo,ep);}
+ if(hp){Object.assign(human,hp);const ep=around(hp,320).find(p=>clear(p,13,thiefWalls(g,echo)));if(ep)Object.assign(echo,ep);}
 
  let capture=0,deadline=0,release=0,rescued=false,echoCaught=false,priorEchoCaptures=0,echoFreeAtRelease=false;
  for(let i=0;i<1100;i++){
