@@ -39,7 +39,7 @@ if(mode==='geometry'){
     for(const b of g.seats.filter(s=>s.bot)){
      const waiting=b.escaped||b.stun>g.now||E.hidden(g,b)||(b.rescueId&&g.now-b.rescueAt<1300)||(b.bottleId&&g.now-b.bottleAt<1500)||b.windup>g.now;
      if(waiting){history.delete(b.id);continue;}
-     const h=history.get(b.id);if(!h||E.distance(b,h)>10)history.set(b.id,{x:b.x,y:b.y,at:g.now});else if(g.now-h.at>=6000&&!seen.has(b.id)){seen.add(b.id);stalls.push({id:b.id,at:g.now,x:b.x,y:b.y,task:b.task,mode:b.mode,hand:b.hand,homeSafe:E.homeSafe(g,b),plateDistance:E.distance(b,g.plate),unbanked:g.loot.filter(l=>!l.banked&&!l.holder).map(l=>({id:l.id,locked:l.locked}))});}
+     const h=history.get(b.id);if(!h||E.distance(b,h)>10)history.set(b.id,{x:b.x,y:b.y,at:g.now});else if(g.now-h.at>=6000&&!seen.has(b.id)){seen.add(b.id);stalls.push({id:b.id,at:g.now,x:b.x,y:b.y,task:b.task,mode:b.mode,hand:b.hand,crew:g.seats.filter(p=>p.team===b.team).map(p=>({id:p.id,stun:p.stun,escaped:p.escaped,hand:p.hand,task:p.task})),homeSafe:E.homeSafe(g,b),plateDistance:E.distance(b,g.plate),unbanked:g.loot.filter(l=>!l.banked&&!l.holder).map(l=>({id:l.id,locked:l.locked}))});}
     }
    }
    cases.push({seed,n,level,stalls});

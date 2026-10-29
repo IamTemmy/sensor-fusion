@@ -17,6 +17,7 @@ export function reviewFixture(state:string):Game{
  if(state==='hide'){const p=hidingSpots(g)[0];s.hand=null;loot.holder=null;g.noises=[];Object.assign(s,{x:p.x+30,y:p.y});g.guards[0].victim=s.id;g.guards[0].entered=true;}
  if(state==='event'){g.jobEvent={kind:'shift',at:g.now-500,until:g.now+2000,flashUntil:g.now+2500,started:true,ended:false,warned:true};event(g,'SHIFT CHANGE · Guards switched routes.','honk');}
  if(state==='stash'){const p=hidingSpots(g)[0];Object.assign(s,{x:p.x+35,y:p.y,hand:null});Object.assign(loot,{x:p.x,y:p.y,holder:null,stashedAt:0,claimed:true});g.noises=[];event(g,'Rookie stashed art. Anyone can take it.');}
+ if(state==='pass-hot'||state==='pass-quiet'){Object.assign(s,{x:410,y:420,aim:{x:550,y:420}});Object.assign(g.seats[1],{x:550,y:420,hand:null});Object.assign(loot,{x:s.x,y:s.y});if(state==='pass-quiet'){loot.quietUntil=g.now+8000;g.noises=[];}}
  if(state==='pass'){s.hand=null;loot.holder=null;g.noises=[];loot.flight={from:{x:410,y:420},to:{x:550,y:420},at:g.now-250,team:0,thrower:s.id};loot.x=480;loot.y=420;Object.assign(s,{x:410,y:420});Object.assign(g.seats[1],{x:550,y:420,hand:null});event(g,'ECHO: PASS!');}
  if(state.startsWith('dock')){if(state.includes('violet')){s.team=1;g.seats[2].team=0;}const dock=vanFor(g,s.team);Object.assign(s,{x:dock.x,y:dock.y,hand:null});loot.holder=null;loot.banked=true;g.noises=[];event(g,'$600 secured. Rookie delivered Last Sunset.','bank',dock);g.events.at(-1)!.at-=state==='dock'?80:1200;}
  if(state==='van'){s.escaped=true;}
