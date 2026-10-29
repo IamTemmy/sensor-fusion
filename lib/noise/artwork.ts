@@ -1,13 +1,15 @@
 // Presentation identities only. Never change loot IDs, values or engine names.
 export type ArtSpec={name:string;kind:string;glow:string};
-export function artwork(id:string,value:number):ArtSpec{
+export function artwork(id:string,value:number,layout=0):ArtSpec{
  const n=[...id].reduce((a,c)=>a*31+c.charCodeAt(0),0)>>>0;
+ if(value!==1200&&layout===1)return value>=500?{name:['The Last Expedition','Amber Coast','The Forgotten Cartographer'][n%3],kind:['portrait','sea','sunset'][n%3],glow:'#a9d4b5'}:{name:'Archivist’s Music Box',kind:'box',glow:'#d9bd8c'};
+ if(value!==1200&&layout===2)return value>=500?{name:['A Map of Midnight','Orbit in Blue','The Seventh Eclipse'][n%3],kind:['abstract','vase','sea'][n%3],glow:'#a8ccff'}:{name:'Celestial Idol',kind:'idol',glow:'#c2aaff'};
  if(value===1200)return {name:'The Crown Mask',kind:'crown',glow:'#ffd579'};
  if(value>=1000)return {name:n%2?'Golden Muse':'Marble Poet',kind:n%2?'gold':'bust',glow:'#f5cc7d'};
  if(value>=500){const names=['Last Sunset','The Visitor','Colour Study','Moonlit Sea','Blue Moon Vase'];return {name:names[n%5],kind:['sunset','portrait','abstract','sea','vase'][n%5],glow:'#a6beff'};}
  return {name:['Lucky Cat','Little Idol','Music Box'][n%3],kind:['cat','idol','box'][n%3],glow:'#8ef2d2'};
 }
-export function drawArtwork(ctx:CanvasRenderingContext2D,id:string,value:number,x:number,y:number,scale=1){const {kind}=artwork(id,value);ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
+export function drawArtwork(ctx:CanvasRenderingContext2D,id:string,value:number,x:number,y:number,scale=1,layout=0){const {kind}=artwork(id,value,layout);ctx.save();ctx.translate(x,y);ctx.scale(scale,scale);
  const rect=(x:number,y:number,w:number,h:number,c:string,r=0)=>{ctx.fillStyle=c;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();};const dot=(x:number,y:number,r:number,c:string)=>{ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();};const path=(p:number[][],c:string)=>{ctx.fillStyle=c;ctx.beginPath();p.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fill();};
  if(kind==='crown'){rect(-14,-13,28,24,'#f4c351',7);path([[-14,-12],[-18,-25],[-6,-18],[0,-28],[6,-18],[18,-25],[14,-12]],'#ffe8a1');dot(-6,-3,3,'#372e46');dot(6,-3,3,'#372e46');rect(-4,5,8,2,'#8a4c25');dot(0,-18,3,'#e57777');}
  else if(kind==='bust'||kind==='gold'){const c=kind==='gold'?'#f5c45d':'#e8e6db';rect(-15,10,30,6,kind==='gold'?'#99662c':'#889ba9',2);path([[-14,8],[-9,-2],[-3,-5],[3,-5],[10,-2],[14,8]],c);rect(-4,-6,8,8,c);dot(0,-15,10,c);path([[-10,-15],[-8,-23],[0,-26],[9,-21],[10,-14],[3,-19]],kind==='gold'?'#d89b3b':'#aebec7');rect(2,-15,3,5,kind==='gold'?'#9d6328':'#a1aeb4');}

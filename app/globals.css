@@ -651,3 +651,19 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 }
 
 .results-your-haul{color:#c7d8df;font-size:13px;line-height:1.4;margin:0 0 8px}.noise-app .results-victory h2{overflow-wrap:anywhere}
+/* Museum interpretation stays in the control area, never over the playing field. */
+.museum-lore{font-size:12px;color:#c9bb9b;font-style:italic;line-height:1.5}
+.museum-placard{grid-column:1/-1;flex:0 0 100%;display:none;min-width:0;padding:6px 12px;background:#152a31;border-left:2px solid #ccb578;text-align:left;line-height:1.35}
+.museum-placard.visible{display:flex;gap:10px;align-items:baseline}.museum-placard strong{color:#f2d797;font-size:12px;white-space:nowrap}.museum-placard span{color:#c6d6d5;font-size:12px}.controls{flex-wrap:wrap}.museum-radio{color:#b6bfae;font-size:12px!important;line-height:1.45}.museum-radio small{display:block;color:#d7bd80;font-size:9px;letter-spacing:1px}
+.results-record-row{display:grid;grid-template-columns:1fr 1fr;gap:16px;align-items:stretch}.results-time{justify-content:center}.recap-record-card{display:grid;gap:4px;border-left:1px solid #75807455;padding:6px 12px;text-align:center}.recap-record-card strong{font:11px var(--display);color:#a7b8bf;letter-spacing:.5px}.recap-record-card span{font-size:12px;color:#c8d5d7;line-height:1.6}.recap-record-card.is-new{background:#ddbc5b18;border-radius:6px}.recap-record-card.is-new strong{color:#ffdc83}
+@media(min-width:801px){.context-tip.dock-context-tip{left:16px;right:auto;bottom:20px;transform:none;max-width:270px}}
+@media(max-width:800px){.museum-placard.visible{display:block;padding:4px 8px}.museum-placard strong{font-size:10px;display:block}.museum-placard span{font-size:10px;display:block}.recap-record-card{padding:5px 6px}.recap-record-card strong{font-size:10px}.recap-record-card span{font-size:11px}.results-record-row{gap:8px}.museum-lore{font-size:11px}}
+.noise-app.is-playing .museum-placard{grid-area:3/1/4/3;position:relative;z-index:5;align-self:center;justify-self:start;margin-left:84px;max-width:340px;height:auto;max-height:76px;overflow:auto;box-sizing:border-box}.museum-placard.visible{display:block}.museum-placard strong,.museum-placard span{display:block}.active-heist:has(.museum-placard.visible) .keyboard-note{visibility:hidden}
+@media(min-width:801px){.noise-app .active-heist .context-tip.dock-context-tip{top:auto!important;left:16px!important;right:auto!important;bottom:100px!important;transform:none!important;max-width:260px!important;width:260px!important}}
+@media(max-width:800px){.noise-app.is-playing .museum-placard{grid-area:3/1/4/2!important;inset:auto!important;margin:0;max-width:none;width:100%;height:48px;max-height:48px;align-self:stretch}}
+@media(max-width:950px) and (max-height:500px){.noise-app.is-playing .museum-placard{grid-area:3/1/4/4!important;height:30px;max-height:30px;max-width:none;margin:0;width:100%;font-size:10px}.museum-placard strong,.museum-placard span{display:inline}}
+@media(min-width:801px){.noise-app .active-heist .context-tip.dock-context-tip.dock-right{left:auto!important;right:16px!important}}
+.noise-app:has(.museum-placard.visible) .context-tip{visibility:hidden}
+.arena-plan-note{flex-wrap:wrap}
+.recap-redesign>.results-record-row{flex-shrink:0;margin-top:6px;margin-bottom:6px;padding:4px 10px}.recap-record-card{padding-top:3px;padding-bottom:3px}.recap-record-card span{font-size:11px;line-height:1.35}
+@media(min-width:801px) and (max-height:780px){.results-hero{min-height:0}.results-victory{padding:10px 30px 6px}.noise-app .results-victory h2{font-size:30px;margin:5px 0}.results-haul{font-size:50px}.results-outcome{min-height:23px;margin-top:4px}.noise-app .results-awards .recap-stars svg{width:28px;height:28px}.results-goals>span{min-height:26px}.noise-app .results-note{height:26px}.results-player{min-height:56px;padding:4px 8px}.results-roster{gap:5px}}

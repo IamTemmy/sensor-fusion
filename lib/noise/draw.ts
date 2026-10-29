@@ -1,3 +1,4 @@
+import {museumIdentity} from './museum-identity';
 import {drawMuseumDecor} from './museum-decor';
 import {recentLure} from './clarity';
 import {practiceTarget} from './practice';
@@ -20,9 +21,9 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  const rect=(x:number,y:number,w:number,h:number,c:string,r=0)=>{ctx.fillStyle=c;ctx.beginPath();ctx.roundRect(x,y,w,h,r);ctx.fill();};
  const circle=(x:number,y:number,r:number,c:string)=>{ctx.fillStyle=c;ctx.beginPath();ctx.arc(x,y,r,0,Math.PI*2);ctx.fill();};
  const text=(s:string,x:number,y:number,size=12,color='#d9e1df',align:CanvasTextAlign='left')=>{const px=Math.max(12/cam.scale,size);ctx.font=`${size>=16?'400':'700'} ${px}px ${size>=16?"'Bungee', Impact":"Arial"}, sans-serif`;ctx.textAlign=align;ctx.fillStyle=color;ctx.fillText(s,x,y);};
- const art=(id:string,value:number,x:number,y:number,scale=1,carried=false)=>{const spec=artwork(id,value);ctx.save();if(spec.kind==='gold'||spec.kind==='idol')ctx.filter='sepia(.85) saturate(1.5)';const ok=sprite(ctx,artSpriteKey(spec.kind),x,y,58*scale,68*scale,false,false,carried);ctx.restore();if(!ok)drawArtwork(ctx,id,value,x,y,scale);};
+ const art=(id:string,value:number,x:number,y:number,scale=1,carried=false)=>{const spec=artwork(id,value,g.layout);ctx.save();if(spec.kind==='gold'||spec.kind==='idol')ctx.filter='sepia(.85) saturate(1.5)';const ok=sprite(ctx,artSpriteKey(spec.kind),x,y,58*scale,68*scale,false,false,carried);ctx.restore();if(!ok)drawArtwork(ctx,id,value,x,y,scale,g.layout);};
  // A fixed museum stage. All decoration is paint, never extra collision geometry.
- const floor=(['#253039','#29272d','#182e36'][g.layout]||'#101f2a');
+ const identity=museumIdentity(g.layout),floor=identity.floor;
  rect(18,18,924,564,'#050c17',12);rect(24,24,912,552,floor,3);
  ctx.save();ctx.beginPath();ctx.rect(24,24,912,552);ctx.clip();
  for(let y=24;y<576;y+=48)for(let x=24;x<936;x+=48){
@@ -30,14 +31,17 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
   ctx.strokeStyle='#b7c9c918';ctx.strokeRect(x+1,y+1,46,46);
   if(g.layout===1){ctx.strokeStyle='#cfae7a0c';ctx.beginPath();ctx.moveTo(x,y+12);ctx.lineTo(x+48,y+12);ctx.moveTo(x,y+36);ctx.lineTo(x+48,y+36);ctx.stroke();}
  }
- paintedFloor(ctx);
+ paintedFloor(ctx);rect(24,24,912,552,identity.wash);
+ if(g.layout===2){ctx.strokeStyle='#d8bd782b';ctx.lineWidth=.8;for(const r of [75,140,210]){ctx.beginPath();ctx.ellipse(555,320,r,r*.65,0,0,Math.PI*2);ctx.stroke();}for(let i=0;i<32;i++){const x=65+(i*173)%820,y=70+(i*97)%460;circle(x,y,i%4===0?1.8:1,'#dceaff66');if(i%4===0){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+24,y-15);ctx.stroke();}}}
+ if(g.layout===1){ctx.strokeStyle='#b58f4e18';for(let y=32;y<576;y+=18){ctx.beginPath();ctx.moveTo(24,y);ctx.lineTo(936,y);ctx.stroke();}}
  // Warm pools from the exhibition lights contrast with the moonlit service loop.
- for(const x of [145,480,815]){const light=ctx.createRadialGradient(x,65,4,x,65,210);light.addColorStop(0,'#f6cd8130');light.addColorStop(.4,'#d5ac7111');light.addColorStop(1,'#dfb27300');ctx.fillStyle=light;ctx.fillRect(x-210,24,420,250);}
+ for(const x of [145,480,815]){const light=ctx.createRadialGradient(x,65,4,x,65,210);light.addColorStop(0,identity.light);light.addColorStop(.4,'#d5ac7111');light.addColorStop(1,'#dfb27300');ctx.fillStyle=light;ctx.fillRect(x-210,24,420,250);}
 
  // Low-contrast carpet is floor paint only, clipped around the exact collision walls.
  ctx.save();ctx.beginPath();ctx.rect(24,24,912,552);for(const w of walls)ctx.rect(w.x,w.y,w.w,w.h);ctx.clip('evenodd');ctx.globalAlpha=.55;rect(448,40,64,520,'#5e263c');rect(452,40,2,520,'#b48a53');rect(508,40,2,520,'#b48a53');if(g.layout===2){rect(40,270,880,60,'#5e263c');rect(40,274,880,2,'#b48a53');rect(40,324,880,2,'#b48a53');}ctx.restore();
+ if(g.layout===0)for(const d of g.arena?.decor||[]){rect(d.x-3,d.y-3,d.w+6,d.h+6,floor,8);}
  ctx.strokeStyle='#bbac7760';ctx.lineWidth=2;ctx.strokeRect(36,36,888,528);ctx.strokeStyle='#bbac7720';ctx.strokeRect(42,42,876,516);
- for(const room of (g.training?[]:roomLabels(g,Math.max(7,7/cam.scale)))){if(g.seats.some(s=>distance(positions.get(s.id)||s,room)<60)||staffDoors(g).some(d=>distance(d,room)<65)||g.guards.some(h=>h.sentry&&distance(h,room)<65))continue;ctx.save();ctx.globalAlpha=.22;text(room.name,room.x,room.y,12,'#dac9a0','center');ctx.restore();}
+ for(const room of (g.training||width<700&&overview?[]:roomLabels(g,Math.max(7,7/cam.scale)))){if(g.seats.some(s=>distance(positions.get(s.id)||s,room)<60)||staffDoors(g).some(d=>distance(d,room)<65)||g.guards.some(h=>h.sentry&&distance(h,room)<65))continue;ctx.save();ctx.globalAlpha=.22;text(room.name,room.x,room.y,12,'#dac9a0','center');ctx.restore();}
  // Inlaid compass at the heart of the collection, beneath all game objects.
  ctx.save();ctx.translate(480,300);ctx.strokeStyle='#d2bc7b14';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,110,0,Math.PI*2);ctx.stroke();ctx.rotate(Math.PI/4);ctx.strokeRect(-77,-77,154,154);ctx.restore();
  for(const l of g.loot){if(l.banked||l.stashedAt!==undefined||l.flight)continue;const light=ctx.createRadialGradient(l.x,l.y,8,l.x,l.y,100);light.addColorStop(0,'#ffcf7738');light.addColorStop(1,'#ffe0a500');ctx.fillStyle=light;ctx.fillRect(l.x-100,l.y-100,200,200);}
@@ -66,11 +70,11 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
   ctx.save();ctx.shadowColor='#000b';ctx.shadowBlur=10;ctx.shadowOffsetY=7;rect(w.x,w.y,w.w,w.h,'#040c16',2);ctx.restore();
   rect(w.x,w.y-11,w.w,w.h+11,'#182b3b',2);
   rect(w.x,w.y+w.h-11,w.w,11,'#263c4b',1);
-  rect(w.x,w.y-11,w.w,w.h,'#788a94',2);
-  rect(w.x+2,w.y-9,Math.max(1,w.w-4),Math.max(1,w.h-4),'#66727a',1);rect(w.x+1,w.y-10,w.w-2,2,'#d1b17a');
+  rect(w.x,w.y-11,w.w,w.h,identity.cap,2);
+  rect(w.x+2,w.y-9,Math.max(1,w.w-4),Math.max(1,w.h-4),identity.cap,1);rect(w.x+1,w.y-10,w.w-2,2,'#d1b17a');
   rect(w.x,w.y-11,w.w,2,'#b8ccce');
   if(w.w>40)rect(w.x+7,w.y+w.h-9,w.w-14,2,'#ac956744');
-  sprite(ctx,w.w>=w.h?'wall-h':'wall-v',w.x+w.w/2,w.y+w.h/2-5.5,w.w,w.h+11,false,true);
+  ctx.save();ctx.globalAlpha=.35;sprite(ctx,w.w>=w.h?'wall-h':'wall-v',w.x+w.w/2,w.y+w.h/2-5.5,w.w,w.h+11,false,true);ctx.restore();
   if(g.layout===1&&w.w>50&&w.h>=16)for(let bx=w.x+8;bx<w.x+w.w-8;bx+=8)rect(bx,w.y-6,5,Math.min(14,w.h-8),['#a8806a','#baaa7d','#57938c'][Math.floor(bx/8)%3],1);
   else if(w.w>45&&w.h>18&&w.w<200){rect(w.x+6,w.y-5,w.w-12,w.h-12,'#94c5c44a',2);ctx.strokeStyle='#daeee788';ctx.strokeRect(w.x+6,w.y-5,w.w-12,w.h-12);}
  }
@@ -83,7 +87,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  // Paint dock openings after the wall tops, without changing collision or zone coordinates.
  for(const team of [...new Set(g.seats.map(s=>s.team))]){const v=vanFor(g,team),top=v.y<300,color=COLORS[team],edge=top?24:576;rect(v.x-34,edge-13,68,28,'#101b28');ctx.strokeStyle=color;ctx.lineWidth=3;ctx.strokeRect(v.x-34,edge-13,68,28);const glow=ctx.createRadialGradient(v.x,edge,5,v.x,v.y,85);glow.addColorStop(0,color+'66');glow.addColorStop(1,color+'00');ctx.fillStyle=glow;ctx.fillRect(v.x-50,Math.min(v.y,edge)-40,100,140);ctx.save();ctx.translate(v.x,top?12:588);if(vanFacing(g,team)==='north')ctx.rotate(Math.PI);sprite(ctx,team===0?'van-mint':'van-violet',0,0,54,66);ctx.restore();}
  const lootLabels:{l:typeof g.loot[number];name:string;glow:string}[]=[];
- for(const l of g.loot){if(l.banked||l.holder||l.guardCarrier)continue;if(l.stashedAt!==undefined){ctx.save();ctx.globalAlpha=.8;art(l.id,l.value,l.x,l.y-10,.6,true);ctx.restore();text('STASH · $'+l.value,l.x,l.y+24,11,'#ffe2a1','center');continue;}if(l.flight){const f=Math.min(1,(g.now-l.flight.at)/500);circle(l.x,l.y,10,'#0008');art(l.id,l.value,l.x,l.y-25-(reducedMotion?12:Math.sin(f*Math.PI)*55),.72,true);continue;}if(l.sealed)continue;const spec=artwork(l.id,l.value);const glow=ctx.createRadialGradient(l.x,l.y,4,l.x,l.y,50);glow.addColorStop(0,(l.locked&&open?'#ffd579':spec.glow)+'38');glow.addColorStop(1,spec.glow+'00');ctx.fillStyle=glow;ctx.fillRect(l.x-50,l.y-50,100,100);
+ for(const l of g.loot){if(l.banked||l.holder||l.guardCarrier)continue;if(l.stashedAt!==undefined){ctx.save();ctx.globalAlpha=.8;art(l.id,l.value,l.x,l.y-10,.6,true);ctx.restore();text('STASH · $'+l.value,l.x,l.y+24,11,'#ffe2a1','center');continue;}if(l.flight){const f=Math.min(1,(g.now-l.flight.at)/500);circle(l.x,l.y,10,'#0008');art(l.id,l.value,l.x,l.y-25-(reducedMotion?12:Math.sin(f*Math.PI)*55),.72,true);continue;}if(l.sealed)continue;const spec=artwork(l.id,l.value,g.layout);const glow=ctx.createRadialGradient(l.x,l.y,4,l.x,l.y,50);glow.addColorStop(0,(l.locked&&open?'#ffd579':spec.glow)+'38');glow.addColorStop(1,spec.glow+'00');ctx.fillStyle=glow;ctx.fillRect(l.x-50,l.y-50,100,100);
  if(l.locked){sprite(ctx,open?'case-open':'case-locked',l.x,l.y-19,66,80);art(l.id,l.value,l.x,l.y-17,.72);if(!open){ctx.save();ctx.strokeStyle='#ff6169';ctx.shadowColor='#ff4656';ctx.shadowBlur=5;ctx.lineWidth=1.2;for(const dy of [-40,-25,-10]){ctx.beginPath();ctx.moveTo(l.x-22,l.y+dy);ctx.lineTo(l.x+22,l.y+dy);ctx.stroke();}ctx.restore();}else if(!reducedMotion){for(let i=0;i<3;i++){const a=t+i*2.1;circle(l.x+Math.cos(a)*28,l.y-25+Math.sin(a)*22,1.5,'#ffe9af');}}}
  else art(l.id,l.value,l.x,l.y-20+Math.sin(t*2+l.value)*.6,1);
  if(emptyPost(g,l)&&!g.guards.some(h=>guardActive(g,h)&&distance(h,l)<60))text('POST EMPTY',l.x,l.y-65,12,'#a2f1cb','center');lootLabels.push({l,name:spec.name,glow:spec.glow});}

@@ -1,0 +1,203 @@
+{
+  "note": "18 full matches: 2/4/6 thieves x 3 museums x idle/naive-collector. Stall = within 10u for >6s, excluding stationed sentries and guards not yet entered. Flip = >2 rad in a tick with <4u travel. These are diagnostics, not all flips are defects.",
+  "cases": [
+    {
+      "n": 2,
+      "layout": 0,
+      "seed": 1,
+      "policy": "idle",
+      "flips": 13,
+      "activeTicks": 7106,
+      "sentryHoldTicks": 1900,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 0,
+      "seed": 1,
+      "policy": "collector",
+      "flips": 17,
+      "activeTicks": 7686,
+      "sentryHoldTicks": 865,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 1,
+      "seed": 2,
+      "policy": "idle",
+      "flips": 8,
+      "activeTicks": 6699,
+      "sentryHoldTicks": 1904,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 1,
+      "seed": 2,
+      "policy": "collector",
+      "flips": 15,
+      "activeTicks": 7476,
+      "sentryHoldTicks": 1061,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 2,
+      "seed": 6,
+      "policy": "idle",
+      "flips": 21,
+      "activeTicks": 7711,
+      "sentryHoldTicks": 1904,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 2,
+      "seed": 6,
+      "policy": "collector",
+      "flips": 22,
+      "activeTicks": 7928,
+      "sentryHoldTicks": 392,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 0,
+      "seed": 1,
+      "policy": "idle",
+      "flips": 23,
+      "activeTicks": 10733,
+      "sentryHoldTicks": 2663,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 0,
+      "seed": 1,
+      "policy": "collector",
+      "flips": 28,
+      "activeTicks": 10394,
+      "sentryHoldTicks": 1926,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 1,
+      "seed": 2,
+      "policy": "idle",
+      "flips": 20,
+      "activeTicks": 10425,
+      "sentryHoldTicks": 1978,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 1,
+      "seed": 2,
+      "policy": "collector",
+      "flips": 24,
+      "activeTicks": 10977,
+      "sentryHoldTicks": 2075,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 2,
+      "seed": 6,
+      "policy": "idle",
+      "flips": 50,
+      "activeTicks": 10860,
+      "sentryHoldTicks": 1825,
+      "passes": 1,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 2,
+      "seed": 6,
+      "policy": "collector",
+      "flips": 132,
+      "activeTicks": 11172,
+      "sentryHoldTicks": 1214,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 0,
+      "seed": 1,
+      "policy": "idle",
+      "flips": 36,
+      "activeTicks": 14719,
+      "sentryHoldTicks": 2992,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 0,
+      "seed": 1,
+      "policy": "collector",
+      "flips": 37,
+      "activeTicks": 15055,
+      "sentryHoldTicks": 1904,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 1,
+      "seed": 2,
+      "policy": "idle",
+      "flips": 33,
+      "activeTicks": 14847,
+      "sentryHoldTicks": 1946,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 1,
+      "seed": 2,
+      "policy": "collector",
+      "flips": 36,
+      "activeTicks": 14996,
+      "sentryHoldTicks": 1512,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 2,
+      "seed": 6,
+      "policy": "idle",
+      "flips": 43,
+      "activeTicks": 14624,
+      "sentryHoldTicks": 1848,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 2,
+      "seed": 6,
+      "policy": "collector",
+      "flips": 47,
+      "activeTicks": 14617,
+      "sentryHoldTicks": 2,
+      "passes": 1,
+      "stalls": []
+    }
+  ]
+}

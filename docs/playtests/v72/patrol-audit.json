@@ -1,0 +1,694 @@
+{
+  "note": "18 full matches: 2/4/6 thieves x 3 museums x idle/naive-collector. Stall = within 10u for >6s, excluding stationed sentries and guards not yet entered. Flip = >2 rad in a tick with <4u travel. These are diagnostics, not all flips are defects.",
+  "cases": [
+    {
+      "n": 2,
+      "layout": 0,
+      "seed": 1,
+      "policy": "idle",
+      "flips": 12,
+      "activeTicks": 7106,
+      "sentryHoldTicks": 1900,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 0,
+      "seed": 1,
+      "policy": "collector",
+      "flips": 17,
+      "activeTicks": 7686,
+      "sentryHoldTicks": 865,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 1,
+      "seed": 2,
+      "policy": "idle",
+      "flips": 6,
+      "activeTicks": 6699,
+      "sentryHoldTicks": 1904,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 1,
+      "seed": 2,
+      "policy": "collector",
+      "flips": 13,
+      "activeTicks": 7417,
+      "sentryHoldTicks": 1061,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 2,
+      "layout": 2,
+      "seed": 6,
+      "policy": "idle",
+      "flips": 15,
+      "activeTicks": 7193,
+      "sentryHoldTicks": 1904,
+      "passes": 0,
+      "stalls": [
+        {
+          "at": 87440,
+          "h": {
+            "id": "g-lockdown",
+            "x": 368.05846036448395,
+            "y": 309.54577112816395,
+            "angle": 0.22981945037086632,
+            "mode": "patrol",
+            "target": {
+              "x": 350,
+              "y": 530
+            },
+            "route": [
+              {
+                "x": 350,
+                "y": 530
+              },
+              {
+                "x": 600,
+                "y": 530
+              },
+              {
+                "x": 650,
+                "y": 400
+              },
+              {
+                "x": 340,
+                "y": 300
+              }
+            ],
+            "way": 0,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 480,
+              "y": 560
+            },
+            "entryAt": 70280,
+            "entered": true
+          },
+          "targetDistance": 221.19261971912965,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "n": 2,
+      "layout": 2,
+      "seed": 6,
+      "policy": "collector",
+      "flips": 23,
+      "activeTicks": 7928,
+      "sentryHoldTicks": 392,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 4,
+      "layout": 0,
+      "seed": 1,
+      "policy": "idle",
+      "flips": 26,
+      "activeTicks": 10969,
+      "sentryHoldTicks": 2233,
+      "passes": 0,
+      "stalls": [
+        {
+          "at": 25640,
+          "h": {
+            "id": "g0",
+            "x": 191.89539925571728,
+            "y": 309.67880105181297,
+            "angle": 2.9737250213573603,
+            "mode": "patrol",
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 12000,
+            "entered": true
+          },
+          "targetDistance": 112.31322079077313,
+          "clear": false
+        },
+        {
+          "at": 70200,
+          "h": {
+            "id": "g-sentry-2",
+            "x": 191.44495405686916,
+            "y": 309.94252424078076,
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "mode": "patrol",
+            "angle": 3.1018367354161844,
+            "victim": null,
+            "attention": 0,
+            "door": {
+              "x": 880,
+              "y": 40
+            },
+            "entryAt": 14400,
+            "entered": true,
+            "retreatUntil": 65340
+          },
+          "targetDistance": 111.88758453472929,
+          "clear": false
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "layout": 0,
+      "seed": 1,
+      "policy": "collector",
+      "flips": 17,
+      "activeTicks": 10739,
+      "sentryHoldTicks": 1739,
+      "passes": 0,
+      "stalls": [
+        {
+          "at": 25880,
+          "h": {
+            "id": "g0",
+            "x": 191.89539925571728,
+            "y": 309.67880105181297,
+            "angle": 2.9737250213573603,
+            "mode": "patrol",
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 12000,
+            "entered": true
+          },
+          "targetDistance": 112.31322079077313,
+          "clear": false
+        },
+        {
+          "at": 36720,
+          "h": {
+            "id": "g-sentry-1",
+            "x": 206.0431784660775,
+            "y": 295.40118418432075,
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 80,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 440
+              },
+              {
+                "x": 340,
+                "y": 300
+              }
+            ],
+            "way": 1,
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "mode": "patrol",
+            "angle": 2.4128382649601687,
+            "victim": null,
+            "attention": 0,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 13200,
+            "entered": true,
+            "retreatUntil": 28660
+          },
+          "targetDistance": 126.12704684062815,
+          "clear": true
+        },
+        {
+          "at": 73960,
+          "h": {
+            "id": "g-sentry-2",
+            "x": 211.69598244302148,
+            "y": 306.222371471647,
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "mode": "patrol",
+            "angle": 2.969282991295881,
+            "victim": null,
+            "attention": 57440,
+            "door": {
+              "x": 880,
+              "y": 40
+            },
+            "entryAt": 14400,
+            "entered": true,
+            "retreatUntil": 22460
+          },
+          "targetDistance": 131.84289779265242,
+          "clear": true
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "layout": 1,
+      "seed": 2,
+      "policy": "idle",
+      "flips": 18,
+      "activeTicks": 10093,
+      "sentryHoldTicks": 1837,
+      "passes": 1,
+      "stalls": [
+        {
+          "at": 28960,
+          "h": {
+            "id": "g0",
+            "x": 190.93621923545032,
+            "y": 309.8562731173847,
+            "angle": 2.989263512984219,
+            "mode": "patrol",
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 12000,
+            "entered": true
+          },
+          "targetDistance": 111.37320529651815,
+          "clear": false
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "layout": 1,
+      "seed": 2,
+      "policy": "collector",
+      "flips": 33,
+      "activeTicks": 11126,
+      "sentryHoldTicks": 1234,
+      "passes": 0,
+      "stalls": [
+        {
+          "at": 25560,
+          "h": {
+            "id": "g0",
+            "x": 190.93621923545032,
+            "y": 309.8562731173847,
+            "angle": 2.989263512984219,
+            "mode": "patrol",
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 12000,
+            "entered": true
+          },
+          "targetDistance": 111.37320529651815,
+          "clear": false
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "layout": 2,
+      "seed": 6,
+      "policy": "idle",
+      "flips": 87,
+      "activeTicks": 10926,
+      "sentryHoldTicks": 2095,
+      "passes": 1,
+      "stalls": [
+        {
+          "at": 76600,
+          "h": {
+            "id": "g0",
+            "x": 191.6105455276769,
+            "y": 309.9745973633476,
+            "angle": 3.1258212705440322,
+            "mode": "patrol",
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 12000,
+            "entered": true,
+            "retreatUntil": 59900,
+            "searchCenter": {
+              "x": 203.49323407386098,
+              "y": 120.25296376351329
+            },
+            "searchAt": 46640,
+            "luredUntil": 48020
+          },
+          "targetDistance": 112.05537231898583,
+          "clear": false
+        }
+      ]
+    },
+    {
+      "n": 4,
+      "layout": 2,
+      "seed": 6,
+      "policy": "collector",
+      "flips": 41,
+      "activeTicks": 11170,
+      "sentryHoldTicks": 1510,
+      "passes": 0,
+      "stalls": [
+        {
+          "at": 25760,
+          "h": {
+            "id": "g0",
+            "x": 190.72968498337258,
+            "y": 309.8827239248362,
+            "angle": 2.9822339665501256,
+            "mode": "patrol",
+            "target": {
+              "x": 80,
+              "y": 300
+            },
+            "route": [
+              {
+                "x": 80,
+                "y": 80
+              },
+              {
+                "x": 280,
+                "y": 80
+              },
+              {
+                "x": 340,
+                "y": 300
+              },
+              {
+                "x": 80,
+                "y": 300
+              }
+            ],
+            "way": 3,
+            "attention": 15160,
+            "victim": null,
+            "door": {
+              "x": 80,
+              "y": 40
+            },
+            "entryAt": 12000,
+            "entered": true
+          },
+          "targetDistance": 111.16983119844815,
+          "clear": false
+        }
+      ]
+    },
+    {
+      "n": 6,
+      "layout": 0,
+      "seed": 1,
+      "policy": "idle",
+      "flips": 30,
+      "activeTicks": 14916,
+      "sentryHoldTicks": 3073,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 0,
+      "seed": 1,
+      "policy": "collector",
+      "flips": 50,
+      "activeTicks": 15055,
+      "sentryHoldTicks": 1339,
+      "passes": 1,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 1,
+      "seed": 2,
+      "policy": "idle",
+      "flips": 38,
+      "activeTicks": 14750,
+      "sentryHoldTicks": 1477,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 1,
+      "seed": 2,
+      "policy": "collector",
+      "flips": 36,
+      "activeTicks": 14996,
+      "sentryHoldTicks": 1512,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 2,
+      "seed": 6,
+      "policy": "idle",
+      "flips": 48,
+      "activeTicks": 14604,
+      "sentryHoldTicks": 1429,
+      "passes": 0,
+      "stalls": []
+    },
+    {
+      "n": 6,
+      "layout": 2,
+      "seed": 6,
+      "policy": "collector",
+      "flips": 54,
+      "activeTicks": 14620,
+      "sentryHoldTicks": 636,
+      "passes": 0,
+      "stalls": [
+        {
+          "at": 53240,
+          "h": {
+            "id": "g-lockdown",
+            "x": 367.835919370095,
+            "y": 309.48340147416934,
+            "angle": 0.2343296197686226,
+            "mode": "patrol",
+            "target": {
+              "x": 350,
+              "y": 530
+            },
+            "route": [
+              {
+                "x": 350,
+                "y": 530
+              },
+              {
+                "x": 600,
+                "y": 530
+              },
+              {
+                "x": 650,
+                "y": 400
+              },
+              {
+                "x": 340,
+                "y": 300
+              }
+            ],
+            "way": 0,
+            "attention": 0,
+            "victim": null,
+            "door": {
+              "x": 480,
+              "y": 560
+            },
+            "entryAt": 40720,
+            "entered": true
+          },
+          "targetDistance": 221.2367289696241,
+          "clear": true
+        }
+      ]
+    }
+  ]
+}

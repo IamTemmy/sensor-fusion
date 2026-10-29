@@ -5,3 +5,4 @@ export function betterRecord(old:RunRecord|null,next:RunRecord):RunRecord {
 }
 
 export const recordKey=(difficulty:string,mode:string,layout:number,plan='legacy')=>`noise-best-v68:${difficulty}:${mode}:${layout}:${plan}`;
+export function recordOutcome(old:RunRecord|null,next:RunRecord):'first'|'new'|'existing'{return !old?'first':betterRecord(old,next)===next?'new':'existing';}

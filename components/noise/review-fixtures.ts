@@ -13,6 +13,7 @@ export function reviewFixture(state:string):Game{
  event(g,'ECHO: Covering your alarm.');event(g,state==='coop'?'The collection is still waiting.':'Violet is closing in on the collection.');
  if(['centre','coop','locked','open'].includes(state)){s.hand=null;loot.holder=null;loot.x=loot.home?.x||270;loot.y=loot.home?.y||260;g.noises=[];}
  if(state==='locked'||state==='open'){const j=g.loot.find(l=>l.locked)!;s.x=j.x;s.y=j.y+25;s.aim={x:j.x,y:j.y};if(state==='open'){g.seats[1].x=g.plate.x;g.seats[1].y=g.plate.y;}else{g.seats[1].x=s.x-65;g.seats[1].y=s.y;}}
+ if(state.includes('placard')||state.includes('centerpiece')){const d=g.arena!.decor[0];s.hand=null;loot.holder=null;g.noises=[];Object.assign(s,{x:d.x+d.w/2,y:d.y+d.h+35});}
  if(state==='hide'){const p=hidingSpots(g)[0];s.hand=null;loot.holder=null;g.noises=[];Object.assign(s,{x:p.x+30,y:p.y});g.guards[0].victim=s.id;g.guards[0].entered=true;}
  if(state==='event'){g.jobEvent={kind:'shift',at:g.now-500,until:g.now+2000,flashUntil:g.now+2500,started:true,ended:false,warned:true};event(g,'SHIFT CHANGE · Guards switched routes.','honk');}
  if(state==='stash'){const p=hidingSpots(g)[0];Object.assign(s,{x:p.x+35,y:p.y,hand:null});Object.assign(loot,{x:p.x,y:p.y,holder:null,stashedAt:0,claimed:true});g.noises=[];event(g,'Rookie stashed art. Anyone can take it.');}
