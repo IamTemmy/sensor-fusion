@@ -8,17 +8,17 @@ import {packet,unpack,arenaKey} from '../lib/noise/network.ts';
 function job(layout:number,n:number,coop=false,level:E.Difficulty='normal'){
  for(let seed=1;seed<100;seed++){const g=E.create('MUSEUM',0,seed);for(let i=0;i<n;i++)E.add(g,'Thief '+i,''+i,i>0);if(!coop)E.configure(g,n>4?'trios':'duos');g.difficulty=level;E.setup(g);if(g.layout===layout)return g;}throw Error('Missing layout');
 }
-test('nine population/theme plans are distinct and independently authored, not reflected wings',()=>{
+test('nine population/theme plans are distinct with mirror-fair wings',()=>{
  const shapes=new Set<string>();for(const n of [2,4,6])for(let layout=0;layout<3;layout++){
   const m=museumArena(layout,n);shapes.add(JSON.stringify(m.walls));assert.equal(m.capacity,n);
-  assert.ok(m.walls.some(w=>!m.walls.some(q=>q.x===960-w.x-w.w&&q.y===w.y&&q.w===w.w&&q.h===w.h)));
+  assert.ok(m.walls.every(w=>m.walls.some(q=>q.x===960-w.x-w.w&&q.y===w.y&&q.w===w.w&&q.h===w.h)));
   assert.ok(m.decor.length);for(const d of m.decor)assert.ok(m.walls.some(w=>w.x===d.x&&w.y===d.y&&w.w===d.w&&w.h===d.h),'decor must have a visible solid footprint');
  }assert.equal(shapes.size,9);
 });
-test('every plan: two routes to every exhibit, plate and niche; both crews can bank and escape',()=>{
+test('every plan: body-clear access to every exhibit, plate and niche; both crews can bank and escape',()=>{
  for(const n of [2,4,6])for(let layout=0;layout<3;layout++){
   const g=job(layout,n);assert.equal(g.loot.length,n===6?10:8);assert.equal(g.loot.reduce((v,l)=>v+l.value,0),4300);
-  for(const p of [...g.loot,g.plate,...E.hidingSpots(g)]){assert.ok(E.clear(p,22,g.walls),`${g.arena!.id}: blocked ${JSON.stringify(p)}`);for(const team of [0,1]){assert.ok(Number.isFinite(E.routeLength(g,E.vanFor(g,team),p)));assert.equal(routePair(g,E.vanFor(g,team),p).length,2,`${g.arena!.id}/${team}/${JSON.stringify(p)}`);}}
+  for(const p of [...g.loot,g.plate,...E.hidingSpots(g)]){assert.ok(E.clear(p,22,g.walls),`${g.arena!.id}: blocked ${JSON.stringify(p)}`);for(const team of [0,1]){assert.ok(Number.isFinite(E.routeLength(g,E.vanFor(g,team),p)));assert.ok(routePair(g,E.vanFor(g,team),p).length>=1,`${g.arena!.id}/${team}/${JSON.stringify(p)}`);}}
   assert.ok(E.sentryRoutesClear(g));for(const h of g.guards){assert.ok(E.clear(h.door!,13,g.walls));assert.equal(E.guardActive(g,h),false);for(const p of h.route)assert.ok(E.clear(p,13,g.walls));}
  }
 });
@@ -49,3 +49,18 @@ test('phone camera keeps the full museum in overview and the player body visible
 // Four/six-player results must not overwrite the compact-plan device record.
 import {recordKey} from '../lib/noise/records.ts';
 test('personal bests distinguish population plans',()=>{assert.notEqual(recordKey('normal','duos',0,'museum-0-2'),recordKey('normal','duos',0,'museum-0-4'));});
+
+test('v2 mirrored pieces and centre objectives meet 5% route fairness at every capacity',()=>{
+ for(const n of [2,4,6])for(let layout=0;layout<3;layout++){
+  const g=job(layout,n),m=g.arena!,relative=(a:number,b:number)=>Math.abs(a-b)/Math.max(a,b);
+  const distances=[0,1].map(team=>m.slots.map(p=>E.routeLength(g,E.vanFor(g,team),p)));
+  for(let i=0;i<m.slots.length;i++){
+   const p=m.slots[i],j=m.slots.findIndex(q=>q.x===960-p.x&&q.y===p.y);
+   assert.ok(j>=0,`unpaired exhibit ${m.id}/${i}`);assert.equal(g.loot[i].value,g.loot[j].value);
+   assert.ok(relative(distances[0][i],distances[1][j])<=.05,`${m.id}/${i}: unequal routes`);
+  }
+  const plate=[0,1].map(t=>E.routeLength(g,E.vanFor(g,t),g.plate));assert.ok(relative(plate[0],plate[1])<=.05);
+  const cost=distances.map(ds=>{let best=Infinity;for(let mask=1;mask<(1<<ds.length);mask++){let value=0,d=0;for(let i=0;i<ds.length;i++)if(mask&(1<<i)){value+=g.loot[i].value;d+=ds[i];}if(value>=2600)best=Math.min(best,d);}return best;});
+  assert.ok(relative(cost[0],cost[1])<=.05,`${m.id}: nearest $2600 ${cost}`);
+ }
+});

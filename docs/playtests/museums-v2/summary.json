@@ -1,0 +1,806 @@
+{
+  "hash": "7142b6d90dc23002bbad0ca3752ce50ba6030d5635554605b8b35d135a5d6357",
+  "engineHash": "d6b3cabc159d945044608edbb615c018f9b6c4e511632a395e01abcd37a9ecef",
+  "baselineCommit": "7db285ee540546db14001349aedb5737fca2b8af",
+  "passedTests": 222,
+  "ship": false,
+  "difficulty": [
+    {
+      "mode": "coop",
+      "level": "rookie",
+      "n": 40,
+      "baseline": 92.5,
+      "current": 82.5,
+      "delta": -10.000000000000009,
+      "pass": true
+    },
+    {
+      "mode": "coop",
+      "level": "normal",
+      "n": 40,
+      "baseline": 52.5,
+      "current": 57.49999999999999,
+      "delta": 4.999999999999993,
+      "pass": true
+    },
+    {
+      "mode": "coop",
+      "level": "pro",
+      "n": 40,
+      "baseline": 20,
+      "current": 22.5,
+      "delta": 2.4999999999999996,
+      "pass": true
+    },
+    {
+      "mode": "duos",
+      "level": "rookie",
+      "n": 40,
+      "baseline": 90,
+      "current": 97.5,
+      "delta": 7.499999999999996,
+      "pass": true
+    },
+    {
+      "mode": "duos",
+      "level": "normal",
+      "n": 40,
+      "baseline": 50,
+      "current": 62.5,
+      "delta": 12.5,
+      "pass": false
+    },
+    {
+      "mode": "duos",
+      "level": "pro",
+      "n": 40,
+      "baseline": 25,
+      "current": 50,
+      "delta": 25,
+      "pass": false
+    }
+  ],
+  "idle": [
+    {
+      "layout": 0,
+      "matches": 30,
+      "detectedStops": 13,
+      "categories": {
+        "plate hold": 2,
+        "dock wait, only jackpot remains": 10,
+        "rescue wait": 1,
+        "unexplained": 0
+      },
+      "literalPass": false,
+      "unexplained": []
+    },
+    {
+      "layout": 1,
+      "matches": 30,
+      "detectedStops": 13,
+      "categories": {
+        "plate hold": 3,
+        "dock wait, only jackpot remains": 6,
+        "rescue wait": 4,
+        "unexplained": 0
+      },
+      "literalPass": false,
+      "unexplained": []
+    },
+    {
+      "layout": 2,
+      "matches": 30,
+      "detectedStops": 21,
+      "categories": {
+        "plate hold": 7,
+        "dock wait, only jackpot remains": 14,
+        "rescue wait": 0,
+        "unexplained": 0
+      },
+      "literalPass": false,
+      "unexplained": []
+    }
+  ],
+  "escape": [
+    {
+      "level": "rookie",
+      "n": 40,
+      "escaped": 40,
+      "tied": 0,
+      "left": 0,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "level": "normal",
+      "n": 40,
+      "escaped": 40,
+      "tied": 0,
+      "left": 0,
+      "misses": [],
+      "pass": true
+    },
+    {
+      "level": "pro",
+      "n": 40,
+      "escaped": 38,
+      "tied": 2,
+      "left": 0,
+      "misses": [],
+      "pass": true
+    }
+  ],
+  "geometry": [
+    {
+      "layout": 0,
+      "n": 2,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 574.3292885635854,
+          "violet": 574.3292885635854,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 402.61644278394795,
+          "violet": 402.61644278394795,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 350.72255825514645,
+          "violet": 350.72255825514645,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 402.24368808004016,
+          "violet": 402.24368808004016,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2800,
+          "distance": 1729.91197768272,
+          "arts": [
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "value": 2800,
+          "distance": 1729.91197768272,
+          "arts": [
+            3,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 1,
+      "n": 2,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 645.4213494723163,
+          "violet": 645.4213494723163,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 397.1302508964934,
+          "violet": 397.1302508964934,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 575.6028515783703,
+          "violet": 575.6028515783703,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 477.38343338474033,
+          "violet": 477.38343338474033,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2800,
+          "distance": 2095.5378853319203,
+          "arts": [
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "value": 2800,
+          "distance": 2095.5378853319203,
+          "arts": [
+            3,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 2,
+      "n": 2,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 600.7224842915426,
+          "violet": 600.7224842915426,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 393.8591118661596,
+          "violet": 393.8591118661596,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 368.7817782917155,
+          "violet": 368.7817782917155,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 348.1647980138681,
+          "violet": 348.1647980138681,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2800,
+          "distance": 1711.528172463286,
+          "arts": [
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "value": 2800,
+          "distance": 1711.528172463286,
+          "arts": [
+            3,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 0,
+      "n": 4,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 575.7016555674406,
+          "violet": 575.7016555674406,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 402.61644278394795,
+          "violet": 402.61644278394795,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 370.9758220835934,
+          "violet": 370.9758220835934,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 405.26151235234005,
+          "violet": 405.26151235234005,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2800,
+          "distance": 1754.5554327873222,
+          "arts": [
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "value": 2800,
+          "distance": 1754.5554327873222,
+          "arts": [
+            3,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 1,
+      "n": 4,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 645.4213494723163,
+          "violet": 645.4213494723163,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 397.1302508964934,
+          "violet": 397.1302508964934,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 585.9368805344891,
+          "violet": 585.9368805344891,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 486.0523744962447,
+          "violet": 486.0523744962447,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2800,
+          "distance": 2114.5408553995435,
+          "arts": [
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "value": 2800,
+          "distance": 2114.5408553995435,
+          "arts": [
+            3,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 2,
+      "n": 4,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 605.6448045039091,
+          "violet": 605.6448045039091,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 393.8591118661596,
+          "violet": 393.8591118661596,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 368.7817782917155,
+          "violet": 368.7817782917155,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 351.1114422503687,
+          "violet": 351.1114422503687,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2800,
+          "distance": 1719.397136912153,
+          "arts": [
+            3,
+            4,
+            5,
+            7
+          ]
+        },
+        {
+          "value": 2800,
+          "distance": 1719.397136912153,
+          "arts": [
+            3,
+            4,
+            6,
+            8
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 0,
+      "n": 6,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 577.6668463585271,
+          "violet": 577.6668463585271,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 402.61644278394795,
+          "violet": 402.61644278394795,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 391.71029494589163,
+          "violet": 391.71029494589163,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 409.0833228753133,
+          "violet": 409.0833228753133,
+          "differencePct": 0
+        },
+        {
+          "art": 9,
+          "twin": 10,
+          "mint": 116.619037896906,
+          "violet": 116.619037896906,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2600,
+          "distance": 1678.6126219852729,
+          "arts": [
+            1,
+            3,
+            4,
+            5,
+            9
+          ]
+        },
+        {
+          "value": 2600,
+          "distance": 1678.6126219852729,
+          "arts": [
+            2,
+            3,
+            4,
+            6,
+            10
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 1,
+      "n": 6,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 645.4410384266208,
+          "violet": 645.4410384266208,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 397.1302508964934,
+          "violet": 397.1302508964934,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 598.2146008688569,
+          "violet": 598.2146008688569,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 498.21460086885696,
+          "violet": 498.21460086885696,
+          "differencePct": 0
+        },
+        {
+          "art": 9,
+          "twin": 10,
+          "mint": 116.619037896906,
+          "violet": 116.619037896906,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2600,
+          "distance": 1947.4049280888773,
+          "arts": [
+            1,
+            3,
+            4,
+            5,
+            9
+          ]
+        },
+        {
+          "value": 2600,
+          "distance": 1947.4049280888773,
+          "arts": [
+            2,
+            3,
+            4,
+            6,
+            10
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    },
+    {
+      "layout": 2,
+      "n": 6,
+      "pocketShiftMaxPct": 0.19885127940270503,
+      "reachable": true,
+      "fairness": [
+        {
+          "art": 1,
+          "twin": 2,
+          "mint": 190,
+          "violet": 190,
+          "differencePct": 0
+        },
+        {
+          "art": 3,
+          "twin": 3,
+          "mint": 610.9636520526191,
+          "violet": 610.9636520526191,
+          "differencePct": 0
+        },
+        {
+          "art": 4,
+          "twin": 4,
+          "mint": 393.8591118661596,
+          "violet": 393.8591118661596,
+          "differencePct": 0
+        },
+        {
+          "art": 5,
+          "twin": 6,
+          "mint": 368.7817782917155,
+          "violet": 368.7817782917155,
+          "differencePct": 0
+        },
+        {
+          "art": 7,
+          "twin": 8,
+          "mint": 354.44835041059525,
+          "violet": 354.44835041059525,
+          "differencePct": 0
+        },
+        {
+          "art": 9,
+          "twin": 10,
+          "mint": 116.619037896906,
+          "violet": 116.619037896906,
+          "differencePct": 0
+        }
+      ],
+      "plateDifferencePct": 0,
+      "nearest2600": [
+        {
+          "value": 2600,
+          "distance": 1680.2235801074003,
+          "arts": [
+            1,
+            3,
+            4,
+            5,
+            9
+          ]
+        },
+        {
+          "value": 2600,
+          "distance": 1680.2235801074003,
+          "arts": [
+            2,
+            3,
+            4,
+            6,
+            10
+          ]
+        }
+      ],
+      "collectionDifferencePct": 0,
+      "setups": 6,
+      "failures": []
+    }
+  ],
+  "performance": [
+    {
+      "layout": 0,
+      "baselineMs": 2.7411729999985255,
+      "currentMs": 2.2733680000001186,
+      "deltaPct": -17.06586924643787,
+      "pass": true
+    },
+    {
+      "layout": 1,
+      "baselineMs": 1.3227049999986775,
+      "currentMs": 4.194005000001198,
+      "deltaPct": 217.07788206783758,
+      "pass": false
+    },
+    {
+      "layout": 2,
+      "baselineMs": 3.9103160000013304,
+      "currentMs": 7.6321180000013555,
+      "deltaPct": 95.1790596974454,
+      "pass": false
+    }
+  ]
+}

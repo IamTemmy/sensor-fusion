@@ -32,16 +32,17 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
   if(g.layout===1){ctx.strokeStyle='#cfae7a0c';ctx.beginPath();ctx.moveTo(x,y+12);ctx.lineTo(x+48,y+12);ctx.moveTo(x,y+36);ctx.lineTo(x+48,y+36);ctx.stroke();}
  }
  paintedFloor(ctx);rect(24,24,912,552,identity.wash);
- if(g.layout===2){ctx.strokeStyle='#d8bd782b';ctx.lineWidth=.8;for(const r of [75,140,210]){ctx.beginPath();ctx.ellipse(555,320,r,r*.65,0,0,Math.PI*2);ctx.stroke();}for(let i=0;i<32;i++){const x=65+(i*173)%820,y=70+(i*97)%460;circle(x,y,i%4===0?1.8:1,'#dceaff66');if(i%4===0){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+24,y-15);ctx.stroke();}}}
+ if(g.layout===2){ctx.strokeStyle='#d8bd782b';ctx.lineWidth=.8;for(const r of [75,140,210]){ctx.beginPath();ctx.ellipse(480,300,r,r*.65,0,0,Math.PI*2);ctx.stroke();}for(let i=0;i<32;i++){const x=65+(i*173)%820,y=70+(i*97)%460;circle(x,y,i%4===0?1.8:1,'#dceaff66');if(i%4===0){ctx.beginPath();ctx.moveTo(x,y);ctx.lineTo(x+24,y-15);ctx.stroke();}}}
  if(g.layout===1){ctx.strokeStyle='#b58f4e18';for(let y=32;y<576;y+=18){ctx.beginPath();ctx.moveTo(24,y);ctx.lineTo(936,y);ctx.stroke();}}
  // Warm pools from the exhibition lights contrast with the moonlit service loop.
  for(const x of [145,480,815]){const light=ctx.createRadialGradient(x,65,4,x,65,210);light.addColorStop(0,identity.light);light.addColorStop(.4,'#d5ac7111');light.addColorStop(1,'#dfb27300');ctx.fillStyle=light;ctx.fillRect(x-210,24,420,250);}
 
  // Low-contrast carpet is floor paint only, clipped around the exact collision walls.
  ctx.save();ctx.beginPath();ctx.rect(24,24,912,552);for(const w of walls)ctx.rect(w.x,w.y,w.w,w.h);ctx.clip('evenodd');ctx.globalAlpha=.55;rect(448,40,64,520,'#5e263c');rect(452,40,2,520,'#b48a53');rect(508,40,2,520,'#b48a53');if(g.layout===2){rect(40,270,880,60,'#5e263c');rect(40,274,880,2,'#b48a53');rect(40,324,880,2,'#b48a53');}ctx.restore();
+ if(g.layout===2){circle(480,300,96,'#172f45');ctx.strokeStyle='#b99c5a88';ctx.lineWidth=2;for(const r of [86,94]){ctx.beginPath();ctx.arc(480,300,r,0,Math.PI*2);ctx.stroke();}for(let i=0;i<24;i++){const a=i*Math.PI/12;ctx.beginPath();ctx.moveTo(480+Math.cos(a)*86,300+Math.sin(a)*86);ctx.lineTo(480+Math.cos(a)*94,300+Math.sin(a)*94);ctx.stroke();}}
  if(g.layout===0)for(const d of g.arena?.decor||[]){rect(d.x-3,d.y-3,d.w+6,d.h+6,floor,8);}
  ctx.strokeStyle='#bbac7760';ctx.lineWidth=2;ctx.strokeRect(36,36,888,528);ctx.strokeStyle='#bbac7720';ctx.strokeRect(42,42,876,516);
- for(const room of (g.training||width<700&&overview?[]:roomLabels(g,Math.max(7,7/cam.scale)))){if(g.seats.some(s=>distance(positions.get(s.id)||s,room)<60)||staffDoors(g).some(d=>distance(d,room)<65)||g.guards.some(h=>h.sentry&&distance(h,room)<65))continue;ctx.save();ctx.globalAlpha=.22;text(room.name,room.x,room.y,12,'#dac9a0','center');ctx.restore();}
+ for(const room of (g.training||width<700&&overview?[]:roomLabels(g,Math.max(10,10/cam.scale)))){if(g.seats.some(s=>distance(positions.get(s.id)||s,room)<60)||staffDoors(g).some(d=>distance(d,room)<65)||g.guards.some(h=>h.sentry&&distance(h,room)<65))continue;ctx.save();ctx.globalAlpha=.22;text(room.name,room.x,room.y,12,'#dac9a0','center');ctx.restore();}
  // Inlaid compass at the heart of the collection, beneath all game objects.
  ctx.save();ctx.translate(480,300);ctx.strokeStyle='#d2bc7b14';ctx.lineWidth=2;ctx.beginPath();ctx.arc(0,0,110,0,Math.PI*2);ctx.stroke();ctx.rotate(Math.PI/4);ctx.strokeRect(-77,-77,154,154);ctx.restore();
  for(const l of g.loot){if(l.banked||l.stashedAt!==undefined||l.flight)continue;const light=ctx.createRadialGradient(l.x,l.y,8,l.x,l.y,100);light.addColorStop(0,'#ffcf7738');light.addColorStop(1,'#ffe0a500');ctx.fillStyle=light;ctx.fillRect(l.x-100,l.y-100,200,200);}
@@ -76,6 +77,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
   if(w.w>40)rect(w.x+7,w.y+w.h-9,w.w-14,2,'#ac956744');
   ctx.save();ctx.globalAlpha=.35;sprite(ctx,w.w>=w.h?'wall-h':'wall-v',w.x+w.w/2,w.y+w.h/2-5.5,w.w,w.h+11,false,true);ctx.restore();
   if(g.layout===1&&w.w>50&&w.h>=16)for(let bx=w.x+8;bx<w.x+w.w-8;bx+=8)rect(bx,w.y-6,5,Math.min(14,w.h-8),['#a8806a','#baaa7d','#57938c'][Math.floor(bx/8)%3],1);
+  else if(g.layout===1&&w.h>50&&w.w>=16){for(let by=w.y+8;by<w.y+w.h-8;by+=8)rect(w.x+5,by-8,Math.min(14,w.w-8),5,['#a8806a','#baaa7d','#57938c'][Math.floor(by/8)%3],1);}
   else if(w.w>45&&w.h>18&&w.w<200){rect(w.x+6,w.y-5,w.w-12,w.h-12,'#94c5c44a',2);ctx.strokeStyle='#daeee788';ctx.strokeRect(w.x+6,w.y-5,w.w-12,w.h-12);}
  }
  // Brass wall caps and sconces belong to solid geometry, never to a walkable lane.

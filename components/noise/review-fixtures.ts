@@ -32,5 +32,14 @@ export function reviewFixture(state:string):Game{
  if(state==="recap-jackpot"){g.total=2675;g.seats[0].bank=1275;g.seats[1].bank=1400;g.seats[2].bank=0;g.seats[3].bank=0;g.crewMode="coop";g.loot.find(l=>l.value!==1200)!.banked=false;}
  if(state==='recap-coop'||state==='recap-jackpot'){g.crewMode='coop';g.seats=g.seats.filter(s=>s.team===0);}
  if(state==='recap-mixed'){g.seats[3].escaped=false;g.seats[3].penalty=150;}
+ if(state.startsWith('museum-')){
+  // Architecture review: real arena data, frozen actors clear of the centrepiece.
+  g.total=0;g.alert=0;g.noises=[];g.events=[];
+  for(const l of g.loot){l.holder=null;Object.assign(l,l.home);}
+  g.seats.forEach((p,i)=>{const home=vanFor(g,p.team);Object.assign(p,{x:home.x,y:home.y+(i%2?14:-14),hand:null,bank:0});});
+  g.guards.forEach((h,i)=>Object.assign(h,h.sentry||h.route[i%h.route.length],{entered:true,mode:'patrol'}));
+  if(state.includes('centerpiece')){const d=g.arena!.decor[0];Object.assign(s,{x:d.x+d.w/2,y:d.y+d.h+45});}
+  event(g,g.arena!.brief);
+ }
  return g;
 }

@@ -1,0 +1,65 @@
+{
+  "hash": "7142b6d90dc23002bbad0ca3752ce50ba6030d5635554605b8b35d135a5d6357",
+  "results": [
+    {
+      "name": "geometry",
+      "exitCode": 0
+    },
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "tests",
+      "exitCode": 0
+    },
+    {
+      "name": "escape-rookie",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-coop-rookie",
+      "exitCode": 0
+    },
+    {
+      "name": "idle-1",
+      "exitCode": 0
+    },
+    {
+      "name": "idle-2",
+      "exitCode": 0
+    },
+    {
+      "name": "escape-normal",
+      "exitCode": 0
+    },
+    {
+      "name": "idle-0",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-coop-normal",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-duos-rookie",
+      "exitCode": 0
+    },
+    {
+      "name": "escape-pro",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-coop-pro",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-duos-normal",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-duos-pro",
+      "exitCode": 0
+    }
+  ]
+}
