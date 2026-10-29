@@ -7,15 +7,19 @@ const copy=<T,>(v:T):T=>JSON.parse(JSON.stringify(v));
 export class OnlinePrediction {
  game:Game|null=null;authoritative:View|null=null;you='';pending:Pending[]=[];nextAction=0;ack=0;clock=0;
  movements:Movement[]=[];changes:{at:number;dir:Vec;sneak:boolean}[]=[];snapshots:{v:View;at:number}[]=[];
+ relay=false;snapshotGaps:number[]=[];private renderAt:number|undefined;private renderClock=0;
+ setRelay(relay:boolean){if(this.relay===relay)return;this.relay=relay;this.snapshotGaps=[];this.renderAt=undefined;}
+ get interpolationDelay(){const gaps=[...this.snapshotGaps].sort((a,b)=>a-b);return this.relay&&gaps.length?Math.max(100,Math.min(600,1.5*gaps[Math.ceil(gaps.length*.9)-1])):100;}
  now:()=>number;constructor(now=()=>performance.now()){this.now=now;}
  recordMovement(a:{seq:number;dx:number;dy:number;sneak?:boolean}){this.movements.push({...a,sneak:!!a.sneak,sentAt:this.now()});this.movements=this.movements.slice(-256);}
  offsets=new Map<string,Vec&{left:number}>();dir:Vec={x:0,y:0};aim:Vec={x:480,y:300};sneak=false;
- reset(){this.game=null;this.authoritative=null;this.pending=[];this.nextAction=0;this.ack=0;this.clock=0;this.offsets.clear();this.movements=[];this.changes=[];this.snapshots=[];}
+ reset(){this.game=null;this.authoritative=null;this.pending=[];this.nextAction=0;this.ack=0;this.clock=0;this.offsets.clear();this.movements=[];this.changes=[];this.snapshots=[];this.snapshotGaps=[];this.renderAt=undefined;}
  accept(v:View,ack=0,rtt=0){
   if(this.authoritative&&v.code===this.authoritative.code&&v.match===this.authoritative.match&&v.revision<=this.authoritative.revision)return false;
   const changed=!this.authoritative||v.code!==this.authoritative.code||v.match!==this.authoritative.match;
   const previous=this.positions();if(changed)this.reset();
   const received=this.now();
+  const last=this.snapshots.at(-1);if(last&&received>last.at){this.snapshotGaps.push(received-last.at);this.snapshotGaps=this.snapshotGaps.slice(-10);}
   this.snapshots.push({v:copy(v),at:received});this.snapshots=this.snapshots.slice(-32);
   this.authoritative=copy(v);this.you=v.you;this.ack=Math.max(this.ack,ack);this.nextAction=Math.max(this.nextAction,this.ack);this.pending=this.pending.filter(a=>a.id>this.ack);
   this.game=copy(v);this.clock=v.now;
@@ -70,13 +74,18 @@ export class OnlinePrediction {
  }
  private replayMovement(ms:number,dir:Vec,sneak:boolean){this.dir=dir;this.sneak=sneak;this.setInput();this.advancePresentation(this.game!.now+ms);}
  positions(){const out=new Map<string,Vec>();if(!this.game)return out;
-  const target=this.now()-100;
-  const newer=this.snapshots.find(s=>s.at>=target)||this.snapshots.at(-1);
-  const older=[...this.snapshots].reverse().find(s=>s.at<=target)||this.snapshots[0];
+  const now=this.now(),desired=now-this.interpolationDelay;
+  // Slew the playback clock when the measured delay changes: never rewind actors
+  // or freeze them merely to fill a newly enlarged buffer. Own prediction is separate.
+  let target=desired;
+  if(this.relay){if(this.renderAt===undefined)this.renderAt=desired;else{const dt=Math.max(0,now-this.renderClock);this.renderAt+=dt*Math.max(.5,Math.min(1.25,1+(desired-this.renderAt-dt)/500));}target=this.renderAt;this.renderClock=now;}
+  let newer=this.snapshots.find(s=>s.at>=target)||this.snapshots.at(-1);
+  let older=[...this.snapshots].reverse().find(s=>s.at<=target)||this.snapshots[0];
+  const latest=this.snapshots.at(-1);if(this.relay&&latest&&target>latest.at&&this.snapshots.length>1){newer=latest;older=this.snapshots.at(-2)!;}
   for(const s of [...this.game.seats,...this.game.guards]){
    let p={x:s.x,y:s.y};
    if(s.id===this.you){const o=this.offsets.get(s.id);if(o){const d=Math.hypot(o.x,o.y);if(d)move(p,o.x/d,o.y/d,1,d,thiefWalls(this.game,s as Game['seats'][number]));}}
-   else if(older&&newer){const a=[...older.v.seats,...older.v.guards].find(a=>a.id===s.id),b=[...newer.v.seats,...newer.v.guards].find(a=>a.id===s.id);if(a&&b){const t=newer.at===older.at?1:Math.max(0,Math.min(1,(target-older.at)/(newer.at-older.at)));p={x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t};}}
+   else if(older&&newer){const a=[...older.v.seats,...older.v.guards].find(a=>a.id===s.id),b=[...newer.v.seats,...newer.v.guards].find(a=>a.id===s.id);if(a&&b){const t=newer.at===older.at?1:Math.max(0,Math.min(this.relay?1+100/(newer.at-older.at):1,(target-older.at)/(newer.at-older.at)));p={x:a.x+(b.x-a.x)*t,y:a.y+(b.y-a.y)*t};}}
    out.set(s.id,p);
   }return out;}
  current(){if(!this.game)return null;const v=view(this.game,this.you);if(v.phase==='finished'&&this.authoritative?.phase==='playing')v.phase='playing';return v;}
