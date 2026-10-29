@@ -2,7 +2,7 @@
   {
     "layout": 1,
     "matches": 30,
-    "stalls": 13,
+    "stalls": 10,
     "cases": [
       {
         "seed": 1001,
@@ -14,42 +14,7 @@
         "seed": 1002,
         "n": 4,
         "level": "rookie",
-        "stalls": [
-          {
-            "id": "p4",
-            "at": 63520,
-            "x": 874.0131544151327,
-            "y": 511.0075450108898,
-            "task": "fetch",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": true,
-            "plateDistance": 394.1668833112823,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              }
-            ]
-          },
-          {
-            "id": "p2",
-            "at": 63560,
-            "x": 846.7101433525509,
-            "y": 504.15283429331305,
-            "task": "fetch",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": true,
-            "plateDistance": 366.73365712777996,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              }
-            ]
-          }
-        ]
+        "stalls": []
       },
       {
         "seed": 1003,
@@ -79,78 +44,13 @@
         "seed": 1016,
         "n": 2,
         "level": "pro",
-        "stalls": [
-          {
-            "id": "p2",
-            "at": 54240,
-            "x": 78.94033935553637,
-            "y": 544.1387222259028,
-            "task": "wait-rescue",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": true,
-            "plateDistance": 403.48119930919677,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              },
-              {
-                "id": "art6",
-                "locked": false
-              },
-              {
-                "id": "art8",
-                "locked": false
-              }
-            ]
-          }
-        ]
+        "stalls": []
       },
       {
         "seed": 1017,
         "n": 4,
         "level": "pro",
-        "stalls": [
-          {
-            "id": "p3",
-            "at": 47520,
-            "x": 122.82522830548609,
-            "y": 524.5100027415602,
-            "task": "wait-rescue",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": true,
-            "plateDistance": 358.01474518435606,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              },
-              {
-                "id": "art5",
-                "locked": false
-              }
-            ]
-          },
-          {
-            "id": "p2",
-            "at": 78840,
-            "x": 480,
-            "y": 500,
-            "task": "fetch",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": false,
-            "plateDistance": 0,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              }
-            ]
-          }
-        ]
+        "stalls": []
       },
       {
         "seed": 1018,
@@ -158,15 +58,37 @@
         "level": "pro",
         "stalls": [
           {
-            "id": "p4",
-            "at": 26960,
-            "x": 875.3461611297786,
-            "y": 542.9099856626162,
+            "id": "p3",
+            "at": 74840,
+            "x": 79.61820700679114,
+            "y": 540.5296103075068,
             "task": "wait-rescue",
             "mode": "auto",
             "hand": null,
+            "crew": [
+              {
+                "id": "p1",
+                "stun": 80640,
+                "escaped": false,
+                "hand": null
+              },
+              {
+                "id": "p3",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "wait-rescue"
+              },
+              {
+                "id": "p5",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "wait-rescue"
+              }
+            ],
             "homeSafe": true,
-            "plateDistance": 397.6680198225887,
+            "plateDistance": 402.42791835574127,
             "unbanked": [
               {
                 "id": "art3",
@@ -190,13 +112,88 @@
         "seed": 1029,
         "n": 4,
         "level": "rookie",
-        "stalls": []
+        "stalls": [
+          {
+            "id": "p2",
+            "at": 61160,
+            "x": 480,
+            "y": 500,
+            "task": "hold-plate",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "hold-plate"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 0,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              }
+            ]
+          }
+        ]
       },
       {
         "seed": 1030,
         "n": 6,
         "level": "rookie",
-        "stalls": []
+        "stalls": [
+          {
+            "id": "p2",
+            "at": 61680,
+            "x": 478.73775150985654,
+            "y": 498.7474981625954,
+            "task": "hold-plate",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "hold-plate"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              },
+              {
+                "id": "p6",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 1.7782103653874612,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              }
+            ]
+          }
+        ]
       },
       {
         "seed": 1031,
@@ -229,14 +226,30 @@
         "stalls": [
           {
             "id": "p2",
-            "at": 65960,
-            "x": 479.61812149873583,
-            "y": 498.67757855395627,
-            "task": "fetch",
+            "at": 50320,
+            "x": 480.3889719985432,
+            "y": 497.05740309908714,
+            "task": "hold-plate",
             "mode": "auto",
             "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "hold-plate"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              }
+            ],
             "homeSafe": false,
-            "plateDistance": 1.3764554735566883,
+            "plateDistance": 2.968194019418652,
             "unbanked": [
               {
                 "id": "art3",
@@ -250,29 +263,7 @@
         "seed": 1045,
         "n": 6,
         "level": "pro",
-        "stalls": [
-          {
-            "id": "p5",
-            "at": 33400,
-            "x": 60.951847934177884,
-            "y": 511.9747593300836,
-            "task": "wait-rescue",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": true,
-            "plateDistance": 419.219213074489,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              },
-              {
-                "id": "art5",
-                "locked": false
-              }
-            ]
-          }
-        ]
+        "stalls": []
       },
       {
         "seed": 1055,
@@ -286,36 +277,68 @@
         "level": "rookie",
         "stalls": [
           {
-            "id": "p4",
-            "at": 72040,
-            "x": 853.3495271075875,
-            "y": 505.6228028934751,
+            "id": "p2",
+            "at": 60120,
+            "x": 872.8744451919625,
+            "y": 510.2468286528674,
             "task": "fetch",
             "mode": "auto",
             "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "fetch"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "fetch"
+              }
+            ],
             "homeSafe": true,
-            "plateDistance": 373.3918656101631,
+            "plateDistance": 393.008049767856,
             "unbanked": [
               {
-                "id": "art3",
-                "locked": true
+                "id": "art4",
+                "locked": false
               }
             ]
           },
           {
-            "id": "p2",
-            "at": 72200,
-            "x": 882.1976465972219,
-            "y": 513.2066053636893,
+            "id": "p4",
+            "at": 60120,
+            "x": 842.3960326878491,
+            "y": 507.62964690221037,
             "task": "fetch",
             "mode": "auto",
             "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "fetch"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "fetch"
+              }
+            ],
             "homeSafe": true,
-            "plateDistance": 402.4144149425764,
+            "plateDistance": 362.47633856535384,
             "unbanked": [
               {
-                "id": "art3",
-                "locked": true
+                "id": "art4",
+                "locked": false
               }
             ]
           }
@@ -343,7 +366,48 @@
         "seed": 1069,
         "n": 6,
         "level": "normal",
-        "stalls": []
+        "stalls": [
+          {
+            "id": "p2",
+            "at": 78360,
+            "x": 475.34316164794467,
+            "y": 495.3545217725202,
+            "task": "wait-rescue",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "wait-rescue"
+              },
+              {
+                "id": "p4",
+                "stun": 79840,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              },
+              {
+                "id": "p6",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "wait-rescue"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 6.5777360390306425,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              }
+            ]
+          }
+        ]
       },
       {
         "seed": 1070,
@@ -355,17 +419,46 @@
         "seed": 1071,
         "n": 4,
         "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1072,
+        "n": 6,
+        "level": "pro",
         "stalls": [
           {
-            "id": "p2",
-            "at": 58320,
-            "x": 481.0938778178306,
-            "y": 499.32772082545085,
-            "task": "fetch",
+            "id": "p4",
+            "at": 36840,
+            "x": 899.0413431369989,
+            "y": 532.8788042163695,
+            "task": "wait-rescue",
             "mode": "auto",
             "hand": null,
-            "homeSafe": false,
-            "plateDistance": 1.2839501426746887,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "hold-plate"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "wait-rescue"
+              },
+              {
+                "id": "p6",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "reroute"
+              }
+            ],
+            "homeSafe": true,
+            "plateDistance": 420.32923170386135,
             "unbanked": [
               {
                 "id": "art3",
@@ -374,12 +467,6 @@
             ]
           }
         ]
-      },
-      {
-        "seed": 1072,
-        "n": 6,
-        "level": "pro",
-        "stalls": []
       },
       {
         "seed": 1082,
@@ -393,32 +480,31 @@
         "level": "rookie",
         "stalls": [
           {
-            "id": "p4",
-            "at": 74920,
-            "x": 856.7127487226813,
-            "y": 509.22667751712385,
-            "task": "fetch",
-            "mode": "auto",
-            "hand": null,
-            "homeSafe": true,
-            "plateDistance": 376.82572447777903,
-            "unbanked": [
-              {
-                "id": "art3",
-                "locked": true
-              }
-            ]
-          },
-          {
             "id": "p2",
-            "at": 75080,
-            "x": 885.99943345739,
-            "y": 510.931173723979,
-            "task": "fetch",
+            "at": 57160,
+            "x": 480,
+            "y": 500,
+            "task": "hold-plate",
             "mode": "auto",
             "hand": null,
-            "homeSafe": true,
-            "plateDistance": 406.1465628645716,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "hold-plate"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 0,
             "unbanked": [
               {
                 "id": "art3",
@@ -432,7 +518,48 @@
         "seed": 1084,
         "n": 6,
         "level": "rookie",
-        "stalls": []
+        "stalls": [
+          {
+            "id": "p2",
+            "at": 42920,
+            "x": 479.70718968899945,
+            "y": 499.4740972620661,
+            "task": "hold-plate",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "hold-plate"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              },
+              {
+                "id": "p6",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "jackpot"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 0.6019232243356427,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              }
+            ]
+          }
+        ]
       }
     ]
   }

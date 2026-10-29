@@ -2,9 +2,11 @@
   {
     "level": "normal",
     "n": 40,
-    "escaped": 40,
-    "tied": 0,
-    "left": 0,
-    "misses": []
+    "escaped": 37,
+    "tied": 2,
+    "left": 1,
+    "misses": [
+      1035
+    ]
   }
 ]

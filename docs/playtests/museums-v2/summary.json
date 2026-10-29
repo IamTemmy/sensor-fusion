@@ -1,8 +1,8 @@
 {
-  "hash": "7142b6d90dc23002bbad0ca3752ce50ba6030d5635554605b8b35d135a5d6357",
-  "engineHash": "d6b3cabc159d945044608edbb615c018f9b6c4e511632a395e01abcd37a9ecef",
+  "hash": "07e83bf8bd7dc01073dde9c0572f5ede39f7f82e0e3ed67cd8eea567052973c0",
+  "engineHash": "bc5980522c1e996c288ff9c30bb83b2fd6ffd785aad6baa6a702f44c62d771fd",
   "baselineCommit": "7db285ee540546db14001349aedb5737fca2b8af",
-  "passedTests": 222,
+  "passedTests": 232,
   "ship": false,
   "difficulty": [
     {
@@ -19,8 +19,8 @@
       "level": "normal",
       "n": 40,
       "baseline": 52.5,
-      "current": 57.49999999999999,
-      "delta": 4.999999999999993,
+      "current": 60,
+      "delta": 7.499999999999996,
       "pass": true
     },
     {
@@ -28,8 +28,8 @@
       "level": "pro",
       "n": 40,
       "baseline": 20,
-      "current": 22.5,
-      "delta": 2.4999999999999996,
+      "current": 27.500000000000004,
+      "delta": 7.500000000000001,
       "pass": true
     },
     {
@@ -37,17 +37,17 @@
       "level": "rookie",
       "n": 40,
       "baseline": 90,
-      "current": 97.5,
-      "delta": 7.499999999999996,
-      "pass": true
+      "current": 77.5,
+      "delta": -12.5,
+      "pass": false
     },
     {
       "mode": "duos",
       "level": "normal",
       "n": 40,
       "baseline": 50,
-      "current": 62.5,
-      "delta": 12.5,
+      "current": 67.5,
+      "delta": 17.500000000000004,
       "pass": false
     },
     {
@@ -55,8 +55,8 @@
       "level": "pro",
       "n": 40,
       "baseline": 25,
-      "current": 50,
-      "delta": 25,
+      "current": 55.00000000000001,
+      "delta": 30.000000000000004,
       "pass": false
     }
   ],
@@ -64,36 +64,156 @@
     {
       "layout": 0,
       "matches": 30,
-      "detectedStops": 13,
+      "detectedStops": 6,
       "categories": {
         "plate hold": 2,
-        "dock wait, only jackpot remains": 10,
-        "rescue wait": 1,
-        "unexplained": 0
+        "dock wait, only jackpot remains": 2,
+        "dock wait, remaining art carried": 1,
+        "rescue wait": 0,
+        "unexplained": 1
       },
       "literalPass": false,
-      "unexplained": []
+      "unexplained": [
+        {
+          "id": "p2",
+          "at": 68360,
+          "x": 836.5844839025831,
+          "y": 521.6213821242201,
+          "task": "wait-rescue",
+          "mode": "auto",
+          "hand": null,
+          "crew": [
+            {
+              "id": "p2",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "wait-rescue"
+            },
+            {
+              "id": "p4",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "fetch"
+            },
+            {
+              "id": "p6",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "fetch"
+            }
+          ],
+          "homeSafe": true,
+          "plateDistance": 357.2393851817477,
+          "unbanked": [
+            {
+              "id": "art3",
+              "locked": false
+            }
+          ],
+          "seed": 1027,
+          "level": "pro",
+          "n": 6
+        }
+      ]
     },
     {
       "layout": 1,
       "matches": 30,
-      "detectedStops": 13,
+      "detectedStops": 10,
       "categories": {
-        "plate hold": 3,
-        "dock wait, only jackpot remains": 6,
-        "rescue wait": 4,
-        "unexplained": 0
+        "plate hold": 6,
+        "dock wait, only jackpot remains": 1,
+        "dock wait, remaining art carried": 0,
+        "rescue wait": 1,
+        "unexplained": 2
       },
       "literalPass": false,
-      "unexplained": []
+      "unexplained": [
+        {
+          "id": "p2",
+          "at": 60120,
+          "x": 872.8744451919625,
+          "y": 510.2468286528674,
+          "task": "fetch",
+          "mode": "auto",
+          "hand": null,
+          "crew": [
+            {
+              "id": "p2",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "fetch"
+            },
+            {
+              "id": "p4",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "fetch"
+            }
+          ],
+          "homeSafe": true,
+          "plateDistance": 393.008049767856,
+          "unbanked": [
+            {
+              "id": "art4",
+              "locked": false
+            }
+          ],
+          "seed": 1056,
+          "level": "rookie",
+          "n": 4
+        },
+        {
+          "id": "p4",
+          "at": 60120,
+          "x": 842.3960326878491,
+          "y": 507.62964690221037,
+          "task": "fetch",
+          "mode": "auto",
+          "hand": null,
+          "crew": [
+            {
+              "id": "p2",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "fetch"
+            },
+            {
+              "id": "p4",
+              "stun": 0,
+              "escaped": false,
+              "hand": null,
+              "task": "fetch"
+            }
+          ],
+          "homeSafe": true,
+          "plateDistance": 362.47633856535384,
+          "unbanked": [
+            {
+              "id": "art4",
+              "locked": false
+            }
+          ],
+          "seed": 1056,
+          "level": "rookie",
+          "n": 4
+        }
+      ]
     },
     {
       "layout": 2,
       "matches": 30,
-      "detectedStops": 21,
+      "detectedStops": 9,
       "categories": {
-        "plate hold": 7,
-        "dock wait, only jackpot remains": 14,
+        "plate hold": 9,
+        "dock wait, only jackpot remains": 0,
+        "dock wait, remaining art carried": 0,
         "rescue wait": 0,
         "unexplained": 0
       },
@@ -105,26 +225,30 @@
     {
       "level": "rookie",
       "n": 40,
-      "escaped": 40,
+      "escaped": 39,
       "tied": 0,
-      "left": 0,
-      "misses": [],
+      "left": 1,
+      "misses": [
+        1020
+      ],
       "pass": true
     },
     {
       "level": "normal",
       "n": 40,
-      "escaped": 40,
-      "tied": 0,
-      "left": 0,
-      "misses": [],
+      "escaped": 37,
+      "tied": 2,
+      "left": 1,
+      "misses": [
+        1035
+      ],
       "pass": true
     },
     {
       "level": "pro",
       "n": 40,
-      "escaped": 38,
-      "tied": 2,
+      "escaped": 39,
+      "tied": 1,
       "left": 0,
       "misses": [],
       "pass": true
@@ -783,24 +907,24 @@
   "performance": [
     {
       "layout": 0,
-      "baselineMs": 2.7411729999985255,
-      "currentMs": 2.2733680000001186,
-      "deltaPct": -17.06586924643787,
+      "baselineMs": 2.6038619999999355,
+      "currentMs": 1.2470270000012533,
+      "deltaPct": -52.10856028463551,
       "pass": true
     },
     {
       "layout": 1,
-      "baselineMs": 1.3227049999986775,
-      "currentMs": 4.194005000001198,
-      "deltaPct": 217.07788206783758,
+      "baselineMs": 1.3423419999999169,
+      "currentMs": 2.2299980000007054,
+      "deltaPct": 66.12741015336208,
       "pass": false
     },
     {
       "layout": 2,
-      "baselineMs": 3.9103160000013304,
-      "currentMs": 7.6321180000013555,
-      "deltaPct": 95.1790596974454,
-      "pass": false
+      "baselineMs": 3.737178999999742,
+      "currentMs": 2.178351999998995,
+      "deltaPct": -41.71132825055622,
+      "pass": true
     }
   ]
 }

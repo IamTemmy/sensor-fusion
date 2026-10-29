@@ -2,9 +2,11 @@
   {
     "level": "rookie",
     "n": 40,
-    "escaped": 40,
+    "escaped": 39,
     "tied": 0,
-    "left": 0,
-    "misses": []
+    "left": 1,
+    "misses": [
+      1020
+    ]
   }
 ]
