@@ -1,0 +1,1 @@
+NOT SHIPPED: emitter mechanics and all tests pass, idle 0/30 each and escape pass, but co-op Normal 85% and Pro 52.5% exceed the allowed baseline drift; duos Rookie 57.5%, Pro 50% miss targets. CPU all layouts passes. Do not merge this candidate.
