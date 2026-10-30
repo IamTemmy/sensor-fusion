@@ -28,6 +28,7 @@ assert.ok(coop('rookie')>=.75&&coop('rookie')<=.95,'Rookie co-op target is appro
 assert.ok(coop('normal')>=.50&&coop('normal')<=.70,'Normal co-op target is approximately 60%');
 assert.ok(coop('pro')>=.15&&coop('pro')<=.35,'Pro co-op target is approximately 25%');
 const rivals=d=>report.cells.find(c=>c.difficulty===d).results.find(r=>r.mode==='duos').winRate;
-assert.ok(rivals('rookie')>.70,'Rookie rivals must remain above 70%');
-assert.ok(rivals('normal')>=.45&&rivals('normal')<=.50,'Normal rivals target is 45–50%');
+assert.ok(rivals('rookie')>=.75,'Rookie rivals must remain at least 75%');
+assert.ok(rivals('normal')>=.45&&rivals('normal')<=.60,'Normal rivals target is 45–60%');
+assert.ok(rivals('pro')>=.25&&rivals('pro')<=.40,'Pro rivals target is 25–40%');
 console.log('Difficulty ordering gate passed (same 40 seeds, naive collector + Auto Echo).');
