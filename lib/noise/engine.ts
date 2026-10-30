@@ -121,7 +121,7 @@ export function setup(g:Game,arenaFactory?:typeof museumArena){guardPaths.delete
 }
 
 function setupMuseum(g:Game,arenaFactory?:typeof museumArena){
- const map=arenaFactory?arenaFactory(g.layout,g.seats.length):g.seats.length<=4&&g.crewMode!=='trios'?((g.match-1)%2?archiveArena(g.seats.length):flagshipArena(g.seats.length)):museumArena(g.layout,g.seats.length);if(map.id==='flagship-velmont')g.layout=0;if(map.id==='night-archive')g.layout=1;g.arena=map;g.walls=map.walls;g.plate={...map.plate};if(isFlagship(g))navigationEdges(g.walls);
+ const map=arenaFactory?arenaFactory(g.layout,g.seats.length):g.seats.length<=4&&g.crewMode!=='trios'?((g.match-1)%2?archiveArena(g.seats.length):flagshipArena(g.seats.length)):museumArena(g.layout,g.seats.length);if(map.id==='flagship-velmont')g.layout=0;if(map.id==='night-archive')g.layout=1;g.arena=map;g.walls=map.walls;g.plate={...map.plate};if(isFlagship(g)){navigationEdges(g.walls);const exit=map.crownExit;if(exit)navigationEdges(g.walls.filter(w=>!(w.x===exit.x&&w.y===exit.y&&w.w===exit.w&&w.h===exit.h)));}
  g.difficulty=difficultyOf(g);const rival=g.crewMode!=='coop';
  const values=map.capacity===6?[200,200,1200,500,500,500,400,400,200,200]:[200,200,1200,500,600,600,500,500];
  const names=['Pocket relic','Music box','Crown mask','Contested collection','Wing masterpiece','Wing masterpiece','Moonlit portrait','Blue moon vase','Archive folio','Moon pendant'];

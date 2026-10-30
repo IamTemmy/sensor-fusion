@@ -1,0 +1,14 @@
+[
+  {
+    "museum": "flagship-velmont",
+    "actionMs": 1.004523999999975,
+    "maxFirst25Ticks": 28.02236400000001,
+    "opened": true
+  },
+  {
+    "museum": "night-archive",
+    "actionMs": 0.08277499999996962,
+    "maxFirst25Ticks": 10.070381999999995,
+    "opened": true
+  }
+]
