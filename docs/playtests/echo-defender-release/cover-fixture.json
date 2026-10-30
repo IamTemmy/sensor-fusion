@@ -1,0 +1,18 @@
+[
+  {
+    "cover": false,
+    "n": 40,
+    "banked": 0,
+    "captured": 40,
+    "interventions": 0,
+    "bankRate": 0
+  },
+  {
+    "cover": true,
+    "n": 40,
+    "banked": 40,
+    "captured": 0,
+    "interventions": 40,
+    "bankRate": 1
+  }
+]

@@ -1,0 +1,650 @@
+[
+  {
+    "layout": 0,
+    "n": 2,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 574.3292885635854,
+        "violet": 574.3292885635854,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 402.61644278394795,
+        "violet": 402.61644278394795,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 350.72255825514645,
+        "violet": 350.72255825514645,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 402.24368808004016,
+        "violet": 402.24368808004016,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2800,
+        "distance": 1729.91197768272,
+        "arts": [
+          3,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "value": 2800,
+        "distance": 1729.91197768272,
+        "arts": [
+          3,
+          4,
+          6,
+          8
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 1,
+    "n": 2,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 645.4213494723163,
+        "violet": 645.4213494723163,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 397.1302508964934,
+        "violet": 397.1302508964934,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 575.6028515783703,
+        "violet": 575.6028515783703,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 477.38343338474033,
+        "violet": 477.38343338474033,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2800,
+        "distance": 2095.5378853319203,
+        "arts": [
+          3,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "value": 2800,
+        "distance": 2095.5378853319203,
+        "arts": [
+          3,
+          4,
+          6,
+          8
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 2,
+    "n": 2,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 600.7224842915426,
+        "violet": 600.7224842915426,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 393.8591118661596,
+        "violet": 393.8591118661596,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 368.7817782917155,
+        "violet": 368.7817782917155,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 348.1647980138681,
+        "violet": 348.1647980138681,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2800,
+        "distance": 1711.528172463286,
+        "arts": [
+          3,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "value": 2800,
+        "distance": 1711.528172463286,
+        "arts": [
+          3,
+          4,
+          6,
+          8
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 0,
+    "n": 4,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 575.7016555674406,
+        "violet": 575.7016555674406,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 402.61644278394795,
+        "violet": 402.61644278394795,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 370.9758220835934,
+        "violet": 370.9758220835934,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 405.26151235234005,
+        "violet": 405.26151235234005,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2800,
+        "distance": 1754.5554327873222,
+        "arts": [
+          3,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "value": 2800,
+        "distance": 1754.5554327873222,
+        "arts": [
+          3,
+          4,
+          6,
+          8
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 1,
+    "n": 4,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 645.4213494723163,
+        "violet": 645.4213494723163,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 397.1302508964934,
+        "violet": 397.1302508964934,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 585.9368805344891,
+        "violet": 585.9368805344891,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 486.0523744962447,
+        "violet": 486.0523744962447,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2800,
+        "distance": 2114.5408553995435,
+        "arts": [
+          3,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "value": 2800,
+        "distance": 2114.5408553995435,
+        "arts": [
+          3,
+          4,
+          6,
+          8
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 2,
+    "n": 4,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 605.6448045039091,
+        "violet": 605.6448045039091,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 393.8591118661596,
+        "violet": 393.8591118661596,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 368.7817782917155,
+        "violet": 368.7817782917155,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 351.1114422503687,
+        "violet": 351.1114422503687,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2800,
+        "distance": 1719.397136912153,
+        "arts": [
+          3,
+          4,
+          5,
+          7
+        ]
+      },
+      {
+        "value": 2800,
+        "distance": 1719.397136912153,
+        "arts": [
+          3,
+          4,
+          6,
+          8
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 0,
+    "n": 6,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 577.6668463585271,
+        "violet": 577.6668463585271,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 402.61644278394795,
+        "violet": 402.61644278394795,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 391.71029494589163,
+        "violet": 391.71029494589163,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 409.0833228753133,
+        "violet": 409.0833228753133,
+        "differencePct": 0
+      },
+      {
+        "art": 9,
+        "twin": 10,
+        "mint": 116.619037896906,
+        "violet": 116.619037896906,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2600,
+        "distance": 1678.6126219852729,
+        "arts": [
+          1,
+          3,
+          4,
+          5,
+          9
+        ]
+      },
+      {
+        "value": 2600,
+        "distance": 1678.6126219852729,
+        "arts": [
+          2,
+          3,
+          4,
+          6,
+          10
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 1,
+    "n": 6,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 645.4410384266208,
+        "violet": 645.4410384266208,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 397.1302508964934,
+        "violet": 397.1302508964934,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 598.2146008688569,
+        "violet": 598.2146008688569,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 498.21460086885696,
+        "violet": 498.21460086885696,
+        "differencePct": 0
+      },
+      {
+        "art": 9,
+        "twin": 10,
+        "mint": 116.619037896906,
+        "violet": 116.619037896906,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2600,
+        "distance": 1947.4049280888773,
+        "arts": [
+          1,
+          3,
+          4,
+          5,
+          9
+        ]
+      },
+      {
+        "value": 2600,
+        "distance": 1947.4049280888773,
+        "arts": [
+          2,
+          3,
+          4,
+          6,
+          10
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  },
+  {
+    "layout": 2,
+    "n": 6,
+    "pocketShiftMaxPct": 0.19885127940270503,
+    "reachable": true,
+    "fairness": [
+      {
+        "art": 1,
+        "twin": 2,
+        "mint": 190,
+        "violet": 190,
+        "differencePct": 0
+      },
+      {
+        "art": 3,
+        "twin": 3,
+        "mint": 610.9636520526191,
+        "violet": 610.9636520526191,
+        "differencePct": 0
+      },
+      {
+        "art": 4,
+        "twin": 4,
+        "mint": 393.8591118661596,
+        "violet": 393.8591118661596,
+        "differencePct": 0
+      },
+      {
+        "art": 5,
+        "twin": 6,
+        "mint": 368.7817782917155,
+        "violet": 368.7817782917155,
+        "differencePct": 0
+      },
+      {
+        "art": 7,
+        "twin": 8,
+        "mint": 354.44835041059525,
+        "violet": 354.44835041059525,
+        "differencePct": 0
+      },
+      {
+        "art": 9,
+        "twin": 10,
+        "mint": 116.619037896906,
+        "violet": 116.619037896906,
+        "differencePct": 0
+      }
+    ],
+    "plateDifferencePct": 0,
+    "nearest2600": [
+      {
+        "value": 2600,
+        "distance": 1680.2235801074003,
+        "arts": [
+          1,
+          3,
+          4,
+          5,
+          9
+        ]
+      },
+      {
+        "value": 2600,
+        "distance": 1680.2235801074003,
+        "arts": [
+          2,
+          3,
+          4,
+          6,
+          10
+        ]
+      }
+    ],
+    "collectionDifferencePct": 0,
+    "setups": 6,
+    "failures": []
+  }
+]
