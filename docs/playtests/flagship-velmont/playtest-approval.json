@@ -1,0 +1,9 @@
+{
+  "sourceHash": "385e994592280eda5981a0019cd725c41bb02f3dec263eb288a0d5953d2bc67f",
+  "allowedFailures": [
+    "duos/normal",
+    "duos/pro"
+  ],
+  "authorizedOn": "2026-10-30",
+  "purpose": "User explicitly requested deployment of this candidate so Temmy and Claude can test it. Balance failures remain reported; no other failing gate is waived."
+}

@@ -1,4 +1,4 @@
-# Visibility, sound and dock candidate — not yet merged
+# Visibility, sound and dock candidate — user-approved playtest deployment
 
 Implemented readable Shadows/Full lighting, three-second guard silhouettes, nearby unseen footsteps, faint flashlight cues, exhibit values, an accessible title, and a boarding notice below the timer. Restored solid dinosaur/statue/orrery exhibits. Rivals docks now leave a 34u walk-through gap (was 15u); a 13u-radius thief fits, with a continuous clear center line from the front approach to the rear. Co-op keeps its original dock.
 
@@ -19,6 +19,6 @@ Sound fixtures cover a thrown jar luring a guard around the Clock doorway, a thr
 | Duos, swapped docks, 40 seeds | 100% | 72.5% | 57.5% |
 | Duos, pooled | 100% | **66.25% — fail** | **47.5% — fail** |
 
-Rivals Normal must be 45–60% and Pro 25–40%. These two release gates fail, so this candidate has **not** been merged or deployed. Source-matched results are in `../playtests/flagship-velmont/release.json`. Earlier completed candidates remain in `visibility-iteration-1` through `visibility-iteration-4`; no failed result was relabelled as passing. Coordinate changes materially affect the scripted collector's routes; the unresolved issue is rivals balance, not sound collision or route reachability.
+Rivals Normal must be 45–60% and Pro 25–40%. These two release gates fail, so this is **not a balance-gate pass**. On October 30, Temmy explicitly requested deployment for testing with Claude despite these known failures. The build approval is pinned to this exact source hash and these two failures only; the simulation results remain unchanged. GitHub main is unchanged; the review branch is the source for this playtest deployment. Source-matched results are in `../playtests/flagship-velmont/release.json`. Earlier completed candidates remain in `visibility-iteration-1` through `visibility-iteration-4`; no failed result was relabelled as passing. Coordinate changes materially affect the scripted collector's routes; the unresolved issue is rivals balance, not sound collision or route reachability.
 
 No scoring, timers, guard speed, rival skill or network transport changes. Current candidate reports are source-hashed. Screenshots are frozen development fixtures, not physical-device or multiplayer human tests.
