@@ -1,13 +1,13 @@
 {
-  "sourceHash": "b83b79b804a0e32e52b97ffbe6c947d2f5835d384e7d6819a4611f3d68dc9d28",
-  "engineHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
-  "at": "2026-10-30T11:30:45.773Z",
+  "sourceHash": "12f7f041379df0d97cd5b989baefcc3d1f5050847a2ad79cc742699a0a0526af",
+  "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
+  "at": "2026-10-30T11:57:54.738Z",
   "gates": {
     "tests": {
       "passed": true,
       "summary": [
-        "ℹ tests 276",
-        "ℹ pass 276",
+        "ℹ tests 278",
+        "ℹ pass 278",
         "ℹ fail 0"
       ]
     },
@@ -287,13 +287,13 @@
       "limits": "Static authored geometry only; no bots, guard AI, capacity, latency, balance or release gates simulated. Engine navigation uses its existing 12u movement, while static target/patrol clearance uses 13u."
     },
     "idle": {
-      "engineAndGeometryHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "matches": 30,
       "stalls": 0,
       "passed": true
     },
     "rush": {
-      "engineAndGeometryHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "matches": 120,
       "earlyBanks": 0,
       "banks": 52,
@@ -301,14 +301,14 @@
       "passed": true
     },
     "patrol": {
-      "engineAndGeometryHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "matches": 9,
       "stalls": 0,
       "archivePasses": 9,
       "passed": true
     },
     "escape": {
-      "engineHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "rows": [
         {
           "level": "rookie",
@@ -340,7 +340,7 @@
       "passed": true
     },
     "chaseForks": {
-      "engineHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "method": "33 actual flagship chase forks, 50–150u behind in 10u increments, one pursuing Normal guard, real held-jar throw and normal movement for four seconds; matched no-throw controls hold the jar. No walls changed.",
       "n": 33,
       "caught": 7,
@@ -349,7 +349,7 @@
       "passed": true
     },
     "echoAlone": {
-      "engineHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "method": "Human stays idle at own dock for the entire normal 90-second match; Auto Echo alone collects/passes/banks. Crew haul includes a pass to the idle human, if it banks automatically.",
       "rows": [
         {
@@ -524,18 +524,18 @@
       ]
     },
     "cpu": {
-      "engineAndGeometryHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
+      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
       "cases": [
         {
           "n": 2,
           "level": "rookie",
           "ticks": 2077,
-          "p95": 0.7763510000000053,
-          "max": 24.598246000000017,
+          "p95": 0.745584000000008,
+          "max": 37.10396499999999,
           "slowTicks": [
             {
               "at": 40,
-              "ms": 24.598246000000017
+              "ms": 37.10396499999999
             }
           ]
         },
@@ -543,45 +543,50 @@
           "n": 2,
           "level": "normal",
           "ticks": 2162,
-          "p95": 2.223683000000051,
-          "max": 10.820904999999811,
+          "p95": 2.379889999999932,
+          "max": 14.792679000000135,
           "slowTicks": []
         },
         {
           "n": 2,
           "level": "pro",
           "ticks": 2176,
-          "p95": 1.355203000000074,
-          "max": 7.735482999999931,
-          "slowTicks": []
+          "p95": 1.4286729999998897,
+          "max": 22.593104999999923,
+          "slowTicks": [
+            {
+              "at": 8400,
+              "ms": 22.593104999999923
+            }
+          ]
         },
         {
           "n": 4,
           "level": "rookie",
           "ticks": 2248,
-          "p95": 3.294608000000153,
-          "max": 16.738271999999597,
+          "p95": 3.4834589999991294,
+          "max": 18.951477999999952,
           "slowTicks": []
         },
         {
           "n": 4,
           "level": "normal",
           "ticks": 2250,
-          "p95": 3.123460000000705,
-          "max": 9.635887999999795,
+          "p95": 3.2709469999999783,
+          "max": 10.758437000000413,
           "slowTicks": []
         },
         {
           "n": 4,
           "level": "pro",
           "ticks": 2179,
-          "p95": 2.9304580000007263,
-          "max": 13.29823000000033,
+          "p95": 2.7893819999999323,
+          "max": 14.810531000000083,
           "slowTicks": []
         }
       ],
-      "p95": 3.294608000000153,
-      "max": 24.598246000000017,
+      "p95": 3.4834589999991294,
+      "max": 37.10396499999999,
       "passed": true
     }
   },

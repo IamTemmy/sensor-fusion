@@ -18,7 +18,7 @@
 
 | Gate | Result |
 | --- | --- |
-| Unit tests | 276 passed, 0 failed |
+| Unit tests | 278 passed, 0 failed |
 | TypeScript | Passed |
 | Geometry and navigation | Passed |
 | Chase forks, caught within 4 seconds | 7/33 (21.21%); without throw 25/33 |
@@ -27,7 +27,7 @@
 | Patrol | 0 stalls / 9; Archive pass 9/9 |
 | Rush Crown | 0 early banks / 120 |
 | Echo escapes, 40 seeds each | Rookie 40; Normal 39 (seed 1032 left); Pro 40 |
-| CPU | p95 3.29 ms; maximum 24.60 ms |
+| CPU | p95 3.48 ms; maximum 37.10 ms |
 
 ### Difficulty
 
@@ -54,6 +54,10 @@ Screenshots in `docs/flagship-velmont/playability-*.jpg` are frozen presentation
 
 Run `node scripts/flagship-gates.mjs`. Detailed JSON, including per-seat balance and timing cases, is alongside this report. `pnpm build` checks that release evidence matches the current source before building.
 
-- Source hash: `b83b79b804a0e32e52b97ffbe6c947d2f5835d384e7d6819a4611f3d68dc9d28`
-- Engine/geometry hash: `3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1`
-- Run started: `2026-10-30T11:30:45.773Z`
+- Source hash: `12f7f041379df0d97cd5b989baefcc3d1f5050847a2ad79cc742699a0a0526af`
+- Engine/geometry hash: `7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03`
+- Run started: `2026-10-30T11:57:54.738Z`
+
+## Follow-up: Crown and outward getaway
+
+Vans now face the exterior and leave beyond the map, with aboard markers following them. Explicit Hold Plate orders pre-position Echo before the time lock opens, without unlocking early. See `CROWN-AND-GETAWAY.md` for the separate diagnostic tests: current Normal/Pro solo Crown return policies did not bank the Crown in the tested samples. Passing the standard release gates is not a claim that this remaining playability question is resolved.

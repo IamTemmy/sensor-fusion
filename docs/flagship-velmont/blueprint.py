@@ -79,7 +79,7 @@ export function flagshipArena(players:number):MuseumArena {
  niches:d.hides.map(p=>({...p,back:'left',kind:'recess'})),
  rooms:d.rooms.map(r=>({name:String(r[0]),x:Number(r[1])+Number(r[3])/2,y:Number(r[2])+25,bounds:{x:Number(r[1]),y:Number(r[2]),w:Number(r[3]),h:Number(r[4])}})),
  sensors:d.lasers,decor:d.decor,doors:[{x:120,y:65},{x:570,y:65},{x:890,y:245}],
- docks:d.docks,dockFacings:['north','east'],posts:d.sentries};
+ docks:d.docks,dockFacings:['west','south'],posts:d.sentries};
 }
 '''
 (OUT.parent.parent/'lib/noise/flagship-arena.ts').write_text(module)

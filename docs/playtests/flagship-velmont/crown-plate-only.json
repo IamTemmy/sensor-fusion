@@ -1,0 +1,242 @@
+[
+  {
+    "level": "rookie",
+    "seed": 1001,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 53.48,
+    "caught": 3
+  },
+  {
+    "level": "rookie",
+    "seed": 1002,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 59.6,
+    "caught": 4
+  },
+  {
+    "level": "rookie",
+    "seed": 1003,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 57.04,
+    "caught": 4
+  },
+  {
+    "level": "rookie",
+    "seed": 1004,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 53.64,
+    "caught": 3
+  },
+  {
+    "level": "rookie",
+    "seed": 1005,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 53.56,
+    "caught": 3
+  },
+  {
+    "level": "rookie",
+    "seed": 1006,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 53.56,
+    "caught": 3
+  },
+  {
+    "level": "rookie",
+    "seed": 1007,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 56.68,
+    "caught": 4
+  },
+  {
+    "level": "rookie",
+    "seed": 1008,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 53.36,
+    "caught": 3
+  },
+  {
+    "level": "rookie",
+    "seed": 1009,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 59.6,
+    "caught": 4
+  },
+  {
+    "level": "rookie",
+    "seed": 1010,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": 57.04,
+    "caught": 4
+  },
+  {
+    "level": "normal",
+    "seed": 1001,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 6
+  },
+  {
+    "level": "normal",
+    "seed": 1002,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 7
+  },
+  {
+    "level": "normal",
+    "seed": 1003,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 6
+  },
+  {
+    "level": "normal",
+    "seed": 1004,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 6
+  },
+  {
+    "level": "normal",
+    "seed": 1005,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 5
+  },
+  {
+    "level": "normal",
+    "seed": 1006,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 5
+  },
+  {
+    "level": "normal",
+    "seed": 1007,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 5
+  },
+  {
+    "level": "normal",
+    "seed": 1008,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 6
+  },
+  {
+    "level": "normal",
+    "seed": 1009,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 7
+  },
+  {
+    "level": "normal",
+    "seed": 1010,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 4
+  },
+  {
+    "level": "pro",
+    "seed": 1001,
+    "echoReachedPlate": true,
+    "pickupSeconds": 31.72,
+    "bankSeconds": null,
+    "caught": 6
+  },
+  {
+    "level": "pro",
+    "seed": 1002,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 7
+  },
+  {
+    "level": "pro",
+    "seed": 1003,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 6
+  },
+  {
+    "level": "pro",
+    "seed": 1004,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 7
+  },
+  {
+    "level": "pro",
+    "seed": 1005,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 4
+  },
+  {
+    "level": "pro",
+    "seed": 1006,
+    "echoReachedPlate": true,
+    "pickupSeconds": 40.28,
+    "bankSeconds": null,
+    "caught": 5
+  },
+  {
+    "level": "pro",
+    "seed": 1007,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 5
+  },
+  {
+    "level": "pro",
+    "seed": 1008,
+    "echoReachedPlate": true,
+    "pickupSeconds": 33.52,
+    "bankSeconds": null,
+    "caught": 5
+  },
+  {
+    "level": "pro",
+    "seed": 1009,
+    "echoReachedPlate": true,
+    "pickupSeconds": 30.04,
+    "bankSeconds": null,
+    "caught": 7
+  },
+  {
+    "level": "pro",
+    "seed": 1010,
+    "echoReachedPlate": true,
+    "pickupSeconds": 35.12,
+    "bankSeconds": null,
+    "caught": 6
+  }
+]

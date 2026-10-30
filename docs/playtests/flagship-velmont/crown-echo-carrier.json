@@ -1,0 +1,182 @@
+[
+  {
+    "level": "rookie",
+    "seed": 1001,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1002,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1003,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1004,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1005,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1006,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1007,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1008,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1009,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "rookie",
+    "seed": 1010,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1001,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1002,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1003,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1004,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1005,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1006,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1007,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1008,
+    "pickupSeconds": 59.24,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1009,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "normal",
+    "seed": 1010,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1001,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1002,
+    "pickupSeconds": 68.4,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1003,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1004,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1005,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1006,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1007,
+    "pickupSeconds": 67.08,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1008,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1009,
+    "pickupSeconds": null,
+    "bankSeconds": null
+  },
+  {
+    "level": "pro",
+    "seed": 1010,
+    "pickupSeconds": 48.4,
+    "bankSeconds": null
+  }
+]
