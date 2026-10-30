@@ -1,7 +1,7 @@
 {
   "scope": "presentation-only",
   "base": "49f55789b6297fe08736808e9e72711483b092b5",
-  "sourceHash": "032a8b1dbf8ad17f4b7f584e36949f685bf2861af3ad3bf3447a40df2ec55332",
+  "sourceHash": "5df348b1652259f6c60abfcc2b34a3734726e301e34e797459735aa6964a3396",
   "protectedFiles": {
     ".gitignore": "0f953d59d28b539e23e7e95ce94cef7be8b982c1d2c89b152fec2fddc278d6fa",
     ".npmrc": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d",
@@ -343,5 +343,17 @@
   "typecheck": true,
   "screenshotsReviewed": true,
   "performanceStatus": "unresolved",
-  "policy": "Final UI-only deployment; no gameplay, networking or balance changes. CPU remains failed; see README and browser-cpu.json."
+  "policy": "Final UI-only deployment; no gameplay, networking or balance changes. CPU remains failed; see README and browser-cpu.json.",
+  "centeringCorrection": {
+    "scope": "CSS only",
+    "desktopWidth": 1366,
+    "phoneWidth": 360,
+    "artCenterErrorsPx": [
+      0,
+      0,
+      0,
+      0
+    ],
+    "reviewed": true
+  }
 }

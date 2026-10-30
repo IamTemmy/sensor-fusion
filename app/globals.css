@@ -832,9 +832,9 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .guide-v37>.guide-tabs{flex:0 0 auto}
 .noise-app .guide-rule-scroll{flex:1 1 150px;min-height:100px;scrollbar-gutter:stable;scrollbar-color:#e0bb72 #172d44}
 .noise-app .guide-scroll-hint{flex:0 0 auto;font:11px/1.2 Arial;color:#e6c98d;text-align:right}
-.noise-app .entry-tabs>button{display:grid;grid-template-rows:auto auto;align-items:center;align-content:start}
-.noise-app .entry-tabs>button>span{display:grid;grid-template-rows:1.3em minmax(2.6em,auto);gap:5px;align-items:center}
-.noise-app .heist-options>button{display:grid;grid-template-rows:auto 1.3em minmax(2.6em,auto);align-items:center;align-content:start}
+.noise-app .entry-tabs>button{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto auto;justify-content:stretch;justify-items:center;align-items:center;align-content:start}
+.noise-app .entry-tabs>button>span{width:100%;text-align:center;display:grid;grid-template-rows:1.3em minmax(2.6em,auto);gap:5px;align-items:center}
+.noise-app .heist-options>button{display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:auto 1.3em minmax(2.6em,auto);justify-content:stretch;justify-items:center;align-items:center;align-content:start}
 .noise-app .entry-tabs>button>span>b,.noise-app .heist-options>button>b{align-self:center;margin:0;line-height:1.3}
 @media(max-width:700px){
  .noise-app>.topbar{padding:4px 8px!important;gap:6px;height:50px;min-height:50px;flex-basis:50px}
