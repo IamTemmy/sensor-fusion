@@ -4,6 +4,21 @@ Implemented readable Shadows/Full lighting, three-second guard silhouettes, near
 
 Sound fixtures cover a thrown jar luring a guard around the Clock doorway, a throw triggering a Hall emitter, and a throw stopping at a solid centerpiece. Existing art-pass tests ensure a queued pass cannot substitute a sound jar. Both loading-bay entrances reach either van after either rematch assignment.
 
-The most recent completed candidate (iteration 4, 42u dock gap) passed 263 tests, typecheck, reachability, idle, patrol, Crown rush, Echo escape and CPU gates. Co-op rates were 100% / 45% / 32.5%. Rivals pooled Normal was 43.75% and Pro 45%, outside the requested ranges. Its report is retained under visibility-iteration-4. The 34u-gap candidate is still being validated; no main merge or deployment is authorized by those earlier numbers.
+## Final branch checks (not a release pass)
+
+- 264 tests passed; TypeScript and geometry checks passed. The seven new tests cover guard memory, solid-exhibit clearance, both bay approaches and the continuous 34u van gap, rematch/snapshot dock positions, three sound-throw scenarios, and pulling the Portrait sentry through its doorway.
+- Unintended bot idle: 0/30. Patrol stalls: 0; Archive patrol passes: 9/9.
+- Crown early banks: 0/120.
+- Echo escape: Rookie 40/40, Normal 40/40, Pro 39/40 (one tied up, none left behind untied).
+- Host p95: 5.37ms; maximum: 38.60ms. Both pass the 8ms/40ms limits.
+
+| Deterministic collector win rate | Rookie | Normal | Pro |
+|---|---:|---:|---:|
+| Co-op, 40 seeds | 100% | 45% | 32.5% |
+| Duos, initial docks, 40 seeds | 100% | 60% | 37.5% |
+| Duos, swapped docks, 40 seeds | 100% | 72.5% | 57.5% |
+| Duos, pooled | 100% | **66.25% — fail** | **47.5% — fail** |
+
+Rivals Normal must be 45–60% and Pro 25–40%. These two release gates fail, so this candidate has **not** been merged or deployed. Source-matched results are in `../playtests/flagship-velmont/release.json`. Earlier completed candidates remain in `visibility-iteration-1` through `visibility-iteration-4`; no failed result was relabelled as passing. Coordinate changes materially affect the scripted collector's routes; the unresolved issue is rivals balance, not sound collision or route reachability.
 
 No scoring, timers, guard speed, rival skill or network transport changes. Current candidate reports are source-hashed. Screenshots are frozen development fixtures, not physical-device or multiplayer human tests.

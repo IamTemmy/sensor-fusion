@@ -1,13 +1,13 @@
 {
-  "sourceHash": "230b854e40049a68c023002a5c0cedc9364cbedf64b4196baec016fe7ff5e4b1",
-  "engineHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
-  "at": "2026-10-30T09:13:47.570Z",
+  "sourceHash": "385e994592280eda5981a0019cd725c41bb02f3dec263eb288a0d5953d2bc67f",
+  "engineHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
+  "at": "2026-10-30T09:26:40.185Z",
   "gates": {
     "tests": {
       "passed": true,
       "summary": [
-        "ℹ tests 263",
-        "ℹ pass 263",
+        "ℹ tests 264",
+        "ℹ pass 264",
         "ℹ fail 0"
       ]
     },
@@ -38,8 +38,8 @@
       "journeys": [
         {
           "target": "Bay relic",
-          "seconds": 0.52,
-          "distance": 78
+          "seconds": 0.48,
+          "distance": 72
         },
         {
           "target": "Clockwork",
@@ -49,12 +49,12 @@
         {
           "target": "Fossil folio",
           "seconds": 1.32,
-          "distance": 198
+          "distance": 197
         },
         {
           "target": "Sculpture",
-          "seconds": 2.88,
-          "distance": 432
+          "seconds": 2.84,
+          "distance": 426
         },
         {
           "target": "Star atlas",
@@ -64,32 +64,32 @@
         {
           "target": "Archive masterwork",
           "seconds": 2.8000000000000003,
-          "distance": 416
+          "distance": 420
         },
         {
           "target": "Portrait masterwork",
-          "seconds": 3.8000000000000003,
-          "distance": 570
+          "seconds": 3.7600000000000002,
+          "distance": 564
         },
         {
           "target": "Crown",
-          "seconds": 7.8,
-          "distance": 1165
+          "seconds": 7.72,
+          "distance": 1158
         },
         {
           "target": "640,350",
-          "seconds": 4.12,
-          "distance": 618
+          "seconds": 4.08,
+          "distance": 612
         },
         {
-          "target": "76.5,530",
+          "target": "80.5,530",
           "seconds": 0,
           "distance": 0
         },
         {
-          "target": "188.5,530",
-          "seconds": 0.72,
-          "distance": 108
+          "target": "184.5,530",
+          "seconds": 0.64,
+          "distance": 96
         },
         {
           "target": "52,346",
@@ -98,50 +98,50 @@
         },
         {
           "target": "250,162",
-          "seconds": 3.08,
-          "distance": 458
+          "seconds": 3.12,
+          "distance": 468
         },
         {
           "target": "488,162",
           "seconds": 5.72,
-          "distance": 858
+          "distance": 853
         },
         {
           "target": "524,382",
           "seconds": 4,
-          "distance": 598
+          "distance": 594
         },
         {
           "target": "556,536",
-          "seconds": 4,
-          "distance": 600
+          "seconds": 3.96,
+          "distance": 594
         },
         {
           "target": "724,248",
-          "seconds": 6.8,
-          "distance": 1020
+          "seconds": 6.76,
+          "distance": 1014
         },
         {
           "target": "410,215",
-          "seconds": 3.56,
-          "distance": 534
+          "seconds": 3.52,
+          "distance": 526
         },
         {
           "target": "910,230",
           "seconds": 6.2,
-          "distance": 930
+          "distance": 927
         }
       ],
       "rivalJourneys": [
         {
           "crew": 0,
           "target": "Bay relic",
-          "seconds": 0.52
+          "seconds": 0.48
         },
         {
           "crew": 0,
           "target": "Clockwork",
-          "seconds": 2.64
+          "seconds": 2.6
         },
         {
           "crew": 0,
@@ -151,7 +151,7 @@
         {
           "crew": 0,
           "target": "Sculpture",
-          "seconds": 2.92
+          "seconds": 2.88
         },
         {
           "crew": 0,
@@ -166,7 +166,7 @@
         {
           "crew": 0,
           "target": "Portrait masterwork",
-          "seconds": 3.88
+          "seconds": 3.84
         },
         {
           "crew": 0,
@@ -186,7 +186,7 @@
         {
           "crew": 0,
           "target": "250,162",
-          "seconds": 3.08
+          "seconds": 3.12
         },
         {
           "crew": 0,
@@ -196,12 +196,12 @@
         {
           "crew": 0,
           "target": "524,382",
-          "seconds": 4.08
+          "seconds": 4.04
         },
         {
           "crew": 0,
           "target": "556,536",
-          "seconds": 4.04
+          "seconds": 4
         },
         {
           "crew": 0,
@@ -211,7 +211,7 @@
         {
           "crew": 1,
           "target": "Bay relic",
-          "seconds": 0.52
+          "seconds": 0.48
         },
         {
           "crew": 1,
@@ -221,7 +221,7 @@
         {
           "crew": 1,
           "target": "Fossil folio",
-          "seconds": 1.4000000000000001
+          "seconds": 1.36
         },
         {
           "crew": 1,
@@ -231,7 +231,7 @@
         {
           "crew": 1,
           "target": "Star atlas",
-          "seconds": 4.6000000000000005
+          "seconds": 4.64
         },
         {
           "crew": 1,
@@ -241,59 +241,59 @@
         {
           "crew": 1,
           "target": "Portrait masterwork",
-          "seconds": 3.08
+          "seconds": 3.12
         },
         {
           "crew": 1,
           "target": "Crown",
-          "seconds": 7
+          "seconds": 7.04
         },
         {
           "crew": 1,
           "target": "640,350",
-          "seconds": 3.36
+          "seconds": 3.4
         },
         {
           "crew": 1,
           "target": "52,346",
-          "seconds": 1.56
+          "seconds": 1.52
         },
         {
           "crew": 1,
           "target": "250,162",
-          "seconds": 3.2
+          "seconds": 3.24
         },
         {
           "crew": 1,
           "target": "488,162",
-          "seconds": 4.96
+          "seconds": 5
         },
         {
           "crew": 1,
           "target": "524,382",
-          "seconds": 3.24
+          "seconds": 3.2800000000000002
         },
         {
           "crew": 1,
           "target": "556,536",
-          "seconds": 3.24
+          "seconds": 3.2800000000000002
         },
         {
           "crew": 1,
           "target": "724,248",
-          "seconds": 6.04
+          "seconds": 6.08
         }
       ],
       "limits": "Static authored geometry only; no bots, guard AI, capacity, latency, balance or release gates simulated. Engine navigation uses its existing 12u movement, while static target/patrol clearance uses 13u."
     },
     "idle": {
-      "engineAndGeometryHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
+      "engineAndGeometryHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
       "matches": 30,
       "stalls": 0,
       "passed": true
     },
     "rush": {
-      "engineAndGeometryHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
+      "engineAndGeometryHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
       "matches": 120,
       "earlyBanks": 0,
       "banks": 51,
@@ -301,14 +301,14 @@
       "passed": true
     },
     "patrol": {
-      "engineAndGeometryHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
+      "engineAndGeometryHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
       "matches": 9,
       "stalls": 0,
       "archivePasses": 9,
       "passed": true
     },
     "escape": {
-      "engineHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
+      "engineHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
       "rows": [
         {
           "level": "rookie",
@@ -432,7 +432,7 @@
           "mode": "duos",
           "difficulty": "normal",
           "n": 80,
-          "rate": 0.4375,
+          "rate": 0.6625,
           "target": [
             0.45,
             0.6
@@ -443,14 +443,14 @@
               "difficulty": "normal",
               "swap": 0,
               "n": 40,
-              "rate": 0.2
+              "rate": 0.6
             },
             {
               "mode": "duos",
               "difficulty": "normal",
               "swap": 1,
               "n": 40,
-              "rate": 0.675
+              "rate": 0.725
             }
           ],
           "passed": false
@@ -459,7 +459,7 @@
           "mode": "duos",
           "difficulty": "pro",
           "n": 80,
-          "rate": 0.45,
+          "rate": 0.475,
           "target": [
             0.25,
             0.4
@@ -470,14 +470,14 @@
               "difficulty": "pro",
               "swap": 0,
               "n": 40,
-              "rate": 0.2
+              "rate": 0.375
             },
             {
               "mode": "duos",
               "difficulty": "pro",
               "swap": 1,
               "n": 40,
-              "rate": 0.7
+              "rate": 0.575
             }
           ],
           "passed": false
@@ -485,53 +485,53 @@
       ]
     },
     "cpu": {
-      "engineAndGeometryHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
+      "engineAndGeometryHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
       "cases": [
         {
           "n": 2,
           "level": "rookie",
           "ticks": 2077,
-          "p95": 1.1771740000000364,
-          "max": 27.829330999999996
+          "p95": 0.9410779999999477,
+          "max": 31.667475999999994
         },
         {
           "n": 2,
           "level": "normal",
           "ticks": 2250,
-          "p95": 1.276544000000058,
-          "max": 7.655847999999992
+          "p95": 1.338247000000024,
+          "max": 13.156386999999995
         },
         {
           "n": 2,
           "level": "pro",
           "ticks": 2250,
-          "p95": 1.2937900000001719,
-          "max": 9.358257999999978
+          "p95": 1.6737729999999829,
+          "max": 13.215282000000116
         },
         {
           "n": 4,
           "level": "rookie",
           "ticks": 2250,
-          "p95": 1.674123000000236,
-          "max": 7.944031999999879
+          "p95": 2.503744000000097,
+          "max": 38.596602000000075
         },
         {
           "n": 4,
           "level": "normal",
-          "ticks": 2178,
-          "p95": 2.673018000000411,
-          "max": 11.52556899999945
+          "ticks": 2250,
+          "p95": 5.370146000000204,
+          "max": 21.190632999999252
         },
         {
           "n": 4,
           "level": "pro",
-          "ticks": 2250,
-          "p95": 3.4015959999996994,
-          "max": 8.764037000000826
+          "ticks": 2104,
+          "p95": 3.1073639999995066,
+          "max": 11.034254000000146
         }
       ],
-      "p95": 3.4015959999996994,
-      "max": 27.829330999999996,
+      "p95": 5.370146000000204,
+      "max": 38.596602000000075,
       "passed": true
     }
   },
