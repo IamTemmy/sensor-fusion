@@ -1,0 +1,130 @@
+{
+  "hash": "39136f4f11c24e446929147e7647cbed39df19a60e91913db505f54beff49fed",
+  "results": [
+    {
+      "name": "typecheck",
+      "exitCode": 0
+    },
+    {
+      "name": "geometry",
+      "exitCode": 0
+    },
+    {
+      "name": "tests",
+      "exitCode": 1
+    },
+    {
+      "name": "idle-1",
+      "exitCode": 0
+    },
+    {
+      "name": "idle-0",
+      "exitCode": 0
+    },
+    {
+      "name": "escape-rookie",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-coop-rookie",
+      "exitCode": 0
+    },
+    {
+      "name": "idle-2",
+      "exitCode": 0
+    },
+    {
+      "name": "escape-normal",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-duos-rookie",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-coop-normal",
+      "exitCode": 0
+    },
+    {
+      "name": "escape-pro",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-duos-normal",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-coop-pro",
+      "exitCode": 0
+    },
+    {
+      "name": "difficulty-duos-pro",
+      "exitCode": 0
+    }
+  ],
+  "difficulty": [
+    {
+      "mode": "coop",
+      "difficulty": "rookie",
+      "n": 40,
+      "winRate": 92.5,
+      "pass": true
+    },
+    {
+      "mode": "duos",
+      "difficulty": "rookie",
+      "n": 40,
+      "winRate": 72.5,
+      "pass": false
+    },
+    {
+      "mode": "coop",
+      "difficulty": "normal",
+      "n": 40,
+      "winRate": 62.5,
+      "pass": true
+    },
+    {
+      "mode": "duos",
+      "difficulty": "normal",
+      "n": 40,
+      "winRate": 67.5,
+      "pass": false
+    },
+    {
+      "mode": "coop",
+      "difficulty": "pro",
+      "n": 40,
+      "winRate": 22.5,
+      "pass": true
+    },
+    {
+      "mode": "duos",
+      "difficulty": "pro",
+      "n": 40,
+      "winRate": 60,
+      "pass": false
+    }
+  ],
+  "idle": [
+    {
+      "layout": 0,
+      "matches": 30,
+      "stalls": 0,
+      "pass": true
+    },
+    {
+      "layout": 1,
+      "matches": 30,
+      "stalls": 2,
+      "pass": false
+    },
+    {
+      "layout": 2,
+      "matches": 30,
+      "stalls": 0,
+      "pass": true
+    }
+  ],
+  "pass": false
+}

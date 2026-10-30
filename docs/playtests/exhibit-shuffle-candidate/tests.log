@@ -1,0 +1,321 @@
+Claude v21 fixture {"heldCaught":0,"afterCaught":1,"rescued":39,"captures":40,"rows":[{"seed":1,"cap":15560,"free":21000,"ecap":27280,"rescues":1},{"seed":2,"cap":14720,"free":18120,"ecap":22400,"rescues":1},{"seed":3,"cap":15080,"free":17840,"ecap":-1,"rescues":1},{"seed":4,"cap":14960,"free":17360,"ecap":-1,"rescues":1},{"seed":5,"cap":14960,"free":18240,"ecap":-1,"rescues":1},{"seed":6,"cap":14720,"free":17520,"ecap":24560,"rescues":1},{"seed":7,"cap":14720,"free":17920,"ecap":-1,"rescues":1},{"seed":8,"cap":14720,"free":18040,"ecap":23240,"rescues":1},{"seed":9,"cap":15400,"free":18920,"ecap":25240,"rescues":1},{"seed":10,"cap":15400,"free":19120,"ecap":-1,"rescues":1},{"seed":11,"cap":15640,"free":18680,"ecap":24920,"rescues":1},{"seed":12,"cap":15640,"free":19600,"ecap":24640,"rescues":1},{"seed":13,"cap":15560,"free":21560,"ecap":23960,"rescues":0},{"seed":14,"cap":15560,"free":21280,"ecap":27000,"rescues":1},{"seed":15,"cap":14720,"free":17360,"ecap":-1,"rescues":1},{"seed":16,"cap":15080,"free":18360,"ecap":23560,"rescues":1},{"seed":17,"cap":14960,"free":17360,"ecap":-1,"rescues":1},{"seed":18,"cap":14960,"free":17360,"ecap":-1,"rescues":1},{"seed":19,"cap":14720,"free":18160,"ecap":-1,"rescues":1},{"seed":20,"cap":14720,"free":17400,"ecap":24800,"rescues":1},{"seed":21,"cap":14720,"free":17320,"ecap":20760,"rescues":1},{"seed":22,"cap":15400,"free":19440,"ecap":-1,"rescues":1},{"seed":23,"cap":15400,"free":18040,"ecap":22240,"rescues":1},{"seed":24,"cap":15640,"free":20320,"ecap":25680,"rescues":1},{"seed":25,"cap":15560,"free":18520,"ecap":26200,"rescues":1},{"seed":26,"cap":15320,"free":18960,"ecap":-1,"rescues":1},{"seed":27,"cap":15320,"free":19280,"ecap":24600,"rescues":1},{"seed":28,"cap":15560,"free":18280,"ecap":23560,"rescues":1},{"seed":29,"cap":15080,"free":18360,"ecap":-1,"rescues":1},{"seed":30,"cap":14960,"free":18240,"ecap":-1,"rescues":1},{"seed":31,"cap":14960,"free":17360,"ecap":-1,"rescues":1},{"seed":32,"cap":14720,"free":17520,"ecap":-1,"rescues":1},{"seed":33,"cap":14720,"free":17880,"ecap":23240,"rescues":1},{"seed":34,"cap":14720,"free":17960,"ecap":-1,"rescues":1},{"seed":35,"cap":15400,"free":17520,"ecap":21000,"rescues":1},{"seed":36,"cap":15400,"free":18080,"ecap":21640,"rescues":1},{"seed":37,"cap":15440,"free":19520,"ecap":-1,"rescues":1},{"seed":38,"cap":15320,"free":19280,"ecap":23560,"rescues":1},{"seed":39,"cap":15320,"free":17840,"ecap":21000,"rescues":1},{"seed":40,"cap":15560,"free":18600,"ecap":25280,"rescues":1}]}
+✔ exact Claude v21 fixture: scripted advance, guards[0] approach, hold and exit across 40 seeds (8493.146925ms)
+✔ authority, capacity, map connectivity and projection strips secrets (67.114903ms)
+✔ paths are authoritative; solo loot collected once with bag limit (5.219004ms)
+✔ vault requires different thieves at both stations for four seconds (1.01496ms)
+✔ honored contract pays 40/60 exactly once, including departed helper (0.574045ms)
+✔ hot betrayal voids contract, survives drop and requires roof (0.970212ms)
+✔ capture applies to human and bot, drops bag and preserves bank (4.961977ms)
+✔ smoke blocks detection; a decoy targets one nearby guard (3.674697ms)
+✔ lift boundaries and final window reject banking when closed (0.526984ms)
+✔ disconnect releases bag and cancels movement; reconnect retains bank (2.085603ms)
+✔ deadline confiscation conserves value and stale actions fail after rematch (0.778593ms)
+✔ bots have independent goals and obey the same pickup rules (10.020931ms)
+✔ human-only rival games support 1v1, 2v2 and 3v3 without injecting bots (121.509347ms)
+✔ three humans get one bot on the short crew, and imbalance is rejected until filled (15.257952ms)
+✔ duel plate unlocks crown for both humans and stays unlocked after stepping off (14.369904ms)
+✔ decoy bot commits to visible approach, draws sentry off post, then retreats (77.655657ms)
+✔ bot does not bait a sentry without an available collector or in training (27.849515ms)
+✔ bot stashes threatened art in a nearby niche and stays hidden rather than re-grabbing (22.254585ms)
+✔ replays clear tactical commitments and rotate layout (22.054223ms)
+✔ nine population/theme plans are distinct with mirror-fair wings (4.86418ms)
+✔ every plan: body-clear access to every exhibit, plate and niche; both crews can bank and escape (2124.030213ms)
+✖ fair opportunities: shared objectives within 80 route units, collection cost within 15%, no cheap jackpot monopoly (161.825524ms)
+✔ all difficulties/populations: valid sentries, collision-safe patrol destinations and replay rotation (2446.817988ms)
+✔ museum definition travels once per arena and survives delta snapshots (15.159674ms)
+✔ phone camera keeps the full museum in overview and the player body visible at every edge in closer view (0.528296ms)
+✔ personal bests distinguish population plans (0.147993ms)
+✔ v2 mirrored pieces and centre objectives meet 5% route fairness at every capacity (717.372842ms)
+✔ original score schedules bounded notes, mutes, and skips background backlog (1.412669ms)
+✔ passing silenced art preserves its original deadline and never sends a jar (30.596815ms)
+✔ hot art still sounds on its receiver; passing cannot launder its alarm (46.373579ms)
+✔ a stale art-pass command cannot throw a newly held alarm jar (20.154089ms)
+✔ quiet expiry during flight becomes audible; a missed quiet pass does not reset silence (34.80756ms)
+✔ indexed route queue preserves linear-search priority and insertion ties on decreases (6.304631ms)
+✔ posted guard forecasts stay at the exhibit instead of inventing a patrol turn (22.667406ms)
+✔ guest replay of a delayed pass cannot throw a substituted alarm (30.543215ms)
+✔ Rookie bot crews assign the remaining jackpot instead of waiting at their dock (15.347426ms)
+✔ a teammate inside the safe dock does not trap Auto Echo in guard-spacing mode (34.556843ms)
+✔ wall broad phase preserves the original sampled collision and sight results (238.733419ms)
+✔ relay stall keeps newest direction, preserves commands and contiguous actions (30.212306ms)
+✔ unreliable input rejects unauthenticated senders and old directions, without losing action retry (28.533076ms)
+✔ guest movement bypasses blocked reliable commands and drops congested state sends (11.948155ms)
+✔ duplicate snapshots cannot repeatedly rewind predicted movement (10.125657ms)
+✔ 40 seeds: natural capture then Echo rescue protects BOTH thieves for full 3s (929.356612ms)
+✔ rival zones bank only their owner and all zones block guard paths (16.681237ms)
+✔ all art starts last call, never immediate finish; deadline penalty is personal and idempotent (7.189243ms)
+✔ one human boarding does not end rivals or co-op early (26.690509ms)
+✔ star tiers require the goal, normal collection, then jackpot; records favour achievement then time (6.293593ms)
+✔ each layout sensors avoid walls and differ; bot carriers trigger same sensor as humans (131.499311ms)
+✔ static noise heard through wall within 220; sneaking halves sight range (12.941721ms)
+✔ Fetch banks one piece then returns to Follow (3.580445ms)
+✔ moving carriers can be planted at 80 and 240 units (20 + 14 deterministic trials) (287.678031ms)
+✔ rival bot plants a captured capsule on a visible human carrier (14.120819ms)
+✔ banking the last piece near deadline still grants the full 15s last call (2.458424ms)
+✔ co-op valuable core spans the three rooms instead of clustering in the far wing (246.06416ms)
+✔ authored museums retain distinct, non-rectangular patrol circuits (15.668591ms)
+✖ fixed 4300 budget, eight pieces, all value tiers, equal-budget rivals and 250-unit danger rule across seeds (224.507091ms)
+✔ eight-piece budget still reserves the jackpot for teamwork; carry speed decreases by value (403.827147ms)
+✔ each event warns 3s before, triggers once, preserves budget and ends; shift never teleports guards (85.779277ms)
+✔ Follow stays within passing range and warns about an approaching guard (28.139769ms)
+✔ new central loot respects the existing <40-unit rival route fairness gate (386.476386ms)
+✔ Follow uses the safe captor retreat window, but respects an active facing captor (127.90139ms)
+✔ E prefers reachable art unless a capturable alarm is strictly closer (52.396664ms)
+✔ Auto is default, manual orders persist and carrying-human switches Auto to cover (56.027666ms)
+✔ difficulty changes count and tuning; rival human crews are forced to Normal (134.892614ms)
+✔ device bests are isolated by difficulty, mode and arena (0.350869ms)
+✔ online JSON round-trip preserves rival navigation fairness (2023.393046ms)
+✔ bot sneaks only near a sensor on its next path segment (29.99604ms)
+✔ crew views hide rival bot callouts but preserve public match events (27.466003ms)
+✔ Auto backs away from the carrier when a guard is closing (24.933787ms)
+✔ Auto callouts are not repeated on every tick (60.288241ms)
+✖ 40 natural captures: rescue window, completion time, follow-through and carried art (10916.588787ms)
+✔ 20 idle-near-patrol seeds: at most six reversals in any rolling two seconds (878.731896ms)
+✔ weighted bot routing detours around a visible cone and ignores a retreating captor on rescue (5.556763ms)
+✔ bursty local frames and stale input do not make a blocked player bounce (6.327545ms)
+✔ active-guard plate handoff: at least 75% pickup within 15s with Echo beside the crew (3460.744019ms)
+✔ 40 natural self-releases: Echo is caught within 3s in at most 10% (9232.165119ms)
+✔ bot movement decisions cannot bypass guard-aware routing (0.98077ms)
+✔ a freed partner across a guard cone does not trigger a direct rejoin (45.248107ms)
+✔ scream follows carrier, teammate steals it, it returns after eight seconds (37.787986ms)
+✔ E never drops art; G drop leaves a capturable scream and its silence survives pickup (40.595646ms)
+✔ thrower cannot recapture for three seconds and a distinct alarm counts only once (27.046446ms)
+✔ Echo follow does not steal the first player alarm; cover waits before handling it (41.928491ms)
+✔ invalid exit does not throw; boarding waits for every human thief (17.936407ms)
+✔ duos fills odd human counts, trios fills six, commands stay within crew (43.900041ms)
+✔ jackpot requires an active plate holder and reset clears new match state (16.669489ms)
+✔ opening guard cannot see or catch the first-art route for twelve seconds (66.810104ms)
+✔ Claude fixture: 40 fixed seeds, active events, safe waiting/rejoin and at least 40% rescues (5436.625237ms)
+✔ idle Follow yields before a different patrol reaches its waiting position (74.529938ms)
+✔ thrown capsule breaks mid-chase at 130/220 units; matched no-throw controls are caught (97.595694ms)
+✔ boarding is reversible before last call; bank and replay input remain intact (16.807487ms)
+✔ all opening guards remain behind staff doors during grace and walk in afterward (461.127405ms)
+✔ hiding requires quiet, sneaking, one occupant; expires and has cooldown (13.492662ms)
+✔ hiding spots are clear, outside vans and accessible in rivals (238.106243ms)
+✔ events publish a persistent visual cue and an audible banner (60.861515ms)
+✔ eight exhibits cover each room; comparable rival collections have equal value and bounded route distance (511.579741ms)
+✔ posted sentry leaves a watched exhibit for a capsule and returns afterward (3.999106ms)
+✔ actual local RAF driver moves after two replays in every crew mode (410.52843ms)
+✔ late previous-match network input cannot move or act after replay (13.208053ms)
+✔ all layouts and every pedestal/plate remain accessible (435.240968ms)
+✔ replays vary layouts and seed changes placements without changing loot budget (272.104635ms)
+✔ rescue interrupted by moving away must restart full 1.2s (7.962118ms)
+✔ capture drops recoverable loot, adds alert and only van footprint protects (14.670196ms)
+✔ all banked art starts a visible last call (17.507506ms)
+✔ end-job requires every thief aboard (13.036554ms)
+✔ hearing through a wall adds alert once per scream, not every simulation tick (7.430747ms)
+✔ a dropped unlocked jackpot can be stolen without holding its original plate again (24.043329ms)
+✔ safe practice demonstrates a diversion without capture penalties (0.742169ms)
+✔ hide prompt is available at 40 units only for a quiet, free thief and available cover (59.403142ms)
+✔ hiding is explained in the guide, action bar and first-time spotted tip (0.441846ms)
+✔ all sentry posts leave 30-unit-clear art-to-van routes; distinct posts and wall cover (1746.381798ms)
+✔ a claimed sentry exhibit retires its post and resumes a patrol (53.37551ms)
+✔ security collects after five seconds and visibly walks art home, blocking grabs only while carried (28.63201ms)
+✖ v32 hiding is useful, door-safe and accessible across every layout and difficulty (131.249846ms)
+✔ authored rooms: two body-clear route alternatives per exhibit and plate, each crew, both modes (717.212445ms)
+✔ four wall recesses stay clear of staff doors, bays and sentry posts; lasers terminate on walls (131.195834ms)
+✔ rivals stars reward winning, crew escape, and winning with the jackpot (6.318891ms)
+✔ Auto Echo banks carried art and boards after human; explicit van order works too (23.279139ms)
+✔ stash is silent, one piece per niche, never returned, and can be taken by a rival (29.529166ms)
+✔ pass takes half a second, cannot be grabbed in flight, and catches within 30u (33.2074ms)
+✔ receiver moving out of range produces a dropped, sounding alarm, not a teleport catch (23.601494ms)
+✔ rival intercepts the travelled path, but not through a wall (26.965674ms)
+✔ Auto Echo offers a safe receive point and takes caught art to the van (27.484205ms)
+✔ abandoned post is exposed and Auto Echo exploits it when the route is clear (8.494249ms)
+✔ guards separate by at least 20u without crossing a wall or entering a safe zone (5.250692ms)
+✔ capture, rescue and bank pops remain at their event, not a distant same-column jackpot (1.384586ms)
+✔ nearby actor labels push a pop apart locally (0.211348ms)
+✔ v36 eases only Rookie co-op patrol and sight; other levels and chase settings stay fixed (2.321938ms)
+✔ online lifecycle: host lobby, joined lobby, start first frame, finished and replay render (118.756825ms)
+✔ invalid layout is safe in both crew modes and terminal presentation (2.991122ms)
+✔ wire round trip preserves simulation geometry, dynamic sensors and token redaction (25.985287ms)
+✔ overlapping/out-of-order packets apply ordered actions exactly once independently of movement seq (39.467643ms)
+✔ own movement predicts between snapshots while remote humans hold without a bracket (11.662614ms)
+✔ correction blends small errors and snaps errors over 20 units; stale responses ignored (26.079618ms)
+✔ predicted grab and throw execute immediately; rejection rolls back hand, art and alarm (42.510057ms)
+✔ pending actions survive snapshots before ack, retry once, and replay resets prediction (30.185085ms)
+✔ pass, stash, untie, board and leave use the same immediate engine actions and reconcile (11.222861ms)
+✔ 300ms delayed snapshots produce continuous per-frame remote motion with bounded corrections (11.177513ms)
+✔ room serialization releases after errors and keeps different rooms independent (17.072897ms)
+✔ F without receiver keeps art; thrown pass restarts an alarm on catch (51.985125ms)
+✔ capture silences dropped art; automatic release protects from all guards for 3s (44.594247ms)
+✔ guard paths exclude the same rectangle used for safety and banking (50.533337ms)
+✔ noise investigation ends while the noise remains alive (20.473661ms)
+✔ Echo refuses an unsafe rescue and resumes when the guard leaves (48.932374ms)
+✔ human plate triggers an automatic jackpot fetch in follow mode (9.325803ms)
+✔ sensor is crossing-triggered; empty-handed sneak bypasses, art does not (12.776953ms)
+✔ thrown capsule attaches to rival but never to someone inside getaway (27.063711ms)
+✔ practice bank opens rival lesson and planting completes it (14.158325ms)
+✔ guided practice advances on grab, cover order and actual banking, not waiting (15.289094ms)
+✔ lure lesson requires a human-thrown alarm heard by the sentry and pickup (4.806082ms)
+✔ pass, stash, hide and board complete via real engine actions (2.576753ms)
+✔ practice is unhurried, retryable and does not change ordinary games (32.519212ms)
+✔ clarity distinguishes held alarm, sounding art and quiet art without mutation (7.071937ms)
+✔ bot intention prioritizes tied-up and rescue states over old tasks (0.51122ms)
+✔ radio uses the visible artwork identity and lure marks only confirmed listeners (1.046688ms)
+✔ a wrong drop cannot finish pass practice; retry restores a catchable pass (7.390266ms)
+✔ missed practice pass lands without falsely completing; retry remains usable (3.194163ms)
+✔ host alone advances authoritative state; guest cannot start or impersonate host (1.848204ms)
+✔ same command through channel and relay executes once (0.399943ms)
+✔ signaling exchange validates bounded SDP and epochs (0.200081ms)
+✔ malformed and oversized peer inputs never reach engine (0.691742ms)
+✔ static arena delivered first, compact snapshots hydrate and expose no secrets (0.939215ms)
+✔ direct drop switches after 2 seconds and recovers on fresh state (0.122584ms)
+✔ host end yields recap without simulating a second job (0.590349ms)
+✔ guest snapshot reconciliation retains prediction rollback (26.03965ms)
+✔ reliable authenticated channel applies a command once, rejects another seat and sends acknowledgments (5.092181ms)
+✔ guest applies direct snapshots, acknowledges geometry and switches relay/direct both ways (1.734383ms)
+✔ concurrent lobby joins survive host snapshots and never reuse seat IDs (2.092837ms)
+✔ TURN is opt-in configured, bounded, and STUN stays first (5.295877ms)
+✔ retry backoff and connecting labels never mislabel relay as Direct (0.84361ms)
+✔ TURN readout uses the selected candidate pair, not unused relay candidates (0.399972ms)
+✔ mobile away freezes speculative time/actions and resumes from authority (32.017083ms)
+✔ announced mobile pause has a bounded lease; lost active host still ends (0.163306ms)
+✔ worker clock starts one scheduler and shuts it down (1.278686ms)
+✔ idle lobby does not simulate, sample movement or republish at gameplay speed (8.012847ms)
+✔ host controls publish immediately and preserve useful rejection reason (64.132463ms)
+✔ initial signaling failure recovers with bootstrap instead of retaining unusable host (1.910812ms)
+✔ host gameplay actions still execute directly without a speculative second world (13.829988ms)
+✔ timeout copy explains reconnection and lobby sends no empty movement mailbox entries (0.529889ms)
+✔ server transports use database CAS without isolate-global promise queues (0.80867ms)
+✔ guest presentation advances movement without running AI or changing authoritative outcomes (108.318438ms)
+✔ remote bot holds the last snapshot without extrapolating (27.980308ms)
+✔ navigation cache respects changed walls and repeated routes stay deterministic (3.634452ms)
+✔ worker clock never queues more than one tick while main thread is busy (2.168401ms)
+✔ delayed guest catch-up uses collision substeps and cannot tunnel through a wall (18.603253ms)
+✔ Archive guards skip forbidden dock waypoints and continue moving without entering a dock (112.731875ms)
+✔ hiding and stashing work at all authored niches across both modes and seeds (322.318422ms)
+✔ recap never awards all normal art for an empty aborted lobby (19.002055ms)
+✔ radio deduplicates staff messages and removes repeated tutorial prose (10.83877ms)
+✔ local RAF driver and direct fixed ticks make the same bot decisions for a full job (2130.730796ms)
+✔ Echo gathers an available safe alarm for an exposed plate job instead of staying blocked (57.057851ms)
+✔ late Echo overrides reroute, keeps carried art, banks and boards (29.792327ms)
+✔ freed Echo with less than 15 seconds heads home rather than fetching (30.675033ms)
+✔ guard path work is capped at two recalculations and deferred guards get served (69.081054ms)
+✔ Pro close chase ignores half of landed lures deterministically; other levels unchanged (2452.193221ms)
+✔ last-call Echo keeps progressing when every active guard is distant (3.913764ms)
+✔ winner headline includes actual names and winning amount even for losing viewer (1.354483ms)
+✔ team victory lists every winning crew member (0.242416ms)
+✔ unconfigured TURN makes no provider request and reports unavailable (0.365211ms)
+✔ broker keeps provider token server-side, strips blocked ports and caches per seat (4.248318ms)
+✔ TURN provider errors fall back without leaking response or secrets (0.336668ms)
+✔ prediction with 200ms round trip stops without RTT slide; 50 actions acknowledged (156.484256ms)
+ℹ {"rtt":200,"overshootPx":1.6173705879352838,"pendingMax":2,"pendingFinal":0,"ack":50}
+✔ prediction with 400ms round trip stops without RTT slide; 50 actions acknowledged (148.690349ms)
+ℹ {"rtt":400,"overshootPx":2.7755658474004576,"pendingMax":4,"pendingFinal":0,"ack":50}
+✔ remote humans and guards interpolate without extrapolating during a gap (7.351219ms)
+✔ 50 actions through authenticated peer state messages carry per-seat ack and prune prediction (29.227199ms)
+✔ redundant inputs cannot change another match or resurrect a stale direction (12.701259ms)
+✔ a patrol completes a sub-three-unit navigation corner instead of freezing (1248.653787ms)
+✔ device records distinguish first runs, improvements, ties and worse runs (0.22567ms)
+✔ relay p90 uses only ten latest gaps and clamps between100 and600ms (37.025127ms)
+✔ jittered relay200–500ms keeps moving remote actors smooth after buffer warmup; own thief responds on next frame (45.486987ms)
+✔ relay extrapolation stops after100ms and stale/duplicate snapshots do not pollute gaps (14.673935ms)
+✔ forced HTTP400ms request cadence preserves immediate own input before authoritative corrections (49.582436ms)
+ℹ Later authoritative correction under sparse HTTP inputs: 34.65px; not a zero-overshoot acceptance.
+✔ ready gate: no elapsed gameplay or bot looting before every human is ready (20.41079ms)
+✔ capture removes active noise; throw transfers it into a reachable distraction (35.044144ms)
+✔ sound cannot be captured through a wall (30.816166ms)
+✔ captured alarm bursts after ten seconds and frees the hand (19.838947ms)
+✔ loot banks exactly once, including extraction at edge of van zone (12.697695ms)
+✔ capture drops carried loot; teammate rescue grants protection (41.031666ms)
+✔ human and helper obey collision geometry; invalid inputs cannot teleport (20.766297ms)
+✔ expired movement input stops unattended clients (3.568493ms)
+✔ room projection never exposes any seat token (13.859857ms)
+✔ replay clears loot, stun, stats, hands and readiness (17.226407ms)
+✔ all four treasures have navigable paths from the van and back (126.177178ms)
+✔ Echo follows before fetching, and cannot clear the museum during onboarding (46.538072ms)
+✔ host permissions and six-seat limit hold (0.459624ms)
+✔ opening uses real door deployment, never a drawing-only guard sweep (1.344809ms)
+✔ art tiers have distinct visual identities without changing game values (1.222835ms)
+✔ crowded actor labels never overlap (0.495428ms)
+✔ static WebP set stays under 1.5MB including mobile crops (0.489398ms)
+✔ sprite sheet frames fit the atlas and every required crew/state has an asset (2.303194ms)
+✔ sprite absence safely leaves primitive fallback enabled (0.413193ms)
+✔ directional and carry poses preserve crew asset routing (1.04057ms)
+✔ touch guide preserves desktop copy and converts contextual controls (1.384558ms)
+ℹ tests 232
+ℹ suites 0
+ℹ pass 228
+ℹ fail 4
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 16889.562411
+
+✖ failing tests:
+
+test at tests/museum-arenas.test.ts:25:1
+✖ fair opportunities: shared objectives within 80 route units, collection cost within 15%, no cheap jackpot monopoly (161.825524ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(E.routeLength(g,E.vanFor(g,t),l)>=250)
+  
+      at TestContext.<anonymous> (file:///tmp/velmont-shuffle/tests/museum-arenas.test.ts:30:76)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:974:18)
+      at Test.postRun (node:internal/test_runner/test:1542:19)
+      at Test.run (node:internal/test_runner/test:1467:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:974:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/noise-v14.test.ts:6:1
+✖ fixed 4300 budget, eight pieces, all value tiers, equal-budget rivals and 250-unit danger rule across seeds (224.507091ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(routeLength(g,vanFor(g,team),l)>=250)
+  
+      at TestContext.<anonymous> (file:///tmp/velmont-shuffle/tests/noise-v14.test.ts:9:109)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/noise-v18.test.ts:7:1
+✖ 40 natural captures: rescue window, completion time, follow-through and carried art (10916.588787ms)
+  AssertionError [ERR_ASSERTION]: Art lost in fewer than 10% of carrying scenarios
+      at TestContext.<anonymous> (file:///tmp/velmont-shuffle/tests/noise-v18.test.ts:17:9)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }
+
+test at tests/noise-v32.test.ts:6:1
+✖ v32 hiding is useful, door-safe and accessible across every layout and difficulty (131.249846ms)
+  AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:
+  
+    assert.ok(g.loot.some(l=>E.distance(p,l.home||l)<=150)||routes.some(q=>E.distance(p,q)<=150))
+  
+      at TestContext.<anonymous> (file:///tmp/velmont-shuffle/tests/noise-v32.test.ts:11:182)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1402:25)
+      at Test.start (node:internal/test_runner/test:1262:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: false,
+    expected: true,
+    operator: '==',
+    diff: 'simple'
+  }

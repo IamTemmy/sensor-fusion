@@ -1,0 +1,271 @@
+layout 1 done
+[
+  {
+    "layout": 1,
+    "matches": 30,
+    "stalls": 2,
+    "cases": [
+      {
+        "seed": 1001,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1002,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1003,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1004,
+        "n": 2,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1005,
+        "n": 4,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1015,
+        "n": 6,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1016,
+        "n": 2,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1017,
+        "n": 4,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1018,
+        "n": 6,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1028,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1029,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1030,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1031,
+        "n": 2,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1032,
+        "n": 4,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1042,
+        "n": 6,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1043,
+        "n": 2,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1044,
+        "n": 4,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1045,
+        "n": 6,
+        "level": "pro",
+        "stalls": [
+          {
+            "id": "p2",
+            "at": 88120,
+            "x": 39.84865153613352,
+            "y": 493.3255577748313,
+            "task": "reroute",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "reroute"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "van"
+              },
+              {
+                "id": "p6",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "reroute"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 440.2019510787942,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              }
+            ]
+          },
+          {
+            "id": "p6",
+            "at": 88440,
+            "x": 39.55787158449161,
+            "y": 490.38162436235405,
+            "task": "reroute",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p2",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "reroute"
+              },
+              {
+                "id": "p4",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "van"
+              },
+              {
+                "id": "p6",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "reroute"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 440.54713894552765,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 1055,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1056,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1057,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1058,
+        "n": 2,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1059,
+        "n": 4,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1069,
+        "n": 6,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1070,
+        "n": 2,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1071,
+        "n": 4,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1072,
+        "n": 6,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1082,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1083,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1084,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      }
+    ]
+  }
+]

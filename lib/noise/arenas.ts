@@ -2133,7 +2133,7 @@ export const AUTHORED_COOP = [
 // Current museum plans: authored independently, with population-specific circulation.
 export type MuseumPoint={x:number;y:number};
 export type MuseumRect=MuseumPoint&{w:number;h:number};
-export type MuseumArena={id:string;name:string;capacity:2|4|6;theme:'sculpture'|'fossil'|'celestial';brief:string;walls:MuseumRect[];slots:MuseumPoint[];plate:MuseumPoint;routes:MuseumPoint[][];niches:(MuseumPoint&{back:string;kind:string})[];rooms:(MuseumPoint&{name:string})[];sensors:MuseumRect[];decor:(MuseumRect&{kind:string})[];doors:MuseumPoint[]};
+export type MuseumArena={id:string;name:string;capacity:2|4|6;theme:'sculpture'|'fossil'|'celestial';brief:string;walls:MuseumRect[];slots:MuseumPoint[];pedestals:(MuseumPoint&{tier:'safe'|'medium'|'risky'})[];plate:MuseumPoint;routes:MuseumPoint[][];niches:(MuseumPoint&{back:string;kind:string})[];rooms:(MuseumPoint&{name:string})[];sensors:MuseumRect[];decor:(MuseumRect&{kind:string})[];doors:MuseumPoint[]};
 const pt=(x:number,y:number)=>({x,y});
 const box=(x:number,y:number,w:number,h:number)=>({x,y,w,h});
 export function museumArena(layout:number,players:number):MuseumArena{
@@ -2155,6 +2155,8 @@ export function museumArena(layout:number,players:number):MuseumArena{
   [...pointPair(280,510),pt(480,85),pt(480,445),...pointPair(270,195),...pointPair(270,295)],
   [...pointPair(280,510),pt(480,85),pt(480,455),...pointPair(170,150),...pointPair(360,300)]
  ][layout];
+ const extra=[[pt(300,500),pt(320,80),pt(300,340)],[pt(180,500),pt(320,195),pt(100,280)],[pt(180,500),pt(170,450),pt(360,350)]][layout];
+ const pedestals=[...slots.map((p,i)=>({...p,tier:(i<2?'safe':i===2||i===4||i===5?'risky':'medium') as 'safe'|'medium'|'risky'})),...extra.flatMap((p,i)=>pointPair(p.x,p.y).map(q=>({...q,tier:([ 'safe','risky','medium'] as const)[i]})))];
  if(capacity===6)slots.push(...pointPair(190,450));
  const nichePoints=[ [...pointPair(150,164),...pointPair(150,410)], [...pointPair(174,380),...pointPair(370+span,185)], [...pointPair(274-span,240),...pointPair(350,436)] ][layout];
  const niches=nichePoints.map((p,i)=>({...p,back:i?'left':'right',kind:layout===1?'curtain':'planter'}));
@@ -2184,5 +2186,5 @@ export function museumArena(layout:number,players:number):MuseumArena{
   'The Open Court: cross exposed marble, raid laser-gated alcoves, or slip behind the statue to the apse.',
   'The Stacks: dead-end collections reward commitment; the catalog shortcut is watched, the outer loop is longer.',
   'The Observatory: four guarded spokes meet at the orrery; circle the outer ring to change your approach.'
- ][layout],walls:[...perimeter,...plans[layout],...emitters],slots,plate:pt(480,layout===2?405:500),routes,niches,decor,sensors,doors:[...(layout===0?pointPair(40,280):layout===1?pointPair(240,195):pointPair(80,40)),pt(80,40),pt(880,40),pt(480,40),pt(480,560)],rooms};
+ ][layout],walls:[...perimeter,...plans[layout],...emitters],slots,pedestals,plate:pt(480,layout===2?405:500),routes,niches,decor,sensors,doors:[...(layout===0?pointPair(40,280):layout===1?pointPair(240,195):pointPair(80,40)),pt(80,40),pt(880,40),pt(480,40),pt(480,560)],rooms};
 }

@@ -121,8 +121,12 @@ function setupMuseum(g:Game){
  g.difficulty=difficultyOf(g);const rival=g.crewMode!=='coop';
  const values=map.capacity===6?[200,200,1200,500,500,500,400,400,200,200]:[200,200,1200,500,600,600,500,500];
  const names=['Pocket relic','Music box','Crown mask','Contested collection','Wing masterpiece','Wing masterpiece','Moonlit portrait','Blue moon vase','Archive folio','Moon pendant'];
- const pocketShift=Math.floor(random(g)*5)*6-12;const pocketShift2=Math.floor(random(g)*5)*6-12;
- g.loot=map.slots.map((p,i)=>{p=i<2?{x:p.x,y:p.y+(i===0?pocketShift:pocketShift2)}:p;return ({id:'art'+(i+1),name:names[i],value:values[i],...p,home:{...p},holder:null,banked:false,locked:i===2});});g.lootTotal=g.loot.reduce((n,l)=>n+l.value,0);
+ // Deal mirrored pairs from authored risk tiers. Crown and contested centre stay shared.
+ const available=map.pedestals.filter(p=>p.x<480).map(p=>({...p}));
+ const slots=map.slots.map(p=>({...p}));
+ const pairs=map.capacity===6?[[4,5],[6,7],[0,1],[8,9]]:[[4,5],[6,7],[0,1]];
+ for(const [a,b] of pairs){const value=values[a];const pool=available.filter(p=>value>=600?p.tier==='risky':value>=400?p.tier!=='safe':p.tier!=='risky');const p=pool[Math.floor(random(g)*pool.length)];if(!p)throw Error('No pedestal for '+value);slots[a]={x:p.x,y:p.y};slots[b]={x:960-p.x,y:p.y};available.splice(available.indexOf(p),1);}
+ g.loot=slots.map((p,i)=>({id:'art'+(i+1),name:names[i],value:values[i],...p,home:{...p},holder:null,banked:false,locked:i===2}));g.lootTotal=g.loot.reduce((n,l)=>n+l.value,0);
  // Budget is $4300 at every population; six-player plans spread it across ten jobs.
  g.sensors=map.sensors.map((r,i)=>({...r,id:'sensor-'+i,cooldown:0}));
  const count=g.difficulty==='rookie'?(g.crewMode==='coop'?3:2):g.difficulty==='pro'||g.crewMode==='coop'?4:3;
