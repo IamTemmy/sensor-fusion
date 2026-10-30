@@ -9,7 +9,7 @@ export function endHost(g:Game){g.phase='finished';g.finishReason='Host left. Jo
 export function validEnvelope(g:Game,e:Envelope){
  if(!e||typeof e.id!=='string'||e.id.length>100||!e.payload||typeof e.payload!=='object'||JSON.stringify(e).length>16000)return false;
  if(!g.seats.some(s=>!s.bot&&s.id===e.seat&&s.token===e.token))return false;
- const p=e.payload;if(!['input','ready','start','configure','fill','team','bot','remove','difficulty','replay','endJob'].includes(p.type))return false;
+ const p=e.payload;if(!['input','ready','start','configure','fill','preset','team','bot','remove','difficulty','replay','endJob'].includes(p.type))return false;
  if(p.type==='input'&&(!Number.isSafeInteger(p.seq)||![p.dx,p.dy,p.aim?.x,p.aim?.y].every(Number.isFinite)||Math.abs(p.dx)>2||Math.abs(p.dy)>2))return false;
  return true;
 }

@@ -11,15 +11,16 @@ export function releaseFixture(seed:number){
  const hp=around(patrol,100).find(p=>clear(p,13,thiefWalls(g,human)));
  if(hp){Object.assign(human,hp);const ep=around(hp,320).find(p=>clear(p,13,thiefWalls(g,echo)));if(ep)Object.assign(echo,ep);}
 
- let capture=0,deadline=0,release=0,rescued=false,echoCaught=false,priorEchoCaptures=0,echoFreeAtRelease=false;
+ let capture=0,deadline=0,release=0,rescued=false,echoCaught=false,echoFreeAtRelease=false;
  for(let i=0;i<1100;i++){
   if(!capture)go(g,human,[...g.guards].sort((a,b)=>distance(a,human)-distance(b,human))[0]);
   else if(release)go(g,human,vanFor(g,human.team));
   else command(g,human.id,{type:'input',match:g.match,seq:human.lastSeq+1,dx:0,dy:0});
   advance(g,g.now+40);
   if(!capture&&human.stun>g.now){capture=g.now;deadline=human.stun;}
-  if(capture&&!release&&human.stun<=g.now){release=g.now;rescued=release<deadline;priorEchoCaptures=echo.captures;echoFreeAtRelease=echo.stun<=g.now;}
-  if(release&&echo.captures>priorEchoCaptures)echoCaught=true;
+  if(capture&&!release&&human.stun<=g.now){release=g.now;rescued=release<deadline;echoFreeAtRelease=echo.stun<=g.now;}
+  // captures counts bottled alarms, not arrests; observe the authoritative tied state.
+  if(release&&echo.stun>g.now)echoCaught=true;
   if(release&&g.now-release>=3000)break;
  }
  return {seed,layout:g.layout,capture,release,rescued,selfReleased:!!release&&!rescued,echoFreeAtRelease,echoCaught};

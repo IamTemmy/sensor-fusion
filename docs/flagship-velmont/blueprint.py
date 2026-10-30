@@ -32,7 +32,7 @@ rect(696,290,152,12);rect(784,390,152,12);rect(696,490,152,12)
 # Archive shelving and gallery L-return, attached to existing room fabric.
 rect(184,120,12,32);rect(140,224,138,12)
 rect(280,262,12,35);rect(280,285,65,12)
-# Keep a clear shared approach and a 34u walk-through gap ahead of the protected dock zones.
+# Keep a clear shared approach and two open approaches to the L-shaped docks.
 
 hides=[]
 def niche(x,y,side):
@@ -50,10 +50,10 @@ rooms=[('NORTH WALK',24,24,660,84),('ARCHIVE STACKS',24,120,254,130),
 ('CLOCK ROOM',316,432,200,144),('SERVICE LOOP',528,432,156,144),
 ('CROWN VAULT',696,24,240,166),('HALL OF MIRRORS',696,202,240,374)]
 arts=[dict(name=n,x=x,y=y,value=v) for n,x,y,v in [
-('Bay relic',132.5,470,200),('Clockwork',450,550,200),('Fossil folio',170,350,500),
+('Bay relic',140,470,200),('Clockwork',450,550,200),('Fossil folio',170,350,500),
 ('Sculpture',420,320,500),('Star atlas',640,160,500),('Archive masterwork',212,190,600),
 ('Portrait masterwork',370,165,600),('Crown',810,85,1200)]]
-plate=dict(x=640,y=350); docks=[dict(x=80.5,y=530),dict(x=184.5,y=530)]
+plate=dict(x=640,y=350); docks=[dict(x=60,y=480),dict(x=180,y=540)]
 lasers=[dict(x=690,y=400,w=6,h=80),dict(x=320,y=250,w=80,h=5),
 dict(x=696,y=390,w=88,h=5),dict(x=850,y=290,w=86,h=5),dict(x=360,y=24,w=5,h=84)]
 guards=[[(110,285),(170,285),(170,335),(260,335),(260,390),(370,390),(370,475),(370,390),(370,335),(170,335),(110,285)],
@@ -79,7 +79,7 @@ export function flagshipArena(players:number):MuseumArena {
  niches:d.hides.map(p=>({...p,back:'left',kind:'recess'})),
  rooms:d.rooms.map(r=>({name:String(r[0]),x:Number(r[1])+Number(r[3])/2,y:Number(r[2])+25,bounds:{x:Number(r[1]),y:Number(r[2]),w:Number(r[3]),h:Number(r[4])}})),
  sensors:d.lasers,decor:d.decor,doors:[{x:120,y:65},{x:570,y:65},{x:890,y:245}],
- docks:d.docks,coopDock:{x:90,y:530},posts:d.sentries};
+ docks:d.docks,dockFacings:['north','east'],posts:d.sentries};
 }
 '''
 (OUT.parent.parent/'lib/noise/flagship-arena.ts').write_text(module)

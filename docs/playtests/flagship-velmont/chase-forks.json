@@ -1,0 +1,472 @@
+{
+  "engineHash": "37f9334fac97d024b8199dc7b9d004f229fecf5d33680a81e918cb73c5adef78",
+  "method": "33 actual flagship chase forks, 50–150u behind in 10u increments, one pursuing Normal guard, real held-jar throw and normal movement for four seconds; matched no-throw controls hold the jar. No walls changed.",
+  "n": 33,
+  "caught": 7,
+  "caughtRate": 0.21212121212121213,
+  "baselineCaught": 25,
+  "rows": [
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 80,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 90,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 100,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 110,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 120,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 130,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 140,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Fossil to bay",
+      "gap": 150,
+      "caught": false,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 100,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 110,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 120,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 130,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 140,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Sculpture to Clock",
+      "gap": 150,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 100,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 110,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 120,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 130,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 140,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "Clock to bay",
+      "gap": 150,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 50,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 60,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 70,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 80,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 90,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Fossil to bay",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 70,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 80,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 90,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Sculpture to Clock",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "Clock to bay",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    }
+  ]
+}

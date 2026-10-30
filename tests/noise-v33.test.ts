@@ -25,7 +25,7 @@ test('rivals stars reward winning, crew escape, and winning with the jackpot',()
 });
 test('Auto Echo banks carried art and boards after human; explicit van order works too',()=>{
  for(const explicit of [false,true]){const g=job(1,'coop');g.guards=[];g.sensors=[];g.jobEvent=undefined;const [h,e]=g.seats;const home=E.vanFor(g,0);Object.assign(h,home);Object.assign(e,{x:home.x+90,y:home.y});const art=g.loot[0];art.holder=e.id;e.hand=art.id;art.claimed=true;
- if(explicit)E.action(g,h,'help:van');else E.action(g,h,'extract');
+ if(explicit)E.action(g,h,'help:van');else {E.action(g,h,'extract');E.action(g,h,'extract');}
  for(let i=0;i<500&&!e.escaped;i++)E.advance(g,g.now+40);
  assert.equal(e.escaped,true);assert.equal(art.banked,true);assert.equal(e.bank,art.value);assert.ok(g.events.some(x=>x.text.includes('Right behind you')));
  }

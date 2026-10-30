@@ -8,6 +8,9 @@ export function reviewFixture(state:string):Game{
   if(!state.includes('start'))g.guards.forEach((h,i)=>Object.assign(h,h.sentry||h.route[i%h.route.length],{entered:true,entryAt:undefined}));
   const p=state.includes('vault')?{x:810,y:85}:state.includes('archive')?{x:120,y:180}:state.includes('mirrors')?{x:890,y:350}:{x:420,y:335};if(!state.includes('start')){Object.assign(g.seats[0],p);Object.assign(g.seats[1],{x:590,y:335});}
   if(state.includes('start'))g.now=0;
+  if(state==='flagship-crew'){const p=hidingSpots(g)[0];Object.assign(g.seats[1],p,{hideId:0,hiddenAt:g.now,sneak:true});Object.assign(g.seats[0],vanFor(g,0),{escaped:true});}
+  if(state==='flagship-empty'){g.now=10000;Object.assign(g.seats[0],vanFor(g,0),{emptyBoardUntil:g.now+4000});}
+  if(state==='flagship-lobby'){g.phase='lobby';g.layout=-1;g.arena=undefined;}
   if(state.includes('last-call')){g.now=75000;g.end=90000;}
   if(state.includes('pass')){const l=g.loot[3];Object.assign(l,{holder:g.seats[1].id,x:590,y:335});g.seats[1].hand=l.id;event(g,'ECHO: Bring free hands. Q asks me to pass.');}
   else event(g,state==='flagship-plan'?'ARCHITECTURE REVIEW · Fog disabled in this development fixture.':'The Velmont · Vault opens at 1:00.');

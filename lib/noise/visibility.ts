@@ -1,4 +1,4 @@
-import {distance,sight,isFlagship,guardActive,type Game,type View,type Vec,type Rect} from './engine.ts';
+import {distance,sight,hidden,isFlagship,guardActive,type Game,type View,type Vec,type Rect} from './engine.ts';
 
 /** Client presentation only. Does not mutate or redact the authoritative simulation. */
 export function rayEnd(origin:Vec,angle:number,walls:Rect[],range=1200):Vec {
@@ -23,18 +23,34 @@ export function rememberGuards(memory:Map<string,GuardMemory>,guards:(Vec&{id:st
  for(const h of guards)if(visible(h))memory.set(h.id,{x:h.x,y:h.y,angle:h.angle,at:now});
  return [...memory].flatMap(([id,h])=>{if(now-h.at>=3000||!guards.some(g=>g.id===id)){memory.delete(id);return [];}return visible(guards.find(g=>g.id===id)!)?[]:[{id,...h,alpha:.5*(1-(now-h.at)/3000)}];});
 }
-type Memory={key:string;guards:Map<string,GuardMemory>;mask:HTMLCanvasElement;polygon:Vec[];origin:Vec;at:number};
+type Memory={key:string;guards:Map<string,GuardMemory>;rivals:Map<string,RivalMemory>;mask:HTMLCanvasElement;polygon:Vec[];origin:Vec;at:number};
 const memories=new WeakMap<object,Memory>();
 function shape(ctx:CanvasRenderingContext2D,polygon:Vec[],origin:Vec){ctx.beginPath();polygon.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();ctx.moveTo(origin.x+60,origin.y);ctx.arc(origin.x,origin.y,60,0,Math.PI*2);ctx.fill();}
-export function prepareVision(ctx:CanvasRenderingContext2D,g:Game|View,you:string,positions:Map<string,Vec>,lights:'full'|'shadows'='shadows'){
+export function prepareVision(ctx:CanvasRenderingContext2D,g:Game|View,you:string,positions:Map<string,Vec>,lights:'full'|'shadows'='full'){
  const me=g.seats.find(s=>s.id===you);if(!isFlagship(g)||!me||g.phase!=='playing'||typeof document==='undefined')return null;
  const origin=positions.get(you)||me,key=`${g.code}:${g.match}:${you}`;
- let m=memories.get(ctx.canvas);if(!m||m.key!==key){const c=document.createElement('canvas');c.width=960;c.height=600;m={key,guards:new Map(),mask:c,polygon:[],origin:{x:-999,y:-999},at:-Infinity};memories.set(ctx.canvas,m);}
- if(lights==='full'){m.guards.clear();return null;}
+ let m=memories.get(ctx.canvas);if(!m||m.key!==key){const c=document.createElement('canvas');c.width=960;c.height=600;m={key,guards:new Map(),rivals:new Map(),mask:c,polygon:[],origin:{x:-999,y:-999},at:-Infinity};memories.set(ctx.canvas,m);}
+ if(lights==='full'){m.guards.clear();m.rivals.clear();return null;}
  if(distance(m.origin,origin)>2||g.now-m.at>100){m.polygon=visibilityPolygon(origin,g.walls);m.origin={...origin};m.at=g.now;}
  const visible=(p:Vec)=>visibleFrom(origin,p,g.walls),guards=g.guards.filter(h=>guardActive(g,h)).map(h=>({...h,...(positions.get(h.id)||h)}));
  const ghosts=rememberGuards(m.guards,guards,visible,g.now);
+ const rivalGhosts=rememberRivals(m.rivals,g.seats.filter(s=>s.team!==me.team).map(s=>({...s,...(positions.get(s.id)||s)})),visible,g.now);
  // The whole building and exhibit state remain readable. Only opposing actors are occluded.
  const scene={...g,guards:g.guards.filter(h=>visible(positions.get(h.id)||h))};
- return {scene,visible,ghosts,unseen:guards.filter(h=>!visible(h)),origin,paint(){const f=m!.mask.getContext('2d')!;f.clearRect(0,0,960,600);f.globalCompositeOperation='source-over';f.fillStyle='rgba(39,44,51,.35)';f.fillRect(0,0,960,600);f.globalCompositeOperation='destination-out';shape(f,m!.polygon,origin);f.globalCompositeOperation='source-over';ctx.drawImage(m!.mask,0,0);}};
+ return {scene,visible,ghosts,rivalGhosts,unseen:guards.filter(h=>!visible(h)),origin,paint(){const f=m!.mask.getContext('2d')!;f.clearRect(0,0,960,600);f.globalCompositeOperation='source-over';f.fillStyle='rgba(39,44,51,.35)';f.fillRect(0,0,960,600);f.globalCompositeOperation='destination-out';shape(f,m!.polygon,origin);f.globalCompositeOperation='source-over';ctx.drawImage(m!.mask,0,0);}};
 }
+
+export type RivalMemory=GuardMemory&{team:number;name:string};
+/** Store only the last observed actor pose, never its carried art or current unseen position. */
+export function rememberRivals(memory:Map<string,RivalMemory>,rivals:(Vec&{id:string;team:number;name:string;dx:number;dy:number;escaped:boolean})[],visible:(p:Vec)=>boolean,now:number){
+ const active=rivals.filter(s=>!s.escaped);
+ for(const s of active)if(visible(s))memory.set(s.id,{x:s.x,y:s.y,angle:Math.atan2(s.dy,s.dx),team:s.team,name:s.name,at:now});
+ return [...memory].flatMap(([id,s])=>{const current=active.find(r=>r.id===id);if(!current||now-s.at>=3000){memory.delete(id);return [];}return visible(current)?[]:[{id,...s,alpha:.5*(1-(now-s.at)/3000)}];});
+}
+export function crewActorState(g:Game|View,you:string,s:Game['seats'][number],visible:(p:Vec)=>boolean){
+ const own=s.team===g.seats.find(p=>p.id===you)?.team;
+ if(s.escaped)return own?'aboard':'occluded';
+ if(!own&&!visible(s))return 'occluded';
+ return hidden(g,s)?'hidden':'visible';
+}
+export const floorExhibits=(g:Game|View)=>g.loot.filter(l=>!l.banked&&!l.holder&&!l.guardCarrier&&!l.flight);

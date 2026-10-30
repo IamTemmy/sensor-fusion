@@ -711,3 +711,25 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .clock .boarding-warning{position:absolute;top:calc(100% + 6px);left:50%;transform:translateX(-50%);display:block;width:max-content;max-width:230px;padding:5px 8px;border:1px solid #c8a675;border-radius:6px;background:#30252bf2;color:#fff0cf;font:600 12px/1.3 Arial;z-index:30;white-space:normal}
 @media(max-width:700px){.noise-app .lights-setting{font-size:0;gap:0}.noise-app .lights-setting select{font-size:10px;max-width:72px;padding:2px}.noise-app .clock .boarding-warning{left:auto;right:0;transform:none;max-width:170px;font-size:11px}.noise-app .top-actions{gap:3px}}
 @media(max-width:700px){.noise-app .clock .boarding-warning{top:calc(100% + 46px)}}
+
+/* The lobby exposes team ownership directly on desktop and phone. */
+.team-presets{display:flex;gap:8px;margin:12px 0}.team-presets button{flex:1;padding:10px;border:1px solid #54717c;border-radius:8px;background:#162d3b;color:#f5e7cb;font-weight:700}
+.team-board{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:12px;margin:12px 0}.team-column{padding:12px;border:1px solid #5bbda1;border-radius:12px;background:#112d2c}.team-column.violet{border-color:#ac89df;background:#241f39}.team-column h3{display:flex;justify-content:space-between;color:#a6f2d6;font-size:17px;margin:0 0 10px}.team-column.violet h3{color:#d2b7ff}.team-column h3 small{font:12px Arial;align-self:center}.team-column p{font-size:12px;line-height:1.5}.team-seat{display:flex;align-items:center;min-width:0;margin:6px 0;background:#07172188;border-radius:8px}.seat-move{display:flex;align-items:center;gap:8px;text-align:left;flex:1;min-width:0;padding:6px;background:none;border:0;color:#fff}.seat-move:disabled{opacity:1;cursor:default}.seat-move .crew-portrait{width:40px;height:48px;object-fit:contain}.seat-move span{display:grid;gap:4px;min-width:0}.seat-move b{overflow-wrap:anywhere}.seat-move small{font:10px Arial;color:#b7ccd0}.seat-move em{font:10px Arial;color:#e4ce99}.seat-remove{padding:8px;background:none;border:0;color:#f2b7b7}.team-add{width:100%;padding:8px;border:1px dashed #a3cfc080;background:#ffffff08;color:#fff;border-radius:6px}.planned-museum{display:grid;gap:4px;padding:12px 16px;margin:10px 0;border:1px solid #9f8354;border-radius:9px;background:#16252f}.planned-museum small{color:#d6bd80;font-size:10px}.planned-museum b{font-size:20px}.planned-museum span{font-size:12px;color:#c3d0d6}
+@media(max-width:600px){.team-board{gap:7px}.team-column{padding:8px}.seat-move{gap:4px;padding:4px}.seat-move .crew-portrait{width:28px;height:38px}.seat-move b{font-size:12px}.seat-remove{padding:5px}.team-presets button{font-size:11px;padding:8px}}
+
+.empty-board-warning{position:absolute;bottom:calc(100% + 6px);right:16px;max-width:320px;padding:9px 13px;border:1px solid #efc778;border-radius:8px;background:#302719f5;color:#fff0c8;font:700 13px/1.4 Arial;z-index:35}
+/* Keep the team board readable without nested phone scrollbars. */
+.noise-app .lobby>.team-presets,.noise-app .lobby>.team-board,.noise-app .lobby>.planned-museum{grid-column:1/-1}
+@media(max-width:800px){
+ .noise-app .planning-room{overflow-y:auto;align-items:flex-start}
+ .noise-app .planning-room .lobby{max-height:none;overflow:visible;margin:10px 12px}
+ .noise-app .lobby>.planning-sketch,.noise-app .lobby>p:first-of-type{display:none}
+ .noise-app .lobby>h2{font-size:21px;margin:6px 0 10px}
+ .noise-app .lobby>.mode-warning{font-size:12px;line-height:1.4;margin:8px 0}
+ .noise-app .team-seat{position:relative}
+ .noise-app .team-seat .seat-move{display:grid;grid-template-columns:1fr;width:100%;padding:8px}
+ .noise-app .team-seat .seat-move .crew-portrait{width:38px;height:42px}
+ .noise-app .team-seat .seat-move b{font-size:13px;word-break:normal;overflow-wrap:break-word}
+ .noise-app .team-seat .seat-remove{position:absolute;right:0;top:0;padding:8px}
+ .noise-app .team-presets{margin-top:8px}
+}
