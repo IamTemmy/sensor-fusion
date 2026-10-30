@@ -1,0 +1,47 @@
+{
+  "difficulty": "normal",
+  "seeds": "1001–1040",
+  "engineHash": "ca0c957b0fa26e9ca6eb8cb75d5a0a03b8ba9ff1f41fae9b94eaca7997534d74",
+  "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
+  "results": [
+    {
+      "byLayout": [
+        {
+          "layout": 0,
+          "n": 13,
+          "wins": 3
+        },
+        {
+          "layout": 1,
+          "n": 14,
+          "wins": 8
+        },
+        {
+          "layout": 2,
+          "n": 13,
+          "wins": 10
+        }
+      ],
+      "mode": "coop",
+      "policy": "auto",
+      "echo": "auto",
+      "n": 40,
+      "winRate": 0.525,
+      "meanBank": 2605,
+      "meanOther": 0,
+      "minBank": 1500,
+      "maxBank": 3100,
+      "bankStdDev": 516,
+      "lockdownRate": 1,
+      "meanCatches": 5.875,
+      "meanHumanAlarms": 0,
+      "starRates": [
+        0.475,
+        0.1,
+        0.425,
+        0
+      ],
+      "runsWithBotPlants": 0
+    }
+  ]
+}

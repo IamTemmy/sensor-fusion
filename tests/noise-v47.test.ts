@@ -28,7 +28,7 @@ test('local RAF driver and direct fixed ticks make the same bot decisions for a 
  }
 });
 test('Echo gathers an available safe alarm for an exposed plate job instead of staying blocked',()=>{
- const g=job(1,'duos'),[h,e]=g.seats;g.phase='playing';g.start=0;g.now=20000;g.end=90000;g.walls=[];g.sensors=[];g.jobEvent=undefined;g.hideSpots=[];g.plate={x:200,y:300};Object.assign(h,{x:200,y:300});Object.assign(e,{x:330,y:300,bot:true,mode:'auto'});
+ const g=job(1,'duos'),[h,e]=g.seats;g.phase='playing';g.start=0;g.now=40000;g.vaultOpensAt=40000;g.end=90000;g.walls=[];g.sensors=[];g.jobEvent=undefined;g.hideSpots=[];g.plate={x:200,y:300};Object.assign(h,{x:200,y:300});Object.assign(e,{x:330,y:300,bot:true,mode:'auto'});
  const l=g.loot.find(l=>l.locked)!;g.loot=[l];Object.assign(l,{x:600,y:300,home:{x:600,y:300}});
  g.guards=[{id:'watch',x:650,y:300,angle:Math.PI,mode:'patrol',sentry:{x:650,y:300},sentryArt:l.id,route:[{x:650,y:300}],target:{x:650,y:300},way:0,attention:0,victim:null}];
  g.noises=[{id:'bait',x:280,y:300,holder:null,kind:'alarm',born:g.now,expires:g.now+10000,source:null,vx:0,vy:0,flight:0}];

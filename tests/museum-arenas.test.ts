@@ -19,7 +19,7 @@ test('every plan: body-clear access to every exhibit, plate and niche; both crew
  for(const n of [2,4,6])for(let layout=0;layout<3;layout++){
   const g=job(layout,n);assert.equal(g.loot.length,n===6?10:8);assert.equal(g.loot.reduce((v,l)=>v+l.value,0),4300);
   for(const p of [...g.loot,g.plate,...E.hidingSpots(g)]){assert.ok(E.clear(p,22,g.walls),`${g.arena!.id}: blocked ${JSON.stringify(p)}`);for(const team of [0,1]){assert.ok(Number.isFinite(E.routeLength(g,E.vanFor(g,team),p)));assert.ok(routePair(g,E.vanFor(g,team),p).length>=1,`${g.arena!.id}/${team}/${JSON.stringify(p)}`);}}
-  assert.ok(E.sentryRoutesClear(g));for(const h of g.guards){assert.ok(E.clear(h.door!,13,g.walls));assert.equal(E.guardActive(g,h),false);for(const p of h.route)assert.ok(E.clear(p,13,g.walls));}
+  assert.ok(E.sentryRoutesClear(g));for(const h of g.guards){assert.ok(E.clear(h.door!,13,g.walls));assert.equal(E.guardActive(g,h),g.loot.some(l=>l.id===h.sentryArt&&l.value===1200));for(const p of h.route)assert.ok(E.clear(p,13,g.walls));}
  }
 });
 test('fair opportunities: shared objectives within 80 route units, collection cost within 15%, no cheap jackpot monopoly',()=>{

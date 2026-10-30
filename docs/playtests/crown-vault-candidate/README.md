@@ -1,0 +1,1 @@
+NOT SHIPPED: Crown deadline passes 40/40 seeds and initial sentry fixtures pass, but active-guard plate handoff is 25/60 (required 45/60), Archive idle 1/30, Rookie left behind 3/40, duos Pro 42.5%. See summary.json and raw logs. CPU all three layouts passes. Do not merge this candidate.

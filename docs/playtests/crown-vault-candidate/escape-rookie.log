@@ -1,0 +1,22 @@
+[
+  {
+    "level": "rookie",
+    "n": 40,
+    "escaped": 37,
+    "tied": 0,
+    "left": 3,
+    "misses": [
+      1016,
+      1025,
+      1027
+    ]
+  }
+]
+file:///tmp/velmont-vault/scripts/verify-v48.ts:8
+ rows.push({level,n:40,escaped,tied,left,misses});}console.log(JSON.stringify(rows,null,2));if(!process.env.V48_ENGINE&&rows.some(r=>r.left>2))throw new Error('Echo escape acceptance failed');
+                                                                                                                                                     ^
+
+Error: Echo escape acceptance failed
+    at file:///tmp/velmont-vault/scripts/verify-v48.ts:8:150
+
+Node.js v24.22.1
