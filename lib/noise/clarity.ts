@@ -11,8 +11,8 @@ export function botIntention(g:Scene,s:Thief){
 }
 export function handStatus(g:Scene,s:Thief){
  if(g.noises.some(n=>n.id===s.hand))return 'ALARM IN HAND · F throws';
- if(['flagship-velmont','night-archive'].includes(g.arena?.id||'')&&g.loot.some(l=>l.id===s.hand&&l.value===1200))return g.noises.some(n=>n.attached===s.id)?'CROWN + ALARM · Partner grabs alarm':'QUIET CROWN · Bank or pass';
- if(g.loot.some(l=>l.id===s.hand))return g.noises.some(n=>n.attached===s.id)?'ART + ALARM · Partner grabs alarm':'QUIET ART · Bank or pass';
+ if(['flagship-velmont','night-archive'].includes(g.arena?.id||'')&&g.loot.some(l=>l.id===s.hand&&l.value===1200))return g.noises.some(n=>n.attached===s.id)?'CROWN + ALARM · F shakes off alarm':'QUIET CROWN · Bank or pass';
+ if(g.loot.some(l=>l.id===s.hand))return g.noises.some(n=>n.attached===s.id)?'ART + ALARM · F shakes off alarm':'QUIET ART · Bank or pass';
  return 'HANDS FREE · E interacts';
 }
 /** Engine names remain stable; display the canvas identity in radio prose too. */

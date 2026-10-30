@@ -1,6 +1,6 @@
 {
-  "sourceHash": "7b2d5aaeae5d1aa427cda20029c0c74eca753e3086f777ed3ef9609c19c02fc5",
-  "at": "2026-10-30T16:39:35.094Z",
+  "sourceHash": "9687c1ed01b25662983e86a4aa1dcfb1cfcf47fa040ba91f9358b6b788973400",
+  "at": "2026-10-30T17:11:03.376Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
     "test": {
@@ -13,13 +13,13 @@
   "museums": {
     "flagship-velmont": {
       "idle": {
-        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 106,
@@ -28,7 +28,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -197,30 +197,29 @@
         ]
       },
       "cpu": {
-        "p95": 5.845271000000139,
-        "max": 30.93103199999996,
-        "passed": true,
-        "rechecked": true
+        "p95": 6.430156000000352,
+        "max": 31.36262799999986,
+        "passed": true
       }
     },
     "night-archive": {
       "idle": {
-        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
         "matches": 120,
         "earlyPickups": 0,
-        "earlyBanks": 101,
-        "banks": 119,
+        "earlyBanks": 100,
+        "banks": 120,
         "earliestBankSeconds": 34.56,
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -239,15 +238,15 @@
             "level": "normal",
             "n": 40,
             "median": 2000,
-            "min": 1400,
-            "max": 2600
+            "min": 900,
+            "max": 3100
           },
           {
             "level": "pro",
             "n": 40,
             "median": 1500,
             "min": 400,
-            "max": 2100
+            "max": 2600
           }
         ],
         "passed": true
@@ -257,17 +256,17 @@
           {
             "difficulty": "rookie",
             "n": 40,
-            "left": 1
+            "left": 0
           },
           {
             "difficulty": "normal",
             "n": 40,
-            "left": 1
+            "left": 2
           },
           {
             "difficulty": "pro",
             "n": 40,
-            "left": 2
+            "left": 0
           }
         ],
         "passed": true
@@ -287,7 +286,7 @@
           {
             "difficulty": "pro",
             "n": 20,
-            "banks": 18
+            "banks": 17
           }
         ],
         "method": "Timed approach; normal inputs/actions, empty-handed sneaking, alarm bottling and recovery; Echo holds plate then covers.",
@@ -303,15 +302,21 @@
           {
             "difficulty": "normal",
             "n": 20,
-            "banks": 19
+            "banks": 20
           },
           {
             "difficulty": "pro",
             "n": 20,
-            "banks": 13
+            "banks": 12
           }
         ],
         "method": "Human holds plate, then supports Echo with alarm capture and dropped-loot recovery. Crew banking after Echo pickup, including legitimate passes.",
+        "passed": true
+      },
+      "chaseForks": {
+        "n": 44,
+        "caught": 14,
+        "caughtRate": 0.3181818181818182,
         "passed": true
       },
       "winRates": {
@@ -322,70 +327,71 @@
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.9
+            "rate": 0.8
           },
           {
             "mode": "duos",
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.8
+            "rate": 0.85
           },
           {
             "mode": "duos",
             "difficulty": "rookie",
             "swap": 1,
             "n": 20,
-            "rate": 0.9
+            "rate": 1
           },
           {
             "mode": "coop",
             "difficulty": "normal",
             "swap": 0,
             "n": 20,
-            "rate": 0.5
+            "rate": 0.2
           },
           {
             "mode": "duos",
             "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.4
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.55
+          },
+          {
+            "mode": "coop",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.25
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
             "swap": 0,
             "n": 20,
             "rate": 0.35
           },
           {
             "mode": "duos",
-            "difficulty": "normal",
+            "difficulty": "pro",
             "swap": 1,
-            "n": 20,
-            "rate": 0.6
-          },
-          {
-            "mode": "coop",
-            "difficulty": "pro",
-            "swap": 0,
-            "n": 20,
-            "rate": 0.15
-          },
-          {
-            "mode": "duos",
-            "difficulty": "pro",
-            "swap": 0,
             "n": 20,
             "rate": 0.3
-          },
-          {
-            "mode": "duos",
-            "difficulty": "pro",
-            "swap": 1,
-            "n": 20,
-            "rate": 0.55
           }
         ]
       },
       "cpu": {
-        "p95": 7.076221999999689,
-        "max": 29.611507000000017,
-        "passed": true
+        "p95": 7.099224999999933,
+        "max": 32.59265599999998,
+        "passed": true,
+        "rechecked": true
       }
     }
   },
@@ -393,24 +399,33 @@
   "passed": true,
   "rechecks": [
     {
-      "gate": "flagship-velmont/cpu",
+      "gate": "night-archive/cpu",
       "initial": {
-        "p95": 6.260277999999744,
-        "max": 55.83907999999974,
+        "p95": 8.277542000001631,
+        "max": 46.669013999999976,
         "passed": false
       },
-      "reason": "Initial 55.84ms/45.58ms outliers were at 11.8s/10.8s, before any job event. The tested seed has a shift event, so the changed vault-event branch is not exercised. Two serial repetitions of all six identical CPU cases passed without source changes. Root cause of the original timing outliers is not established.",
+      "reason": "Two serial repetitions of all six identical CPU fixtures after the initial threshold miss; no engine or geometry changes. The original timing variation is not attributed to a proven cause.",
       "samples": [
         {
-          "p95": 5.817531000000599,
-          "max": 30.93103199999996
+          "p95": 6.77499700000044,
+          "max": 26.023325
         },
         {
-          "p95": 5.845271000000139,
-          "max": 20.561728000000016
+          "p95": 7.099224999999933,
+          "max": 32.59265599999998
         }
-      ],
-      "originalEvidence": "docs/playtests/perfect-haul/cpu-first-failure.json"
+      ]
     }
-  ]
+  ],
+  "simulationSourceHash": "0e26339cf6e8e6210ea85e5170b8696d2c46a358fb7c7d3356a1a8effb34412a",
+  "postSimulationValidation": {
+    "files": [
+      "lib/noise/practice.ts",
+      "lib/noise/input-copy.ts"
+    ],
+    "change": "Only tutorial instruction text and its touch translation, verified by reconstructing the exact original release hash.",
+    "tests": 303,
+    "typecheck": "passed"
+  }
 }

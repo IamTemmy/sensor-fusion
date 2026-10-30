@@ -1,5 +1,5 @@
 {
-  "engineHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+  "engineHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
   "method": "Human stays idle at own dock for the entire normal 90-second match; Auto Echo alone collects/passes/banks. Crew haul includes a pass to the idle human, if it banks automatically.",
   "rows": [
     {
@@ -11,8 +11,8 @@
       "runs": [
         {
           "seed": 1001,
-          "haul": 2600,
-          "echoBank": 2600,
+          "haul": 3100,
+          "echoBank": 3100,
           "escaped": true,
           "catches": 0
         },
@@ -25,8 +25,8 @@
         },
         {
           "seed": 1003,
-          "haul": 3100,
-          "echoBank": 3100,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
           "catches": 1
         },
@@ -35,42 +35,42 @@
           "haul": 3100,
           "echoBank": 3100,
           "escaped": true,
-          "catches": 0
+          "catches": 1
         },
         {
           "seed": 1005,
           "haul": 2600,
           "echoBank": 2600,
           "escaped": true,
-          "catches": 0
-        },
-        {
-          "seed": 1006,
-          "haul": 2600,
-          "echoBank": 2600,
-          "escaped": true,
           "catches": 1
         },
         {
-          "seed": 1007,
-          "haul": 2500,
-          "echoBank": 2500,
-          "escaped": true,
-          "catches": 2
-        },
-        {
-          "seed": 1008,
+          "seed": 1006,
           "haul": 3100,
           "echoBank": 3100,
           "escaped": true,
           "catches": 0
         },
         {
+          "seed": 1007,
+          "haul": 3100,
+          "echoBank": 3100,
+          "escaped": true,
+          "catches": 0
+        },
+        {
+          "seed": 1008,
+          "haul": 2600,
+          "echoBank": 2600,
+          "escaped": true,
+          "catches": 1
+        },
+        {
           "seed": 1009,
-          "haul": 1950,
-          "echoBank": 1950,
-          "escaped": false,
-          "catches": 2
+          "haul": 3100,
+          "echoBank": 3100,
+          "escaped": true,
+          "catches": 0
         },
         {
           "seed": 1010,
@@ -98,7 +98,7 @@
           "haul": 2600,
           "echoBank": 2600,
           "escaped": true,
-          "catches": 1
+          "catches": 0
         },
         {
           "seed": 1014,
@@ -109,43 +109,43 @@
         },
         {
           "seed": 1015,
-          "haul": 2600,
-          "echoBank": 2600,
-          "escaped": true,
-          "catches": 1
-        },
-        {
-          "seed": 1016,
-          "haul": 2100,
-          "echoBank": 2100,
-          "escaped": true,
-          "catches": 3
-        },
-        {
-          "seed": 1017,
-          "haul": 2500,
-          "echoBank": 2500,
-          "escaped": true,
-          "catches": 1
-        },
-        {
-          "seed": 1018,
           "haul": 3100,
           "echoBank": 3100,
           "escaped": true,
           "catches": 0
         },
         {
-          "seed": 1019,
+          "seed": 1016,
+          "haul": 1400,
+          "echoBank": 1400,
+          "escaped": true,
+          "catches": 1
+        },
+        {
+          "seed": 1017,
+          "haul": 3100,
+          "echoBank": 3100,
+          "escaped": true,
+          "catches": 0
+        },
+        {
+          "seed": 1018,
           "haul": 2600,
           "echoBank": 2600,
           "escaped": true,
           "catches": 1
         },
         {
+          "seed": 1019,
+          "haul": 3100,
+          "echoBank": 3100,
+          "escaped": true,
+          "catches": 0
+        },
+        {
           "seed": 1020,
-          "haul": 2600,
-          "echoBank": 2600,
+          "haul": 3100,
+          "echoBank": 3100,
           "escaped": true,
           "catches": 1
         },
@@ -154,14 +154,14 @@
           "haul": 2600,
           "echoBank": 2600,
           "escaped": true,
-          "catches": 2
+          "catches": 1
         },
         {
           "seed": 1022,
-          "haul": 1400,
-          "echoBank": 1400,
+          "haul": 3100,
+          "echoBank": 3100,
           "escaped": true,
-          "catches": 2
+          "catches": 0
         },
         {
           "seed": 1023,
@@ -172,10 +172,10 @@
         },
         {
           "seed": 1024,
-          "haul": 1400,
-          "echoBank": 1400,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
-          "catches": 2
+          "catches": 1
         },
         {
           "seed": 1025,
@@ -186,24 +186,24 @@
         },
         {
           "seed": 1026,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 2500,
+          "echoBank": 2500,
           "escaped": true,
-          "catches": 2
+          "catches": 1
         },
         {
           "seed": 1027,
-          "haul": 2600,
-          "echoBank": 2600,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 0
+          "catches": 1
         },
         {
           "seed": 1028,
           "haul": 3100,
           "echoBank": 3100,
           "escaped": true,
-          "catches": 0
+          "catches": 1
         },
         {
           "seed": 1029,
@@ -228,43 +228,43 @@
         },
         {
           "seed": 1032,
-          "haul": 3100,
-          "echoBank": 3100,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
           "catches": 0
         },
         {
           "seed": 1033,
-          "haul": 3100,
-          "echoBank": 3100,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
-          "catches": 1
+          "catches": 0
         },
         {
           "seed": 1034,
-          "haul": 3100,
-          "echoBank": 3100,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
-          "catches": 1
+          "catches": 2
         },
         {
           "seed": 1035,
           "haul": 3100,
           "echoBank": 3100,
           "escaped": true,
-          "catches": 0
+          "catches": 1
         },
         {
           "seed": 1036,
-          "haul": 2600,
-          "echoBank": 2600,
+          "haul": 2500,
+          "echoBank": 2500,
           "escaped": true,
           "catches": 1
         },
         {
           "seed": 1037,
-          "haul": 3100,
-          "echoBank": 3100,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
           "catches": 0
         },
@@ -277,17 +277,17 @@
         },
         {
           "seed": 1039,
-          "haul": 3100,
-          "echoBank": 3100,
+          "haul": 2100,
+          "echoBank": 2100,
           "escaped": true,
           "catches": 1
         },
         {
           "seed": 1040,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 3100,
+          "echoBank": 3100,
           "escaped": true,
-          "catches": 2
+          "catches": 0
         }
       ]
     },
@@ -295,104 +295,104 @@
       "level": "normal",
       "n": 40,
       "median": 2000,
-      "min": 1400,
-      "max": 2600,
+      "min": 900,
+      "max": 3100,
       "runs": [
         {
           "seed": 1001,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 2100,
+          "echoBank": 2100,
           "escaped": true,
-          "catches": 2
+          "catches": 3
         },
         {
           "seed": 1002,
-          "haul": 2500,
-          "echoBank": 2500,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 4
         },
         {
           "seed": 1003,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 2
+          "catches": 3
         },
         {
           "seed": 1004,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
+          "catches": 3
+        },
+        {
+          "seed": 1005,
           "haul": 2500,
           "echoBank": 2500,
           "escaped": true,
           "catches": 1
         },
         {
-          "seed": 1005,
-          "haul": 2000,
-          "echoBank": 2000,
-          "escaped": true,
-          "catches": 4
-        },
-        {
           "seed": 1006,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 2
-        },
-        {
-          "seed": 1007,
-          "haul": 2000,
-          "echoBank": 2000,
-          "escaped": true,
           "catches": 4
         },
         {
-          "seed": 1008,
+          "seed": 1007,
           "haul": 2600,
           "echoBank": 2600,
+          "escaped": true,
+          "catches": 1
+        },
+        {
+          "seed": 1008,
+          "haul": 2500,
+          "echoBank": 2500,
           "escaped": true,
           "catches": 3
         },
         {
           "seed": 1009,
-          "haul": 2000,
-          "echoBank": 2000,
-          "escaped": true,
-          "catches": 3
-        },
-        {
-          "seed": 1010,
-          "haul": 1400,
-          "echoBank": 1400,
-          "escaped": true,
-          "catches": 4
-        },
-        {
-          "seed": 1011,
-          "haul": 1500,
-          "echoBank": 1500,
-          "escaped": true,
-          "catches": 6
-        },
-        {
-          "seed": 1012,
-          "haul": 2000,
-          "echoBank": 2000,
-          "escaped": true,
-          "catches": 3
-        },
-        {
-          "seed": 1013,
-          "haul": 2100,
-          "echoBank": 2100,
+          "haul": 1900,
+          "echoBank": 1900,
           "escaped": true,
           "catches": 2
         },
         {
+          "seed": 1010,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
+          "catches": 0
+        },
+        {
+          "seed": 1011,
+          "haul": 2100,
+          "echoBank": 2100,
+          "escaped": true,
+          "catches": 3
+        },
+        {
+          "seed": 1012,
+          "haul": 900,
+          "echoBank": 900,
+          "escaped": true,
+          "catches": 5
+        },
+        {
+          "seed": 1013,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
+          "catches": 4
+        },
+        {
           "seed": 1014,
-          "haul": 2500,
-          "echoBank": 2500,
+          "haul": 3100,
+          "echoBank": 3100,
           "escaped": true,
           "catches": 2
         },
@@ -401,35 +401,35 @@
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 2
+          "catches": 4
         },
         {
           "seed": 1016,
-          "haul": 2600,
-          "echoBank": 2600,
-          "escaped": true,
-          "catches": 1
-        },
-        {
-          "seed": 1017,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 3
+          "catches": 2
+        },
+        {
+          "seed": 1017,
+          "haul": 1275,
+          "echoBank": 675,
+          "escaped": false,
+          "catches": 5
         },
         {
           "seed": 1018,
-          "haul": 1900,
-          "echoBank": 1900,
+          "haul": 2100,
+          "echoBank": 2100,
           "escaped": true,
-          "catches": 3
+          "catches": 2
         },
         {
           "seed": 1019,
-          "haul": 2500,
-          "echoBank": 2500,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 2
         },
         {
           "seed": 1020,
@@ -440,31 +440,31 @@
         },
         {
           "seed": 1021,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 3100,
+          "echoBank": 3100,
           "escaped": true,
-          "catches": 2
+          "catches": 0
         },
         {
           "seed": 1022,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
-          "catches": 2
+          "catches": 3
         },
         {
           "seed": 1023,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 4
+          "catches": 3
         },
         {
           "seed": 1024,
-          "haul": 2600,
-          "echoBank": 2600,
+          "haul": 2500,
+          "echoBank": 2500,
           "escaped": true,
-          "catches": 2
+          "catches": 0
         },
         {
           "seed": 1025,
@@ -475,94 +475,94 @@
         },
         {
           "seed": 1026,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 2100,
+          "echoBank": 2100,
           "escaped": true,
           "catches": 2
         },
         {
           "seed": 1027,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 2500,
+          "echoBank": 2500,
           "escaped": true,
-          "catches": 3
+          "catches": 1
         },
         {
           "seed": 1028,
-          "haul": 2500,
-          "echoBank": 2500,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 2
         },
         {
           "seed": 1029,
+          "haul": 1400,
+          "echoBank": 1400,
+          "escaped": true,
+          "catches": 2
+        },
+        {
+          "seed": 1030,
+          "haul": 2600,
+          "echoBank": 2600,
+          "escaped": true,
+          "catches": 2
+        },
+        {
+          "seed": 1031,
           "haul": 2500,
           "echoBank": 2500,
           "escaped": true,
           "catches": 1
         },
         {
-          "seed": 1030,
+          "seed": 1032,
           "haul": 2100,
           "echoBank": 2100,
-          "escaped": true,
-          "catches": 4
-        },
-        {
-          "seed": 1031,
-          "haul": 2000,
-          "echoBank": 2000,
-          "escaped": true,
-          "catches": 4
-        },
-        {
-          "seed": 1032,
-          "haul": 2000,
-          "echoBank": 2000,
           "escaped": true,
           "catches": 3
         },
         {
           "seed": 1033,
-          "haul": 2600,
-          "echoBank": 2000,
-          "escaped": true,
-          "catches": 2
-        },
-        {
-          "seed": 1034,
-          "haul": 2600,
-          "echoBank": 2600,
-          "escaped": true,
-          "catches": 3
-        },
-        {
-          "seed": 1035,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 3
+          "catches": 4
         },
         {
-          "seed": 1036,
+          "seed": 1034,
+          "haul": 1125,
+          "echoBank": 1125,
+          "escaped": false,
+          "catches": 4
+        },
+        {
+          "seed": 1035,
           "haul": 2500,
           "echoBank": 2500,
           "escaped": true,
           "catches": 2
         },
         {
-          "seed": 1037,
-          "haul": 1575,
-          "echoBank": 1575,
-          "escaped": false,
+          "seed": 1036,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
           "catches": 4
         },
         {
-          "seed": 1038,
-          "haul": 1900,
-          "echoBank": 1900,
+          "seed": 1037,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
           "catches": 2
+        },
+        {
+          "seed": 1038,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
+          "catches": 4
         },
         {
           "seed": 1039,
@@ -573,10 +573,10 @@
         },
         {
           "seed": 1040,
-          "haul": 2500,
-          "echoBank": 2500,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 2
         }
       ]
     },
@@ -585,61 +585,61 @@
       "n": 40,
       "median": 1500,
       "min": 400,
-      "max": 2100,
+      "max": 2600,
       "runs": [
         {
           "seed": 1001,
-          "haul": 900,
-          "echoBank": 900,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 5
+          "catches": 1
         },
         {
           "seed": 1002,
-          "haul": 1500,
-          "echoBank": 1500,
+          "haul": 1400,
+          "echoBank": 1400,
           "escaped": true,
           "catches": 3
         },
         {
           "seed": 1003,
-          "haul": 900,
-          "echoBank": 900,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 3
+          "catches": 2
         },
         {
           "seed": 1004,
           "haul": 1500,
           "echoBank": 1500,
           "escaped": true,
-          "catches": 4
+          "catches": 3
         },
         {
           "seed": 1005,
-          "haul": 1500,
-          "echoBank": 1500,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
           "catches": 1
         },
         {
           "seed": 1006,
-          "haul": 2100,
-          "echoBank": 2100,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 4
         },
         {
           "seed": 1007,
-          "haul": 400,
-          "echoBank": 400,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
-          "catches": 5
+          "catches": 4
         },
         {
           "seed": 1008,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1000,
+          "echoBank": 1000,
           "escaped": true,
           "catches": 3
         },
@@ -648,75 +648,75 @@
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 3
-        },
-        {
-          "seed": 1010,
-          "haul": 1500,
-          "echoBank": 900,
-          "escaped": true,
-          "catches": 5
-        },
-        {
-          "seed": 1011,
-          "haul": 2000,
-          "echoBank": 2000,
-          "escaped": true,
           "catches": 2
         },
         {
-          "seed": 1012,
+          "seed": 1010,
           "haul": 1500,
           "echoBank": 1500,
           "escaped": true,
           "catches": 4
         },
         {
+          "seed": 1011,
+          "haul": 900,
+          "echoBank": 900,
+          "escaped": true,
+          "catches": 2
+        },
+        {
+          "seed": 1012,
+          "haul": 1400,
+          "echoBank": 1400,
+          "escaped": true,
+          "catches": 3
+        },
+        {
           "seed": 1013,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 2
         },
         {
           "seed": 1014,
-          "haul": 750,
-          "echoBank": 750,
-          "escaped": false,
+          "haul": 2100,
+          "echoBank": 2100,
+          "escaped": true,
           "catches": 3
         },
         {
           "seed": 1015,
-          "haul": 900,
-          "echoBank": 400,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
-          "catches": 6
+          "catches": 3
         },
         {
           "seed": 1016,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1400,
+          "echoBank": 1400,
           "escaped": true,
-          "catches": 1
+          "catches": 4
         },
         {
           "seed": 1017,
-          "haul": 900,
-          "echoBank": 900,
-          "escaped": true,
-          "catches": 5
-        },
-        {
-          "seed": 1018,
           "haul": 1500,
           "echoBank": 1500,
           "escaped": true,
           "catches": 2
         },
         {
+          "seed": 1018,
+          "haul": 1500,
+          "echoBank": 1500,
+          "escaped": true,
+          "catches": 4
+        },
+        {
           "seed": 1019,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1400,
+          "echoBank": 1400,
           "escaped": true,
           "catches": 4
         },
@@ -725,13 +725,13 @@
           "haul": 1000,
           "echoBank": 1000,
           "escaped": true,
-          "catches": 2
+          "catches": 3
         },
         {
           "seed": 1021,
-          "haul": 1625,
-          "echoBank": 1125,
-          "escaped": false,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
           "catches": 2
         },
         {
@@ -746,70 +746,70 @@
           "haul": 1400,
           "echoBank": 1400,
           "escaped": true,
-          "catches": 3
+          "catches": 4
         },
         {
           "seed": 1024,
+          "haul": 1500,
+          "echoBank": 1500,
+          "escaped": true,
+          "catches": 4
+        },
+        {
+          "seed": 1025,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
+          "catches": 4
+        },
+        {
+          "seed": 1026,
+          "haul": 2000,
+          "echoBank": 2000,
+          "escaped": true,
+          "catches": 3
+        },
+        {
+          "seed": 1027,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
           "catches": 2
         },
         {
-          "seed": 1025,
-          "haul": 900,
-          "echoBank": 900,
-          "escaped": true,
-          "catches": 4
-        },
-        {
-          "seed": 1026,
-          "haul": 1400,
-          "echoBank": 1400,
-          "escaped": true,
-          "catches": 5
-        },
-        {
-          "seed": 1027,
-          "haul": 1000,
-          "echoBank": 1000,
-          "escaped": true,
-          "catches": 5
-        },
-        {
           "seed": 1028,
-          "haul": 1000,
-          "echoBank": 1000,
+          "haul": 1600,
+          "echoBank": 1600,
           "escaped": true,
-          "catches": 4
+          "catches": 3
         },
         {
           "seed": 1029,
-          "haul": 1500,
-          "echoBank": 1500,
+          "haul": 2600,
+          "echoBank": 2600,
           "escaped": true,
-          "catches": 5
+          "catches": 2
         },
         {
           "seed": 1030,
           "haul": 2000,
           "echoBank": 2000,
           "escaped": true,
-          "catches": 2
+          "catches": 3
         },
         {
           "seed": 1031,
           "haul": 1500,
           "echoBank": 1500,
           "escaped": true,
-          "catches": 5
+          "catches": 3
         },
         {
           "seed": 1032,
-          "haul": 900,
-          "echoBank": 900,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 3
+          "catches": 4
         },
         {
           "seed": 1033,
@@ -820,52 +820,52 @@
         },
         {
           "seed": 1034,
-          "haul": 1000,
-          "echoBank": 1000,
+          "haul": 400,
+          "echoBank": 400,
           "escaped": true,
-          "catches": 5
+          "catches": 4
         },
         {
           "seed": 1035,
-          "haul": 1400,
-          "echoBank": 1400,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
           "catches": 4
         },
         {
           "seed": 1036,
-          "haul": 2100,
-          "echoBank": 2100,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
-          "catches": 2
+          "catches": 4
         },
         {
           "seed": 1037,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
           "catches": 3
         },
         {
           "seed": 1038,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
-          "catches": 2
+          "catches": 4
         },
         {
           "seed": 1039,
-          "haul": 2000,
-          "echoBank": 2000,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
-          "catches": 2
+          "catches": 3
         },
         {
           "seed": 1040,
-          "haul": 1400,
-          "echoBank": 1200,
+          "haul": 2000,
+          "echoBank": 1800,
           "escaped": true,
-          "catches": 4
+          "catches": 2
         }
       ]
     }

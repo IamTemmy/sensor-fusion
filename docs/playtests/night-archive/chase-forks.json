@@ -1,0 +1,626 @@
+{
+  "engineHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+  "method": "44 night-archive chase forks, 50–150u behind in 10u increments, one pursuing Normal guard, real held-jar throw and normal movement for four seconds; matched no-throw controls hold the jar. Production walls unchanged in the fixture.",
+  "n": 44,
+  "caught": 14,
+  "caughtRate": 0.3181818181818182,
+  "baselineCaught": 44,
+  "rows": [
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 100,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 110,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 120,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 130,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 140,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut westbound",
+      "gap": 150,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 100,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 110,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 120,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 130,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 140,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "West cut eastbound",
+      "gap": 150,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 100,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 110,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 120,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 130,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 140,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut eastbound",
+      "gap": 150,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 90,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 100,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 110,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 120,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 130,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 140,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": false,
+      "fork": "East cut westbound",
+      "gap": 150,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 80,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 90,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut westbound",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 80,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 90,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "West cut eastbound",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 90,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut eastbound",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 50,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 60,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 70,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 80,
+      "caught": true,
+      "lured": false
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 90,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 100,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 110,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 120,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 130,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 140,
+      "caught": false,
+      "lured": true
+    },
+    {
+      "throwJar": true,
+      "fork": "East cut westbound",
+      "gap": 150,
+      "caught": false,
+      "lured": true
+    }
+  ]
+}

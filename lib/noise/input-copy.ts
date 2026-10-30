@@ -2,6 +2,10 @@
 export function touchCopy(text:string,touch:boolean){
  if(!touch)return text;
  return text
+ .replaceAll('Aim away and F shakes off the alarm. Then aim at Echo and F passes quiet art.','Aim away and tap Shake off alarm. Then aim at Echo and tap Pass quiet art.')
+ .replaceAll('Carrying art? F flings its alarm after 1s. A teammate takes it instantly.','Carrying art? Tap Shake off alarm; it flies after 1s. A teammate takes it instantly.')
+ .replaceAll('Q asks Echo to pass art. F passes quiet art or shakes off its alarm. G drops it.','Tap Pass it to ask Echo for art. Use Pass quiet art, Shake off alarm, or Drop.')
+ .replaceAll('F shakes off alarm','Tap Shake off alarm')
  .replace('Move WASD, aim with the mouse. E grabs, unties and stashes. F throws. G drops. Shift sneaks.','Drag the thumbstick to move. Tap the floor to aim. Use Grab, Untie, Stash, Throw and Drop. Tap Sneak to toggle stealth.')
  .replaceAll('Press R in your dock','Tap Board van in your dock').replaceAll('R again hops out','Tap Leave van to hop out')
  .replaceAll('R boards or hops out before Last Call.','Tap Board van, or Leave van before Last Call.')

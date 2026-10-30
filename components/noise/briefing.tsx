@@ -7,7 +7,7 @@ import {COOP_GOAL,type CrewMode} from '../../lib/noise/engine';
 
 const steps=[
  {title:'Grab art',body:'Every exhibit comes with a loud alarm.',key:'E',action:'Grab',touch:'Tap Grab',color:'#95e8cd'},
- {title:'Take the alarm',body:'Your partner takes the noise. Ask Echo to Cover.',key:'E',action:'Grab alarm',touch:'Tap Grab alarm',color:'#ffa39b'},
+ {title:'Shake off alarm',body:'Carrying art? F flings its alarm away, or let a teammate take it.',key:'F',action:'Shake off alarm',touch:'Tap Shake off alarm',color:'#ffa39b'},
  {title:'Throw the alarm',body:'Pull guards away from your route.',key:'F',action:'Throw',touch:'Aim, then tap Throw',color:'#a6d9ef'},
  {title:'Bank & board',body:'Deliver your art. Get everyone aboard.',key:'R',action:'Board van',touch:'Tap Board van',color:'#f3d18b'},
 ];
@@ -24,7 +24,7 @@ export function HeistBriefing({arena,training,crewMode,duel=false,touch,busy,rea
    </header>
    {arena&&<div className="arena-plan-note"><b>{arena.name} · {arena.capacity===2?'Compact':arena.capacity===4?'Crew':'Grand'} plan</b><span>{arena.brief}</span><small className="museum-lore">{museumIdentity(['sculpture','fossil','celestial'].indexOf(arena.theme)).lore}</small></div>}
    <ol className="quick-brief-steps">{steps.map((step,i)=><li key={step.title} style={{'--step-color':step.color} as CSSProperties}>
-    <span className="quick-step-number" aria-hidden="true">0{i+1}</span><GuideIcon step={i}/><h3>{step.title}</h3><p>{['flagship-velmont','night-archive'].includes(arena?.id||'')&&i===1?'Your teammate can take any art alarm, including the Crown’s.':duel&&i===1?'Drop your art to free a hand, then grab its alarm.':duel&&i===3?'Bank your art, then board your own van.':step.body}</p>
+    <span className="quick-step-number" aria-hidden="true">0{i+1}</span><GuideIcon step={i}/><h3>{step.title}</h3><p>{i===1?(touch?'Carrying art? Tap Shake off alarm, or let a teammate take it.':step.body):duel&&i===3?'Bank your art, then board your own van.':step.body}</p>
     <div className="quick-step-control">{touch?<><span aria-hidden="true">☝</span>{step.touch}</>:<><kbd>{step.key}</kbd>{step.action}</>}</div>
    </li>)}</ol>
    <div className="quick-brief-controls" aria-label="Movement controls">{touch?<><span>Drag to move</span><span>Tap floor to aim</span><span>Tap Sneak for stealth</span></>:<><span><MovementKeys/> Move</span><span><kbd>SHIFT</kbd> Sneak</span><span><kbd>G</kbd> Drop art</span><span><kbd>Q</kbd> Ask for art</span></>}</div>

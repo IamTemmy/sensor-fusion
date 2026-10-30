@@ -1,9 +1,9 @@
 {
-  "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+  "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
   "matches": 120,
   "earlyPickups": 0,
-  "earlyBanks": 101,
-  "banks": 119,
+  "earlyBanks": 100,
+  "banks": 120,
   "earliestBankSeconds": 34.56,
   "cases": [
     {
@@ -280,7 +280,7 @@
       "seed": 1006,
       "level": "normal",
       "pickupSeconds": 30.2,
-      "bankSeconds": 40.68
+      "bankSeconds": 34.64
     },
     {
       "seed": 1007,
@@ -340,7 +340,7 @@
       "seed": 1016,
       "level": "normal",
       "pickupSeconds": 30.2,
-      "bankSeconds": 40.68
+      "bankSeconds": 74.72
     },
     {
       "seed": 1017,
@@ -406,7 +406,7 @@
       "seed": 1027,
       "level": "normal",
       "pickupSeconds": 30.2,
-      "bankSeconds": 40.68
+      "bankSeconds": 34.64
     },
     {
       "seed": 1028,
@@ -490,7 +490,7 @@
       "seed": 1001,
       "level": "pro",
       "pickupSeconds": 30.2,
-      "bankSeconds": 42.36
+      "bankSeconds": 42.52
     },
     {
       "seed": 1002,
@@ -532,7 +532,7 @@
       "seed": 1008,
       "level": "pro",
       "pickupSeconds": 30.2,
-      "bankSeconds": 34.64
+      "bankSeconds": 40.68
     },
     {
       "seed": 1009,
@@ -561,8 +561,8 @@
     {
       "seed": 1013,
       "level": "pro",
-      "pickupSeconds": 32.44,
-      "bankSeconds": 76.2
+      "pickupSeconds": 33.28,
+      "bankSeconds": 75.44
     },
     {
       "seed": 1014,
@@ -574,7 +574,7 @@
       "seed": 1015,
       "level": "pro",
       "pickupSeconds": 30.2,
-      "bankSeconds": 67.36
+      "bankSeconds": 81.28
     },
     {
       "seed": 1016,
@@ -592,13 +592,13 @@
       "seed": 1018,
       "level": "pro",
       "pickupSeconds": 35.16,
-      "bankSeconds": 56.32
+      "bankSeconds": 45.64
     },
     {
       "seed": 1019,
       "level": "pro",
       "pickupSeconds": 30.2,
-      "bankSeconds": 40.68
+      "bankSeconds": 34.64
     },
     {
       "seed": 1020,
@@ -628,7 +628,7 @@
       "seed": 1024,
       "level": "pro",
       "pickupSeconds": 32.44,
-      "bankSeconds": 58.08
+      "bankSeconds": 76.84
     },
     {
       "seed": 1025,
@@ -646,7 +646,7 @@
       "seed": 1027,
       "level": "pro",
       "pickupSeconds": 32.72,
-      "bankSeconds": 43.2
+      "bankSeconds": 37.16
     },
     {
       "seed": 1028,
@@ -670,7 +670,7 @@
       "seed": 1031,
       "level": "pro",
       "pickupSeconds": 35.8,
-      "bankSeconds": 80.6
+      "bankSeconds": 80.32
     },
     {
       "seed": 1032,
@@ -712,19 +712,19 @@
       "seed": 1038,
       "level": "pro",
       "pickupSeconds": 35.8,
-      "bankSeconds": 86.28
+      "bankSeconds": 81.16
     },
     {
       "seed": 1039,
       "level": "pro",
       "pickupSeconds": 30.12,
-      "bankSeconds": null
+      "bankSeconds": 40.6
     },
     {
       "seed": 1040,
       "level": "pro",
       "pickupSeconds": 30.12,
-      "bankSeconds": 40.6
+      "bankSeconds": 50.56
     }
   ]
 }
