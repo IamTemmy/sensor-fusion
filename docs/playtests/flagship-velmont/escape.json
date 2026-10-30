@@ -1,5 +1,5 @@
 {
-  "engineHash": "a17dd1c50d3f4ebed43017908d9d271e664063360915ed4e11901f7ea7fc8754",
+  "engineHash": "3f0e44ac3ca39fbea003b94999a33aaa2b28422a9a59553369fcc53f222158b1",
   "rows": [
     {
       "level": "rookie",
@@ -12,16 +12,18 @@
     {
       "level": "normal",
       "n": 40,
-      "escaped": 40,
+      "escaped": 39,
       "tied": 0,
-      "left": 0,
-      "misses": []
+      "left": 1,
+      "misses": [
+        1032
+      ]
     },
     {
       "level": "pro",
       "n": 40,
-      "escaped": 39,
-      "tied": 1,
+      "escaped": 40,
+      "tied": 0,
       "left": 0,
       "misses": []
     }

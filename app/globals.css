@@ -733,3 +733,37 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app .team-seat .seat-remove{position:absolute;right:0;top:0;padding:8px}
  .noise-app .team-presets{margin-top:8px}
 }
+@media(min-width:801px){
+ .noise-app .planning-room .lobby{display:grid;grid-template-columns:minmax(280px,.8fr) minmax(0,1.2fr);grid-template-rows:none;gap:8px 24px;padding:22px;align-items:start}
+ .noise-app .planning-room .lobby>*{grid-area:auto;margin-top:0;margin-bottom:0}
+ .noise-app .planning-room .lobby>.eyebrow{grid-area:1/1}
+ .noise-app .planning-room .lobby>h2{grid-area:2/1;font-size:24px;margin:0 0 8px}
+ .noise-app .planning-room .lobby>p:first-of-type,.noise-app .planning-room .lobby>.prep-tip{display:none}
+ .noise-app .planning-room .lobby>.planning-sketch{grid-area:1/2/3/3;height:80px;min-height:0}
+ .noise-app .planning-room .lobby>.crew-code{grid-area:3/1}
+ .noise-app .planning-room .lobby>.invite-button{grid-area:4/1}
+ .noise-app .planning-room .lobby>.mode-picker{grid-area:5/1}
+ .noise-app .planning-room .lobby>.difficulty-pills{grid-area:6/1}
+ .noise-app .planning-room .lobby>small{grid-area:7/1;font:12px/1.4 Arial}
+ .noise-app .planning-room .lobby>.mode-warning{grid-area:8/1;font:12px/1.4 Arial}
+ .noise-app .planning-room .lobby>.planned-museum{grid-area:9/1;padding:10px 12px}
+ .noise-app .planning-room .lobby>.team-presets{grid-area:3/2}
+ .noise-app .planning-room .lobby>.team-board{grid-area:4/2/10/3;align-self:stretch}
+ .noise-app .planning-room .lobby>.lobby-actions{grid-area:10/1/11/3;display:flex;justify-content:space-between;padding-top:8px}
+}
+@media(max-width:800px){
+ .noise-app .planning-room .lobby{display:flex;flex-direction:column;gap:8px}
+ .noise-app .planning-room .lobby>*{width:100%;margin-top:0;margin-bottom:0}
+ .noise-app .planning-room .lobby>.eyebrow{order:0}
+ .noise-app .planning-room .lobby>h2{order:1;font-size:18px}
+ .noise-app .planning-room .lobby>.crew-code{order:2}
+ .noise-app .planning-room .lobby>.invite-button{order:3}
+ .noise-app .planning-room .lobby>.mode-picker{order:4}
+ .noise-app .planning-room .lobby>.team-presets{order:5}
+ .noise-app .planning-room .lobby>.team-board{order:6}
+ .noise-app .planning-room .lobby>.planned-museum{order:7}
+ .noise-app .planning-room .lobby>.difficulty-pills{order:8}
+ .noise-app .planning-room .lobby>small{order:9;font:11px/1.4 Arial}
+ .noise-app .planning-room .lobby>.lobby-actions{order:10}
+ .noise-app .planning-room .lobby>.mode-warning,.noise-app .planning-room .lobby>.prep-tip{display:none}
+}
