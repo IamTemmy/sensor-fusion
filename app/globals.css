@@ -846,3 +846,46 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app .bot-order-title{font-size:10px;line-height:1.2}.noise-app .echo-orders>button:first-child>img{width:23px;height:26px}
  .noise-app .guide-lessons{flex-basis:280px}.noise-app .guide-rule-scroll{flex-basis:125px;min-height:90px}
 }
+
+/* Fit the entry and briefing to laptop height without hiding content. */
+.noise-app .heist-menu h1,.noise-app .heist-menu .home-copy>p{width:100%;text-align:center}
+@media(min-width:801px){
+ .noise-app .heist-menu{padding-block:12px}
+ .noise-app .heist-menu h1{font-size:clamp(40px,6.8dvh,64px);margin-bottom:6px}
+ .noise-app .heist-menu .home-copy>p{font-size:12px;margin-bottom:10px}
+ .noise-app .job-menu{padding:12px 14px}
+ .noise-app .job-menu-heading{margin-bottom:8px}
+ .noise-app .job-menu-heading h2{font-size:18px}
+ .noise-app .entry-tabs,.noise-app .heist-options{gap:10px;margin-block:8px}
+ .noise-app .entry-tabs>button,.noise-app .heist-options>button{padding:7px;min-height:0;gap:3px}
+ .noise-app .entry-tabs>button>span{grid-template-rows:1.3em auto;gap:5px}
+ .noise-app .heist-options>button{grid-template-rows:auto 1.3em auto}
+ .noise-app .entry-tabs .menu-crew,.noise-app .heist-options .menu-crew{height:clamp(58px,10dvh,92px)}
+ .noise-app .heist-options>button>span{font-size:12px;line-height:1.35}
+ .noise-app .start-heist{min-height:46px;padding:10px;margin-top:10px;font-size:23px}
+ .noise-app .menu-footer{margin-top:6px}
+ .noise-app .menu-footer button{min-height:30px}
+ .noise-app .quick-brief-overlay{padding:12px}
+ .noise-app .quick-brief-scroll{padding:12px 18px 0}
+ .noise-app .quick-brief-heading h2{font-size:clamp(24px,3.8dvh,34px);margin:7px 0 4px}
+ .noise-app .quick-brief-tagline{font-size:14px}
+ .noise-app .quick-brief-mode{margin:5px 0 8px}
+ .noise-app .quick-brief .arena-plan-note{padding:8px 10px;gap:6px 12px;margin-bottom:9px}
+ .noise-app .quick-brief-steps .painted-guide{height:clamp(72px,12dvh,116px);margin-bottom:5px}
+ .noise-app .quick-brief-steps>li{padding:9px 10px}
+ .noise-app .quick-brief-steps h3{font-size:17px}
+ .noise-app .quick-brief-steps p{font-size:13px;line-height:1.35;margin-bottom:6px}
+ .noise-app .quick-brief-controls{padding:6px 0;margin-top:7px;gap:20px}
+ .noise-app .quick-brief-warning{padding:7px 10px}
+ .noise-app .quick-brief-footer{padding:8px 18px 10px}
+}
+@media(max-width:800px){
+ .noise-app .heist-menu .home-copy>p{margin-bottom:clamp(40px,10dvh,85px)}
+ .noise-app .entry-tabs>button>span{grid-template-rows:1.3em auto}
+ .noise-app .heist-options>button{grid-template-rows:auto 1.3em auto}
+}
+@media(min-width:801px){
+ .noise-app .menu-crew{--portrait:clamp(48px,8dvh,74px)}
+ .noise-app .menu-crew-friends{--portrait:clamp(44px,7.3dvh,68px)}
+ .noise-app .menu-bot-badge{right:calc(50% - clamp(48px,8dvh,74px));bottom:8px}
+}
