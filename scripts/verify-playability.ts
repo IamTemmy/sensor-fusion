@@ -1,8 +1,9 @@
+import {setupGate,gateOut,engineHash as gateHash} from './museum-gate-context.ts';
 import * as E from '../lib/noise/engine.ts';
 import {writeFileSync,readFileSync} from 'node:fs';import {createHash} from 'node:crypto';
-const engineHash=createHash('sha256').update(readFileSync('lib/noise/engine.ts')).update(readFileSync('lib/noise/flagship-arena.ts')).digest('hex');
-const mode=process.env.PLAY_GATE||'chase',count=Number(process.env.PLAY_COUNT||40),out='docs/playtests/flagship-velmont';
-function make(seed:number,level:E.Difficulty){const g=E.create('PLAY',0,seed);E.add(g,'Idle human','human');E.add(g,'Echo','bot',true);g.difficulty=level;E.setup(g);E.command(g,g.host,{type:'ready'});return g;}
+const engineHash=gateHash;
+const mode=process.env.PLAY_GATE||'chase',count=Number(process.env.PLAY_COUNT||40),out=gateOut;
+function make(seed:number,level:E.Difficulty){const g=E.create('PLAY',0,seed);E.add(g,'Idle human','human');E.add(g,'Echo','bot',true);g.difficulty=level;setupGate(g);E.command(g,g.host,{type:'ready'});return g;}
 let result:unknown;
 if(mode==='echo'){
  const rows=[];for(const level of ['rookie','normal','pro'] as const){const runs=[];for(let seed=1001;seed<1001+count;seed++){const g=make(seed,level);let catches=0,lastEvent=0;while(g.phase==='playing'){E.advance(g,g.now+40);catches+=g.events.filter(e=>e.id>lastEvent&&e.kind==='catch').length;lastEvent=g.events.at(-1)?.id||lastEvent;}runs.push({seed,haul:g.total,echoBank:g.seats[1].bank,escaped:g.seats[1].escaped,catches});}const sorted=runs.map(r=>r.haul).sort((a,b)=>a-b),mid=Math.floor(sorted.length/2),median=sorted.length%2?sorted[mid]:(sorted[mid-1]+sorted[mid])/2;rows.push({level,n:count,median,min:sorted[0],max:sorted.at(-1),runs});}result={engineHash,method:'Human stays idle at own dock for the entire normal 90-second match; Auto Echo alone collects/passes/banks. Crew haul includes a pass to the idle human, if it banks automatically.',rows};

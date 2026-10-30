@@ -22,7 +22,7 @@ test('a lone Auto bot bottles its dropped ordinary-art alarm, throws it, then re
  const g=job(),s=g.seats[1],l=g.loot.find(l=>l.value===500)!;Object.assign(s,{x:370,y:475,hand:l.id});Object.assign(l,{x:s.x,y:s.y,holder:s.id,sealed:false});g.noises=[{id:'own-alarm',source:l.id,attached:s.id,holder:null,x:s.x,y:s.y,kind:'alarm',flight:0,vx:0,vy:0,born:g.now,expires:g.now+10000}];g.guards=[{id:'near',x:500,y:475,angle:0,mode:'patrol',target:{x:550,y:475},route:[{x:550,y:475}],way:0,attention:0,victim:null,entered:true}];
  for(let i=0;i<40;i++){E.botQuietArt(g,s,.04);g.now+=40;}
  assert.equal(s.hand,l.id);assert.ok(l.quietUntil!>g.now);assert.ok(g.noises.some(n=>n.id==='own-alarm'&&n.thrownBy===s.id));assert.ok(g.events.some(e=>e.text.includes('grabbed the alarm')));assert.ok(g.events.some(e=>e.text.includes('threw a distraction')));
- const crown=g.loot.find(l=>l.value===1200)!;s.selfQuiet=undefined;s.hand=crown.id;crown.holder=s.id;g.noises=[{...g.noises[0],id:'crown-alarm',source:crown.id,attached:s.id,thrownBy:undefined}];assert.equal(E.botQuietArt(g,s,.04),false);assert.equal(s.hand,crown.id);
+
 });
 
 test('a bot aims a chase distraction within the pursuing guard’s 200u hearing range',()=>{

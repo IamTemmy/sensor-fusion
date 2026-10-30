@@ -35,10 +35,10 @@ test('duel activation only latches after opening, allowing both solo rivals to l
  const g=job(2,'duos');quiet(g);Object.assign(g.seats[0],g.plate);E.advance(g,g.now+40);assert.equal(g.loot[2].locked,true);
  g.now=g.start+30000;E.advance(g,g.now+40);assert.equal(g.loot[2].locked,false);Object.assign(g.seats[0],E.vanFor(g,0));assert.equal(g.loot[2].locked,false);
 });
-test('Crown slowdown is shared by host and guest; its attached alarm cannot be bottled',()=>{
+test('Crown uses ordinary carry speed on host and guest; a teammate can bottle its alarm',()=>{
  const g=job();quiet(g);g.now=g.start+31000;g.walls=[];const [h,b]=g.seats,c=g.loot[2];Object.assign(h,{x:600,y:300});Object.assign(c,{x:600,y:300});Object.assign(b,g.plate);E.action(g,h,'grab');
- assert.equal(h.hand,c.id);Object.assign(b,{x:650,y:300});assert.notEqual(E.interaction(g,b).kind,'noise');E.action(g,b,'grab');assert.equal(b.hand,null);
- assert.equal(E.carrySpeed(1200,g),E.carrySpeed(1200)*.8);const pred=new OnlinePrediction();pred.accept(E.view(g,h.id));const x=h.x;pred.frame(40,{x:1,y:0},{x:700,y:300});E.command(g,h.id,{type:'input',seq:1,dx:1,dy:0});E.advance(g,g.now+40);assert.ok(Math.abs(h.x-x-E.carrySpeed(1200,g)*.04)<.001);assert.ok(Math.abs(pred.positions().get(h.id)!.x-h.x)<.001);
+ assert.equal(h.hand,c.id);Object.assign(b,{x:650,y:300});assert.equal(E.interaction(g,b).kind,'noise');E.action(g,b,'grab');assert.ok(b.hand);assert.ok(c.quietUntil!>g.now);
+ assert.equal(E.carrySpeed(1200,g),E.carrySpeed(1200));const pred=new OnlinePrediction();pred.accept(E.view(g,h.id));const x=h.x;pred.frame(40,{x:1,y:0},{x:700,y:300});E.command(g,h.id,{type:'input',seq:1,dx:1,dy:0});E.advance(g,g.now+40);assert.ok(Math.abs(h.x-x-E.carrySpeed(1200,g)*.04)<.001);assert.ok(Math.abs(pred.positions().get(h.id)!.x-h.x)<.001);
 });
 test('emitter siren remains at emitter for 4s and serializes in delta packets',()=>{
  const g=job(),s=g.sensors![0];const before=packet(g,g.host),v=unpack(before);assert.equal(E.tripEmitter(g,s),true);assert.equal(E.tripEmitter(g,s),false);
@@ -78,3 +78,5 @@ test('both Hall entrances force at least three turns before the Crown',()=>{
  }
 });
 test('room labels remain inside their named room instead of relocating into neighbours',async()=>{const {roomLabels}=await import('../lib/noise/world-labels.ts');const g=job();for(const label of roomLabels(g,7)){const r=g.arena!.rooms.find(r=>r.name===label.name)!,b=r.bounds!;assert.ok(label.x>b.x&&label.x<b.x+b.w&&label.y>b.y&&label.y<b.y+b.h,label.name);}});
+test('vault sentry leaves its post at opening and joins the patrol through Security',()=>{const g=job();const h=g.guards.find(h=>h.sentryArt==='art3')!;g.now=g.start+29960;E.advance(g,g.now+40);assert.equal(h.sentry,undefined);assert.equal(h.sentryArt,undefined);assert.ok(h.route.some(p=>E.distance(p,g.plate)<30));assert.ok(h.route.some(p=>E.distance(p,g.plate)>200));});
+test('Auto Echo prioritizes the Crown over side art while a human holds the open plate',()=>{const g=job();g.guards=[];g.sensors=[];g.jobEvent=undefined;g.now=g.start+30000;const [human,b]=g.seats;Object.assign(human,g.plate);for(let i=0;i<250&&!g.loot[2].holder;i++)E.advance(g,g.now+40);assert.equal(g.loot[2].holder,b.id);});

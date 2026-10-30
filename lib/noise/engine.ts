@@ -12,7 +12,7 @@ export const VAN_RADIUS=35;
 export const SAFE_ZONE:Rect={x:53,y:475,w:70,h:70};
 export const inside=(p:Vec,r:Rect)=>p.x>=r.x&&p.x<=r.x+r.w&&p.y>=r.y&&p.y<=r.y+r.h;
 export const inSafeZone=(p:Vec)=>inside(p,SAFE_ZONE); // legacy co-op helper
-export const isFlagship=(g:Game|View)=>g.arena?.id==='flagship-velmont';
+export const isFlagship=(g:Game|View)=>['flagship-velmont','night-archive'].includes(g.arena?.id||'');
 export const vaultReady=(g:Game|View)=>!isFlagship(g)||(g.phase==='playing'||g.phase==='finished')&&g.now-g.start>=30000;
 export const vanFor=(g:Game|View,team:number):Vec=>g.crewMode==='coop'&&g.arena?.coopDock?g.arena.coopDock:g.arena?.docks?g.arena.docks[g.crewMode==='coop'?0:(team+(g.match-1)%2)%2]:g.crewMode==='coop'?EXIT:team===0?{x:90,y:510}:team===1?{x:870,y:!g.arena&&g.layout===1?90:510}:{x:480,y:65};
 export const zoneFor=(g:Game|View,team:number):Rect=>{const p=vanFor(g,team);return {x:p.x-35,y:p.y-35,w:70,h:70};};
@@ -25,7 +25,7 @@ export function sensors(g:Game|View):Sensor[]{return g.sensors||[];}
 export const CARRY_SPEED=100;
 const alarmHearing=(g:Game|View)=>g.crewMode==='coop'?(difficultyOf(g)==='pro'?340:g.arena&&difficultyOf(g)==='normal'?280:170):170;
 export const LOOT_TOTAL=4300;
-export const carrySpeed=(value:number,g?:Game|View)=>(110-Math.max(0,Math.min(1300,value-200))*30/1300)*(g&&isFlagship(g)&&value===1200?.8:1);
+export const carrySpeed=(value:number,g?:Game|View)=>(110-Math.max(0,Math.min(1300,value-200))*30/1300);
 export const COOP_GOAL=2600;
 export const LAYOUT_NAMES=['Echo Gallery','Night Archive','Crossroads'];
 export type Difficulty='rookie'|'normal'|'pro';
@@ -120,7 +120,7 @@ export function setup(g:Game,arenaFactory?:typeof museumArena){guardPaths.delete
 }
 
 function setupMuseum(g:Game,arenaFactory?:typeof museumArena){
- const map=arenaFactory?arenaFactory(g.layout,g.seats.length):g.seats.length<=4&&g.crewMode!=='trios'?flagshipArena(g.seats.length):museumArena(g.layout,g.seats.length);if(map.id==='flagship-velmont')g.layout=0;g.arena=map;g.walls=map.walls;g.plate={...map.plate};if(isFlagship(g))navigationEdges(g.walls);
+ const map=arenaFactory?arenaFactory(g.layout,g.seats.length):g.seats.length<=4&&g.crewMode!=='trios'?flagshipArena(g.seats.length):museumArena(g.layout,g.seats.length);if(map.id==='flagship-velmont')g.layout=0;if(map.id==='night-archive')g.layout=1;g.arena=map;g.walls=map.walls;g.plate={...map.plate};if(isFlagship(g))navigationEdges(g.walls);
  g.difficulty=difficultyOf(g);const rival=g.crewMode!=='coop';
  const values=map.capacity===6?[200,200,1200,500,500,500,400,400,200,200]:[200,200,1200,500,600,600,500,500];
  const names=['Pocket relic','Music box','Crown mask','Contested collection','Wing masterpiece','Wing masterpiece','Moonlit portrait','Blue moon vase','Archive folio','Moon pendant'];
@@ -211,7 +211,7 @@ export function sameCrew(a:{team:number},b:{team:number}){return a.team===b.team
 export function crewScores(g:Game|View){return [...new Set(g.seats.map(s=>s.team))].sort().map(team=>({team,name:CREW_NAMES[team],bank:g.seats.filter(s=>s.team===team).reduce((n,s)=>n+s.bank,0)}));}
 export const isDuel=(g:Game|View)=>g.crewMode==='duos'&&g.seats.length===2&&g.seats[0].team!==g.seats[1].team;
 export function plateOpen(g:Game|View){return vaultReady(g)&&g.seats.some(s=>!s.escaped&&s.stun<=g.now&&distance(s,g.plate)<30);}
-function capturable(g:Game|View,s:Thief,n:Noise){return !(isFlagship(g)&&(n.source?.startsWith('emitter:')||g.loot.some(l=>l.id===n.source&&l.value===1200)))&&!n.holder&&n.flight<=0&&!(n.thrownBy===s.id&&g.now-(n.thrownAt||0)<3000)&&distance(n,s)<(n.attached?90:115)&&sight(s,n,g.walls);}
+function capturable(g:Game|View,s:Thief,n:Noise){return !(isFlagship(g)&&n.source?.startsWith('emitter:'))&&!n.holder&&n.flight<=0&&!(n.thrownBy===s.id&&g.now-(n.thrownAt||0)<3000)&&distance(n,s)<(n.attached?90:115)&&sight(s,n,g.walls);}
 export function stashSpot(g:Game|View,s:Thief){return hidingSpots(g).findIndex((p,i)=>distance(s,p)<45&&sight(s,p,g.walls)&&!g.loot.some(l=>l.stashedAt===i&&!l.banked));}
 export function passTarget(g:Game|View,s:Thief,aim:Vec=s.aim){return g.seats.filter(b=>b.id!==s.id&&sameCrew(b,s)&&!b.hand&&!b.escaped&&b.stun<=g.now&&distance(b,s)<=220&&sight(s,b,g.walls)).sort((a,b)=>distance(a,aim)-distance(b,aim)||distance(a,s)-distance(b,s))[0];}
 export function canReceiveArt(g:Game|View,from:Thief,to:Thief){return from.id!==to.id&&sameCrew(from,to)&&!to.hand&&!to.escaped&&to.stun<=g.now&&distance(from,to)<=220&&sight(from,to,g.walls)&&g.guards.every(h=>!guardActive(g,h)||distance(h,to)>45||!sight(h,to,g.walls));}
@@ -228,7 +228,7 @@ export function tripEmitter(g:Game,s:Sensor){
 }
 export function crossesBeam(a:Vec,b:Vec,r:Rect){let lo=0,hi=1;for(const [p,d,min,max] of [[a.x,b.x-a.x,r.x,r.x+r.w],[a.y,b.y-a.y,r.y,r.y+r.h]]){if(Math.abs(d)<1e-9){if(p<min||p>max)return false;}else{let t=(min-p)/d,u=(max-p)/d;if(t>u)[t,u]=[u,t];lo=Math.max(lo,t);hi=Math.min(hi,u);if(lo>hi)return false;}}return hi>=0&&lo<=1;}
 export function emptyPost(g:Game|View,l:Loot){const h=g.guards.find(h=>h.sentryArt===l.id&&h.sentry);return !!h&&guardActive(g,h)&&distance(h,h.sentry!)>65&&!l.holder&&!l.banked&&!l.claimed;}
-function catchArt(g:Game,l:Loot,s:Thief){l.flight=undefined;l.stashedAt=undefined;l.droppedAt=undefined;l.recoverAt=undefined;l.holder=s.id;s.hand=l.id;s.passUntil=g.now+1400;Object.assign(l,{x:s.x,y:s.y});if(isFlagship(g)&&l.value===1200)l.quietUntil=0;hush(g,l);if(!l.quietUntil||l.quietUntil<=g.now)alarm(g,s,l.id,s.id);}
+function catchArt(g:Game,l:Loot,s:Thief){l.flight=undefined;l.stashedAt=undefined;l.droppedAt=undefined;l.recoverAt=undefined;l.holder=s.id;s.hand=l.id;s.passUntil=g.now+1400;Object.assign(l,{x:s.x,y:s.y});hush(g,l);if(!l.quietUntil||l.quietUntil<=g.now)alarm(g,s,l.id,s.id);}
 export function advanceArtFlights(g:Game){for(const l of g.loot){const f=l.flight;if(!f)continue;const t=Math.min(1,(g.now-f.at)/500),p={x:f.from.x+(f.to.x-f.from.x)*t,y:f.from.y+(f.to.y-f.from.y)*t};const last={x:l.x,y:l.y};let blocked=false,interceptor:Thief|undefined;const steps=Math.max(1,Math.ceil(distance(last,p)/5));for(let i=1;i<=steps;i++){const q={x:last.x+(p.x-last.x)*i/steps,y:last.y+(p.y-last.y)*i/steps};if(!clear(q,6,g.walls)){blocked=true;break;}l.x=q.x;l.y=q.y;interceptor=g.seats.find(r=>r.team!==f.team&&!r.hand&&!r.escaped&&r.stun<=g.now&&distance(r,q)<=30&&sight(r,q,g.walls));if(interceptor)break;}
  if(interceptor){catchArt(g,l,interceptor);event(g,interceptor.name+' intercepted '+l.name+'!','capture',interceptor);continue;}
  if(t<1&&!blocked)continue;
@@ -253,7 +253,7 @@ export function interaction(g:Game|View,s:Thief):{label:string;target?:Vec;id?:s
 export function configure(g:Game,mode:CrewMode){if(g.phase!=='lobby')throw Error('Choose crews in the lobby.');if(mode==='duos'&&g.seats.length>4)mode='trios';g.crewMode=mode;const teams=mode==='coop'?1:2;g.seats.forEach((s,i)=>s.team=i%teams);}
 export function fillCrews(g:Game){if(g.phase!=='lobby')throw Error('Fill crews before starting.');const teams=g.crewMode==='coop'?1:g.crewMode==='trios'?2:Math.max(2,...g.seats.map(s=>s.team+1));const size=g.crewMode==='trios'?3:g.crewMode==='duos'?2:Math.max(2,g.seats.length);for(let team=0;team<teams;team++)while(g.seats.filter(s=>s.team===team).length<size&&g.seats.length<6){const b=add(g,['Echo','Pip','Moss','Jinx','Vale'][g.seats.filter(s=>s.bot).length]||'Echo','bot',true);b.team=team;}}
 function hush(g:Game,l:Loot){g.noises=g.noises.filter(n=>!(n.source===l.id&&n.attached));}
-function drop(g:Game,s:Thief,captured=false){if(!s.hand)return;const l=g.loot.find(x=>x.id===s.hand),n=g.noises.find(x=>x.id===s.hand);if(l){l.holder=null;l.x=s.x;l.y=s.y;l.droppedAt=g.now;l.recoverAt=g.now+5000;event(g,CREW_NAMES[s.team]+' dropped '+l.name+' at '+roomName(l)+'!');const n=g.noises.find(n=>n.source===l.id&&n.attached);if(n){if(captured)hush(g,l);else{n.attached=null;n.expires=g.now+6500;n.x=s.x;n.y=s.y;}}if(captured)l.quietUntil=isFlagship(g)&&l.value===1200?0:g.now+8000;}if(n){n.attached=null;n.thrownBy=s.id;n.thrownAt=g.now;n.heardBy=[];n.ignoredBy=[];n.holder=null;n.x=s.x;n.y=s.y;n.expires=g.now+5000;n.born=g.now;}s.hand=null;}
+function drop(g:Game,s:Thief,captured=false){if(!s.hand)return;const l=g.loot.find(x=>x.id===s.hand),n=g.noises.find(x=>x.id===s.hand);if(l){l.holder=null;l.x=s.x;l.y=s.y;l.droppedAt=g.now;l.recoverAt=g.now+5000;event(g,CREW_NAMES[s.team]+' dropped '+l.name+' at '+roomName(l)+'!');const n=g.noises.find(n=>n.source===l.id&&n.attached);if(n){if(captured)hush(g,l);else{n.attached=null;n.expires=g.now+6500;n.x=s.x;n.y=s.y;}}if(captured)l.quietUntil=g.now+8000;}if(n){n.attached=null;n.thrownBy=s.id;n.thrownAt=g.now;n.heardBy=[];n.ignoredBy=[];n.holder=null;n.x=s.x;n.y=s.y;n.expires=g.now+5000;n.born=g.now;}s.hand=null;}
 export function action(g:Game,s:Thief,type:string,aim?:Vec){if(g.phase!=='playing'||s.stun>g.now)return;
  // A queued pass must never throw a different item acquired before execution.
  if(type.startsWith('throw:')){if(s.hand!==type.slice(6))return;type='throw';}
@@ -269,7 +269,7 @@ export function action(g:Game,s:Thief,type:string,aim?:Vec){if(g.phase!=='playin
   if(target.kind==='rescue'){if(s.rescueId!==target.id){s.rescueId=target.id!;s.rescueAt=g.now;const guard=g.guards.find(h=>h.id===g.seats.find(p=>p.id===target.id)?.capturedBy);if(guard)guard.retreatUntil=Math.max(guard.retreatUntil||0,g.now+2500);event(g,'Stay beside '+g.seats.find(p=>p.id===target.id)!.name+' for 1.2s to rescue.');}return;}
   if(target.kind==='stash'){const l=g.loot.find(l=>l.id===s.hand)!;l.stashedAt=Number(target.id);Object.assign(l,hidingSpots(g)[l.stashedAt]);l.holder=null;l.droppedAt=undefined;l.recoverAt=undefined;l.quietUntil=0;s.hand=null;g.noises=g.noises.filter(n=>n.source!==l.id||!!n.holder);g.guards.forEach(h=>{if(h.returnArt===l.id)h.returnArt=undefined;});event(g,s.name+' stashed '+l.name+'. Anyone can take it.','info',l);return;}
   if(target.kind==='noise'){const n=g.noises.find(n=>n.id===target.id)!;if(n.attached){const l=g.loot.find(l=>l.id===n.source);if(l)l.quietUntil=g.now+8000;n.attached=null;}else if(n.source){const l=g.loot.find(l=>l.id===n.source);if(l)l.quietUntil=g.now+8000;}n.holder=s.id;n.flight=0;n.vx=n.vy=0;n.kind='capsule';n.expires=g.now+10000;s.hand=n.id;if(!n.counted){s.captures++;n.counted=true;}s.windup=g.now+650;event(g,s.name+' grabbed the alarm. Aim, then throw!','capture',s);return;}
-  if(target.kind==='loot'){const l=g.loot.find(l=>l.id===target.id)!;if(isFlagship(g)&&l.value===1200){if(!vaultReady(g))return;l.quietUntil=0;}if(l.stashedAt!==undefined){l.stashedAt=undefined;l.quietUntil=0;}l.holder=s.id;l.claimed=true;l.locked=false;l.droppedAt=undefined;l.recoverAt=undefined;s.hand=l.id;if(!l.quietUntil||l.quietUntil<=g.now){hush(g,l);alarm(g,s,l.id,s.id);}event(g,isFlagship(g)&&l.value===1200?'CROWN ALARM · It cannot be removed. Pass the Crown or carry it home.':'The art sets off an alarm! G drops it. An empty-handed partner can grab its alarm.','info',s);return;}
+  if(target.kind==='loot'){const l=g.loot.find(l=>l.id===target.id)!;if(isFlagship(g)&&l.value===1200&&!vaultReady(g))return;if(l.stashedAt!==undefined){l.stashedAt=undefined;l.quietUntil=0;}l.holder=s.id;l.claimed=true;l.locked=false;l.droppedAt=undefined;l.recoverAt=undefined;s.hand=l.id;if(!l.quietUntil||l.quietUntil<=g.now){hush(g,l);alarm(g,s,l.id,s.id);}event(g,isFlagship(g)&&l.value===1200?'CROWN TAKEN · Your teammate can grab its alarm. Get it to the van.':'The art sets off an alarm! G drops it. An empty-handed partner can grab its alarm.','info',s);return;}
   if(target.kind==='locked')event(g,!vaultReady(g)?'Vault time-lock: opens when 1:00 remains.':'The Crown needs a teammate on the Security plate.');
   return;
  }
@@ -470,6 +470,12 @@ function guardedWalk(g:Game,s:Thief,target:Vec,dt:number,speed:number,allowCover
   return guards.every(h=>{const already=botDanger(g,s,h,s,true);let previous=distance(h,s);
    for(let i=1;i<=n;i++){const p={x:s.x+(next.x-s.x)*i/n,y:s.y+(next.y-s.y)*i/n};if(botDanger(g,s,h,p,true)&&(!already||distance(h,p)<previous-.1))return false;previous=distance(h,p);}return true;});};
  let next=route.next;
+ // A noisy Crown carrier must keep escaping an active pursuit. The weighted
+ // route still chooses walls/corners; reject immediate steps into grabbing range.
+ if(g.loot.some(l=>l.holder===s.id&&l.value===1200)&&g.guards.some(h=>guardActive(g,h)&&h.mode==='chase'&&h.victim===s.id)){
+  const d=distance(s,next)||1,step={x:s.x+(next.x-s.x)/d*speed*dt,y:s.y+(next.y-s.y)/d*speed*dt};
+  if(corridor(s,next,thiefWalls(g,s))&&g.guards.filter(h=>guardActive(g,h)).every(h=>distance(h,step)>70||distance(h,step)>distance(h,s))){walk(g,s,next,dt,speed);return;}
+ }
  // Weighted paths can start inside a cone; use a clear escape toward cover when that
  // first grid edge approaches the guard. This still passes the same visibility gate.
  if(!allowCover&&corridor(s,target,thiefWalls(g,s))&&safeSegment(target))next=target;
@@ -622,12 +628,12 @@ export function botStashTactic(g:Game,s:Thief){
 }
 /** Use the same drop/capture/throw/recover actions available to a lone human. */
 export function botQuietArt(g:Game,s:Thief,dt:number){
- if(!isFlagship(g)||s.mode!=='auto'||s.escaped||s.stun>g.now||g.seats.some(p=>p.id!==s.id&&sameCrew(p,s)&&p.stun>g.now&&!p.escaped)){s.selfQuiet=undefined;return false;}
+ if(!isFlagship(g)||s.mode!=='auto'||s.escaped||s.stun>g.now||g.seats.some(p=>p.id!==s.id&&sameCrew(p,s)&&p.stun>g.now&&!p.escaped)&&!g.loot.some(l=>l.value===1200&&(l.holder===s.id||s.selfQuiet?.artId===l.id))){s.selfQuiet=undefined;return false;}
  const held=g.loot.find(l=>l.id===s.hand),home=vanFor(g,s.team);
- if(!s.selfQuiet&&held&&held.value!==1200&&distance(s,home)>100&&g.end-g.now>22000){
+ if(!s.selfQuiet&&held&&distance(s,home)>100&&g.end-g.now>22000){
   const noise=g.noises.find(n=>n.source===held.id&&n.attached===s.id);
   const helper=g.seats.some(p=>p.id!==s.id&&sameCrew(p,s)&&!p.escaped&&!p.hand&&p.stun<=g.now&&distance(p,s)<100&&sight(p,s,g.walls));
-  if(noise&&!helper&&g.guards.some(h=>guardActive(g,h)&&distance(h,s)<300)&&g.now>=s.cooldown){
+  if(noise&&!helper&&(held.value===1200||g.guards.some(h=>guardActive(g,h)&&distance(h,s)<300))&&g.now>=s.cooldown){
    action(g,s,'drop');if(!s.hand)s.selfQuiet={artId:held.id,noiseId:noise.id,until:g.now+4000};
   }
  }
@@ -645,9 +651,11 @@ export function botQuietArt(g:Game,s:Thief,dt:number){
 }
 function bot(g:Game,s:Thief,dt:number){
  if(s.escaped||s.stun>g.now)return;
+ if(g.loot.some(l=>l.value===1200&&(l.holder===s.id||s.selfQuiet?.artId===l.id))&&botQuietArt(g,s,dt))return;
  if(botEscape(g,s,dt))return;
  if(botQuietArt(g,s,dt))return;
- if(botStashTactic(g,s)||botSentryTactic(g,s,dt))return;
+ const crownJob=isFlagship(g)&&vaultReady(g)&&g.loot.some(l=>l.value===1200&&!l.banked&&!l.holder)&&g.seats.some(p=>!p.bot&&sameCrew(p,s)&&!p.escaped&&p.stun<=g.now&&distance(p,g.plate)<30);
+ if(!crownJob&&(botStashTactic(g,s)||botSentryTactic(g,s,dt)))return;
  const before={x:s.x,y:s.y};
  if(s.unstickTarget&&(s.unstickUntil||0)>g.now&&distance(s,s.unstickTarget)>8&&(!s.hand&&g.crewMode!=='coop'||!g.seats.some(p=>p.team===s.team&&p.stun>g.now))){guardedWalk(g,s,s.unstickTarget,dt,s.hand?carrySpeed(g.loot.find(l=>l.id===s.hand)?.value||200,g):145,false);if(distance(before,s)<.1)idleSafety(g,s,dt);return;}
  if(s.unstickTarget){s.unstickTarget=undefined;s.unstickUntil=0;s.progressAt=g.now;s.progressPoint={...before};}
@@ -709,10 +717,12 @@ function botDecision(g:Game,s:Thief,dt:number){if(s.escaped||s.stun>g.now)return
  if(s.mode==='van'||automatic&&crew.some(p=>!p.bot&&p.escaped)||g.boardingAt||g.end-g.now<10000){botCall(g,s,'van','Right behind you.');if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));guardedWalk(g,s,home,dt,150);if(homeSafe(g,s))action(g,s,'extract');return;}
  const captive=crew.find(x=>x.stun>g.now&&!x.escaped);
  if(captive){s.spacing=false;const exposed=botRoute(g,s,captive).exposed||rescueForecastExposed(g,s,captive)||!!held&&carryingRescueExposed(g,s,captive);
-  if(held&&(distance(s,home)<distance(s,captive)||exposed)){botCall(g,s,'bank-rescue','Banking first, then coming for you');guardedWalk(g,s,home,dt,carrySpeed(held.value,g));return;}
+  if(held&&(held.value===1200||distance(s,home)<distance(s,captive)||exposed)){botCall(g,s,'bank-rescue','Banking first, then coming for you');guardedWalk(g,s,home,dt,carrySpeed(held.value,g));return;}
   if(exposed){s.rescueId=null;if(!idleSafety(g,s,dt))waitForRescue(g,s,dt);botCall(g,s,'wait-rescue','Waiting for the guard to clear');if(capsule&&g.now>=s.windup)action(g,s,'throw',decoy(g,s));return;}
   botCall(g,s,'rescue','Coming to free '+captive.name);if(distance(s,captive)>32)guardedWalk(g,s,captive,dt,165);if(distance(s,captive)<40)action(g,s,'grab');return;
  }
+ const crewAlarm=!s.hand&&['auto','cover'].includes(s.mode)&&g.noises.find(n=>g.loot.some(l=>l.id===n.source&&l.value===1200)&&n.attached&&crew.some(p=>p.id!==s.id&&p.id===n.attached)&&capturable(g,s,n));
+ if(crewAlarm&&interaction(g,s).id===crewAlarm.id){action(g,s,'grab');return;}
  if(defendCarrier(g,s,dt))return;
  // Keep the landing spot stable while a teammate's pass is airborne.
  const incoming=g.loot.find(l=>l.flight?.team===s.team&&distance(l.flight.to,s)<70);
@@ -728,7 +738,7 @@ function botDecision(g:Game,s:Thief,dt:number){if(s.escaped||s.stun>g.now)return
   if(point){botCall(g,s,'receive','PASS!');if(distance(s,point)>9)guardedWalk(g,s,point,dt,165);return;}
  }
  const abandoned=g.loot.filter(l=>!l.sealed&&!l.flight&&emptyPost(g,l)&&(!l.locked||plateOpen(g))).sort((a,b)=>distance(s,a)-distance(s,b))[0];
- if(!held&&!capsule&&mode!=='plate'&&mode!=='follow'&&abandoned&&!botRoute(g,s,abandoned).exposed){botCall(g,s,'post-empty',"Post's empty, going in");guardedWalk(g,s,abandoned,dt,150);if(distance(s,abandoned)<50)action(g,s,'grab');return;}
+ if(!held&&!capsule&&mode!=='plate'&&mode!=='follow'&&!(vaultReady(g)&&crew.some(p=>!p.bot&&p.stun<=g.now&&distance(p,g.plate)<30))&&abandoned&&!botRoute(g,s,abandoned).exposed){botCall(g,s,'post-empty',"Post's empty, going in");guardedWalk(g,s,abandoned,dt,150);if(distance(s,abandoned)<50)action(g,s,'grab');return;}
  const plateLoot=vaultReady(g)&&g.loot.find(l=>l.locked&&!l.banked&&!l.guardCarrier&&!l.flight&&!l.holder&&!l.sealed);
  const plateHuman=crew.find(p=>!p.bot&&!p.escaped&&p.stun<=g.now&&distance(p,g.plate)<30);
  const atJack=plateLoot&&human&&distance(human,plateLoot)<70;
@@ -779,7 +789,7 @@ function botDecision(g:Game,s:Thief,dt:number){if(s.escaped||s.stun>g.now)return
  if(l&&g.now-g.start>(autonomous?(difficultyOf(g)==='rookie'?5000:isFlagship(g)&&difficultyOf(g)==='pro'?0:1000):isFlagship(g)?1000:12000)){if(autonomous&&difficultyOf(g)==='rookie'&&distance(s,l)<55&&Math.floor((g.now-g.start)/1000)%3===0)return;guardedWalk(g,s,l,dt,autonomous?145*rivalSkill:isFlagship(g)?165:115);if(distance(l,s)<50)action(g,s,'grab');return;}
  if(partner){const home=vanFor(g,s.team),d=distance(partner,home)||1;const receiving={x:partner.x+(home.x-partner.x)/d*38,y:partner.y+(home.y-partner.y)/d*38};const target=clear(receiving,13,thiefWalls(g,s))&&sight(partner,receiving,g.walls)?receiving:partner;if(distance(s,target)>12)guardedWalk(g,s,target,dt,150);}
 }
-function step(g:Game){const dt=STEP/1000;if(isFlagship(g)){if(!g.vaultWarned&&g.now-g.start>=20000){g.vaultWarned=true;event(g,'VAULT · Opens in 10 seconds. Get to Security.','honk');}if(!g.vaultOpened&&vaultReady(g)){g.vaultOpened=true;event(g,'VAULT OPEN · Hold the Security plate to release the Crown.','capture',g.plate);}}updateJobEvent(g);advanceArtFlights(g);
+function step(g:Game){const dt=STEP/1000;if(isFlagship(g)){if(!g.vaultWarned&&g.now-g.start>=20000){g.vaultWarned=true;event(g,'VAULT · Opens in 10 seconds. Get to Security.','honk');}if(!g.vaultOpened&&vaultReady(g)){g.vaultOpened=true;const sentry=g.guards.find(h=>h.sentryArt==='art3');if(sentry){sentry.sentry=undefined;sentry.sentryArt=undefined;sentry.sentryUntil=undefined;sentry.victim=null;sentry.mode='patrol';sentry.attention=0;sentry.route=(g.arena?.routes[2]||[g.plate,{x:g.plate.x-60,y:g.plate.y}]).map(p=>({...p}));sentry.way=sentry.route.reduce((best,p,i)=>distance(p,g.plate)<distance(sentry.route[best],g.plate)?i:best,0);sentry.target={...sentry.route[sentry.way]};}event(g,'VAULT OPEN · Hold the Security plate to release the Crown.','capture',g.plate);}}updateJobEvent(g);advanceArtFlights(g);
  // A solo rival has no partner to hold the plate: activating it unlocks the crown for both players.
  if(isDuel(g)&&plateOpen(g)){const crown=g.loot.find(l=>l.locked&&!l.banked);if(crown){crown.locked=false;event(g,'DUEL · Crown unlocked for both thieves.','info',g.plate);}}
  if(!g.honking&&g.end-g.now<=15000){g.honking=true;event(g,'15s LEFT. Return to your own van or lose 25% of your personal bank!','honk');}

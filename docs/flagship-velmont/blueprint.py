@@ -73,7 +73,7 @@ export function flagshipArena(players:number):MuseumArena {
  const order=[0,1,7,2,5,6,3,4];
  const routes=d.guardRoutes.map(r=>r.map(point));
  return {id:'flagship-velmont',name:'The Velmont',capacity:players<=2?2:4,theme:'sculpture',
- brief:'A building of blind corners. Crown opens at 1:00. Hold Security’s plate; its alarm stays on the carrier. Noise on you brings guards to you. Noise elsewhere sends them there.',
+ brief:'A building of blind corners. Crown opens at 1:00. Hold Security’s plate; a teammate can take its alarm. Noise on you brings guards to you. Noise elsewhere sends them there.',
  walls:d.walls,slots:order.map(i=>({x:d.arts[i].x,y:d.arts[i].y})),plate:d.plate,
  routes:[routes[0],routes[3],routes[1],routes[2],routes[0],routes[1]],
  niches:d.hides.map(p=>({...p,back:'left',kind:'recess'})),

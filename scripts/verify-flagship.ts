@@ -1,10 +1,11 @@
+import {setupGate,gateOut,engineHash as gateHash} from './museum-gate-context.ts';
 import * as E from '../lib/noise/engine.ts';
 import {writeFileSync,mkdirSync,readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
 import {performance} from 'node:perf_hooks';
-const mode=process.env.FLAGSHIP_GATE||'idle',out='docs/playtests/flagship-velmont';mkdirSync(out,{recursive:true});
-const hash=createHash('sha256').update(readFileSync('lib/noise/engine.ts')).update(readFileSync('lib/noise/flagship-arena.ts')).digest('hex');
-function make(seed:number,n:number,level:E.Difficulty,swap=0){const g=E.create('GATE',0,seed);E.add(g,'Human','h');for(let i=1;i<n;i++)E.add(g,'Bot '+i,'b'+i,true);if(n===4)E.configure(g,'duos');g.difficulty=level;g.match=swap;E.setup(g);E.command(g,g.host,{type:'ready'});return g;}
+const mode=process.env.FLAGSHIP_GATE||'idle',out=gateOut;mkdirSync(out,{recursive:true});
+const hash=gateHash;
+function make(seed:number,n:number,level:E.Difficulty,swap=0){const g=E.create('GATE',0,seed);E.add(g,'Human','h');for(let i=1;i<n;i++)E.add(g,'Bot '+i,'b'+i,true);if(n===4)E.configure(g,'duos');g.difficulty=level;g.match=swap;setupGate(g);E.command(g,g.host,{type:'ready'});return g;}
 function go(g:E.Game,s:E.Thief,t:E.Vec){const p=E.steer(s,t,E.thiefWalls(g,s)),d=E.distance(s,p)||1;E.command(g,s.id,{type:'input',seq:s.lastSeq+1,dx:(p.x-s.x)/d,dy:(p.y-s.y)/d});}
 function naive(g:E.Game){const s=g.seats[0];if(s.stun>g.now||s.escaped)return;const l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(s,a)-E.distance(s,b))[0];const t=s.hand||!l||g.end-g.now<7000?E.vanFor(g,0):l;go(g,s,t);if(!s.hand&&l&&E.distance(s,l)<50&&E.interaction(g,s).kind==='loot')E.action(g,s,'grab');if(g.end-g.now<7000&&E.homeSafe(g,s))E.action(g,s,'extract');}
 let result:any;
