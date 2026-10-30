@@ -1,0 +1,217 @@
+{
+  "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+  "matches": 30,
+  "stalls": 0,
+  "cases": [
+    {
+      "seed": 1001,
+      "n": 2,
+      "level": "rookie",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1002,
+      "n": 4,
+      "level": "rookie",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1003,
+      "n": 2,
+      "level": "normal",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1004,
+      "n": 4,
+      "level": "normal",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1005,
+      "n": 2,
+      "level": "pro",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1006,
+      "n": 4,
+      "level": "pro",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1007,
+      "n": 2,
+      "level": "rookie",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1008,
+      "n": 4,
+      "level": "rookie",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1009,
+      "n": 2,
+      "level": "normal",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1010,
+      "n": 4,
+      "level": "normal",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1011,
+      "n": 2,
+      "level": "pro",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1012,
+      "n": 4,
+      "level": "pro",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1013,
+      "n": 2,
+      "level": "rookie",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1014,
+      "n": 4,
+      "level": "rookie",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1015,
+      "n": 2,
+      "level": "normal",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1016,
+      "n": 4,
+      "level": "normal",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1017,
+      "n": 2,
+      "level": "pro",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1018,
+      "n": 4,
+      "level": "pro",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1019,
+      "n": 2,
+      "level": "rookie",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1020,
+      "n": 4,
+      "level": "rookie",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1021,
+      "n": 2,
+      "level": "normal",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1022,
+      "n": 4,
+      "level": "normal",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1023,
+      "n": 2,
+      "level": "pro",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1024,
+      "n": 4,
+      "level": "pro",
+      "swap": 1,
+      "stalls": []
+    },
+    {
+      "seed": 1025,
+      "n": 2,
+      "level": "rookie",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1026,
+      "n": 4,
+      "level": "rookie",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1027,
+      "n": 2,
+      "level": "normal",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1028,
+      "n": 4,
+      "level": "normal",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1029,
+      "n": 2,
+      "level": "pro",
+      "swap": 0,
+      "stalls": []
+    },
+    {
+      "seed": 1030,
+      "n": 4,
+      "level": "pro",
+      "swap": 0,
+      "stalls": []
+    }
+  ]
+}

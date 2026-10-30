@@ -1,0 +1,62 @@
+{
+  "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+  "matches": 9,
+  "stalls": 0,
+  "archivePasses": 9,
+  "cases": [
+    {
+      "level": "rookie",
+      "seed": 1001,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "rookie",
+      "seed": 1013,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "rookie",
+      "seed": 1040,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "normal",
+      "seed": 1001,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "normal",
+      "seed": 1013,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "normal",
+      "seed": 1040,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "pro",
+      "seed": 1001,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "pro",
+      "seed": 1013,
+      "stalls": [],
+      "archivePass": true
+    },
+    {
+      "level": "pro",
+      "seed": 1040,
+      "stalls": [],
+      "archivePass": true
+    }
+  ]
+}

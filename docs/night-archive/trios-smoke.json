@@ -1,0 +1,283 @@
+{
+  "engineHash": "456a1bc1b7754340e93b2b7a06fc0155ad5784e26c6d902161bf3a289e28d253",
+  "method": "30 six-thief 3v3 matches, idle human, 10 fixed seeds per difficulty. Idle checks begin after opening grace and exclude aboard/tied/hidden/rescue/bottling/plate waits.",
+  "matches": 30,
+  "invalid": 0,
+  "stalls": 2,
+  "rows": [
+    {
+      "level": "rookie",
+      "seed": 1001,
+      "layout": 1,
+      "bank": 2150,
+      "escaped": 3,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1002,
+      "layout": 1,
+      "bank": 1125,
+      "escaped": 3,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1003,
+      "layout": 1,
+      "bank": 2350,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1004,
+      "layout": 1,
+      "bank": 2575,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1005,
+      "layout": 1,
+      "bank": 2550,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1006,
+      "layout": 2,
+      "bank": 2400,
+      "escaped": 3,
+      "stalls": [
+        "p2"
+      ],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1007,
+      "layout": 2,
+      "bank": 3100,
+      "escaped": 5,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1008,
+      "layout": 2,
+      "bank": 3000,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1009,
+      "layout": 2,
+      "bank": 3100,
+      "escaped": 5,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "rookie",
+      "seed": 1010,
+      "layout": 0,
+      "bank": 3100,
+      "escaped": 5,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1001,
+      "layout": 1,
+      "bank": 2375,
+      "escaped": 3,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1002,
+      "layout": 1,
+      "bank": 2150,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1003,
+      "layout": 1,
+      "bank": 2175,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1004,
+      "layout": 1,
+      "bank": 2450,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1005,
+      "layout": 1,
+      "bank": 1850,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1006,
+      "layout": 2,
+      "bank": 2600,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1007,
+      "layout": 2,
+      "bank": 2600,
+      "escaped": 5,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1008,
+      "layout": 2,
+      "bank": 3100,
+      "escaped": 5,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1009,
+      "layout": 2,
+      "bank": 2000,
+      "escaped": 1,
+      "stalls": [
+        "p2"
+      ],
+      "invalid": 0
+    },
+    {
+      "level": "normal",
+      "seed": 1010,
+      "layout": 0,
+      "bank": 1700,
+      "escaped": 1,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1001,
+      "layout": 1,
+      "bank": 1375,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1002,
+      "layout": 1,
+      "bank": 1475,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1003,
+      "layout": 1,
+      "bank": 1325,
+      "escaped": 1,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1004,
+      "layout": 1,
+      "bank": 1375,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1005,
+      "layout": 1,
+      "bank": 1475,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1006,
+      "layout": 2,
+      "bank": 4125,
+      "escaped": 4,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1007,
+      "layout": 2,
+      "bank": 2275,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1008,
+      "layout": 2,
+      "bank": 1775,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1009,
+      "layout": 2,
+      "bank": 2650,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    },
+    {
+      "level": "pro",
+      "seed": 1010,
+      "layout": 0,
+      "bank": 1750,
+      "escaped": 2,
+      "stalls": [],
+      "invalid": 0
+    }
+  ]
+}

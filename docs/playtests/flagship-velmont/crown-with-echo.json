@@ -4,15 +4,15 @@
     "seed": 1001,
     "echoReachedPlate": true,
     "pickupSeconds": 47.84,
-    "bankSeconds": 68.12,
-    "caught": 1
+    "bankSeconds": 69.48,
+    "caught": 0
   },
   {
     "level": "rookie",
     "seed": 1002,
     "echoReachedPlate": true,
     "pickupSeconds": 49.52,
-    "bankSeconds": 65.96,
+    "bankSeconds": 70.4,
     "caught": 0
   },
   {
@@ -20,7 +20,7 @@
     "seed": 1003,
     "echoReachedPlate": true,
     "pickupSeconds": 47.84,
-    "bankSeconds": 63.92,
+    "bankSeconds": 68.24,
     "caught": 0
   },
   {
@@ -28,7 +28,7 @@
     "seed": 1004,
     "echoReachedPlate": true,
     "pickupSeconds": 47.8,
-    "bankSeconds": 63.92,
+    "bankSeconds": 64.44,
     "caught": 0
   },
   {
@@ -36,15 +36,15 @@
     "seed": 1005,
     "echoReachedPlate": true,
     "pickupSeconds": 51.64,
-    "bankSeconds": 67.72,
-    "caught": 0
+    "bankSeconds": 73.6,
+    "caught": 1
   },
   {
     "level": "rookie",
     "seed": 1006,
     "echoReachedPlate": true,
     "pickupSeconds": 47.76,
-    "bankSeconds": 64.4,
+    "bankSeconds": 64.72,
     "caught": 0
   },
   {
@@ -52,23 +52,23 @@
     "seed": 1007,
     "echoReachedPlate": true,
     "pickupSeconds": 41.48,
-    "bankSeconds": 60.64,
-    "caught": 1
+    "bankSeconds": 63.12,
+    "caught": 2
   },
   {
     "level": "rookie",
     "seed": 1008,
     "echoReachedPlate": true,
     "pickupSeconds": 47.84,
-    "bankSeconds": 68.12,
-    "caught": 1
+    "bankSeconds": 69.48,
+    "caught": 0
   },
   {
     "level": "rookie",
     "seed": 1009,
     "echoReachedPlate": true,
     "pickupSeconds": 47.64,
-    "bankSeconds": 67.12,
+    "bankSeconds": 68.44,
     "caught": 0
   },
   {
@@ -76,7 +76,7 @@
     "seed": 1010,
     "echoReachedPlate": true,
     "pickupSeconds": 47.84,
-    "bankSeconds": 63.92,
+    "bankSeconds": 68.28,
     "caught": 0
   },
   {
@@ -84,7 +84,7 @@
     "seed": 1011,
     "echoReachedPlate": true,
     "pickupSeconds": 47.84,
-    "bankSeconds": 64.16,
+    "bankSeconds": 68.28,
     "caught": 0
   },
   {
@@ -92,7 +92,7 @@
     "seed": 1012,
     "echoReachedPlate": true,
     "pickupSeconds": 47.8,
-    "bankSeconds": 67.76,
+    "bankSeconds": 68.32,
     "caught": 0
   },
   {
@@ -100,15 +100,15 @@
     "seed": 1013,
     "echoReachedPlate": true,
     "pickupSeconds": 48.4,
-    "bankSeconds": 65.32,
-    "caught": 0
+    "bankSeconds": 74.6,
+    "caught": 1
   },
   {
     "level": "rookie",
     "seed": 1014,
     "echoReachedPlate": true,
     "pickupSeconds": 41.28,
-    "bankSeconds": 60.52,
+    "bankSeconds": 61.52,
     "caught": 1
   },
   {
@@ -116,7 +116,7 @@
     "seed": 1015,
     "echoReachedPlate": true,
     "pickupSeconds": 44.4,
-    "bankSeconds": 59.92,
+    "bankSeconds": 64.24,
     "caught": 1
   },
   {
@@ -124,7 +124,7 @@
     "seed": 1016,
     "echoReachedPlate": true,
     "pickupSeconds": 47.64,
-    "bankSeconds": 67.12,
+    "bankSeconds": 68.44,
     "caught": 0
   },
   {
@@ -132,7 +132,7 @@
     "seed": 1017,
     "echoReachedPlate": true,
     "pickupSeconds": 47.76,
-    "bankSeconds": 63.96,
+    "bankSeconds": 68.48,
     "caught": 0
   },
   {
@@ -140,7 +140,7 @@
     "seed": 1018,
     "echoReachedPlate": true,
     "pickupSeconds": 47.72,
-    "bankSeconds": 65.24,
+    "bankSeconds": 68.32,
     "caught": 0
   },
   {
@@ -148,7 +148,7 @@
     "seed": 1019,
     "echoReachedPlate": true,
     "pickupSeconds": 47.8,
-    "bankSeconds": 67.76,
+    "bankSeconds": 68.32,
     "caught": 0
   },
   {
@@ -156,7 +156,7 @@
     "seed": 1020,
     "echoReachedPlate": true,
     "pickupSeconds": 47.76,
-    "bankSeconds": 64.04,
+    "bankSeconds": 64.4,
     "caught": 0
   },
   {
@@ -172,15 +172,15 @@
     "seed": 1002,
     "echoReachedPlate": true,
     "pickupSeconds": 40.6,
-    "bankSeconds": 59.48,
-    "caught": 2
+    "bankSeconds": 65.32,
+    "caught": 3
   },
   {
     "level": "normal",
     "seed": 1003,
     "echoReachedPlate": true,
     "pickupSeconds": 46.32,
-    "bankSeconds": null,
+    "bankSeconds": 82.52,
     "caught": 4
   },
   {
@@ -188,15 +188,15 @@
     "seed": 1004,
     "echoReachedPlate": true,
     "pickupSeconds": 41,
-    "bankSeconds": 61.08,
-    "caught": 2
+    "bankSeconds": 68.44,
+    "caught": 4
   },
   {
     "level": "normal",
     "seed": 1005,
     "echoReachedPlate": true,
     "pickupSeconds": 40.6,
-    "bankSeconds": 66.04,
+    "bankSeconds": null,
     "caught": 4
   },
   {
@@ -204,24 +204,24 @@
     "seed": 1006,
     "echoReachedPlate": true,
     "pickupSeconds": 46.28,
-    "bankSeconds": 83.08,
-    "caught": 5
+    "bankSeconds": 77.8,
+    "caught": 4
   },
   {
     "level": "normal",
     "seed": 1007,
     "echoReachedPlate": true,
     "pickupSeconds": 45.52,
-    "bankSeconds": 69.68,
-    "caught": 3
+    "bankSeconds": 66.88,
+    "caught": 2
   },
   {
     "level": "normal",
     "seed": 1008,
     "echoReachedPlate": true,
     "pickupSeconds": 44.44,
-    "bankSeconds": 72.84,
-    "caught": 4
+    "bankSeconds": null,
+    "caught": 7
   },
   {
     "level": "normal",
@@ -236,15 +236,15 @@
     "seed": 1010,
     "echoReachedPlate": true,
     "pickupSeconds": 46.32,
-    "bankSeconds": 73.92,
-    "caught": 4
+    "bankSeconds": null,
+    "caught": 5
   },
   {
     "level": "normal",
     "seed": 1011,
     "echoReachedPlate": true,
     "pickupSeconds": 41,
-    "bankSeconds": 69.04,
+    "bankSeconds": 64.96,
     "caught": 3
   },
   {
@@ -252,8 +252,8 @@
     "seed": 1012,
     "echoReachedPlate": true,
     "pickupSeconds": 40.6,
-    "bankSeconds": 65.36,
-    "caught": 4
+    "bankSeconds": 61.52,
+    "caught": 2
   },
   {
     "level": "normal",
@@ -276,15 +276,15 @@
     "seed": 1015,
     "echoReachedPlate": true,
     "pickupSeconds": 40.88,
-    "bankSeconds": 58.96,
-    "caught": 2
+    "bankSeconds": 66.88,
+    "caught": 3
   },
   {
     "level": "normal",
     "seed": 1016,
     "echoReachedPlate": true,
     "pickupSeconds": 43.92,
-    "bankSeconds": 61.8,
+    "bankSeconds": 65.48,
     "caught": 2
   },
   {
@@ -300,7 +300,7 @@
     "seed": 1018,
     "echoReachedPlate": true,
     "pickupSeconds": 44.76,
-    "bankSeconds": 76.72,
+    "bankSeconds": 74.6,
     "caught": 4
   },
   {
@@ -308,7 +308,7 @@
     "seed": 1019,
     "echoReachedPlate": true,
     "pickupSeconds": 41.8,
-    "bankSeconds": 58.32,
+    "bankSeconds": 63.4,
     "caught": 1
   },
   {
@@ -324,7 +324,7 @@
     "seed": 1001,
     "echoReachedPlate": true,
     "pickupSeconds": 51.32,
-    "bankSeconds": 70.16,
+    "bankSeconds": 73.76,
     "caught": 3
   },
   {
@@ -332,16 +332,16 @@
     "seed": 1002,
     "echoReachedPlate": true,
     "pickupSeconds": 42.8,
-    "bankSeconds": 70.96,
-    "caught": 4
+    "bankSeconds": 79.28,
+    "caught": 5
   },
   {
     "level": "pro",
     "seed": 1003,
     "echoReachedPlate": true,
     "pickupSeconds": 52,
-    "bankSeconds": 79.56,
-    "caught": 4
+    "bankSeconds": null,
+    "caught": 5
   },
   {
     "level": "pro",
@@ -349,7 +349,7 @@
     "echoReachedPlate": true,
     "pickupSeconds": 51.68,
     "bankSeconds": null,
-    "caught": 6
+    "caught": 5
   },
   {
     "level": "pro",
@@ -364,7 +364,7 @@
     "seed": 1006,
     "echoReachedPlate": true,
     "pickupSeconds": 41.08,
-    "bankSeconds": 63.92,
+    "bankSeconds": 63.96,
     "caught": 3
   },
   {
@@ -372,7 +372,7 @@
     "seed": 1007,
     "echoReachedPlate": true,
     "pickupSeconds": 44.48,
-    "bankSeconds": 66.52,
+    "bankSeconds": 69.16,
     "caught": 3
   },
   {
@@ -381,7 +381,7 @@
     "echoReachedPlate": true,
     "pickupSeconds": 48.32,
     "bankSeconds": null,
-    "caught": 6
+    "caught": 5
   },
   {
     "level": "pro",
@@ -396,7 +396,7 @@
     "seed": 1010,
     "echoReachedPlate": true,
     "pickupSeconds": 52.48,
-    "bankSeconds": null,
+    "bankSeconds": 82.96,
     "caught": 4
   },
   {
@@ -404,8 +404,8 @@
     "seed": 1011,
     "echoReachedPlate": true,
     "pickupSeconds": 45.16,
-    "bankSeconds": 82.4,
-    "caught": 4
+    "bankSeconds": 79.64,
+    "caught": 3
   },
   {
     "level": "pro",
@@ -436,8 +436,8 @@
     "seed": 1015,
     "echoReachedPlate": true,
     "pickupSeconds": 44.6,
-    "bankSeconds": 74.44,
-    "caught": 4
+    "bankSeconds": 81.16,
+    "caught": 5
   },
   {
     "level": "pro",
@@ -468,15 +468,15 @@
     "seed": 1019,
     "echoReachedPlate": true,
     "pickupSeconds": 44.6,
-    "bankSeconds": 67.16,
-    "caught": 3
+    "bankSeconds": 73.4,
+    "caught": 4
   },
   {
     "level": "pro",
     "seed": 1020,
     "echoReachedPlate": true,
     "pickupSeconds": 58.92,
-    "bankSeconds": 85.08,
-    "caught": 4
+    "bankSeconds": null,
+    "caught": 5
   }
 ]

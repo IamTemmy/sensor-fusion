@@ -1,595 +1,370 @@
 {
-  "sourceHash": "12f7f041379df0d97cd5b989baefcc3d1f5050847a2ad79cc742699a0a0526af",
-  "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-  "at": "2026-10-30T11:57:54.738Z",
+  "sourceHash": "ca28b9c737eefacb1c69c8b0f14ee5c1c43356813e8b185959c5ccb09f111a6e",
+  "at": "2026-10-30T13:27:05.720Z",
+  "policy": "2026-10-30: per-museum playability; win rates are information, not fixed difficulty bands.",
   "gates": {
-    "tests": {
-      "passed": true,
-      "summary": [
-        "ℹ tests 278",
-        "ℹ pass 278",
-        "ℹ fail 0"
-      ]
+    "test": {
+      "passed": true
     },
     "typecheck": {
-      "passed": true,
-      "output": "$ tsc --noEmit\n"
-    },
-    "geometry": {
-      "passed": true,
-      "clearTargets": 19,
-      "engineNavigationTargets": 19,
-      "rivalNavigationTargets": 30,
-      "guardSegments": 36,
-      "plateHasNoSightToCrown": true,
-      "passFixture": {
-        "from": {
-          "x": 590,
-          "y": 335
-        },
-        "to": {
-          "x": 410,
-          "y": 335
-        },
-        "distance": 180,
-        "clearSight": true
-      },
-      "crownCarrySpeed": 86.92307692307692,
-      "journeys": [
-        {
-          "target": "Bay relic",
-          "seconds": 0.52,
-          "distance": 78
-        },
-        {
-          "target": "Clockwork",
-          "seconds": 2.6,
-          "distance": 390
-        },
-        {
-          "target": "Fossil folio",
-          "seconds": 1.12,
-          "distance": 168
-        },
-        {
-          "target": "Sculpture",
-          "seconds": 2.92,
-          "distance": 438
-        },
-        {
-          "target": "Star atlas",
-          "seconds": 5.44,
-          "distance": 816
-        },
-        {
-          "target": "Archive masterwork",
-          "seconds": 2.48,
-          "distance": 372
-        },
-        {
-          "target": "Portrait masterwork",
-          "seconds": 3.84,
-          "distance": 576
-        },
-        {
-          "target": "Crown",
-          "seconds": 7.88,
-          "distance": 1178
-        },
-        {
-          "target": "640,350",
-          "seconds": 4.2,
-          "distance": 630
-        },
-        {
-          "target": "60,480",
-          "seconds": 0,
-          "distance": 0
-        },
-        {
-          "target": "180,540",
-          "seconds": 0.88,
-          "distance": 132
-        },
-        {
-          "target": "52,346",
-          "seconds": 1.08,
-          "distance": 162
-        },
-        {
-          "target": "250,162",
-          "seconds": 2.7600000000000002,
-          "distance": 414
-        },
-        {
-          "target": "488,162",
-          "seconds": 5.8,
-          "distance": 870
-        },
-        {
-          "target": "524,382",
-          "seconds": 4.08,
-          "distance": 610
-        },
-        {
-          "target": "556,536",
-          "seconds": 4.04,
-          "distance": 606
-        },
-        {
-          "target": "724,248",
-          "seconds": 6.88,
-          "distance": 1032
-        },
-        {
-          "target": "410,215",
-          "seconds": 3.64,
-          "distance": 546
-        },
-        {
-          "target": "910,230",
-          "seconds": 6.28,
-          "distance": 942
-        }
-      ],
-      "rivalJourneys": [
-        {
-          "crew": 0,
-          "target": "Bay relic",
-          "seconds": 0.52
-        },
-        {
-          "crew": 0,
-          "target": "Clockwork",
-          "seconds": 2.64
-        },
-        {
-          "crew": 0,
-          "target": "Fossil folio",
-          "seconds": 1.12
-        },
-        {
-          "crew": 0,
-          "target": "Sculpture",
-          "seconds": 2.92
-        },
-        {
-          "crew": 0,
-          "target": "Star atlas",
-          "seconds": 5.44
-        },
-        {
-          "crew": 0,
-          "target": "Archive masterwork",
-          "seconds": 2.48
-        },
-        {
-          "crew": 0,
-          "target": "Portrait masterwork",
-          "seconds": 3.84
-        },
-        {
-          "crew": 0,
-          "target": "Crown",
-          "seconds": 7.88
-        },
-        {
-          "crew": 0,
-          "target": "640,350",
-          "seconds": 4.2
-        },
-        {
-          "crew": 0,
-          "target": "52,346",
-          "seconds": 1.08
-        },
-        {
-          "crew": 0,
-          "target": "250,162",
-          "seconds": 2.7600000000000002
-        },
-        {
-          "crew": 0,
-          "target": "488,162",
-          "seconds": 5.8
-        },
-        {
-          "crew": 0,
-          "target": "524,382",
-          "seconds": 4.08
-        },
-        {
-          "crew": 0,
-          "target": "556,536",
-          "seconds": 4.04
-        },
-        {
-          "crew": 0,
-          "target": "724,248",
-          "seconds": 6.88
-        },
-        {
-          "crew": 1,
-          "target": "Bay relic",
-          "seconds": 0.52
-        },
-        {
-          "crew": 1,
-          "target": "Clockwork",
-          "seconds": 1.8
-        },
-        {
-          "crew": 1,
-          "target": "Fossil folio",
-          "seconds": 1.4000000000000001
-        },
-        {
-          "crew": 1,
-          "target": "Sculpture",
-          "seconds": 2.24
-        },
-        {
-          "crew": 1,
-          "target": "Star atlas",
-          "seconds": 4.68
-        },
-        {
-          "crew": 1,
-          "target": "Archive masterwork",
-          "seconds": 2.96
-        },
-        {
-          "crew": 1,
-          "target": "Portrait masterwork",
-          "seconds": 3.16
-        },
-        {
-          "crew": 1,
-          "target": "Crown",
-          "seconds": 7.08
-        },
-        {
-          "crew": 1,
-          "target": "640,350",
-          "seconds": 3.44
-        },
-        {
-          "crew": 1,
-          "target": "52,346",
-          "seconds": 1.56
-        },
-        {
-          "crew": 1,
-          "target": "250,162",
-          "seconds": 3.2800000000000002
-        },
-        {
-          "crew": 1,
-          "target": "488,162",
-          "seconds": 5.04
-        },
-        {
-          "crew": 1,
-          "target": "524,382",
-          "seconds": 3.36
-        },
-        {
-          "crew": 1,
-          "target": "556,536",
-          "seconds": 3.3200000000000003
-        },
-        {
-          "crew": 1,
-          "target": "724,248",
-          "seconds": 6.12
-        }
-      ],
-      "limits": "Static authored geometry only; no bots, guard AI, capacity, latency, balance or release gates simulated. Engine navigation uses its existing 12u movement, while static target/patrol clearance uses 13u."
-    },
-    "idle": {
-      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "matches": 30,
-      "stalls": 0,
-      "passed": true
-    },
-    "rush": {
-      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "matches": 120,
-      "earlyBanks": 0,
-      "banks": 52,
-      "earliestBankSeconds": 58.8,
-      "passed": true
-    },
-    "patrol": {
-      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "matches": 9,
-      "stalls": 0,
-      "archivePasses": 9,
-      "passed": true
-    },
-    "escape": {
-      "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "rows": [
-        {
-          "level": "rookie",
-          "n": 40,
-          "escaped": 40,
-          "tied": 0,
-          "left": 0,
-          "misses": []
-        },
-        {
-          "level": "normal",
-          "n": 40,
-          "escaped": 39,
-          "tied": 0,
-          "left": 1,
-          "misses": [
-            1032
-          ]
-        },
-        {
-          "level": "pro",
-          "n": 40,
-          "escaped": 40,
-          "tied": 0,
-          "left": 0,
-          "misses": []
-        }
-      ],
-      "passed": true
-    },
-    "chaseForks": {
-      "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "method": "33 actual flagship chase forks, 50–150u behind in 10u increments, one pursuing Normal guard, real held-jar throw and normal movement for four seconds; matched no-throw controls hold the jar. No walls changed.",
-      "n": 33,
-      "caught": 7,
-      "caughtRate": 0.21212121212121213,
-      "baselineCaught": 25,
-      "passed": true
-    },
-    "echoAlone": {
-      "engineHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "method": "Human stays idle at own dock for the entire normal 90-second match; Auto Echo alone collects/passes/banks. Crew haul includes a pass to the idle human, if it banks automatically.",
-      "rows": [
-        {
-          "level": "rookie",
-          "n": 40,
-          "median": 2600,
-          "min": 1000,
-          "max": 3100
-        },
-        {
-          "level": "normal",
-          "n": 40,
-          "median": 1900,
-          "min": 900,
-          "max": 2600
-        },
-        {
-          "level": "pro",
-          "n": 40,
-          "median": 1500,
-          "min": 200,
-          "max": 2000
-        }
-      ],
-      "passed": true
-    },
-    "difficulty": {
-      "passed": true,
-      "method": "Co-op: 40 seeds. Duos: 80 matches, the same 40 seeds in each rematch dock assignment; both seat rates reported, combined rate gated. Naive full-map collector + Auto Echo. Ties are not wins.",
-      "cells": [
-        {
-          "mode": "coop",
-          "difficulty": "rookie",
-          "n": 40,
-          "rate": 1,
-          "target": [
-            0.75,
-            1
-          ],
-          "seats": [
-            {
-              "mode": "coop",
-              "difficulty": "rookie",
-              "swap": 0,
-              "n": 40,
-              "rate": 1
-            }
-          ],
-          "passed": true
-        },
-        {
-          "mode": "coop",
-          "difficulty": "normal",
-          "n": 40,
-          "rate": 0.5,
-          "target": [
-            0.45,
-            0.6
-          ],
-          "seats": [
-            {
-              "mode": "coop",
-              "difficulty": "normal",
-              "swap": 0,
-              "n": 40,
-              "rate": 0.5
-            }
-          ],
-          "passed": true
-        },
-        {
-          "mode": "coop",
-          "difficulty": "pro",
-          "n": 40,
-          "rate": 0.4,
-          "target": [
-            0.2,
-            0.4
-          ],
-          "seats": [
-            {
-              "mode": "coop",
-              "difficulty": "pro",
-              "swap": 0,
-              "n": 40,
-              "rate": 0.4
-            }
-          ],
-          "passed": true
-        },
-        {
-          "mode": "duos",
-          "difficulty": "rookie",
-          "n": 80,
-          "rate": 0.9875,
-          "target": [
-            0.75,
-            1
-          ],
-          "seats": [
-            {
-              "mode": "duos",
-              "difficulty": "rookie",
-              "swap": 0,
-              "n": 40,
-              "rate": 0.975
-            },
-            {
-              "mode": "duos",
-              "difficulty": "rookie",
-              "swap": 1,
-              "n": 40,
-              "rate": 1
-            }
-          ],
-          "passed": true
-        },
-        {
-          "mode": "duos",
-          "difficulty": "normal",
-          "n": 80,
-          "rate": 0.5625,
-          "target": [
-            0.45,
-            0.6
-          ],
-          "seats": [
-            {
-              "mode": "duos",
-              "difficulty": "normal",
-              "swap": 0,
-              "n": 40,
-              "rate": 0.475
-            },
-            {
-              "mode": "duos",
-              "difficulty": "normal",
-              "swap": 1,
-              "n": 40,
-              "rate": 0.65
-            }
-          ],
-          "passed": true
-        },
-        {
-          "mode": "duos",
-          "difficulty": "pro",
-          "n": 80,
-          "rate": 0.325,
-          "target": [
-            0.25,
-            0.4
-          ],
-          "seats": [
-            {
-              "mode": "duos",
-              "difficulty": "pro",
-              "swap": 0,
-              "n": 40,
-              "rate": 0.425
-            },
-            {
-              "mode": "duos",
-              "difficulty": "pro",
-              "swap": 1,
-              "n": 40,
-              "rate": 0.225
-            }
-          ],
-          "passed": true
-        }
-      ]
-    },
-    "cpu": {
-      "engineAndGeometryHash": "7794fa5358b15ec390c5b557542c505957225298c3d56d5163fe1fb902d4ff03",
-      "cases": [
-        {
-          "n": 2,
-          "level": "rookie",
-          "ticks": 2077,
-          "p95": 0.745584000000008,
-          "max": 37.10396499999999,
-          "slowTicks": [
-            {
-              "at": 40,
-              "ms": 37.10396499999999
-            }
-          ]
-        },
-        {
-          "n": 2,
-          "level": "normal",
-          "ticks": 2162,
-          "p95": 2.379889999999932,
-          "max": 14.792679000000135,
-          "slowTicks": []
-        },
-        {
-          "n": 2,
-          "level": "pro",
-          "ticks": 2176,
-          "p95": 1.4286729999998897,
-          "max": 22.593104999999923,
-          "slowTicks": [
-            {
-              "at": 8400,
-              "ms": 22.593104999999923
-            }
-          ]
-        },
-        {
-          "n": 4,
-          "level": "rookie",
-          "ticks": 2248,
-          "p95": 3.4834589999991294,
-          "max": 18.951477999999952,
-          "slowTicks": []
-        },
-        {
-          "n": 4,
-          "level": "normal",
-          "ticks": 2250,
-          "p95": 3.2709469999999783,
-          "max": 10.758437000000413,
-          "slowTicks": []
-        },
-        {
-          "n": 4,
-          "level": "pro",
-          "ticks": 2179,
-          "p95": 2.7893819999999323,
-          "max": 14.810531000000083,
-          "slowTicks": []
-        }
-      ],
-      "p95": 3.4834589999991294,
-      "max": 37.10396499999999,
       "passed": true
     }
   },
-  "passed": true,
-  "failed": []
+  "museums": {
+    "flagship-velmont": {
+      "idle": {
+        "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+        "matches": 30,
+        "stalls": 0,
+        "passed": true
+      },
+      "rush": {
+        "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+        "matches": 120,
+        "earlyBanks": 0,
+        "banks": 57,
+        "earliestBankSeconds": 49.52,
+        "passed": true
+      },
+      "patrol": {
+        "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+        "matches": 9,
+        "stalls": 0,
+        "archivePasses": 9,
+        "passed": true
+      },
+      "echoAlone": {
+        "rows": [
+          {
+            "level": "rookie",
+            "n": 40,
+            "median": 2050,
+            "min": 1400,
+            "max": 3100
+          },
+          {
+            "level": "normal",
+            "n": 40,
+            "median": 1500,
+            "min": 900,
+            "max": 2500
+          },
+          {
+            "level": "pro",
+            "n": 40,
+            "median": 1400,
+            "min": 400,
+            "max": 2600
+          }
+        ],
+        "passed": true
+      },
+      "echoEscape": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 40,
+            "left": 0
+          },
+          {
+            "difficulty": "normal",
+            "n": 40,
+            "left": 0
+          },
+          {
+            "difficulty": "pro",
+            "n": 40,
+            "left": 0
+          }
+        ],
+        "passed": true
+      },
+      "crownHuman": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 20
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 11
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 8
+          }
+        ],
+        "method": "Timed approach; normal inputs/actions, empty-handed sneaking, alarm bottling and recovery; Echo holds plate then covers.",
+        "passed": true
+      },
+      "crownEcho": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 19
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 8
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 7
+          }
+        ],
+        "method": "Human holds plate, then supports Echo with alarm capture and dropped-loot recovery. Crew banking after Echo pickup, including legitimate passes.",
+        "passed": true
+      },
+      "chaseForks": {
+        "n": 33,
+        "caught": 7,
+        "caughtRate": 0.21212121212121213,
+        "passed": true
+      },
+      "winRates": {
+        "informational": true,
+        "cells": [
+          {
+            "mode": "coop",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.95
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.95
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.95
+          },
+          {
+            "mode": "coop",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.7
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.55
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.85
+          },
+          {
+            "mode": "coop",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.55
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.4
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.4
+          }
+        ]
+      },
+      "cpu": {
+        "p95": 3.9913790000000517,
+        "max": 22.783266999999995,
+        "passed": true
+      }
+    },
+    "night-archive": {
+      "idle": {
+        "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+        "matches": 30,
+        "stalls": 0,
+        "passed": true
+      },
+      "rush": {
+        "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+        "matches": 120,
+        "earlyBanks": 0,
+        "banks": 40,
+        "earliestBankSeconds": 52.48,
+        "passed": true
+      },
+      "patrol": {
+        "engineAndGeometryHash": "155918185defe1ab17ec0d84a9e4cba8bbeb0c35ed888e8b1a066baa28827e15",
+        "matches": 9,
+        "stalls": 0,
+        "archivePasses": 9,
+        "passed": true
+      },
+      "echoAlone": {
+        "rows": [
+          {
+            "level": "rookie",
+            "n": 40,
+            "median": 2850,
+            "min": 1400,
+            "max": 3100
+          },
+          {
+            "level": "normal",
+            "n": 40,
+            "median": 1500,
+            "min": 400,
+            "max": 2600
+          },
+          {
+            "level": "pro",
+            "n": 40,
+            "median": 1500,
+            "min": 750,
+            "max": 2100
+          }
+        ],
+        "passed": true
+      },
+      "echoEscape": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 40,
+            "left": 1
+          },
+          {
+            "difficulty": "normal",
+            "n": 40,
+            "left": 1
+          },
+          {
+            "difficulty": "pro",
+            "n": 40,
+            "left": 2
+          }
+        ],
+        "passed": true
+      },
+      "crownHuman": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 18
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 12
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 9
+          }
+        ],
+        "method": "Timed approach; normal inputs/actions, empty-handed sneaking, alarm bottling and recovery; Echo holds plate then covers.",
+        "passed": true
+      },
+      "winRates": {
+        "informational": true,
+        "cells": [
+          {
+            "mode": "coop",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.9
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 1
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.95
+          },
+          {
+            "mode": "coop",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.25
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.65
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.7
+          },
+          {
+            "mode": "coop",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.15
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.25
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.5
+          }
+        ]
+      },
+      "cpu": {
+        "p95": 7.2179030000006605,
+        "max": 25.53320100000019,
+        "passed": true
+      }
+    }
+  },
+  "failed": [],
+  "passed": true
 }
