@@ -797,3 +797,9 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app .planning-room .lobby-actions button{width:100%;min-height:38px;font-size:11px!important}
  .noise-app .planning-room .lobby-actions>.primary{min-height:48px;font-size:16px!important;margin:0}
 }
+
+/* The friends crew uses the exact portrait artwork from the game-mode cards. */
+.friends-character-group{position:relative;display:flex;justify-content:center;align-items:flex-end;width:230px;height:116px;margin:auto;overflow:hidden;mask-image:linear-gradient(#000 80%,transparent)}
+.friends-character-group .crew-portrait{width:94px;height:106px;object-fit:cover;object-position:top;border-radius:45% 45% 0 0;margin:0 -9px;filter:drop-shadow(0 2px 5px #0008)}
+.friends-character-group .crew-portrait:nth-child(2){width:106px;height:116px;z-index:1}
+@media(max-width:600px){.friends-character-group{width:170px;height:86px}.friends-character-group .crew-portrait{width:70px;height:78px}.friends-character-group .crew-portrait:nth-child(2){width:78px;height:86px}}

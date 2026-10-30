@@ -1,3 +1,5 @@
+# HISTORICAL v82 generator. Current Crown-access geometry lives in lib/noise/*-arena.ts.
+# Render current routes with docs/crown-access/export.ts and render.py; do not regenerate over it.
 """Generate the flagship arena and its review blueprint from one geometry source."""
 import json, math, heapq
 from pathlib import Path

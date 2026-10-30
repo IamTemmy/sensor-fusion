@@ -2,7 +2,7 @@ import {action,command,view,type Game,type View,type Vec} from './engine.ts';
 // Transport-only metadata; never changes engine rules or leaves the server.
 export type NetAction={id:number;action:string;aim:Vec};
 type Stored=Game&{net?:{match:number;acks:Record<string,number>}};
-export const arenaKey=(g:Game|View)=>`${g.code}:${g.match}:${g.layout}:${g.crewMode}`;
+export const arenaKey=(g:Game|View)=>`${g.code}:${g.match}:${g.layout}:${g.crewMode}:${g.crownExitOpen?1:0}`;
 export function actionAck(g:Game,id:string){const n=(g as Stored).net;return n?.match===g.match?n.acks[id]||0:0;}
 export function applyPacket(g:Game,id:string,a:Record<string,any>){
  if(a.type!=='input'||a.protocol!==2){command(g,id,a as Parameters<typeof command>[2]);return;}

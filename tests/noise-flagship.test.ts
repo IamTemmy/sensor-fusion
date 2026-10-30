@@ -35,10 +35,10 @@ test('duel activation only latches after opening, allowing both solo rivals to l
  const g=job(2,'duos');quiet(g);Object.assign(g.seats[0],g.plate);E.advance(g,g.now+40);assert.equal(g.loot[2].locked,true);
  g.now=g.start+30000;E.advance(g,g.now+40);assert.equal(g.loot[2].locked,false);Object.assign(g.seats[0],E.vanFor(g,0));assert.equal(g.loot[2].locked,false);
 });
-test('Crown uses ordinary carry speed on host and guest; a teammate can bottle its alarm',()=>{
+test('Crown has no carry penalty on host and guest; a teammate can bottle its alarm',()=>{
  const g=job();quiet(g);g.now=g.start+31000;g.walls=[];const [h,b]=g.seats,c=g.loot[2];Object.assign(h,{x:600,y:300});Object.assign(c,{x:600,y:300});Object.assign(b,g.plate);E.action(g,h,'grab');
  assert.equal(h.hand,c.id);Object.assign(b,{x:650,y:300});assert.equal(E.interaction(g,b).kind,'noise');E.action(g,b,'grab');assert.ok(b.hand);assert.ok(c.quietUntil!>g.now);
- assert.equal(E.carrySpeed(1200,g),E.carrySpeed(1200));const pred=new OnlinePrediction();pred.accept(E.view(g,h.id));const x=h.x;pred.frame(40,{x:1,y:0},{x:700,y:300});E.command(g,h.id,{type:'input',seq:1,dx:1,dy:0});E.advance(g,g.now+40);assert.ok(Math.abs(h.x-x-E.carrySpeed(1200,g)*.04)<.001);assert.ok(Math.abs(pred.positions().get(h.id)!.x-h.x)<.001);
+ assert.equal(E.carrySpeed(1200,g),165);const pred=new OnlinePrediction();pred.accept(E.view(g,h.id));const x=h.x;pred.frame(40,{x:1,y:0},{x:700,y:300});E.command(g,h.id,{type:'input',seq:1,dx:1,dy:0});E.advance(g,g.now+40);assert.ok(Math.abs(h.x-x-E.carrySpeed(1200,g)*.04)<.001);assert.ok(Math.abs(pred.positions().get(h.id)!.x-h.x)<.001);
 });
 test('emitter siren remains at emitter for 4s and serializes in delta packets',()=>{
  const g=job(),s=g.sensors![0];const before=packet(g,g.host),v=unpack(before);assert.equal(E.tripEmitter(g,s),true);assert.equal(E.tripEmitter(g,s),false);

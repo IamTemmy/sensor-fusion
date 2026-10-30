@@ -1,3 +1,5 @@
+# HISTORICAL v82 generator. Current Crown-access geometry lives in lib/noise/*-arena.ts.
+# Render current routes with docs/crown-access/export.ts and render.py; do not regenerate over it.
 """Authored asymmetric Night Archive geometry; no mirrored or rotated template."""
 import json
 from pathlib import Path

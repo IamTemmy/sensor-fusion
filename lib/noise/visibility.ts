@@ -1,4 +1,4 @@
-import {distance,sight,hidden,isFlagship,guardActive,type Game,type View,type Vec,type Rect} from './engine.ts';
+import {exhibitAvailable,distance,sight,hidden,isFlagship,guardActive,type Game,type View,type Vec,type Rect} from './engine.ts';
 
 /** Client presentation only. Does not mutate or redact the authoritative simulation. */
 export function rayEnd(origin:Vec,angle:number,walls:Rect[],range=1200):Vec {
@@ -53,4 +53,4 @@ export function crewActorState(g:Game|View,you:string,s:Game['seats'][number],vi
  if(!own&&!visible(s))return 'occluded';
  return hidden(g,s)?'hidden':'visible';
 }
-export const floorExhibits=(g:Game|View)=>g.loot.filter(l=>!l.banked&&!l.holder&&!l.guardCarrier&&!l.flight);
+export const floorExhibits=(g:Game|View)=>g.loot.filter(l=>exhibitAvailable(g,l)&&!l.banked&&!l.holder&&!l.guardCarrier&&!l.flight);
