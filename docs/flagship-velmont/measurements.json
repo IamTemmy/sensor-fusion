@@ -1,0 +1,95 @@
+{
+  "method": "4u eight-neighbour grid, square wall inflation 13u; approximate path lengths, not gameplay simulations",
+  "fastCrownDistance": 1253.4,
+  "longCrownDistance": 1533.0,
+  "plateToCrownDistance": 658.8,
+  "unobstructedFastRoundTripSeconds": 22.8,
+  "targets": [
+    {
+      "name": "Bay relic",
+      "clear": true,
+      "distance": 179.31370849898474
+    },
+    {
+      "name": "Clockwork",
+      "clear": true,
+      "distance": 378.22539674441606
+    },
+    {
+      "name": "Fossil folio",
+      "clear": true,
+      "distance": 213.13708498984744
+    },
+    {
+      "name": "Sculpture",
+      "clear": true,
+      "distance": 455.6467529817253
+    },
+    {
+      "name": "Star atlas",
+      "clear": true,
+      "distance": 723.1757569573607
+    },
+    {
+      "name": "Archive masterwork",
+      "clear": true,
+      "distance": 431.19595949289317
+    },
+    {
+      "name": "Portrait masterwork",
+      "clear": true,
+      "distance": 561.989898732233
+    },
+    {
+      "name": "Crown",
+      "clear": true,
+      "distance": 1121.352380466499
+    },
+    {
+      "name": "target8",
+      "clear": true,
+      "distance": 639.8132752230958
+    },
+    {
+      "name": "target9",
+      "clear": true,
+      "distance": 0
+    },
+    {
+      "name": "target10",
+      "clear": true,
+      "distance": 88.0
+    },
+    {
+      "name": "target11",
+      "clear": true,
+      "distance": 210.62741699796948
+    },
+    {
+      "name": "target12",
+      "clear": true,
+      "distance": 478.79393923933975
+    },
+    {
+      "name": "target13",
+      "clear": true,
+      "distance": 728.2640687119289
+    },
+    {
+      "name": "target14",
+      "clear": true,
+      "distance": 627.0782104868019
+    },
+    {
+      "name": "target15",
+      "clear": true,
+      "distance": 603.1959594928933
+    },
+    {
+      "name": "target16",
+      "clear": true,
+      "distance": 1057.754400720052
+    }
+  ],
+  "mirroredInteriorOverlapPercent": 26.5
+}
