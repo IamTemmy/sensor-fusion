@@ -1,7 +1,7 @@
 {
   "difficulty": "normal",
   "seeds": "1001–1020",
-  "engineHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+  "engineHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
   "dockSwap": true,
   "note": "Equal pathfinding, full visible map; noise policy drops/captures/throws its scream; Fetch repeatedly orders one-piece Fetch; teamwork uses Cover then holds the plate. Bot plants counted over the complete match event stream. Not a human skill benchmark. All wins strict; ties not wins.",
   "results": [

@@ -1,6 +1,6 @@
 {
-  "sourceHash": "0038bcc36777f8f54adec263b0ed67399bf5262ccf4a91dd84a8c9d3d6a77091",
-  "at": "2026-10-30T14:49:44.054Z",
+  "sourceHash": "7b2d5aaeae5d1aa427cda20029c0c74eca753e3086f777ed3ef9609c19c02fc5",
+  "at": "2026-10-30T16:39:35.094Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
     "test": {
@@ -13,13 +13,13 @@
   "museums": {
     "flagship-velmont": {
       "idle": {
-        "engineAndGeometryHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 106,
@@ -28,7 +28,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -143,7 +143,7 @@
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.85
+            "rate": 0.9
           },
           {
             "mode": "duos",
@@ -164,7 +164,7 @@
             "difficulty": "normal",
             "swap": 0,
             "n": 20,
-            "rate": 0.45
+            "rate": 0.4
           },
           {
             "mode": "duos",
@@ -197,20 +197,21 @@
         ]
       },
       "cpu": {
-        "p95": 6.1578129999998055,
-        "max": 26.01736600000001,
-        "passed": true
+        "p95": 5.845271000000139,
+        "max": 30.93103199999996,
+        "passed": true,
+        "rechecked": true
       }
     },
     "night-archive": {
       "idle": {
-        "engineAndGeometryHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 101,
@@ -219,7 +220,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -230,7 +231,7 @@
           {
             "level": "rookie",
             "n": 40,
-            "median": 2850,
+            "median": 3100,
             "min": 1400,
             "max": 3100
           },
@@ -238,7 +239,7 @@
             "level": "normal",
             "n": 40,
             "median": 2000,
-            "min": 1000,
+            "min": 1400,
             "max": 2600
           },
           {
@@ -335,7 +336,7 @@
             "difficulty": "rookie",
             "swap": 1,
             "n": 20,
-            "rate": 0.95
+            "rate": 0.9
           },
           {
             "mode": "coop",
@@ -370,7 +371,7 @@
             "difficulty": "pro",
             "swap": 0,
             "n": 20,
-            "rate": 0.25
+            "rate": 0.3
           },
           {
             "mode": "duos",
@@ -382,24 +383,34 @@
         ]
       },
       "cpu": {
-        "p95": 6.6549119999999675,
-        "max": 22.850187000000005,
+        "p95": 7.076221999999689,
+        "max": 29.611507000000017,
         "passed": true
       }
     }
   },
   "failed": [],
   "passed": true,
-  "simulationSourceHash": "f2cab2e1a3da41744510baef8519bc220a82f851335a03e468300a2486e11d0a",
-  "postSimulationValidation": {
-    "at": "2026-10-30T15:03:39.673Z",
-    "files": [
-      "app/globals.css",
-      "lib/noise/draw.ts"
-    ],
-    "changes": "Constrain friends portraits to phone card width; move Crown exit label clear of the nearby painting. No simulation, geometry, networking, test or gate changes.",
-    "unitTests": 292,
-    "typecheck": true,
-    "browser": "Phone cards and Velmont exit label inspected; screenshots in docs/crown-access."
-  }
+  "rechecks": [
+    {
+      "gate": "flagship-velmont/cpu",
+      "initial": {
+        "p95": 6.260277999999744,
+        "max": 55.83907999999974,
+        "passed": false
+      },
+      "reason": "Initial 55.84ms/45.58ms outliers were at 11.8s/10.8s, before any job event. The tested seed has a shift event, so the changed vault-event branch is not exercised. Two serial repetitions of all six identical CPU cases passed without source changes. Root cause of the original timing outliers is not established.",
+      "samples": [
+        {
+          "p95": 5.817531000000599,
+          "max": 30.93103199999996
+        },
+        {
+          "p95": 5.845271000000139,
+          "max": 20.561728000000016
+        }
+      ],
+      "originalEvidence": "docs/playtests/perfect-haul/cpu-first-failure.json"
+    }
+  ]
 }

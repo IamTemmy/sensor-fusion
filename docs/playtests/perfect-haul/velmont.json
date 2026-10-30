@@ -1,0 +1,1592 @@
+{
+  "museum": "flagship-velmont",
+  "timer": 90,
+  "method": "Scripted goal-directed player plus real Echo; unchanged guards and collisions. Inputs only; no teleportation, invulnerability or pre-banked loot. Not a human skill benchmark.",
+  "rows": [
+    {
+      "level": "rookie",
+      "seed": 1001,
+      "event": "vault",
+      "stars": 1,
+      "bank": 2950,
+      "complete": null,
+      "catches": 7,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art6",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1002,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 82.56,
+      "catches": 4,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1003,
+      "event": "shift",
+      "stars": 0,
+      "bank": 2525,
+      "complete": null,
+      "catches": 2,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1004,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 56.8,
+      "catches": 2,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1005,
+      "event": "vault",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 74.88,
+      "catches": 4,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1006,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 72.96,
+      "catches": 1,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1007,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 73.12,
+      "catches": 2,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1008,
+      "event": "vault",
+      "stars": 0,
+      "bank": 2500,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1009,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 85.08,
+      "catches": 4,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1010,
+      "event": "shift",
+      "stars": 1,
+      "bank": 3200,
+      "complete": null,
+      "catches": 3,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1011,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 77.44,
+      "catches": 5,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1012,
+      "event": "curator",
+      "stars": 0,
+      "bank": 2125,
+      "complete": null,
+      "catches": 3,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1013,
+      "event": "shift",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 75.84,
+      "catches": 2,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1014,
+      "event": "blackout",
+      "stars": 1,
+      "bank": 3100,
+      "complete": null,
+      "catches": 3,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art6",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1015,
+      "event": "vault",
+      "stars": 1,
+      "bank": 3175,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art6",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1016,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 76.4,
+      "catches": 4,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1017,
+      "event": "shift",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 82.84,
+      "catches": 5,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1018,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1575,
+      "complete": null,
+      "catches": 2,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "rookie",
+      "seed": 1019,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 62.76,
+      "catches": 1,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "rookie",
+      "seed": 1020,
+      "event": "shift",
+      "stars": 1,
+      "bank": 2825,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1001,
+      "event": "vault",
+      "stars": 0,
+      "bank": 675,
+      "complete": null,
+      "catches": 7,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1002,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 10,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1003,
+      "event": "shift",
+      "stars": 1,
+      "bank": 2625,
+      "complete": null,
+      "catches": 3,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1004,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 1800,
+      "complete": null,
+      "catches": 7,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1005,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1925,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1006,
+      "event": "curator",
+      "stars": 0,
+      "bank": 2000,
+      "complete": null,
+      "catches": 8,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1007,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 68.92,
+      "catches": 4,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "normal",
+      "seed": 1008,
+      "event": "vault",
+      "stars": 0,
+      "bank": 2075,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1009,
+      "event": "curator",
+      "stars": 1,
+      "bank": 2700,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art4",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1010,
+      "event": "shift",
+      "stars": 1,
+      "bank": 3100,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art6",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1011,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 2450,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1012,
+      "event": "curator",
+      "stars": 0,
+      "bank": 2000,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1013,
+      "event": "shift",
+      "stars": 0,
+      "bank": 2125,
+      "complete": null,
+      "catches": 8,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1014,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 1750,
+      "complete": null,
+      "catches": 8,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1015,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1500,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1016,
+      "event": "curator",
+      "stars": 0,
+      "bank": 650,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1017,
+      "event": "shift",
+      "stars": 0,
+      "bank": 350,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1018,
+      "event": "vault",
+      "stars": 0,
+      "bank": 2325,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        false
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1019,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1550,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": "p1"
+        },
+        {
+          "id": "art7",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1020,
+      "event": "shift",
+      "stars": 0,
+      "bank": 2375,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1001,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1675,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1002,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": "p1"
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1003,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1800,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1004,
+      "event": "shift",
+      "stars": 0,
+      "bank": 1950,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1005,
+      "event": "shift",
+      "stars": 0,
+      "bank": 900,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1006,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 900,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1007,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1008,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1009,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1800,
+      "complete": null,
+      "catches": 7,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1010,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1800,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": "p1"
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1011,
+      "event": "shift",
+      "stars": 0,
+      "bank": 1400,
+      "complete": null,
+      "catches": 3,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1012,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 2075,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1013,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 1950,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": "p1"
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1014,
+      "event": "vault",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 8,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1015,
+      "event": "vault",
+      "stars": 0,
+      "bank": 2075,
+      "complete": null,
+      "catches": 7,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1016,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1017,
+      "event": "shift",
+      "stars": 0,
+      "bank": 150,
+      "complete": null,
+      "catches": 9,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1018,
+      "event": "shift",
+      "stars": 0,
+      "bank": 1950,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": "p1"
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1019,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 1425,
+      "complete": null,
+      "catches": 8,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "pro",
+      "seed": 1020,
+      "event": "vault",
+      "stars": 0,
+      "bank": 150,
+      "complete": null,
+      "catches": 8,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art2",
+          "holder": null
+        },
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": null
+        },
+        {
+          "id": "art5",
+          "holder": null
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art7",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "engineHash": "1d12335eb0819b3ff032199f24a34b54a52f8fa86e1a607ea97cf55128d726b4",
+  "engineHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
   "method": "Human stays idle at own dock for the entire normal 90-second match; Auto Echo alone collects/passes/banks. Crew haul includes a pass to the idle human, if it banks automatically.",
   "rows": [
     {
@@ -39,10 +39,10 @@
         },
         {
           "seed": 1005,
-          "haul": 2100,
-          "echoBank": 2100,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 1
+          "catches": 2
         },
         {
           "seed": 1006,
@@ -349,8 +349,8 @@
         },
         {
           "seed": 1008,
-          "haul": 900,
-          "echoBank": 900,
+          "haul": 1500,
+          "echoBank": 1500,
           "escaped": true,
           "catches": 5
         },
@@ -589,10 +589,10 @@
       "runs": [
         {
           "seed": 1001,
-          "haul": 1000,
-          "echoBank": 1000,
+          "haul": 2000,
+          "echoBank": 2000,
           "escaped": true,
-          "catches": 4
+          "catches": 3
         },
         {
           "seed": 1002,
@@ -631,8 +631,8 @@
         },
         {
           "seed": 1007,
-          "haul": 900,
-          "echoBank": 900,
+          "haul": 1400,
+          "echoBank": 1400,
           "escaped": true,
           "catches": 4
         },
@@ -823,7 +823,7 @@
           "haul": 400,
           "echoBank": 400,
           "escaped": true,
-          "catches": 6
+          "catches": 5
         },
         {
           "seed": 1035,

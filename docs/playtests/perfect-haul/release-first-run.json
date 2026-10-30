@@ -1,0 +1,395 @@
+{
+  "sourceHash": "7b2d5aaeae5d1aa427cda20029c0c74eca753e3086f777ed3ef9609c19c02fc5",
+  "at": "2026-10-30T16:39:35.094Z",
+  "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
+  "gates": {
+    "test": {
+      "passed": true
+    },
+    "typecheck": {
+      "passed": true
+    }
+  },
+  "museums": {
+    "flagship-velmont": {
+      "idle": {
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "matches": 30,
+        "stalls": 0,
+        "passed": true
+      },
+      "rush": {
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "matches": 120,
+        "earlyPickups": 0,
+        "earlyBanks": 106,
+        "banks": 117,
+        "earliestBankSeconds": 35.28,
+        "passed": true
+      },
+      "patrol": {
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "matches": 9,
+        "stalls": 0,
+        "archivePasses": 9,
+        "passed": true
+      },
+      "echoAlone": {
+        "rows": [
+          {
+            "level": "rookie",
+            "n": 40,
+            "median": 2300,
+            "min": 1400,
+            "max": 3100
+          },
+          {
+            "level": "normal",
+            "n": 40,
+            "median": 1950,
+            "min": 400,
+            "max": 2500
+          },
+          {
+            "level": "pro",
+            "n": 40,
+            "median": 900,
+            "min": 0,
+            "max": 2000
+          }
+        ],
+        "passed": true
+      },
+      "echoEscape": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 40,
+            "left": 0
+          },
+          {
+            "difficulty": "normal",
+            "n": 40,
+            "left": 0
+          },
+          {
+            "difficulty": "pro",
+            "n": 40,
+            "left": 0
+          }
+        ],
+        "passed": true
+      },
+      "crownHuman": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 20
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 19
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 15
+          }
+        ],
+        "method": "Timed approach; normal inputs/actions, empty-handed sneaking, alarm bottling and recovery; Echo holds plate then covers.",
+        "passed": true
+      },
+      "crownEcho": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 20
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 19
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 11
+          }
+        ],
+        "method": "Human holds plate, then supports Echo with alarm capture and dropped-loot recovery. Crew banking after Echo pickup, including legitimate passes.",
+        "passed": true
+      },
+      "chaseForks": {
+        "n": 33,
+        "caught": 7,
+        "caughtRate": 0.21212121212121213,
+        "passed": true
+      },
+      "winRates": {
+        "informational": true,
+        "cells": [
+          {
+            "mode": "coop",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.9
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.9
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.85
+          },
+          {
+            "mode": "coop",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.5
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.4
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.85
+          },
+          {
+            "mode": "coop",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.05
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.45
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.6
+          }
+        ]
+      },
+      "cpu": {
+        "p95": 6.260277999999744,
+        "max": 55.83907999999974,
+        "passed": false
+      }
+    },
+    "night-archive": {
+      "idle": {
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "matches": 30,
+        "stalls": 0,
+        "passed": true
+      },
+      "rush": {
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "matches": 120,
+        "earlyPickups": 0,
+        "earlyBanks": 101,
+        "banks": 119,
+        "earliestBankSeconds": 34.56,
+        "passed": true
+      },
+      "patrol": {
+        "engineAndGeometryHash": "e5c4af331d5cccb3fcb5ec750d8f809e46c2b11672932d46d54ef53cb9faa777",
+        "matches": 9,
+        "stalls": 0,
+        "archivePasses": 9,
+        "passed": true
+      },
+      "echoAlone": {
+        "rows": [
+          {
+            "level": "rookie",
+            "n": 40,
+            "median": 3100,
+            "min": 1400,
+            "max": 3100
+          },
+          {
+            "level": "normal",
+            "n": 40,
+            "median": 2000,
+            "min": 1400,
+            "max": 2600
+          },
+          {
+            "level": "pro",
+            "n": 40,
+            "median": 1500,
+            "min": 400,
+            "max": 2100
+          }
+        ],
+        "passed": true
+      },
+      "echoEscape": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 40,
+            "left": 1
+          },
+          {
+            "difficulty": "normal",
+            "n": 40,
+            "left": 1
+          },
+          {
+            "difficulty": "pro",
+            "n": 40,
+            "left": 2
+          }
+        ],
+        "passed": true
+      },
+      "crownHuman": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 20
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 20
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 18
+          }
+        ],
+        "method": "Timed approach; normal inputs/actions, empty-handed sneaking, alarm bottling and recovery; Echo holds plate then covers.",
+        "passed": true
+      },
+      "crownEcho": {
+        "rows": [
+          {
+            "difficulty": "rookie",
+            "n": 20,
+            "banks": 20
+          },
+          {
+            "difficulty": "normal",
+            "n": 20,
+            "banks": 19
+          },
+          {
+            "difficulty": "pro",
+            "n": 20,
+            "banks": 13
+          }
+        ],
+        "method": "Human holds plate, then supports Echo with alarm capture and dropped-loot recovery. Crew banking after Echo pickup, including legitimate passes.",
+        "passed": true
+      },
+      "winRates": {
+        "informational": true,
+        "cells": [
+          {
+            "mode": "coop",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.9
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.8
+          },
+          {
+            "mode": "duos",
+            "difficulty": "rookie",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.9
+          },
+          {
+            "mode": "coop",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.5
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.35
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.6
+          },
+          {
+            "mode": "coop",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.15
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.3
+          },
+          {
+            "mode": "duos",
+            "difficulty": "pro",
+            "swap": 1,
+            "n": 20,
+            "rate": 0.55
+          }
+        ]
+      },
+      "cpu": {
+        "p95": 7.076221999999689,
+        "max": 29.611507000000017,
+        "passed": true
+      }
+    }
+  },
+  "failed": [
+    "flagship-velmont/cpu"
+  ],
+  "passed": false
+}
