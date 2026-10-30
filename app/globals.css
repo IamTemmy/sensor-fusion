@@ -767,3 +767,23 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app .planning-room .lobby>.lobby-actions{order:10}
  .noise-app .planning-room .lobby>.mode-warning,.noise-app .planning-room .lobby>.prep-tip{display:none}
 }
+
+/* One selection language throughout the crew planner; borders never resize. */
+.noise-app .planning-room .lobby :is(.mode-picker,.difficulty-pills){display:flex;gap:5px;padding:4px;border:1px solid #526676;border-radius:12px;background:#07131f;box-shadow:none}
+.noise-app .planning-room .lobby :is(.mode-picker,.difficulty-pills) button{flex:1;min-width:0;min-height:42px;margin:0;padding:8px 6px;border:1px solid transparent;border-radius:8px;background:transparent;box-shadow:none;color:#cbd8df;font-size:12px;transform:none}
+.noise-app .planning-room .lobby .mode-picker button.selected,.noise-app .planning-room .lobby .difficulty-pills button[aria-pressed=true]{background:linear-gradient(135deg,#ffe4a1,#e5b861)!important;border-color:#ffe5a8;color:#172331!important;box-shadow:0 2px 6px #0005}
+.noise-app .planning-room .lobby :is(.mode-picker,.difficulty-pills) button:focus-visible{outline:2px solid #8cedd0;outline-offset:2px}
+.noise-app .planning-room .team-board.single-crew{grid-template-columns:1fr}
+.noise-app .planning-room .team-column{background:linear-gradient(145deg,#173c37ee,#10282aee)}
+.noise-app .planning-room .team-column.violet{background:linear-gradient(145deg,#392b50ee,#211c34ee)}
+.noise-app .planning-room .seat-move:disabled{opacity:1;filter:none;color:#f8edda;cursor:default}
+.noise-app .planning-room .seat-move{border:1px solid #73978f40;border-radius:9px;box-shadow:none;background:#08182080;min-height:68px}
+.noise-app .planning-room .team-add{margin-top:10px;border:1px dashed #8cc9bba0;background:#ffffff08;box-shadow:none;min-height:44px}
+.noise-app .planning-room .team-presets button{min-height:44px;box-shadow:none;border:1px solid #637887;border-radius:9px;background:#18303e;font-size:12px}
+@media(max-width:600px){.noise-app .planning-room .lobby :is(.mode-picker,.difficulty-pills) button{font-size:10px;padding:8px 3px}.noise-app .planning-room .team-presets button{font-size:10px}.noise-app .planning-room .team-board.single-crew .team-seat{min-height:68px}}
+.noise-app .planning-room .single-crew .team-column{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:9px;align-content:start}
+.noise-app .planning-room .single-crew .team-column :is(h3,.team-add){grid-column:1/-1}
+.noise-app .planning-room .single-crew .team-seat{margin:0}
+.noise-app .planning-room .single-crew .team-add{margin-top:2px}
+@media(max-width:380px){.noise-app .planning-room .single-crew .team-column{grid-template-columns:1fr}}
+.noise-app .planning-room .team-presets button[aria-pressed=true]{border-color:#8ce7d1;background:#204a46;color:#ddfff5;box-shadow:inset 0 0 0 1px #8ce7d1}

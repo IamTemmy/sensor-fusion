@@ -26,7 +26,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  const text=(s:string,x:number,y:number,size=12,color='#d9e1df',align:CanvasTextAlign='left')=>{const px=Math.max(12/cam.scale,size);ctx.font=`${size>=16?'400':'700'} ${px}px ${size>=16?"'Bungee', Impact":"Arial"}, sans-serif`;ctx.textAlign=align;ctx.fillStyle=color;ctx.fillText(s,x,y);};
  const art=(id:string,value:number,x:number,y:number,scale=1,carried=false)=>{const spec=artwork(id,value,g.layout);ctx.save();if(spec.kind==='gold'||spec.kind==='idol')ctx.filter='sepia(.85) saturate(1.5)';const ok=sprite(ctx,artSpriteKey(spec.kind),x,y,58*scale,68*scale,false,false,carried);ctx.restore();if(!ok)drawArtwork(ctx,id,value,x,y,scale,g.layout);};
  // A fixed museum stage. All decoration is paint, never extra collision geometry.
- const identity=museumIdentity(isFlagship(g)?0:g.layout),floor=identity.floor;
+ const identity=museumIdentity(g.layout),floor=identity.floor;
  rect(18,18,924,564,'#050c17',12);rect(24,24,912,552,floor,3);
  ctx.save();ctx.beginPath();ctx.rect(24,24,912,552);ctx.clip();
  for(let y=24;y<576;y+=48)for(let x=24;x<936;x+=48){
@@ -139,7 +139,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  for(const item of lootLabels){const {l,name,glow}=item;if(!isFlagship(g)&&g.seats.some(s=>!s.escaped&&distance(s,l)<55))continue;const h=12/cam.scale;const near=g.seats.some(s=>!s.escaped&&distance(s,l)<90);const value='$'+l.value;const nameShown=near&&!g.seats.some(s=>!s.escaped&&distance(s,l)<40);const lines=nameShown?2:1;const width=Math.max(value.length*h*.65+12,nameShown?name.length*h*.55+10:0);const box=stackLabel(l.x,l.y+28,width,h*lines+8,labels);rect(box.x-width/2,box.y-h,width,h*lines+8,'#081324eb',4);text(value,box.x,box.y,12,glow,'center');if(nameShown)text(name,box.x,box.y+h+2,12,'#eee6cf','center');}
  for(const l of pendingLabels){const h=12/cam.scale;ctx.font=`700 ${h}px Arial`;const w=ctx.measureText(l.value).width+12;const box=stackLabel(Math.max(cam.x+w/2+4,Math.min(cam.x+cam.w-w/2-4,l.x)),Math.max(cam.y+h+5,l.y),w,h,labels);rect(box.x-w/2,box.y-h,w,h+7,'#071321e8',4);text(l.value,box.x,box.y,12,l.color,'center');}
  if(me&&!background){const target=interaction(g,me);if(target.target){ctx.strokeStyle='#d5ffe8';ctx.lineWidth=2;ctx.setLineDash([4,4]);ctx.beginPath();ctx.arc(target.target.x,target.target.y,28,0,Math.PI*2);ctx.stroke();ctx.setLineDash([]);}}
- if(blackoutActive(g)){rect(cam.x,cam.y,cam.w,cam.h,isFlagship(g)?(lights==='full'?'#03071300':'#03071318'):'#03071388');for(const l of floorExhibits(g).filter(l=>!l.sealed)){circle(l.x,l.y,10,'#f7d19166');}}
+ if(blackoutActive(g)){rect(cam.x,cam.y,cam.w,cam.h,isFlagship(g)?(lights==='full'?'#03071366':'#03071380'):'#03071388');for(const l of floorExhibits(g).filter(l=>!l.sealed)){circle(l.x,l.y,10,'#f7d19166');}}
  if(g.alert>=60){rect(cam.x,cam.y,cam.w,cam.h,'#d7203012');}
  const recent=g.events.filter(e=>g.now-e.at>=0&&g.now-e.at<900&&(['capture','bank','rescue','throw','catch'].includes(e.kind)||e.text.startsWith('The art sets off an alarm!')||e.text.startsWith('DISTRACTED ')));
  for(const e of recent){const age=g.now-e.at,f=age/900,bank=e.kind==='bank',caught=e.kind==='catch'&&e.text.includes('caught!'),freed=e.kind==='rescue'&&!e.text.includes('passed');

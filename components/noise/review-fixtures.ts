@@ -3,6 +3,8 @@ import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('archive-')){const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);g.match=1;setup(g);g.phase='playing';g.start=0;g.now=0;g.end=90000;g.events=[];g.jobEvent=undefined;if(state==='archive-centerpiece'){Object.assign(g.seats[0],{x:180,y:330});g.now=15000;}return g;}
+
  if(state.startsWith('flagship-')||state.startsWith('getaway-flagship-')){
   const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);add(g,'Violet','v',true);add(g,'Pip','p',true);configure(g,'duos');g.seats.forEach((s,i)=>s.team=i<2?0:1);setup(g);g.phase='playing';g.start=0;g.now=32000;g.end=90000;g.alert=state.includes('start')?0:18;g.events=[];g.jobEvent=undefined;if(!state.includes('start'))g.loot.forEach(l=>l.sealed=false);
   if(!state.includes('start'))g.guards.forEach((h,i)=>Object.assign(h,h.sentry||h.route[i%h.route.length],{entered:true,entryAt:undefined}));
@@ -10,7 +12,7 @@ export function reviewFixture(state:string):Game{
   if(state.includes('start'))g.now=0;
   if(state==='flagship-crew'){const p=hidingSpots(g)[0];Object.assign(g.seats[1],p,{hideId:0,hiddenAt:g.now,sneak:true});Object.assign(g.seats[0],vanFor(g,0),{escaped:true});}
   if(state==='flagship-empty'){g.now=10000;Object.assign(g.seats[0],vanFor(g,0),{emptyBoardUntil:g.now+4000});}
-  if(state==='flagship-lobby'){g.phase='lobby';g.layout=-1;g.arena=undefined;}
+  if(state==='flagship-lobby'){g.match=0;g.phase='lobby';g.layout=-1;g.arena=undefined;}
   if(state.includes('last-call')){g.now=75000;g.end=90000;}
   if(state.includes('pass')){const l=g.loot[3];Object.assign(l,{holder:g.seats[1].id,x:590,y:335});g.seats[1].hand=l.id;event(g,'ECHO: Bring free hands. Q asks me to pass.');}
   else event(g,state==='flagship-plan'?'ARCHITECTURE REVIEW · Fog disabled in this development fixture.':'The Velmont · Vault opens at 1:00.');
