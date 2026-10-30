@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as E from '../lib/noise/engine.ts';
+import * as E from './helpers/legacy-engine.ts';
 function job(seed=1,mode:E.CrewMode='duos',difficulty:E.Difficulty='normal'){const g=E.create('V31',0,seed);E.add(g,'Human','tok');E.configure(g,mode);E.fillCrews(g);g.difficulty=difficulty;E.setup(g);E.command(g,g.seats[0].id,{type:'ready'});return g;}
 function tick(g:E.Game,ms:number){for(let i=0;i<ms;i+=40)E.advance(g,g.now+40);}
 test('all sentry posts leave 30-unit-clear art-to-van routes; distinct posts and wall cover',()=>{

@@ -1,4 +1,4 @@
-import * as E from '../lib/noise/engine.ts';
+import * as E from '../tests/helpers/legacy-engine.ts';
 export function verify(){
 let heldCaught=0, afterCaught=0, rescued=0;
 const rows:any[]=[];

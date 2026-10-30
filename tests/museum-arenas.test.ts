@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as E from '../lib/noise/engine.ts';
+import * as E from './helpers/legacy-engine.ts';
 import {museumArena} from '../lib/noise/arenas.ts';
 import {museumCamera} from '../lib/noise/camera.ts';
 import {routePair} from '../scripts/arena-routes.ts';

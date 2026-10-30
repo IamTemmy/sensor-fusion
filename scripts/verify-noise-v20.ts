@@ -1,6 +1,6 @@
 import {pathToFileURL} from 'node:url';
 import {mkdirSync,writeFileSync} from 'node:fs';
-import {create,add,setup,command,advance,distance,steer,thiefWalls,vanFor,type Game,type Thief,type Vec} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,distance,steer,thiefWalls,vanFor,type Game,type Thief,type Vec} from '../tests/helpers/legacy-engine.ts';
 const go=(g:Game,s:Thief,p:Vec)=>{const n=steer(s,p,thiefWalls(g,s)),d=distance(s,n)||1;command(g,s.id,{type:'input',match:g.match,seq:s.lastSeq+1,dx:(n.x-s.x)/d,dy:(n.y-s.y)/d});};
 export function claudeFixture(seed:number,warmup=false){
  const g=create('CLAUDE',1000,seed),human=add(g,'Human','h'),echo=add(g,'Echo','e',true);setup(g);command(g,human.id,{type:'ready'});

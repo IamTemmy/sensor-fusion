@@ -1,0 +1,31 @@
+[
+  {
+    "level": "rookie",
+    "n": 40,
+    "escaped": 40,
+    "tied": 0,
+    "left": 0,
+    "misses": []
+  },
+  {
+    "level": "normal",
+    "n": 40,
+    "escaped": 40,
+    "tied": 0,
+    "left": 0,
+    "misses": []
+  },
+  {
+    "level": "pro",
+    "n": 40,
+    "escaped": 36,
+    "tied": 0,
+    "left": 4,
+    "misses": [
+      1013,
+      1016,
+      1038,
+      1039
+    ]
+  }
+]

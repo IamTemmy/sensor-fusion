@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,configure,fillCrews,command,advance,action,vanFor,zoneFor,homeSafe,zones,inside,clear,steer,move,distance,finish,stars,LAYOUTS,type Game,type CrewMode} from '../lib/noise/engine.ts';
+import {create,add,setup,configure,fillCrews,command,advance,action,vanFor,zoneFor,homeSafe,zones,inside,clear,steer,move,distance,finish,stars,LAYOUTS,type Game,type CrewMode} from './helpers/legacy-engine.ts';
 import {betterRecord} from '../lib/noise/records.ts';
 function job(seed=1,mode:CrewMode='coop',humans=1){const g=create('TEST',1000,seed);for(let i=0;i<humans;i++)add(g,'Human'+i,'t'+i);configure(g,mode);fillCrews(g);setup(g);for(const p of g.seats.filter(s=>!s.bot))command(g,p.id,{type:'ready'});return g;}
 function tick(g:Game,ms:number){for(let i=0;i<ms;i+=40)advance(g,g.now+40);}

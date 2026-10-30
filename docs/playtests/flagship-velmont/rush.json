@@ -1,0 +1,729 @@
+{
+  "engineAndGeometryHash": "6267a514a0c1ffb77d235a5d063aa5cd89b17fb637e683bc9e678e40003d3060",
+  "matches": 120,
+  "earlyBanks": 0,
+  "banks": 73,
+  "earliestBankSeconds": 52.24,
+  "cases": [
+    {
+      "seed": 1001,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1002,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1003,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1004,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1005,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1006,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1007,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1008,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1009,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1010,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1011,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1012,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1013,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1014,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1015,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 52.24
+    },
+    {
+      "seed": 1016,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 52.24
+    },
+    {
+      "seed": 1017,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1018,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1019,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1020,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1021,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1022,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1023,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1024,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1025,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1026,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1027,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1028,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1029,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1030,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1031,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1032,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1033,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1034,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1035,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1036,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1037,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1038,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1039,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 52.24
+    },
+    {
+      "seed": 1040,
+      "level": "rookie",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 64.32
+    },
+    {
+      "seed": 1001,
+      "level": "normal",
+      "pickupSeconds": 30.92,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1002,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 87.84
+    },
+    {
+      "seed": 1003,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 84.04
+    },
+    {
+      "seed": 1004,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1005,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 86.24
+    },
+    {
+      "seed": 1006,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1007,
+      "level": "normal",
+      "pickupSeconds": 32.04,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1008,
+      "level": "normal",
+      "pickupSeconds": 30.92,
+      "bankSeconds": 79.2
+    },
+    {
+      "seed": 1009,
+      "level": "normal",
+      "pickupSeconds": 32.04,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1010,
+      "level": "normal",
+      "pickupSeconds": 30.36,
+      "bankSeconds": 84.8
+    },
+    {
+      "seed": 1011,
+      "level": "normal",
+      "pickupSeconds": 30.92,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1012,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 83.56
+    },
+    {
+      "seed": 1013,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1014,
+      "level": "normal",
+      "pickupSeconds": 31.2,
+      "bankSeconds": 79.12
+    },
+    {
+      "seed": 1015,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 84
+    },
+    {
+      "seed": 1016,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1017,
+      "level": "normal",
+      "pickupSeconds": 32.6,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1018,
+      "level": "normal",
+      "pickupSeconds": 30.92,
+      "bankSeconds": 78.64
+    },
+    {
+      "seed": 1019,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 86.84
+    },
+    {
+      "seed": 1020,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1021,
+      "level": "normal",
+      "pickupSeconds": 33.44,
+      "bankSeconds": 81.2
+    },
+    {
+      "seed": 1022,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1023,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 84
+    },
+    {
+      "seed": 1024,
+      "level": "normal",
+      "pickupSeconds": 31.2,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1025,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 78
+    },
+    {
+      "seed": 1026,
+      "level": "normal",
+      "pickupSeconds": 31.76,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1027,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1028,
+      "level": "normal",
+      "pickupSeconds": 30.92,
+      "bankSeconds": 79.2
+    },
+    {
+      "seed": 1029,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 83.6
+    },
+    {
+      "seed": 1030,
+      "level": "normal",
+      "pickupSeconds": 31.48,
+      "bankSeconds": 85.72
+    },
+    {
+      "seed": 1031,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1032,
+      "level": "normal",
+      "pickupSeconds": 32.32,
+      "bankSeconds": 80.12
+    },
+    {
+      "seed": 1033,
+      "level": "normal",
+      "pickupSeconds": 32.88,
+      "bankSeconds": 81.04
+    },
+    {
+      "seed": 1034,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 78
+    },
+    {
+      "seed": 1035,
+      "level": "normal",
+      "pickupSeconds": 30.92,
+      "bankSeconds": 84.64
+    },
+    {
+      "seed": 1036,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1037,
+      "level": "normal",
+      "pickupSeconds": 32.04,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1038,
+      "level": "normal",
+      "pickupSeconds": 33.72,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1039,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1040,
+      "level": "normal",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1001,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 77.92
+    },
+    {
+      "seed": 1002,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 84.16
+    },
+    {
+      "seed": 1003,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 83.36
+    },
+    {
+      "seed": 1004,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1005,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 84.36
+    },
+    {
+      "seed": 1006,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1007,
+      "level": "pro",
+      "pickupSeconds": 31.76,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1008,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1009,
+      "level": "pro",
+      "pickupSeconds": 31.48,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1010,
+      "level": "pro",
+      "pickupSeconds": 30.92,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1011,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1012,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1013,
+      "level": "pro",
+      "pickupSeconds": 30.36,
+      "bankSeconds": 84.68
+    },
+    {
+      "seed": 1014,
+      "level": "pro",
+      "pickupSeconds": 30.92,
+      "bankSeconds": 66.92
+    },
+    {
+      "seed": 1015,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1016,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1017,
+      "level": "pro",
+      "pickupSeconds": 31.76,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1018,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 71.88
+    },
+    {
+      "seed": 1019,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 84.08
+    },
+    {
+      "seed": 1020,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1021,
+      "level": "pro",
+      "pickupSeconds": 32.88,
+      "bankSeconds": 86.76
+    },
+    {
+      "seed": 1022,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1023,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1024,
+      "level": "pro",
+      "pickupSeconds": 30.64,
+      "bankSeconds": 72.72
+    },
+    {
+      "seed": 1025,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 58.28
+    },
+    {
+      "seed": 1026,
+      "level": "pro",
+      "pickupSeconds": 31.48,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1027,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 66.04
+    },
+    {
+      "seed": 1028,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1029,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1030,
+      "level": "pro",
+      "pickupSeconds": 31.48,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1031,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1032,
+      "level": "pro",
+      "pickupSeconds": 31.76,
+      "bankSeconds": 85.76
+    },
+    {
+      "seed": 1033,
+      "level": "pro",
+      "pickupSeconds": 32.04,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1034,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1035,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1036,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1037,
+      "level": "pro",
+      "pickupSeconds": 31.48,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1038,
+      "level": "pro",
+      "pickupSeconds": 33.72,
+      "bankSeconds": null
+    },
+    {
+      "seed": 1039,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": 76.48
+    },
+    {
+      "seed": 1040,
+      "level": "pro",
+      "pickupSeconds": 30.08,
+      "bankSeconds": null
+    }
+  ]
+}

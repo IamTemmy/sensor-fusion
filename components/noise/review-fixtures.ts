@@ -1,9 +1,18 @@
+import {museumArena} from '../../lib/noise/arenas';
 import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('flagship-')){
+  const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);add(g,'Violet','v',true);add(g,'Pip','p',true);configure(g,'duos');g.seats.forEach((s,i)=>s.team=i<2?0:1);setup(g);g.phase='playing';g.start=0;g.now=32000;g.end=90000;g.alert=18;g.events=[];g.jobEvent=undefined;
+  g.guards.forEach((h,i)=>Object.assign(h,h.sentry||h.route[i%h.route.length],{entered:true,entryAt:undefined}));
+  const p=state.includes('vault')?{x:810,y:85}:state.includes('archive')?{x:120,y:180}:state.includes('mirrors')?{x:890,y:350}:{x:420,y:335};Object.assign(g.seats[0],p);Object.assign(g.seats[1],{x:590,y:335});
+  if(state.includes('pass')){const l=g.loot[3];Object.assign(l,{holder:g.seats[1].id,x:590,y:335});g.seats[1].hand=l.id;event(g,'ECHO: Bring free hands. Q asks me to pass.');}
+  else event(g,state==='flagship-plan'?'ARCHITECTURE REVIEW · Fog disabled in this development fixture.':'The Velmont · Vault opens at 1:00.');
+  return g;
+ }
  if(state.startsWith('practice-')){const g=create('VISUAL',0,1);g.training=true;add(g,'Rookie','local');add(g,'Echo','echo',true);setup(g);g.phase='playing';g.now=20000;preparePractice(g,Math.max(0,Math.min(6,Number(state.split('-')[1])-1)));if(state==='practice-2'){preparePractice(g,0);g.practiceStage=11;(g as any).lesson.step=1;g.seats[0].hand=g.loot[0].id;g.loot[0].holder=g.seats[0].id;g.seats[1].bot=true;}return g;}
- let g=create('VISUAL',0,1);for(let seed=1;seed<50;seed++){g=create('VISUAL',0,seed);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state!=='coop'){add(g,'Violet','violet',true);add(g,'Pip','pip',true);configure(g,'duos');}setup(g);if(g.layout===(state.includes('archive')?1:state.includes('crossroads')?2:0))break;}
+ let g=create('VISUAL',0,1);for(let seed=1;seed<50;seed++){g=create('VISUAL',0,seed);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state!=='coop'){add(g,'Violet','violet',true);add(g,'Pip','pip',true);configure(g,'duos');}setup(g,museumArena);if(g.layout===(state.includes('archive')?1:state.includes('crossroads')?2:0))break;}
  g.phase='playing';g.start=0;g.now=32000;g.end=90000;g.alert=44;g.events=[];
  const spots=[{x:450,y:300},{x:410,y:325},{x:520,y:330},{x:560,y:270}];
  g.seats.forEach((s,i)=>{const target=spots[i];const options=[target,{x:target.x,y:target.y+40},{x:target.x,y:target.y-40}];const p=options.find(p=>clear(p,12,g.walls))||s;Object.assign(s,{x:p.x,y:p.y,team:i<2?0:1,aim:{x:580,y:300},bank:i===0?600:0});});g.total=600;

@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as E from '../lib/noise/engine.ts';
+import * as E from './helpers/legacy-engine.ts';
 import {job,lure} from '../scripts/verify-noise-v29.ts';
 const tick=(g:E.Game,ms:number)=>{for(let t=0;t<ms;t+=40)E.advance(g,g.now+40);};
 test('thrown capsule breaks mid-chase at 130/220 units; matched no-throw controls are caught',()=>{for(const gap of [130,220]){assert.equal(lure(gap,false).caught,true);const thrown=lure(gap,true);assert.equal(thrown.caught,false);assert.equal(thrown.heard,true);}});

@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,configure,fillCrews,setup,command,advance,action,steer,move,distance,EXIT,VAN_RADIUS,canEndJob,LAYOUTS,PEDESTALS,clear,type Game,type CrewMode} from '../lib/noise/engine.ts';
+import {create,add,configure,fillCrews,setup,command,advance,action,steer,move,distance,EXIT,VAN_RADIUS,canEndJob,LAYOUTS,PEDESTALS,clear,type Game,type CrewMode} from './helpers/legacy-engine.ts';
 import {newLocalLoop,runLocalFrame} from '../lib/noise/client-loop.ts';
 function start(mode:CrewMode='coop',seed=123){const g=create('TEST',1000,seed),s=add(g,'Rookie','local');configure(g,mode);fillCrews(g);setup(g);command(g,s.id,{type:'ready'});return {g,s};}
 function tick(g:Game,ms:number){for(let i=0;i<ms;i+=40)advance(g,g.now+40);}

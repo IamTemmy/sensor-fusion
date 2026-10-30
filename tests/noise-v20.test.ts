@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,command,advance,distance,idleGuards,guardSees} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,distance,idleGuards,guardSees} from './helpers/legacy-engine.ts';
 import {verify} from '../scripts/verify-noise-v20.ts';
 
 test('Claude fixture: 40 fixed seeds, active events, safe waiting/rejoin and at least 40% rescues',()=>{

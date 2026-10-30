@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,command,advance,botRoute,guardSees,distance,clear} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,botRoute,guardSees,distance,clear} from './helpers/legacy-engine.ts';
 import {newLocalLoop,runLocalFrame,reconcilePosition} from '../lib/noise/client-loop.ts';
 import {rescueFixture,carryingFixtures,spacingFixture,jackpotFixture} from '../scripts/verify-noise-v18.ts';
 

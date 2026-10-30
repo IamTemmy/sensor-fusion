@@ -1,4 +1,4 @@
-"""Design-only blueprint. Does not import into the live game."""
+"""Generate the flagship arena and its review blueprint from one geometry source."""
 import json, math, heapq
 from pathlib import Path
 from PIL import Image, ImageDraw, ImageFont
@@ -32,8 +32,7 @@ rect(696,290,152,12);rect(784,390,152,12);rect(696,490,152,12)
 # Archive shelving and gallery L-return, attached to existing room fabric.
 rect(184,120,12,32);rect(140,224,138,12)
 rect(280,262,12,35);rect(280,285,65,12)
-# Bay divider leaves two generous exits and two separately coloured dock zones.
-rect(224,432,12,36)
+# Keep the shared bay open: a return here pinched Mint's route around Violet's dock.
 
 hides=[]
 def niche(x,y,side):
@@ -61,7 +60,7 @@ guards=[[(110,285),(170,285),(170,335),(260,335),(260,390),(370,390),(370,475),(
 [(120,65),(570,65),(570,165),(640,220),(580,220),(580,335),(640,335),(580,335),(580,220),(570,165),(570,65),(120,65)],
 [(740,450),(740,350),(890,350),(890,245),(890,350),(740,350),(740,450)]]
 guards.append([(120,65),(120,160),(150,180),(210,180),(150,180),(110,180),(110,285),(110,180),(120,160),(120,65)])
-sentries=[dict(x=370,y=215),dict(x=910,y=230)]
+sentries=[dict(x=410,y=215),dict(x=910,y=230)]
 data=dict(width=960,height=600,walls=walls,doors=doors,rooms=rooms,arts=arts,plate=plate,docks=docks,hides=hides,lasers=lasers,guardRoutes=guards,sentries=sentries)
 (OUT/'blueprint.json').write_text(json.dumps(data,indent=2)+'\n')
 module='''// Authored flagship geometry; source: docs/flagship-velmont/blueprint.py.
@@ -112,7 +111,7 @@ safe,safe_route=path(start,crown,[opponentDock,dict(x=684,y=400,w=12,h=80)])
 plate_distance,plate_route=path(xy(plate),crown)
 metrics=dict(method='4u eight-neighbour grid, square wall inflation 13u; approximate path lengths, not gameplay simulations',
     fastCrownDistance=round(fast,1),longCrownDistance=round(safe,1),plateToCrownDistance=round(plate_distance,1),
-    unobstructedFastRoundTripSeconds=round(fast/150+fast/(110-1000*30/1300),1),
+    unobstructedFastRoundTripSeconds=round(fast/150+fast/((110-1000*30/1300)*.8),1),
     targets=[dict(name=p.get('name',f'target{i}'),clear=clear(xy(p)),distance=path(start,xy(p))[0]) for i,p in enumerate(arts+[plate]+docks+hides)])
 # Interior-only wall overlap under left-right reflection (outer frame excluded).
 occupied={(x,y) for x in range(24,936,2) for y in range(24,576,2) if any(w['x']<=x<w['x']+w['w'] and w['y']<=y<w['y']+w['h'] for w in walls[4:])}
@@ -127,7 +126,7 @@ def box(x,y,w,h,c,outline=None):d.rectangle((x*S,y*S,(x+w)*S,(y+h)*S),fill=c,out
 def line(points,color,width=2):d.line([(int((x+28)*S),int((y+128)*S)) for x,y in points],fill=color,width=width*S,joint='curve')
 def dot(x,y,r,c):d.ellipse(((x+28-r)*S,(y+128-r)*S,(x+28+r)*S,(y+128+r)*S),fill=c)
 text(28,22,'THE VELMONT',32,'#f4d79b',True)
-text(29,67,'FLAGSHIP / APPROVED REVISION 02',13,'#71d7c8',True)
+text(29,67,'FLAGSHIP / IMPLEMENTATION REVISION 03',13,'#71d7c8',True)
 text(29,94,'960 × 600 world units   •   2–4 thieves   •   implementation branch, not live',13)
 colors=['#1b303b','#25312f','#372c33','#26313f','#28343b','#303339','#28372f','#20393b','#31333b','#21333a','#40342b','#27283c']
 for (name,x,y,w,h),c in zip(rooms,colors):box(x+28,y+128,w,h,c)
@@ -162,6 +161,6 @@ text(1010,632,'KEY',12,'#f4d79b',True)
 for j,(t,c) in enumerate([('A / C  Art / Crown','#eac773'),('P  Remote pressure plate','#90cbff'),('H  Wall recess','#71d7c8'),('G / dotted  Sentry / patrol','#e57f69'),('Pink  Laser beam','#ff617b')]):text(1010,656+j*19,t,11,c)
 text(28,752,f"SHORT LASER ROUTE  ≈ {fast:.0f}u       LONG APPROACH  ≈ {safe:.0f}u       PLATE → CROWN  ≈ {plate_distance:.0f}u",15,'#f4d79b',True)
 text(28,784,'Gold = shortest Crown route   •   Teal = longer approach   •   both converge in the laser maze',12)
-text(28,807,'13u clearance measured. Patrols, balance, visibility and passing remain implementation gates. No gameplay changed.',12,'#9dacb7')
+text(28,807,'13u clearance measured. Candidate implementation: release requires passing balance, idle, escape and CPU gates.',12,'#9dacb7')
 im.save(OUT/'blueprint.png')
 print(json.dumps(metrics,indent=2))

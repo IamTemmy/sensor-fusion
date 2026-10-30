@@ -66,7 +66,7 @@ export class OnlinePrediction {
   const before=g.now,dt=Math.max(0,Math.min(750,to-before))/1000;g.now=to;
   const s=g.seats.find(s=>s.id===this.you);
   if(s&&!s.escaped&&s.stun<=before){
-   const art=g.loot.find(l=>l.id===s.hand),speed=(s.hand?(art?carrySpeed(art.value):CARRY_SPEED):165)*(s.sneak?.55:1);
+   const art=g.loot.find(l=>l.id===s.hand),speed=(s.hand?(art?carrySpeed(art.value,g):CARRY_SPEED):165)*(s.sneak?.55:1);
    move(s,s.dx,s.dy,dt,speed,thiefWalls(g,s));
   }
   for(const l of g.loot){const holder=g.seats.find(s=>s.id===l.holder);if(holder){l.x=holder.x;l.y=holder.y;}else if(l.flight){const t=Math.min(1,(to-l.flight.at)/500);l.x=l.flight.from.x+(l.flight.to.x-l.flight.from.x)*t;l.y=l.flight.from.y+(l.flight.to.y-l.flight.from.y)*t;}}

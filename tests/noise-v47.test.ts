@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import * as E from '../lib/noise/engine.ts';
+import * as E from './helpers/legacy-engine.ts';
 import {radioEvents,normalArtSecured} from '../lib/noise/clarity.ts';
 import {runLocalFrame,newLocalLoop} from '../lib/noise/client-loop.ts';
 function job(seed=2,mode:E.CrewMode='duos'){const g=E.create('V47',0,seed);E.add(g,'Human','tok');E.configure(g,mode);E.fillCrews(g);E.setup(g);E.command(g,g.host,{type:'ready'});return g;}

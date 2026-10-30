@@ -23,7 +23,7 @@ export function applyPacket(g:Game,id:string,a:Record<string,any>){
 export function packet(g:Game,id:string,known?:string){
  const v=view(g,id) as View&{net?:unknown};delete v.net;delete (v as View&{peer?:unknown}).peer;
  const key=arenaKey(g);const {walls,plate,hideSpots,sensors,arena:museum,...dynamic}=v;
- return {protocol:2,arenaKey:key,ack:actionAck(g,id),view:{...dynamic,sensorState:(sensors||[]).map(s=>({id:s.id,cooldown:s.cooldown,inside:s.inside}))},...(known===key?{}:{arena:{walls,plate,hideSpots,museum,sensors:(sensors||[]).map(({cooldown,inside,...s})=>s)}})};
+ return {protocol:2,arenaKey:key,ack:actionAck(g,id),view:{...dynamic,sensorState:(sensors||[]).map(s=>({id:s.id,cooldown:s.cooldown,screamingUntil:s.screamingUntil,inside:s.inside}))},...(known===key?{}:{arena:{walls,plate,hideSpots,museum,sensors:(sensors||[]).map(({cooldown,inside,screamingUntil,...s})=>s)}})};
 }
 export type Wire=ReturnType<typeof packet>;
 export function unpack(p:Wire,previous?:View|null):View{

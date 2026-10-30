@@ -1,9 +1,9 @@
 {
   "method": "4u eight-neighbour grid, square wall inflation 13u; approximate path lengths, not gameplay simulations",
-  "fastCrownDistance": 1343.7,
-  "longCrownDistance": 1623.3,
+  "fastCrownDistance": 1218.7,
+  "longCrownDistance": 1485.1,
   "plateToCrownDistance": 749.2,
-  "unobstructedFastRoundTripSeconds": 24.4,
+  "unobstructedFastRoundTripSeconds": 25.7,
   "targets": [
     {
       "name": "Bay relic",
@@ -91,5 +91,5 @@
       "distance": 1057.754400720052
     }
   ],
-  "mirroredInteriorOverlapPercent": 25.4
+  "mirroredInteriorOverlapPercent": 25.7
 }

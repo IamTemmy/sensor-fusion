@@ -18,16 +18,16 @@ export function HeistBriefing({arena,training,crewMode,duel=false,touch,busy,rea
   <div className="quick-brief-scroll" tabIndex={0} aria-label="Heist briefing">
    <header className="quick-brief-heading">
     <div className="quick-brief-kickers"><span>QUICK START</span><span className="brief-timer"><Clock/>{training?'No timer':'90 seconds'}</span></div>
-    <h2 id="brief-title">The alarm is stealable.</h2>
+    <h2 id="brief-title">{arena?.id==='flagship-velmont'?'Every corner is a choice.':'The alarm is stealable.'}</h2>
     <p className="quick-brief-tagline">A little teamwork. A very loud getaway.</p>
     <p className="quick-brief-mode">{training?'Practice · Learn six moves at your own pace':crewMode==='coop'?`Co-op · Bank $${COOP_GOAL.toLocaleString()} and escape`:duel?'1v1 · Step on the plate to unlock the crown for both players':'Rivals · Richest crew wins'}</p>
    </header>
    {arena&&<div className="arena-plan-note"><b>{arena.name} · {arena.capacity===2?'Compact':arena.capacity===4?'Crew':'Grand'} plan</b><span>{arena.brief}</span><small className="museum-lore">{museumIdentity(['sculpture','fossil','celestial'].indexOf(arena.theme)).lore}</small></div>}
    <ol className="quick-brief-steps">{steps.map((step,i)=><li key={step.title} style={{'--step-color':step.color} as CSSProperties}>
-    <span className="quick-step-number" aria-hidden="true">0{i+1}</span><GuideIcon step={i}/><h3>{step.title}</h3><p>{duel&&i===1?'Drop your art to free a hand, then grab its alarm.':duel&&i===3?'Bank your art, then board your own van.':step.body}</p>
+    <span className="quick-step-number" aria-hidden="true">0{i+1}</span><GuideIcon step={i}/><h3>{step.title}</h3><p>{arena?.id==='flagship-velmont'&&i===1?'Ordinary alarms can be taken. The Crown’s cannot.':duel&&i===1?'Drop your art to free a hand, then grab its alarm.':duel&&i===3?'Bank your art, then board your own van.':step.body}</p>
     <div className="quick-step-control">{touch?<><span aria-hidden="true">☝</span>{step.touch}</>:<><kbd>{step.key}</kbd>{step.action}</>}</div>
    </li>)}</ol>
-   <div className="quick-brief-controls" aria-label="Movement controls">{touch?<><span>Drag to move</span><span>Tap floor to aim</span><span>Tap Sneak for stealth</span></>:<><span><MovementKeys/> Move</span><span><kbd>SHIFT</kbd> Sneak</span><span><kbd>G</kbd> Drop art</span></>}</div>
+   <div className="quick-brief-controls" aria-label="Movement controls">{touch?<><span>Drag to move</span><span>Tap floor to aim</span><span>Tap Sneak for stealth</span></>:<><span><MovementKeys/> Move</span><span><kbd>SHIFT</kbd> Sneak</span><span><kbd>G</kbd> Drop art</span><span><kbd>Q</kbd> Ask for art</span></>}</div>
    <div className="quick-brief-warning"><Clock/><div><strong>{training?'Take your time. Learn by doing.':'Board before time runs out.'}</strong><span>{training?'No timer or loot penalties. Each lesson marks your target.':'Left behind outside your dock? Lose 25% of your bank.'}</span></div></div>
   </div>
   <footer className="quick-brief-footer"><button className="quick-more-rules" onClick={onRules}>More rules <span aria-hidden="true">→</span></button><button className="primary" disabled={busy||ready} onClick={onReady}>{ready?'Waiting for the crew…':training?'LET’S PRACTICE →':'I’M IN — LET’S GO →'}</button></footer>

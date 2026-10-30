@@ -1,7 +1,7 @@
 function fixture(g:Game){g.arena=undefined;g.hideSpots=[];g.sensors=[];g.jobEvent=undefined;g.layout=0;g.walls=WALLS;g.plate={x:730,y:155};g.loot.forEach((l,i)=>{Object.assign(l,[{x:205,y:320},{x:440,y:285},{x:835,y:120},{x:810,y:470}][i]);l.home={x:l.x,y:l.y};l.locked=i===2;if(i===0)l.value=500;});}
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,command,advance,action,configure,fillCrews,crewScores,interaction,PLATE,EXIT,WALLS,type Game} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,action,configure,fillCrews,crewScores,interaction,PLATE,EXIT,WALLS,type Game} from './helpers/legacy-engine.ts';
 function job(){const g=create('TESTAA',1000,42),a=add(g,'Human','secret'),b=add(g,'Echo','bot',true);setup(g);fixture(g);command(g,a.id,{type:'ready'});g.guards=[];g.alarmAt=Infinity;return {g,a,b};}
 function tick(g:Game,ms:number){for(let n=0;n<ms;n+=40)advance(g,g.now+40);}
 test('scream follows carrier, teammate steals it, it returns after eight seconds',()=>{const {g,a,b}=job();a.x=205;a.y=320;b.x=220;b.y=320;action(g,a,'grab');const n=g.noises[0];assert.equal(n.attached,a.id);a.x=235;tick(g,40);assert.equal(n.x,a.x);action(g,b,'grab');assert.equal(n.attached,null);assert.equal(n.holder,b.id);assert.equal(a.hand,'art1');b.escaped=true;tick(g,7960);assert.equal(g.noises.some(n=>n.attached===a.id),false);tick(g,80);assert.equal(g.noises.some(n=>n.attached===a.id),true);a.x=EXIT.x;a.y=EXIT.y;tick(g,40);assert.equal(g.noises.some(n=>n.attached===a.id),false);assert.equal(g.total,500);});

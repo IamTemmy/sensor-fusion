@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,configure,setup,command,advance,updateJobEvent,routeLength,patrolPool,clear,distance,vanFor,mirrorPoint,rotatePoint,LOOT_TOTAL,carrySpeed,finish,blackoutActive,type Game} from '../lib/noise/engine.ts';
+import {create,add,configure,setup,command,advance,updateJobEvent,routeLength,patrolPool,clear,distance,vanFor,mirrorPoint,rotatePoint,LOOT_TOTAL,carrySpeed,finish,blackoutActive,type Game} from './helpers/legacy-engine.ts';
 const job=(seed=1,mode:'coop'|'duos'='duos')=>{const g=create('TEST',1000,seed);for(let i=0;i<(mode==='coop'?2:4);i++)add(g,'P'+i,'t'+i);configure(g,mode);setup(g);return g;};
 function live(g:Game){for(const s of g.seats)command(g,s.id,{type:'ready'});}
 test('fixed 4300 budget, eight pieces, all value tiers, equal-budget rivals and 250-unit danger rule across seeds',()=>{

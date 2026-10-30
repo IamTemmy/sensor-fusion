@@ -1,4 +1,4 @@
-import test from 'node:test';import assert from 'node:assert/strict';import * as E from '../lib/noise/engine.ts';
+import test from 'node:test';import assert from 'node:assert/strict';import * as E from './helpers/legacy-engine.ts';
 function lobby(n:number,mode:E.CrewMode='duos'){const g=E.create('COORD',0,1001);for(let i=0;i<n;i++)E.add(g,'Human '+i,'token'+i);E.configure(g,mode);return g;}
 test('human-only rival games support 1v1, 2v2 and 3v3 without injecting bots',()=>{for(const n of [2,4,6]){const g=lobby(n,n===6?'trios':'duos');E.command(g,g.host,{type:'start'});assert.equal(g.phase,'ready');assert.equal(g.seats.length,n);assert.ok(g.seats.every(p=>!p.bot));}});
 test('three humans get one bot on the short crew, and imbalance is rejected until filled',()=>{const g=lobby(3);assert.throws(()=>E.command(g,g.host,{type:'start'}),/Balance crews/);const short=[0,1].find(t=>g.seats.filter(s=>s.team===t).length===1);E.fillCrews(g);assert.equal(g.seats.filter(s=>s.bot).length,1);assert.equal(g.seats.find(s=>s.bot)!.team,short);E.command(g,g.host,{type:'start'});assert.equal(g.phase,'ready');});

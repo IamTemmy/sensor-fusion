@@ -11,6 +11,7 @@ export function botIntention(g:Scene,s:Thief){
 }
 export function handStatus(g:Scene,s:Thief){
  if(g.noises.some(n=>n.id===s.hand))return 'ALARM IN HAND · F throws';
+ if(g.arena?.id==='flagship-velmont'&&g.loot.some(l=>l.id===s.hand&&l.value===1200))return 'CROWN + ALARM · Cannot be silenced';
  if(g.loot.some(l=>l.id===s.hand))return g.noises.some(n=>n.attached===s.id)?'ART + ALARM · Partner grabs alarm':'QUIET ART · Bank or pass';
  return 'HANDS FREE · E interacts';
 }

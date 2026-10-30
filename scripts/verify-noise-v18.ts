@@ -1,7 +1,7 @@
 import {pathToFileURL} from 'node:url';
 import {mkdirSync,writeFileSync,readFileSync} from 'node:fs';
 import {createHash} from 'node:crypto';
-import {create,add,setup,command,advance,action,distance,steer,thiefWalls,clear,sight,homeSafe,type Game,type Thief,type Vec} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,action,distance,steer,thiefWalls,clear,sight,homeSafe,type Game,type Thief,type Vec} from '../tests/helpers/legacy-engine.ts';
 const go=(g:Game,s:Thief,p:Vec)=>{const n=steer(s,p,thiefWalls(g,s)),d=distance(s,n)||1;command(g,s.id,{type:'input',match:g.match,seq:s.lastSeq+1,dx:(n.x-s.x)/d,dy:(n.y-s.y)/d});};
 export function rescueFixture(seed:number,carrying=false){const g=create('RESCUE',1000,seed),human=add(g,'Human','h'),echo=add(g,'Echo','e',true);setup(g);command(g,human.id,{type:'ready'});g.jobEvent=undefined;let loaded=false;let art:Game['loot'][number]|undefined;
  let caughtAt=0,rescuedAt=0,echoCaught=false,artLost=false,carryingAtCapture=false,echoWasCaughtAtCapture=false;

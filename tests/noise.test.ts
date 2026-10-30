@@ -1,7 +1,7 @@
 function fixture(g:Game){g.layout=0;g.walls=WALLS;g.plate={x:730,y:155};g.loot.forEach((l,i)=>{Object.assign(l,[{x:205,y:320},{x:440,y:285},{x:835,y:120},{x:810,y:470}][i]);l.home={x:l.x,y:l.y};l.locked=i===2;if(i===0)l.value=500;});}
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,command,advance,action,input,clear,move,sight,steer,distance,view,EXIT,DURATION,WALLS,type Game} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,action,input,clear,move,sight,steer,distance,view,EXIT,DURATION,WALLS,type Game} from './helpers/legacy-engine.ts';
 function job(bot=false){const g=create('NOISEA',1000,77);const me=add(g,'Tester','secret-human');if(bot)add(g,'Echo','secret-bot',true);setup(g);fixture(g);command(g,me.id,{type:'ready'});return {g,me};}
 function tick(g:Game,n=40){advance(g,g.now+n);}
 test('ready gate: no elapsed gameplay or bot looting before every human is ready',()=>{const g=create('NOISEA',1000);const a=add(g,'A','a'),b=add(g,'B','b');command(g,a.id,{type:'start'});command(g,a.id,{type:'ready'});advance(g,50000);assert.equal(g.phase,'ready');assert.equal(g.total,0);command(g,b.id,{type:'ready'});assert.equal(g.end,50000+DURATION);assert.equal(g.phase,'playing');});

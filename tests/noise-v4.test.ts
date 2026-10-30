@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,command,advance,action,EXIT,SAFE_ZONE,inSafeZone,LAYOUTS,distance,type Game} from '../lib/noise/engine.ts';
+import {create,add,setup,command,advance,action,EXIT,SAFE_ZONE,inSafeZone,LAYOUTS,distance,type Game} from './helpers/legacy-engine.ts';
 function job(){const g=create('FIX',1000,42),s=add(g,'Human','t'),b=add(g,'Echo','b',true);setup(g);command(g,s.id,{type:'ready'});g.walls=LAYOUTS[0];g.sensors=[];g.guards=[];return {g,s,b};}
 function tick(g:Game,ms:number){for(let i=0;i<ms;i+=40)advance(g,g.now+40);}
 function guard(g:Game,x:number,y:number){g.guards=[{id:'test',x,y,angle:0,mode:'patrol',target:{x:250,y:90},route:[{x:250,y:90},{x:80,y:90}],way:0,attention:0,victim:null}];return g.guards[0];}
