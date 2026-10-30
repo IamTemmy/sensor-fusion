@@ -66,3 +66,15 @@ test('chased bot automatically passes actual art to a visible human within 220u'
 test('autonomous crews do not commit to a locked plate before the vault opens',()=>{const g=job(4,'duos');g.guards=[];g.sensors=[];g.jobEvent=undefined;for(const l of g.loot)if(l.value!==1200)l.banked=true;for(let i=0;i<200;i++)E.advance(g,g.now+40);assert.ok(g.seats.filter(s=>s.bot&&s.team===1).every(s=>s.task!=='hold-plate'));});
 test('no unobstructed floor rectangle exceeds both 260u width and 200u height',()=>{const g=job(),xs=[...new Set([24,936,...g.walls.flatMap(w=>[w.x,w.x+w.w])])].filter(x=>x>=24&&x<=936).sort((a,b)=>a-b);for(const a of xs)for(const b of xs){if(b-a<=260)continue;const blocked=g.walls.filter(w=>w.x<b&&w.x+w.w>a).map(w=>[Math.max(24,w.y),Math.min(576,w.y+w.h)]).filter(([a,b])=>b>a).sort((a,b)=>a[0]-b[0]);let end=24;for(const [lo,hi] of blocked){assert.ok(lo-end<=200,`${a}..${b} / ${end}..${lo}`);end=Math.max(end,hi);}assert.ok(576-end<=200,`${a}..${b} / ${end}..576`);}});
 test('navigation escapes the thin floor strip below the Fossil recess',()=>{const g=job(),p={x:44,y:404},home=E.vanFor(g,0);assert.ok(E.clear(p,13,g.walls));for(let i=0;i<300&&E.distance(p,home)>20;i++){const q=E.steer(p,home,g.walls);E.move(p,q.x-p.x,q.y-p.y,.04,150,g.walls);}assert.ok(E.distance(p,home)<20);});
+test('both Hall entrances force at least three turns before the Crown',()=>{
+ const g=job(),dirs=[[10,0],[-10,0],[0,10],[0,-10]],cols=96,encode=(x:number,y:number,d:number)=>((y/10)*cols+x/10)*4+d;
+ for(const start of [{x:670,y:450},{x:670,y:550}]){
+  const buckets:number[][]=Array.from({length:30},()=>[]),best=new Map<number,number>();for(let d=0;d<4;d++){const k=encode(start.x,start.y,d);best.set(k,0);buckets[0].push(k);}let found=Infinity;
+  outer:for(let turns=0;turns<buckets.length;turns++)for(let i=0;i<buckets[turns].length;i++){
+   const k=buckets[turns][i];if(best.get(k)!==turns)continue;const d=k%4,cell=Math.floor(k/4),p={x:cell%cols*10,y:Math.floor(cell/cols)*10};if(E.distance(p,g.loot[2])<=10){found=turns;break outer;}
+   for(let nd=0;nd<4;nd++){const [dx,dy]=dirs[nd],q={x:p.x+dx,y:p.y+dy},t=turns+Number(nd!==d);if(t>=30||!E.clear(q,13,g.walls)||!E.clear({x:p.x+dx/2,y:p.y+dy/2},13,g.walls))continue;const next=encode(q.x,q.y,nd);if(t<(best.get(next)??Infinity)){best.set(next,t);buckets[t].push(next);}}
+  }
+  assert.ok(Number.isFinite(found)&&found>=3,`${JSON.stringify(start)}: ${found} turns`);
+ }
+});
+test('room labels remain inside their named room instead of relocating into neighbours',async()=>{const {roomLabels}=await import('../lib/noise/world-labels.ts');const g=job();for(const label of roomLabels(g,7)){const r=g.arena!.rooms.find(r=>r.name===label.name)!,b=r.bounds!;assert.ok(label.x>b.x&&label.x<b.x+b.w&&label.y>b.y&&label.y<b.y+b.h,label.name);}});

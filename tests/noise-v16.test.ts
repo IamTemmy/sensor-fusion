@@ -1,7 +1,7 @@
 import {recordKey} from '../lib/noise/records.ts';
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {create,add,setup,configure,fillCrews,command,advance,action,interaction,difficultyOf,tuning,RIVAL_LAYOUTS,wideX,routeLength,vanFor,distance,type Difficulty} from '../lib/noise/engine.ts';
+import {create,add,setup,configure,fillCrews,command,advance,action,interaction,difficultyOf,tuning,RIVAL_LAYOUTS,wideX,routeLength,vanFor,distance,type Difficulty} from './helpers/legacy-engine.ts';
 function job(seed=1,mode:'coop'|'duos'='coop',difficulty:Difficulty='normal'){const g=create('V16',1000,seed);g.difficulty=difficulty;const human=add(g,'Human','h'),echo=add(g,'Echo','b',true);if(mode==='duos'){configure(g,mode);echo.team=human.team;fillCrews(g);}setup(g);command(g,human.id,{type:'ready'});return {g,human,echo};}
 test('E prefers reachable art unless a capturable alarm is strictly closer',()=>{const {g,human:s}=job();g.walls=[];s.x=300;s.y=300;const l=g.loot[0];Object.assign(l,{x:320,y:300,locked:false});g.noises=[{id:'n',x:390,y:300,holder:null,expires:g.now+5000,born:g.now,flight:0,vx:0,vy:0,kind:'alarm',source:null}];assert.equal(interaction(g,s).kind,'loot');g.noises[0].x=305;assert.equal(interaction(g,s).kind,'noise');g.noises[0].x=320;assert.equal(interaction(g,s).kind,'loot');});
 test('Auto is default, manual orders persist and carrying-human switches Auto to cover',()=>{const {g,human,echo}=job();assert.equal(echo.mode,'auto');g.guards=[];g.jobEvent=undefined;human.hand=g.loot[0].id;g.loot[0].holder=human.id;human.x=400;human.y=300;advance(g,g.now+40);assert.equal(echo.task,'cover');action(g,human,'help:follow');advance(g,g.now+40);assert.equal(echo.mode,'follow');});

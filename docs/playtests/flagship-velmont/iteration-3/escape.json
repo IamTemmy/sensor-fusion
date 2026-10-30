@@ -1,0 +1,29 @@
+{
+  "engineHash": "bd5eb92948b6bfc613e77cb111481a56578f14fad6ed8d23ccdd92c88688ce64",
+  "rows": [
+    {
+      "level": "rookie",
+      "n": 40,
+      "escaped": 40,
+      "tied": 0,
+      "left": 0,
+      "misses": []
+    },
+    {
+      "level": "normal",
+      "n": 40,
+      "escaped": 40,
+      "tied": 0,
+      "left": 0,
+      "misses": []
+    },
+    {
+      "level": "pro",
+      "n": 40,
+      "escaped": 39,
+      "tied": 1,
+      "left": 0,
+      "misses": []
+    }
+  ]
+}

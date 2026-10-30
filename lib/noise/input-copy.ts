@@ -9,6 +9,7 @@ export function touchCopy(text:string,touch:boolean){
  .replaceAll('R boards the van.','Tap Board van.').replaceAll('R boards.','Tap Board van.')
  .replaceAll('Press R to board your van.','Tap Board van to escape.')
  .replaceAll('G drops art','Tap Drop to put down art').replaceAll('E grabs it.','Tap Grab.').replaceAll('Partner uses E.','Partner taps Grab alarm.')
+ .replaceAll('Q asks Echo to pass art. F passes yours. G drops it.','Tap Pass it to ask Echo for art. Pass art throws yours; Drop puts it down.')
  .replaceAll('F throws.','Tap Throw alarm.').replaceAll('F throws','Tap Throw alarm')
  .replaceAll('E interacts','Tap an action').replaceAll('hold E','tap Untie and stay beside you')
  .replaceAll('E while carrying art','tap Stash while carrying art')

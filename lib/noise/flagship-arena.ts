@@ -10,7 +10,7 @@ export function flagshipArena(players:number):MuseumArena {
  walls:d.walls,slots:order.map(i=>({x:d.arts[i].x,y:d.arts[i].y})),plate:d.plate,
  routes:[routes[0],routes[3],routes[1],routes[2],routes[0],routes[1]],
  niches:d.hides.map(p=>({...p,back:'left',kind:'recess'})),
- rooms:d.rooms.map(r=>({name:String(r[0]),x:Number(r[1])+Number(r[3])/2,y:Number(r[2])+25})),
+ rooms:d.rooms.map(r=>({name:String(r[0]),x:Number(r[1])+Number(r[3])/2,y:Number(r[2])+25,bounds:{x:Number(r[1]),y:Number(r[2]),w:Number(r[3]),h:Number(r[4])}})),
  sensors:d.lasers,decor:[],doors:[{x:120,y:65},{x:570,y:65},{x:890,y:245}],
  docks:d.docks,posts:d.sentries};
 }
