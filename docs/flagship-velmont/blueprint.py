@@ -26,6 +26,7 @@ wall('v',304,432,576,[(450,530)])
 wall('v',516,432,576,[(450,530)])
 wall('v',684,24,576,[(400,480),(500,576)])
 wall('h',190,696,936,[(844,924)])
+rect(780,120,156,12) # Vault return forces the final left-right switchback.
 # Secure wing: alternating wall returns force decisions at blind corners.
 rect(696,290,152,12);rect(784,390,152,12);rect(696,490,152,12)
 # Archive shelving and gallery L-return, attached to existing room fabric.
@@ -50,18 +51,37 @@ rooms=[('NORTH WALK',24,24,660,84),('ARCHIVE STACKS',24,120,254,130),
 ('CLOCK ROOM',316,432,200,144),('SERVICE LOOP',528,432,156,144),
 ('CROWN VAULT',696,24,240,166),('HALL OF MIRRORS',696,202,240,374)]
 arts=[dict(name=n,x=x,y=y,value=v) for n,x,y,v in [
-('Bay relic',264,520,200),('Clockwork',450,550,200),('Fossil folio',170,350,500),
+('Bay relic',132.5,470,200),('Clockwork',450,550,200),('Fossil folio',170,350,500),
 ('Sculpture',420,320,500),('Star atlas',640,160,500),('Archive masterwork',212,190,600),
 ('Portrait masterwork',370,165,600),('Crown',810,85,1200)]]
 plate=dict(x=640,y=350); docks=[dict(x=90,y=530),dict(x=175,y=530)]
 lasers=[dict(x=690,y=400,w=6,h=80),dict(x=320,y=250,w=80,h=5),
-dict(x=696,y=390,w=88,h=5),dict(x=850,y=290,w=86,h=5),dict(x=530,y=110,w=80,h=5)]
+dict(x=696,y=390,w=88,h=5),dict(x=850,y=290,w=86,h=5),dict(x=360,y=24,w=5,h=84)]
 guards=[[(110,285),(170,285),(170,335),(260,335),(260,390),(370,390),(370,475),(370,390),(370,335),(170,335),(110,285)],
 [(120,65),(570,65),(570,165),(640,220),(580,220),(580,335),(640,335),(580,335),(580,220),(570,165),(570,65),(120,65)],
 [(740,450),(740,350),(890,350),(890,245),(890,350),(740,350),(740,450)]]
-sentries=[dict(x=370,y=215),dict(x=890,y=230)]
+guards.append([(120,65),(120,160),(150,180),(210,180),(150,180),(110,180),(110,285),(110,180),(120,160),(120,65)])
+sentries=[dict(x=370,y=215),dict(x=910,y=230)]
 data=dict(width=960,height=600,walls=walls,doors=doors,rooms=rooms,arts=arts,plate=plate,docks=docks,hides=hides,lasers=lasers,guardRoutes=guards,sentries=sentries)
 (OUT/'blueprint.json').write_text(json.dumps(data,indent=2)+'\n')
+module='''// Authored flagship geometry; source: docs/flagship-velmont/blueprint.py.
+import type {MuseumArena} from './arenas.ts';
+const design = '''+json.dumps(data,separators=(',',':'))+''';
+export function flagshipArena(players:number):MuseumArena {
+ const d=structuredClone(design), point=(p:number[])=>({x:p[0],y:p[1]});
+ const order=[0,1,7,2,5,6,3,4];
+ const routes=d.guardRoutes.map(r=>r.map(point));
+ return {id:'flagship-velmont',name:'The Velmont',capacity:players<=2?2:4,theme:'sculpture',
+ brief:'A building of blind corners. Crown opens at 1:00. Hold Security’s plate; its alarm stays on the carrier. Noise on you brings guards to you. Noise elsewhere sends them there.',
+ walls:d.walls,slots:order.map(i=>({x:d.arts[i].x,y:d.arts[i].y})),plate:d.plate,
+ routes:[routes[0],routes[3],routes[1],routes[2],routes[0],routes[1]],
+ niches:d.hides.map(p=>({...p,back:'left',kind:'recess'})),
+ rooms:d.rooms.map(r=>({name:String(r[0]),x:Number(r[1])+Number(r[3])/2,y:Number(r[2])+25})),
+ sensors:d.lasers,decor:[],doors:[{x:120,y:65},{x:570,y:65},{x:890,y:245}],
+ docks:d.docks,posts:d.sentries};
+}
+'''
+(OUT.parent.parent/'lib/noise/flagship-arena.ts').write_text(module)
 
 # Conservative square-inflated clearance exactly matches engine clear(p,13).
 def clear(p,extra=()):
@@ -107,8 +127,8 @@ def box(x,y,w,h,c,outline=None):d.rectangle((x*S,y*S,(x+w)*S,(y+h)*S),fill=c,out
 def line(points,color,width=2):d.line([(int((x+28)*S),int((y+128)*S)) for x,y in points],fill=color,width=width*S,joint='curve')
 def dot(x,y,r,c):d.ellipse(((x+28-r)*S,(y+128-r)*S,(x+28+r)*S,(y+128+r)*S),fill=c)
 text(28,22,'THE VELMONT',32,'#f4d79b',True)
-text(29,67,'FLAGSHIP / ARCHITECTURE REVIEW 01',13,'#71d7c8',True)
-text(29,94,'960 × 600 world units   •   offset rooms + connected loops   •   proposal, not live',13)
+text(29,67,'FLAGSHIP / APPROVED REVISION 02',13,'#71d7c8',True)
+text(29,94,'960 × 600 world units   •   2–4 thieves   •   implementation branch, not live',13)
 colors=['#1b303b','#25312f','#372c33','#26313f','#28343b','#303339','#28372f','#20393b','#31333b','#21333a','#40342b','#27283c']
 for (name,x,y,w,h),c in zip(rooms,colors):box(x+28,y+128,w,h,c)
 for x in range(24,937,20):line([(x,24),(x,576)],'#30404a',1)

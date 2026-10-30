@@ -2,7 +2,7 @@
   "clearTargets": 19,
   "engineNavigationTargets": 19,
   "rivalNavigationTargets": 30,
-  "guardSegments": 27,
+  "guardSegments": 36,
   "plateHasNoSightToCrown": true,
   "passFixture": {
     "from": {
@@ -20,8 +20,8 @@
   "journeys": [
     {
       "target": "Bay relic",
-      "seconds": 1.12,
-      "distance": 168
+      "seconds": 0.44,
+      "distance": 66
     },
     {
       "target": "Clockwork",
@@ -55,8 +55,8 @@
     },
     {
       "target": "Crown",
-      "seconds": 7.08,
-      "distance": 1062
+      "seconds": 7.640000000000001,
+      "distance": 1146
     },
     {
       "target": "640,350",
@@ -109,16 +109,16 @@
       "distance": 510
     },
     {
-      "target": "890,230",
-      "seconds": 6.04,
-      "distance": 906
+      "target": "910,230",
+      "seconds": 6.12,
+      "distance": 918
     }
   ],
   "rivalJourneys": [
     {
       "crew": 0,
       "target": "Bay relic",
-      "seconds": 3.56
+      "seconds": 0.44
     },
     {
       "crew": 0,
@@ -153,7 +153,7 @@
     {
       "crew": 0,
       "target": "Crown",
-      "seconds": 7.88
+      "seconds": 8.48
     },
     {
       "crew": 0,
@@ -193,7 +193,7 @@
     {
       "crew": 1,
       "target": "Bay relic",
-      "seconds": 0.56
+      "seconds": 0.44
     },
     {
       "crew": 1,
@@ -228,7 +228,7 @@
     {
       "crew": 1,
       "target": "Crown",
-      "seconds": 6.5200000000000005
+      "seconds": 7.08
     },
     {
       "crew": 1,

@@ -1,14 +1,14 @@
 {
   "method": "4u eight-neighbour grid, square wall inflation 13u; approximate path lengths, not gameplay simulations",
-  "fastCrownDistance": 1253.4,
-  "longCrownDistance": 1533.0,
-  "plateToCrownDistance": 658.8,
-  "unobstructedFastRoundTripSeconds": 22.8,
+  "fastCrownDistance": 1343.7,
+  "longCrownDistance": 1623.3,
+  "plateToCrownDistance": 749.2,
+  "unobstructedFastRoundTripSeconds": 24.4,
   "targets": [
     {
       "name": "Bay relic",
       "clear": true,
-      "distance": 179.31370849898474
+      "distance": 78.2253967444162
     },
     {
       "name": "Clockwork",
@@ -43,7 +43,7 @@
     {
       "name": "Crown",
       "clear": true,
-      "distance": 1121.352380466499
+      "distance": 1211.6955262170065
     },
     {
       "name": "target8",
@@ -91,5 +91,5 @@
       "distance": 1057.754400720052
     }
   ],
-  "mirroredInteriorOverlapPercent": 26.5
+  "mirroredInteriorOverlapPercent": 25.4
 }

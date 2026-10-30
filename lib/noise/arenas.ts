@@ -2133,7 +2133,7 @@ export const AUTHORED_COOP = [
 // Current museum plans: authored independently, with population-specific circulation.
 export type MuseumPoint={x:number;y:number};
 export type MuseumRect=MuseumPoint&{w:number;h:number};
-export type MuseumArena={id:string;name:string;capacity:2|4|6;theme:'sculpture'|'fossil'|'celestial';brief:string;walls:MuseumRect[];slots:MuseumPoint[];plate:MuseumPoint;routes:MuseumPoint[][];niches:(MuseumPoint&{back:string;kind:string})[];rooms:(MuseumPoint&{name:string})[];sensors:MuseumRect[];decor:(MuseumRect&{kind:string})[];doors:MuseumPoint[]};
+export type MuseumArena={docks?:MuseumPoint[];posts?:MuseumPoint[];id:string;name:string;capacity:2|4|6;theme:'sculpture'|'fossil'|'celestial';brief:string;walls:MuseumRect[];slots:MuseumPoint[];plate:MuseumPoint;routes:MuseumPoint[][];niches:(MuseumPoint&{back:string;kind:string})[];rooms:(MuseumPoint&{name:string})[];sensors:MuseumRect[];decor:(MuseumRect&{kind:string})[];doors:MuseumPoint[]};
 const pt=(x:number,y:number)=>({x,y});
 const box=(x:number,y:number,w:number,h:number)=>({x,y,w,h});
 export function museumArena(layout:number,players:number):MuseumArena{
