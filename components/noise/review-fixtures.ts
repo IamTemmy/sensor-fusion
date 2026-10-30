@@ -28,7 +28,8 @@ export function reviewFixture(state:string):Game{
  if(state==='post-sign'){const d=staffDoors(g)[0];Object.assign(g.guards[0],{x:d.x,y:d.y+30,sentry:{x:d.x,y:d.y+30},entered:true,mode:'patrol',target:{x:d.x,y:d.y+30}});}
  if(state==='briefing')g.phase='ready';
  if(state==='capture'){s.stun=g.now+5900;s.hand=null;loot.holder=null;g.noises=[];event(g,'MINT · Rookie caught! Their crew can untie them.','catch',s);g.events.at(-1)!.at-=80;}
- if(['recap','recap-jackpot','recap-coop','recap-mixed'].includes(state)){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
+ if((state.startsWith('getaway')||['recap','recap-jackpot','recap-coop','recap-mixed'].includes(state))){g.phase='finished';g.success=true;g.total=3300;g.finishedAt=79000;g.finishReason='The collection is gone. So are you.';g.loot.forEach(l=>{l.banked=true;l.bankedBy=0;});g.seats.forEach((s,i)=>{s.escaped=true;s.escapedAt=78000;s.bank=i===0?1800:i===1?1500:0;s.captures=i===0?4:2;});}
+ if(state.startsWith('getaway')){g.seats.forEach(p=>Object.assign(p,vanFor(g,p.team)));g.seats[3].escaped=false;g.seats[3].x-=48;}
  if(state==='recap-loss'){g.seats=g.seats.filter(s=>s.team===0);g.phase='finished';g.crewMode='coop';g.success=false;g.total=600;g.seats.forEach(s=>{s.bank=s.id===g.seats[0].id?600:0;s.escaped=false;});g.finishedAt=g.start+90000;g.finishReason='The van has left.';}
  if(state==="recap-jackpot"){g.total=2675;g.seats[0].bank=1275;g.seats[1].bank=1400;g.seats[2].bank=0;g.seats[3].bank=0;g.crewMode="coop";g.loot.find(l=>l.value!==1200)!.banked=false;}
  if(state==='recap-coop'||state==='recap-jackpot'){g.crewMode='coop';g.seats=g.seats.filter(s=>s.team===0);}

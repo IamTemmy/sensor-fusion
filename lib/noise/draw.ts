@@ -1,3 +1,4 @@
+import {departingVan} from './getaway';
 import {museumIdentity} from './museum-identity';
 import {drawMuseumDecor} from './museum-decor';
 import {recentLure} from './clarity';
@@ -12,7 +13,7 @@ export {type Camera} from './camera';
 import {museumCamera} from './camera';
 export const camera=museumCamera;
 export const COLORS=['#8ef2d2','#bdadff','#ffb974','#91c6ff','#f79cbb','#c2e082'];
-export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,height:number,time:number,you:string,positions:Map<string,Vec>,aim:Vec,background=false,reducedMotion=false,overview=true){
+export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,height:number,time:number,you:string,positions:Map<string,Vec>,aim:Vec,background=false,reducedMotion=false,overview=true,departureMs?:number){
  preloadSprites();
  const walls=g.walls||WALLS,plate=g.plate||PLATE,jackpot=g.loot.find(l=>l.value===1200);
  const me=g.seats.find(s=>s.id===you),display=positions.get(you)||me;const cam=camera(width,height,display,overview);const t=reducedMotion?0:time/1000;
@@ -87,7 +88,7 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  }
  drawMuseumDecor(ctx,g.arena);
  // Paint dock openings after the wall tops, without changing collision or zone coordinates.
- for(const team of [...new Set(g.seats.map(s=>s.team))]){const v=vanFor(g,team),top=v.y<300,color=COLORS[team],edge=top?24:576;rect(v.x-34,edge-13,68,28,'#101b28');ctx.strokeStyle=color;ctx.lineWidth=3;ctx.strokeRect(v.x-34,edge-13,68,28);const glow=ctx.createRadialGradient(v.x,edge,5,v.x,v.y,85);glow.addColorStop(0,color+'66');glow.addColorStop(1,color+'00');ctx.fillStyle=glow;ctx.fillRect(v.x-50,Math.min(v.y,edge)-40,100,140);ctx.save();ctx.translate(v.x,top?12:588);if(vanFacing(g,team)==='north')ctx.rotate(Math.PI);sprite(ctx,team===0?'van-mint':'van-violet',0,0,54,66);ctx.restore();}
+ for(const team of [...new Set(g.seats.map(s=>s.team))]){const v=vanFor(g,team),top=v.y<300,color=COLORS[team],edge=top?24:576;rect(v.x-34,edge-13,68,28,'#101b28');ctx.strokeStyle=color;ctx.lineWidth=3;ctx.strokeRect(v.x-34,edge-13,68,28);const glow=ctx.createRadialGradient(v.x,edge,5,v.x,v.y,85);glow.addColorStop(0,color+'66');glow.addColorStop(1,color+'00');ctx.fillStyle=glow;ctx.fillRect(v.x-50,Math.min(v.y,edge)-40,100,140);const departure=departureMs===undefined?null:departingVan(g,team,departureMs);ctx.save();ctx.translate(departure?.x??v.x,departure?.y??(top?12:588));if(vanFacing(g,team)==='north')ctx.rotate(Math.PI);if(departure&&departure.progress>0){for(let i=0;i<4;i++){const drift=(departureMs!/100+i*.3)%1;circle((i%2?1:-1)*(9+drift*8),-32-drift*30,4+drift*8,'#c9d8d333');}}sprite(ctx,team===0?'van-mint':'van-violet',0,0,54,66);if(departure){const gap=12*(1-departure.doors);rect(-23-gap,-27,22,6,'#1b3f46',2);rect(1+gap,-27,22,6,'#1b3f46',2);rect(-21,-22,8,3,'#ff6654',1);rect(13,-22,8,3,'#ff6654',1);}ctx.restore();}
  const lootLabels:{l:typeof g.loot[number];name:string;glow:string}[]=[];
  for(const l of g.loot){if(l.banked||l.holder||l.guardCarrier)continue;if(l.stashedAt!==undefined){ctx.save();ctx.globalAlpha=.8;art(l.id,l.value,l.x,l.y-10,.6,true);ctx.restore();text('STASH · $'+l.value,l.x,l.y+24,11,'#ffe2a1','center');continue;}if(l.flight){const f=Math.min(1,(g.now-l.flight.at)/500);circle(l.x,l.y,10,'#0008');art(l.id,l.value,l.x,l.y-25-(reducedMotion?12:Math.sin(f*Math.PI)*55),.72,true);continue;}if(l.sealed)continue;const spec=artwork(l.id,l.value,g.layout);const glow=ctx.createRadialGradient(l.x,l.y,4,l.x,l.y,50);glow.addColorStop(0,(l.locked&&open?'#ffd579':spec.glow)+'38');glow.addColorStop(1,spec.glow+'00');ctx.fillStyle=glow;ctx.fillRect(l.x-50,l.y-50,100,100);
  if(l.locked){sprite(ctx,open?'case-open':'case-locked',l.x,l.y-19,66,80);art(l.id,l.value,l.x,l.y-17,.72);if(!open){ctx.save();ctx.strokeStyle='#ff6169';ctx.shadowColor='#ff4656';ctx.shadowBlur=5;ctx.lineWidth=1.2;for(const dy of [-40,-25,-10]){ctx.beginPath();ctx.moveTo(l.x-22,l.y+dy);ctx.lineTo(l.x+22,l.y+dy);ctx.stroke();}ctx.restore();}else if(!reducedMotion){for(let i=0;i<3;i++){const a=t+i*2.1;circle(l.x+Math.cos(a)*28,l.y-25+Math.sin(a)*22,1.5,'#ffe9af');}}}
