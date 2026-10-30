@@ -1,0 +1,12 @@
+[
+  {
+    "level": "normal",
+    "n": 40,
+    "escaped": 37,
+    "tied": 2,
+    "left": 1,
+    "misses": [
+      1035
+    ]
+  }
+]

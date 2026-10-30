@@ -1,0 +1,2 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {archiveSight,ARCHIVE_LAMPS} from '../lib/noise/archive-light.ts';import {museumArena} from '../lib/noise/arenas.ts';
+test('Archive lamp rule has one shared set of pools and leaves other museums unchanged',()=>{for(const layout of [0,1,2]){const g={layout,arena:museumArena(layout,4)};assert.equal(archiveSight(g,ARCHIVE_LAMPS[0]),layout===1?1.3:1);assert.equal(archiveSight(g,{x:480,y:550}),layout===1?.85:1);}assert.equal(archiveSight({layout:1,arena:undefined},ARCHIVE_LAMPS[0]),1);});

@@ -1,0 +1,234 @@
+layout 1 done
+[
+  {
+    "layout": 1,
+    "matches": 30,
+    "stalls": 1,
+    "cases": [
+      {
+        "seed": 1001,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1002,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1003,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1004,
+        "n": 2,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1005,
+        "n": 4,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1015,
+        "n": 6,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1016,
+        "n": 2,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1017,
+        "n": 4,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1018,
+        "n": 6,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1028,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1029,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1030,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1031,
+        "n": 2,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1032,
+        "n": 4,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1042,
+        "n": 6,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1043,
+        "n": 2,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1044,
+        "n": 4,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1045,
+        "n": 6,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1055,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1056,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1057,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1058,
+        "n": 2,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1059,
+        "n": 4,
+        "level": "normal",
+        "stalls": []
+      },
+      {
+        "seed": 1069,
+        "n": 6,
+        "level": "normal",
+        "stalls": [
+          {
+            "id": "p3",
+            "at": 55080,
+            "x": 920.853499057978,
+            "y": 511.0927970935501,
+            "task": "van",
+            "mode": "auto",
+            "hand": null,
+            "crew": [
+              {
+                "id": "p1",
+                "stun": 59880,
+                "escaped": false,
+                "hand": null
+              },
+              {
+                "id": "p3",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "van"
+              },
+              {
+                "id": "p5",
+                "stun": 0,
+                "escaped": false,
+                "hand": null,
+                "task": "cover"
+              }
+            ],
+            "homeSafe": false,
+            "plateDistance": 440.9930359756504,
+            "unbanked": [
+              {
+                "id": "art3",
+                "locked": true
+              },
+              {
+                "id": "art4",
+                "locked": false
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "seed": 1070,
+        "n": 2,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1071,
+        "n": 4,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1072,
+        "n": 6,
+        "level": "pro",
+        "stalls": []
+      },
+      {
+        "seed": 1082,
+        "n": 2,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1083,
+        "n": 4,
+        "level": "rookie",
+        "stalls": []
+      },
+      {
+        "seed": 1084,
+        "n": 6,
+        "level": "rookie",
+        "stalls": []
+      }
+    ]
+  }
+]

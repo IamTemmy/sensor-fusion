@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {execFileSync} from 'node:child_process';import {create,add,setup} from '../lib/noise/engine.ts';
+test('Cover improves carrier banking with a two-second lead over a chasing guard',()=>{const r=JSON.parse(execFileSync(process.execPath,['--experimental-strip-types','scripts/verify-echo-defender.ts'],{encoding:'utf8'}));assert.ok(r[1].bankRate>=.7);assert.ok(r[1].bankRate>r[0].bankRate);assert.ok(r[1].interventions>0);});
+test('a replay resets defender cooldown and pursuit observations',()=>{const g=create('RESET'),s=add(g,'Echo','e',true);s.defendAt=90000;s.coverThreat={id:'g',distance:100};setup(g);assert.equal(s.defendAt,undefined);assert.equal(s.coverThreat,undefined);});

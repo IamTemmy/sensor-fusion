@@ -37,7 +37,7 @@ if(mode==='geometry'){
     const s=g.seats[0],l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(s,a)-E.distance(s,b))[0];const target=s.hand||!l||g.end-g.now<7000?E.vanFor(g,0):l;const p=E.steer(s,target,E.thiefWalls(g,s)),dist=E.distance(s,p)||1;E.command(g,s.id,{type:'input',seq:s.lastSeq+1,dx:(p.x-s.x)/dist,dy:(p.y-s.y)/dist});if(!s.hand&&l&&E.distance(s,l)<50)E.action(g,s,'grab');
     E.advance(g,g.now+40);
     for(const b of g.seats.filter(s=>s.bot)){
-     const intentional=process.env.MUSEUM_INTENTIONAL_WAITS==='1'&&(E.homeSafe(g,b)||(E.distance(b,g.plate)<30&&g.loot.some(l=>l.locked&&!l.banked&&!l.holder)));
+     const intentional=process.env.MUSEUM_INTENTIONAL_WAITS==='1'&&(E.homeSafe(g,b)||(b.task==='wait-rescue'&&g.seats.some(p=>p.team===b.team&&!p.escaped&&p.stun>g.now))||(E.distance(b,g.plate)<30&&g.loot.some(l=>l.locked&&!l.banked&&!l.holder)));
      const waiting=intentional||b.escaped||b.stun>g.now||E.hidden(g,b)||(b.rescueId&&g.now-b.rescueAt<1300)||(b.bottleId&&g.now-b.bottleAt<1500)||b.windup>g.now;
      if(waiting){history.delete(b.id);continue;}
      const h=history.get(b.id);if(!h||E.distance(b,h)>10)history.set(b.id,{x:b.x,y:b.y,at:g.now});else if(g.now-h.at>=6000&&!seen.has(b.id)){seen.add(b.id);stalls.push({id:b.id,at:g.now,x:b.x,y:b.y,task:b.task,mode:b.mode,hand:b.hand,crew:g.seats.filter(p=>p.team===b.team).map(p=>({id:p.id,stun:p.stun,escaped:p.escaped,hand:p.hand,task:p.task})),homeSafe:E.homeSafe(g,b),plateDistance:E.distance(b,g.plate),unbanked:g.loot.filter(l=>!l.banked&&!l.holder).map(l=>({id:l.id,locked:l.locked}))});}
