@@ -20,28 +20,28 @@
   "journeys": [
     {
       "target": "Bay relic",
-      "seconds": 0.44,
-      "distance": 66
+      "seconds": 0.48,
+      "distance": 72
     },
     {
       "target": "Clockwork",
-      "seconds": 2.4,
-      "distance": 360
+      "seconds": 2.48,
+      "distance": 372
     },
     {
       "target": "Fossil folio",
-      "seconds": 1.28,
-      "distance": 192
+      "seconds": 1.32,
+      "distance": 197
     },
     {
       "target": "Sculpture",
-      "seconds": 2.7600000000000002,
-      "distance": 414
+      "seconds": 2.84,
+      "distance": 426
     },
     {
       "target": "Star atlas",
-      "seconds": 5.28,
-      "distance": 792
+      "seconds": 5.32,
+      "distance": 798
     },
     {
       "target": "Archive masterwork",
@@ -50,33 +50,33 @@
     },
     {
       "target": "Portrait masterwork",
-      "seconds": 3.72,
-      "distance": 558
+      "seconds": 3.7600000000000002,
+      "distance": 564
     },
     {
       "target": "Crown",
-      "seconds": 7.640000000000001,
-      "distance": 1146
+      "seconds": 7.72,
+      "distance": 1158
     },
     {
       "target": "640,350",
-      "seconds": 4.04,
-      "distance": 606
+      "seconds": 4.08,
+      "distance": 612
     },
     {
-      "target": "90,530",
+      "target": "80.5,530",
       "seconds": 0,
       "distance": 0
     },
     {
-      "target": "175,530",
-      "seconds": 0.52,
-      "distance": 78
+      "target": "184.5,530",
+      "seconds": 0.64,
+      "distance": 96
     },
     {
       "target": "52,346",
-      "seconds": 1.36,
-      "distance": 204
+      "seconds": 1.4000000000000001,
+      "distance": 206
     },
     {
       "target": "250,162",
@@ -85,40 +85,40 @@
     },
     {
       "target": "488,162",
-      "seconds": 4.6000000000000005,
-      "distance": 690
+      "seconds": 5.72,
+      "distance": 853
     },
     {
       "target": "524,382",
-      "seconds": 3.88,
-      "distance": 582
+      "seconds": 4,
+      "distance": 594
     },
     {
       "target": "556,536",
-      "seconds": 3.84,
-      "distance": 576
+      "seconds": 3.96,
+      "distance": 594
     },
     {
       "target": "724,248",
-      "seconds": 6.72,
-      "distance": 1003
+      "seconds": 6.76,
+      "distance": 1014
     },
     {
       "target": "410,215",
-      "seconds": 3.48,
-      "distance": 520
+      "seconds": 3.52,
+      "distance": 526
     },
     {
       "target": "910,230",
-      "seconds": 6.12,
-      "distance": 918
+      "seconds": 6.2,
+      "distance": 927
     }
   ],
   "rivalJourneys": [
     {
       "crew": 0,
       "target": "Bay relic",
-      "seconds": 0.44
+      "seconds": 0.48
     },
     {
       "crew": 0,
@@ -128,7 +128,7 @@
     {
       "crew": 0,
       "target": "Fossil folio",
-      "seconds": 1.28
+      "seconds": 1.32
     },
     {
       "crew": 0,
@@ -138,7 +138,7 @@
     {
       "crew": 0,
       "target": "Star atlas",
-      "seconds": 5.36
+      "seconds": 5.4
     },
     {
       "crew": 0,
@@ -153,17 +153,17 @@
     {
       "crew": 0,
       "target": "Crown",
-      "seconds": 7.8
+      "seconds": 7.84
     },
     {
       "crew": 0,
       "target": "640,350",
-      "seconds": 4.16
+      "seconds": 4.2
     },
     {
       "crew": 0,
       "target": "52,346",
-      "seconds": 1.36
+      "seconds": 1.4000000000000001
     },
     {
       "crew": 0,
@@ -173,12 +173,12 @@
     {
       "crew": 0,
       "target": "488,162",
-      "seconds": 4.76
+      "seconds": 5.8
     },
     {
       "crew": 0,
       "target": "524,382",
-      "seconds": 4.08
+      "seconds": 4.04
     },
     {
       "crew": 0,
@@ -188,32 +188,32 @@
     {
       "crew": 0,
       "target": "724,248",
-      "seconds": 6.84
+      "seconds": 6.88
     },
     {
       "crew": 1,
       "target": "Bay relic",
-      "seconds": 0.44
+      "seconds": 0.48
     },
     {
       "crew": 1,
       "target": "Clockwork",
-      "seconds": 1.84
+      "seconds": 1.76
     },
     {
       "crew": 1,
       "target": "Fossil folio",
-      "seconds": 1.32
+      "seconds": 1.36
     },
     {
       "crew": 1,
       "target": "Sculpture",
-      "seconds": 2.24
+      "seconds": 2.16
     },
     {
       "crew": 1,
       "target": "Star atlas",
-      "seconds": 4.68
+      "seconds": 4.64
     },
     {
       "crew": 1,
@@ -223,17 +223,17 @@
     {
       "crew": 1,
       "target": "Portrait masterwork",
-      "seconds": 3.16
+      "seconds": 3.12
     },
     {
       "crew": 1,
       "target": "Crown",
-      "seconds": 7.08
+      "seconds": 7.04
     },
     {
       "crew": 1,
       "target": "640,350",
-      "seconds": 3.48
+      "seconds": 3.4
     },
     {
       "crew": 1,
@@ -243,27 +243,27 @@
     {
       "crew": 1,
       "target": "250,162",
-      "seconds": 3.2
+      "seconds": 3.24
     },
     {
       "crew": 1,
       "target": "488,162",
-      "seconds": 4.08
+      "seconds": 5
     },
     {
       "crew": 1,
       "target": "524,382",
-      "seconds": 3.36
+      "seconds": 3.2800000000000002
     },
     {
       "crew": 1,
       "target": "556,536",
-      "seconds": 3.3200000000000003
+      "seconds": 3.2800000000000002
     },
     {
       "crew": 1,
       "target": "724,248",
-      "seconds": 6.12
+      "seconds": 6.08
     }
   ],
   "limits": "Static authored geometry only; no bots, guard AI, capacity, latency, balance or release gates simulated. Engine navigation uses its existing 12u movement, while static target/patrol clearance uses 13u."

@@ -1,14 +1,14 @@
-# The Velmont — release validation
+# The Velmont — flagship and visibility validation
 
 Approved flagship implemented on `flagship-velmont`. The first approved-revision commit `1501966` includes the updated `blueprint.png`. No second blueprint approval is required. Release deadline: 30 October 2026, 18:00 America/Chicago.
 
 Two–four thieves use this asymmetric building; six thieves / 3v3 retain the previous museums. The Hall forces switchbacks on both approaches. Six wall recesses, five beams, the Archive patrol and posted Crown guard are active. Adjacent docks swap assignments every rematch; the bay $200 is equidistant.
 
-The vault warns at 1:10 and opens at 1:00 remaining. Security’s plate has no effect before opening. Crown carrying is 0.8× ordinary Crown carry speed and its alarm cannot be bottled. Beam crossings trigger a four-second siren at the emitter, including crossings by thrown jars. Wall-based client visibility retains explored floor/art memory and teammate markers. Q / touch “Pass it!” requests actual art only; a chased bot can pass to a free-handed human in sight.
+The vault warns at 1:10 and opens at 1:00 remaining. Security’s plate has no effect before opening. Crown carrying is 0.8× ordinary Crown carry speed and its alarm cannot be bottled. Beam crossings trigger a four-second siren at the emitter, including crossings by thrown jars. Shadows keeps the entire building and available exhibits readable, dimming unseen floor by about 35%. Only guards and rival thieves are hidden outside sight; guards leave three-second last-seen silhouettes, faint flashlight cones and nearby footstep cues. Full lighting reveals actors. Teammates remain visible. Q / touch “Pass it!” requests actual art only; a chased bot can pass to a free-handed human in sight.
 
-## Gate results
+## Previous live release (v78) gate results
 
-The complete machine-readable report is `../playtests/flagship-velmont/release.json`. Earlier failed iterations remain in numbered folders. These are deterministic policy simulations, not human playtest win rates.
+The table below records the previous live release. Current candidate status is in `VISIBILITY-STATUS.md` and `../playtests/flagship-velmont/release.json`; failed visibility/decor iterations are retained in numbered folders. These are deterministic policy simulations, not human playtest win rates.
 
 | Mode | Rookie | Normal | Pro |
 |---|---:|---:|---:|
@@ -34,7 +34,7 @@ Historical map-specific regressions explicitly use the legacy arena factory, inc
 
 ## Visual evidence and scope
 
-`blueprint.py` generates the blueprint and imported geometry. `desktop-full-map.jpg` deliberately disables fog in a development-only architecture fixture. `phone-desktop-review.jpg` and `landscape-phone.jpg` use actual client visibility at phone/desktop viewport sizes. `getaway-mid.jpg` shows the winning van departing first while the left-behind player remains. Screenshots are frozen presentation fixtures, not simulation evidence. Landscape and portrait phones default to Closer view.
+`blueprint.py` generates the blueprint and imported geometry. `desktop-full-map.jpg` deliberately disables fog in a development-only architecture fixture. `phone-desktop-review.jpg` and `landscape-phone.jpg` record the previous visibility design. `shadows-desktop-start.jpg` and `shadows-phone-start.jpg` show the new readable Shadows setting at match start. `getaway-mid.jpg` shows the winning van departing first while the left-behind player remains. Screenshots are frozen presentation fixtures, not simulation evidence. Landscape and portrait phones default to Closer view.
 
 The browser checks do not replace a physical-device or cross-network human playtest. This change does not claim to fix every network path; transport behavior is preserved.
 

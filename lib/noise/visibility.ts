@@ -1,4 +1,4 @@
-import {distance,sight,isFlagship,type Game,type View,type Vec,type Rect,type Loot} from './engine.ts';
+import {distance,sight,isFlagship,guardActive,type Game,type View,type Vec,type Rect} from './engine.ts';
 
 /** Client presentation only. Does not mutate or redact the authoritative simulation. */
 export function rayEnd(origin:Vec,angle:number,walls:Rect[],range=1200):Vec {
@@ -18,20 +18,23 @@ export function visibilityPolygon(origin:Vec,walls:Rect[]):Vec[]{
  return [...angles].sort((a,b)=>a-b).map(a=>rayEnd(origin,a,walls));
 }
 export const visibleFrom=(origin:Vec,p:Vec,walls:Rect[])=>distance(origin,p)<=60||sight(origin,p,walls);
-type Memory={key:string;loot:Map<string,Loot>;explored:HTMLCanvasElement;mask:HTMLCanvasElement;polygon:Vec[];origin:Vec;at:number};
+export type GuardMemory=Vec&{angle:number;at:number};
+export function rememberGuards(memory:Map<string,GuardMemory>,guards:(Vec&{id:string;angle:number})[],visible:(p:Vec)=>boolean,now:number){
+ for(const h of guards)if(visible(h))memory.set(h.id,{x:h.x,y:h.y,angle:h.angle,at:now});
+ return [...memory].flatMap(([id,h])=>{if(now-h.at>=3000||!guards.some(g=>g.id===id)){memory.delete(id);return [];}return visible(guards.find(g=>g.id===id)!)?[]:[{id,...h,alpha:.5*(1-(now-h.at)/3000)}];});
+}
+type Memory={key:string;guards:Map<string,GuardMemory>;mask:HTMLCanvasElement;polygon:Vec[];origin:Vec;at:number};
 const memories=new WeakMap<object,Memory>();
 function shape(ctx:CanvasRenderingContext2D,polygon:Vec[],origin:Vec){ctx.beginPath();polygon.forEach((p,i)=>i?ctx.lineTo(p.x,p.y):ctx.moveTo(p.x,p.y));ctx.closePath();ctx.moveTo(origin.x+60,origin.y);ctx.arc(origin.x,origin.y,60,0,Math.PI*2);ctx.fill();}
-export function prepareVision(ctx:CanvasRenderingContext2D,g:Game|View,you:string,positions:Map<string,Vec>){
+export function prepareVision(ctx:CanvasRenderingContext2D,g:Game|View,you:string,positions:Map<string,Vec>,lights:'full'|'shadows'='shadows'){
  const me=g.seats.find(s=>s.id===you);if(!isFlagship(g)||!me||g.phase!=='playing'||typeof document==='undefined')return null;
  const origin=positions.get(you)||me,key=`${g.code}:${g.match}:${you}`;
- let m=memories.get(ctx.canvas);if(!m||m.key!==key){const canvas=()=>{const c=document.createElement('canvas');c.width=960;c.height=600;return c;};m={key,loot:new Map(),explored:canvas(),mask:canvas(),polygon:[],origin:{x:-999,y:-999},at:-Infinity};memories.set(ctx.canvas,m);}
- if(distance(m.origin,origin)>2||g.now-m.at>100){m.polygon=visibilityPolygon(origin,g.walls);m.origin={...origin};m.at=g.now;const e=m.explored.getContext('2d')!;e.fillStyle='#fff';shape(e,m.polygon,origin);}
- const visible=(p:Vec)=>visibleFrom(origin,p,g.walls),loot:Loot[]=[];
- // Keep last-observed floor exhibits, never live positions of unseen moving actors.
- for(const l of g.loot){const old=m.loot.get(l.id);if(visible(l)){if(!l.banked&&!l.holder&&!l.guardCarrier&&!l.flight)m.loot.set(l.id,{...l});else m.loot.delete(l.id);loot.push(l);}
-  else if(old){if(visible(old))m.loot.delete(l.id);else loot.push({...old});}}
- const scene={...g,loot,guards:g.guards.filter(h=>visible(positions.get(h.id)||h)),noises:g.noises.filter(n=>visible(n)),events:g.events.filter(e=>visible(e))};
- return {scene,visible,paint(){const f=m!.mask.getContext('2d')!;f.clearRect(0,0,960,600);f.globalCompositeOperation='source-over';f.fillStyle='#020711e6';f.fillRect(0,0,960,600);f.globalCompositeOperation='destination-out';f.globalAlpha=.24;f.drawImage(m!.explored,0,0);f.globalAlpha=1;shape(f,m!.polygon,origin);f.globalCompositeOperation='source-over';ctx.drawImage(m!.mask,0,0);
-   for(const s of g.seats.filter(s=>s.id!==you&&s.team===me.team&&!s.escaped)){const p=positions.get(s.id)||s;if(visible(p))continue;ctx.save();ctx.fillStyle=s.stun>g.now?'#ff8e98':'#91ead9';ctx.beginPath();ctx.arc(p.x,p.y,5,0,Math.PI*2);ctx.fill();ctx.font='bold 10px Arial';ctx.textAlign='center';ctx.fillText(s.name.toUpperCase(),p.x,p.y-11);ctx.restore();}
- }};
+ let m=memories.get(ctx.canvas);if(!m||m.key!==key){const c=document.createElement('canvas');c.width=960;c.height=600;m={key,guards:new Map(),mask:c,polygon:[],origin:{x:-999,y:-999},at:-Infinity};memories.set(ctx.canvas,m);}
+ if(lights==='full'){m.guards.clear();return null;}
+ if(distance(m.origin,origin)>2||g.now-m.at>100){m.polygon=visibilityPolygon(origin,g.walls);m.origin={...origin};m.at=g.now;}
+ const visible=(p:Vec)=>visibleFrom(origin,p,g.walls),guards=g.guards.filter(h=>guardActive(g,h)).map(h=>({...h,...(positions.get(h.id)||h)}));
+ const ghosts=rememberGuards(m.guards,guards,visible,g.now);
+ // The whole building and exhibit state remain readable. Only opposing actors are occluded.
+ const scene={...g,guards:g.guards.filter(h=>visible(positions.get(h.id)||h))};
+ return {scene,visible,ghosts,unseen:guards.filter(h=>!visible(h)),origin,paint(){const f=m!.mask.getContext('2d')!;f.clearRect(0,0,960,600);f.globalCompositeOperation='source-over';f.fillStyle='rgba(39,44,51,.35)';f.fillRect(0,0,960,600);f.globalCompositeOperation='destination-out';shape(f,m!.polygon,origin);f.globalCompositeOperation='source-over';ctx.drawImage(m!.mask,0,0);}};
 }

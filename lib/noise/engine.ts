@@ -14,7 +14,7 @@ export const inside=(p:Vec,r:Rect)=>p.x>=r.x&&p.x<=r.x+r.w&&p.y>=r.y&&p.y<=r.y+r
 export const inSafeZone=(p:Vec)=>inside(p,SAFE_ZONE); // legacy co-op helper
 export const isFlagship=(g:Game|View)=>g.arena?.id==='flagship-velmont';
 export const vaultReady=(g:Game|View)=>!isFlagship(g)||(g.phase==='playing'||g.phase==='finished')&&g.now-g.start>=30000;
-export const vanFor=(g:Game|View,team:number):Vec=>g.arena?.docks?g.arena.docks[g.crewMode==='coop'?0:(team+(g.match-1)%2)%2]:g.crewMode==='coop'?EXIT:team===0?{x:90,y:510}:team===1?{x:870,y:!g.arena&&g.layout===1?90:510}:{x:480,y:65};
+export const vanFor=(g:Game|View,team:number):Vec=>g.crewMode==='coop'&&g.arena?.coopDock?g.arena.coopDock:g.arena?.docks?g.arena.docks[g.crewMode==='coop'?0:(team+(g.match-1)%2)%2]:g.crewMode==='coop'?EXIT:team===0?{x:90,y:510}:team===1?{x:870,y:!g.arena&&g.layout===1?90:510}:{x:480,y:65};
 export const zoneFor=(g:Game|View,team:number):Rect=>{const p=vanFor(g,team);return {x:p.x-35,y:p.y-35,w:70,h:70};};
 export const zones=(g:Game|View):Rect[]=>[...new Set(g.seats.map(s=>s.team))].map(t=>zoneFor(g,t));
 export const homeSafe=(g:Game|View,s:Vec&{team:number})=>inside(s,zoneFor(g,s.team));

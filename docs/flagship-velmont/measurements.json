@@ -1,54 +1,54 @@
 {
   "method": "4u eight-neighbour grid, square wall inflation 13u; approximate path lengths, not gameplay simulations",
-  "fastCrownDistance": 1218.7,
-  "longCrownDistance": 1485.1,
+  "fastCrownDistance": 1219.7,
+  "longCrownDistance": 1486.0,
   "plateToCrownDistance": 749.2,
   "unobstructedFastRoundTripSeconds": 25.7,
   "targets": [
     {
       "name": "Bay relic",
       "clear": true,
-      "distance": 78.2253967444162
+      "distance": 81.53910524340097
     },
     {
       "name": "Clockwork",
       "clear": true,
-      "distance": 378.22539674441606
+      "distance": 386.22539674441606
     },
     {
       "name": "Fossil folio",
       "clear": true,
-      "distance": 213.13708498984744
+      "distance": 216.4507934888322
     },
     {
       "name": "Sculpture",
       "clear": true,
-      "distance": 455.6467529817253
+      "distance": 463.6467529817253
     },
     {
       "name": "Star atlas",
       "clear": true,
-      "distance": 723.1757569573607
+      "distance": 731.1757569573608
     },
     {
       "name": "Archive masterwork",
       "clear": true,
-      "distance": 431.19595949289317
+      "distance": 434.5096679918779
     },
     {
       "name": "Portrait masterwork",
       "clear": true,
-      "distance": 561.989898732233
+      "distance": 565.3036072312177
     },
     {
       "name": "Crown",
       "clear": true,
-      "distance": 1211.6955262170065
+      "distance": 1219.6955262170065
     },
     {
       "name": "target8",
       "clear": true,
-      "distance": 639.8132752230958
+      "distance": 647.8132752230958
     },
     {
       "name": "target9",
@@ -58,38 +58,38 @@
     {
       "name": "target10",
       "clear": true,
-      "distance": 88.0
+      "distance": 104.0
     },
     {
       "name": "target11",
       "clear": true,
-      "distance": 210.62741699796948
+      "distance": 213.94112549695421
     },
     {
       "name": "target12",
       "clear": true,
-      "distance": 478.79393923933975
+      "distance": 482.1076477383245
     },
     {
       "name": "target13",
       "clear": true,
-      "distance": 728.2640687119289
+      "distance": 775.2935059634517
     },
     {
       "name": "target14",
       "clear": true,
-      "distance": 627.0782104868019
+      "distance": 635.0782104868019
     },
     {
       "name": "target15",
       "clear": true,
-      "distance": 603.1959594928933
+      "distance": 611.1959594928933
     },
     {
       "name": "target16",
       "clear": true,
-      "distance": 1057.754400720052
+      "distance": 1065.754400720052
     }
   ],
-  "mirroredInteriorOverlapPercent": 25.7
+  "mirroredInteriorOverlapPercent": 25.3
 }

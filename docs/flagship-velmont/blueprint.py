@@ -32,7 +32,7 @@ rect(696,290,152,12);rect(784,390,152,12);rect(696,490,152,12)
 # Archive shelving and gallery L-return, attached to existing room fabric.
 rect(184,120,12,32);rect(140,224,138,12)
 rect(280,262,12,35);rect(280,285,65,12)
-# Keep the shared bay open: a return here pinched Mint's route around Violet's dock.
+# Keep a clear shared approach and a 34u walk-through gap ahead of the protected dock zones.
 
 hides=[]
 def niche(x,y,side):
@@ -53,7 +53,7 @@ arts=[dict(name=n,x=x,y=y,value=v) for n,x,y,v in [
 ('Bay relic',132.5,470,200),('Clockwork',450,550,200),('Fossil folio',170,350,500),
 ('Sculpture',420,320,500),('Star atlas',640,160,500),('Archive masterwork',212,190,600),
 ('Portrait masterwork',370,165,600),('Crown',810,85,1200)]]
-plate=dict(x=640,y=350); docks=[dict(x=90,y=530),dict(x=175,y=530)]
+plate=dict(x=640,y=350); docks=[dict(x=80.5,y=530),dict(x=184.5,y=530)]
 lasers=[dict(x=690,y=400,w=6,h=80),dict(x=320,y=250,w=80,h=5),
 dict(x=696,y=390,w=88,h=5),dict(x=850,y=290,w=86,h=5),dict(x=360,y=24,w=5,h=84)]
 guards=[[(110,285),(170,285),(170,335),(260,335),(260,390),(370,390),(370,475),(370,390),(370,335),(170,335),(110,285)],
@@ -61,7 +61,9 @@ guards=[[(110,285),(170,285),(170,335),(260,335),(260,390),(370,390),(370,475),(
 [(740,450),(740,350),(890,350),(890,245),(890,350),(740,350),(740,450)]]
 guards.append([(120,65),(120,160),(150,180),(210,180),(150,180),(110,180),(110,285),(110,180),(120,160),(120,65)])
 sentries=[dict(x=410,y=215),dict(x=910,y=230)]
-data=dict(width=960,height=600,walls=walls,doors=doors,rooms=rooms,arts=arts,plate=plate,docks=docks,hides=hides,lasers=lasers,guardRoutes=guards,sentries=sentries)
+decor=[dict(x=24,y=278,w=44,h=22,kind='fossil'),dict(x=425,y=278,w=59,h=20,kind='sculpture'),dict(x=525,y=195,w=34,h=30,kind='orrery')]
+for d in decor: rect(d['x'],d['y'],d['w'],d['h'])
+data=dict(decor=decor,width=960,height=600,walls=walls,doors=doors,rooms=rooms,arts=arts,plate=plate,docks=docks,hides=hides,lasers=lasers,guardRoutes=guards,sentries=sentries)
 (OUT/'blueprint.json').write_text(json.dumps(data,indent=2)+'\n')
 module='''// Authored flagship geometry; source: docs/flagship-velmont/blueprint.py.
 import type {MuseumArena} from './arenas.ts';
@@ -76,8 +78,8 @@ export function flagshipArena(players:number):MuseumArena {
  routes:[routes[0],routes[3],routes[1],routes[2],routes[0],routes[1]],
  niches:d.hides.map(p=>({...p,back:'left',kind:'recess'})),
  rooms:d.rooms.map(r=>({name:String(r[0]),x:Number(r[1])+Number(r[3])/2,y:Number(r[2])+25,bounds:{x:Number(r[1]),y:Number(r[2]),w:Number(r[3]),h:Number(r[4])}})),
- sensors:d.lasers,decor:[],doors:[{x:120,y:65},{x:570,y:65},{x:890,y:245}],
- docks:d.docks,posts:d.sentries};
+ sensors:d.lasers,decor:d.decor,doors:[{x:120,y:65},{x:570,y:65},{x:890,y:245}],
+ docks:d.docks,coopDock:{x:90,y:530},posts:d.sentries};
 }
 '''
 (OUT.parent.parent/'lib/noise/flagship-arena.ts').write_text(module)
@@ -105,7 +107,7 @@ def path(a,b,extra=()):
             if nd<dist.get(q,float('inf')):dist[q]=nd;prev[q]=p;heapq.heappush(queue,(nd,q))
     return None,[]
 xy=lambda p:(p['x'],p['y'])
-start=xy(docks[0]);crown=xy(arts[-1]);opponentDock=dict(x=140,y=495,w=70,h=70)
+start=xy(docks[0]);crown=xy(arts[-1]);opponentDock=dict(x=docks[1]['x']-35,y=docks[1]['y']-35,w=70,h=70)
 fast,fast_route=path(start,crown,[opponentDock])
 safe,safe_route=path(start,crown,[opponentDock,dict(x=684,y=400,w=12,h=80)])
 plate_distance,plate_route=path(xy(plate),crown)
@@ -126,8 +128,8 @@ def box(x,y,w,h,c,outline=None):d.rectangle((x*S,y*S,(x+w)*S,(y+h)*S),fill=c,out
 def line(points,color,width=2):d.line([(int((x+28)*S),int((y+128)*S)) for x,y in points],fill=color,width=width*S,joint='curve')
 def dot(x,y,r,c):d.ellipse(((x+28-r)*S,(y+128-r)*S,(x+28+r)*S,(y+128+r)*S),fill=c)
 text(28,22,'THE VELMONT',32,'#f4d79b',True)
-text(29,67,'FLAGSHIP / IMPLEMENTATION REVISION 03',13,'#71d7c8',True)
-text(29,94,'960 × 600 world units   •   2–4 thieves   •   implementation branch, not live',13)
+text(29,67,'FLAGSHIP / VISIBILITY + DECOR REVISION 04',13,'#71d7c8',True)
+text(29,94,'960 × 600 world units   •   2–4 thieves   •   solid exhibits + shared loading bay',13)
 colors=['#1b303b','#25312f','#372c33','#26313f','#28343b','#303339','#28372f','#20393b','#31333b','#21333a','#40342b','#27283c']
 for (name,x,y,w,h),c in zip(rooms,colors):box(x+28,y+128,w,h,c)
 for x in range(24,937,20):line([(x,24),(x,576)],'#30404a',1)

@@ -1,8 +1,8 @@
 {
-  "engineAndGeometryHash": "7be96b0dd4164a23f7da5d40ce7421e90ec7d754ec74fc9ddc99303c90031f3f",
+  "engineAndGeometryHash": "82ec7fb46f99cf3af9a88fcbc6db42c308b3274be221699c90d86c4fcdee1dac",
   "matches": 120,
   "earlyBanks": 0,
-  "banks": 50,
+  "banks": 51,
   "earliestBankSeconds": 52.24,
   "cases": [
     {
@@ -321,7 +321,7 @@
       "seed": 1013,
       "level": "normal",
       "pickupSeconds": 30.08,
-      "bankSeconds": 85.64
+      "bankSeconds": null
     },
     {
       "seed": 1014,
@@ -363,7 +363,7 @@
       "seed": 1020,
       "level": "normal",
       "pickupSeconds": 30.08,
-      "bankSeconds": 85.84
+      "bankSeconds": null
     },
     {
       "seed": 1021,
@@ -459,7 +459,7 @@
       "seed": 1036,
       "level": "normal",
       "pickupSeconds": 30.16,
-      "bankSeconds": null
+      "bankSeconds": 64.44
     },
     {
       "seed": 1037,
@@ -525,7 +525,7 @@
       "seed": 1007,
       "level": "pro",
       "pickupSeconds": 30.08,
-      "bankSeconds": null
+      "bankSeconds": 72.84
     },
     {
       "seed": 1008,
@@ -705,7 +705,7 @@
       "seed": 1037,
       "level": "pro",
       "pickupSeconds": 30.08,
-      "bankSeconds": null
+      "bankSeconds": 81.16
     },
     {
       "seed": 1038,
