@@ -1,0 +1,1 @@
+PASS: three authenticated compact guests receive current revisions and acknowledge every frame through real PeerRoom channel handlers. In-memory channels; not an ICE/NAT test.

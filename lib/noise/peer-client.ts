@@ -1,11 +1,15 @@
+import {RelayDecoder} from './compact-relay.ts';
+import {CompactSender,CompactReceiver} from './compact-wire.ts';
 import {type Game,type View} from './engine.ts';
 import {arenaKey,unpack,type Wire} from './network.ts';
 import {HostAuthority,endHost,directReady,type Envelope,type Signal} from './peer-protocol.ts';
 import {STUN_SERVERS,DIRECT_ATTEMPT_MS,ICE_RESTART_MS,directFailure,connectionLabel,selectedTurn} from './peer-policy.ts';
-type Link={pc:RTCPeerConnection;input?:RTCDataChannel;state?:RTCDataChannel;epoch:string;known?:string;authenticated:boolean;last:number;started:number;localIce:RTCIceCandidateInit[];remoteIce:Set<string>;attempt:number;turn:boolean;restarted:boolean;negotiating:boolean};
+type Link={compact?:CompactSender;decoder?:CompactReceiver;outbox?:unknown[];rtt?:number;rx?:number;rxBytes?:number;rxAt?:number;rxSeconds?:number;pc:RTCPeerConnection;input?:RTCDataChannel;state?:RTCDataChannel;epoch:string;known?:string;authenticated:boolean;last:number;started:number;localIce:RTCIceCandidateInit[];remoteIce:Set<string>;attempt:number;turn:boolean;restarted:boolean;negotiating:boolean};
 type Options={code:string;token:string;view:View;input:()=>Record<string,any>;onInput?:(a:{seq:number;dx:number;dy:number;sneak?:boolean})=>void;onView:(v:View,ack:number,rtt:number)=>void;onStatus:(mode:string,ping:number,modes:Record<string,string>)=>void;onError:(s:string)=>void};
 const uniqueId=()=>Array.from(crypto.getRandomValues(new Uint8Array(16)),x=>x.toString(16).padStart(2,'0')).join('');
 export class PeerRoom{
+ receivedBytes=0;receivedFrames=0;
+ relayDecoder=new RelayDecoder();
  directFailures=new Map<string,string>();
  get debugReason(){return [...this.directFailures].map(([id,reason])=>id+': '+reason).join(' · ');}
  private noteDirectFailure(id:string,l:Link){if(this.directFailures.has(id))return;const reason=directFailure(l.localIce,l.pc.iceConnectionState);this.directFailures.set(id,reason);console.info('[Velmont Direct]',reason);}
@@ -24,7 +28,7 @@ export class PeerRoom{
  private async sync(bootstrap=false){
  const refreshIce=performance.now()>=this.iceRefreshAt;
  const isDirect=this.direct();const messages=isDirect?[]:[...this.commandQueue.values(),...(this.base.phase==='playing'&&this.latest?[this.latest]:[])];
- const ack=this.acks.slice();const {data,rtt}=await this.request(this.host?{bootstrap,refreshIce,game:this.authority?.game,signals:this.signals,acks:ack}:{bootstrap,refreshIce,signal:this.signals[this.base.you],messages});this.lastHttp=rtt;if(this.closed)return;
+ const ack=this.acks.slice();const {data,rtt}=await this.request(this.host?{bootstrap,refreshIce,game:this.authority?.game,signals:this.signals,acks:ack}:{bootstrap,refreshIce,signal:this.signals[this.base.you],messages,compactRelay:true,relayKnown:this.relayDecoder.known,snapshot:!isDirect});this.lastHttp=rtt;if(this.closed)return;
  if(data.iceServers){this.iceServers=data.iceServers;this.iceRefreshAt=performance.now()+(data.turnAvailable?20*60*1000:60000);for(const l of this.links.values())try{l.pc.setConfiguration({iceServers:this.iceServers});}catch{}}
  if(data.closed){this.accept(data,rtt,true);this.options.onError('Host left. Job ended');this.stop(false);return;}
  if(this.host){
@@ -33,7 +37,7 @@ export class PeerRoom{
   authority.game.serial=Math.max(authority.game.serial,data.serial||0);authority.game.revision=Math.max(authority.game.revision,data.view?.revision||0);
   for(const s of data.humans||[])if(!authority.game.seats.some(x=>x.id===s.id)){authority.game.seats.push(s);authority.game.revision++;}
   this.acks=this.acks.filter(id=>!ack.includes(id));
-  for(const e of data.mail||[]){authority.input(e);this.acks.push(e.id);}
+  for(const e of data.mail||[]){this.readMetrics(e);authority.input(e);this.acks.push(e.id);}
   for(const s of authority.game.seats.filter(s=>!s.bot&&s.id!==authority.game.host)){
    const link=this.links.get(s.id);const age=link?performance.now()-link.started:0;const failed=link?.pc.iceConnectionState==='failed';if(!link)void this.offer(s.id);else if(!link.authenticated&&!link.restarted&&!link.negotiating&&(age>=ICE_RESTART_MS||failed))void this.restart(s.id,link);else if(link.authenticated&&(failed||performance.now()-link.last>15000))void this.offer(s.id);if(link&&!link.authenticated&&age>=DIRECT_ATTEMPT_MS)this.noteDirectFailure(s.id,link);
    const sig=data.signals?.[s.id];if(link===this.links.get(s.id)&&link&&sig?.epoch===link.epoch&&sig.answer&&link.pc.signalingState==='have-local-offer')try{await link.pc.setRemoteDescription(sig.answer);}catch{}
@@ -41,7 +45,7 @@ export class PeerRoom{
   }
  }else{
   for(const id of data.received||[])this.commandQueue.delete(id);
-  if(!this.direct()){this.ping=rtt;this.stats.latencies.push(rtt);this.accept(data,rtt);}
+  if(!this.direct()){this.ping=rtt;this.stats.latencies.push(rtt);const wire=data.compact?this.relayDecoder.decode(data.compact):data;if(wire){this.receivedFrames++;this.receivedBytes+=new TextEncoder().encode(JSON.stringify(data.compact||data)).length;this.accept(wire,rtt);}}
   const sig=data.signal as Signal|undefined;const link=this.links.get(this.base.host);
   if(sig?.offer&&(!link||link.epoch!==sig.epoch))void this.answer(sig);else if(link&&sig?.epoch===link.epoch)await this.addIce(link,sig.offerIce);
  }
@@ -58,33 +62,52 @@ export class PeerRoom{
  private async addIce(l:Link,cs?:RTCIceCandidateInit[]){if(!l.pc.remoteDescription)return;for(const c of cs||[]){const k=JSON.stringify(c);if(l.remoteIce.has(k))continue;try{await l.pc.addIceCandidate(c);l.remoteIce.add(k);}catch{}}}
  private transmit(c:RTCDataChannel|undefined,data:unknown){if(this.forceRelay||c?.readyState!=='open'||c.bufferedAmount>(c.label==='state'?8192:65536))return false;try{const serialized=JSON.stringify(data);this.delayed(()=>{if(c.readyState==='open'&&c.bufferedAmount<(c.label==='state'?8192:65536))try{c.send(serialized);}catch{}});return true;}catch{return false;}}
  private bind(link:Link,id:string,c:RTCDataChannel){if(!['inputs','state'].includes(c.label)){c.close();return;}if(c.label==='inputs')link.input=c;else link.state=c;
- c.onopen=()=>{if(!this.host&&c.label==='inputs')this.transmit(c,{kind:'hello',seat:this.base.you,token:this.options.token});};
+ c.onopen=()=>{if(!this.host&&c.label==='inputs')this.transmit(c,{kind:'hello',seat:this.base.you,token:this.options.token,compact:1});};
  c.onmessage=e=>this.delayed(()=>{if(this.forceRelay||typeof e.data!=='string'||e.data.length>(this.host?18000:260000))return;try{const m=JSON.parse(e.data);if(this.host){
   const seat=this.authority?.game.seats.find(s=>s.id===id&&!s.bot);if(!seat)return;
-  if(c.label==='inputs'&&m.kind==='hello'){if(m.seat!==id||m.token!==seat.token){link.pc.close();return;}link.authenticated=true;this.firstDirect??=performance.now()-this.startedAt;this.transmit(c,{kind:'welcome'});return;}
+  if(c.label==='inputs'&&m.kind==='hello'){if(m.seat!==id||m.token!==seat.token){link.pc.close();return;}link.authenticated=true;if(m.compact===1){link.compact=new CompactSender();link.outbox=[];}this.firstDirect??=performance.now()-this.startedAt;this.transmit(c,{kind:'welcome'});return;}
   if(!link.authenticated)return;
   if(c.label==='state'&&(m.kind!=='input'||m.message?.payload?.type!=='input'||m.message?.payload?.protocol!==2))return;
   link.last=performance.now();if(m.kind==='ping'){this.transmit(c,{kind:'pong',at:m.at});return;}if(m.kind==='arena'){link.known=m.key;return;}
-  if(m.kind==='input'&&m.message?.seat===id){const ok=this.authority!.input(m.message);if(c.label==='inputs')this.transmit(c,{kind:'ack',id:m.message.id,ok});}
+  if(m.kind==='delta-reset'){link.compact=new CompactSender();link.outbox=[];return;}
+  if(m.kind==='delta-ack'){link.compact?.acknowledge(m.n);link.rtt=Math.max(0,performance.now()-(m.sent||performance.now()));link.rxAt=performance.now();return;}
+  if(m.kind==='input'&&m.message?.seat===id){this.readMetrics(m.message);const ok=this.authority!.input(m.message);if(c.label==='inputs')this.transmit(c,{kind:'ack',id:m.message.id,ok});}
  }else{
   if(m.kind==='ended'){this.accept(m.packet,0,true);this.options.onError('Host left. Job ended');this.stop(false);return;}
   if(m.kind==='welcome'){link.authenticated=true;this.firstDirect??=performance.now()-this.startedAt;return;}
   if(m.kind==='pong'&&Number.isFinite(m.at)){this.ping=Math.max(0,performance.now()-m.at);this.stats.latencies.push(this.ping);return;}
   if(m.kind==='ack'){this.commandQueue.delete(m.id);if(!m.ok)this.options.onError('The host rejected that action.');return;}
+  if(m.kind==='keys'){(link.decoder??=new CompactReceiver()).keys(m);return;}
+  if(m.kind==='delta'){const decoded=(link.decoder??=new CompactReceiver()).decode(m);if(!decoded){if(m.s===link.decoder?.stream&&m.k<=(link.decoder?.paths.length||0)&&m.n>(link.decoder?.latest||0))this.transmit(link.input,{kind:'delta-reset'});return;}this.lastState=performance.now();link.last=this.lastState;this.receivedFrames++;this.receivedBytes+=new TextEncoder().encode(e.data).length;this.accept(decoded,this.ping);link.rx=(link.rx||0)+1;link.rxBytes=(link.rxBytes||0)+new TextEncoder().encode(e.data).length;this.transmit(link.input,{kind:'delta-ack',n:m.n,sent:m.sent,rx:link.rx,bytes:link.rxBytes});return;}
   if(m.kind==='snapshot'){this.lastState=performance.now();link.last=this.lastState;this.accept(m.packet,this.ping);this.transmit(link.input,{kind:'arena',key:m.packet.arenaKey});}
  }}catch{/* Malformed peer data never reaches the engine. */}});
  }
  private accept(p:Wire,rtt:number,force=false){try{const v=unpack(p,this.base);if(!force&&v.code===this.base.code&&v.revision<this.base.revision)return;this.base=v;this.stats.snapshots++;this.options.onView(v,p.ack,rtt);}catch{/* Ask again for static geometry after a lost first snapshot. */}}
  direct(){const l=this.links.get(this.base.host);return !this.forceRelay&&!!l&&l.authenticated&&directReady(l.state?.readyState==='open',this.lastState,performance.now());}
  command(type:string,extra:Record<string,unknown>={}){if(!this.booted){this.options.onError('Still connecting to your crew. Please try that button once connected.');return;}const e=this.envelope({type,...extra});if(this.host){if(!this.authority?.input(e))this.options.onError(this.authority?.lastError||'That action is unavailable.');else{this.publishHost();this.nextSync=0;}}else{this.commandQueue.set(e.id,e);this.transmit(this.links.get(this.base.host)?.input,{kind:'input',message:e});}}
+ private readMetrics(e:Envelope){const m=e.payload?.metrics,l=this.links.get(e.seat);if(!l||!m||![m.rtt,m.frames,m.bytes,m.seconds].every(x=>Number.isFinite(x)&&x>=0))return;l.rtt=m.rtt;l.rx=m.frames;l.rxBytes=m.bytes;l.rxSeconds=m.seconds;}
+ private sendSnapshot(id:string,l:Link){
+  if(!this.authority)return;
+  if(!l.compact){this.transmit(l.state,{kind:'snapshot',packet:this.authority.snapshot(id,l.known)});return;}
+  const queue=l.outbox??=[];
+  while(queue.length){if(!this.transmit(l.input,queue[0]))return;queue.shift();}
+  if(l.compact.serial>0&&!l.compact.ack)return;
+  const encoded=l.compact.encode(this.authority.snapshot(id));
+  if(encoded.keys)queue.push(encoded.keys);
+  const frame={...encoded.frame,sent:Math.round(performance.now())};
+  if(encoded.reliable)queue.push(frame);
+  while(queue.length){if(!this.transmit(l.input,queue[0]))return;queue.shift();}
+  if(!encoded.reliable)this.transmit(l.state,frame);
+ }
+ get hostStats(){return [...this.links].map(([id,l])=>({id,connection:connectionLabel(l.authenticated,l.state?.readyState==='open',performance.now()-l.started,l.turn),rtt:Math.round(l.rtt||0),received:l.rx||0,averageBytes:l.rx?Math.round((l.rxBytes||0)/l.rx):0,perSecond:l.rx?Math.round(l.rx/Math.max(1,(l.rxSeconds??(performance.now()-l.started)/1000))*10)/10:0}));}
  private publishHost(){if(!this.authority)return;this.accept(this.authority.snapshot(this.authority.game.host,arenaKey(this.base)),0);}
  action(action:string,aim:{x:number;y:number}){if(!this.host||this.base.phase!=='playing')return;this.command('input',{...this.options.input(),protocol:1,action,aim});}
  private envelope(payload:Record<string,any>):Envelope{return{id:`${this.lease}:${++this.counter}`,seat:this.base.you,token:this.options.token,payload};}
  private step(){if(this.closed)return;const now=performance.now();
  if(this.host&&this.authority&&!this.away&&this.authority.game.phase==='playing'){let steps=0;const budgetAt=performance.now();while(now-this.tickAt>=40&&steps++<5){this.authority.tick();this.tickAt+=40;if(performance.now()-budgetAt>=10)break;}if(now-this.tickAt>200)this.tickAt=now;}
  for(const [id,l] of this.links)if(!l.authenticated&&now-l.started>=DIRECT_ATTEMPT_MS)this.noteDirectFailure(id,l);
- const playing=this.base.phase==='playing';if(now-this.sendAt<(playing?50:250))return;this.sendAt=now;const payload=playing?this.options.input():undefined;if(payload){this.options.onInput?.(payload as {seq:number;dx:number;dy:number;sneak?:boolean});const previous=this.recentInputs.slice(-2);this.recentInputs.push({...payload,actions:undefined});this.recentInputs=this.recentInputs.slice(-2);payload.previous=previous;}else this.recentInputs=[];const e=payload?this.envelope(payload):undefined;this.latest=e;
- if(this.host&&this.authority){if(e)this.authority.input(e);const g=this.authority.game;(g as Game&{connectionModes?:Record<string,string>}).connectionModes=Object.fromEntries([...this.links].map(([id,l])=>[id,connectionLabel(l.authenticated,l.state?.readyState==='open'&&now-l.last<2000,now-this.startedAt,l.turn)]));if(playing||g.revision!==this.lastLobbyRevision||now-this.lastLobbyPublish>=1000){this.publishHost();this.lastLobbyRevision=g.revision;this.lastLobbyPublish=now;}for(const [id,l] of this.links){if(l.authenticated)this.transmit(l.state,{kind:'snapshot',packet:this.authority.snapshot(id,l.known)});}}
+ const playing=this.base.phase==='playing';if(now-this.sendAt<(playing?50:250))return;this.sendAt=now;const payload=playing?this.options.input():undefined;if(payload){this.options.onInput?.(payload as {seq:number;dx:number;dy:number;sneak?:boolean});const previous=this.recentInputs.slice(-2);this.recentInputs.push({...payload,actions:undefined});this.recentInputs=this.recentInputs.slice(-2);payload.previous=previous;if(!this.host)payload.metrics={rtt:this.ping,frames:this.receivedFrames,bytes:this.receivedBytes,seconds:(now-this.startedAt)/1000};}else this.recentInputs=[];const e=payload?this.envelope(payload):undefined;this.latest=e;
+ if(this.host&&this.authority){if(e)this.authority.input(e);const g=this.authority.game;(g as Game&{connectionModes?:Record<string,string>}).connectionModes=Object.fromEntries([...this.links].map(([id,l])=>[id,connectionLabel(l.authenticated,l.state?.readyState==='open'&&now-l.last<2000,now-this.startedAt,l.turn)]));if(playing||g.revision!==this.lastLobbyRevision||now-this.lastLobbyPublish>=1000){this.publishHost();this.lastLobbyRevision=g.revision;this.lastLobbyPublish=now;}for(const [id,l] of this.links){if(l.authenticated)this.sendSnapshot(id,l);}}
  else{const l=this.links.get(this.base.host);if(l?.authenticated){if(e)this.transmit(l.state,{kind:'input',message:e});for(const cmd of this.commandQueue.values())this.transmit(l.input,{kind:'input',message:cmd});if(now-this.lastPing>1000){this.lastPing=now;this.transmit(l.input,{kind:'ping',at:now});}}}
  const modes:Record<string,string>={...(this.base as View&{connectionModes?:Record<string,string>}).connectionModes};for(const [id,l] of this.links)modes[id]=connectionLabel(l.authenticated,l.state?.readyState==='open'&&now-l.last<2500,now-this.startedAt,l.turn);if(now-this.lastStats>2000){this.lastStats=now;for(const l of this.links.values())if(l.authenticated)void l.pc.getStats().then(stats=>{l.turn=selectedTurn(stats);}).catch(()=>{});}this.mode=this.host?'Host':this.direct()?(this.links.get(this.base.host)?.turn?'Direct (TURN)':'Direct'):now-this.startedAt<DIRECT_ATTEMPT_MS?'Connecting…':'Relay';const status=JSON.stringify([this.mode,Math.round(this.ping/25)*25,modes]);if(status!==this.lastStatus||now-this.lastStatusAt>=1000){this.lastStatusAt=now;this.lastStatus=status;this.options.onStatus(this.mode,Math.round(this.ping),modes);}
  }

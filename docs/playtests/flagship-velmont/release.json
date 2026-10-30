@@ -1,13 +1,131 @@
 {
-  "sourceHash": "9687c1ed01b25662983e86a4aa1dcfb1cfcf47fa040ba91f9358b6b788973400",
+  "sourceHash": "5d5c570b5be0f1e52295e0d61c4e5a3c820606193bc7a8c5ef184023502ab068",
   "at": "2026-10-30T17:11:03.376Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
     "test": {
-      "passed": true
+      "passed": true,
+      "tests": 309
     },
     "typecheck": {
       "passed": true
+    },
+    "compactTransport": {
+      "passed": true,
+      "rows": [
+        {
+          "museum": "Velmont",
+          "humans": 3,
+          "echo": 1,
+          "ackDelay": 200,
+          "loss": "25% of unreliable frames",
+          "median": 529,
+          "max": 2595,
+          "oldMedian": 9406,
+          "threeGuestUploadBytesPerSec": 62705,
+          "encoderP95": 12.200144999998884,
+          "reliableFrames": 250,
+          "decoded": 1409
+        },
+        {
+          "museum": "Velmont",
+          "humans": 3,
+          "echo": 1,
+          "ackDelay": 400,
+          "loss": "25% of unreliable frames",
+          "median": 600,
+          "max": 2659,
+          "oldMedian": 9406,
+          "threeGuestUploadBytesPerSec": 72965,
+          "encoderP95": 8.252707999999984,
+          "reliableFrames": 464,
+          "decoded": 1461
+        },
+        {
+          "museum": "Velmont",
+          "humans": 4,
+          "echo": 0,
+          "ackDelay": 200,
+          "loss": "25% of unreliable frames",
+          "median": 576,
+          "max": 2093,
+          "oldMedian": 8421,
+          "threeGuestUploadBytesPerSec": 57046,
+          "encoderP95": 5.502178000002459,
+          "reliableFrames": 106,
+          "decoded": 1374
+        },
+        {
+          "museum": "Velmont",
+          "humans": 4,
+          "echo": 0,
+          "ackDelay": 400,
+          "loss": "25% of unreliable frames",
+          "median": 619,
+          "max": 2119,
+          "oldMedian": 8421,
+          "threeGuestUploadBytesPerSec": 61719,
+          "encoderP95": 3.7854169999991427,
+          "reliableFrames": 210,
+          "decoded": 1397
+        },
+        {
+          "museum": "Archive",
+          "humans": 3,
+          "echo": 1,
+          "ackDelay": 200,
+          "loss": "25% of unreliable frames",
+          "median": 550,
+          "max": 2242,
+          "oldMedian": 9189,
+          "threeGuestUploadBytesPerSec": 59294,
+          "encoderP95": 2.924879999998666,
+          "reliableFrames": 196,
+          "decoded": 1397
+        },
+        {
+          "museum": "Archive",
+          "humans": 3,
+          "echo": 1,
+          "ackDelay": 400,
+          "loss": "25% of unreliable frames",
+          "median": 606,
+          "max": 2293,
+          "oldMedian": 9189,
+          "threeGuestUploadBytesPerSec": 67523,
+          "encoderP95": 3.08572400000412,
+          "reliableFrames": 358,
+          "decoded": 1434
+        },
+        {
+          "museum": "Archive",
+          "humans": 4,
+          "echo": 0,
+          "ackDelay": 200,
+          "loss": "25% of unreliable frames",
+          "median": 549,
+          "max": 1669,
+          "oldMedian": 8158,
+          "threeGuestUploadBytesPerSec": 52613,
+          "encoderP95": 5.5065859999958775,
+          "reliableFrames": 77,
+          "decoded": 1367
+        },
+        {
+          "museum": "Archive",
+          "humans": 4,
+          "echo": 0,
+          "ackDelay": 400,
+          "loss": "25% of unreliable frames",
+          "median": 579,
+          "max": 1679,
+          "oldMedian": 8158,
+          "threeGuestUploadBytesPerSec": 55848,
+          "encoderP95": 2.927662000001874,
+          "reliableFrames": 149,
+          "decoded": 1382
+        }
+      ]
     }
   },
   "museums": {
@@ -427,5 +545,23 @@
     "change": "Only tutorial instruction text and its touch translation, verified by reconstructing the exact original release hash.",
     "tests": 303,
     "typecheck": "passed"
+  },
+  "transportValidation": {
+    "base": "f03eb6eb838c1106c246293648a76fbaaa58def5",
+    "baseCertificateHash": "9687c1ed01b25662983e86a4aa1dcfb1cfcf47fa040ba91f9358b6b788973400",
+    "at": "2026-10-30T20:24:40.441Z",
+    "sourceHash": "5d5c570b5be0f1e52295e0d61c4e5a3c820606193bc7a8c5ef184023502ab068",
+    "tests": 309,
+    "packetGate": true,
+    "method": "Prior gameplay results retained: every preexisting lib/noise file except peer-client.ts is byte-identical. Full replay attempt interrupted by execution environment; not represented as a completed rerun. New transport, packet-loss, 200/400ms prediction and browser fallback checks recorded separately.",
+    "changes": {
+      "app/page.tsx": "6758b1d8603ea8655c6f9c6b166844eb214ec5076f27574cf1e17536841c8024",
+      "app/api/noise/peer/route.ts": "815ba1e3786f15a2decb5170bb64832fe0dcc5d9edf59e0d03c3439cccec02ad",
+      "lib/noise/peer-client.ts": "9b8fc8b782ff381c645d7fdd0fe2655d72ed701bc40c123b84ac3e71f1398369",
+      "lib/noise/compact-wire.ts": "a40a69a698ee75af4b911f2b4d57b45be4a19aa1c3f4ad588834c781674112c4",
+      "lib/noise/compact-relay.ts": "a3acbd6f1881b66eb7faaaf874fd3528374f4e98c2ad6cf038bf541405bf4966",
+      "scripts/verify-compact-network.ts": "c4ae7e2a99a3a840b848bb8952f2dc54907bf87a148ace4c57e4bc5bd04ba9da",
+      "tests/compact-wire.test.ts": "2b05723adc57e39dd9c2daa56ed3070bc9f0ec2281bdcdd30e83f8bb7efeda99"
+    }
   }
 }

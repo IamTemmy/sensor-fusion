@@ -1,0 +1,20 @@
+✔ compact roundtrip retains every public field, no tokens, deletion and literal marker strings (115.476306ms)
+✔ loss and reordering reconstruct from acknowledged frame, not previous send (14.320897ms)
+✔ new stream rejects delayed packets from previous stream (12.571137ms)
+✔ HTTP compact recovery survives lost response, lost dictionary, and cold worker (19.650632ms)
+✔ compact prediction with 200ms round trip stops without RTT slide; 50 actions acknowledged (649.515034ms)
+ℹ {"rtt":200,"overshootPx":1.7062888588708347,"pendingMax":2,"pendingFinal":0,"ack":50}
+✔ compact prediction with 400ms round trip stops without RTT slide; 50 actions acknowledged (535.547474ms)
+ℹ {"rtt":400,"overshootPx":3.0203374149535307,"pendingMax":4,"pendingFinal":0,"ack":50}
+✔ relay stall keeps newest direction, preserves commands and contiguous actions (50.265396ms)
+✔ unreliable input rejects unauthenticated senders and old directions, without losing action retry (5.573767ms)
+✔ guest movement bypasses blocked reliable commands and drops congested state sends (2.116602ms)
+✔ duplicate snapshots cannot repeatedly rewind predicted movement (4.449843ms)
+ℹ tests 10
+ℹ suites 0
+ℹ pass 10
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 1678.925062
