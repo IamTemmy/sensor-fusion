@@ -29,7 +29,7 @@ const rules:Record<string,string[]>={
  'Left behind outside your dock when the van leaves? You lose a quarter of your money.',
  'Bank everything and Last Call starts: 15 seconds to board.'],
  'Jackpot':[
- 'In The Velmont, the Crown opens at 1:00 remaining. Its carrier moves 20% slower and its alarm cannot be removed. One thief holds Security’s plate; another takes it.',
+ 'In The Velmont and Night Archive, the Crown opens at 1:00 remaining. One thief holds the plate; another takes it. There is no extra Crown speed penalty, and a teammate can take its alarm.',
  'The plate opens it for everyone, rivals too. In 1v1, stepping on it unlocks the crown permanently.'],
  'Rivals':[
  'Mint vs Violet. The richest crew wins.',
