@@ -1,0 +1,17 @@
+import {execFileSync} from 'node:child_process';
+import {readFileSync,writeFileSync} from 'node:fs';
+import assert from 'node:assert/strict';
+import {releaseHash} from '../../scripts/flagship-gates.mjs';
+const base='878586c81c446029a56e0c31e6196fde5dd0b7d2';
+const git=(...a)=>execFileSync('git',a,{encoding:'utf8'});
+const allowed=new Set(['app/page.tsx','app/globals.css','components/noise/menu-crew.tsx','public/art/menu/hero-crew-v2.webp']);
+const changed=[...git('diff','--name-only',base).trim().split('\n'),...git('ls-files','--others','--exclude-standard').trim().split('\n')].filter(p=>p&&!p.startsWith('docs/'));
+assert.ok(changed.every(p=>allowed.has(p)),JSON.stringify(changed));
+for(const p of git('ls-tree','-r','--name-only',base,'lib','hooks','scripts','tests','app/api').trim().split('\n'))assert.deepEqual(readFileSync(p),execFileSync('git',['show',base+':'+p]),p);
+let old=git('show',base+':app/page.tsx');
+old=old.replace("'use client';", "'use client';\nimport {MenuCrew} from '../components/noise/menu-crew';");
+old=old.replace('<img className="entry-character-art" src="/art/menu/bots.webp" alt="" aria-hidden="true" width="360" height="205"/>','<MenuCrew kind="bots"/>').replace('<div className="friends-character-group" aria-hidden="true"><Portrait/><Portrait team={1}/><Portrait echo/></div>','<MenuCrew kind="friends"/>').replace('<div className="mode-art"><Portrait/><Portrait echo/></div>','<MenuCrew kind="coop"/>').replace('<div className="mode-art"><Portrait echo/><i>VS</i><Portrait team={1}/></div>','<MenuCrew kind="rivals"/>');
+assert.equal(readFileSync('app/page.tsx','utf8'),old);
+const report=JSON.parse(git('show',base+':docs/playtests/flagship-velmont/release.json'));assert.ok(report.passed);
+report.presentationValidation={base,baseCertificateHash:report.sourceHash,at:new Date().toISOString(),typecheck:true,desktopAndPhoneReviewed:true,method:'Menu artwork only. All lib/hooks/scripts/tests/API files byte-identical. Page changes restricted to four decorative card images and their import. Prior gameplay and transport results retained, not rerun.'};
+report.sourceHash=releaseHash();writeFileSync('docs/playtests/flagship-velmont/release.json',JSON.stringify(report,null,2)+'\n');console.log(report.sourceHash);

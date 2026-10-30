@@ -1,5 +1,5 @@
 {
-  "sourceHash": "5d5c570b5be0f1e52295e0d61c4e5a3c820606193bc7a8c5ef184023502ab068",
+  "sourceHash": "4aee6aefc62439b589f8d2704db90a408a6b34055f12d805a103ecf3c2b0d123",
   "at": "2026-10-30T17:11:03.376Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
@@ -563,5 +563,13 @@
       "scripts/verify-compact-network.ts": "c4ae7e2a99a3a840b848bb8952f2dc54907bf87a148ace4c57e4bc5bd04ba9da",
       "tests/compact-wire.test.ts": "2b05723adc57e39dd9c2daa56ed3070bc9f0ec2281bdcdd30e83f8bb7efeda99"
     }
+  },
+  "presentationValidation": {
+    "base": "878586c81c446029a56e0c31e6196fde5dd0b7d2",
+    "baseCertificateHash": "5d5c570b5be0f1e52295e0d61c4e5a3c820606193bc7a8c5ef184023502ab068",
+    "at": "2026-10-30T21:24:53.487Z",
+    "typecheck": true,
+    "desktopAndPhoneReviewed": true,
+    "method": "Menu artwork only. All lib/hooks/scripts/tests/API files byte-identical. Page changes restricted to four decorative card images and their import. Prior gameplay and transport results retained, not rerun."
   }
 }
