@@ -23,12 +23,12 @@ Each candidate retains its exact code, engine hash, raw logs, and CPU report on 
 
 | Candidate branch | Co-op R/N/P | Duos R/N/P | Idle E/A/C | Blocking result |
 |---|---|---|---|---|
-| candidate/crown-vault | 85/52.5/32.5% | 85/55/42.5% | 0/1/0 | Plate pickup 25/60, required45; Rookie outside3/40; Pro>40% |
+| candidate/crown-vault | 85/52.5/32.5% | 85/55/42.5% | 0/1/0 | Plate pickup 25/60, required 45; Rookie outside 3/40; Pro>40% |
 | candidate/laser-emitter | 90/85/52.5% | 57.5/57.5/50% | 0/0/0 | Co-op drift and Rookie/Pro rivals outside bounds |
 | candidate/exhibit-shuffle | 92.5/62.5/22.5% | 72.5/67.5/60% | 0/2/0 | Four tests fail: cheap high-value routes, niche usefulness, carrying rescue; rivals outside bounds |
-| candidate/archive-darkness | 87.5/62.5/25% | 72.5/52.5/32.5% | 0/1/0 | Combined pre-balance defender candidate: Rookie below75%, six-player Archive return-to-van stall |
+| candidate/archive-darkness | 87.5/62.5/25% | 72.5/52.5/32.5% | 0/1/0 | Combined pre-balance defender candidate: Rookie below 75%, six-player Archive return-to-van stall |
 
-The vault's early-pickup check passes all40 seeds but does not override its other failures. All held candidates pass CPU limits. Their p95 E/A/C (ms): vault1.791/1.850/3.351; emitter1.375/2.193/1.516; shuffle2.689/1.727/4.084; darkness1.426/1.851/2.628. Max tick across maps respectively32.865,13.338,19.190,14.746ms. Crossroads rotating-beam/top-docks step was not attempted because its explicit1–6 prerequisite is unmet.
+The vault's early-pickup check passes all 40 seeds but does not override its other failures. All held candidates pass CPU limits. Their p95 E/A/C (ms): vault 1.791/1.850/3.351; emitter 1.375/2.193/1.516; shuffle 2.689/1.727/4.084; darkness 1.426/1.851/2.628. Max tick across maps respectively 32.865,13.338,19.190,14.746 ms. Crossroads rotating-beam/top-docks step was not attempted because its explicit 1–6 prerequisite is unmet.
 
 [Independent review](REVIEW.md). [Detailed released defender gates](../echo-defender-release/README.md).
 
