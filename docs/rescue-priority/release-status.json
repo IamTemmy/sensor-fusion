@@ -1,0 +1,82 @@
+{
+  "status": "approved-with-known-limitation",
+  "engineHash": "ddbf59690aa44b631658f9b4360a48300e6071e0df62ff09dfaeaa4617412138",
+  "unitTests": 326,
+  "typecheck": true,
+  "acceptance": [
+    {
+      "museum": "flagship-velmont",
+      "n": 30,
+      "first": 30,
+      "banked": 17,
+      "freed": 30
+    },
+    {
+      "museum": "night-archive",
+      "n": 30,
+      "first": 29,
+      "banked": 26,
+      "freed": 30
+    }
+  ],
+  "regressions": [
+    {
+      "museum": "flagship-velmont",
+      "idle": {
+        "stalls": 0,
+        "matches": 30
+      },
+      "echo": [
+        {
+          "difficulty": "rookie",
+          "medianHaul": 2300,
+          "leftBehind": 0,
+          "matches": 40
+        },
+        {
+          "difficulty": "normal",
+          "medianHaul": 1950,
+          "leftBehind": 0,
+          "matches": 40
+        },
+        {
+          "difficulty": "pro",
+          "medianHaul": 900,
+          "leftBehind": 0,
+          "matches": 40
+        }
+      ]
+    },
+    {
+      "museum": "night-archive",
+      "idle": {
+        "stalls": 0,
+        "matches": 30
+      },
+      "echo": [
+        {
+          "difficulty": "rookie",
+          "medianHaul": 3100,
+          "leftBehind": 0,
+          "matches": 40
+        },
+        {
+          "difficulty": "normal",
+          "medianHaul": 2000,
+          "leftBehind": 2,
+          "matches": 40
+        },
+        {
+          "difficulty": "pro",
+          "medianHaul": 1500,
+          "leftBehind": 0,
+          "matches": 40
+        }
+      ]
+    }
+  ],
+  "blocker": null,
+  "scope": "Bot decision order and bot-only ownership memory; no gameplay rules, networking, UI or tuning changes.",
+  "acceptedLimitation": "Velmont banks 17/30 within 15 seconds; owner accepted and requested deployment.",
+  "sourceHash": "098eb92a5f7051bd96e93f0c0e7079fb2190fc64197afa326011e5f5e7672954"
+}

@@ -1,0 +1,920 @@
+[
+  {
+    "museum": "flagship-velmont",
+    "n": 30,
+    "first": 19,
+    "banked": 14,
+    "freed": 30,
+    "runs": [
+      {
+        "seed": 1001,
+        "from": {
+          "x": 80,
+          "y": 80
+        },
+        "to": {
+          "x": 200,
+          "y": 80
+        },
+        "first": 2960,
+        "bank": 12960,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1002,
+        "from": {
+          "x": 760,
+          "y": 80
+        },
+        "to": {
+          "x": 880,
+          "y": 80
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1003,
+        "from": {
+          "x": 80,
+          "y": 200
+        },
+        "to": {
+          "x": 200,
+          "y": 200
+        },
+        "first": 2960,
+        "bank": 6040,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1004,
+        "from": {
+          "x": 520,
+          "y": 280
+        },
+        "to": {
+          "x": 640,
+          "y": 280
+        },
+        "first": 2960,
+        "bank": 9000,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1005,
+        "from": {
+          "x": 520,
+          "y": 320
+        },
+        "to": {
+          "x": 640,
+          "y": 320
+        },
+        "first": 2960,
+        "bank": 9120,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1006,
+        "from": {
+          "x": 400,
+          "y": 360
+        },
+        "to": {
+          "x": 400,
+          "y": 480
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1007,
+        "from": {
+          "x": 600,
+          "y": 400
+        },
+        "to": {
+          "x": 600,
+          "y": 520
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1008,
+        "from": {
+          "x": 320,
+          "y": 480
+        },
+        "to": {
+          "x": 440,
+          "y": 480
+        },
+        "first": 13320,
+        "bank": 14160,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1009,
+        "from": {
+          "x": 760,
+          "y": 520
+        },
+        "to": {
+          "x": 880,
+          "y": 520
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1010,
+        "from": {
+          "x": 600,
+          "y": 80
+        },
+        "to": {
+          "x": 600,
+          "y": 200
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1011,
+        "from": {
+          "x": 760,
+          "y": 160
+        },
+        "to": {
+          "x": 880,
+          "y": 160
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1012,
+        "from": {
+          "x": 360,
+          "y": 280
+        },
+        "to": {
+          "x": 360,
+          "y": 400
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1013,
+        "from": {
+          "x": 440,
+          "y": 320
+        },
+        "to": {
+          "x": 560,
+          "y": 320
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1014,
+        "from": {
+          "x": 360,
+          "y": 360
+        },
+        "to": {
+          "x": 480,
+          "y": 360
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1015,
+        "from": {
+          "x": 400,
+          "y": 400
+        },
+        "to": {
+          "x": 400,
+          "y": 520
+        },
+        "first": 2960,
+        "bank": 6040,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1016,
+        "from": {
+          "x": 240,
+          "y": 480
+        },
+        "to": {
+          "x": 360,
+          "y": 480
+        },
+        "first": 2960,
+        "bank": 5560,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1017,
+        "from": {
+          "x": 680,
+          "y": 520
+        },
+        "to": {
+          "x": 800,
+          "y": 520
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1018,
+        "from": {
+          "x": 480,
+          "y": 80
+        },
+        "to": {
+          "x": 600,
+          "y": 80
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1019,
+        "from": {
+          "x": 600,
+          "y": 160
+        },
+        "to": {
+          "x": 600,
+          "y": 280
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1020,
+        "from": {
+          "x": 160,
+          "y": 280
+        },
+        "to": {
+          "x": 160,
+          "y": 400
+        },
+        "first": 2960,
+        "bank": 3800,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1021,
+        "from": {
+          "x": 400,
+          "y": 320
+        },
+        "to": {
+          "x": 520,
+          "y": 320
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1022,
+        "from": {
+          "x": 280,
+          "y": 360
+        },
+        "to": {
+          "x": 400,
+          "y": 360
+        },
+        "first": 2960,
+        "bank": 6240,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1023,
+        "from": {
+          "x": 320,
+          "y": 400
+        },
+        "to": {
+          "x": 440,
+          "y": 400
+        },
+        "first": 2960,
+        "bank": 6520,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1024,
+        "from": {
+          "x": 160,
+          "y": 480
+        },
+        "to": {
+          "x": 280,
+          "y": 480
+        },
+        "first": 4280,
+        "bank": 7320,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1025,
+        "from": {
+          "x": 600,
+          "y": 520
+        },
+        "to": {
+          "x": 720,
+          "y": 520
+        },
+        "first": 3080,
+        "bank": 9520,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1026,
+        "from": {
+          "x": 400,
+          "y": 80
+        },
+        "to": {
+          "x": 520,
+          "y": 80
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1027,
+        "from": {
+          "x": 520,
+          "y": 160
+        },
+        "to": {
+          "x": 640,
+          "y": 160
+        },
+        "first": 2960,
+        "bank": 14640,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1028,
+        "from": {
+          "x": 800,
+          "y": 240
+        },
+        "to": {
+          "x": 920,
+          "y": 240
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1029,
+        "from": {
+          "x": 360,
+          "y": 320
+        },
+        "to": {
+          "x": 480,
+          "y": 320
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1030,
+        "from": {
+          "x": 200,
+          "y": 360
+        },
+        "to": {
+          "x": 320,
+          "y": 360
+        },
+        "first": 2960,
+        "bank": 5440,
+        "freed": true,
+        "ground": true
+      }
+    ]
+  },
+  {
+    "museum": "night-archive",
+    "n": 30,
+    "first": 19,
+    "banked": 17,
+    "freed": 30,
+    "runs": [
+      {
+        "seed": 1001,
+        "from": {
+          "x": 80,
+          "y": 80
+        },
+        "to": {
+          "x": 200,
+          "y": 80
+        },
+        "first": 2960,
+        "bank": 7120,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1002,
+        "from": {
+          "x": 480,
+          "y": 80
+        },
+        "to": {
+          "x": 600,
+          "y": 80
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1003,
+        "from": {
+          "x": 200,
+          "y": 160
+        },
+        "to": {
+          "x": 200,
+          "y": 280
+        },
+        "first": 2960,
+        "bank": 5120,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1004,
+        "from": {
+          "x": 400,
+          "y": 200
+        },
+        "to": {
+          "x": 400,
+          "y": 320
+        },
+        "first": 3760,
+        "bank": 7360,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1005,
+        "from": {
+          "x": 560,
+          "y": 240
+        },
+        "to": {
+          "x": 560,
+          "y": 360
+        },
+        "first": 3080,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1006,
+        "from": {
+          "x": 320,
+          "y": 320
+        },
+        "to": {
+          "x": 440,
+          "y": 320
+        },
+        "first": 3200,
+        "bank": 6960,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1007,
+        "from": {
+          "x": 440,
+          "y": 360
+        },
+        "to": {
+          "x": 440,
+          "y": 480
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1008,
+        "from": {
+          "x": 800,
+          "y": 400
+        },
+        "to": {
+          "x": 920,
+          "y": 400
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1009,
+        "from": {
+          "x": 120,
+          "y": 520
+        },
+        "to": {
+          "x": 240,
+          "y": 520
+        },
+        "first": 4040,
+        "bank": 5520,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1010,
+        "from": {
+          "x": 160,
+          "y": 80
+        },
+        "to": {
+          "x": 280,
+          "y": 80
+        },
+        "first": 2960,
+        "bank": 7400,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1011,
+        "from": {
+          "x": 640,
+          "y": 80
+        },
+        "to": {
+          "x": 640,
+          "y": 200
+        },
+        "first": 2960,
+        "bank": 12000,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1012,
+        "from": {
+          "x": 560,
+          "y": 160
+        },
+        "to": {
+          "x": 560,
+          "y": 280
+        },
+        "first": 3000,
+        "bank": 10000,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1013,
+        "from": {
+          "x": 640,
+          "y": 200
+        },
+        "to": {
+          "x": 760,
+          "y": 200
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1014,
+        "from": {
+          "x": 200,
+          "y": 280
+        },
+        "to": {
+          "x": 200,
+          "y": 400
+        },
+        "first": 2960,
+        "bank": 4160,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1015,
+        "from": {
+          "x": 520,
+          "y": 320
+        },
+        "to": {
+          "x": 640,
+          "y": 320
+        },
+        "first": 3000,
+        "bank": 10200,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1016,
+        "from": {
+          "x": 200,
+          "y": 400
+        },
+        "to": {
+          "x": 200,
+          "y": 520
+        },
+        "first": 11560,
+        "bank": 12720,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1017,
+        "from": {
+          "x": 160,
+          "y": 440
+        },
+        "to": {
+          "x": 160,
+          "y": 560
+        },
+        "first": 3760,
+        "bank": 4560,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1018,
+        "from": {
+          "x": 280,
+          "y": 520
+        },
+        "to": {
+          "x": 400,
+          "y": 520
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1019,
+        "from": {
+          "x": 240,
+          "y": 80
+        },
+        "to": {
+          "x": 360,
+          "y": 80
+        },
+        "first": 2960,
+        "bank": 7640,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1020,
+        "from": {
+          "x": 80,
+          "y": 120
+        },
+        "to": {
+          "x": 200,
+          "y": 120
+        },
+        "first": 3840,
+        "bank": 7360,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1021,
+        "from": {
+          "x": 720,
+          "y": 160
+        },
+        "to": {
+          "x": 840,
+          "y": 160
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1022,
+        "from": {
+          "x": 760,
+          "y": 200
+        },
+        "to": {
+          "x": 880,
+          "y": 200
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1023,
+        "from": {
+          "x": 320,
+          "y": 280
+        },
+        "to": {
+          "x": 320,
+          "y": 400
+        },
+        "first": 9840,
+        "bank": 11880,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1024,
+        "from": {
+          "x": 800,
+          "y": 320
+        },
+        "to": {
+          "x": 920,
+          "y": 320
+        },
+        "first": 2960,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1025,
+        "from": {
+          "x": 400,
+          "y": 400
+        },
+        "to": {
+          "x": 400,
+          "y": 520
+        },
+        "first": 2960,
+        "bank": 5960,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1026,
+        "from": {
+          "x": 440,
+          "y": 440
+        },
+        "to": {
+          "x": 440,
+          "y": 560
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1027,
+        "from": {
+          "x": 440,
+          "y": 520
+        },
+        "to": {
+          "x": 560,
+          "y": 520
+        },
+        "first": 2960,
+        "bank": 7520,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1028,
+        "from": {
+          "x": 360,
+          "y": 80
+        },
+        "to": {
+          "x": 480,
+          "y": 80
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1029,
+        "from": {
+          "x": 440,
+          "y": 120
+        },
+        "to": {
+          "x": 440,
+          "y": 240
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      },
+      {
+        "seed": 1030,
+        "from": {
+          "x": 800,
+          "y": 160
+        },
+        "to": {
+          "x": 920,
+          "y": 160
+        },
+        "first": null,
+        "bank": null,
+        "freed": true,
+        "ground": true
+      }
+    ]
+  }
+]
