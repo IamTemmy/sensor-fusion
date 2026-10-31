@@ -1,2 +1,2 @@
-const keyRule=/(Empty-handed sneaking passes lasers; carrying art trips them|Crown opens at 1:00|90 seconds|\$2,600|1:00|staff exit|Security|Map Room|15s Last Call|15 seconds|a quarter of your money|[Ll]ose 25%)/g;
+const keyRule=/(Empty-handed sneaking passes lasers; carrying art trips them|Crown opens at 1:00|Crown \(\$1,200\)|pressure plate|Solo\? Tell Echo: Hold plate\.|90 seconds|\$2,600|1:00|staff exit|Security|Map Room|15s Last Call|15 seconds|a quarter of your money|[Ll]ose 25%)/g;
 export function RuleEmphasis({text}:{text:string}){return <>{text.split(keyRule).map((part,i)=>i%2?<strong key={i}>{part}</strong>:part)}</>;}

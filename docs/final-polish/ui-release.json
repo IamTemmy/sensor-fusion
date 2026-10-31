@@ -1,7 +1,7 @@
 {
   "scope": "presentation-only",
   "base": "49f55789b6297fe08736808e9e72711483b092b5",
-  "sourceHash": "7d942c30a12435287f3e0259adb9f96a5edd3c93326a20823292aa2462ece062",
+  "sourceHash": "a6c72800e3994d3302ff5f5a8e4366df1a829ea58a56a97f989c98ed79b51f3f",
   "protectedFiles": {
     ".gitignore": "0f953d59d28b539e23e7e95ce94cef7be8b982c1d2c89b152fec2fddc278d6fa",
     ".npmrc": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d",
@@ -26,13 +26,13 @@
     "components.json": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd",
     "components/connector-error.tsx": "2d0d04559952ce9c9a327cca499f4b99f35d885cccfce375230e116695d3f155",
     "components/museum.tsx": "2d96283c5df74b983f3920fc51caddfe3f355b5d805f4cd7a8638c9eb7a279af",
-    "components/noise/briefing.tsx": "ce4f5e29232f1bb0f565340627551b11d90f5ca4be804058cd7764735e4d642e",
+    "components/noise/briefing.tsx": "b9f09a975d0864dfa0536ff8b2aaa51191a1ef4a7b3d661879197ad8ca7c0e93",
     "components/noise/crew-art.tsx": "3108f5da82abbc22384b7737b4145097afebed3047f36522f2ca3f619fe6e5dd",
     "components/noise/latency-probe.tsx": "c0560ac4c9ed34c0788a71610020ff483c0ce3adbed6de7998fdaeae8d62762c",
     "components/noise/menu-crew.tsx": "98dc313619a0ad74441b4abca33d963da87330da339861af21ab87ffd4661715",
     "components/noise/museum-lore.tsx": "fb025e0596c5265b2868bf611debb963c5132c8bde68bf5c0f753a9412f62aa9",
     "components/noise/recap.tsx": "46e2d54c910d8052a44be075bb3818b30aebec236ea043a5132b50087e6d9d58",
-    "components/noise/review-fixtures.ts": "67e255a2da8ac0d84d44027ad37663ecca667b53976e05874190481155dfa23b",
+    "components/noise/review-fixtures.ts": "2b2817721a6369f615b9a5435ee443d7e821287323b4c674c94703cb62cdd12e",
     "components/noise/team-board.tsx": "4288e07a9ec993934719960067329ee2c68536f6ea6e7be013c68855c678c1c6",
     "components/noise/velmont-wordmark.tsx": "f520dea73f1e46f79bfcf1215f30ec82392622a8177d14d600021dc1622d52b6",
     "components/sensor-feed.tsx": "a457e0987409ca5422ada306a3a1682d6275f37ffc139275ec4ff1469835a1cf",
@@ -126,7 +126,7 @@
     "lib/noise/client-loop.ts": "c93344e0d5000e59c6f850b8a7cba1dcd151fcee600677ff95a9895520e17a51",
     "lib/noise/compact-relay.ts": "a3acbd6f1881b66eb7faaaf874fd3528374f4e98c2ad6cf038bf541405bf4966",
     "lib/noise/compact-wire.ts": "a40a69a698ee75af4b911f2b4d57b45be4a19aa1c3f4ad588834c781674112c4",
-    "lib/noise/engine.ts": "29ed3e82c48b7d221f24f1f7fe07251f3fd8cf75ce5e8e247732e0ea8e49032f",
+    "lib/noise/engine.ts": "4d24e87534924bcaef18748fa8112375814f882f15014fb857101f264f5a36e8",
     "lib/noise/flagship-arena.ts": "3b4a0c2707db1cfda082f802090b852966cf6be62687284a047373583dca9d1c",
     "lib/noise/getaway.ts": "122ef3b85c49aa8eb8964252b966c04ee750647b26041373acb116db1b1fad9a",
     "lib/noise/input-copy.ts": "a9ef6b7b2088d07aba8c192afba9bb31abd0a147a4a2dc0a65e218f43c9e800a",
@@ -389,5 +389,11 @@
     ],
     "inviteRefresh": "same guest restored; URL cleaned; roster stays two seats",
     "hostDeparture": "confirmation accepted; guest receives host-ended card without recap"
+  },
+  "plateClarity": {
+    "scope": "Text, renderer labels and frozen development fixtures only",
+    "engineChanges": "Verified exact two message-string replacements; all simulation logic unchanged",
+    "duelException": "After time lock, activation unlocks permanently",
+    "tests": 314
   }
 }

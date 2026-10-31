@@ -901,3 +901,5 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .quick-brief-steps h3,.noise-app .guide-cards h3{text-wrap:balance}
 .noise-app .quick-brief-steps p,.noise-app .guide-rule-scroll li{text-wrap:pretty;overflow-wrap:break-word}
 @media(max-width:800px){.noise-app .quick-brief>.quick-brief-warning{margin:5px 12px 0;padding:7px 9px}.noise-app .quick-brief>.quick-brief-warning strong{font-size:11px}.noise-app .quick-brief>.quick-brief-warning span{font-size:11px}.noise-app .quick-brief-footer{padding-top:8px}.noise-app .hosting-notice{font-size:9px}}
+
+.plate-rule-line{display:block;margin-top:5px}.arena-plan-note strong{font-weight:750}

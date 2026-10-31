@@ -30,6 +30,7 @@ const rules:Record<string,string[]>={
  'Left behind outside your dock when the van leaves? You lose a quarter of your money.',
  'Bank everything and Last Call starts: 15 seconds to board.'],
  'Jackpot':[
+ 'The plate is a floor tile. Stand on it to keep the Crown vault open; step off and it locks again until someone grabs the Crown. In 1v1, stepping on it after 1:00 instead unlocks it permanently.',
  'The Crown unlocks at 1:00. Carry it at normal art-carrying speed; a teammate can take its alarm. Grabbing it opens the staff exit.',
  'The Velmont: the plate is in Security. Night Archive: the plate is in the Map Room.',
  'The plate opens it for everyone, rivals too. In 1v1, stepping on it after the time lock opens unlocks the Crown permanently for both players.'],

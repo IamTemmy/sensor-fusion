@@ -3,6 +3,8 @@ import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('plate-')){const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state.includes('archive'))g.match=1;setup(g);g.phase='playing';g.start=0;g.end=90000;g.now=state.includes('before')?20000:31000;g.events=[];g.jobEvent=undefined;const crown=g.loot.find(l=>l.value===1200)!;Object.assign(g.seats[0],state.includes('crown')?{x:crown.x,y:crown.y+55}:{x:g.plate.x+100,y:g.plate.y+90});Object.assign(g.seats[1],state.includes('held')?g.plate:vanFor(g,0));return g;}
+
  if(state.startsWith('archive-')){const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);g.match=1;setup(g);g.phase='playing';g.start=0;g.now=0;g.end=90000;g.events=[];g.jobEvent=undefined;if(state==='archive-centerpiece'){Object.assign(g.seats[0],{x:180,y:330});g.now=15000;}return g;}
 
  if(state.startsWith('flagship-')||state.startsWith('getaway-flagship-')){
