@@ -36,7 +36,7 @@ export function practiceText(g:Game|View){const l=lessonOf(g);if(!l)return 'Grab
  'Grab the glowing exhibit with E. It sets off an alarm.',
  l.covered?'Carry the exhibit into your dock. Art banks automatically.':'Open Your bot → Cover me. Then carry the art to your dock.',
  l.lured?'The sentry moved! Grab its guarded exhibit with E.':s.hand&&g.noises.some(n=>n.id===s.hand)?'Aim above the sentry, then F throws the alarm to lure it away.':'E grabs the highlighted alarm. Throw it away from the exhibit to lure the sentry.',
- 'Aim away and F shakes off the alarm. Then aim at Echo and F passes quiet art.',
+ 'F passes art to a nearby teammate. No one near? F shakes off its alarm.',
  l.stashed?'Now hold Shift (or tap Sneak) and move into the glowing niche.':'Carry art to the glowing niche. E stashes it safely.',
  'Enter your dock and press R to board. Everyone aboard ends the job.',
  'Practice complete. You are ready for a real heist.'

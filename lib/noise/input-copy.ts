@@ -2,6 +2,8 @@
 export function touchCopy(text:string,touch:boolean){
  if(!touch)return text;
  return text
+ .replaceAll('F passes art to a nearby teammate. No one near? F shakes off its alarm.','Tap Pass to send art to a nearby teammate. No one near? Tap Shake off alarm.')
+ .replaceAll('Q asks Echo to pass art. G drops it.','Tap Pass it to ask Echo for art. Tap Drop to put it down.')
  .replaceAll('Aim away and F shakes off the alarm. Then aim at Echo and F passes quiet art.','Aim away and tap Shake off alarm. Then aim at Echo and tap Pass quiet art.')
  .replaceAll('Carrying art? F flings its alarm after 1s. A teammate takes it instantly.','Carrying art? Tap Shake off alarm; it flies after 1s. A teammate takes it instantly.')
  .replaceAll('Q asks Echo to pass art. F passes quiet art or shakes off its alarm. G drops it.','Tap Pass it to ask Echo for art. Use Pass quiet art, Shake off alarm, or Drop.')

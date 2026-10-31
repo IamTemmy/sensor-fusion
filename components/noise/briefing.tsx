@@ -8,7 +8,7 @@ import {COOP_GOAL,type CrewMode} from '../../lib/noise/engine';
 
 const steps=[
  {title:'Grab art',body:'Every exhibit comes with a loud alarm.',key:'E',action:'Grab',touch:'Tap Grab',color:'#95e8cd'},
- {title:'Shake off alarm',body:'Carrying art? F flings its alarm away, or let a teammate take it.',key:'F',action:'Shake off alarm',touch:'Tap Shake off alarm',color:'#ffa39b'},
+ {title:'Pass or shake',body:'F passes art to a nearby teammate. No one near? F shakes off its alarm.',key:'F',action:'Pass / Shake off',touch:'Tap Pass / Shake off',color:'#ffa39b'},
  {title:'Throw the alarm',body:'Pull guards away from your route.',key:'F',action:'Throw',touch:'Aim, then tap Throw',color:'#a6d9ef'},
  {title:'Bank & board',body:'Deliver your art. Get everyone aboard.',key:'R',action:'Board van',touch:'Tap Board van',color:'#f3d18b'},
 ];
@@ -25,7 +25,7 @@ export function HeistBriefing({arena,training,crewMode,duel=false,touch,busy,rea
    </header>
    {arena&&<div className="arena-plan-note"><b>{arena.name} · {arena.capacity===2?'Compact':arena.capacity===4?'Crew':'Grand'} plan</b><span>{['flagship-velmont','night-archive'].includes(arena.id)?<><RuleEmphasis text={`The Crown ($1,200) unlocks at 1:00. One thief stands on the pressure plate in ${arena.id==='night-archive'?'the Map Room':'Security'} to keep the vault open while another grabs the Crown. Solo? Tell Echo: Hold plate.`}/>{duel&&<span className="plate-rule-line">1v1 exception: after 1:00, stepping on the plate unlocks the Crown permanently for both thieves.</span>}<span className="plate-rule-line">Noise on you brings guards to you. Noise elsewhere sends them there.</span></>:<RuleEmphasis text={arena.brief}/>}</span>{' '}<small className="museum-lore">{museumIdentity(['sculpture','fossil','celestial'].indexOf(arena.theme)).lore}</small></div>}
    <ol className="quick-brief-steps">{steps.map((step,i)=><li key={step.title} style={{'--step-color':step.color} as CSSProperties}>
-    <span className="quick-step-number" aria-hidden="true">0{i+1}</span><GuideIcon step={i}/><h3>{step.title}</h3><p>{i===1?(touch?'Carrying art? Tap Shake off alarm, or let a teammate take it.':step.body):duel&&i===3?'Bank your art, then board your own van.':step.body}</p>
+    <span className="quick-step-number" aria-hidden="true">0{i+1}</span><GuideIcon step={i}/><h3>{step.title}</h3><p>{i===1?(touch?'Tap Pass to send art to a nearby teammate. No one near? Tap Shake off alarm.':step.body):duel&&i===3?'Bank your art, then board your own van.':step.body}</p>
     <div className="quick-step-control">{touch?<><span aria-hidden="true">☝</span>{step.touch}</>:<><kbd>{step.key}</kbd>{step.action}</>}</div>
    </li>)}</ol>
    <div className="quick-brief-controls" aria-label="Movement controls">{touch?<><span>Drag to move</span><span>Tap floor to aim</span><span>Tap Sneak for stealth</span></>:<><span><MovementKeys/> Move</span><span><kbd>SHIFT</kbd> Sneak</span><span><kbd>G</kbd> Drop art</span><span><kbd>Q</kbd> Ask for art</span></>}</div>

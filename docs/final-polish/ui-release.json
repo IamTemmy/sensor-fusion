@@ -1,7 +1,7 @@
 {
   "scope": "presentation-only",
   "base": "49f55789b6297fe08736808e9e72711483b092b5",
-  "sourceHash": "a6c72800e3994d3302ff5f5a8e4366df1a829ea58a56a97f989c98ed79b51f3f",
+  "sourceHash": "e9bc4c11d8ec94ad5a03750a2d95344bba6878745aa07ca5a3b2050b599e1222",
   "protectedFiles": {
     ".gitignore": "0f953d59d28b539e23e7e95ce94cef7be8b982c1d2c89b152fec2fddc278d6fa",
     ".npmrc": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d",
@@ -26,7 +26,7 @@
     "components.json": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd",
     "components/connector-error.tsx": "2d0d04559952ce9c9a327cca499f4b99f35d885cccfce375230e116695d3f155",
     "components/museum.tsx": "2d96283c5df74b983f3920fc51caddfe3f355b5d805f4cd7a8638c9eb7a279af",
-    "components/noise/briefing.tsx": "b9f09a975d0864dfa0536ff8b2aaa51191a1ef4a7b3d661879197ad8ca7c0e93",
+    "components/noise/briefing.tsx": "9ae812f20e1b791ace8aa380b6f3e87fb45e31e8e19075b373b8cf370f1fe869",
     "components/noise/crew-art.tsx": "3108f5da82abbc22384b7737b4145097afebed3047f36522f2ca3f619fe6e5dd",
     "components/noise/latency-probe.tsx": "c0560ac4c9ed34c0788a71610020ff483c0ce3adbed6de7998fdaeae8d62762c",
     "components/noise/menu-crew.tsx": "98dc313619a0ad74441b4abca33d963da87330da339861af21ab87ffd4661715",
@@ -129,7 +129,7 @@
     "lib/noise/engine.ts": "4d24e87534924bcaef18748fa8112375814f882f15014fb857101f264f5a36e8",
     "lib/noise/flagship-arena.ts": "3b4a0c2707db1cfda082f802090b852966cf6be62687284a047373583dca9d1c",
     "lib/noise/getaway.ts": "122ef3b85c49aa8eb8964252b966c04ee750647b26041373acb116db1b1fad9a",
-    "lib/noise/input-copy.ts": "a9ef6b7b2088d07aba8c192afba9bb31abd0a147a4a2dc0a65e218f43c9e800a",
+    "lib/noise/input-copy.ts": "9bbb92bcd5977d761491bd8e4374a72b3573c749c9952de107d50465ef0b07d4",
     "lib/noise/lobby.ts": "fd5b014913cbc80b7efe5d1988b37ba539670f10e2d617321d9d5619d2c55a45",
     "lib/noise/museum-decor.ts": "89558fb7315926768d6ae616bb46d52d0a7b8a58007064e2727d45afded2e14b",
     "lib/noise/museum-identity.ts": "166f8c1e2cd0a1bd2a5f1e2f0fb61a2a12b671d7a8f743e315e10652bcdc8907",
@@ -141,7 +141,7 @@
     "lib/noise/peer-client.ts": "9b8fc8b782ff381c645d7fdd0fe2655d72ed701bc40c123b84ac3e71f1398369",
     "lib/noise/peer-policy.ts": "75cb008d0234adb1cc844cdc48e507f5631378e6cb08f2e852f19b4015188047",
     "lib/noise/peer-protocol.ts": "c63c9f06954f790bb276e698572d2caf791493b7255837c30c9e63bb3abf7ddb",
-    "lib/noise/practice.ts": "84a1eca89898bad4107c1f6be09478ac810a822c45519e528059bb7459199df5",
+    "lib/noise/practice.ts": "2e2d27a55b4f8e20f8e043ddbafe05a34f5067c696e22fe30a3a7a56fb2bb886",
     "lib/noise/recap-result.ts": "8e1e05f515fc789999882147c07d06f0a8c8f64b880c15ae68d9030d20d52725",
     "lib/noise/records.ts": "a72c40e36b364d5c53e622367c84ddb1d355480fb9a63c274331cf31bf5cfe45",
     "lib/noise/room-lock.ts": "4637577c14ea749f6cfa352f97afb889494887f2647ef64d2ad96ee71a66e62f",
@@ -339,7 +339,7 @@
     "vendor/shadcn-tailwind-4.13.0.css": "bc7d83425702955b4cb67cb14ede9d603f9d912376d57a2d81d661094d2a782a",
     "vite.config.ts": "6f6d890794fbe23f3e35cceb327f49d5977432a5aaf715e040a6408932da395b"
   },
-  "unitTests": 314,
+  "unitTests": 317,
   "typecheck": true,
   "screenshotsReviewed": true,
   "performanceStatus": "unresolved",
@@ -395,5 +395,10 @@
     "engineChanges": "Verified exact two message-string replacements; all simulation logic unchanged",
     "duelException": "After time lock, activation unlocks permanently",
     "tests": 314
+  },
+  "throwMapping": {
+    "scope": "Client mapping and labels only; engine and network protocol unchanged",
+    "tests": 317,
+    "priority": "Eligible pass, else shake ringing art, else no-op hint"
   }
 }
