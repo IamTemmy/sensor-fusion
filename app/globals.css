@@ -889,3 +889,15 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app .menu-crew-friends{--portrait:clamp(44px,7.3dvh,68px)}
  .noise-app .menu-bot-badge{right:calc(50% - clamp(48px,8dvh,74px));bottom:8px}
 }
+/* Release copy: critical instructions remain readable and in view. */
+.noise-app .arena-plan-note .museum-lore{display:block;flex-basis:100%;font-weight:400;margin-top:3px}
+.noise-app .arena-plan-note strong,.noise-app .guide-rule-scroll strong{color:#ffe1a1;font-weight:750}
+.noise-app .quick-brief>.quick-brief-warning{flex-shrink:0;margin:6px 18px 0}
+.noise-app .hosting-notice{white-space:normal;text-wrap:balance}
+.noise-app .host-ended{max-width:480px;text-align:center;padding:24px}
+.noise-app .host-ended h2{font-size:26px;text-wrap:balance}
+.noise-app .host-ended p{line-height:1.5;margin:16px 0;text-wrap:pretty}
+.noise-app .host-ended .primary{width:100%;margin-top:8px}
+.noise-app .quick-brief-steps h3,.noise-app .guide-cards h3{text-wrap:balance}
+.noise-app .quick-brief-steps p,.noise-app .guide-rule-scroll li{text-wrap:pretty;overflow-wrap:break-word}
+@media(max-width:800px){.noise-app .quick-brief>.quick-brief-warning{margin:5px 12px 0;padding:7px 9px}.noise-app .quick-brief>.quick-brief-warning strong{font-size:11px}.noise-app .quick-brief>.quick-brief-warning span{font-size:11px}.noise-app .quick-brief-footer{padding-top:8px}.noise-app .hosting-notice{font-size:9px}}

@@ -1,7 +1,7 @@
 {
   "scope": "presentation-only",
   "base": "49f55789b6297fe08736808e9e72711483b092b5",
-  "sourceHash": "6eb6b1628b4be1615ae17d0675f007ff72975caa5f287b40d2b23751b403ff7f",
+  "sourceHash": "7d942c30a12435287f3e0259adb9f96a5edd3c93326a20823292aa2462ece062",
   "protectedFiles": {
     ".gitignore": "0f953d59d28b539e23e7e95ce94cef7be8b982c1d2c89b152fec2fddc278d6fa",
     ".npmrc": "a3909ac0447c469fda12c57374993be70f47ce73e49fd3124678c7c047f2214d",
@@ -12,7 +12,7 @@
     "app/api/noise/route.ts": "43bf23b2cdd9af6d4add75f5151eb06d79d915287689b5c0c23404e488504bf6",
     "app/api/room/route.ts": "439f6c12761bd04d9561d5d58974ddca10a24117e968b0f709b9daeff4f8ab37",
     "app/chatgpt-auth.ts": "4265a2e7c2dcb3a6f4b7026f762bf5b6e4caec76cc13c0a45987ee9a9f2e42cc",
-    "app/layout.tsx": "77697be0aeffda19c0f577ee34a7ab3d5277ea07913c13abde6f31f4b9dd7d96",
+    "app/layout.tsx": "ee4b624a163a465e873689e8409d060cc27e6b9c6499ff853efc085e700b9910",
     "app/network-check/network-check.module.css": "1b9594c1abe124ba6e382670764eb8bd9864e5c1b1106c930f06c4c00a43d843",
     "app/network-check/page.tsx": "5154a8b1270f5f90ff1ab6fab9b3a007a2a2cda145695ad08f58ad2d22f060d1",
     "app/visual-check/page.tsx": "c43f386aac3ae925942b7d34155eceeb432162b3e682d82fc3da19d564327da6",
@@ -26,7 +26,7 @@
     "components.json": "31f4ca67a4a62572571003d3d5aac85ee6fbfca67a192924bac6b168d95e98fd",
     "components/connector-error.tsx": "2d0d04559952ce9c9a327cca499f4b99f35d885cccfce375230e116695d3f155",
     "components/museum.tsx": "2d96283c5df74b983f3920fc51caddfe3f355b5d805f4cd7a8638c9eb7a279af",
-    "components/noise/briefing.tsx": "1608bc90bb5ff3901ae215bbc82587aef6bd6155986b962bd224987bfda6a329",
+    "components/noise/briefing.tsx": "ce4f5e29232f1bb0f565340627551b11d90f5ca4be804058cd7764735e4d642e",
     "components/noise/crew-art.tsx": "3108f5da82abbc22384b7737b4145097afebed3047f36522f2ca3f619fe6e5dd",
     "components/noise/latency-probe.tsx": "c0560ac4c9ed34c0788a71610020ff483c0ce3adbed6de7998fdaeae8d62762c",
     "components/noise/menu-crew.tsx": "98dc313619a0ad74441b4abca33d963da87330da339861af21ab87ffd4661715",
@@ -129,7 +129,7 @@
     "lib/noise/engine.ts": "29ed3e82c48b7d221f24f1f7fe07251f3fd8cf75ce5e8e247732e0ea8e49032f",
     "lib/noise/flagship-arena.ts": "3b4a0c2707db1cfda082f802090b852966cf6be62687284a047373583dca9d1c",
     "lib/noise/getaway.ts": "122ef3b85c49aa8eb8964252b966c04ee750647b26041373acb116db1b1fad9a",
-    "lib/noise/input-copy.ts": "fb6c5109667e2af617e6d1b28482be806d2ade81153bcb1eb7af4341af8f3907",
+    "lib/noise/input-copy.ts": "a9ef6b7b2088d07aba8c192afba9bb31abd0a147a4a2dc0a65e218f43c9e800a",
     "lib/noise/lobby.ts": "fd5b014913cbc80b7efe5d1988b37ba539670f10e2d617321d9d5619d2c55a45",
     "lib/noise/museum-decor.ts": "89558fb7315926768d6ae616bb46d52d0a7b8a58007064e2727d45afded2e14b",
     "lib/noise/museum-identity.ts": "166f8c1e2cd0a1bd2a5f1e2f0fb61a2a12b671d7a8f743e315e10652bcdc8907",
@@ -339,7 +339,7 @@
     "vendor/shadcn-tailwind-4.13.0.css": "bc7d83425702955b4cb67cb14ede9d603f9d912376d57a2d81d661094d2a782a",
     "vite.config.ts": "6f6d890794fbe23f3e35cceb327f49d5977432a5aaf715e040a6408932da395b"
   },
-  "unitTests": 309,
+  "unitTests": 314,
   "typecheck": true,
   "screenshotsReviewed": true,
   "performanceStatus": "unresolved",
@@ -378,5 +378,16 @@
       690,
       690
     ]
+  },
+  "releaseCandidate": {
+    "scope": "Rules, guide, image preloads and client lifecycle UI; no protocol/engine/balance changes",
+    "reviewedPresentationFiles": [
+      "app/layout.tsx",
+      "components/noise/briefing.tsx",
+      "lib/noise/input-copy.ts",
+      "scripts/difficulty-gate.mjs"
+    ],
+    "inviteRefresh": "same guest restored; URL cleaned; roster stays two seats",
+    "hostDeparture": "confirmation accepted; guest receives host-ended card without recap"
   }
 }

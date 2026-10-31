@@ -1,0 +1,7 @@
+import test from 'node:test';import assert from 'node:assert/strict';
+import {savedSeat,resumeInvite,hostEnded,hostLeaveWarning,withoutCrew} from '../lib/noise/release-ui.ts';
+test('invite refresh restores only a matching saved seat',()=>{const seat=savedSeat({code:'MINT42',token:'seat-secret'});assert.ok(resumeInvite('mint42',seat));assert.equal(resumeInvite('BLUE42',seat),false);assert.equal(resumeInvite(null,seat),false);});
+test('malformed stored sessions cannot trigger rejoin',()=>{for(const v of [null,{},'bad',{code:'MINT42'},{code:'MINT42',token:''},{code:'bad',token:'x'}])assert.equal(savedSeat(v),null);});
+test('successful join cleans only crew query and preserves other URL state',()=>{assert.equal(withoutCrew('https://example.com/?crew=MINT42&lag=400#guide'),'/?lag=400#guide');});
+test('host warning applies online until a job has ended',()=>{for(const phase of ['lobby','ready','playing'])assert.ok(hostLeaveWarning('online',{host:'h',you:'h',phase}));assert.equal(hostLeaveWarning('online',{host:'h',you:'g',phase:'playing'}),false);assert.equal(hostLeaveWarning('solo',{host:'h',you:'h',phase:'playing'}),false);assert.equal(hostLeaveWarning('online',{host:'h',you:'h',phase:'finished'}),false);});
+test('host termination is separate from a normal scored finish',()=>{assert.ok(hostEnded({phase:'finished',finishReason:'Host left. Job ended'}));assert.equal(hostEnded({phase:'finished',finishReason:'The van has left.'}),false);assert.equal(hostEnded({phase:'playing',finishReason:''}),false);});

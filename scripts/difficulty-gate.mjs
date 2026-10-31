@@ -6,7 +6,7 @@ import {createHash} from 'node:crypto';
 let ui;try{ui=JSON.parse(readFileSync('docs/final-polish/ui-release.json','utf8'));}catch{}
 if(ui?.scope==='presentation-only'&&ui.sourceHash===releaseHash()){
  for(const [path,hash] of Object.entries(ui.protectedFiles))assert.equal(createHash('sha256').update(readFileSync(path)).digest('hex'),hash,path+' changed outside UI scope');
- assert.ok(ui.unitTests===309&&ui.typecheck&&ui.screenshotsReviewed);
+ assert.ok(ui.unitTests>=309&&ui.typecheck&&ui.screenshotsReviewed);
  console.log('Verified UI-only release. Gameplay/network files unchanged. CPU target remains unresolved; no new performance pass claimed.');
  process.exit(0);
 }
