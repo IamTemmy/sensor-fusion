@@ -903,3 +903,19 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 @media(max-width:800px){.noise-app .quick-brief>.quick-brief-warning{margin:5px 12px 0;padding:7px 9px}.noise-app .quick-brief>.quick-brief-warning strong{font-size:11px}.noise-app .quick-brief>.quick-brief-warning span{font-size:11px}.noise-app .quick-brief-footer{padding-top:8px}.noise-app .hosting-notice{font-size:9px}}
 
 .plate-rule-line{display:block;margin-top:5px}.arena-plan-note strong{font-weight:750}
+
+/* Isolated next preview: one first-heist instruction, replacing contextual tips. */
+.first-heist { max-width: min(440px, calc(100vw - 24px)); }
+.first-heist span { display: grid; gap: 5px; }
+.first-heist b { color: #8ef2d2; font-size: 11px; letter-spacing: .08em; }
+.noise-app:has(.first-heist) .museum-placard,
+.noise-app:has(.first-heist) .event-banner,
+.noise-app:has(.first-heist) .alarm-tip { display: none !important; }
+.noise-app:has(.first-heist) .context-tip { visibility: visible; }
+.loot-audit { position:relative; margin:16px 0; padding:14px; border:1px solid #69838a; border-radius:12px; background:#0c1c29; color:#e3eeee; }
+.loot-audit summary { cursor:pointer; font-weight:700; color:#f5d68d; }
+.loot-audit ul { list-style:none; padding:0; }
+.loot-audit li { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:8px 0; border-bottom:1px solid #ffffff18; }
+.loot-audit p { font-size:14px; line-height:1.5; }
+.action[aria-disabled="true"] { opacity: .55; }
+.noise-app:has(.error-toast) .first-heist { visibility:hidden; }
