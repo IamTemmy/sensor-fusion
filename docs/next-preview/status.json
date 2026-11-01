@@ -3,7 +3,7 @@
   "branch": "next",
   "baseline": "ce1ce1f07f462d010dbfd7ae1fd0cd8a41267b03",
   "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
-  "unitTests": 341,
+  "unitTests": 342,
   "typecheck": true,
   "engineAndProtocol": "unchanged",
   "browserRegression": "BLOCKED: all 20 Playwright cases failed at launch (missing Chromium executable)",
@@ -88,5 +88,19 @@
     }
   },
   "rescueCommand": "exit 1: accepted Velmont 17/30 banking limitation; both museums exactly match baseline",
-  "deployment": "none"
+  "deployment": "none",
+  "followupReview": {
+    "base": "0e57950",
+    "fixes": [
+      "unique solo start identity and two-attempt cap",
+      "raw guest scrolls buttons into view; 1280x800 window",
+      "touch player label omits F prefix"
+    ],
+    "isolation": "PASS",
+    "typecheck": "PASS",
+    "localProductionBuild": "PASS: node scripts/run-framework.mjs build",
+    "localProductionHTTP": 200,
+    "backgroundGuest": "BLOCKED (exit 1): Chromium executable missing; installer failed again",
+    "deployment": "none"
+  }
 }

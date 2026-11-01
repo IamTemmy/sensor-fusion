@@ -33,3 +33,17 @@ Review target: `next@b85ddec`. No deployment was performed. Main, submitted site
 | Echo bubble | [Desktop](screenshots/next-bubble-1280.jpg) | [Phone](screenshots/next-bubble-390.jpg) |
 | Receiver ring | [Desktop](screenshots/next-ring-1280.jpg) | [Phone](screenshots/next-ring-390.jpg) |
 | Results audit | [Desktop](screenshots/recap-coop-1280.jpg) | [Phone](screenshots/recap-coop-390.jpg) |
+
+## Follow-up review of 0e57950
+
+Solo progress now stores `soloStart` from the game's start timestamp. Component identity includes that start, clearing held-ID memory between solo games. A new PRACTICE/match-1 game consumes the next attempt; reloading the same identity resumes. Online code+match identity is unchanged. A new unit test covers new-game/reload/attempt-cap/Skip and online behavior.
+
+The raw guest launches at 1280×800 and scrolls each target button to the center before measuring/clicking it. The canvas receives the existing touch-controls state and omits `F · ` on touch labels.
+
+Actual follow-up validation: isolation PASS; `pnpm test` 342 passed / 0 failed; `pnpm typecheck` exit 0. `node scripts/run-framework.mjs build` completed (production framework build, not the full `pnpm build` simulation gate). Started the generated Worker locally using `pnpm start --port 4184`; HTTP GET returned 200. Against that local production server the background helper exited 1 with:
+
+```json
+{"status":"BLOCKED","reason":"browserType.launch: Failed to launch chromium because executable doesn't exist at /root/.cache/ms-playwright/chromium-1248/chrome-linux64/chrome"}
+```
+
+Chromium installation was retried and failed again. The Join/hidden-20s behavior is therefore not claimed as verified. Earlier screenshots/rescue/suite results above belong to the prior review pass. No deploy, secrets, main or protected-file changes.

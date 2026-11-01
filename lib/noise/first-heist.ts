@@ -1,14 +1,14 @@
 import type {View} from './engine.ts';
 export type Lesson = 'grab'|'alarm'|'bank'|'board'|'done';
-export type GuideProgress={step:Lesson;code:string;match:number;attempts:number;heldIds:string[]};
+export type GuideProgress={step:Lesson;code:string;match:number;attempts:number;heldIds:string[];soloStart?:number};
 export const GUIDE_KEY='velmont-first-heist-v1';
-export function resumeGuide(raw:string|null,code:string,match:number):GuideProgress {
+export function resumeGuide(raw:string|null,code:string,match:number,soloStart?:number):GuideProgress {
  let old:Partial<GuideProgress>|null=null;try{old=JSON.parse(raw||'null');}catch{if(raw==='done')old={step:'done'};}
- const fresh:GuideProgress={step:'grab',code,match,attempts:1,heldIds:[]};
+ const fresh:GuideProgress={step:'grab',code,match,attempts:1,heldIds:[],...(soloStart===undefined?{}:{soloStart})};
  if(old?.step==='done')return {...fresh,step:'done'};
  if(!old||!['grab','alarm','bank','board'].includes(old.step||''))return fresh;
  const attempts=Math.min(2,Math.max(1,Number(old.attempts)||1));
- if(old.code===code&&old.match===match)return {...fresh,step:old.step!,attempts,heldIds:Array.isArray(old.heldIds)?old.heldIds.filter(x=>typeof x==='string'):[]};
+ if(old.code===code&&old.match===match&&old.soloStart===soloStart)return {...fresh,step:old.step!,attempts,heldIds:Array.isArray(old.heldIds)?old.heldIds.filter(x=>typeof x==='string'):[]};
  return {...fresh,attempts:Math.min(2,attempts+1),step:attempts>=2?'done':'grab'};
 }
 /** Personal progress only: a crew bank counts only for art this player held. */

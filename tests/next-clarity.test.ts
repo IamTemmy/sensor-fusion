@@ -18,3 +18,14 @@ for(const task of ['bank','bank-rescue','rescue','receive','recover-pass','jackp
 });
 test('loose-art tip is neutral unless a pass remains airborne',()=>{const {g,human}=fixture();g.loot[0].droppedAt=g.now;let a=lootRecap(view(g,human.id),human.team);assert.match(a.tip,/loose art/);assert.doesNotMatch(a.tip,/pass|receiver/i);g.loot[0].flight={from:{x:0,y:0},to:{x:20,y:20},at:g.now,team:human.team,thrower:human.id};a=lootRecap(view(g,human.id),human.team);assert.match(a.tip,/pass was still airborne/);});
 test('recover bubble survives a missed crew pass only while the art remains loose',()=>{const {g,human,bot}=fixture(),art=g.loot[0];bot.task=bot.announcedTask='recover-pass';bot.taskAt=g.now;art.x=bot.x;art.y=bot.y;art.droppedAt=g.now;g.events.push({...g.events[0],at:g.now,text:human.name+' passed '+art.name+' toward '+bot.name+'.'});assert.equal(decisionBubble(g,bot),'Recovering your art');art.guardCarrier='guard';g.now+=100;assert.equal(decisionBubble(g,bot),null);});
+test('fresh solo games use a new attempt despite PRACTICE match 1; same game reload resumes',()=>{
+ const first={...resumeGuide(null,'PRACTICE',1,1000),step:'board' as const,heldIds:['art']};
+ assert.deepEqual(resumeGuide(JSON.stringify(first),'PRACTICE',1,1000),first);
+ const second=resumeGuide(JSON.stringify(first),'PRACTICE',1,2000);
+ assert.equal(second.step,'grab');assert.equal(second.attempts,2);assert.deepEqual(second.heldIds,[]);
+ assert.deepEqual(resumeGuide(JSON.stringify(second),'PRACTICE',1,2000),second);
+ assert.equal(resumeGuide(JSON.stringify(second),'PRACTICE',1,3000).step,'done');
+ assert.equal(resumeGuide(JSON.stringify({...second,step:'done'}),'PRACTICE',1,4000).step,'done');
+ const online={...resumeGuide(null,'ROOM',1),step:'bank' as const};
+ assert.deepEqual(resumeGuide(JSON.stringify(online),'ROOM',1),online);
+});

@@ -20,7 +20,7 @@ try{
  await host.goto('/');await host.getByRole('button',{name:/Play with friends/}).click();await host.getByRole('button',{name:/Host a room/}).click();
  const code=(await host.locator('.crew-code').innerText()).match(/[A-Z0-9]{6}/)[0];
  stage='launch';
- raw=spawn(executable,['--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--remote-allow-origins=http://localhost',`--user-data-dir=${profile}`,'--no-first-run','--no-default-browser-check',...(process.env.RAW_CHROMIUM_HEADED==='1'?[]:['--headless=new']),...(process.getuid?.()===0?['--no-sandbox']:[]),'about:blank'],{stdio:'ignore'});
+ raw=spawn(executable,['--window-size=1280,800','--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--remote-allow-origins=http://localhost',`--user-data-dir=${profile}`,'--no-first-run','--no-default-browser-check',...(process.env.RAW_CHROMIUM_HEADED==='1'?[]:['--headless=new']),...(process.getuid?.()===0?['--no-sandbox']:[]),'about:blank'],{stdio:'ignore'});
  let launchError;raw.on('error',e=>{launchError=e;});
  const port=await until(async()=>{if(launchError)throw launchError;try{return Number((await readFile(join(profile,'DevToolsActivePort'),'utf8')).split('\n')[0]);}catch{return false;}},'Raw Chromium did not start');
  const endpoint='http://127.0.0.1:'+port;
@@ -28,7 +28,7 @@ try{
  const guestTarget=await json('/json/new?'+encodeURIComponent(base+'/?crew='+code),'PUT');
  client=await cdp(guestTarget.webSocketDebuggerUrl);stage='test';
  const evaluate=async expression=>{const r=await client.send('Runtime.evaluate',{expression,returnByValue:true,awaitPromise:true});if(r.exceptionDetails)throw Error('Guest DOM evaluation failed');return r.result.value;};
- const click=async text=>{const p=await until(()=>evaluate(`(()=>{const e=[...document.querySelectorAll('button')].find(e=>e.textContent.includes(${JSON.stringify(text)})&&!e.disabled);if(!e)return null;const r=e.getBoundingClientRect();return r.width&&r.height?{x:r.x+r.width/2,y:r.y+r.height/2}:null;})()`),'Guest button missing: '+text);await client.send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await client.send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});};
+ const click=async text=>{const p=await until(()=>evaluate(`(()=>{const e=[...document.querySelectorAll('button')].find(e=>e.textContent.includes(${JSON.stringify(text)})&&!e.disabled);if(!e)return null;e.scrollIntoView({block:'center',behavior:'instant'});const r=e.getBoundingClientRect();return r.width&&r.height?{x:r.x+r.width/2,y:r.y+r.height/2}:null;})()`),'Guest button missing: '+text);await client.send('Input.dispatchMouseEvent',{type:'mousePressed',button:'left',clickCount:1,...p});await client.send('Input.dispatchMouseEvent',{type:'mouseReleased',button:'left',clickCount:1,...p});};
  await click('Join crew');await until(()=>evaluate("!!document.querySelector('.crew-code')"),'Guest did not join');
  await host.getByRole('button',{name:/Enter the gallery/}).click();await host.getByRole('button',{name:/LET’S GO/}).click();await click('LET’S GO');
  await until(()=>evaluate("!!document.querySelector('.active-heist')"),'Guest match did not start');await host.locator('.active-heist').waitFor();

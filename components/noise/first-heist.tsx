@@ -4,13 +4,14 @@ import type {View} from '../../lib/noise/engine';
 import {firstHeistStep,guideCopy,resumeGuide,GUIDE_KEY,type GuideProgress} from '../../lib/noise/first-heist';
 import {ContextTip} from './presentation';
 import {useTouchControls} from '../../hooks/use-touch-controls';
-export function FirstHeist({v}:{v:View}){
+export function FirstHeist({v,solo=false}:{v:View;solo?:boolean}){
  const [progress,setProgress]=useState<GuideProgress|null>(null);
  const held=useRef(new Set<string>()),touch=useTouchControls();
+ const soloStart=solo?v.start:undefined;
  const me=v.seats.find(s=>s.id===v.you);
  // Observe each rendered hand, including a hand that changes before an effect runs.
  if(me?.hand&&v.loot.some(l=>l.id===me.hand))held.current.add(me.hand);
- useEffect(()=>{let raw=null;try{raw=localStorage.getItem(GUIDE_KEY);}catch{}const restored=resumeGuide(raw,v.code,v.match);restored.heldIds.forEach(id=>held.current.add(id));setProgress(restored);},[v.code,v.match]);
+ useEffect(()=>{let raw=null;try{raw=localStorage.getItem(GUIDE_KEY);}catch{}const restored=resumeGuide(raw,v.code,v.match,soloStart);restored.heldIds.forEach(id=>held.current.add(id));setProgress(restored);},[v.code,v.match,soloStart]);
  useEffect(()=>{if(!progress)return;const step=firstHeistStep(v,progress.step,held.current),heldIds=[...held.current];const next={...progress,step,heldIds};try{localStorage.setItem(GUIDE_KEY,JSON.stringify(next));}catch{}if(step!==progress.step||heldIds.length!==progress.heldIds.length)setProgress(next);},[v,progress]);
  const finish=()=>{if(!progress)return;const next={...progress,step:'done' as const};try{localStorage.setItem(GUIDE_KEY,JSON.stringify(next));}catch{}setProgress(next);};
  if(!progress)return null;
