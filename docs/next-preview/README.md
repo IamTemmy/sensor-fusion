@@ -1,21 +1,35 @@
-# Isolated next preview
+# Isolated next review fixes
 
-Submitted v94, its main branch and secrets remain untouched. The hosting manifest here belongs ONLY to the new preview project. Do not merge this manifest into main.
+Review target: `next@b85ddec`. No deployment was performed. Main, submitted site and secrets were not touched. `.openai/hosting.json` remains the separate preview project; never merge it into main.
 
-Implemented: first-device guided heist (skippable, one hint, progresses from observed play); pass receiver ring and current F action label; short, confirmed bot decision bubbles; final-state per-piece results audit. No simulation, map, scoring, protocol or TURN configuration changes.
+## Fixes
 
-The guided path replaces ContextTip, suppresses competing placard/event hints, and yields to action error messages. Later matches use normal contextual tips. Bot bubbles require task == announcedTask, expire at 2.3 seconds, and inherit botCall's existing 2.5-second announcement limit. Heading to the plate is distinguished from actually standing on it.
+- First-heist progress follows the player's bank or a personally held piece banked by their crew. Other seats' deposits do not skip lessons. Held IDs are observed each render and persisted with step/code/match/attempt count. Same-match reload resumes; Skip/escape dismiss; unfinished matches get one retry.
+- Explicit touch copy, intrinsic guide height and clear action/status spacing. No Echo sentence for human-only teams. The guide also overrides the placard visibility rule that otherwise hid it on desktop.
+- Echo bubbles require live held-art, captive, incoming-pass, loose-art, plate-distance or unbanked-Crown conditions; they still expire at 2.3 seconds. Loose recovery uses available crew drop/pass events, so incomplete event history can conservatively omit a bubble.
+- Guest unavailable-action checks use the same predicted view as buttons, falling back to the authoritative snapshot. Sent packets/protocol are unchanged.
+- Neutral loose-art recap advice unless a pass is airborne; no Crown heading when this crew did not bank it; audit margins align with crew cards; dead aria-disabled CSS removed.
+- Preview suite readiness order corrected. Separate raw-CDP guest script checks actual 20-second background visibility and restoration.
 
-Results report final state, not a fabricated event history: a piece with a guard is 'With security'; a claimed piece back on display is 'Returned to display'; an untouched piece is 'Not collected'. Crown amount is gross and already included in the haul before penalties.
+## Actual validation
 
-## Validation
+- `node scripts/check-preview-isolation.mjs`: PASS, all nine protected files identical to ce1ce1f.
+- `pnpm test`: 341 tests pass, zero fail.
+- `pnpm typecheck`: PASS.
+- `node --experimental-strip-types scripts/verify-rescue-pass.ts`: Velmont 30/17/30; Archive 29/26/30 (art-first / banked within 15s / captive freed, out of 30). Exact accepted baseline. Command exits 1 because the existing Velmont 85% banking threshold remains unmet; this is not relabeled green.
+- Playwright local suite: BLOCKED. All 20 cases fail before launch because Chromium is absent. `playwright install chromium` was attempted and failed with a truncated archive.
+- Raw background-guest script: BLOCKED at browser launch, not passed.
+- Cloud-browser visual fixtures: all four guide steps fit at 390×844, 360×740 and 1280×800 with scrollHeight equal to clientHeight and no action/status overlap. Phone heights 49/62/62/49 px. Desktop guide visibility checked after correcting the placard CSS conflict. These are frozen fixtures, not multiplayer or physical-device FPS certification.
+- Idle/Echo/CPU figures in status.json are explicitly historical from the previous next pass, not rerun here. Gameplay source remains unchanged.
 
-330 unit tests passed; TypeScript passed. Idle, Echo-alone, van and rescue results match the accepted submitted release. Velmont 17/30 banking within 15s remains the previously accepted limitation; its independent 85% test still fails and is not relabeled green.
+## Screenshots (frozen presentation fixtures)
 
-CPU sampling identified botDanger and botRoute/risk scoring, collision sampling and distance checks as dominant simulation work; GC was also visible. This identifies cumulative CPU consumers, not proof of a specific browser frame spike. Both museums passed the isolated Node tick threshold in this run (see status.json). Rendering and network costs are excluded. The engine was not changed to improve these numbers.
-
-Manual cloud-browser checks reached the guided desktop match and the live 390×844 phone frame. These are UI checks, not a physical-device FPS certification.
-
-Automated regression is blocked before launch: Playwright's Chromium archive was empty/truncated, leaving no executable. The suite is authored and discovered but NOT passed. Headless tab backgrounding must independently verify visibilityState === hidden. Do not publish until the suite passes and the same-device phone comparison is complete.
-
-The preview Site was registered but has no saved/deployed version. Its TURN secrets remain unset for the owner to enter. No submitted-site secrets were read or altered.
+| View | 1280×800 | 390×844 |
+|---|---|---|
+| Grab | [Desktop](screenshots/next-guide-grab-1280.jpg) | [Phone](screenshots/next-guide-grab-390.jpg) |
+| Alarm | [Desktop](screenshots/next-guide-alarm-1280.jpg) | [Phone](screenshots/next-guide-alarm-390.jpg) |
+| Bank | [Desktop](screenshots/next-guide-bank-1280.jpg) | [Phone](screenshots/next-guide-bank-390.jpg) |
+| Board | [Desktop](screenshots/next-guide-board-1280.jpg) | [Phone](screenshots/next-guide-board-390.jpg) |
+| Echo bubble | [Desktop](screenshots/next-bubble-1280.jpg) | [Phone](screenshots/next-bubble-390.jpg) |
+| Receiver ring | [Desktop](screenshots/next-ring-1280.jpg) | [Phone](screenshots/next-ring-390.jpg) |
+| Results audit | [Desktop](screenshots/recap-coop-1280.jpg) | [Phone](screenshots/recap-coop-390.jpg) |

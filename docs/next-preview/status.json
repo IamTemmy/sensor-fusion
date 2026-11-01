@@ -3,67 +3,11 @@
   "branch": "next",
   "baseline": "ce1ce1f07f462d010dbfd7ae1fd0cd8a41267b03",
   "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
-  "unitTests": 330,
+  "unitTests": 341,
   "typecheck": true,
   "engineAndProtocol": "unchanged",
-  "browserRegression": "blocked: Chromium archive download failed; browser executable unavailable",
+  "browserRegression": "BLOCKED: all 20 Playwright cases failed at launch (missing Chromium executable)",
   "phoneFPS": "unverified: no physical mid-range phone measurement",
-  "museums": {
-    "flagship-velmont": {
-      "idle": 0,
-      "echo": [
-        {
-          "difficulty": "rookie",
-          "matches": 40,
-          "medianHaul": 2300,
-          "leftBehind": 0
-        },
-        {
-          "difficulty": "normal",
-          "matches": 40,
-          "medianHaul": 1950,
-          "leftBehind": 0
-        },
-        {
-          "difficulty": "pro",
-          "matches": 40,
-          "medianHaul": 900,
-          "leftBehind": 0
-        }
-      ],
-      "cpu": {
-        "p95": 6.828793000000587,
-        "max": 23.00795499999998
-      }
-    },
-    "night-archive": {
-      "idle": 0,
-      "echo": [
-        {
-          "difficulty": "rookie",
-          "matches": 40,
-          "medianHaul": 3100,
-          "leftBehind": 0
-        },
-        {
-          "difficulty": "normal",
-          "matches": 40,
-          "medianHaul": 2000,
-          "leftBehind": 2
-        },
-        {
-          "difficulty": "pro",
-          "matches": 40,
-          "medianHaul": 1500,
-          "leftBehind": 0
-        }
-      ],
-      "cpu": {
-        "p95": 6.846752999999808,
-        "max": 32.01034200000001
-      }
-    }
-  },
   "rescue": [
     {
       "museum": "flagship-velmont",
@@ -79,5 +23,70 @@
       "banked": 26,
       "freed": 30
     }
-  ]
+  ],
+  "reviewBase": "b85ddec",
+  "isolation": "PASS: all nine protected files byte-identical to ce1ce1f",
+  "backgroundGuest": "BLOCKED: missing Chromium executable; hidden-20s scenario not executed",
+  "visualChecks": "Cloud browser: four guide steps at 390x844, 360x740 and 1280x800 fit without control/status overlap; fixture screenshots captured",
+  "historicalGameplayGates": {
+    "source": "prior next implementation; not rerun in this review-fix pass",
+    "museums": {
+      "flagship-velmont": {
+        "idle": 0,
+        "echo": [
+          {
+            "difficulty": "rookie",
+            "matches": 40,
+            "medianHaul": 2300,
+            "leftBehind": 0
+          },
+          {
+            "difficulty": "normal",
+            "matches": 40,
+            "medianHaul": 1950,
+            "leftBehind": 0
+          },
+          {
+            "difficulty": "pro",
+            "matches": 40,
+            "medianHaul": 900,
+            "leftBehind": 0
+          }
+        ],
+        "cpu": {
+          "p95": 6.828793000000587,
+          "max": 23.00795499999998
+        }
+      },
+      "night-archive": {
+        "idle": 0,
+        "echo": [
+          {
+            "difficulty": "rookie",
+            "matches": 40,
+            "medianHaul": 3100,
+            "leftBehind": 0
+          },
+          {
+            "difficulty": "normal",
+            "matches": 40,
+            "medianHaul": 2000,
+            "leftBehind": 2
+          },
+          {
+            "difficulty": "pro",
+            "matches": 40,
+            "medianHaul": 1500,
+            "leftBehind": 0
+          }
+        ],
+        "cpu": {
+          "p95": 6.846752999999808,
+          "max": 32.01034200000001
+        }
+      }
+    }
+  },
+  "rescueCommand": "exit 1: accepted Velmont 17/30 banking limitation; both museums exactly match baseline",
+  "deployment": "none"
 }

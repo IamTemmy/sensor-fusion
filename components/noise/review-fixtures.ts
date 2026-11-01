@@ -3,6 +3,16 @@ import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('next-guide-')||state==='next-bubble'||state==='next-ring'){
+  const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);setup(g);g.phase='playing';g.start=0;g.now=20000;g.end=90000;g.events=[];g.jobEvent=undefined;
+  const [s,b]=g.seats,l=g.loot.find(l=>l.value===200)!;Object.assign(s,{x:120,y:495,bank:0});Object.assign(b,{x:195,y:495,bank:200});
+  if(['next-guide-alarm','next-guide-bank','next-ring'].includes(state)){s.hand=l.id;l.holder=s.id;l.claimed=true;Object.assign(l,{x:s.x,y:s.y});}
+  if(state==='next-guide-alarm')g.noises=[{id:'visual-alarm',x:s.x,y:s.y,attached:s.id,holder:null,expires:60000,born:19000,vx:0,vy:0,flight:0,kind:'alarm',source:l.id}];
+  if(state==='next-guide-board')s.bank=200;
+  if(state==='next-bubble'){b.hand=l.id;l.holder=b.id;b.task=b.announcedTask='bank';b.taskAt=g.now;}
+  return g;
+ }
+
  if(state.startsWith('plate-')){const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);if(state.includes('archive'))g.match=1;setup(g);g.phase='playing';g.start=0;g.end=90000;g.now=state.includes('before')?20000:31000;g.events=[];g.jobEvent=undefined;const crown=g.loot.find(l=>l.value===1200)!;Object.assign(g.seats[0],state.includes('crown')?{x:crown.x,y:crown.y+55}:{x:g.plate.x+100,y:g.plate.y+90});Object.assign(g.seats[1],state.includes('held')?g.plate:vanFor(g,0));return g;}
 
  if(state.startsWith('archive-')){const g=create('VISUAL',0,1001);add(g,'Rookie','local');add(g,'Echo','echo',true);g.match=1;setup(g);g.phase='playing';g.start=0;g.now=0;g.end=90000;g.events=[];g.jobEvent=undefined;if(state==='archive-centerpiece'){Object.assign(g.seats[0],{x:180,y:330});g.now=15000;}return g;}

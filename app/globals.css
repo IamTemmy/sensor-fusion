@@ -912,10 +912,24 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app:has(.first-heist) .event-banner,
 .noise-app:has(.first-heist) .alarm-tip { display: none !important; }
 .noise-app:has(.first-heist) .context-tip { visibility: visible; }
-.loot-audit { position:relative; margin:16px 0; padding:14px; border:1px solid #69838a; border-radius:12px; background:#0c1c29; color:#e3eeee; }
+.loot-audit { position:relative; margin:16px 30px; padding:14px; border:1px solid #69838a; border-radius:12px; background:#0c1c29; color:#e3eeee; }
 .loot-audit summary { cursor:pointer; font-weight:700; color:#f5d68d; }
 .loot-audit ul { list-style:none; padding:0; }
 .loot-audit li { display:flex; justify-content:space-between; flex-wrap:wrap; gap:6px 20px; padding:8px 0; border-bottom:1px solid #ffffff18; }
 .loot-audit p { font-size:14px; line-height:1.5; }
-.action[aria-disabled="true"] { opacity: .55; }
+
 .noise-app:has(.error-toast) .first-heist { visibility:hidden; }
+
+/* Reserve intrinsic-height guidance above controls, shrinking only the map row. */
+.noise-app .active-heist .first-heist { height:auto!important; max-height:none!important; overflow:visible!important; min-height:0!important; display:flex; align-items:center; gap:8px; box-sizing:border-box; }
+.first-heist>span { min-width:0; flex:1; }
+.first-heist>button { flex-shrink:0; }
+@media(max-width:800px) and (orientation:portrait) {
+ .noise-app.is-playing:has(.first-heist)>.active-heist { grid-template-rows:94px minmax(0,1fr) auto calc(128px + env(safe-area-inset-bottom))!important; }
+ .noise-app.is-playing .first-heist { padding:8px 10px!important; }
+ .loot-audit { margin:16px 14px; }
+}
+
+/* A hidden placard still matches :has(.visible); the active lesson wins. */
+.noise-app.is-playing .active-heist .context-tip.first-heist{visibility:visible}
+.noise-app.is-playing:has(.error-toast) .active-heist .context-tip.first-heist{visibility:hidden}

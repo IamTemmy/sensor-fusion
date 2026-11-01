@@ -1,20 +1,20 @@
 'use client';
-import {useEffect,useState} from 'react';
+import {useEffect,useRef,useState} from 'react';
 import type {View} from '../../lib/noise/engine';
-import {firstHeistStep,firstHeistCopy,type Lesson} from '../../lib/noise/first-heist';
+import {firstHeistStep,guideCopy,resumeGuide,GUIDE_KEY,type GuideProgress} from '../../lib/noise/first-heist';
 import {ContextTip} from './presentation';
 import {useTouchControls} from '../../hooks/use-touch-controls';
-import {touchCopy} from '../../lib/noise/input-copy';
-const KEY='velmont-first-heist-v1';
 export function FirstHeist({v}:{v:View}){
- const [enabled,setEnabled]=useState<boolean|null>(null),[step,setStep]=useState<Lesson>('grab');
- const touch=useTouchControls();
- useEffect(()=>{try{const fresh=!localStorage.getItem(KEY);setEnabled(fresh);if(fresh)localStorage.setItem(KEY,'started');}catch{setEnabled(true);}},[]);
- const finish=()=>{setEnabled(false);try{localStorage.setItem(KEY,'done');}catch{}};
- useEffect(()=>{if(!enabled)return;const next=firstHeistStep(v,step);if(next!==step)setStep(next);if(next==='done')finish();},[v,step,enabled]);
- if(enabled===null)return null;
- if(!enabled||step==='done')return <ContextTip v={v}/>;
+ const [progress,setProgress]=useState<GuideProgress|null>(null);
+ const held=useRef(new Set<string>()),touch=useTouchControls();
  const me=v.seats.find(s=>s.id===v.you);
- const message=me&&me.stun>v.now?'A teammate can untie you. Stay still until they finish.':firstHeistCopy[step];
- return <aside className="context-tip first-heist" role="status"><span><b>FIRST HEIST · {['grab','alarm','bank','board'].indexOf(step)+1}/4</b>{touch?message.replace('Grab (E)','Grab').replace('F passes','Tap Pass to send').replace('F shakes','tap Shake off to fling').replace('Board (R)','Board'):message}</span><button onClick={finish} aria-label="Skip guided first heist">Skip ×</button></aside>;
+ // Observe each rendered hand, including a hand that changes before an effect runs.
+ if(me?.hand&&v.loot.some(l=>l.id===me.hand))held.current.add(me.hand);
+ useEffect(()=>{let raw=null;try{raw=localStorage.getItem(GUIDE_KEY);}catch{}const restored=resumeGuide(raw,v.code,v.match);restored.heldIds.forEach(id=>held.current.add(id));setProgress(restored);},[v.code,v.match]);
+ useEffect(()=>{if(!progress)return;const step=firstHeistStep(v,progress.step,held.current),heldIds=[...held.current];const next={...progress,step,heldIds};try{localStorage.setItem(GUIDE_KEY,JSON.stringify(next));}catch{}if(step!==progress.step||heldIds.length!==progress.heldIds.length)setProgress(next);},[v,progress]);
+ const finish=()=>{if(!progress)return;const next={...progress,step:'done' as const};try{localStorage.setItem(GUIDE_KEY,JSON.stringify(next));}catch{}setProgress(next);};
+ if(!progress)return null;
+ if(progress.step==='done')return <ContextTip v={v}/>;
+ const message=me&&me.stun>v.now?'A teammate can untie you. Stay still until they finish.':guideCopy(progress.step,touch,v.seats.some(s=>s.bot&&s.team===me?.team));
+ return <aside className="context-tip first-heist" role="status"><span><b>FIRST HEIST · {['grab','alarm','bank','board'].indexOf(progress.step)+1}/4</b>{message}</span><button onClick={finish} aria-label="Skip guided first heist">Skip ×</button></aside>;
 }
