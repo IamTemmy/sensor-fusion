@@ -1,3 +1,9 @@
+## Arrival and hideout split — 2026-11-02
+
+Presentation only. Original museum-getaway art is restored on the arrival screen with the existing mask-O wordmark, tagline and one Start a heist button. Setup moves into the hideout artwork with compact crew/job/difficulty controls. Friends retains the existing host/join flow and explains that job selection happens in the lobby. Watch intro, Learn to play and Practice are available in the hideout. Existing first-use intro, invite handling and game callbacks are retained.
+
+Validation this pass: pnpm test 377/377; pnpm typecheck PASS; isolation PASS. Browser checks via Sites managed preview: desktop 1280×800 planning screen; 390×844 and 360×740 arrival/setup/friends screens fit without overflow; bots-to-Rivals briefing, Leave, Watch intro and Skip exercised. At 844×390 the setup panel scrolls vertically to keep controls readable. No multiplayer transport regression or gameplay performance gates rerun for this presentation-only pass. No gameplay, maps, bot, networking or secrets changes. Submitted site remains untouched.
+
 ## Gerard narration — 2026-11-02
 
 Six completed ElevenLabs MP3 recordings are included (477,084 bytes total). Manifest lists only these files. First-shot poster stays visible while bounded voice loading/decoding completes; scene timing then uses the decoded voice length. No gameplay, engine, map or network changes. Validation: 377/377 tests, typecheck, isolation and framework production build passed. FFmpeg decoded all six files without errors. Voice lengths 4.21/3.08/3.97/2.77/4.68/4.52 seconds. Physical-device audio balance and integrated LUFS were not measured. Historical CPU gate was not rerun; preview deployment follows the user's explicit override.
