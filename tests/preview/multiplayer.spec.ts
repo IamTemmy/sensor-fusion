@@ -42,3 +42,13 @@ for(const width of [1280,390])for(const state of ['next-bubble','next-ring','rec
  if(state==='recap-coop')await page.locator('.loot-audit summary').click();
  await page.screenshot({path:`outputs/preview-tests/${state}-${width}.png`});
 });
+
+for(const size of [{width:390,height:844},{width:360,height:740}])test(`event banner preserves first heist at ${size.width}x${size.height}`,async({page})=>{
+ await page.setViewportSize(size);
+ await page.goto('/?visualReview=next-guide-grab');
+ const guide=page.locator('.first-heist');await expect(guide).toBeVisible();
+ await page.locator('.active-heist').evaluate(el=>{const banner=document.createElement('div');banner.className='event-banner';banner.textContent='Museum event';el.appendChild(banner);});
+ await expect(page.locator('.event-banner')).toHaveCount(1);
+ await expect(guide).toBeVisible();
+ expect(await guide.evaluate(el=>el.scrollHeight<=el.clientHeight)).toBe(true);
+});
