@@ -25,7 +25,7 @@ export function HeistRecap({v,reduced,record,recordStatus='existing',host,busy,o
  const escape=me?.escaped?(((me.escapedAt||v.finishedAt||v.now)-v.start)/1000).toFixed(1)+'s':'Left behind';
  const escapedCount=crew.filter(s=>s.escaped).length;
  const outcome=escapedCount===crew.length?'Everyone escaped':escapedCount===0?'No one escaped':`${escapedCount} of ${crew.length} escaped`;
- const note=coop?'Each star builds on the last. Collection targets scale with this museum’s loot. The Crown counts toward the haul, rather than awarding a star by itself.':'A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.';
+ const note=coop?'Each star builds on the last. Collection targets scale with this museum’s loot. The Crown is needed to reach the three-star target: the rest of the collection alone falls short.':'A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.';
  return <section className={'heist-recap recap-redesign '+(!won?'heist-recap-loss':'')} role="dialog" aria-modal="true" aria-labelledby="recap-title">
   <div className="results-scroll">
    <div className="results-backdrop" aria-hidden="true"><img className="results-art" src={won&&team===0?'/art/v34/getaway.webp':'/art/v24/recap.webp'} alt=""/></div>

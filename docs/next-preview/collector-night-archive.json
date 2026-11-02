@@ -1,63 +1,23 @@
 {
   "museum": "night-archive",
   "timer": 90,
-  "method": "Scripted goal-directed player plus real Echo; unchanged guards and collisions. Inputs only; no teleportation, invulnerability or pre-banked loot.",
-  "summary": [
-    {
-      "level": "rookie",
-      "n": 0,
-      "threeStars": 0,
-      "bestBank": null,
-      "completionSeconds": []
-    },
-    {
-      "level": "normal",
-      "n": 10,
-      "threeStars": 5,
-      "bestBank": 4300,
-      "completionSeconds": [
-        86.16,
-        85.84,
-        78.44,
-        84.08,
-        85.36
-      ]
-    },
-    {
-      "level": "pro",
-      "n": 0,
-      "threeStars": 0,
-      "bestBank": null,
-      "completionSeconds": []
-    }
-  ],
+  "policy": "route-budget-v2",
+  "method": "Ordinary human inputs and shake/grab/board commands, 8s return margin, round-trip feasibility, botRoute and guardSees avoidance. Echo and engine unchanged. Full map knowledge; not a human skill benchmark.",
   "rows": [
     {
       "level": "normal",
       "seed": 1001,
       "event": "vault",
       "stars": 0,
-      "bank": 2025,
+      "bank": 2050,
+      "humanEscaped": true,
+      "catches": 3,
+      "finishSeconds": 90,
+      "humanEscapeSeconds": 80.08,
       "complete": null,
-      "catches": 2,
       "escaped": [
-        false,
+        true,
         false
-      ],
-      "missing": [
-        {
-          "id": "art4",
-          "sealed": false,
-          "holder": "p1"
-        },
-        {
-          "id": "art6",
-          "holder": null
-        },
-        {
-          "id": "art8",
-          "holder": null
-        }
       ]
     },
     {
@@ -66,54 +26,46 @@
       "event": "curator",
       "stars": 3,
       "bank": 4300,
-      "complete": 86.16,
+      "humanEscaped": true,
       "catches": 2,
+      "finishSeconds": 70.8,
+      "humanEscapeSeconds": 70.48,
+      "complete": 70.48,
       "escaped": [
         true,
         true
-      ],
-      "missing": []
+      ]
     },
     {
       "level": "normal",
       "seed": 1003,
       "event": "shift",
-      "stars": 0,
-      "bank": 2850,
-      "complete": null,
+      "stars": 3,
+      "bank": 4300,
+      "humanEscaped": true,
       "catches": 5,
+      "finishSeconds": 78.52,
+      "humanEscapeSeconds": 78.48,
+      "complete": 75.8,
       "escaped": [
-        false,
-        false
-      ],
-      "missing": [
-        {
-          "id": "art8",
-          "holder": null
-        }
+        true,
+        true
       ]
     },
     {
       "level": "normal",
       "seed": 1004,
       "event": "blackout",
-      "stars": 0,
-      "bank": 1950,
+      "stars": 3,
+      "bank": 3800,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 85.92,
+      "humanEscapeSeconds": 76.8,
       "complete": null,
-      "catches": 3,
       "escaped": [
-        false,
-        false
-      ],
-      "missing": [
-        {
-          "id": "art3",
-          "holder": null
-        },
-        {
-          "id": "art8",
-          "holder": null
-        }
+        true,
+        true
       ]
     },
     {
@@ -121,42 +73,48 @@
       "seed": 1005,
       "event": "vault",
       "stars": 3,
-      "bank": 4300,
-      "complete": 85.84,
-      "catches": 1,
+      "bank": 3800,
+      "humanEscaped": true,
+      "catches": 3,
+      "finishSeconds": 72.6,
+      "humanEscapeSeconds": 70.92,
+      "complete": null,
       "escaped": [
         true,
         true
-      ],
-      "missing": []
+      ]
     },
     {
       "level": "normal",
       "seed": 1006,
       "event": "curator",
-      "stars": 3,
-      "bank": 4300,
-      "complete": 78.44,
-      "catches": 3,
+      "stars": 1,
+      "bank": 2600,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 81.92,
+      "humanEscapeSeconds": 81.88,
+      "complete": null,
       "escaped": [
         true,
         true
-      ],
-      "missing": []
+      ]
     },
     {
       "level": "normal",
       "seed": 1007,
       "event": "blackout",
       "stars": 3,
-      "bank": 4300,
-      "complete": 84.08,
-      "catches": 3,
+      "bank": 3800,
+      "humanEscaped": true,
+      "catches": 5,
+      "finishSeconds": 80.16,
+      "humanEscapeSeconds": 73.96,
+      "complete": null,
       "escaped": [
         true,
         true
-      ],
-      "missing": []
+      ]
     },
     {
       "level": "normal",
@@ -164,54 +122,46 @@
       "event": "vault",
       "stars": 3,
       "bank": 4300,
-      "complete": 85.36,
+      "humanEscaped": true,
       "catches": 2,
+      "finishSeconds": 77.76,
+      "humanEscapeSeconds": 77.72,
+      "complete": 77.72,
       "escaped": [
         true,
         true
-      ],
-      "missing": []
+      ]
     },
     {
       "level": "normal",
       "seed": 1009,
       "event": "curator",
-      "stars": 1,
-      "bank": 2750,
+      "stars": 0,
+      "bank": 1500,
+      "humanEscaped": true,
+      "catches": 5,
+      "finishSeconds": 80.48,
+      "humanEscapeSeconds": 80.44,
       "complete": null,
-      "catches": 4,
       "escaped": [
-        false,
+        true,
         true
-      ],
-      "missing": [
-        {
-          "id": "art7",
-          "holder": "p1"
-        },
-        {
-          "id": "art8",
-          "holder": null
-        }
       ]
     },
     {
       "level": "normal",
       "seed": 1010,
       "event": "shift",
-      "stars": 1,
-      "bank": 3025,
-      "complete": null,
-      "catches": 6,
+      "stars": 3,
+      "bank": 4300,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 70.04,
+      "humanEscapeSeconds": 65.64,
+      "complete": 70.04,
       "escaped": [
-        false,
+        true,
         true
-      ],
-      "missing": [
-        {
-          "id": "art7",
-          "holder": null
-        }
       ]
     }
   ]

@@ -952,3 +952,23 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app.is-playing .active-heist:has(>.event-banner)>.museum-placard,
 .noise-app.is-playing .active-heist:has(>.museum-placard.visible)>.context-tip:not(.first-heist){display:none!important}
 .noise-app.is-playing>.error-toast{position:relative!important;inset:auto!important;transform:none!important;flex:0 0 auto;margin:0;max-width:none;width:100%;box-sizing:border-box;order:3;border-radius:0;padding:6px 12px;font-size:13px}
+
+/* Review 348f874: one stable notice lane; errors never resize the desktop canvas. */
+.noise-app.is-playing .notice-space{grid-area:3/1/4/3;min-width:0;pointer-events:none}
+.noise-app.is-playing .in-play-error{grid-area:3/1/4/3!important;position:relative!important;inset:auto!important;transform:none!important;margin:0!important;width:100%!important;max-width:none!important;box-sizing:border-box;align-self:stretch;display:flex;align-items:center;justify-content:space-between;gap:12px;padding:8px 16px!important;border-radius:0;z-index:30;font-size:13px}
+.noise-app.is-playing .active-heist:has(>.in-play-error)>:is(.context-tip,.practice-tip,.event-banner,.museum-placard){visibility:hidden!important}
+@media(min-width:801px) and (min-height:501px){
+ .noise-app.is-playing>.active-heist,.noise-app.is-playing>.active-heist:has(>:is(.context-tip,.practice-tip,.event-banner,.museum-placard.visible)){grid-template-rows:76px minmax(0,1fr) 64px 92px!important}
+ .noise-app.is-playing>.active-heist>.bottom-controls{grid-area:4/1/5/3!important}
+}
+@media(max-width:800px) and (orientation:portrait){
+ .noise-app.is-playing .notice-space,.noise-app.is-playing .in-play-error{grid-area:3/1/4/2!important}
+}
+@media(max-height:500px) and (orientation:landscape){
+ .noise-app.is-playing>.active-heist,.noise-app.is-playing>.active-heist:has(>:is(.context-tip,.practice-tip,.event-banner,.museum-placard.visible)){grid-template-columns:82px minmax(0,1fr) 176px!important;grid-template-rows:58px minmax(0,1fr) minmax(42px,auto)!important}
+ .noise-app.is-playing>.active-heist>.bottom-controls{display:contents!important}
+ .noise-app.is-playing>.active-heist>:is(.context-tip,.practice-tip,.event-banner,.museum-placard.visible,.in-play-error,.notice-space){grid-area:3/1/4/4!important;position:relative!important;inset:auto!important;transform:none!important;width:100%!important;max-width:none!important;height:auto!important;max-height:none!important;min-height:0!important;margin:0!important;padding:5px 10px!important;box-sizing:border-box;overflow:visible!important;align-self:stretch;display:flex;align-items:center;gap:10px;font-size:11px!important;line-height:1.25!important;border-radius:0}
+ .noise-app.is-playing>.active-heist>.context-tip>span{display:block!important;flex:1;min-width:0}
+ .noise-app.is-playing>.active-heist>.first-heist>span{display:grid!important;gap:3px}
+ .noise-app.is-playing>.active-heist>.context-tip>button{flex-shrink:0;margin:0!important}
+}

@@ -3,6 +3,7 @@ import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state==='next-context-tip'||state==='next-error'||state==='next-error-message'){const g=reviewFixture('flagship-start');g.now=20000;g.guards=[];Object.assign(g.seats[0],{...vanFor(g,0),hand:null});return g;}
  if(state==='next-crew-departed'){
   const g=reviewFixture('flagship-start');g.now=40000;
   g.seats.filter(s=>s.team===0).forEach(s=>Object.assign(s,{escaped:true,escapedAt:38500,bank:500}));
