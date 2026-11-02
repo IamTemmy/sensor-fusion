@@ -9,17 +9,20 @@ void main(){
  vec2 p=uv;float target=size.x/size.y;float source=mix(16./9.,9./16.,portrait);
  vec2 cover=vec2(min(1.,target/source),min(1.,source/target));
  vec2 base=(p-.5)*cover/(1.04+camera.z)+.5;
- // Two depth samples refine the ray displacement. White foreground moves more than distant architecture.
- float d=texture2D(depthMap,base).r;vec2 q=base+camera.xy*(d-.25);
- d=texture2D(depthMap,q).r;q=clamp(base+camera.xy*(d-.25),.015,.985);
+ // Keep the crew's central band on one rigid depth plane; background/floor retain parallax.
+ float rigid=shot>2.5&&shot<3.5?smoothstep(.13,.25,base.y)*(1.-smoothstep(.78,.90,base.y)):0.;
+ float d=mix(texture2D(depthMap,base).r,.65,rigid);
+ vec2 q=clamp(base+camera.xy*(d-.25),.015,.985);
  vec3 c=texture2D(colorMap,q).rgb;
- // Rack focus moves from the background to the eyes in the final shot.
- float focus=mix(.25,.84,smoothstep(0.,.65,progress));float blur=shot>4.5?abs(d-focus)*.0035:0.;
- c=(c*2.+texture2D(colorMap,q+vec2(blur,0.)).rgb+texture2D(colorMap,q-vec2(blur,0.)).rgb+texture2D(colorMap,q+vec2(0.,blur)).rgb+texture2D(colorMap,q-vec2(0.,blur)).rgb)/6.;
  if(shot<.5||shot>4.5){
   float cone=beam(p,vec2(.69,.48),2.1+sin(time*.42)*.7,.026);if(shot<.5)c+=vec3(.43,.56,.72)*cone*(1.-d)*.38;
   for(int i=0;i<3;i++){float layer=float(i)+1.;vec2 rain=p*vec2(92.,24.)/layer+vec2(time*3.,time*19./layer);vec2 cell=floor(rain);vec2 f=fract(rain);float streak=(1.-smoothstep(.01,.045,abs(f.x-.5)))*(1.-smoothstep(.05,.8,f.y))*step(.67,hash(cell));c+=vec3(.38,.48,.58)*streak*.25;}
-  vec2 floorp=p*vec2(40.,18.);float splash=abs(length(fract(floorp)-.5)-fract(time*1.7+hash(floor(floorp)))*.4);c+=vec3(.1,.15,.18)*(1.-smoothstep(.0,.025,splash))*step(p.y,.22)*.22;
+  // Sparse, short-lived elliptical impacts on the wet pavement only.
+  vec2 floorp=p*vec2(24.,45.);vec2 cell=floor(floorp),f=fract(floorp)-.5;
+  float seed=hash(cell),age=fract(time*1.4+seed*9.);
+  float radius=length(f*vec2(1.,2.4)),ring=1.-smoothstep(.012,.04,abs(radius-age*.42));
+  float splash=ring*(1.-age)*step(.78,seed)*(1.-smoothstep(.12,.20,p.y));
+  c+=vec3(.21,.27,.32)*splash*.45;
  }else if(shot<1.5){c+=vec3(.66,.58,.39)*beam(p,vec2(.70,.35),3.0+sin(time*.48)*.55,.015)*(1.-d)*.22;
  }else if(shot<2.5){c*=1.+sin(time*13.)*.008+sin(time*7.1)*.006;
  }else if(shot>3.5&&shot<4.5){vec2 jar=mix(vec2(.675,.44),vec2(.63,.425),portrait);vec2 delta=(p-jar)*vec2(target,1.);float glow=exp(-dot(delta,delta)*70.);c+=vec3(.22,.008,.004)*glow*(.5+.5*sin(time*12.56637));}

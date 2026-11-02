@@ -28,3 +28,7 @@ Reduced motion, slow/save-data connections or unavailable WebGL use the calm pos
 Original generated art in the established Velmont style; no external asset downloads, paid APIs or new keys. Shots 1–3 are retained. New 4 and 6 and corrected rival stride in 5 have landscape/portrait depth passes. Native generated color images are 1672×941 / 941×1672, resampled to 1920×1080 / 1080×1920 WebP. Depth exports are 512×288 / 288×512. This is approximate art-directed depth, not reconstructed 3D geometry.
 
 Intro ambience and gameplay underscore are original Web Audio synthesis; there are no downloaded samples or music files. See `docs/next-preview/intro-v3/AUDIO-CREDITS.md` and `assets.json` for provenance and sizes.
+
+## Adding voice recordings or clips
+
+After adding/removing files, run `node scripts/update-intro-media.mjs`, commit the updated `media.json`, then build. `node scripts/update-intro-media.mjs --check` verifies it is current. The player reads this manifest once per opening and never probes unlisted optional files.

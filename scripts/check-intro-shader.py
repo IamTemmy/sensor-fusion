@@ -47,7 +47,7 @@ for portrait in [False,True]:
    path=Path('public/cinematics/intro-v3')/f"shot-{shot+1:02d}-{orientation}{'-depth' if i else ''}.webp"
    im=Image.open(path).convert('RGBA').transpose(Image.Transpose.FLIP_TOP_BOTTOM);data=im.tobytes();gl('glActiveTexture',None,C.c_uint)(0x84C0+i);gl('glBindTexture',None,C.c_uint,C.c_uint)(0x0DE1,tex[i]);gl('glTexImage2D',None,C.c_uint,I,I,I,I,I,C.c_uint,C.c_uint,P)(0x0DE1,0,0x1908,im.width,im.height,0,0x1908,0x1401,C.c_char_p(data))
   progress=.65;eased=progress*progress*(3-2*progress)
-  camera=[((eased-.5)*.003,0,.025*eased),((eased-.5)*.018,.002,.008),(.002,(eased-.5)*.013,.018*eased),((eased-.5)*.019,0,.006),((eased-.5)*.014,-.001,.012*eased),((eased-.5)*.004,0,.028*math.sin(math.pi*progress))][shot]
+  camera=[((eased-.5)*.003,0,.025*eased),((eased-.5)*.018,.002,.008),(.002,(eased-.5)*.013,.018*eased),((eased-.5)*.008,0,.006),((eased-.5)*.014,-.001,.012*eased),((eased-.5)*.004,0,.028*math.sin(math.pi*progress))][shot]
   u3(uniform(p,b'camera'),*camera);u2(uniform(p,b'size'),w,h)
   for name,value in [('time',progress*[5,4,4,4,6,5][shot]),('shot',shot),('portrait',int(portrait)),('progress',progress)]:u1(uniform(p,name.encode()),value)
   gl('glViewport',None,I,I,I,I)(0,0,w,h);gl('glDrawArrays',None,C.c_uint,I,I)(5,0,4);raw=C.create_string_buffer(w*h*4);gl('glReadPixels',None,I,I,I,I,C.c_uint,C.c_uint,P)(0,0,w,h,0x1908,0x1401,raw)

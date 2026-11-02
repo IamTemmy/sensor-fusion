@@ -45,7 +45,7 @@ export function cameraAt(shot:number,progress:number):[number,number,number] {
   case 0:return [(e-.5)*.003,0,.025*e];
   case 1:return [(e-.5)*.018,.002,.008];
   case 2:return [.002,(e-.5)*.013,.018*e];
-  case 3:return [(e-.5)*.019,0,.006];
+  case 3:return [(e-.5)*.008,0,.006];
   case 4:return [(e-.5)*.014,-.001,.012*e];
   default:return [(e-.5)*.004,0,.028*Math.sin(Math.PI*p)];
  }

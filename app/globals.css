@@ -1155,7 +1155,9 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .cinema-player.is-ready .cinema-stage{opacity:1}
 .cinema-player.is-preparing{background:#06101a55}
 .cinema-loading{position:absolute;left:20%;right:20%;bottom:18%;padding:16px;text-align:center;border-radius:12px;background:#07131de8;color:#fff0c4;font-size:16px}
-.cinema-title-reveal{position:absolute;z-index:3;inset:17% 12% auto;display:flex;justify-content:center;filter:drop-shadow(0 4px 12px #000);animation:cinema-title-in .6s ease-out both;pointer-events:none}
+.cinema-title-reveal{position:absolute;z-index:3;inset:0 12%;display:flex;align-items:center;justify-content:center;filter:drop-shadow(0 4px 12px #000);animation:cinema-title-in .6s ease-out both;pointer-events:none}
 .cinema-title-reveal .velmont-wordmark{font-size:clamp(38px,7vw,90px)}
 @keyframes cinema-title-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
 @media(prefers-reduced-motion:reduce){.cinema-player,.cinema-player .cinema-stage{transition-duration:.1s}.cinema-title-reveal{animation:none}}
+
+.cinema-player:has(.cinema-title-reveal) .cinema-stage{opacity:.18}

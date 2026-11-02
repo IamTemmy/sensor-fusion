@@ -1,3 +1,11 @@
+## Cinematic polish pass
+
+Removed the final-shot focus blur. Corridor crew uses a rigid central depth plane with reduced lateral displacement; surrounding floor/background retain depth motion. Final title is vertically centered and the artwork dims behind it. Sparse elliptical rain impacts stay on the pavement.
+
+The intro and game now share the original sine alarm chirp (1150→100 Hz, 0.26 seconds); gameplay timing is unchanged. Intro repeats it at 0.7-second intervals. Optional media loads only from media.json: no missing-file HEAD probes. Run node scripts/update-intro-media.mjs whenever recordings change.
+
+Validation: 377 unit tests passed; typecheck and isolation passed; framework build passed. All 12 software GLES2 reference renders passed. Local browser: centered title observed, full intro returned to menu, no optional-media 404s (unrelated browser-extension metadata errors present). Physical phone FPS and final audio loudness remain unmeasured. No new voice recordings, clips, keys, secrets or gameplay changes.
+
 # Six-shot opening — current pass
 
 Presentation-only, branch next. NOT DEPLOYED. Exact narration and media filename instructions: public/cinematics/intro-v3/README.md.

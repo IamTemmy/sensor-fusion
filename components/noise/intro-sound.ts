@@ -1,3 +1,4 @@
+import {alarmChirp} from '../../lib/noise/alarm-sound.ts';
 import {narrationWindow,prepareNarration} from '../../lib/noise/intro-audio.ts';
 /** Original sparse suspense ambience/effects. No song, downloaded samples, or paid keys. */
 export class IntroSound {
@@ -52,9 +53,7 @@ export class IntroSound {
       this.tone(35,now+Math.max(0,2-offset),1.2,.035,'triangle');this.tone(120,now,duration,.008);
     }
     if(shot===1||shot===4)for(let t=.4;t<duration;t+=shot===4?.34:.9)this.tone(85,now+t,.09,.018,'triangle');
-    if(shot===4){const {osc,volume}=this.tone(610,now,duration,.035,'triangle');
-      for(let t=0;t<duration;t+=.025){const pulse=.5+.5*Math.sin(Math.PI*4*(offset+t));volume.gain.setValueAtTime(.006+pulse*.022,now+t);osc.frequency.setValueAtTime(540+pulse*180,now+t);}
-    }
+    if(shot===4)for(let t=0;t+.26<=duration;t+=.7)this.nodes.push(alarmChirp(ctx,this.ambience,now+t));
   }
   endHit(start=this.context.currentTime){this.stop();this.tone(42,start,.7,.13);this.tone(84,start,.3,.035,'triangle');}
   close(){if(this.closing)return;this.closing=true;const ctx=this.context;if(!('close' in ctx))return;
