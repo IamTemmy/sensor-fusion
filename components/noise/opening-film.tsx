@@ -56,7 +56,9 @@ export const OpeningFilm=forwardRef<OpeningFilmHandle,{muted?:boolean;onMutedCha
    // Keep the menu visible until the first poster is decoded; keep the previous shot during later loads.
    DisplayShot(info.shot);Elapsed(0);Ready(true);LoadError(false);Clip('');Playing(false);AudioBlocked(false);
    const el=document.querySelector<HTMLElement>('.cinema-film');if(el&&segment===0)el.dataset.firstFrameMs=String(Math.round(performance.now()-clickAt.current));
-   const [url]=await Promise.all([Promise.race([clipReady,wait(100)]),Promise.race([voiceReady,wait(350)])]);
+   // The decoded poster is already visible. Wait for the bounded voice load so
+   // narration cannot arrive after scene() has scheduled a silent shot.
+   const [url]=await Promise.all([Promise.race([clipReady,wait(100)]),voiceReady]);
    if(!alive)return;
    if(url){mode='video';Clip(url);last=performance.now();}else fallback();
   })();

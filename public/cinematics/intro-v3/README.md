@@ -15,7 +15,7 @@ Narrator: the mint-beanie planner. Youthful, wry, quietly confident; natural del
 | vo-05 | 6 s | Rule two: somebody's setting off the alarms. Make sure it's not on you. |
 | vo-06 | 5 s | Rule three… no matter what happens… don't get left behind. |
 
-No voice recordings are present. Add these files here; replace any earlier-script recordings. Voice starts 0.3 seconds after the cut. Decoded narration extends a shot to its natural length plus a 0.6-second tail; silence trimming, peak normalization, light room reflection and 10 dB ambience ducking remain. Missing recordings use captions. Supplied recordings must be checked against the script by a human; this player does not transcribe them.
+All six Gerard recordings are included as vo-01.mp3 through vo-06.mp3. Voice starts 0.3 seconds after the cut. Decoded narration extends a shot to its natural length plus a 0.6-second tail; silence trimming, peak normalization, light room reflection and 10 dB ambience ducking remain. Missing recordings use captions. Supplied recordings must be checked against the script by a human; this player does not transcribe them.
 
 ## Optional real clips
 
@@ -25,7 +25,7 @@ Reduced motion, slow/save-data connections or unavailable WebGL use the calm pos
 
 ## Asset and audio provenance
 
-Original generated art in the established Velmont style; no external asset downloads, paid APIs or new keys. Shots 1–3 are retained. New 4 and 6 and corrected rival stride in 5 have landscape/portrait depth passes. Native generated color images are 1672×941 / 941×1672, resampled to 1920×1080 / 1080×1920 WebP. Depth exports are 512×288 / 288×512. This is approximate art-directed depth, not reconstructed 3D geometry.
+Original generated art in the established Velmont style; no external visual asset downloads or new keys. Narration was generated separately through the user-authorized ElevenLabs connection. Shots 1–3 are retained. New 4 and 6 and corrected rival stride in 5 have landscape/portrait depth passes. Native generated color images are 1672×941 / 941×1672, resampled to 1920×1080 / 1080×1920 WebP. Depth exports are 512×288 / 288×512. This is approximate art-directed depth, not reconstructed 3D geometry.
 
 Intro ambience and gameplay underscore are original Web Audio synthesis; there are no downloaded samples or music files. See `docs/next-preview/intro-v3/AUDIO-CREDITS.md` and `assets.json` for provenance and sizes.
 

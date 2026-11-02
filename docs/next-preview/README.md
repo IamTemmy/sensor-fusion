@@ -1,3 +1,7 @@
+## Gerard narration — 2026-11-02
+
+Six completed ElevenLabs MP3 recordings are included (477,084 bytes total). Manifest lists only these files. First-shot poster stays visible while bounded voice loading/decoding completes; scene timing then uses the decoded voice length. No gameplay, engine, map or network changes. Validation: 377/377 tests, typecheck, isolation and framework production build passed. FFmpeg decoded all six files without errors. Voice lengths 4.21/3.08/3.97/2.77/4.68/4.52 seconds. Physical-device audio balance and integrated LUFS were not measured. Historical CPU gate was not rerun; preview deployment follows the user's explicit override.
+
 ## Cinematic polish pass
 
 Removed the final-shot focus blur. Corridor crew uses a rigid central depth plane with reduced lateral displacement; surrounding floor/background retain depth motion. Final title is vertically centered and the artwork dims behind it. Sparse elliptical rain impacts stay on the pavement.

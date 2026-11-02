@@ -7,7 +7,7 @@ export class IntroMedia {
   private voices=new Map<number,Promise<ArrayBuffer|null>>();
   private manifest:Promise<Set<string>>|null=null;
   private listed(){
-    return this.manifest??=fetch(`${INTRO_ROOT}/media.json`,{cache:'no-cache',signal:this.controller.signal})
+    return this.manifest??=fetch(`${INTRO_ROOT}/media.json`,{cache:'no-cache',signal:AbortSignal.any([this.controller.signal,AbortSignal.timeout(2000)])})
       .then(r=>r.ok?r.json():{files:[]}).then(data=>{const files=data&&typeof data==='object'&&'files' in data?data.files:[];return new Set<string>(Array.isArray(files)?files.filter((s:unknown)=>typeof s==='string'&&/^(vo-0[1-6]\.(mp3|wav)|six-shot-0[1-6]-(landscape|portrait)\.(mp4|webm))$/.test(s)):[]);}).catch(()=>new Set<string>());
   }
   private videos:HTMLVideoElement[]=[];
