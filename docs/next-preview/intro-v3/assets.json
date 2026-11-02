@@ -1,0 +1,165 @@
+{
+  "assets": [
+    {
+      "file": "shot-01-landscape.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "export": [
+        1920,
+        1080
+      ],
+      "bytes": 317164
+    },
+    {
+      "file": "shot-02-landscape.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "export": [
+        1920,
+        1080
+      ],
+      "bytes": 243162
+    },
+    {
+      "file": "shot-03-landscape.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "export": [
+        1920,
+        1080
+      ],
+      "bytes": 241270
+    },
+    {
+      "file": "shot-04-landscape.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "export": [
+        1920,
+        1080
+      ],
+      "bytes": 269598
+    },
+    {
+      "file": "shot-05-landscape.webp",
+      "native": [
+        1672,
+        941
+      ],
+      "export": [
+        1920,
+        1080
+      ],
+      "bytes": 184082
+    },
+    {
+      "file": "shot-01-portrait.webp",
+      "native": [
+        941,
+        1672
+      ],
+      "export": [
+        1080,
+        1920
+      ],
+      "bytes": 306918
+    },
+    {
+      "file": "shot-02-portrait.webp",
+      "native": [
+        941,
+        1672
+      ],
+      "export": [
+        1080,
+        1920
+      ],
+      "bytes": 224444
+    },
+    {
+      "file": "shot-03-portrait.webp",
+      "native": [
+        941,
+        1672
+      ],
+      "export": [
+        1080,
+        1920
+      ],
+      "bytes": 248070
+    },
+    {
+      "file": "shot-04-portrait.webp",
+      "native": [
+        941,
+        1672
+      ],
+      "export": [
+        1080,
+        1920
+      ],
+      "bytes": 276372
+    },
+    {
+      "file": "shot-05-portrait.webp",
+      "native": [
+        941,
+        1672
+      ],
+      "export": [
+        1080,
+        1920
+      ],
+      "bytes": 166860
+    },
+    {
+      "file": "shot-01-landscape-depth.webp",
+      "bytes": 11102
+    },
+    {
+      "file": "shot-01-portrait-depth.webp",
+      "bytes": 10268
+    },
+    {
+      "file": "shot-02-landscape-depth.webp",
+      "bytes": 9800
+    },
+    {
+      "file": "shot-02-portrait-depth.webp",
+      "bytes": 10108
+    },
+    {
+      "file": "shot-03-landscape-depth.webp",
+      "bytes": 13902
+    },
+    {
+      "file": "shot-03-portrait-depth.webp",
+      "bytes": 14528
+    },
+    {
+      "file": "shot-04-landscape-depth.webp",
+      "bytes": 12994
+    },
+    {
+      "file": "shot-04-portrait-depth.webp",
+      "bytes": 13932
+    },
+    {
+      "file": "shot-05-landscape-depth.webp",
+      "bytes": 11252
+    },
+    {
+      "file": "shot-05-portrait-depth.webp",
+      "bytes": 13176
+    }
+  ],
+  "totalBytes": 2599002
+}

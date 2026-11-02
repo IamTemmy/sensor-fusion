@@ -1,3 +1,11 @@
+# Current pass: opening v3 — 2026-11-02
+
+**Not deployed.** See [intro-v3/README.md](intro-v3/README.md) for implementation, actual checks, asset sizes and explicit limitations. 361 unit tests pass; isolation and typecheck pass. Browser depth playback remains unverified; software GLES2 reference rendering passes. Video/voice files are not yet supplied.
+
+---
+
+## Historical passes (not current validation)
+
 # Review fixes for next@348f874 — 2026-11-02
 
 No deployment. Engine is unchanged from 348f874; eight protected map/network files remain identical to ce1ce1f. Preview manifest retained. No main, submitted-site or secret changes.

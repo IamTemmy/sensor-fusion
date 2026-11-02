@@ -1,10 +1,18 @@
-import {useId,type CSSProperties} from 'react';
-import {VelmontWordmark} from './velmont-wordmark';
-const asset='/cinematics/intro-v2/';
-function Sprite({frame,className}:{frame:number[];className:string}){const id=useId();return <svg className={className} viewBox={frame.join(' ')}><defs><clipPath id={id}><rect x={frame[0]} y={frame[1]} width={frame[2]} height={frame[3]}/></clipPath></defs><image clipPath={`url(#${id})`} href="/art/v25/museum-atlas.webp" width="1536" height="1536"/></svg>;}
-export function IntroScene({shot,calm=false}:{shot:number;calm?:boolean}){return <div className={`story-scene story-scene-${shot} ${calm?'story-calm':''}`} aria-hidden="true">
- {(shot===0||shot===3)&&<><div className="story-sky"/><div className="story-moon"/><img className="story-museum" src={asset+'museum.webp'} alt=""/><div className="story-searchlight"/><div className="story-street"/><div className="story-reflection"/><div className="story-rain">{Array.from({length:36},(_,i)=><i key={i} style={{left:`${(i*37)%100}%`,animationDelay:`-${i*.13}s`,animationDuration:`${.55+(i%4)*.15}s`} as CSSProperties}/>)}</div><div className="story-van"><div className="story-headlights"/><img src={asset+'van.webp'} alt=""/><i className="story-tail"/><div className="story-doors"><i/><i/></div><div className="story-spray"/></div><div className="story-foreground"/></>}
- {shot===1&&<><img className="story-backdrop" src="/art/concept/planning-desk.webp" alt=""/><div className="story-lamp"/><svg className="story-blueprint" viewBox="0 0 1000 600"><path className="story-route-shadow" d="M150 480H350V350H600V180H820"/><path className="story-route" d="M150 480H350V350H600V180H820"/><circle cx="820" cy="180" r="30" fill="none" stroke="#f9d583" strokeWidth="5"/><path d="m800 185-4-22 15 12 9-17 9 17 15-12-4 22Z" fill="#f9d583"/></svg><img className="story-hand" src={asset+'hand.webp'} alt=""/></>}
- {shot===2&&<><div className="story-gallery"><i/><i/><i/></div><div className="story-gallery-light"/><Sprite className="story-painting" frame={[9,264,237,240]}/><Sprite className="story-mint" frame={[40,520,176,240]}/><Sprite className="story-violet" frame={[815,520,161,240]}/><div className="story-jar"><span>ϟ</span><i/><i/></div><Sprite className="story-guard guard-one" frame={[303,776,161,240]}/><Sprite className="story-guard guard-two" frame={[550,776,179,240]}/><div className="story-corridor"/></>}
- {shot===4&&<><img className="story-backdrop story-hideout" src="/art/concept/hideout-planning-v1.webp" alt=""/><img className="story-title-blueprint" src="/art/concept/planning-desk.webp" alt=""/><div className="story-stamp"><VelmontWordmark/><p>THE NEXT JOB IS YOURS.</p></div></>}
- </div>;}
+'use client';
+import {useEffect,useRef,useState} from 'react';
+import {introAsset,INTRO_SHOTS} from '../../lib/noise/intro-story';
+import {IntroMedia} from './intro-media';
+import {IntroRenderer} from './intro-renderer';
+export function IntroScene({shot,elapsed=0,calm=false,portrait=false,media}:{shot:number;elapsed?:number;calm?:boolean;portrait?:boolean;media?:IntroMedia}){
+ const canvas=useRef<HTMLCanvasElement>(null),renderer=useRef<IntroRenderer|null>(null),clock=useRef(elapsed);clock.current=elapsed;
+ const [ready,Ready]=useState(false),[kind,Kind]=useState('poster'),[error,ErrorMessage]=useState('');
+ useEffect(()=>{const assets=media??new IntroMedia();let alive=true;Ready(false);Kind(calm?'calm-still':'poster');
+ assets.loadShot(shot,portrait,!calm).then(images=>{if(!alive||calm||!canvas.current)return;try{renderer.current=new IntroRenderer(canvas.current,images);renderer.current.draw(shot,clock.current,portrait);Ready(true);Kind('depth-webgl');}catch(error){ErrorMessage(error instanceof Error?error.message:'Renderer unavailable');Kind('calm-still');}}).catch(()=>Kind('poster'));
+ const lost=(e:Event)=>{e.preventDefault();Ready(false);Kind('calm-still');};const c=canvas.current;c?.addEventListener('webglcontextlost',lost);
+ return()=>{alive=false;c?.removeEventListener('webglcontextlost',lost);renderer.current?.close();renderer.current=null;if(!media)assets.close();};},[shot,portrait,calm,media]);
+ useEffect(()=>{renderer.current?.draw(shot,elapsed,portrait);},[shot,elapsed,portrait]);
+ return <div className="cinema-scene" data-renderer={kind} data-renderer-error={error} aria-hidden="true">
+ <img className="cinema-poster" src={introAsset(shot,portrait)} alt="" onLoad={()=>{const film=canvas.current?.closest<HTMLElement>('.cinema-film');if(film&&shot===0&&!film.dataset.shotFrameMs){const click=Number(film.dataset.clickAt);if(click)film.dataset.shotFrameMs=String(Math.round(performance.now()-click));}}} style={{transform:!ready?`scale(${1+Math.min(1,elapsed/INTRO_SHOTS[shot].seconds)*.012})`:undefined}}/>
+ <canvas ref={canvas} className="cinema-depth" style={{opacity:ready?1:0}}/>
+ </div>;
+}
