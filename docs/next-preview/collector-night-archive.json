@@ -1,0 +1,218 @@
+{
+  "museum": "night-archive",
+  "timer": 90,
+  "method": "Scripted goal-directed player plus real Echo; unchanged guards and collisions. Inputs only; no teleportation, invulnerability or pre-banked loot.",
+  "summary": [
+    {
+      "level": "rookie",
+      "n": 0,
+      "threeStars": 0,
+      "bestBank": null,
+      "completionSeconds": []
+    },
+    {
+      "level": "normal",
+      "n": 10,
+      "threeStars": 5,
+      "bestBank": 4300,
+      "completionSeconds": [
+        86.16,
+        85.84,
+        78.44,
+        84.08,
+        85.36
+      ]
+    },
+    {
+      "level": "pro",
+      "n": 0,
+      "threeStars": 0,
+      "bestBank": null,
+      "completionSeconds": []
+    }
+  ],
+  "rows": [
+    {
+      "level": "normal",
+      "seed": 1001,
+      "event": "vault",
+      "stars": 0,
+      "bank": 2025,
+      "complete": null,
+      "catches": 2,
+      "escaped": [
+        false,
+        false
+      ],
+      "missing": [
+        {
+          "id": "art4",
+          "sealed": false,
+          "holder": "p1"
+        },
+        {
+          "id": "art6",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1002,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 86.16,
+      "catches": 2,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "normal",
+      "seed": 1003,
+      "event": "shift",
+      "stars": 0,
+      "bank": 2850,
+      "complete": null,
+      "catches": 5,
+      "escaped": [
+        false,
+        false
+      ],
+      "missing": [
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1004,
+      "event": "blackout",
+      "stars": 0,
+      "bank": 1950,
+      "complete": null,
+      "catches": 3,
+      "escaped": [
+        false,
+        false
+      ],
+      "missing": [
+        {
+          "id": "art3",
+          "holder": null
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1005,
+      "event": "vault",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 85.84,
+      "catches": 1,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "normal",
+      "seed": 1006,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 78.44,
+      "catches": 3,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "normal",
+      "seed": 1007,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 84.08,
+      "catches": 3,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "normal",
+      "seed": 1008,
+      "event": "vault",
+      "stars": 3,
+      "bank": 4300,
+      "complete": 85.36,
+      "catches": 2,
+      "escaped": [
+        true,
+        true
+      ],
+      "missing": []
+    },
+    {
+      "level": "normal",
+      "seed": 1009,
+      "event": "curator",
+      "stars": 1,
+      "bank": 2750,
+      "complete": null,
+      "catches": 4,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art7",
+          "holder": "p1"
+        },
+        {
+          "id": "art8",
+          "holder": null
+        }
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1010,
+      "event": "shift",
+      "stars": 1,
+      "bank": 3025,
+      "complete": null,
+      "catches": 6,
+      "escaped": [
+        false,
+        true
+      ],
+      "missing": [
+        {
+          "id": "art7",
+          "holder": null
+        }
+      ]
+    }
+  ]
+}

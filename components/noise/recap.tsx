@@ -3,7 +3,7 @@ import {lootRecap} from '../../lib/noise/loot-recap';
 import {winningResult} from '../../lib/noise/recap-result';
 import {normalArtSecured} from '../../lib/noise/clarity';
 import type {CSSProperties} from 'react';
-import {crewScores,stars,difficultyOf,LAYOUT_NAMES,COOP_GOAL,recapTip,type View} from '../../lib/noise/engine';
+import {crewScores,stars,starTargets,difficultyOf,LAYOUT_NAMES,COOP_GOAL,recapTip,type View} from '../../lib/noise/engine';
 import type {RunRecord} from '../../lib/noise/records';
 import {COLORS} from '../../lib/noise/draw';
 import {Portrait,GoldStars} from './presentation';
@@ -18,13 +18,14 @@ export function HeistRecap({v,reduced,record,recordStatus='existing',host,busy,o
  const title=v.training?'Practice complete':coop?(won?'A clean getaway!':'One more shot?'):result.title;
  const crew=v.seats.filter(s=>s.team===team),jackpot=v.loot.some(l=>(l.locked||l.value===1200)&&l.banked&&l.bankedBy===team);
  const rating=stars(v,team);
- const goals=coop?[{label:money(COOP_GOAL)+' + escape',done:rating>=1},{label:'All normal art',done:rating>=2},{label:'Full collection + jackpot',done:rating>=3}]:[{label:'Won the haul',done:rating>=1},{label:'Win + crew escaped',done:won&&crew.every(s=>s.escaped)},{label:'Win + jackpot',done:rating>=3}];
+ const targets=starTargets(v);
+ const goals=coop?[{label:money(targets[0])+' + escape',done:rating>=1},{label:money(targets[1])+' + whole crew escapes',done:rating>=2},{label:money(targets[2])+' + whole crew escapes',done:rating>=3}]:[{label:'Bank loot + escape',done:rating>=1},{label:'Outright win + whole crew escapes',done:rating>=2},{label:'Win + '+money(targets[2])+' + crew escapes',done:rating>=3}];
 
  const highlight=[...v.seats].sort((a,b)=>b.bestThrow-a.bestThrow)[0];
  const escape=me?.escaped?(((me.escapedAt||v.finishedAt||v.now)-v.start)/1000).toFixed(1)+'s':'Left behind';
  const escapedCount=crew.filter(s=>s.escaped).length;
  const outcome=escapedCount===crew.length?'Everyone escaped':escapedCount===0?'No one escaped':`${escapedCount} of ${crew.length} escaped`;
- const note=coop&&jackpot&&rating<3?(normalArtSecured(v,team)?'Jackpot collected. Reach the haul goal and escape to earn the collection stars.':'Jackpot collected. Bank every normal exhibit, reach the goal and escape for three stars.'):coop?'Each star builds on the last: reach the goal, collect all normal art, then add the jackpot.':'Win the haul. Escape together for two stars. Win with the jackpot for three.';
+ const note=coop?'Each star builds on the last. Collection targets scale with this museum’s loot. The Crown counts toward the haul, rather than awarding a star by itself.':'A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.';
  return <section className={'heist-recap recap-redesign '+(!won?'heist-recap-loss':'')} role="dialog" aria-modal="true" aria-labelledby="recap-title">
   <div className="results-scroll">
    <div className="results-backdrop" aria-hidden="true"><img className="results-art" src={won&&team===0?'/art/v34/getaway.webp':'/art/v24/recap.webp'} alt=""/></div>

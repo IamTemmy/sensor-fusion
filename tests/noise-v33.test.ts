@@ -21,7 +21,7 @@ test('four wall recesses stay clear of staff doors, bays and sentry posts; laser
  }
 });
 test('rivals stars reward winning, crew escape, and winning with the jackpot',()=>{
- const g=job();const crew=g.seats.filter(s=>s.team===0),rival=g.seats.find(s=>s.team===1)!;crew[0].bank=800;rival.bank=500;assert.equal(E.stars(g,0),1);assert.equal(E.stars(g,1),0);crew.forEach(s=>s.escaped=true);assert.equal(E.stars(g,0),2);const jack=g.loot.find(l=>l.value===1200)!;jack.banked=true;jack.bankedBy=0;assert.equal(E.stars(g,0),3);rival.bank=2000;assert.equal(E.stars(g,0),0);
+ const g=job();const crew=g.seats.filter(s=>s.team===0),rival=g.seats.find(s=>s.team===1)!;crew[0].bank=800;rival.bank=500;assert.equal(E.stars(g,0),0);assert.equal(E.stars(g,1),0);crew.forEach(s=>s.escaped=true);assert.equal(E.stars(g,0),2);const jack=g.loot.find(l=>l.value===1200)!;jack.banked=true;jack.bankedBy=0;assert.equal(E.stars(g,0),2);crew[0].bank=E.starTargets(g)[2];assert.equal(E.stars(g,0),3);rival.bank=crew[0].bank+1;assert.equal(E.stars(g,0),1);
 });
 test('Auto Echo banks carried art and boards after human; explicit van order works too',()=>{
  for(const explicit of [false,true]){const g=job(1,'coop');g.guards=[];g.sensors=[];g.jobEvent=undefined;const [h,e]=g.seats;const home=E.vanFor(g,0);Object.assign(h,home);Object.assign(e,{x:home.x+90,y:home.y});const art=g.loot[0];art.holder=e.id;e.hand=art.id;art.claimed=true;

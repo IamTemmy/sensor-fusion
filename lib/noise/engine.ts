@@ -266,7 +266,7 @@ export function action(g:Game,s:Thief,type:string,aim?:Vec){if(g.phase!=='playin
  // A queued pass must never throw a different item acquired before execution.
  if(type.startsWith('shake:')){if(s.hand!==type.slice(6))return;type='shake-alarm';}
  if(type.startsWith('throw:')){if(s.hand!==type.slice(6))return;type='throw';}
- if(type==='extract'&&s.escaped){if(g.boardingAt||g.end-g.now<=15000){event(g,'LAST CALL. Stay aboard: the van is departing.');return;}const home=vanFor(g,s.team);s.escaped=false;s.escapedAt=undefined;s.x=home.x+(home.x<480?30:-30);s.y=home.y;s.safe=g.now+3000;s.dx=s.dy=0;event(g,s.name+' hopped out. Banked art stays secure.','rescue',s);return;}
+ if(type==='extract'&&s.escaped){if(crewDepartureAt(g,s.team)!==null||g.boardingAt||g.end-g.now<=15000){event(g,'Stay aboard: your crew’s van is departing.');return;}const home=vanFor(g,s.team);s.escaped=false;s.escapedAt=undefined;s.x=home.x+(home.x<480?30:-30);s.y=home.y;s.safe=g.now+3000;s.dx=s.dy=0;event(g,s.name+' hopped out. Banked art stays secure.','rescue',s);return;}
  if(s.escaped)return;
  if(type==='extract'){if(!homeSafe(g,s)){event(g,'Return to your own crew’s getaway zone first.');return;}const held=g.loot.find(l=>l.id===s.hand);if(!g.training&&!s.bot&&!held&&g.end-g.now>60000&&g.seats.filter(p=>sameCrew(p,s)).every(p=>p.bank===0)){if((s.emptyBoardUntil||0)<=g.now){s.emptyBoardUntil=g.now+4000;event(g,'Leave empty-handed? Press R again','info',s);return;}}s.emptyBoardUntil=undefined;if(held){hush(g,held);held.banked=true;held.bankedBy=s.team;held.holder=null;s.hand=null;s.bank+=held.value;g.total+=held.value;}drop(g,s);g.noises=g.noises.filter(n=>n.attached!==s.id);s.escaped=true;s.escapedAt=g.now;s.dx=s.dy=0;event(g,s.name+' is in the van.','bank',s);return;}
  if(type==='pass-request'){requestArtPass(g,s);return;}
@@ -916,15 +916,28 @@ function step(g:Game){const dt=STEP/1000;if(isFlagship(g)){if(!g.vaultWarned&&g.
 }
 function addPracticeRival(g:Game){const rival={...g.seats[0],id:'practice-rival',name:'Practice rival',token:undefined,bot:false,team:1,x:250,y:420,hand:null,dx:0,dy:0,safe:g.now+300000,bank:0};g.seats.push(rival);return rival;}
 export function roomName(p:Vec){return p.x<320?'Echo Gallery':p.x<640?'Archive':'Private Collection';}
+/** Derived from existing seat state; no new wire fields. */
+export function crewDepartureAt(g:Game|View,team:number):number|null {
+ const crew=g.seats.filter(s=>s.team===team);
+ return !g.training&&crew.length>0&&crew.every(s=>s.escaped&&s.escapedAt!==undefined)?Math.max(...crew.map(s=>s.escapedAt!)):null;
+}
+/** Targets scale with the collection in this population plan; bonus events do not move them. */
+export function starTargets(g:Game|View){
+ const total=g.lootTotal||g.loot.reduce((n,l)=>n+l.value,0),round=(n:number)=>Math.ceil(n/100)*100;
+ return g.crewMode==='coop'?[COOP_GOAL,Math.max(COOP_GOAL,round(total*.65)),Math.max(COOP_GOAL,round(total*.8))]:[1,1,round(total*.6)];
+}
 export function stars(g:Game|View,team=0){
- const scores=crewScores(g),bank=scores.find(t=>t.team===team)?.bank||0;
+ const scores=crewScores(g),bank=scores.find(t=>t.team===team)?.bank||0,crew=g.seats.filter(s=>s.team===team);
+ const escaped=crew.some(s=>s.escaped),all=crew.length>0&&crew.every(s=>s.escaped),targets=starTargets(g);
  if(g.crewMode!=='coop'){
-  if(bank<=0||scores.some(t=>t.team!==team&&t.bank>bank))return 0;
-  if(g.loot.some(l=>l.locked&&l.banked&&l.bankedBy===team||l.value===1200&&l.banked&&l.bankedBy===team))return 3;
-  return g.seats.filter(s=>s.team===team).every(s=>s.escaped)?2:1;
+  if(bank<=0||!escaped)return 0;
+  const won=scores.every(t=>t.team===team||bank>t.bank);
+  if(!won||!all)return 1;
+  return bank>=targets[2]?3:2;
  }
- if(bank<COOP_GOAL||!g.seats.some(s=>s.team===team&&(s.escaped||homeSafe(g,s))))return 0;
- const normal=g.loot.filter(l=>l.value!==1200).every(l=>l.banked&&l.bankedBy===team);return normal?(g.loot.some(l=>l.value===1200&&l.banked&&l.bankedBy===team)?3:2):1;
+ if(bank<targets[0]||!escaped)return 0;
+ if(!all||bank<targets[1])return 1;
+ return bank>=targets[2]?3:2;
 }
 export function recapTip(g:Game|View,team=0){
  const crew=g.seats.filter(s=>s.team===team);

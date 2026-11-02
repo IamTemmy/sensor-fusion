@@ -1,3 +1,24 @@
+# Independent departure and ratings — local next changes
+
+Latest pass (2026-11-02): user approved engine changes for departure and ratings only. No deployment; main, submitted site and secrets untouched. Preview hosting manifest preserved.
+
+- Full crews drive off independently; rivals continue and can overtake. Hop out remains available before whole-crew boarding and Last Call. Departure derives existing escaped/escapedAt fields, with no wire changes.
+- STAFF text replaced by discreet guard-entry door symbols; guide explains them.
+- Guidance, event notices and placards use a reserved row outside the arena. Desktop 1280×800 and phone 390×844 first-heist fixtures inspected. Phone canvas ends at y652.75, hint ends at y716, controls end at y844; no overlap or clipped hint text.
+- Co-op stars: $2,600 + escape; 65% collection + whole crew; 80% + whole crew. Targets round up to $100 and use the initial collection budget.
+- Rivals: bank + escape; outright win + whole crew; also 60% collection for three. Crown alone no longer awards three. Ties are not outright wins.
+- Historical best records use a new namespace for the changed rubric.
+
+Validation: 350 tests passed, typecheck passed, isolation passed. Eight previously protected files remain byte-identical to ce1ce1f; only the approved engine revision is pinned separately. New tests cover independent departure, no hop-out after departure, rivals continuing/overtaking, ties and score boundaries for both museums and 2/4/6 seat plans.
+
+Exploratory Normal collector audit (10 seeds per museum): Velmont 0/10 three-star, best $3,200; Archive 5/10, best $4,300. The existing scripted collector pursues every piece and boards late. These are not human skill results; three-star balance is NOT certified. No new live multiplayer, physical-phone FPS, CPU or full gameplay-gate certification in this pass.
+
+Screenshot: `guidance-phone.jpg` (frozen local fixture). Desktop inspected in browser; screenshot export did not synchronize.
+
+---
+
+## Historical review notes (not current validation)
+
 # Isolated next review fixes
 
 Review target: `next@b85ddec`. No deployment was performed. Main, submitted site and secrets were not touched. `.openai/hosting.json` remains the separate preview project; never merge it into main.
