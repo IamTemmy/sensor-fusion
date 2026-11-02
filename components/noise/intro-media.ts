@@ -41,12 +41,14 @@ export class IntroMedia {
   }
   voice(shot:number):Promise<ArrayBuffer|null> {
     if(!this.voices.has(shot))this.voices.set(shot,(async()=>{
-      try {
-        const url=`${INTRO_ROOT}/vo-${String(shot+1).padStart(2,'0')}.mp3`;
-        const head=await fetch(url,{method:'HEAD',signal:this.controller.signal});
-        if(!head.ok||!head.headers.get('content-type')?.startsWith('audio/'))return null;
-        const r=await fetch(url,{signal:this.controller.signal});return r.ok?await r.arrayBuffer():null;
-      }catch{return null;}
+      for(const ext of ['mp3','wav'])try {
+        const url=`${INTRO_ROOT}/vo-${String(shot+1).padStart(2,'0')}.${ext}`;
+        const signal=AbortSignal.any([this.controller.signal,AbortSignal.timeout(2000)]);
+        const head=await fetch(url,{method:'HEAD',signal});
+        if(!head.ok||!head.headers.get('content-type')?.startsWith('audio/'))continue;
+        const r=await fetch(url,{signal});if(r.ok)return await r.arrayBuffer();
+      }catch{if(this.controller.signal.aborted)return null;}
+      return null;
     })());
     return this.voices.get(shot)!;
   }

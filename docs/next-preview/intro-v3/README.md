@@ -1,3 +1,33 @@
+# Opening art / narration-support revision — 2026-11-02
+
+**Current pass: committed on next, not deployed.** Main, submitted site, secrets and preview manifest untouched.
+
+- Shot 4 now depicts mint throwing an airborne alarm toward a fleeing, alarmed violet rival, on desktop and phone. No cooperative rival catch. Shot 3 planning crew is all teal. Four color compositions and their aligned approximate depth passes replaced; jar glow relocated to the new art.
+- Skip instruction: **Press any key or click to skip**.
+- Preserved subtle thriller ambience, following the user's direct preference instead of the pasted jazz suggestion. No song, external samples, voice or video files added.
+- MP3/WAV narration slots now trim outer silence, normalize RMS with peak headroom, add a light room reflection, begin 300ms after the cut, and duck ambience 10dB. Long lines extend illustrated shots; split shot 4 resumes the same line. Synthesized sound fades on Skip. Narrator direction: youthful male mint-beanie planner.
+- Audio sources, exact remaining work and export procedure: [AUDIO-CREDITS.md](AUDIO-CREDITS.md).
+
+## Actual checks for this revision
+
+- Isolation: PASS; engine byte-identical to 5a5a133, protected maps/network unchanged.
+- pnpm test: **369 passed, 0 failed**, 16.94s. Includes five PCM/timing cases and three actual audio-scheduler fixtures.
+- pnpm typecheck: PASS.
+- Framework build: PASS. Full gameplay/CPU gates not rerun for presentation-only changes.
+- Software GLES2 shader: compile/link and all **10 reference frames PASS**. Updated depth-reference-strip.jpg is software-rendered evidence, not a browser capture.
+- Fresh browser playback / sound export: **BLOCKED**. Local preview returned connection refused and ERR_BLOCKED_BY_CLIENT. No fresh first-frame timing, browser screenshot, audio recording, -16 LUFS, physical phone FPS, or listening pass claimed.
+- Real voice/video generation: unavailable here. Recordings remain missing. Narration processing is unit-tested using synthetic PCM fixtures, not a performed voice.
+
+## Download budget
+
+20 runtime WebP assets: **2,623,686 bytes (2.50 MiB)**. Landscape: 1,333,588 bytes; portrait: 1,290,098 bytes. Only the selected orientation is requested during the intro. New audio/video asset payload: **0 bytes**. Full per-file sizes in assets.json. The WAV export is optional, generated locally for review, and not shipped as an asset.
+
+The artwork is 2.5D illustrated motion, not generated video; character limbs do not articulate. New image exports remain resampled from native 1672×941 / 941×1672, not claimed as native 2K.
+
+---
+
+## Historical opening-v3 implementation and checks (previous pass, not current validation)
+
 # Opening v3 — 2026-11-02
 
 Presentation only, branch `next`. **Not deployed.** No secrets read or changed; preview manifest unchanged. Engine byte-identical to `5a5a133`; maps/network protected by isolation check.

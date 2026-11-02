@@ -22,7 +22,7 @@ void main(){
   vec2 floorp=p*vec2(40.,18.);float splash=abs(length(fract(floorp)-.5)-fract(time*1.7+hash(floor(floorp)))*.4);c+=vec3(.1,.15,.18)*(1.-smoothstep(.0,.025,splash))*step(p.y,.22)*.22;
  }else if(shot<1.5){c+=vec3(.66,.58,.39)*beam(p,vec2(.70,.35),3.0+sin(time*.48)*.55,.015)*(1.-d)*.22;
  }else if(shot<2.5){c*=1.+sin(time*13.)*.008+sin(time*7.1)*.006;
- }else if(shot<3.5){vec2 jar=mix(vec2(.52,.43),vec2(.50,.55),portrait);vec2 delta=(p-jar)*vec2(target,1.);float glow=exp(-dot(delta,delta)*70.);c+=vec3(.22,.008,.004)*glow*(.5+.5*sin(time*12.56637));}
+ }else if(shot<3.5){vec2 jar=mix(vec2(.675,.44),vec2(.63,.425),portrait);vec2 delta=(p-jar)*vec2(target,1.);float glow=exp(-dot(delta,delta)*70.);c+=vec3(.22,.008,.004)*glow*(.5+.5*sin(time*12.56637));}
  float flare=exp(-length((p-vec2(.75,.84))*vec2(target,1.))*22.);c+=vec3(.09,.065,.025)*flare;
  float vignette=1.-.21*smoothstep(.24,.77,length((p-.5)*vec2(1.,.85)));c*=vignette;
  c+=(hash(gl_FragCoord.xy+floor(time*24.))-.5)*.013;

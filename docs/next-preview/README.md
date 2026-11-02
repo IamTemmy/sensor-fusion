@@ -1,3 +1,11 @@
+# Current pass: cinematic rivalry art and narration support — 2026-11-02
+
+**Not deployed.** Shot 4 shows a fleeing violet rival; planning crew is all teal. Subtle thriller ambience preserved; MP3/WAV voice preparation and timing improved. Narration/video recordings are still missing. 369 tests, typecheck, isolation and framework build pass. Software GLES2 checks all ten frames. Fresh browser/audio export blocked by local preview access; no sound recording or new timing claimed. Details: [intro-v3/README.md](intro-v3/README.md), [audio credits](intro-v3/AUDIO-CREDITS.md).
+
+---
+
+## Historical record below
+
 # Current pass: opening v3 — 2026-11-02
 
 **Not deployed.** See [intro-v3/README.md](intro-v3/README.md) for implementation, actual checks, asset sizes and explicit limitations. 361 unit tests pass; isolation and typecheck pass. Browser depth playback remains unverified; software GLES2 reference rendering passes. Video/voice files are not yet supplied.

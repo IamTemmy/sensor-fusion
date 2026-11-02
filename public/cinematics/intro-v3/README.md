@@ -19,12 +19,16 @@ Use these exact filenames, in this directory, with either H.264 MP4 (preferred) 
 
 Example: `shot-03a-portrait.mp4`. The unusual 03a/b names preserve the user's supplied clip naming even though the heist is now the fourth story shot. Color image `shot-04` belongs to that fourth shot; it is not the video filename.
 
-Captions follow the active clip, not a parallel wall clock. Each clip runs until `ended`; supply the target duration to preserve the 26-second edit. Audio follows SFX. Synthesized music/effects and separate voice files are stopped during video playback, preventing double audio. The player adds the final deep hit after the last clip ends; omit a duplicate ending hit from that clip.
+Captions follow the active clip, not a parallel wall clock. Each clip runs until `ended`; supply the target duration to preserve the 26-second edit. Audio follows SFX. Synthesized ambience/effects and separate voice files are stopped during video playback, preventing double audio. The player adds the final deep hit after the last clip ends; omit a duplicate ending hit from that clip.
 
 If a browser refuses unmuted autoplay after decoding, the player tries muted playback and shows **Enable sound**. A missing/stalled clip uses the illustrated fallback without a blank loading screen. Reduced motion and slow/save-data connections use calm stills with a 1.2% gentle zoom and no moving cut-outs, flashing effects or fast pans. WebGL failure also falls back safely.
 
 ## Optional narration for the illustrated version
 
-Add `vo-01.mp3` … `vo-05.mp3`, each containing the corresponding exact sentence above. Voice starts at the shot start; fit it within that shot's duration. For shot 4, the file spans both 03a/b fallback segments and resumes at the three-second offset. Voice is preloaded with the next shot, with a bounded first-shot loading budget; an unavailable/slow recording leaves captions instead of delaying play. Existing synthesized D-minor bed, rain, thunder, hum, footsteps and alarm remain below the recording. No narration files are currently supplied.
+Add `vo-01.mp3` … `vo-05.mp3` (or `.wav`), each containing its corresponding exact caption above. Narrator: the mint-beanie male planner, youthful, quietly confident and wry. No narration files currently exist. The player cannot transcribe/validate supplied recordings: verify the words against the captions before adding them.
+
+Voice starts 0.3s after the cut. Leading/trailing silence is trimmed with a breathing margin; levels are normalized with peak headroom, a light room reflection, and 10dB ambience ducking. Longer lines extend the illustrated shot instead of being cut off. For shot 4, the second fallback segment resumes at voice offset 2.7s. Recordings preload with the next shot; missing, invalid or late first-shot recordings leave captions rather than delaying the opening indefinitely.
+
+The user's preferred subtle suspense ambience remains; no jazz score or background song was added. Generated rain, hum, footsteps, alarm and closing hit need no downloaded audio. See docs/next-preview/intro-v3/AUDIO-CREDITS.md for sources, mix policy and unverified playback limits.
 
 The ending is deliberately opaque: finish close-up → 350 ms black with deep hit → 650 ms menu reveal. No blueprint transparency or menu bleed during the shot.
