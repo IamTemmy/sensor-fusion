@@ -17,3 +17,7 @@ Actual validation: 352 existing unit tests pass; typecheck and isolation pass. C
 - Existing preview access verified owner-only, with no external visitors. Submitted project and secrets untouched.
 
 Publication was blocked by the unchanged full-build CPU gate: Velmont p95 7.0264 ms/max 54.1096 ms; one isolated recheck after stopping the development server gave p95 7.4722 ms/max 55.5326 ms. Limit: p95 <8 ms, max <40 ms. Both failures are retained in opening-validation. All non-CPU release gates passed; Archive CPU passed. No deployment occurred. Existing hosted preview remains unchanged. Do not label either failed CPU run as passed.
+
+## Owner-approved private-preview exception
+
+Owner explicitly approved a one-time private-preview publication despite the CPU maximum failures. Latest retry: p95 7.486715 ms, max 48.559615 ms. Earlier failures remain preserved. This is not a CPU pass or a production-release approval. Build the framework directly after confirming isolation and that the completed release report has no failures other than flagship-velmont/cpu. No gate thresholds or gameplay/network sources are changed. Target is owner-private appgprj_6ae6f13dfc708191875cde1e84d8bfc3 only; submitted site and secrets are excluded.

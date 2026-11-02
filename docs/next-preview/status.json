@@ -146,5 +146,24 @@
       },
       "limitation": "Collector seeks every piece and boards very late; this is not a human skill benchmark or proof of balanced three-star attainability. No fresh multiplayer, CPU or physical phone FPS run."
     }
+  },
+  "openingStoryV2": {
+    "status": "implemented-not-deployed",
+    "paths": [
+      "A prompts and drop-in player only",
+      "B layered 2D animation"
+    ],
+    "unitTests": 356,
+    "typecheck": "PASS",
+    "isolation": "PASS",
+    "engineMatches": "5a5a133",
+    "frameworkBuild": "PASS",
+    "layoutChecks": "15/15 viewport-shot combinations",
+    "firstFrameMs": 175,
+    "realVideo": "not available; pending user clips",
+    "voice": "captions only; optional voice slots",
+    "newAssetBytes": 387540,
+    "normalConnectionColdLoad": "not benchmarked",
+    "phoneFPS": "not measured"
   }
 }

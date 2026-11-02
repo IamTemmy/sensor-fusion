@@ -132,3 +132,8 @@ Actual follow-up validation: isolation PASS; `pnpm test` 342 passed / 0 failed; 
 ```
 
 Chromium installation was retried and failed again. The Join/hidden-20s behavior is therefore not claimed as verified. Earlier screenshots/rescue/suite results above belong to the prior review pass. No deploy, secrets, main or protected-file changes.
+
+
+## Opening story v2 (current pass; no deployment)
+
+Replaces the four-still intro with five layered scenes. Path A is prompts/drop-in support only; Path B is implemented. See [validation and limitations](intro-v2/README.md), [frame strip](intro-v2/frame-strip.jpg), and [Sora prompts](intro-shot-prompts.md). 356 unit tests pass, typecheck and isolation pass, engine matches 5a5a133. Earlier blocked gameplay/browser entries above are historical and were not rerun by this presentation pass.

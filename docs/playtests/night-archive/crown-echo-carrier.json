@@ -50,20 +50,20 @@
   {
     "level": "rookie",
     "seed": 1009,
-    "pickupSeconds": 42.08,
-    "bankSeconds": 51.16
+    "pickupSeconds": 55.24,
+    "bankSeconds": 64.96
   },
   {
     "level": "rookie",
     "seed": 1010,
-    "pickupSeconds": 52.76,
-    "bankSeconds": 58.72
+    "pickupSeconds": 57.64,
+    "bankSeconds": 64.48
   },
   {
     "level": "rookie",
     "seed": 1011,
-    "pickupSeconds": 59.96,
-    "bankSeconds": 74.12
+    "pickupSeconds": 52.52,
+    "bankSeconds": 58.48
   },
   {
     "level": "rookie",
@@ -104,8 +104,8 @@
   {
     "level": "rookie",
     "seed": 1018,
-    "pickupSeconds": 51.32,
-    "bankSeconds": 57.24
+    "pickupSeconds": 49.84,
+    "bankSeconds": 56.08
   },
   {
     "level": "rookie",
@@ -194,14 +194,14 @@
   {
     "level": "normal",
     "seed": 1013,
-    "pickupSeconds": 41.48,
-    "bankSeconds": 47.44
+    "pickupSeconds": null,
+    "bankSeconds": null
   },
   {
     "level": "normal",
     "seed": 1014,
-    "pickupSeconds": 43.76,
-    "bankSeconds": 62.44
+    "pickupSeconds": null,
+    "bankSeconds": null
   },
   {
     "level": "normal",
@@ -248,8 +248,8 @@
   {
     "level": "pro",
     "seed": 1002,
-    "pickupSeconds": 57.24,
-    "bankSeconds": 76.36
+    "pickupSeconds": 58.92,
+    "bankSeconds": 70.16
   },
   {
     "level": "pro",
@@ -260,8 +260,8 @@
   {
     "level": "pro",
     "seed": 1004,
-    "pickupSeconds": 50.08,
-    "bankSeconds": 76.64
+    "pickupSeconds": 59.28,
+    "bankSeconds": 74.32
   },
   {
     "level": "pro",
@@ -278,8 +278,8 @@
   {
     "level": "pro",
     "seed": 1007,
-    "pickupSeconds": null,
-    "bankSeconds": null
+    "pickupSeconds": 64.24,
+    "bankSeconds": 78.52
   },
   {
     "level": "pro",
@@ -290,14 +290,14 @@
   {
     "level": "pro",
     "seed": 1009,
-    "pickupSeconds": 47.92,
-    "bankSeconds": 64.48
+    "pickupSeconds": 48.96,
+    "bankSeconds": 64.52
   },
   {
     "level": "pro",
     "seed": 1010,
-    "pickupSeconds": null,
-    "bankSeconds": null
+    "pickupSeconds": 43.76,
+    "bankSeconds": 55.76
   },
   {
     "level": "pro",
@@ -315,7 +315,7 @@
     "level": "pro",
     "seed": 1013,
     "pickupSeconds": 55.36,
-    "bankSeconds": 72.08
+    "bankSeconds": 72.56
   },
   {
     "level": "pro",
@@ -339,7 +339,7 @@
     "level": "pro",
     "seed": 1017,
     "pickupSeconds": 62.92,
-    "bankSeconds": 73.28
+    "bankSeconds": 73.2
   },
   {
     "level": "pro",
@@ -351,7 +351,7 @@
     "level": "pro",
     "seed": 1019,
     "pickupSeconds": 43.64,
-    "bankSeconds": 64.6
+    "bankSeconds": 64.28
   },
   {
     "level": "pro",
