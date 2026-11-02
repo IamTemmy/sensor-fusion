@@ -14,15 +14,15 @@ void main(){
  d=texture2D(depthMap,q).r;q=clamp(base+camera.xy*(d-.25),.015,.985);
  vec3 c=texture2D(colorMap,q).rgb;
  // Rack focus moves from the background to the eyes in the final shot.
- float focus=mix(.25,.84,smoothstep(0.,.65,progress));float blur=shot>3.5?abs(d-focus)*.0035:0.;
+ float focus=mix(.25,.84,smoothstep(0.,.65,progress));float blur=shot>4.5?abs(d-focus)*.0035:0.;
  c=(c*2.+texture2D(colorMap,q+vec2(blur,0.)).rgb+texture2D(colorMap,q-vec2(blur,0.)).rgb+texture2D(colorMap,q+vec2(0.,blur)).rgb+texture2D(colorMap,q-vec2(0.,blur)).rgb)/6.;
- if(shot<.5){
-  float cone=beam(p,vec2(.69,.48),2.1+sin(time*.42)*.7,.026);c+=vec3(.43,.56,.72)*cone*(1.-d)*.38;
+ if(shot<.5||shot>4.5){
+  float cone=beam(p,vec2(.69,.48),2.1+sin(time*.42)*.7,.026);if(shot<.5)c+=vec3(.43,.56,.72)*cone*(1.-d)*.38;
   for(int i=0;i<3;i++){float layer=float(i)+1.;vec2 rain=p*vec2(92.,24.)/layer+vec2(time*3.,time*19./layer);vec2 cell=floor(rain);vec2 f=fract(rain);float streak=(1.-smoothstep(.01,.045,abs(f.x-.5)))*(1.-smoothstep(.05,.8,f.y))*step(.67,hash(cell));c+=vec3(.38,.48,.58)*streak*.25;}
   vec2 floorp=p*vec2(40.,18.);float splash=abs(length(fract(floorp)-.5)-fract(time*1.7+hash(floor(floorp)))*.4);c+=vec3(.1,.15,.18)*(1.-smoothstep(.0,.025,splash))*step(p.y,.22)*.22;
  }else if(shot<1.5){c+=vec3(.66,.58,.39)*beam(p,vec2(.70,.35),3.0+sin(time*.48)*.55,.015)*(1.-d)*.22;
  }else if(shot<2.5){c*=1.+sin(time*13.)*.008+sin(time*7.1)*.006;
- }else if(shot<3.5){vec2 jar=mix(vec2(.675,.44),vec2(.63,.425),portrait);vec2 delta=(p-jar)*vec2(target,1.);float glow=exp(-dot(delta,delta)*70.);c+=vec3(.22,.008,.004)*glow*(.5+.5*sin(time*12.56637));}
+ }else if(shot>3.5&&shot<4.5){vec2 jar=mix(vec2(.675,.44),vec2(.63,.425),portrait);vec2 delta=(p-jar)*vec2(target,1.);float glow=exp(-dot(delta,delta)*70.);c+=vec3(.22,.008,.004)*glow*(.5+.5*sin(time*12.56637));}
  float flare=exp(-length((p-vec2(.75,.84))*vec2(target,1.))*22.);c+=vec3(.09,.065,.025)*flare;
  float vignette=1.-.21*smoothstep(.24,.77,length((p-.5)*vec2(1.,.85)));c*=vignette;
  c+=(hash(gl_FragCoord.xy+floor(time*24.))-.5)*.013;

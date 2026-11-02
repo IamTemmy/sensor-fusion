@@ -1,3 +1,7 @@
+## Current pass: six-shot opening (not deployed)
+
+Six-shot 28-second story, new teal corridor/dock art, corrected rival stride, smoother first-frame entry, and a restrained procedural gameplay score. 373 tests, typecheck and isolation pass. Managed local browser entry marker: 129 ms in one run; all 12 software GLSL reference frames pass. No real clips or narration supplied; no physical phone FPS or loudness claim. See intro-v3/README.md, assets.json and depth-reference-strip.jpg. Everything below is historical unless explicitly stated otherwise.
+
 # Current pass: cinematic rivalry art and narration support — 2026-11-02
 
 **Not deployed.** Shot 4 shows a fleeing violet rival; planning crew is all teal. Subtle thriller ambience preserved; MP3/WAV voice preparation and timing improved. Narration/video recordings are still missing. 369 tests, typecheck, isolation and framework build pass. Software GLES2 checks all ten frames. Fresh browser/audio export blocked by local preview access; no sound recording or new timing claimed. Details: [intro-v3/README.md](intro-v3/README.md), [audio credits](intro-v3/AUDIO-CREDITS.md).

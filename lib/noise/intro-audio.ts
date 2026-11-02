@@ -4,7 +4,7 @@ export function narrationWindow(offset:number,duration:number){
  return {delay:Math.max(0,VOICE_DELAY-offset),seek:Math.max(0,offset-VOICE_DELAY),remaining:Math.max(0,duration-Math.max(0,offset-VOICE_DELAY))};
 }
 export function narratedSegmentSeconds(base:number,offset:number,seconds:number,voiceSeconds:number){
- return offset+seconds<base?seconds:Math.max(base,VOICE_DELAY+voiceSeconds+.15)-offset;
+ return offset+seconds<base?seconds:Math.max(base,VOICE_DELAY+voiceSeconds+.6)-offset;
 }
 /** Trim only leading/trailing silence, retain 30ms breath margin, normalize RMS with peak headroom. */
 export function prepareNarration(channels:Float32Array[],sampleRate:number){

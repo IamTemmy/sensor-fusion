@@ -13,7 +13,7 @@ export class IntroMedia {
       const abort=()=>{image.src='';reject(new Error('Intro closed'));};
       this.controller.signal.addEventListener('abort',abort,{once:true});
       const done=()=>this.controller.signal.removeEventListener('abort',abort);
-      image.onload=()=>{done();resolve(image);};image.onerror=()=>{done();reject(new Error('Missing intro image'));};image.src=src;
+      image.onload=()=>{void image.decode().catch(()=>{}).then(()=>{done();resolve(image);});};image.onerror=()=>{done();reject(new Error('Missing intro image'));};image.src=src;
     });
   }
   loadShot(shot:number,portrait:boolean,depth=true) {

@@ -1,34 +1,30 @@
-# Velmont opening v3 assets
+# Velmont six-shot opening
 
-Five authored 2.5D compositions, separately generated for landscape and portrait. These are **not video clips**. Generated color art and approximate art-directed depth maps use the existing hideout style. No downloaded third-party artwork, audio, paid APIs or new keys.
+28-second illustrated 2.5D opening: six color compositions with aligned approximate depth maps, separately composed for landscape and portrait. These are NOT real video clips. Small depth-driven camera movement, rain, beams and glow animate the artwork; character limbs and van doors are not articulated. Shot 6 depicts the rescue aboard the van, then the camera pulls back and the logo appears.
 
-Color exports are 1920×1080 / 1080×1920 WebP. The image tool returned 1672×941 / 941×1672 originals; exports are resampled, not native 2K generation. Depth maps are 512×288 / 288×512; white is near. Small displacement is deliberate: these are approximate depth passes, not reconstructed 3D geometry. Characters do not articulate in the illustrated version. Supplied video provides the actual mask-pull, jar throw and running.
+## Exact recording script
 
-## Drop-in video with embedded audio
+Narrator: the mint-beanie planner. Youthful, wry, quietly confident; natural delivery, not a trailer announcer. Record one line per file, with no extra words. Captions must match these lines exactly.
 
-Use these exact filenames, in this directory, with either H.264 MP4 (preferred) or WebM. Supply both `-landscape` and `-portrait` versions; portrait falls back to landscape if missing. No code change needed. Do not reuse the old v2 script recordings.
+| File (MP3 or WAV) | Minimum shot | Exact line |
+|---|---|---|
+| vo-01 | 5 s | The plan is simple. Get in. Get the Crown. Get out. |
+| vo-02 | 4 s | Every crew in town wants what's behind that glass. |
+| vo-03 | 4 s | Ninety seconds. One very nervous alarm system. |
+| vo-04 | 4 s | Rule one: the crew moves together. |
+| vo-05 | 6 s | Rule two: somebody's setting off the alarms. Make sure it's not on you. |
+| vo-06 | 5 s | Rule three… no matter what happens… don't get left behind. |
 
-| Story shot | Segment filename stem | Target length | Caption / narration |
-|---|---|---|---|
-| 1 Exterior | shot-01 | 5 s | Every night, Velmont locks its doors on things that were never theirs to keep. |
-| 2 Collection | shot-02 | 5 s | Paintings stolen once already. Crowns taken from people who never got them back. |
-| 3 Hideout | shot-03 | 5 s | So we take them back. Ninety seconds. In and out. |
-| 4 Heist, first half | shot-03a | 3 s | The alarms will scream. Let them. |
-| 4 Heist, second half | shot-03b | 3 s | Same caption continues; do not repeat the voice line. |
-| 5 Close-up | shot-05 | 5 s | Just don't get left behind. |
+No voice recordings are present. Add these files here; replace any earlier-script recordings. Voice starts 0.3 seconds after the cut. Decoded narration extends a shot to its natural length plus a 0.6-second tail; silence trimming, peak normalization, light room reflection and 10 dB ambience ducking remain. Missing recordings use captions. Supplied recordings must be checked against the script by a human; this player does not transcribe them.
 
-Example: `shot-03a-portrait.mp4`. The unusual 03a/b names preserve the user's supplied clip naming even though the heist is now the fourth story shot. Color image `shot-04` belongs to that fourth shot; it is not the video filename.
+## Optional real clips
 
-Captions follow the active clip, not a parallel wall clock. Each clip runs until `ended`; supply the target duration to preserve the 26-second edit. Audio follows SFX. Synthesized ambience/effects and separate voice files are stopped during video playback, preventing double audio. The player adds the final deep hit after the last clip ends; omit a duplicate ending hit from that clip.
+Revision-qualified filenames prevent old-script videos playing by mistake: `six-shot-01-landscape.mp4` through `six-shot-06-landscape.mp4`, plus `-portrait` versions. WebM is also supported. Embedded sound follows SFX; synthesized sound is stopped during clips. Each clip must contain the matching line above and its full natural duration. No clips were generated or added in this pass.
 
-If a browser refuses unmuted autoplay after decoding, the player tries muted playback and shows **Enable sound**. A missing/stalled clip uses the illustrated fallback without a blank loading screen. Reduced motion and slow/save-data connections use calm stills with a 1.2% gentle zoom and no moving cut-outs, flashing effects or fast pans. WebGL failure also falls back safely.
+Reduced motion, slow/save-data connections or unavailable WebGL use the calm poster version. The menu remains underneath while the first poster decodes; a 450 ms fade introduces it. Later shots retain the preceding image until the next is decoded. Optional-media probes run concurrently rather than blocking initial art. Skip remains reachable while loading. End: final illustration and logo → 350 ms black with deep hit → 650 ms menu fade.
 
-## Optional narration for the illustrated version
+## Asset and audio provenance
 
-Add `vo-01.mp3` … `vo-05.mp3` (or `.wav`), each containing its corresponding exact caption above. Narrator: the mint-beanie male planner, youthful, quietly confident and wry. No narration files currently exist. The player cannot transcribe/validate supplied recordings: verify the words against the captions before adding them.
+Original generated art in the established Velmont style; no external asset downloads, paid APIs or new keys. Shots 1–3 are retained. New 4 and 6 and corrected rival stride in 5 have landscape/portrait depth passes. Native generated color images are 1672×941 / 941×1672, resampled to 1920×1080 / 1080×1920 WebP. Depth exports are 512×288 / 288×512. This is approximate art-directed depth, not reconstructed 3D geometry.
 
-Voice starts 0.3s after the cut. Leading/trailing silence is trimmed with a breathing margin; levels are normalized with peak headroom, a light room reflection, and 10dB ambience ducking. Longer lines extend the illustrated shot instead of being cut off. For shot 4, the second fallback segment resumes at voice offset 2.7s. Recordings preload with the next shot; missing, invalid or late first-shot recordings leave captions rather than delaying the opening indefinitely.
-
-The user's preferred subtle suspense ambience remains; no jazz score or background song was added. Generated rain, hum, footsteps, alarm and closing hit need no downloaded audio. See docs/next-preview/intro-v3/AUDIO-CREDITS.md for sources, mix policy and unverified playback limits.
-
-The ending is deliberately opaque: finish close-up → 350 ms black with deep hit → 650 ms menu reveal. No blueprint transparency or menu bleed during the shot.
+Intro ambience and gameplay underscore are original Web Audio synthesis; there are no downloaded samples or music files. See `docs/next-preview/intro-v3/AUDIO-CREDITS.md` and `assets.json` for provenance and sizes.

@@ -1,206 +1,224 @@
 {
   "status": "not-deployed",
   "branch": "next",
-  "pass": "cinematic-rivalry-and-narration-support",
+  "pass": "six-shot-opening-and-tense-heist-score",
   "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
-  "unitTests": 369,
+  "unitTests": 373,
   "typecheck": "PASS",
-  "isolation": "PASS; engine identical to 5a5a133; maps/network unchanged",
-  "frameworkBuild": "PASS",
-  "softwareShader": "PASS compile/link and 10 reference draws",
-  "browser": "BLOCKED: local connection refused / ERR_BLOCKED_BY_CLIENT",
-  "audioReviewExport": "Implemented but not executed; browser blocked",
-  "voice": "recordings absent; PCM preparation and scheduler fixture tests PASS",
-  "video": "no real clips added",
-  "introAssetBytes": 2623686,
-  "newAudioVideoAssetBytes": 0,
-  "loudness": "UNVERIFIED; no mixed recording or -16 LUFS claim",
+  "isolation": "PASS; protected files unchanged",
+  "softwareShader": "PASS compile/link and 12 reference draws",
+  "browser": "Managed local: entry, captions, SFX toggle, Skip, automatic menu return observed",
+  "firstPosterLocalMs": 96,
+  "firstDecodedReadyLocalMs": 129,
+  "introAssetBytes": 3559738,
+  "voice": "not supplied; six exact captions, optional recordings",
+  "video": "not supplied; 2.5D illustrations only",
   "physicalPhoneFPS": "UNVERIFIED",
-  "historicalOpeningV3": {
+  "audioLoudness": "UNVERIFIED",
+  "historicalPreviousPass": {
     "status": "not-deployed",
     "branch": "next",
-    "pass": "opening-v3",
+    "pass": "cinematic-rivalry-and-narration-support",
     "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
-    "unitTests": 361,
+    "unitTests": 369,
     "typecheck": "PASS",
-    "isolation": "PASS; engine identical to 5a5a133, protected maps/network unchanged",
+    "isolation": "PASS; engine identical to 5a5a133; maps/network unchanged",
     "frameworkBuild": "PASS",
     "softwareShader": "PASS compile/link and 10 reference draws",
-    "browser": "Calm fallback frames, captions, SFX, Skip, once-only and menu return observed",
-    "browserWebGL": "UNVERIFIED: context unavailable",
+    "browser": "BLOCKED: local connection refused / ERR_BLOCKED_BY_CLIENT",
+    "audioReviewExport": "Implemented but not executed; browser blocked",
+    "voice": "recordings absent; PCM preparation and scheduler fixture tests PASS",
+    "video": "no real clips added",
+    "introAssetBytes": 2623686,
+    "newAudioVideoAssetBytes": 0,
+    "loudness": "UNVERIFIED; no mixed recording or -16 LUFS claim",
     "physicalPhoneFPS": "UNVERIFIED",
-    "videoAudioPlayback": "UNVERIFIED: no real clips supplied",
-    "voice": "captions only; optional recordings missing",
-    "firstFrameLocalWarmMs": 88,
-    "firstShotImageLocalWarmMs": 91,
-    "introAssetBytes": 2599002,
-    "historicalPreviousStatus": {
+    "historicalOpeningV3": {
       "status": "not-deployed",
       "branch": "next",
-      "reviewBase": "348f874283d370725b823e700458f320107f2569",
+      "pass": "opening-v3",
       "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
-      "unitTests": 352,
+      "unitTests": 361,
       "typecheck": "PASS",
-      "isolation": "PASS; engine identical to 348f874; eight protected files identical to ce1ce1f",
-      "localProductionBuild": "PASS framework build",
-      "layoutSuite": "BLOCKED: missing Chromium; 13 cases never launched",
-      "multiplayer": "BLOCKED: missing Chromium; production server",
-      "backgroundGuest": "BLOCKED: missing Chromium; production server",
-      "manualVisual": "Frozen cloud-browser fixtures: landscape alarm/context, narrow landscape board; desktop canvas 514px before/during error",
-      "collector": {
-        "Velmont": {
-          "threeStars": 1,
-          "humanEscaped": 10,
-          "runs": 10
-        },
-        "Archive": {
-          "threeStars": 7,
-          "humanEscaped": 10,
-          "runs": 10
-        }
-      },
-      "historical": {
+      "isolation": "PASS; engine identical to 5a5a133, protected maps/network unchanged",
+      "frameworkBuild": "PASS",
+      "softwareShader": "PASS compile/link and 10 reference draws",
+      "browser": "Calm fallback frames, captions, SFX, Skip, once-only and menu return observed",
+      "browserWebGL": "UNVERIFIED: context unavailable",
+      "physicalPhoneFPS": "UNVERIFIED",
+      "videoAudioPlayback": "UNVERIFIED: no real clips supplied",
+      "voice": "captions only; optional recordings missing",
+      "firstFrameLocalWarmMs": 88,
+      "firstShotImageLocalWarmMs": 91,
+      "introAssetBytes": 2599002,
+      "historicalPreviousStatus": {
         "status": "not-deployed",
         "branch": "next",
-        "baseline": "ce1ce1f07f462d010dbfd7ae1fd0cd8a41267b03",
+        "reviewBase": "348f874283d370725b823e700458f320107f2569",
         "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
-        "unitTests": 350,
-        "typecheck": true,
-        "engineAndProtocol": "Engine changed only for approved independent departure and ratings; protocol and maps unchanged",
-        "browserRegression": "BLOCKED: all 20 Playwright cases failed at launch (missing Chromium executable)",
-        "phoneFPS": "unverified: no physical mid-range phone measurement",
-        "rescue": [
-          {
-            "museum": "flagship-velmont",
-            "n": 30,
-            "first": 30,
-            "banked": 17,
-            "freed": 30
-          },
-          {
-            "museum": "night-archive",
-            "n": 30,
-            "first": 29,
-            "banked": 26,
-            "freed": 30
-          }
-        ],
-        "reviewBase": "b85ddec",
-        "isolation": "PASS: eight protected files identical to ce1ce1f; engine pinned to approved departure/rating revision",
-        "backgroundGuest": "BLOCKED: missing Chromium executable; hidden-20s scenario not executed",
-        "visualChecks": "Cloud browser: four guide steps at 390x844, 360x740 and 1280x800 fit without control/status overlap; fixture screenshots captured",
-        "historicalGameplayGates": {
-          "source": "prior next implementation; not rerun in this review-fix pass",
-          "museums": {
-            "flagship-velmont": {
-              "idle": 0,
-              "echo": [
-                {
-                  "difficulty": "rookie",
-                  "matches": 40,
-                  "medianHaul": 2300,
-                  "leftBehind": 0
-                },
-                {
-                  "difficulty": "normal",
-                  "matches": 40,
-                  "medianHaul": 1950,
-                  "leftBehind": 0
-                },
-                {
-                  "difficulty": "pro",
-                  "matches": 40,
-                  "medianHaul": 900,
-                  "leftBehind": 0
-                }
-              ],
-              "cpu": {
-                "p95": 6.828793000000587,
-                "max": 23.00795499999998
-              }
-            },
-            "night-archive": {
-              "idle": 0,
-              "echo": [
-                {
-                  "difficulty": "rookie",
-                  "matches": 40,
-                  "medianHaul": 3100,
-                  "leftBehind": 0
-                },
-                {
-                  "difficulty": "normal",
-                  "matches": 40,
-                  "medianHaul": 2000,
-                  "leftBehind": 2
-                },
-                {
-                  "difficulty": "pro",
-                  "matches": 40,
-                  "medianHaul": 1500,
-                  "leftBehind": 0
-                }
-              ],
-              "cpu": {
-                "p95": 6.846752999999808,
-                "max": 32.01034200000001
-              }
-            }
-          }
-        },
-        "rescueCommand": "exit 1: accepted Velmont 17/30 banking limitation; both museums exactly match baseline",
-        "deployment": "No deployment in this pass; existing preview remains on 833bd67",
-        "followupReview": {
-          "base": "0e57950",
-          "fixes": [
-            "unique solo start identity and two-attempt cap",
-            "raw guest scrolls buttons into view; 1280x800 window",
-            "touch player label omits F prefix"
-          ],
-          "isolation": "PASS",
-          "typecheck": "PASS",
-          "localProductionBuild": "PASS: node scripts/run-framework.mjs build",
-          "localProductionHTTP": 200,
-          "backgroundGuest": "BLOCKED (exit 1): Chromium executable missing; installer failed again",
-          "deployment": "none"
-        },
-        "departureRatingPass": {
-          "tests": 350,
-          "typecheck": "PASS",
-          "visual": "Frozen fixtures: 1280x800 and 390x844 guide outside map and controls; departed crew view inspected",
-          "normalCollectorAudit": {
-            "Velmont": {
-              "seeds": 10,
-              "threeStars": 0,
-              "bestHaul": 3200
-            },
-            "Archive": {
-              "seeds": 10,
-              "threeStars": 5,
-              "bestHaul": 4300
-            }
-          },
-          "limitation": "Collector seeks every piece and boards very late; this is not a human skill benchmark or proof of balanced three-star attainability. No fresh multiplayer, CPU or physical phone FPS run."
-        }
-      },
-      "openingStoryV2": {
-        "status": "implemented-not-deployed",
-        "paths": [
-          "A prompts and drop-in player only",
-          "B layered 2D animation"
-        ],
-        "unitTests": 356,
+        "unitTests": 352,
         "typecheck": "PASS",
-        "isolation": "PASS",
-        "engineMatches": "5a5a133",
-        "frameworkBuild": "PASS",
-        "layoutChecks": "15/15 viewport-shot combinations",
-        "firstFrameMs": 175,
-        "realVideo": "not available; pending user clips",
-        "voice": "captions only; optional voice slots",
-        "newAssetBytes": 387540,
-        "normalConnectionColdLoad": "not benchmarked",
-        "phoneFPS": "not measured"
+        "isolation": "PASS; engine identical to 348f874; eight protected files identical to ce1ce1f",
+        "localProductionBuild": "PASS framework build",
+        "layoutSuite": "BLOCKED: missing Chromium; 13 cases never launched",
+        "multiplayer": "BLOCKED: missing Chromium; production server",
+        "backgroundGuest": "BLOCKED: missing Chromium; production server",
+        "manualVisual": "Frozen cloud-browser fixtures: landscape alarm/context, narrow landscape board; desktop canvas 514px before/during error",
+        "collector": {
+          "Velmont": {
+            "threeStars": 1,
+            "humanEscaped": 10,
+            "runs": 10
+          },
+          "Archive": {
+            "threeStars": 7,
+            "humanEscaped": 10,
+            "runs": 10
+          }
+        },
+        "historical": {
+          "status": "not-deployed",
+          "branch": "next",
+          "baseline": "ce1ce1f07f462d010dbfd7ae1fd0cd8a41267b03",
+          "previewProject": "appgprj_6ae6f13dfc708191875cde1e84d8bfc3",
+          "unitTests": 350,
+          "typecheck": true,
+          "engineAndProtocol": "Engine changed only for approved independent departure and ratings; protocol and maps unchanged",
+          "browserRegression": "BLOCKED: all 20 Playwright cases failed at launch (missing Chromium executable)",
+          "phoneFPS": "unverified: no physical mid-range phone measurement",
+          "rescue": [
+            {
+              "museum": "flagship-velmont",
+              "n": 30,
+              "first": 30,
+              "banked": 17,
+              "freed": 30
+            },
+            {
+              "museum": "night-archive",
+              "n": 30,
+              "first": 29,
+              "banked": 26,
+              "freed": 30
+            }
+          ],
+          "reviewBase": "b85ddec",
+          "isolation": "PASS: eight protected files identical to ce1ce1f; engine pinned to approved departure/rating revision",
+          "backgroundGuest": "BLOCKED: missing Chromium executable; hidden-20s scenario not executed",
+          "visualChecks": "Cloud browser: four guide steps at 390x844, 360x740 and 1280x800 fit without control/status overlap; fixture screenshots captured",
+          "historicalGameplayGates": {
+            "source": "prior next implementation; not rerun in this review-fix pass",
+            "museums": {
+              "flagship-velmont": {
+                "idle": 0,
+                "echo": [
+                  {
+                    "difficulty": "rookie",
+                    "matches": 40,
+                    "medianHaul": 2300,
+                    "leftBehind": 0
+                  },
+                  {
+                    "difficulty": "normal",
+                    "matches": 40,
+                    "medianHaul": 1950,
+                    "leftBehind": 0
+                  },
+                  {
+                    "difficulty": "pro",
+                    "matches": 40,
+                    "medianHaul": 900,
+                    "leftBehind": 0
+                  }
+                ],
+                "cpu": {
+                  "p95": 6.828793000000587,
+                  "max": 23.00795499999998
+                }
+              },
+              "night-archive": {
+                "idle": 0,
+                "echo": [
+                  {
+                    "difficulty": "rookie",
+                    "matches": 40,
+                    "medianHaul": 3100,
+                    "leftBehind": 0
+                  },
+                  {
+                    "difficulty": "normal",
+                    "matches": 40,
+                    "medianHaul": 2000,
+                    "leftBehind": 2
+                  },
+                  {
+                    "difficulty": "pro",
+                    "matches": 40,
+                    "medianHaul": 1500,
+                    "leftBehind": 0
+                  }
+                ],
+                "cpu": {
+                  "p95": 6.846752999999808,
+                  "max": 32.01034200000001
+                }
+              }
+            }
+          },
+          "rescueCommand": "exit 1: accepted Velmont 17/30 banking limitation; both museums exactly match baseline",
+          "deployment": "No deployment in this pass; existing preview remains on 833bd67",
+          "followupReview": {
+            "base": "0e57950",
+            "fixes": [
+              "unique solo start identity and two-attempt cap",
+              "raw guest scrolls buttons into view; 1280x800 window",
+              "touch player label omits F prefix"
+            ],
+            "isolation": "PASS",
+            "typecheck": "PASS",
+            "localProductionBuild": "PASS: node scripts/run-framework.mjs build",
+            "localProductionHTTP": 200,
+            "backgroundGuest": "BLOCKED (exit 1): Chromium executable missing; installer failed again",
+            "deployment": "none"
+          },
+          "departureRatingPass": {
+            "tests": 350,
+            "typecheck": "PASS",
+            "visual": "Frozen fixtures: 1280x800 and 390x844 guide outside map and controls; departed crew view inspected",
+            "normalCollectorAudit": {
+              "Velmont": {
+                "seeds": 10,
+                "threeStars": 0,
+                "bestHaul": 3200
+              },
+              "Archive": {
+                "seeds": 10,
+                "threeStars": 5,
+                "bestHaul": 4300
+              }
+            },
+            "limitation": "Collector seeks every piece and boards very late; this is not a human skill benchmark or proof of balanced three-star attainability. No fresh multiplayer, CPU or physical phone FPS run."
+          }
+        },
+        "openingStoryV2": {
+          "status": "implemented-not-deployed",
+          "paths": [
+            "A prompts and drop-in player only",
+            "B layered 2D animation"
+          ],
+          "unitTests": 356,
+          "typecheck": "PASS",
+          "isolation": "PASS",
+          "engineMatches": "5a5a133",
+          "frameworkBuild": "PASS",
+          "layoutChecks": "15/15 viewport-shot combinations",
+          "firstFrameMs": 175,
+          "realVideo": "not available; pending user clips",
+          "voice": "captions only; optional voice slots",
+          "newAssetBytes": 387540,
+          "normalConnectionColdLoad": "not benchmarked",
+          "phoneFPS": "not measured"
+        }
       }
     }
   }

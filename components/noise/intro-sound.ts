@@ -45,14 +45,14 @@ export class IntroSound {
       this.ambience.gain.setTargetAtTime(1,at+play,.16);
       source.start(at,window.seek,play);this.nodes.push(source);
     }
-    if(shot===0){
+    if(shot===0||shot===5){
       const rain=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*(duration+.1)),ctx.sampleRate),data=rain.getChannelData(0);let seed=193;
       for(let i=0;i<data.length;i++){seed=(Math.imul(seed,1664525)+1013904223)>>>0;data[i]=(seed/4294967296*2-1)*.035;}
       const source=ctx.createBufferSource(),filter=ctx.createBiquadFilter();source.buffer=rain;filter.type='highpass';filter.frequency.value=950;source.connect(filter).connect(this.ambience);source.start(now);this.nodes.push(source);
       this.tone(35,now+Math.max(0,2-offset),1.2,.035,'triangle');this.tone(120,now,duration,.008);
     }
-    if(shot===1||shot===3)for(let t=.4;t<duration;t+=shot===3?.34:.9)this.tone(85,now+t,.09,.018,'triangle');
-    if(shot===3){const {osc,volume}=this.tone(610,now,duration,.035,'triangle');
+    if(shot===1||shot===4)for(let t=.4;t<duration;t+=shot===4?.34:.9)this.tone(85,now+t,.09,.018,'triangle');
+    if(shot===4){const {osc,volume}=this.tone(610,now,duration,.035,'triangle');
       for(let t=0;t<duration;t+=.025){const pulse=.5+.5*Math.sin(Math.PI*4*(offset+t));volume.gain.setValueAtTime(.006+pulse*.022,now+t);osc.frequency.setValueAtTime(540+pulse*180,now+t);}
     }
   }

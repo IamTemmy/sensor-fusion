@@ -1,4 +1,4 @@
-import ctypes as C, os,re
+import ctypes as C, os,re,math
 os.environ['EGL_PLATFORM']='surfaceless'
 e=C.CDLL('libEGL.so.1');e.eglGetDisplay.restype=C.c_void_p;e.eglGetDisplay.argtypes=[C.c_void_p]
 d=e.eglGetDisplay(None)
@@ -41,24 +41,24 @@ for portrait in [False,True]:
  w,h=(390,844) if portrait else (1280,536)
  surface=sig('eglCreatePbufferSurface',P,[P,P,C.POINTER(I)])(d,config,(I*5)(0x3057,w,0x3056,h,0x3038));assert surface
  assert e.eglMakeCurrent(d,surface,surface,ctx)
- for shot in range(5):
+ for shot in range(6):
   orientation='portrait' if portrait else 'landscape'
   for i in range(2):
    path=Path('public/cinematics/intro-v3')/f"shot-{shot+1:02d}-{orientation}{'-depth' if i else ''}.webp"
    im=Image.open(path).convert('RGBA').transpose(Image.Transpose.FLIP_TOP_BOTTOM);data=im.tobytes();gl('glActiveTexture',None,C.c_uint)(0x84C0+i);gl('glBindTexture',None,C.c_uint,C.c_uint)(0x0DE1,tex[i]);gl('glTexImage2D',None,C.c_uint,I,I,I,I,I,C.c_uint,C.c_uint,P)(0x0DE1,0,0x1908,im.width,im.height,0,0x1908,0x1401,C.c_char_p(data))
   progress=.65;eased=progress*progress*(3-2*progress)
-  camera=[((eased-.5)*.003,0,.025*eased),((eased-.5)*.018,.002,.008),(.002,(eased-.5)*.013,.018*eased),((eased-.5)*.014,-.001,.012*eased),(0,(eased-.5)*.003,.027*eased)][shot]
+  camera=[((eased-.5)*.003,0,.025*eased),((eased-.5)*.018,.002,.008),(.002,(eased-.5)*.013,.018*eased),((eased-.5)*.019,0,.006),((eased-.5)*.014,-.001,.012*eased),((eased-.5)*.004,0,.028*math.sin(math.pi*progress))][shot]
   u3(uniform(p,b'camera'),*camera);u2(uniform(p,b'size'),w,h)
-  for name,value in [('time',progress*(6 if shot==3 else 5)),('shot',shot),('portrait',int(portrait)),('progress',progress)]:u1(uniform(p,name.encode()),value)
+  for name,value in [('time',progress*[5,4,4,4,6,5][shot]),('shot',shot),('portrait',int(portrait)),('progress',progress)]:u1(uniform(p,name.encode()),value)
   gl('glViewport',None,I,I,I,I)(0,0,w,h);gl('glDrawArrays',None,C.c_uint,I,I)(5,0,4);raw=C.create_string_buffer(w*h*4);gl('glReadPixels',None,I,I,I,I,C.c_uint,C.c_uint,P)(0,0,w,h,0x1908,0x1401,raw)
   assert gl('glGetError',C.c_uint)()==0
   image=Image.frombytes('RGBA',(w,h),raw.raw).transpose(Image.Transpose.FLIP_TOP_BOTTOM).convert('RGB');assert min(ImageStat.Stat(image).mean)>12, 'Unexpected black renderer output';frames.append(image)
   print(f'{orientation} shot {shot+1}: DRAW PASS')
  gl('glFinish',None)()
-strip=Image.new('RGB',(1280,970),'#0b121c');draw=ImageDraw.Draw(strip);font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',20)
+strip=Image.new('RGB',(1500,1040),'#0b121c');draw=ImageDraw.Draw(strip);font=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',20)
 draw.text((18,12),'Production GLSL reference renders · software GLES2 (not browser screenshots)',font=font,fill='white')
-for i,im in enumerate(frames[:5]):
+for i,im in enumerate(frames[:6]):
  x=18+(i%3)*420;y=50+(i//3)*200;im.thumbnail((406,174));strip.paste(im,(x,y));draw.text((x,y+175),f'Shot {i+1}',font=font,fill='#eed9a0')
-for i,im in enumerate(frames[5:]):
- im.thumbnail((235,508));strip.paste(im,(18+i*250,455))
+for i,im in enumerate(frames[6:]):
+ im.thumbnail((235,508));strip.paste(im,(18+i*245,455))
 strip.save(out/'depth-reference-strip.jpg',quality=90)

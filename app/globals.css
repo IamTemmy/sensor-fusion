@@ -1148,3 +1148,14 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .cinema-skip-hint{position:absolute;z-index:3;bottom:18px;left:0;right:0;text-align:center;color:#d7d3c9;font-size:11px;letter-spacing:1px;pointer-events:none}
 @media(orientation:portrait){.cinema-stage{height:100%;top:0;transform:none}.cinema-top{padding:16px 12px;letter-spacing:1px}.cinema-top>span{max-width:110px;font-size:10px;line-height:1.5}.cinema-caption{left:5%;right:5%;bottom:9%;}.cinema-caption p{font-size:22px;line-height:1.4;padding:14px 5px;background:radial-gradient(ellipse,#000b,transparent 85%)}.cinema-skip-hint{bottom:max(22px,env(safe-area-inset-bottom))}}
 @media(orientation:landscape) and (max-height:500px){.cinema-top{padding:8px 14px}.cinema-top button{min-height:34px;padding:6px 10px}.cinema-caption{bottom:9%;left:14%;right:14%}.cinema-caption p{font-size:18px;line-height:1.25;padding:4px}.cinema-skip-hint{bottom:8px;font-size:10px}}
+/* Cinematic entry: the hideout remains visible until the first decoded frame is ready. */
+.cinema-player{background:transparent;transition:background-color .45s ease}
+.cinema-player .cinema-stage{opacity:0;transition:opacity .45s ease;background:#13202a}
+.cinema-player.is-ready{background:#000}
+.cinema-player.is-ready .cinema-stage{opacity:1}
+.cinema-player.is-preparing{background:#06101a55}
+.cinema-loading{position:absolute;left:20%;right:20%;bottom:18%;padding:16px;text-align:center;border-radius:12px;background:#07131de8;color:#fff0c4;font-size:16px}
+.cinema-title-reveal{position:absolute;z-index:3;inset:17% 12% auto;display:flex;justify-content:center;filter:drop-shadow(0 4px 12px #000);animation:cinema-title-in .6s ease-out both;pointer-events:none}
+.cinema-title-reveal .velmont-wordmark{font-size:clamp(38px,7vw,90px)}
+@keyframes cinema-title-in{from{opacity:0;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+@media(prefers-reduced-motion:reduce){.cinema-player,.cinema-player .cinema-stage{transition-duration:.1s}.cinema-title-reveal{animation:none}}

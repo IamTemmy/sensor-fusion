@@ -1,8 +1,8 @@
 import {IntroSound} from './intro-sound';
-import {INTRO_SEGMENTS} from '../../lib/noise/intro-story';
+import {INTRO_SEGMENTS,INTRO_DURATION} from '../../lib/noise/intro-story';
 /** Offline export uses the exact live synthesizer, never an imitation soundtrack. */
 export async function exportIntroAmbience(){
- const rate=44100,ctx=new OfflineAudioContext(1,rate*27,rate);let at=0;
+ const rate=44100,ctx=new OfflineAudioContext(1,rate*(INTRO_DURATION+1),rate);let at=0;
  for(const part of INTRO_SEGMENTS){new IntroSound(ctx).scene(part.shot,part.offset,part.seconds,at);at+=part.seconds;}
  new IntroSound(ctx).endHit(at);
  const buffer=await ctx.startRendering(),pcm=buffer.getChannelData(0),bytes=new ArrayBuffer(44+pcm.length*2),view=new DataView(bytes);

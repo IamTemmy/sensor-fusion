@@ -2,7 +2,7 @@ import {test} from 'node:test';
 import assert from 'node:assert/strict';
 import {prepareNarration,narrationWindow,narratedSegmentSeconds} from '../lib/noise/intro-audio.ts';
 test('narration begins 300ms after cut and split heist resumes without repeating',()=>{assert.deepEqual(narrationWindow(0,4),{delay:.3,seek:0,remaining:4});assert.deepEqual(narrationWindow(3,4),{delay:0,seek:2.7,remaining:1.2999999999999998});});
-test('long voice extends its final segment, never the first half of the heist',()=>{assert.equal(narratedSegmentSeconds(5,0,5,8),8.450000000000001);assert.equal(narratedSegmentSeconds(6,0,3,8),3);assert.equal(narratedSegmentSeconds(6,3,3,8),5.450000000000001);assert.equal(narratedSegmentSeconds(5,0,5,0),5);});
+test('long voice extends its final segment, never the first half of the heist',()=>{assert.equal(narratedSegmentSeconds(5,0,5,8),8.9);assert.equal(narratedSegmentSeconds(6,0,3,8),3);assert.equal(narratedSegmentSeconds(6,3,3,8),5.9);assert.equal(narratedSegmentSeconds(5,0,5,0),5);});
 test('silent recording is rejected instead of extending the shot',()=>{assert.equal(prepareNarration([new Float32Array(100)],1000),null);});
 test('narration trims silence with breath margin and preserves stereo alignment',()=>{const a=new Float32Array(1000),b=new Float32Array(1000);a.fill(.05,200,500);b.fill(.1,220,550);const edit=prepareNarration([a,b],1000)!;assert.equal(edit.start,170);assert.equal(edit.end,580);assert.ok(edit.gain>1&&edit.gain<=4);});
 test('normalization never raises peaks above headroom',()=>{const edit=prepareNarration([new Float32Array([0,0,1,0,0])],1000)!;assert.ok(edit.gain<=.8);});
