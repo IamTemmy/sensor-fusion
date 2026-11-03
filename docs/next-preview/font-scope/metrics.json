@@ -1,0 +1,1133 @@
+{
+  "metrics": {
+    "font-title-before": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "♫",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "?",
+        "w": 0
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 57.9375,
+        "size": "46px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 56,
+        "size": "18px",
+        "text": "Start a heist",
+        "w": 327
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 0,
+        "size": "12px",
+        "text": "Watch intro",
+        "w": 0
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 0,
+        "size": "12px",
+        "text": "Learn to play",
+        "w": 0
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 0,
+        "size": "12px",
+        "text": "Practice",
+        "w": 0
+      }
+    ],
+    "font-title-after": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "♫",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "?",
+        "w": 0
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 57.9375,
+        "size": "46px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 56,
+        "size": "18px",
+        "text": "Start a heist",
+        "w": 327
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 0,
+        "size": "12px",
+        "text": "Watch intro",
+        "w": 0
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 0,
+        "size": "12px",
+        "text": "Learn to play",
+        "w": 0
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 0,
+        "size": "12px",
+        "text": "Practice",
+        "w": 0
+      }
+    ],
+    "font-hideout-before": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "♫",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "?",
+        "w": 0
+      },
+      {
+        "font": "Arial",
+        "h": 32,
+        "size": "14px",
+        "text": "Back",
+        "w": 33.46875
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 30,
+        "size": "25px",
+        "text": "Plan your heist",
+        "w": 339
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 46,
+        "size": "16px",
+        "text": "With bots",
+        "w": 168.5
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 46,
+        "size": "16px",
+        "text": "With friends",
+        "w": 168.5
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 24,
+        "size": "16px",
+        "text": "Echo has your back. No waiting for players.",
+        "w": 339
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 66,
+        "size": "13px",
+        "text": "Co-opOne crew vs the museum",
+        "w": 164.5
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 66,
+        "size": "13px",
+        "text": "Rival crewsRace another crew",
+        "w": 164.5
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 44,
+        "size": "15px",
+        "text": "rookie",
+        "w": 112.328125
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 44,
+        "size": "15px",
+        "text": "normal",
+        "w": 112.34375
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 44,
+        "size": "15px",
+        "text": "pro",
+        "w": 112.328125
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 54,
+        "size": "19px",
+        "text": "Start heist",
+        "w": 339
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 40,
+        "size": "12px",
+        "text": "Watch intro",
+        "w": 64.25
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 40,
+        "size": "12px",
+        "text": "Learn to play",
+        "w": 73.390625
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 40,
+        "size": "12px",
+        "text": "Practice",
+        "w": 47.359375
+      }
+    ],
+    "font-hideout-after": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "♫",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "10px",
+        "text": "?",
+        "w": 0
+      },
+      {
+        "font": "Arial",
+        "h": 32,
+        "size": "14px",
+        "text": "Back",
+        "w": 33.46875
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 30,
+        "size": "25px",
+        "text": "Plan your heist",
+        "w": 339
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 46,
+        "size": "16px",
+        "text": "With bots",
+        "w": 168.5
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 46,
+        "size": "16px",
+        "text": "With friends",
+        "w": 168.5
+      },
+      {
+        "font": "Manrope, Arial, sans-serif",
+        "h": 24,
+        "size": "16px",
+        "text": "Echo has your back. No waiting for players.",
+        "w": 339
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 66,
+        "size": "13px",
+        "text": "Co-opOne crew vs the museum",
+        "w": 164.5
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 66,
+        "size": "13px",
+        "text": "Rival crewsRace another crew",
+        "w": 164.5
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 44,
+        "size": "15px",
+        "text": "rookie",
+        "w": 112.328125
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 44,
+        "size": "15px",
+        "text": "normal",
+        "w": 112.34375
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 44,
+        "size": "15px",
+        "text": "pro",
+        "w": 112.328125
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 54,
+        "size": "19px",
+        "text": "Start heist",
+        "w": 339
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 40,
+        "size": "12px",
+        "text": "Watch intro",
+        "w": 64.25
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 40,
+        "size": "12px",
+        "text": "Learn to play",
+        "w": 73.390625
+      },
+      {
+        "font": "Arial, sans-serif",
+        "h": 40,
+        "size": "12px",
+        "text": "Practice",
+        "w": 47.359375
+      }
+    ],
+    "font-lobby-before": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 94
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 53
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "♫",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "?",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "Leave",
+        "w": 50.53125
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 25.296875,
+        "size": "23px",
+        "text": "Assemble your crew",
+        "w": 329
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 36,
+        "size": "10px",
+        "text": "Room code MKYR5X",
+        "w": 124.140625
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 36,
+        "size": "10px",
+        "text": "Copy invite link",
+        "w": 189.859375
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "Co-op",
+        "w": 157
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "Rivals",
+        "w": 157
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "rookie",
+        "w": 66.65625
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "normal",
+        "w": 66.671875
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "pro",
+        "w": 66.671875
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "18px",
+        "text": "Crew roster",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 24,
+        "size": "15px",
+        "text": "MINT 2/4",
+        "w": 311
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 24,
+        "size": "14px",
+        "text": "×",
+        "w": 20
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 30,
+        "size": "12px",
+        "text": "+ Echo helper",
+        "w": 311
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 48,
+        "size": "16px",
+        "text": "Enter the gallery",
+        "w": 329
+      }
+    ],
+    "font-lobby-after": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 94
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 53
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "♫",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "?",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 32,
+        "size": "10px",
+        "text": "Leave",
+        "w": 50.53125
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 25.296875,
+        "size": "23px",
+        "text": "Assemble your crew",
+        "w": 329
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 36,
+        "size": "10px",
+        "text": "Room code MKYR5X",
+        "w": 124.140625
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 36,
+        "size": "10px",
+        "text": "Copy invite link",
+        "w": 189.859375
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "Co-op",
+        "w": 157
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "Rivals",
+        "w": 157
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "rookie",
+        "w": 66.65625
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "normal",
+        "w": 66.671875
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "pro",
+        "w": 66.671875
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 0,
+        "size": "18px",
+        "text": "Crew roster",
+        "w": 0
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 24,
+        "size": "15px",
+        "text": "MINT 2/4",
+        "w": 311
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 24,
+        "size": "14px",
+        "text": "×",
+        "w": 20
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 30,
+        "size": "12px",
+        "text": "+ Echo helper",
+        "w": 311
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 48,
+        "size": "16px",
+        "text": "Enter the gallery",
+        "w": 329
+      }
+    ],
+    "font-briefing-before": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 108.984375
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 53
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "♫",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "?",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "Leave",
+        "w": 50.53125
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 25.75,
+        "size": "23px",
+        "text": "The alarm is stealable.",
+        "w": 333
+      },
+      {
+        "font": "Arial",
+        "h": 71.171875,
+        "size": "11px",
+        "text": "Echo Gallery · Crew planThe Open Court: cross exposed marble, raid laser-gated alcoves, or slip behind the statue to the apse.",
+        "w": 333
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Grab art",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 107.96875,
+        "size": "16px",
+        "text": "Every exhibit comes with a loud alarm.",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Pass or shake",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 107.96875,
+        "size": "16px",
+        "text": "Tap Pass to send art to a nearby teammate. No one near? Tap Shake off alarm.",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Throw the alarm",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 64.78125,
+        "size": "16px",
+        "text": "Pull guards away from your route.",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Bank & board",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 64.78125,
+        "size": "16px",
+        "text": "Deliver your art. Get everyone aboard.",
+        "w": 142.5
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "13px",
+        "text": "More rules",
+        "w": 119.0625
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 44,
+        "size": "13px",
+        "text": "I’M IN — LET’S GO",
+        "w": 205.9375
+      }
+    ],
+    "font-briefing-after": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 108.984375
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 53
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "♫",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "?",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "Leave",
+        "w": 50.53125
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 25.75,
+        "size": "23px",
+        "text": "The alarm is stealable.",
+        "w": 333
+      },
+      {
+        "font": "Arial",
+        "h": 73.171875,
+        "size": "11px",
+        "text": "Echo Gallery · Crew planThe Open Court: cross exposed marble, raid laser-gated alcoves, or slip behind the statue to the apse.",
+        "w": 333
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Grab art",
+        "w": 142.5
+      },
+      {
+        "font": "Manrope, Arial, sans-serif",
+        "h": 107.96875,
+        "size": "16px",
+        "text": "Every exhibit comes with a loud alarm.",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Pass or shake",
+        "w": 142.5
+      },
+      {
+        "font": "Manrope, Arial, sans-serif",
+        "h": 107.96875,
+        "size": "16px",
+        "text": "Tap Pass to send art to a nearby teammate. No one near? Tap Shake off alarm.",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Throw the alarm",
+        "w": 142.5
+      },
+      {
+        "font": "Manrope, Arial, sans-serif",
+        "h": 64.78125,
+        "size": "16px",
+        "text": "Pull guards away from your route.",
+        "w": 142.5
+      },
+      {
+        "font": "Arial",
+        "h": 18,
+        "size": "15px",
+        "text": "Bank & board",
+        "w": 142.5
+      },
+      {
+        "font": "Manrope, Arial, sans-serif",
+        "h": 64.78125,
+        "size": "16px",
+        "text": "Deliver your art. Get everyone aboard.",
+        "w": 142.5
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "13px",
+        "text": "More rules",
+        "w": 119.0625
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 44,
+        "size": "13px",
+        "text": "I’M IN — LET’S GO",
+        "w": 205.9375
+      }
+    ],
+    "font-results-before": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 108.984375
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 53
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "♫",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "?",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "Leave",
+        "w": 50.53125
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 29.15625,
+        "size": "27px",
+        "text": "Rookie & Echo win!",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 16,
+        "size": "12px",
+        "text": "3 / 3 STARS",
+        "w": 327
+      },
+      {
+        "font": "Arial",
+        "h": 52,
+        "size": "16px",
+        "text": "A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 16,
+        "size": "12px",
+        "text": "MINT CREW$3,300",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 16,
+        "size": "12px",
+        "text": "VIOLET CREW$0",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 50,
+        "size": "19px",
+        "text": "RUN IT BACK",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "BACK TO HIDEOUT",
+        "w": 159.5
+      }
+    ],
+    "font-results-after": [
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "VELMNTAFTER HOURS",
+        "w": 108.984375
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "SFX ON",
+        "w": 53
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "♫",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "?",
+        "w": 28
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 34,
+        "size": "10px",
+        "text": "Leave",
+        "w": 50.53125
+      },
+      {
+        "font": "Bungee, \"Trebuchet MS\", sans-serif",
+        "h": 29.15625,
+        "size": "27px",
+        "text": "Rookie & Echo win!",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 16,
+        "size": "12px",
+        "text": "3 / 3 STARS",
+        "w": 327
+      },
+      {
+        "font": "Manrope, Arial, sans-serif",
+        "h": 52,
+        "size": "16px",
+        "text": "A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 16,
+        "size": "12px",
+        "text": "MINT CREW$3,300",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 16,
+        "size": "12px",
+        "text": "VIOLET CREW$0",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 50,
+        "size": "19px",
+        "text": "RUN IT BACK",
+        "w": 327
+      },
+      {
+        "font": "Bungee, Impact, sans-serif",
+        "h": 42,
+        "size": "10px",
+        "text": "BACK TO HIDEOUT",
+        "w": 159.5
+      }
+    ]
+  },
+  "differences": {
+    "title": [],
+    "hideout": [
+      {
+        "text": "Echo has your back. No waiting for players.",
+        "oldH": 24,
+        "newH": 24,
+        "oldSize": "16px",
+        "newSize": "16px",
+        "oldFont": "Arial, sans-serif",
+        "newFont": "Manrope, Arial, sans-serif"
+      }
+    ],
+    "lobby": [],
+    "briefing": [
+      {
+        "text": "Echo Gallery · Crew planThe Open Court: cross exposed marble, raid laser-gated alcoves, or slip behind the statue to the apse.",
+        "oldH": 71.171875,
+        "newH": 73.171875,
+        "oldSize": "11px",
+        "newSize": "11px",
+        "oldFont": "Arial",
+        "newFont": "Arial"
+      },
+      {
+        "text": "Every exhibit comes with a loud alarm.",
+        "oldH": 107.96875,
+        "newH": 107.96875,
+        "oldSize": "16px",
+        "newSize": "16px",
+        "oldFont": "Arial",
+        "newFont": "Manrope, Arial, sans-serif"
+      },
+      {
+        "text": "Tap Pass to send art to a nearby teammate. No one near? Tap Shake off alarm.",
+        "oldH": 107.96875,
+        "newH": 107.96875,
+        "oldSize": "16px",
+        "newSize": "16px",
+        "oldFont": "Arial",
+        "newFont": "Manrope, Arial, sans-serif"
+      },
+      {
+        "text": "Pull guards away from your route.",
+        "oldH": 64.78125,
+        "newH": 64.78125,
+        "oldSize": "16px",
+        "newSize": "16px",
+        "oldFont": "Arial",
+        "newFont": "Manrope, Arial, sans-serif"
+      },
+      {
+        "text": "Deliver your art. Get everyone aboard.",
+        "oldH": 64.78125,
+        "newH": 64.78125,
+        "oldSize": "16px",
+        "newSize": "16px",
+        "oldFont": "Arial",
+        "newFont": "Manrope, Arial, sans-serif"
+      }
+    ],
+    "results": [
+      {
+        "text": "A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.",
+        "oldH": 52,
+        "newH": 52,
+        "oldSize": "16px",
+        "newSize": "16px",
+        "oldFont": "Arial",
+        "newFont": "Manrope, Arial, sans-serif"
+      }
+    ]
+  }
+}

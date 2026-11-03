@@ -9,7 +9,7 @@ export function endHost(g:Game){g.phase='finished';g.finishReason='Host left. Jo
 export function validEnvelope(g:Game,e:Envelope){
  if(!e||typeof e.id!=='string'||e.id.length>100||!e.payload||typeof e.payload!=='object'||JSON.stringify(e).length>16000)return false;
  if(!g.seats.some(s=>!s.bot&&s.id===e.seat&&s.token===e.token))return false;
- const p=e.payload;if(!['input','ready','start','configure','fill','preset','team','bot','remove','difficulty','replay','endJob'].includes(p.type))return false;
+ const p=e.payload;if(!['leave','input','ready','start','configure','fill','preset','team','bot','remove','difficulty','replay','endJob'].includes(p.type))return false;
  if(p.type==='input'&&(!Number.isSafeInteger(p.seq)||![p.dx,p.dy,p.aim?.x,p.aim?.y].every(Number.isFinite)||Math.abs(p.dx)>2||Math.abs(p.dy)>2))return false;
  return true;
 }
@@ -23,7 +23,7 @@ export class HostAuthority{
 export function directReady(open:boolean,lastState:number,now:number){return open&&now-lastState<2000;}
 export function signalValid(s:unknown):s is Signal{const x=s as Signal;return !!x&&typeof x.epoch==='string'&&x.epoch.length<100&&[x.offer,x.answer].every(d=>!d||(typeof d.sdp==='string'&&d.sdp.length<24000&&['offer','answer'].includes(d.type)))&&[x.offerIce,x.answerIce].every(cs=>!cs||(Array.isArray(cs)&&cs.length<=48&&cs.every(c=>!!c&&typeof c.candidate==='string'&&c.candidate.length<=2000)));}
 // D1 owns seat admission; a host snapshot must not erase a concurrent join or reuse its ID.
-export function mergeAdmissions(stored:Game,next:Game){const humans=stored.seats.filter(s=>!s.bot);next.seats=next.seats.filter(s=>s.bot||humans.some(h=>h.id===s.id));for(const h of humans){const ns=next.seats.find(s=>s.id===h.id);if(ns){ns.token=h.token;ns.bot=false;}else next.seats.push(structuredClone(h));}next.serial=Math.max(next.serial,stored.serial);return next;}
+export function mergeAdmissions(stored:Game,next:Game){next.lobbyDepartures=[...new Set([...(stored.lobbyDepartures||[]),...(next.lobbyDepartures||[])])];const departed=new Set(next.lobbyDepartures);const humans=stored.seats.filter(s=>!s.bot&&!departed.has(s.id));next.seats=next.seats.filter(s=>s.bot||humans.some(h=>h.id===s.id));for(const h of humans){const ns=next.seats.find(s=>s.id===h.id);if(ns){ns.token=h.token;ns.bot=false;ns.lastSeen=Math.max(ns.lastSeen,h.lastSeen);}else next.seats.push(structuredClone(h));}next.serial=Math.max(next.serial,stored.serial);return next;}
 
 /** Coalesce movement during relay stalls; retain one-shot commands and unacked actions. */
 export function queueRelayInput(mail:Envelope[],incoming:Envelope){

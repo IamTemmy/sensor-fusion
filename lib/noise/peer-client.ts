@@ -1,6 +1,6 @@
 import {RelayDecoder} from './compact-relay.ts';
 import {CompactSender,CompactReceiver} from './compact-wire.ts';
-import {type Game,type View} from './engine.ts';
+import {normalizeCrew,advance,type Game,type View} from './engine.ts';
 import {arenaKey,unpack,type Wire} from './network.ts';
 import {HostAuthority,endHost,directReady,type Envelope,type Signal} from './peer-protocol.ts';
 import {STUN_SERVERS,DIRECT_ATTEMPT_MS,ICE_RESTART_MS,directFailure,connectionLabel,selectedTurn} from './peer-policy.ts';
@@ -35,7 +35,10 @@ export class PeerRoom{
   if(!this.authority&&data.game)this.authority=new HostAuthority(data.game as Game);
   const authority=this.authority;if(!authority)throw Error('Host state unavailable');
   authority.game.serial=Math.max(authority.game.serial,data.serial||0);authority.game.revision=Math.max(authority.game.revision,data.view?.revision||0);
-  for(const s of data.humans||[])if(!authority.game.seats.some(x=>x.id===s.id)){authority.game.seats.push(s);authority.game.revision++;}
+  authority.game.lobbyDepartures=[...new Set([...(authority.game.lobbyDepartures||[]),...(data.departures||[])])];
+  authority.game.seats=authority.game.seats.filter(s=>!authority.game.lobbyDepartures!.includes(s.id));
+  for(const s of data.humans||[]){if(authority.game.lobbyDepartures.includes(s.id))continue;const existing=authority.game.seats.find(x=>x.id===s.id);if(existing)existing.lastSeen=Math.max(existing.lastSeen,s.lastSeen);else{authority.game.seats.push(s);authority.game.revision++;}}
+  if(authority.game.phase==='lobby')normalizeCrew(authority.game);
   this.acks=this.acks.filter(id=>!ack.includes(id));
   for(const e of data.mail||[]){this.readMetrics(e);authority.input(e);this.acks.push(e.id);}
   for(const s of authority.game.seats.filter(s=>!s.bot&&s.id!==authority.game.host)){
@@ -104,6 +107,7 @@ export class PeerRoom{
  action(action:string,aim:{x:number;y:number}){if(!this.host||this.base.phase!=='playing')return;this.command('input',{...this.options.input(),protocol:1,action,aim});}
  private envelope(payload:Record<string,any>):Envelope{return{id:`${this.lease}:${++this.counter}`,seat:this.base.you,token:this.options.token,payload};}
  private step(){if(this.closed)return;const now=performance.now();
+ if(this.host&&this.authority&&this.authority.game.phase==='lobby'&&this.authority.game.friendsLobby){const g=this.authority.game;const host=g.seats.find(s=>s.id===g.host);if(host)host.lastSeen=Date.now();advance(g,Date.now());}
  if(this.host&&this.authority&&!this.away&&this.authority.game.phase==='playing'){let steps=0;const budgetAt=performance.now();while(now-this.tickAt>=40&&steps++<5){this.authority.tick();this.tickAt+=40;if(performance.now()-budgetAt>=10)break;}if(now-this.tickAt>200)this.tickAt=now;}
  for(const [id,l] of this.links)if(!l.authenticated&&now-l.started>=DIRECT_ATTEMPT_MS)this.noteDirectFailure(id,l);
  const playing=this.base.phase==='playing';if(now-this.sendAt<(playing?50:250))return;this.sendAt=now;const payload=playing?this.options.input():undefined;if(payload){this.options.onInput?.(payload as {seq:number;dx:number;dy:number;sneak?:boolean});const previous=this.recentInputs.slice(-2);this.recentInputs.push({...payload,actions:undefined});this.recentInputs=this.recentInputs.slice(-2);payload.previous=previous;if(!this.host)payload.metrics={rtt:this.ping,frames:this.receivedFrames,bytes:this.receivedBytes,seconds:(now-this.startedAt)/1000};}else this.recentInputs=[];const e=payload?this.envelope(payload):undefined;this.latest=e;
@@ -111,7 +115,7 @@ export class PeerRoom{
  else{const l=this.links.get(this.base.host);if(l?.authenticated){if(e)this.transmit(l.state,{kind:'input',message:e});for(const cmd of this.commandQueue.values())this.transmit(l.input,{kind:'input',message:cmd});if(now-this.lastPing>1000){this.lastPing=now;this.transmit(l.input,{kind:'ping',at:now});}}}
  const modes:Record<string,string>={...(this.base as View&{connectionModes?:Record<string,string>}).connectionModes};for(const [id,l] of this.links)modes[id]=connectionLabel(l.authenticated,l.state?.readyState==='open'&&now-l.last<2500,now-this.startedAt,l.turn);if(now-this.lastStats>2000){this.lastStats=now;for(const l of this.links.values())if(l.authenticated)void l.pc.getStats().then(stats=>{l.turn=selectedTurn(stats);}).catch(()=>{});}this.mode=this.host?'Host':this.direct()?(this.links.get(this.base.host)?.turn?'Direct (TURN)':'Direct'):now-this.startedAt<DIRECT_ATTEMPT_MS?'Connecting…':'Relay';const status=JSON.stringify([this.mode,Math.round(this.ping/25)*25,modes]);if(status!==this.lastStatus||now-this.lastStatusAt>=1000){this.lastStatusAt=now;this.lastStatus=status;this.options.onStatus(this.mode,Math.round(this.ping),modes);}
  }
- stop(notify=true){if(this.closed)return;if(notify&&this.host&&this.authority){endHost(this.authority.game);for(const [id,l] of this.links)this.transmit(l.input,{kind:'ended',packet:this.authority.snapshot(id)});}this.closed=true;this.delays.forEach(clearTimeout);this.delays.clear();this.requestAbort?.abort();clearInterval(this.timer);clearTimeout(this.syncTimer);this.worker?.terminate();document.removeEventListener('visibilitychange',this.visibilityChanged);window.removeEventListener('pagehide',this.pageHide);if(notify&&this.host)void fetch('/api/noise/peer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:this.options.code,token:this.options.token,lease:this.lease,close:true}),keepalive:true});for(const l of this.links.values())setTimeout(()=>l.pc.close(),100);}
+ stop(notify=true){if(this.closed)return;if(notify&&!this.host&&this.base.phase==='lobby'){this.command('leave');void fetch('/api/noise/peer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:this.options.code,token:this.options.token,leave:true}),keepalive:true});}if(notify&&this.host&&this.authority){endHost(this.authority.game);for(const [id,l] of this.links)this.transmit(l.input,{kind:'ended',packet:this.authority.snapshot(id)});}this.closed=true;this.delays.forEach(clearTimeout);this.delays.clear();this.requestAbort?.abort();clearInterval(this.timer);clearTimeout(this.syncTimer);this.worker?.terminate();document.removeEventListener('visibilitychange',this.visibilityChanged);window.removeEventListener('pagehide',this.pageHide);if(notify&&this.host)void fetch('/api/noise/peer',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({code:this.options.code,token:this.options.token,lease:this.lease,close:true}),keepalive:true});for(const l of this.links.values())setTimeout(()=>l.pc.close(),100);}
 }
 
 export function connectionError(e:unknown){const err=e as Error;return err?.name==='TimeoutError'||err?.name==='AbortError'?'Connection took too long. Reconnecting to your crew…':err?.message||'Connection lost. Reconnecting to your crew…';}
