@@ -1243,3 +1243,42 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 /* Keep decoded menu artwork mounted across arrival / hideout transitions. */
 .noise-app .arrival-flow .hero-paint .menu-art{position:absolute;inset:0;opacity:0;pointer-events:none}
 .noise-app .arrival-flow .hero-paint .menu-art.active{opacity:1}
+
+/* The planning desk frames a solid, readable crew folio. */
+.noise-app .planning-room .lobby.crew-folio{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);grid-template-areas:"title title" "job roster" "foot foot";align-items:start;gap:16px 24px;width:min(1000px,96%);max-height:100%;overflow:auto;padding:clamp(16px,2vw,28px);background:#0e1d29;border:1px solid #a78c5b;border-radius:16px;text-align:left}
+.noise-app .crew-folio .folio-heading{grid-area:title;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid #34444e}
+.noise-app .crew-folio h2{margin:0;font-size:clamp(24px,3vw,38px);line-height:1.1}
+.folio-invite{display:flex;align-items:stretch;gap:6px}
+.noise-app .crew-folio .folio-invite button{width:auto;margin:0;padding:8px 12px;font-size:13px;min-height:44px}
+.noise-app .crew-folio .folio-invite small{font-size:10px;margin-left:6px}
+.noise-app .planning-room .crew-folio>.folio-job{grid-area:job;display:grid;gap:16px;min-width:0}
+.noise-app .planning-room .crew-folio>.folio-roster{grid-area:roster;min-width:0}
+.noise-app .folio-roster>h3,.noise-app .setup-fields h4{margin:0;color:#ffebbf}
+.noise-app .folio-roster .team-board{align-items:stretch}
+.noise-app .folio-roster .team-column{display:flex;flex-direction:column;gap:6px}
+.noise-app .folio-roster .team-seat{margin:0}
+.noise-app .folio-roster .team-add{margin: auto 0 0}
+.noise-app .folio-roster .open-seat{display:grid;place-items:center;min-height:68px;margin:0;border:1px dashed #ad98b766;border-radius:8px;color:#ddd3e7}
+.noise-app .museum-photo{margin:0;padding:7px;color:#172029;background:#eedabd;box-shadow:0 4px 10px #0005;position:relative}
+.museum-photo:before{content:'';position:absolute;top:-4px;left:49%;width:11px;height:11px;border-radius:50%;background:radial-gradient(at 35% 25%,#ffdc94,#977036 55%,#402d15);box-shadow:1px 2px 3px #0009}
+.museum-photo img{width:100%;height:clamp(90px,15vh,155px);object-fit:cover;display:block}
+.museum-photo figcaption{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 6px;padding:7px 4px 2px}
+.museum-photo small,.setup-fields h4{text-transform:uppercase;letter-spacing:.08em;font-size:11px}
+.museum-photo small{grid-column:1/-1}.museum-photo strong{font-size:20px}.museum-photo span{font-size:12px}
+.noise-app .crew-folio .setup-summary{display:none}
+.setup-fields{display:grid;gap:7px}.setup-fields small,.setup-fields .mode-warning{font-size:12px;line-height:1.35;color:#c2d1da;margin:0}
+.noise-app .planning-room .lobby.crew-folio>.lobby-actions{grid-area:foot;display:flex;justify-content:flex-end;align-items:center;gap:12px;border-top:1px solid #34444e;padding-top:12px}
+@media(max-width:800px){
+ .noise-app .planning-room .lobby.crew-folio{display:flex;flex-direction:column;gap:12px;max-height:none;overflow:visible;margin:8px auto;padding:12px}
+ .noise-app .crew-folio .folio-heading{flex-direction:column;align-items:stretch;gap:10px;padding-bottom:10px}
+ .folio-invite button{flex:1}.folio-roster{order:1}.folio-job{order:2;gap:8px}
+ .noise-app .folio-roster .team-board{grid-template-columns:1fr;margin:8px 0 0}
+ .noise-app .folio-roster .team-column{padding:8px}
+ .noise-app .folio-roster .team-column h3{margin:0}
+ .noise-app .folio-roster .seat-move{min-height:44px!important}
+ .noise-app .folio-roster .open-seat{min-height:32px}
+ .noise-app .crew-folio .setup-summary{display:flex;width:100%;justify-content:space-between;align-items:center;padding:10px;min-height:44px;text-transform:capitalize}
+ .setup-fields{display:none}.setup-fields.expanded{display:grid;padding:10px 0}
+ .museum-photo{order:1;display:flex;align-items:center;gap:8px}.museum-photo img{width:72px;height:49px}.museum-photo figcaption{flex:1}.museum-photo:before{display:none}
+ .noise-app .planning-room .lobby.crew-folio>.lobby-actions{align-items:stretch;gap:6px;background:#0e1d29}
+}
