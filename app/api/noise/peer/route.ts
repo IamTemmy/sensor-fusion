@@ -1,3 +1,4 @@
+import {normalizeCrew} from '../../../../lib/noise/engine';
 import {RelayEncoder} from '../../../../lib/noise/compact-relay';
 const relayEncoder=new RelayEncoder();
 import {env} from 'cloudflare:workers';
@@ -21,9 +22,9 @@ export async function POST(req:Request){try{
   if(typeof a.visibilityAway==='boolean'){(g as PeerGame&{hostAway?:boolean}).hostAway=a.visibilityAway;g.revision++;}
   if(a.close){p.closed=true;endHost(g);}
   else if(a.game){
-   if(a.game.code!==g.code||a.game.version!==4||a.game.host!==g.host||!Array.isArray(a.game.seats)||a.game.seats.length>6)return reply({error:'Invalid host snapshot'},400);
+   if(a.game.code!==g.code||a.game.version!==4||a.game.host!==g.host||!Array.isArray(a.game.seats)||a.game.seats.filter((s:{bot:boolean})=>!s.bot).length>4)return reply({error:'Invalid host snapshot'},400);
    const next=a.game as PeerGame;
-   if(next.revision>=g.revision){mergeAdmissions(g,next);next.peer=p;g=next;}
+   if(next.revision>=g.revision){mergeAdmissions(g,next);normalizeCrew(next);next.peer=p;g=next;}
   }
   const ack=new Set(Array.isArray(a.acks)?a.acks.slice(0,256):[]);p.mail=p.mail.filter(e=>!ack.has(e.id));p.acks=[...p.acks,...ack].slice(-512) as string[];
   for(const [id,sig] of Object.entries(a.signals||{})){if(id!==s.id&&g.seats.some(s=>s.id===id&&!s.bot)&&signalValid(sig)){const old=p.signals[id];p.signals[id]=old?.epoch===sig.epoch?{...old,...sig}:sig;}}

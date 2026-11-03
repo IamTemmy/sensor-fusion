@@ -1346,3 +1346,8 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .planning-room .crew-folio .lobby-actions .secondary{background:transparent;border:0;box-shadow:none}
 @media(max-width:800px){.noise-app .planning-room .lobby.crew-folio>*{flex-shrink:0}.noise-app .planning-room .lobby.crew-folio{flex-shrink:0}}
 @media(max-width:800px){.noise-app .planning-room .crew-folio .folio-invite .crew-code{flex:0 0 88px;min-width:88px;padding:6px}.noise-app .planning-room .crew-folio .folio-invite .crew-code small{display:none}.noise-app .planning-room .crew-folio .folio-invite .invite-button{flex:1;white-space:nowrap}}
+
+/* Crew admission feedback has a stable full-width row. */
+.noise-app .lobby-actions{flex-wrap:wrap}
+.noise-app .start-reason{flex-basis:100%;margin:0;color:#ffe4a2;font-size:13px;line-height:1.4;text-align:right}
+.noise-app .crew-folio .mode-picker{grid-template-columns:repeat(2,minmax(0,1fr))}

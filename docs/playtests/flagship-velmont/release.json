@@ -1,6 +1,6 @@
 {
-  "sourceHash": "23e31e72437db0f4d4685ac6f780ae26805fe01d7f949cf0690faa127b549706",
-  "at": "2026-11-02T06:27:15.858Z",
+  "sourceHash": "cbe19d08a2a8825cf3acb88c42692a58ae979f370321e1f7968c16f3a0e8450c",
+  "at": "2026-11-03T04:32:08.037Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
     "test": {
@@ -13,13 +13,13 @@
   "museums": {
     "flagship-velmont": {
       "idle": {
-        "engineAndGeometryHash": "eed0d92eae07682c79e755421ffe9ff14dc47a21fed76048ad52a7495914e690",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "eed0d92eae07682c79e755421ffe9ff14dc47a21fed76048ad52a7495914e690",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 106,
@@ -28,7 +28,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "eed0d92eae07682c79e755421ffe9ff14dc47a21fed76048ad52a7495914e690",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -197,20 +197,20 @@
         ]
       },
       "cpu": {
-        "p95": 6.861126999999215,
-        "max": 44.28940200000034,
-        "passed": false
+        "p95": 6.365842000000157,
+        "max": 20.898956,
+        "passed": true
       }
     },
     "night-archive": {
       "idle": {
-        "engineAndGeometryHash": "eed0d92eae07682c79e755421ffe9ff14dc47a21fed76048ad52a7495914e690",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "eed0d92eae07682c79e755421ffe9ff14dc47a21fed76048ad52a7495914e690",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 100,
@@ -219,7 +219,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "eed0d92eae07682c79e755421ffe9ff14dc47a21fed76048ad52a7495914e690",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -388,15 +388,12 @@
         ]
       },
       "cpu": {
-        "p95": 7.064124999998967,
-        "max": 54.90678800000023,
-        "passed": false
+        "p95": 6.800058000000718,
+        "max": 24.814158999999563,
+        "passed": true
       }
     }
   },
-  "failed": [
-    "flagship-velmont/cpu",
-    "night-archive/cpu"
-  ],
-  "passed": false
+  "failed": [],
+  "passed": true
 }

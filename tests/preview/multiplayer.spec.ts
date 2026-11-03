@@ -1,5 +1,5 @@
 import {test,expect,type Page} from '@playwright/test';
-async function friends(p:Page){await p.goto('/');await p.getByRole('button',{name:/Play with friends/}).click();}
+async function friends(p:Page){await p.goto('/');await p.getByRole('button',{name:/Start a heist/i}).click();const skip=p.getByRole('button',{name:/Skip/i});if(await skip.isVisible())await skip.click();await p.getByRole('button',{name:/With friends/}).click();}
 async function start(p:Page){await p.getByRole('button',{name:/Enter the gallery/}).click();await p.getByRole('button',{name:/LET’S GO/}).click();}
 async function leave(p:Page){p.once('dialog',d=>d.accept());await p.getByRole('button',{name:'Leave',exact:true}).click();}
 test('code + link, refresh, rematch, host leaves',async({browser,baseURL})=>{
@@ -8,7 +8,7 @@ test('code + link, refresh, rematch, host leaves',async({browser,baseURL})=>{
  try{
   await friends(host);await host.getByRole('button',{name:/Host a room/}).click();
   const text=await host.locator('.crew-code').innerText();const code=text.match(/[A-Z0-9]{6}/)![0];
-  await friends(guest);await guest.getByLabel('Crew code',{exact:true}).fill(code);await guest.getByRole('button',{name:'Join →',exact:true}).click();
+  await friends(guest);await guest.getByLabel('Crew code',{exact:true}).fill(code);await guest.getByRole('button',{name:'Join',exact:true}).click();
   await expect(guest.getByText('Waiting for the host to start.',{exact:true})).toBeVisible();
   await linked.goto('/?crew='+code);await linked.getByRole('button',{name:/Join crew/}).click();await expect(linked.locator('.crew-code')).toContainText(code);
   await start(host);

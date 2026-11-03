@@ -4,7 +4,7 @@ let heldCaught=0, afterCaught=0, rescued=0;
 const rows:any[]=[];
 for (let sd=1; sd<=40; sd++) {
   const g:any=E.create('T',0,sd); E.add(g,'Human','tok'); const H=g.seats[0].id; g.host=H;
-  E.command(g,H,{type:'bot'}); E.command(g,H,{type:'start'}); E.command(g,H,{type:'ready'});
+  E.command(g,H,{type:'bot'}); E.setup(g); E.command(g,H,{type:'ready'});
   let seq=0; const s=g.seats[0], e=g.seats[1];
   E.advance(g,g.now+13000);
   let cap=-1;

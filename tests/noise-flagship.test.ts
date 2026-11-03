@@ -8,10 +8,7 @@ function job(n=2,mode:E.CrewMode='coop',difficulty:E.Difficulty='normal'){
  const g=E.create('FLAG',1000,1001);E.add(g,'Human','h');for(let i=1;i<n;i++)E.add(g,'Echo '+i,'b',true);E.configure(g,mode);g.difficulty=difficulty;E.setup(g);E.command(g,g.host,{type:'ready'});return g;
 }
 function quiet(g:E.Game){g.guards=[];g.sensors=[];g.jobEvent=undefined;g.seats.forEach(s=>s.bot=false);}
-test('flagship selects 2–4 thieves; six thieves and 3v3 retain authored legacy museums',()=>{
- for(const n of [2,3,4])assert.equal(job(n).arena?.id,'flagship-velmont');
- for(const mode of ['coop','trios'] as const){const g=job(6,mode);assert.deepEqual(g.arena,museumArena(g.layout,6));assert.equal(E.isFlagship(g),false);}
-});
+test('flagship selects only supported two to four thief matches',()=>{for(const n of [2,3,4])assert.equal(job(n).arena?.id,'flagship-velmont');assert.throws(()=>job(5),/full/);});
 test('bay pocket art is equidistant; rematches alternate docks without changing teams or values',()=>{
  const g=job(4,'duos');const before=g.seats.map(s=>s.team),homes=[E.vanFor(g,0),E.vanFor(g,1)],bay=g.loot[0];
  assert.equal(E.distance(bay,homes[0]),E.distance(bay,homes[1]));assert.equal(bay.value,200);

@@ -2,8 +2,8 @@ import {mkdirSync,writeFileSync} from 'node:fs';
 import * as E from '../lib/noise/engine.ts';
 import {routePair} from './arena-routes.ts';
 const dir='docs/playtests/v68';mkdirSync(dir,{recursive:true});const rows=[];
-for(const count of [2,4,6])for(let layout=0;layout<3;layout++){
- let g:E.Game|undefined;for(let seed=1;seed<100;seed++){const candidate=E.create('AUDIT',0,seed);for(let i=0;i<count;i++)E.add(candidate,'Player '+i,''+i);E.configure(candidate,count===6?'trios':'duos');E.setup(candidate);if(candidate.layout===layout){g=candidate;break;}}if(!g)throw Error('Missing map');
+for(const count of [2,4])for(let layout=0;layout<3;layout++){
+ let g:E.Game|undefined;for(let seed=1;seed<100;seed++){const candidate=E.create('AUDIT',0,seed);for(let i=0;i<count;i++)E.add(candidate,'Player '+i,''+i);E.configure(candidate,'duos');E.setup(candidate);if(candidate.layout===layout){g=candidate;break;}}if(!g)throw Error('Missing map');
  const objectives=[...g.loot,{id:'plate',...g.plate,value:0}].map(p=>({id:p.id,value:p.value,x:p.x,y:p.y,routes:[0,1].map(t=>({team:t,length:Math.round(E.routeLength(g!,E.vanFor(g!,t),p)),alternatives:routePair(g!,E.vanFor(g!,t),p).length}))}));
  rows.push({id:g.arena!.id,name:g.arena!.name,players:count,guards:g.guards.length,total:g.lootTotal,objectives,sentryRoutesClear:E.sentryRoutesClear(g)});
  let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 660"><rect width="960" height="660" fill="#112333"/><style>text{font-family:Arial;font-size:14px;fill:#e9d6a9}</style>`;

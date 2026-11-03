@@ -17,7 +17,7 @@ try{
  hostBrowser=await chromium.launch({executablePath:executable,headless:true});
  stage='test';
  const host=await hostBrowser.newPage({baseURL:base});
- await host.goto('/');await host.getByRole('button',{name:/Play with friends/}).click();await host.getByRole('button',{name:/Host a room/}).click();
+ await host.goto('/');await host.getByRole('button',{name:/Start a heist/i}).click();const skip=host.getByRole('button',{name:/Skip/i});if(await skip.isVisible())await skip.click();await host.getByRole('button',{name:/With friends/}).click();await host.getByRole('button',{name:/Host a room/}).click();
  const code=(await host.locator('.crew-code').innerText()).match(/[A-Z0-9]{6}/)[0];
  stage='launch';
  raw=spawn(executable,['--window-size=1280,800','--remote-debugging-address=127.0.0.1','--remote-debugging-port=0','--remote-allow-origins=http://localhost',`--user-data-dir=${profile}`,'--no-first-run','--no-default-browser-check',...(process.env.RAW_CHROMIUM_HEADED==='1'?[]:['--headless=new']),...(process.getuid?.()===0?['--no-sandbox']:[]),'about:blank'],{stdio:'ignore'});
