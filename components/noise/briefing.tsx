@@ -32,6 +32,6 @@ export function HeistBriefing({arena,training,crewMode,duel=false,touch,busy,rea
 
   </div>
    <div className="quick-brief-warning"><Clock/><div><strong>{training?'Take your time. Learn by doing.':'15s Last Call · Board before time runs out.'}</strong><span><RuleEmphasis text={training?'No timer or loot penalties. Each lesson marks your target.':'Left behind outside your dock? Lose 25% of your bank.'}/></span></div></div>
-  <footer className="quick-brief-footer"><button className="quick-more-rules" onClick={onRules}>More rules <span aria-hidden="true">→</span></button><button className="primary" disabled={busy||ready} onClick={onReady}>{ready?'Waiting for the crew…':training?'LET’S PRACTICE →':'I’M IN — LET’S GO →'}</button></footer>
+  <footer className="quick-brief-footer"><button className="quick-more-rules" onClick={onRules}>More rules</button><button className="primary" disabled={busy||ready} onClick={onReady}>{ready?'Waiting for the crew…':training?'LET’S PRACTICE':'I’M IN — LET’S GO'}</button></footer>
  </section>;
 }

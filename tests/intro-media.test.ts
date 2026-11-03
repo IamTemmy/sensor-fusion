@@ -17,3 +17,9 @@ test('listed clips load directly and unlisted formats/orientations are never pro
  Object.defineProperty(globalThis,'document',{configurable:true,value:{createElement:()=>({src:'',canPlayType:()=>true,load(){if(this.src)loaded.push(this.src);},pause(){},removeAttribute(){this.src='';}})}});
  try{const m=new IntroMedia();assert.equal(await m.clip(0,true),'/cinematics/intro-v3/six-shot-01-landscape.mp4');assert.equal(await m.clip(1,true),null);assert.deepEqual(calls,['/cinematics/intro-v3/media.json']);assert.deepEqual(loaded,['/cinematics/intro-v3/six-shot-01-landscape.mp4']);m.close();}finally{globalThis.fetch=original;if(doc)Object.defineProperty(globalThis,'document',doc);else Reflect.deleteProperty(globalThis,'document');}
 });
+test('poster and depth preparation share a single decoded color image',async()=>{
+ const original=Object.getOwnPropertyDescriptor(globalThis,'Image'),loaded:string[]=[],decoded:string[]=[];
+ class FakeImage {decoding='';onload:(()=>void)|null=null;onerror:(()=>void)|null=null;private url='';set src(value:string){this.url=value;if(value){loaded.push(value);queueMicrotask(()=>this.onload?.());}}get src(){return this.url;}async decode(){decoded.push(this.url);}}
+ Object.defineProperty(globalThis,'Image',{configurable:true,value:FakeImage});
+ try{const m=new IntroMedia();const [poster,depth]=await Promise.all([m.loadShot(0,false,false),m.loadShot(0,false,true)]);assert.equal(poster.color,depth.color);assert.equal(loaded.length,2);assert.equal(decoded.length,2);await m.loadShot(0,false,true);assert.equal(loaded.length,2);m.close();}finally{if(original)Object.defineProperty(globalThis,'Image',original);else Reflect.deleteProperty(globalThis,'Image');}
+});

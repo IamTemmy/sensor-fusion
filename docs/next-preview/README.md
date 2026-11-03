@@ -1,3 +1,9 @@
+## Navigation and loading polish — 2026-11-03
+
+Removed decorative arrows from menu, briefing and team-move buttons. Both menu backgrounds remain mounted so returning does not swap image sources. Intro poster/depth loading shares one decoded color image; scene renderers are keyed by shot and orientation to avoid drawing a previous shot during a cut.
+
+Validation: 378/378 unit tests passed; pnpm typecheck, isolation check and framework production build passed. Browser checks covered homepage/hideout, guide/Jackpot tab, intro replay/Skip, practice briefing/start/Leave and friends setup. Warm local intro replay reported first frame 76 ms (calm fallback in this browser; not a cold-network or audio-quality benchmark). Local room creation was blocked by missing rooms table in the local D1 database. No gameplay, networking, audio or secret changes; CPU gate not rerun under the standing preview waiver.
+
 ## Arrival and hideout split — 2026-11-02
 
 Presentation only. Original museum-getaway art is restored on the arrival screen with the existing mask-O wordmark, tagline and one Start a heist button. Setup moves into the hideout artwork with compact crew/job/difficulty controls. Friends retains the existing host/join flow and explains that job selection happens in the lobby. Watch intro, Learn to play and Practice are available in the hideout. Existing first-use intro, invite handling and game callbacks are retained.

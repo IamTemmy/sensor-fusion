@@ -2,6 +2,7 @@ import {INTRO_ROOT,introAsset,introClip} from '../../lib/noise/intro-story.ts';
 export type ShotImages={color:HTMLImageElement;depth:HTMLImageElement|null};
 export class IntroMedia {
   private controller=new AbortController();
+  private imageFiles=new Map<string,Promise<HTMLImageElement>>();
   private images=new Map<string,Promise<ShotImages>>();
   private clips=new Map<string,Promise<string|null>>();
   private voices=new Map<number,Promise<ArrayBuffer|null>>();
@@ -11,15 +12,17 @@ export class IntroMedia {
       .then(r=>r.ok?r.json():{files:[]}).then(data=>{const files=data&&typeof data==='object'&&'files' in data?data.files:[];return new Set<string>(Array.isArray(files)?files.filter((s:unknown)=>typeof s==='string'&&/^(vo-0[1-6]\.(mp3|wav)|six-shot-0[1-6]-(landscape|portrait)\.(mp4|webm))$/.test(s)):[]);}).catch(()=>new Set<string>());
   }
   private videos:HTMLVideoElement[]=[];
-  close(){this.controller.abort();for(const video of this.videos){video.pause();video.removeAttribute('src');video.load();}this.videos=[];this.images.clear();this.clips.clear();this.voices.clear();}
+  close(){this.controller.abort();for(const video of this.videos){video.pause();video.removeAttribute('src');video.load();}this.videos=[];this.images.clear();this.imageFiles.clear();this.clips.clear();this.voices.clear();}
   private image(src:string):Promise<HTMLImageElement> {
-    return new Promise((resolve,reject)=>{
+    const cached=this.imageFiles.get(src);if(cached)return cached;
+    const pending=new Promise<HTMLImageElement>((resolve,reject)=>{
       const image=new Image();image.decoding='async';
       const abort=()=>{image.src='';reject(new Error('Intro closed'));};
       this.controller.signal.addEventListener('abort',abort,{once:true});
       const done=()=>this.controller.signal.removeEventListener('abort',abort);
       image.onload=()=>{void image.decode().catch(()=>{}).then(()=>{done();resolve(image);});};image.onerror=()=>{done();reject(new Error('Missing intro image'));};image.src=src;
     });
+    this.imageFiles.set(src,pending);return pending;
   }
   loadShot(shot:number,portrait:boolean,depth=true) {
     const key=`${shot}/${portrait}/${depth}`;

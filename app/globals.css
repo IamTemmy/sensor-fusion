@@ -1239,3 +1239,7 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app .arrival-flow .job-menu-heading h2{font-size:22px}
  .noise-app .arrival-flow .plan-label{margin-top:10px}
 }
+
+/* Keep decoded menu artwork mounted across arrival / hideout transitions. */
+.noise-app .arrival-flow .hero-paint .menu-art{position:absolute;inset:0;opacity:0;pointer-events:none}
+.noise-app .arrival-flow .hero-paint .menu-art.active{opacity:1}
