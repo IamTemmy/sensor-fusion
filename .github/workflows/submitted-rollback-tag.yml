@@ -1,0 +1,35 @@
+name: Preserve submitted rollback tag
+on:
+  push:
+    branches:
+      - release/submitted-rollback-tag
+permissions:
+  contents: write
+jobs:
+  tag:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure the submitted commit has its rollback tag
+        env:
+          GH_TOKEN: ${{ github.token }}
+          GH_REPOSITORY: ${{ github.repository }}
+        run: |
+          python3 - <<'PY'
+          import os, json, urllib.request, urllib.error
+          repo=os.environ['GH_REPOSITORY']
+          token=os.environ['GH_TOKEN']
+          base='https://api.github.com/repos/'+repo+'/git/'
+          headers={'Authorization':'Bearer '+token,'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'}
+          tag='submitted-2026-10-30'
+          sha='ce1ce1f07f462d010dbfd7ae1fd0cd8a41267b03'
+          try:
+              with urllib.request.urlopen(urllib.request.Request(base+'ref/tags/'+tag,headers=headers)) as r:
+                  existing=json.load(r)['object']['sha']
+              assert existing==sha, 'Existing rollback tag points elsewhere; refusing to change it.'
+          except urllib.error.HTTPError as error:
+              if error.code!=404: raise
+              data=json.dumps({'ref':'refs/tags/'+tag,'sha':sha}).encode()
+              with urllib.request.urlopen(urllib.request.Request(base+'refs',data=data,headers=headers,method='POST')) as r:
+                  assert json.load(r)['object']['sha']==sha
+          print('Rollback tag verified: '+tag+' -> '+sha)
+          PY
