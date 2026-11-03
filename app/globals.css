@@ -1351,3 +1351,22 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .lobby-actions{flex-wrap:wrap}
 .noise-app .start-reason{flex-basis:100%;margin:0;color:#ffe4a2;font-size:13px;line-height:1.4;text-align:right}
 .noise-app .crew-folio .mode-picker{grid-template-columns:repeat(2,minmax(0,1fr))}
+
+/* Friends lobby: one invitation action and readable setup at every width. */
+.folio-invite{display:flex;flex-wrap:wrap;gap:10px;align-items:center}.folio-invite .crew-code{flex:0 0 auto;white-space:nowrap;font-size:14px;letter-spacing:0;padding:10px 12px;min-width:0}.crew-code strong{letter-spacing:.12em;margin-left:6px}.lobby-setup{padding:16px 0;border-block:1px solid #51736a55}.lobby-setup .mode-picker{display:flex;gap:8px;margin-bottom:14px}.lobby-setup .mode-picker button{flex:1}.lobby-setup .mode-picker button[aria-pressed=true]{background:#b9dbc8;color:#112b29}.rival-helper-toggle{display:flex;gap:10px;align-items:center;padding:12px 0}.team-seat div.seat-move{display:flex;align-items:center;gap:12px;width:100%;padding:12px;text-align:left}.lobby-setup p{margin:8px 0}.folio-heading{flex-wrap:wrap}.folio-invite .invite-button{min-height:42px}.lobby-setup input{width:20px;height:20px}@media(max-width:600px){.folio-invite{width:100%}.folio-heading .folio-invite .crew-code{font-size:13px}.folio-invite .invite-button{flex:1}.crew-folio .folio-job{display:block}.lobby-setup{padding:12px 0}}
+.noise-app .planning-room .lobby.crew-folio{grid-template-areas:"chrome chrome" "title title" "setup setup" "job roster" "foot foot";grid-template-rows:auto auto auto minmax(230px,auto) auto}
+.noise-app .planning-room .crew-folio>.lobby-setup{grid-area:setup;width:100%;box-sizing:border-box;padding:0 0 12px;border-top:0;display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px}
+.noise-app .crew-folio .lobby-setup .mode-picker{margin:0;min-width:240px;flex:1}.noise-app .crew-folio .lobby-setup .difficulty-pills{margin:0}.noise-app .crew-folio .lobby-setup h4{font-size:13px;margin:0}
+.noise-app .planning-room .crew-folio>.folio-job{height:auto;display:block}.noise-app .planning-room .crew-folio>.folio-roster{height:auto;grid-template-rows:22px auto;gap:10px}.noise-app .crew-folio .team-board{height:auto}.noise-app .crew-folio .team-column{height:auto;min-height:230px;grid-template-rows:24px 1fr auto}.noise-app .crew-folio .folio-invite .crew-code{flex:0 0 auto;min-width:0;width:auto;white-space:nowrap}
+@media(max-width:800px){.noise-app .planning-room .crew-folio>.lobby-setup{order:0;gap:8px;padding:0 0 10px}.noise-app .crew-folio .lobby-setup .mode-picker{flex-basis:100%;min-width:0}.noise-app .crew-folio .team-column{min-height:140px}.noise-app .crew-folio .folio-invite{flex-wrap:wrap;gap:5px}.noise-app .crew-folio .folio-invite .crew-code{padding:6px 8px;font-size:11px}.noise-app .crew-folio .folio-invite .invite-button{font-size:10px;flex:1;min-width:120px}.noise-app .crew-folio .rival-helper-toggle{padding:0;font:12px/1.4 Arial,sans-serif}}
+.noise-app .crew-folio .lobby-setup .mode-picker button[aria-pressed=true]{background:#b9dbc8;color:#112b29;box-shadow:inset 0 0 0 1px #d7f4e5}
+@media(max-width:800px){
+ .noise-app .planning-room .crew-folio .folio-invite .crew-code{flex:0 0 auto;min-width:0;width:auto;gap:4px;padding:6px;font-size:10px;letter-spacing:0}.noise-app .crew-folio .crew-code strong{margin-left:0;letter-spacing:.06em;flex:none}
+ .noise-app .planning-room .crew-folio>.folio-roster{display:block;height:auto;width:100%}
+ .noise-app .crew-folio .team-board{height:auto;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:auto;align-items:stretch}
+ .noise-app .crew-folio .team-column{display:flex;flex-direction:column;height:auto;min-height:180px;gap:8px;padding:8px}
+ .noise-app .crew-folio .team-seats{height:auto;min-height:0;overflow:visible;flex:1}
+ .noise-app .crew-folio .team-seat{flex-shrink:0}.noise-app .crew-folio .team-seat .seat-move{padding:5px;gap:5px;min-width:0;width:100%}.noise-app .crew-folio .seat-move b{overflow-wrap:anywhere}.noise-app .crew-folio .seat-move em{font-size:9px}
+ .noise-app .crew-folio .single-crew .team-seats{grid-template-columns:repeat(2,minmax(0,1fr))}.noise-app .crew-folio .team-column h3{font-size:15px}
+ .noise-app .planning-room .lobby.crew-folio>.lobby-actions{position:static}
+}

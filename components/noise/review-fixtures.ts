@@ -1,8 +1,16 @@
 import {museumArena} from '../../lib/noise/arenas';
 import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
-import {vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
+import {normalizeCrew,vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('friends-lobby-')){
+  const g=create('MKYR5X',0,42);g.friendsLobby=true;
+  const n=Number(state.split('-')[2])||2;for(let i=0;i<n;i++)add(g,['Ghost','Raven','Fox','Nyx'][i],'human'+i);
+  configure(g,state.includes('rivals')?'duos':'coop');g.rivalHelpers=state.includes('helpers');normalizeCrew(g);
+  if(state.includes('guest'))g.host=g.seats[1].id;
+  return g;
+ }
+
  if(state==='next-context-tip'||state==='next-error'||state==='next-error-message'){const g=reviewFixture('flagship-start');g.now=20000;g.guards=[];Object.assign(g.seats[0],{...vanFor(g,0),hand:null});return g;}
  if(state==='next-crew-departed'){
   const g=reviewFixture('flagship-start');g.now=40000;

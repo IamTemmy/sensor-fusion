@@ -1,0 +1,2 @@
+import {useEffect} from 'react';
+export function useTypePair(){useEffect(()=>{if(process.env.NODE_ENV!=='development'&&location.hostname!=='velmont-next-preview.iamtemmy.chatgpt.site')return;const pair=new URLSearchParams(location.search).get('typePair');if(!pair||!['A','B','C'].includes(pair))return;document.body.dataset.typePair=pair;const link=document.createElement('link');link.rel='stylesheet';link.href='/fonts/type-review.css';document.head.appendChild(link);return()=>{delete document.body.dataset.typePair;link.remove();};},[]);}
