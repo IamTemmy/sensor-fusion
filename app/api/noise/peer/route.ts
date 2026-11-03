@@ -1,4 +1,5 @@
-import {normalizeCrew,removeLobbySeat,advance} from '../../../../lib/noise/engine';
+import {lobbyDevice} from '../../../../lib/noise/lobby-device';
+import {normalizeCrew,removeLobbySeat,advance,REMOVED_FROM_CREW} from '../../../../lib/noise/engine';
 import {RelayEncoder} from '../../../../lib/noise/compact-relay';
 const relayEncoder=new RelayEncoder();
 import {env} from 'cloudflare:workers';
@@ -8,13 +9,13 @@ import {sessionIce} from '../../../../lib/noise/turn-service';
 import {hostLeaseExpired} from '../../../../lib/noise/peer-policy';
 export const dynamic='force-dynamic';
 const reply=(x:unknown,status=200)=>Response.json(x,{status,headers:{'Cache-Control':'no-store'}});
-export async function POST(req:Request){try{
+export async function POST(req:Request){const device=lobbyDevice(req);const reply=(data:unknown,status=200)=>Response.json(data,{status,headers:{'Cache-Control':'no-store',...(device.cookie?{'Set-Cookie':device.cookie}:{})}});try{
  if(req.headers.get('origin')&&req.headers.get('origin')!==new URL(req.url).origin)return reply({error:'Origin rejected'},403);
  const raw=await req.text();if(raw.length>350000)return reply({error:'Message too large'},413);const a=JSON.parse(raw),now=Date.now();
  if(!/^[A-Z2-9]{6}$/.test(a.code||''))return reply({error:'Invalid room'},400);
  for(let retry=0;retry<8;retry++){
  const row=await env.DB!.prepare('SELECT state,revision,expires FROM rooms WHERE code=?').bind(a.code).first<{state:string;revision:number;expires:number}>();if(!row||row.expires<now)return reply({error:'Crew expired'},404);
- let g=JSON.parse(row.state) as PeerGame;const original=JSON.stringify(g);const p=g.peer,s=g.seats.find(s=>!s.bot&&s.token===a.token);if(!p||!s)return reply({error:'Seat unavailable'},401);const host=s.id===g.host;if(g.phase==='lobby'&&now-s.lastSeen>=5000)s.lastSeen=now;
+ let g=JSON.parse(row.state) as PeerGame;const original=JSON.stringify(g);const p=g.peer,s=g.seats.find(s=>!s.bot&&s.token===a.token);if(!p||!s)return reply({error:g.lobbyExitTokens?.[a.token]==='removed'?REMOVED_FROM_CREW:'Seat unavailable',departureReason:g.lobbyExitTokens?.[a.token]||'unknown'},g.lobbyExitTokens?.[a.token]==='removed'?403:401);if(g.phase==='lobby'&&!s.deviceKey)s.deviceKey=device.key;const host=s.id===g.host;if(g.phase==='lobby'&&now-s.lastSeen>=5000)s.lastSeen=now;
  if(p.closed||hostLeaseExpired(now,p.heartbeat,!!(g as PeerGame&{hostAway?:boolean}).hostAway)){p.closed=true;endHost(g);}
  if(host&&!p.closed){
   if(typeof a.lease!=='string'||a.lease.length>80)return reply({error:'Host lease required'},400);

@@ -1,8 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {rejoinLobby,seatUnavailable} from '../lib/noise/lobby-recovery.ts';
+import {rejoinLobby,seatUnavailable,shouldAutoRejoin} from '../lib/noise/lobby-recovery.ts';
 import {PeerRoom} from '../lib/noise/peer-client.ts';
-import {create,add,command,view} from '../lib/noise/engine.ts';
+import {create,add,command,advance,view} from '../lib/noise/engine.ts';
 import {HostAuthority} from '../lib/noise/peer-protocol.ts';
 (globalThis as any).document={removeEventListener:()=>{}};
 (globalThis as any).window={removeEventListener:()=>{}};
@@ -17,3 +17,7 @@ test('seat unavailability is distinguished from temporary network failures',()=>
 test('bfcache backgrounding does not explicitly leave the crew',()=>{const {p}=guest();(p as any).pageHide({persisted:true});assert.equal(p.closed,false);});
 
 test('authenticated direct ping and acknowledgments refresh lobby presence; unauthenticated traffic does not',()=>{const {g,s,p}=guest();p.host=true;p.authority=new HostAuthority(g);const c:any={label:'inputs',readyState:'closed'};const link:any={pc:{},authenticated:false};(p as any).bind(link,s.id,c);const clock=Date.now;Date.now=()=>45000;try{c.onmessage({data:JSON.stringify({kind:'ping',at:1})});assert.equal(p.authority.game.seats.find(t=>t.id===s.id)!.lastSeen,1000);link.authenticated=true;for(const kind of ['ping','delta-ack','arena']){p.authority.game.seats.find(t=>t.id===s.id)!.lastSeen=1000;c.onmessage({data:JSON.stringify({kind,at:1})});assert.equal(p.authority.game.seats.find(t=>t.id===s.id)!.lastSeen,45000);}}finally{Date.now=clock;}});
+
+test('only stale departures trigger automatic rejoin; host removal and Leave never do',async()=>{assert.equal(shouldAutoRejoin('stale'),true);for(const reason of ['removed','left','unknown'] as const)assert.equal(shouldAutoRejoin(reason),false);let joins=0;await assert.rejects(()=>rejoinLobby({code:'MKYR5X',name:'Raven',reason:'removed'},async()=>{joins++;}),/host removed/);assert.equal(joins,0);});
+test('removed snapshots and explicit notices carry the removal reason to the client',()=>{const {g,s,p}=guest();let reason='';p.options.onSeatLost=r=>{reason=r;};command(g,g.host,{type:'remove',seatId:s.id});(p as any).accept(packet(g,s.id),0);assert.equal(reason,'removed');assert.equal(p.closed,true);});
+test('a stale-pruned guest automatically gets a fresh seat with the same codename',async()=>{const {g,s,p}=guest();let rejoined:Promise<any>|undefined;p.options.onSeatLost=reason=>{if(shouldAutoRejoin(reason))rejoined=rejoinLobby({code:g.code,name:s.name,reason,previousToken:s.token},async payload=>add(g,String(payload.name),'fresh-stale-token'));};g.seats.find(t=>t.id===g.host)!.lastSeen=71000;advance(g,71000);(p as any).accept(packet(g,s.id),0);assert.ok(rejoined);const fresh=await rejoined;assert.equal(fresh.name,s.name);assert.notEqual(fresh.id,s.id);assert.equal(g.lobbyExitReasons?.[s.id],'stale');assert.equal(g.seats.filter(t=>!t.bot).length,2);});
