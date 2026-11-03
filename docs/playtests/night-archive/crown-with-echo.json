@@ -340,7 +340,7 @@
     "seed": 1003,
     "echoReachedPlate": true,
     "pickupSeconds": 59.8,
-    "bankSeconds": null,
+    "bankSeconds": 73.72,
     "caught": 1
   },
   {
@@ -380,8 +380,8 @@
     "seed": 1008,
     "echoReachedPlate": true,
     "pickupSeconds": 39.72,
-    "bankSeconds": 49.4,
-    "caught": 2
+    "bankSeconds": 63.24,
+    "caught": 3
   },
   {
     "level": "pro",
@@ -412,8 +412,8 @@
     "seed": 1012,
     "echoReachedPlate": true,
     "pickupSeconds": 47.76,
-    "bankSeconds": 56.8,
-    "caught": 1
+    "bankSeconds": null,
+    "caught": 4
   },
   {
     "level": "pro",
@@ -436,8 +436,8 @@
     "seed": 1015,
     "echoReachedPlate": true,
     "pickupSeconds": 39.96,
-    "bankSeconds": 48.96,
-    "caught": 2
+    "bankSeconds": 63.8,
+    "caught": 3
   },
   {
     "level": "pro",

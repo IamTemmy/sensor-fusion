@@ -1,143 +1,25 @@
 {
-  "sourceHash": "4aee6aefc62439b589f8d2704db90a408a6b34055f12d805a103ecf3c2b0d123",
-  "at": "2026-10-30T17:11:03.376Z",
+  "sourceHash": "cbe19d08a2a8825cf3acb88c42692a58ae979f370321e1f7968c16f3a0e8450c",
+  "at": "2026-11-03T04:32:08.037Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
     "test": {
-      "passed": true,
-      "tests": 309
+      "passed": true
     },
     "typecheck": {
       "passed": true
-    },
-    "compactTransport": {
-      "passed": true,
-      "rows": [
-        {
-          "museum": "Velmont",
-          "humans": 3,
-          "echo": 1,
-          "ackDelay": 200,
-          "loss": "25% of unreliable frames",
-          "median": 529,
-          "max": 2595,
-          "oldMedian": 9406,
-          "threeGuestUploadBytesPerSec": 62705,
-          "encoderP95": 12.200144999998884,
-          "reliableFrames": 250,
-          "decoded": 1409
-        },
-        {
-          "museum": "Velmont",
-          "humans": 3,
-          "echo": 1,
-          "ackDelay": 400,
-          "loss": "25% of unreliable frames",
-          "median": 600,
-          "max": 2659,
-          "oldMedian": 9406,
-          "threeGuestUploadBytesPerSec": 72965,
-          "encoderP95": 8.252707999999984,
-          "reliableFrames": 464,
-          "decoded": 1461
-        },
-        {
-          "museum": "Velmont",
-          "humans": 4,
-          "echo": 0,
-          "ackDelay": 200,
-          "loss": "25% of unreliable frames",
-          "median": 576,
-          "max": 2093,
-          "oldMedian": 8421,
-          "threeGuestUploadBytesPerSec": 57046,
-          "encoderP95": 5.502178000002459,
-          "reliableFrames": 106,
-          "decoded": 1374
-        },
-        {
-          "museum": "Velmont",
-          "humans": 4,
-          "echo": 0,
-          "ackDelay": 400,
-          "loss": "25% of unreliable frames",
-          "median": 619,
-          "max": 2119,
-          "oldMedian": 8421,
-          "threeGuestUploadBytesPerSec": 61719,
-          "encoderP95": 3.7854169999991427,
-          "reliableFrames": 210,
-          "decoded": 1397
-        },
-        {
-          "museum": "Archive",
-          "humans": 3,
-          "echo": 1,
-          "ackDelay": 200,
-          "loss": "25% of unreliable frames",
-          "median": 550,
-          "max": 2242,
-          "oldMedian": 9189,
-          "threeGuestUploadBytesPerSec": 59294,
-          "encoderP95": 2.924879999998666,
-          "reliableFrames": 196,
-          "decoded": 1397
-        },
-        {
-          "museum": "Archive",
-          "humans": 3,
-          "echo": 1,
-          "ackDelay": 400,
-          "loss": "25% of unreliable frames",
-          "median": 606,
-          "max": 2293,
-          "oldMedian": 9189,
-          "threeGuestUploadBytesPerSec": 67523,
-          "encoderP95": 3.08572400000412,
-          "reliableFrames": 358,
-          "decoded": 1434
-        },
-        {
-          "museum": "Archive",
-          "humans": 4,
-          "echo": 0,
-          "ackDelay": 200,
-          "loss": "25% of unreliable frames",
-          "median": 549,
-          "max": 1669,
-          "oldMedian": 8158,
-          "threeGuestUploadBytesPerSec": 52613,
-          "encoderP95": 5.5065859999958775,
-          "reliableFrames": 77,
-          "decoded": 1367
-        },
-        {
-          "museum": "Archive",
-          "humans": 4,
-          "echo": 0,
-          "ackDelay": 400,
-          "loss": "25% of unreliable frames",
-          "median": 579,
-          "max": 1679,
-          "oldMedian": 8158,
-          "threeGuestUploadBytesPerSec": 55848,
-          "encoderP95": 2.927662000001874,
-          "reliableFrames": 149,
-          "decoded": 1382
-        }
-      ]
     }
   },
   "museums": {
     "flagship-velmont": {
       "idle": {
-        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 106,
@@ -146,7 +28,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -229,12 +111,12 @@
           {
             "difficulty": "normal",
             "n": 20,
-            "banks": 19
+            "banks": 18
           },
           {
             "difficulty": "pro",
             "n": 20,
-            "banks": 11
+            "banks": 16
           }
         ],
         "method": "Human holds plate, then supports Echo with alarm capture and dropped-loot recovery. Crew banking after Echo pickup, including legitimate passes.",
@@ -254,28 +136,28 @@
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.9
+            "rate": 0.95
           },
           {
             "mode": "duos",
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.9
+            "rate": 0.8
           },
           {
             "mode": "duos",
             "difficulty": "rookie",
             "swap": 1,
             "n": 20,
-            "rate": 0.85
+            "rate": 0.95
           },
           {
             "mode": "coop",
             "difficulty": "normal",
             "swap": 0,
             "n": 20,
-            "rate": 0.5
+            "rate": 0.35
           },
           {
             "mode": "duos",
@@ -289,46 +171,46 @@
             "difficulty": "normal",
             "swap": 1,
             "n": 20,
-            "rate": 0.85
+            "rate": 0.7
           },
           {
             "mode": "coop",
             "difficulty": "pro",
             "swap": 0,
             "n": 20,
-            "rate": 0.05
+            "rate": 0.1
           },
           {
             "mode": "duos",
             "difficulty": "pro",
             "swap": 0,
             "n": 20,
-            "rate": 0.45
+            "rate": 0.6
           },
           {
             "mode": "duos",
             "difficulty": "pro",
             "swap": 1,
             "n": 20,
-            "rate": 0.6
+            "rate": 0.65
           }
         ]
       },
       "cpu": {
-        "p95": 6.430156000000352,
-        "max": 31.36262799999986,
+        "p95": 6.365842000000157,
+        "max": 20.898956,
         "passed": true
       }
     },
     "night-archive": {
       "idle": {
-        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 30,
         "stalls": 0,
         "passed": true
       },
       "rush": {
-        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 120,
         "earlyPickups": 0,
         "earlyBanks": 100,
@@ -337,7 +219,7 @@
         "passed": true
       },
       "patrol": {
-        "engineAndGeometryHash": "ad1b0a6a7bad089fb4294ad7f053a0d4eef0ed7cc503a535bd53f88ab22f3811",
+        "engineAndGeometryHash": "d5d34048274188c7263e644fb3fc58d5930d461ebe58075714156b30afaa4435",
         "matches": 9,
         "stalls": 0,
         "archivePasses": 9,
@@ -420,12 +302,12 @@
           {
             "difficulty": "normal",
             "n": 20,
-            "banks": 20
+            "banks": 18
           },
           {
             "difficulty": "pro",
             "n": 20,
-            "banks": 12
+            "banks": 14
           }
         ],
         "method": "Human holds plate, then supports Echo with alarm capture and dropped-loot recovery. Crew banking after Echo pickup, including legitimate passes.",
@@ -445,31 +327,24 @@
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.8
+            "rate": 0.9
           },
           {
             "mode": "duos",
             "difficulty": "rookie",
             "swap": 0,
             "n": 20,
-            "rate": 0.85
+            "rate": 0.9
           },
           {
             "mode": "duos",
             "difficulty": "rookie",
             "swap": 1,
             "n": 20,
-            "rate": 1
+            "rate": 0.95
           },
           {
             "mode": "coop",
-            "difficulty": "normal",
-            "swap": 0,
-            "n": 20,
-            "rate": 0.2
-          },
-          {
-            "mode": "duos",
             "difficulty": "normal",
             "swap": 0,
             "n": 20,
@@ -478,16 +353,23 @@
           {
             "mode": "duos",
             "difficulty": "normal",
+            "swap": 0,
+            "n": 20,
+            "rate": 0.45
+          },
+          {
+            "mode": "duos",
+            "difficulty": "normal",
             "swap": 1,
             "n": 20,
-            "rate": 0.55
+            "rate": 0.65
           },
           {
             "mode": "coop",
             "difficulty": "pro",
             "swap": 0,
             "n": 20,
-            "rate": 0.25
+            "rate": 0.15
           },
           {
             "mode": "duos",
@@ -501,75 +383,17 @@
             "difficulty": "pro",
             "swap": 1,
             "n": 20,
-            "rate": 0.3
+            "rate": 0.35
           }
         ]
       },
       "cpu": {
-        "p95": 7.099224999999933,
-        "max": 32.59265599999998,
-        "passed": true,
-        "rechecked": true
+        "p95": 6.800058000000718,
+        "max": 24.814158999999563,
+        "passed": true
       }
     }
   },
   "failed": [],
-  "passed": true,
-  "rechecks": [
-    {
-      "gate": "night-archive/cpu",
-      "initial": {
-        "p95": 8.277542000001631,
-        "max": 46.669013999999976,
-        "passed": false
-      },
-      "reason": "Two serial repetitions of all six identical CPU fixtures after the initial threshold miss; no engine or geometry changes. The original timing variation is not attributed to a proven cause.",
-      "samples": [
-        {
-          "p95": 6.77499700000044,
-          "max": 26.023325
-        },
-        {
-          "p95": 7.099224999999933,
-          "max": 32.59265599999998
-        }
-      ]
-    }
-  ],
-  "simulationSourceHash": "0e26339cf6e8e6210ea85e5170b8696d2c46a358fb7c7d3356a1a8effb34412a",
-  "postSimulationValidation": {
-    "files": [
-      "lib/noise/practice.ts",
-      "lib/noise/input-copy.ts"
-    ],
-    "change": "Only tutorial instruction text and its touch translation, verified by reconstructing the exact original release hash.",
-    "tests": 303,
-    "typecheck": "passed"
-  },
-  "transportValidation": {
-    "base": "f03eb6eb838c1106c246293648a76fbaaa58def5",
-    "baseCertificateHash": "9687c1ed01b25662983e86a4aa1dcfb1cfcf47fa040ba91f9358b6b788973400",
-    "at": "2026-10-30T20:24:40.441Z",
-    "sourceHash": "5d5c570b5be0f1e52295e0d61c4e5a3c820606193bc7a8c5ef184023502ab068",
-    "tests": 309,
-    "packetGate": true,
-    "method": "Prior gameplay results retained: every preexisting lib/noise file except peer-client.ts is byte-identical. Full replay attempt interrupted by execution environment; not represented as a completed rerun. New transport, packet-loss, 200/400ms prediction and browser fallback checks recorded separately.",
-    "changes": {
-      "app/page.tsx": "6758b1d8603ea8655c6f9c6b166844eb214ec5076f27574cf1e17536841c8024",
-      "app/api/noise/peer/route.ts": "815ba1e3786f15a2decb5170bb64832fe0dcc5d9edf59e0d03c3439cccec02ad",
-      "lib/noise/peer-client.ts": "9b8fc8b782ff381c645d7fdd0fe2655d72ed701bc40c123b84ac3e71f1398369",
-      "lib/noise/compact-wire.ts": "a40a69a698ee75af4b911f2b4d57b45be4a19aa1c3f4ad588834c781674112c4",
-      "lib/noise/compact-relay.ts": "a3acbd6f1881b66eb7faaaf874fd3528374f4e98c2ad6cf038bf541405bf4966",
-      "scripts/verify-compact-network.ts": "c4ae7e2a99a3a840b848bb8952f2dc54907bf87a148ace4c57e4bc5bd04ba9da",
-      "tests/compact-wire.test.ts": "2b05723adc57e39dd9c2daa56ed3070bc9f0ec2281bdcdd30e83f8bb7efeda99"
-    }
-  },
-  "presentationValidation": {
-    "base": "878586c81c446029a56e0c31e6196fde5dd0b7d2",
-    "baseCertificateHash": "5d5c570b5be0f1e52295e0d61c4e5a3c820606193bc7a8c5ef184023502ab068",
-    "at": "2026-10-30T21:24:53.487Z",
-    "typecheck": true,
-    "desktopAndPhoneReviewed": true,
-    "method": "Menu artwork only. All lib/hooks/scripts/tests/API files byte-identical. Page changes restricted to four decorative card images and their import. Prior gameplay and transport results retained, not rerun."
-  }
+  "passed": true
 }

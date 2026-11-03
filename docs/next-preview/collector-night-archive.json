@@ -1,0 +1,168 @@
+{
+  "museum": "night-archive",
+  "timer": 90,
+  "policy": "route-budget-v2",
+  "method": "Ordinary human inputs and shake/grab/board commands, 8s return margin, round-trip feasibility, botRoute and guardSees avoidance. Echo and engine unchanged. Full map knowledge; not a human skill benchmark.",
+  "rows": [
+    {
+      "level": "normal",
+      "seed": 1001,
+      "event": "vault",
+      "stars": 0,
+      "bank": 2050,
+      "humanEscaped": true,
+      "catches": 3,
+      "finishSeconds": 90,
+      "humanEscapeSeconds": 80.08,
+      "complete": null,
+      "escaped": [
+        true,
+        false
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1002,
+      "event": "curator",
+      "stars": 3,
+      "bank": 4300,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 70.8,
+      "humanEscapeSeconds": 70.48,
+      "complete": 70.48,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1003,
+      "event": "shift",
+      "stars": 3,
+      "bank": 4300,
+      "humanEscaped": true,
+      "catches": 5,
+      "finishSeconds": 78.52,
+      "humanEscapeSeconds": 78.48,
+      "complete": 75.8,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1004,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 3800,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 85.92,
+      "humanEscapeSeconds": 76.8,
+      "complete": null,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1005,
+      "event": "vault",
+      "stars": 3,
+      "bank": 3800,
+      "humanEscaped": true,
+      "catches": 3,
+      "finishSeconds": 72.6,
+      "humanEscapeSeconds": 70.92,
+      "complete": null,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1006,
+      "event": "curator",
+      "stars": 1,
+      "bank": 2600,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 81.92,
+      "humanEscapeSeconds": 81.88,
+      "complete": null,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1007,
+      "event": "blackout",
+      "stars": 3,
+      "bank": 3800,
+      "humanEscaped": true,
+      "catches": 5,
+      "finishSeconds": 80.16,
+      "humanEscapeSeconds": 73.96,
+      "complete": null,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1008,
+      "event": "vault",
+      "stars": 3,
+      "bank": 4300,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 77.76,
+      "humanEscapeSeconds": 77.72,
+      "complete": 77.72,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1009,
+      "event": "curator",
+      "stars": 0,
+      "bank": 1500,
+      "humanEscaped": true,
+      "catches": 5,
+      "finishSeconds": 80.48,
+      "humanEscapeSeconds": 80.44,
+      "complete": null,
+      "escaped": [
+        true,
+        true
+      ]
+    },
+    {
+      "level": "normal",
+      "seed": 1010,
+      "event": "shift",
+      "stars": 3,
+      "bank": 4300,
+      "humanEscaped": true,
+      "catches": 2,
+      "finishSeconds": 70.04,
+      "humanEscapeSeconds": 65.64,
+      "complete": 70.04,
+      "escaped": [
+        true,
+        true
+      ]
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "voice": "Gerard - Relaxed, Conversational",
+  "model": "eleven_v4",
+  "source": "ElevenLabs connected account, user-authorized generation",
+  "files": [
+    {
+      "file": "vo-01.mp3",
+      "bytes": 84878,
+      "duration_seconds": 4.205714
+    },
+    {
+      "file": "vo-02.mp3",
+      "bytes": 66906,
+      "duration_seconds": 3.082449
+    },
+    {
+      "file": "vo-03.mp3",
+      "bytes": 81116,
+      "duration_seconds": 3.970612
+    },
+    {
+      "file": "vo-04.mp3",
+      "bytes": 61890,
+      "duration_seconds": 2.76898
+    },
+    {
+      "file": "vo-05.mp3",
+      "bytes": 92401,
+      "duration_seconds": 4.675918
+    },
+    {
+      "file": "vo-06.mp3",
+      "bytes": 89893,
+      "duration_seconds": 4.519184
+    }
+  ]
+}

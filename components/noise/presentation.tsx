@@ -26,9 +26,9 @@ const rules:Record<string,string[]>={
  'Caught? You’re tied up. A teammate unties you fast, or you wriggle free slowly.'],
  'Getaway':[
  'Art banks the moment you carry it into your dock.',
- 'Press R in your dock to board the van. R again uses Hop out before Last Call.',
+ 'Press R in your dock to board. Your van leaves when your whole crew is aboard. Before that, R uses Hop out until Last Call.',
  'Left behind outside your dock when the van leaves? You lose a quarter of your money.',
- 'Bank everything and Last Call starts: 15 seconds to board.'],
+ 'Bank everything and Last Call starts: 15 seconds to board.', 'Small security-door markers show guard entry points, not player exits.', 'Co-op stars: reach the haul goal and escape; bank 65% for two stars or 80% for three, with your whole crew escaping. Targets round up to the next $100. In the two museums, three stars needs the Crown: the rest of the collection is only $3,100, below the $3,500 target.', 'Rival stars: bank loot and escape; win outright with your whole crew for two; also bank 60% of the museum collection for three. Without the Crown, $2,600 means banking nearly all the remaining $3,100; rivals can bank at most $500 of that collection. Rivals keep playing after your van leaves.'],
  'Jackpot':[
  'The plate is a floor tile. Stand on it to keep the Crown vault open; step off and it locks again until someone grabs the Crown. In 1v1, stepping on it after 1:00 instead unlocks it permanently.',
  'The Crown unlocks at 1:00. Carry it at normal art-carrying speed; a teammate can take its alarm. Grabbing it opens the staff exit.',

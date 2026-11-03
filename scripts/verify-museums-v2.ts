@@ -3,10 +3,10 @@ import {museumArena} from '../lib/noise/arenas.ts';
 import {writeFileSync,mkdirSync} from 'node:fs';
 const out=process.env.MUSEUM_OUT||'docs/playtests/museums-v2';mkdirSync(out,{recursive:true});
 const mode=process.env.MUSEUM_GATE||'geometry';
-function make(seed:number,n:number,level:E.Difficulty='normal',coop=false){const g=E.create('V2',0,seed);E.add(g,'Human','h');for(let i=1;i<n;i++)E.add(g,'Bot '+i,'b'+i,true);if(!coop)E.configure(g,n===6?'trios':'duos');g.difficulty=level;E.setup(g);E.command(g,g.host,{type:'ready'});return g;}
+function make(seed:number,n:number,level:E.Difficulty='normal',coop=false){const g=E.create('V2',0,seed);E.add(g,'Human','h');for(let i=1;i<n;i++)E.add(g,'Bot '+i,'b'+i,true);if(!coop)E.configure(g,'duos');g.difficulty=level;E.setup(g);E.command(g,g.host,{type:'ready'});return g;}
 if(mode==='geometry'){
  const rows=[];
- for(const n of [2,4,6])for(let layout=0;layout<3;layout++){
+ for(const n of [2,4])for(let layout=0;layout<3;layout++){
   const m=museumArena(layout,n),walls=m.walls.map(w=>({x:w.x-13,y:w.y-13,w:w.w+26,h:w.h+26}));
   const visible=(a:E.Vec,b:E.Vec)=>!walls.some(w=>{let lo=0,hi=1;for(const [p,d,min,max] of [[a.x,b.x-a.x,w.x,w.x+w.w],[a.y,b.y-a.y,w.y,w.y+w.h]]){if(Math.abs(d)<1e-9){if(p<=min||p>=max)return false;}else{const t1=(min-p)/d,t2=(max-p)/d;lo=Math.max(lo,Math.min(t1,t2));hi=Math.min(hi,Math.max(t1,t2));if(lo>=hi)return false;}}return hi>0&&lo<1;});
   const docks=[{x:90,y:510},{x:870,y:510}],targets=[...m.slots,m.plate,...m.niches];
@@ -31,7 +31,7 @@ if(mode==='geometry'){
  const rows=[];
  for(const layout of process.env.MUSEUM_LAYOUT?[Number(process.env.MUSEUM_LAYOUT)]:[0,1,2]){
   const cases:{seed:number;n:number;level:E.Difficulty;stalls:any[]}[]=[];for(let seed=1001;cases.length<30;seed++){
-   const index=cases.length,n=[2,4,6][index%3],level=(['rookie','normal','pro'] as const)[Math.floor(index/3)%3];const g=make(seed,n,level,n===2);if(g.layout!==layout)continue;
+   const index=cases.length,n=[2,4][index%3],level=(['rookie','normal','pro'] as const)[Math.floor(index/3)%3];const g=make(seed,n,level,n===2);if(g.layout!==layout)continue;
    const history=new Map<string,{x:number;y:number;at:number}>(),stalls:any[]=[],seen=new Set<string>();
    while(g.phase==='playing'){
     const s=g.seats[0],l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(s,a)-E.distance(s,b))[0];const target=s.hand||!l||g.end-g.now<7000?E.vanFor(g,0):l;const p=E.steer(s,target,E.thiefWalls(g,s)),dist=E.distance(s,p)||1;E.command(g,s.id,{type:'input',seq:s.lastSeq+1,dx:(p.x-s.x)/dist,dy:(p.y-s.y)/dist});if(!s.hand&&l&&E.distance(s,l)<50)E.action(g,s,'grab');
