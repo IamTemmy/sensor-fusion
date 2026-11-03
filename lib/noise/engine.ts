@@ -454,13 +454,14 @@ export function approachExposed(g:Game,s:Vec,target:Vec){
 const chaseSightMode={mode:'chase'} as const;
 /** Current sight is dangerous; retreating guards are deliberately non-threatening. */
 export function guardSees(g:Game,h:Guard,p:Vec,includeRetreat=false){if(!guardActive(g,h)||!includeRetreat&&(h.retreatUntil||0)>g.now)return false;const d=distance(h,p);if(d>=279)return false;const a=Math.atan2(p.y-h.y,p.x-h.x)-h.angle;return d<(h.luredUntil&&h.luredUntil>g.now?60:blackoutActive(g)?60:180*guardSight(g,chaseSightMode)+45)&&(d<60||Math.cos(a)>Math.cos(.8))&&sight(h,p,g.walls);}
-function botDanger(g:Game,s:Thief,h:Guard,p:Vec,includeRetreat=false){
+type DangerContext={precise:boolean;art:Loot|undefined;noise:Noise|undefined};
+function dangerContext(g:Game,s:Thief):DangerContext{return {precise:isFlagship(g)&&difficultyOf(g)==='pro'&&!g.seats.some(c=>sameCrew(c,s)&&!c.bot),art:g.loot.find(l=>l.holder===s.id),noise:g.noises.find(n=>n.attached===s.id)};}
+function botDanger(g:Game,s:Thief,h:Guard,p:Vec,includeRetreat=false,context?:DangerContext){
  if(!guardActive(g,h)||!includeRetreat&&(h.retreatUntil||0)>g.now)return false;
- const precise=isFlagship(g)&&difficultyOf(g)==='pro'&&!g.seats.some(c=>sameCrew(c,s)&&!c.bot);
- const angle=Math.atan2(p.y-h.y,p.x-h.x)-h.angle;
- const inCone=!precise||distance(h,p)<(h.luredUntil&&h.luredUntil>g.now?60:blackoutActive(g)?60:180*guardSight(g,h)+10)&&(distance(h,p)<50||Math.cos(angle)>Math.cos(.7));
+ const precise=context?context.precise:isFlagship(g)&&difficultyOf(g)==='pro'&&!g.seats.some(c=>sameCrew(c,s)&&!c.bot);
+ const inCone=!precise||distance(h,p)<(h.luredUntil&&h.luredUntil>g.now?60:blackoutActive(g)?60:180*guardSight(g,h)+10)&&(distance(h,p)<50||Math.cos(Math.atan2(p.y-h.y,p.x-h.x)-h.angle)>Math.cos(.7));
  if(inCone&&guardSees(g,h,p,includeRetreat))return true;
- const art=g.loot.find(l=>l.holder===s.id);if(!art)return false;const noise=g.noises.find(n=>n.attached===s.id);
+ const art=context?context.art:g.loot.find(l=>l.holder===s.id);if(!art)return false;const noise=context?context.noise:g.noises.find(n=>n.attached===s.id);
  const audible=art&&(!art.quietUntil||art.quietUntil<=g.now)&&g.now-(noise?.heardAt?.[h.id]??-Infinity)>8000;
  // Hearing through a wall attracts pursuit, but is not an immediate capture corridor.
  // Forecast sight still protects blind corners; solid cover must remain a viable route.
@@ -496,7 +497,10 @@ export function botRoute(g:Game,s:Thief,target:Vec):RouteResult{
  const walls=thiefWalls(g,s),rescuing=g.seats.some(p=>p.stun>g.now&&distance(p,target)<1),active=planningGuards(g,rescuing);
  const carrying=g.loot.some(l=>l.holder===s.id);const laserRisk=(p:Vec)=>carrying&&sensors(g).some(z=>z.cooldown<=g.now&&inside(p,{x:z.x-16,y:z.y-16,w:z.w+32,h:z.h+32}))?180:0;
  const direct=()=>({next:steer(s,target,walls),exposed:false,path:[{x:s.x,y:s.y},target]});if(!active.length&&!carrying)return direct();
- const seen=(p:Vec)=>active.some(h=>botDanger(g,s,h,p,true));
+ // Route queries do not mutate crew, loot or alarms. Reuse their danger inputs
+ // across candidate cells without caching guard positions or decisions.
+ const danger=dangerContext(g,s);
+ const seen=(p:Vec)=>active.some(h=>botDanger(g,s,h,p,true,danger));
  const lineSafe=(a:Vec,b:Vec)=>{const n=Math.max(1,Math.ceil(distance(a,b)/20));for(let i=1;i<=n;i++)if(seen({x:a.x+(b.x-a.x)*i/n,y:a.y+(b.y-a.y)*i/n}))return false;return true;};
  const upcoming=g.guards.filter(h=>(h.retreatUntil||0)<=g.now+1200);const wayRisk=(p:Vec)=>laserRisk(p)>0||upcoming.some(h=>distance(p,h.route[h.way]||h.target)<75);
  if(corridor(s,target,walls)&&lineSafe(s,target)&&!Array.from({length:Math.max(1,Math.ceil(distance(s,target)/30))},(_,i)=>({x:s.x+(target.x-s.x)*(i+1)/Math.max(1,Math.ceil(distance(s,target)/30)),y:s.y+(target.y-s.y)*(i+1)/Math.max(1,Math.ceil(distance(s,target)/30))})).some(wayRisk))return {next:target,exposed:false,path:[s,target]};

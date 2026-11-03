@@ -15,12 +15,12 @@ export class CompactSender{
  acknowledge(n:number){if(this.frames.has(n)&&n>this.ack)this.ack=n;}
  encode(wire:Wire){
   const before=this.paths.length,flat:Flat=new Map();
-  const walk=(v:any,p:Path)=>{
+  const walk=(v:unknown,p:Path)=>{
    if(v===undefined)return;
    if(v!==null&&typeof v==='object'){
     put(p,Array.isArray(v)?ARRAY:OBJECT);
-    if(Array.isArray(v))v.forEach((x,i)=>walk(x,[...p,i]));else for(const k of Object.keys(v).sort())walk(v[k],[...p,k]);
-   }else put(p,typeof v==='number'&&(p.at(-1)==='x'||p.at(-1)==='y')?Math.round(v):typeof v==='number'&&p.at(-1)==='angle'?Math.round(((v%(2*Math.PI)+2*Math.PI)%(2*Math.PI))*255/(2*Math.PI)):v);
+    if(Array.isArray(v))v.forEach((x,i)=>walk(x,[...p,i]));else for(const k of Object.keys(v).sort())walk((v as Record<string,unknown>)[k],[...p,k]);
+   }else put(p,typeof v==='number'&&(p.at(-1)==='x'||p.at(-1)==='y')?Math.round(v):typeof v==='number'&&p.at(-1)==='angle'?Math.round(((v%(2*Math.PI)+2*Math.PI)%(2*Math.PI))*255/(2*Math.PI)):v as Scalar);
   };
   const put=(p:Path,v:Scalar)=>{const key=JSON.stringify(p);let id=this.ids.get(key);if(id===undefined){id=this.paths.length;this.ids.set(key,id);this.paths.push(p);}flat.set(id,v);};
   walk(wire,[]);
@@ -42,19 +42,19 @@ export class CompactReceiver{
   const base=m.b?this.frames.get(m.b):new Map<number,Scalar>();if(!base)return;
   const flat=new Map(base);for(const id of m.d)flat.delete(id);
   for(let i=0;i<m.v.length;i+=2){const id=m.v[i] as number;if(!Number.isInteger(id)||id<0||id>=m.k)return;flat.set(id,m.v[i+1] as Scalar);}
-  let root:any;
+  type Node=Record<string,unknown>;let root:Node|undefined;
   // Parents precede children in the shared dictionary, including newly introduced fields.
   for(const [id,value] of [...flat].sort((a,b)=>this.paths[a[0]].length-this.paths[b[0]].length)){
    const path=this.paths[id];if(path.some(k=>k==='__proto__'||k==='constructor'||k==='prototype'))return;
    const val=value!==null&&typeof value==='object'?(value.c===1?[]:{}):value;
-   if(!path.length){root=val;continue;}let target=root;
-   for(let j=0;j<path.length-1;j++){target=target?.[path[j]];if(target===undefined)return;}
-   target[path.at(-1)!]=path.at(-1)==='angle'&&typeof val==='number'?val*2*Math.PI/255:val;
+   if(!path.length){root=val as Node;continue;}let target=root;
+   for(let j=0;j<path.length-1;j++){target=target?.[path[j]] as Node|undefined;if(target===undefined)return;}
+   if(!target)return;target[path.at(-1)!]=path.at(-1)==='angle'&&typeof val==='number'?val*2*Math.PI/255:val;
   }
   if(root?.protocol!==2||!root.view)return;
   this.frames.set(m.n,flat);this.latest=m.n;
   // Keep frames the sender can still reference during delayed acknowledgments.
   for(const n of this.frames.keys())if(n<m.n-256)this.frames.delete(n);
-  return root as Wire;
+  return root as unknown as Wire;
  }
 }

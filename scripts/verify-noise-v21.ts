@@ -1,9 +1,9 @@
 import * as E from '../tests/helpers/legacy-engine.ts';
 export function verify(){
 let heldCaught=0, afterCaught=0, rescued=0;
-const rows:any[]=[];
+const rows=[];
 for (let sd=1; sd<=40; sd++) {
-  const g:any=E.create('T',0,sd); E.add(g,'Human','tok'); const H=g.seats[0].id; g.host=H;
+  const g=E.create('T',0,sd); E.add(g,'Human','tok'); const H=g.seats[0].id; g.host=H;
   E.add(g,'Echo','echo',true); E.setup(g); E.command(g,H,{type:'ready'});
   let seq=0; const s=g.seats[0], e=g.seats[1];
   E.advance(g,g.now+13000);

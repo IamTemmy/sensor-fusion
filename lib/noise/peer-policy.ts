@@ -9,7 +9,7 @@ export function configuredIce(env:Record<string,unknown>):RTCIceServer[]{
  if(typeof env.VELMONT_TURN_USERNAME!=='string'||typeof env.VELMONT_TURN_PASSWORD!=='string'||!env.VELMONT_TURN_USERNAME||!env.VELMONT_TURN_PASSWORD)return STUN_SERVERS;
  return [...STUN_SERVERS,{urls,username:env.VELMONT_TURN_USERNAME,credential:env.VELMONT_TURN_PASSWORD}];
 }
-export function selectedTurn(stats:RTCStatsReport){let pair:any;stats.forEach((s:any)=>{if(s.type==='transport'&&s.selectedCandidatePairId)pair=stats.get(s.selectedCandidatePairId);});if(!pair)stats.forEach((s:any)=>{if(s.type==='candidate-pair'&&s.state==='succeeded'&&s.nominated)pair=s;});return !!pair&&[stats.get(pair.localCandidateId),stats.get(pair.remoteCandidateId)].some((c:any)=>c?.candidateType==='relay');}
+export function selectedTurn(stats:RTCStatsReport){let pair:{localCandidateId:string;remoteCandidateId:string}|undefined;stats.forEach((s)=>{if(s.type==='transport'&&s.selectedCandidatePairId)pair=stats.get(s.selectedCandidatePairId);});if(!pair)stats.forEach((s)=>{if(s.type==='candidate-pair'&&s.state==='succeeded'&&s.nominated)pair=s;});return !!pair&&[stats.get(pair.localCandidateId),stats.get(pair.remoteCandidateId)].some((c)=>c?.candidateType==='relay');}
 export const hostLeaseExpired=(now:number,heartbeat:number,away:boolean)=>now-heartbeat>(away?120000:30000);
 
 export function directFailure(candidates:RTCIceCandidateInit[],state:string){return !candidates.some(c=>/ typ srflx(?: |$)/.test(c.candidate||''))?'no srflx candidates':state==='failed'?'ICE failed':'timeout';}

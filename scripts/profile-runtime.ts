@@ -5,7 +5,7 @@ const root=process.env.PROFILE_BASELINE||'../lib/noise/';
 const E:typeof import('../lib/noise/engine.ts')=await import(root+'engine.ts');
 const {OnlinePrediction}=await import(root+'online-client.ts');
 const g=E.create('PERF46',10000,1001);const h=E.add(g,'Host','host');E.add(g,'Guest','guest');E.configure(g,'duos');E.fillCrews(g);E.setup(g);for(const s of g.seats.filter(s=>!s.bot))E.command(g,s.id,{type:'ready'});
-const times:{at:number,ms:number}[]=[],snapshots:any[]=[];
+const times:{at:number,ms:number}[]=[],snapshots=[];
 while(g.phase==='playing'){
  for(const s of g.seats.filter(s=>!s.bot)){const l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(a,s)-E.distance(b,s))[0];const target=s.hand||!l?E.vanFor(g,s.team):l;const next=E.steer(s,target,E.thiefWalls(g,s));const d=E.distance(s,next)||1;E.command(g,s.id,{type:'input',match:g.match,seq:s.lastSeq+1,dx:(next.x-s.x)/d,dy:(next.y-s.y)/d});if(!s.hand&&l&&E.distance(s,l)<50)E.action(g,s,'grab');}
  const t=performance.now();E.advance(g,g.now+40);times.push({at:g.now-g.start,ms:performance.now()-t});if(times.length%125===0)snapshots.push(JSON.parse(JSON.stringify(E.view(g,g.seats[1].id))));

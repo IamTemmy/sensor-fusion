@@ -1,10 +1,10 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {createRoom,addSeat,intent,tick,project,heartbeat,bag,liftState,nextStep,walkable,EXIT,ROOF,PANEL,VAULT} from '../lib/game/heist.ts';
 function setup(bot=false){const r=createRoom('ABCDEF',1000);r.seed=13;const a=addSeat(r,'Ada','secret-a',1000),b=addSeat(r,'Ben','secret-b',1000,bot);intent(r,a.id,{type:'start'},2000);return {r,a,b};}
-const act=(r:any,s:any,type:string,now=2100,extra={})=>intent(r,s.id,{type,round:r.round,...extra},now);
-function advance(r:any,t:number){for(let n=r.lastTick+200;n<=t;n+=200){for(const s of r.seats)heartbeat(r,s.id,n);tick(r,n);}}
-function total(r:any){return r.seats.reduce((n:number,s:any)=>n+s.bank,0)+r.loot.filter((l:any)=>!['banked','lost'].includes(l.state)).reduce((n:number,l:any)=>n+l.value,0)+r.confiscated;}
-function give(r:any,s:any,id='vault'){const l=r.loot.find((l:any)=>l.id===id);Object.assign(l,{state:'carried',holder:s.id});return l;}
+const act=(r:ReturnType<typeof createRoom>,s:ReturnType<typeof addSeat>,type:string,now=2100,extra={})=>intent(r,s.id,{type,round:r.round,...extra},now);
+function advance(r:ReturnType<typeof createRoom>,t:number){for(let n=r.lastTick+200;n<=t;n+=200){for(const s of r.seats)heartbeat(r,s.id,n);tick(r,n);}}
+function total(r:ReturnType<typeof createRoom>){return r.seats.reduce((n:number,s)=>n+s.bank,0)+r.loot.filter((l)=>!['banked','lost'].includes(l.state)).reduce((n:number,l)=>n+l.value,0)+r.confiscated;}
+function give(r:ReturnType<typeof createRoom>,s:ReturnType<typeof addSeat>,id='vault'){const l=r.loot.find((l)=>l.id===id)!;Object.assign(l,{state:'carried',holder:s.id});return l;}
 test('authority, capacity, map connectivity and projection strips secrets',()=>{const {r,a,b}=setup();assert.throws(()=>act(r,b,'rematch'));assert.ok(!JSON.stringify(project(r,a.id,2100)).includes('secret-'));for(const p of [EXIT,ROOF,PANEL,VAULT,...r.loot]){assert.ok(walkable(p.x,p.y));let s={...EXIT};for(let i=0;i<100&& (s.x!==p.x||s.y!==p.y);i++)s=nextStep(s,p)!;assert.deepEqual(s,{x:p.x,y:p.y});}});
 test('paths are authoritative; solo loot collected once with bag limit',()=>{const {r,a,b}=setup();r.guards=[];act(r,a,'goto',2100,{x:3,y:11});advance(r,2400);assert.equal(bag(r,a).length,1);Object.assign(b,{x:3,y:11});advance(r,2800);assert.equal(bag(r,b).length,0);assert.equal(total(r),4500);assert.throws(()=>act(r,a,'goto',2900,{x:0,y:0}));});
 test('vault requires different thieves at both stations for four seconds',()=>{const {r,a,b}=setup();r.guards=[];Object.assign(a,PANEL);Object.assign(b,VAULT);act(r,a,'interact');advance(r,6000);assert.equal(r.vaultProgress,0);act(r,b,'interact',6100);advance(r,10000);assert.equal(r.loot.find(l=>l.id==='vault')?.holder,b.id);assert.equal(r.loot.find(l=>l.id==='vault')?.helper,a.id);assert.equal(total(r),4500);});

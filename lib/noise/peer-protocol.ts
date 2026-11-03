@@ -1,6 +1,6 @@
 import {advance,type Game} from './engine.ts';
-import {applyPacket,packet} from './network.ts';
-export type Envelope={id:string;seat:string;token:string;payload:Record<string,any>};
+import {applyPacket,packet,type InputPacket} from './network.ts';
+export type Envelope={id:string;seat:string;token:string;payload:Record<string,unknown>};
 export type Signal={epoch:string;offer?:RTCSessionDescriptionInit;answer?:RTCSessionDescriptionInit;offerIce?:RTCIceCandidateInit[];answerIce?:RTCIceCandidateInit[]};
 export type PeerMeta={version:1;heartbeat:number;closed:boolean;lease?:string;signals:Record<string,Signal>;mail:Envelope[];acks:string[]};
 export type PeerGame=Game&{peer?:PeerMeta};
@@ -9,7 +9,7 @@ export function endHost(g:Game){g.phase='finished';g.finishReason='Host left. Jo
 export function validEnvelope(g:Game,e:Envelope){
  if(!e||typeof e.id!=='string'||e.id.length>100||!e.payload||typeof e.payload!=='object'||JSON.stringify(e).length>16000)return false;
  if(!g.seats.some(s=>!s.bot&&s.id===e.seat&&s.token===e.token))return false;
- const p=e.payload;if(!['leave','input','ready','start','configure','fill','preset','team','bot','remove','difficulty','replay','endJob'].includes(p.type))return false;
+ const p=e.payload as InputPacket;if(!['leave','input','ready','start','configure','fill','preset','team','bot','remove','difficulty','replay','endJob'].includes(p.type))return false;
  if(p.type==='input'&&(!Number.isSafeInteger(p.seq)||![p.dx,p.dy,p.aim?.x,p.aim?.y].every(Number.isFinite)||Math.abs(p.dx)>2||Math.abs(p.dy)>2))return false;
  return true;
 }
@@ -32,8 +32,8 @@ export function queueRelayInput(mail:Envelope[],incoming:Envelope){
  if(!movement(incoming))return [...mail,incoming];
  const same=(e:Envelope)=>movement(e)&&e.seat===incoming.seat&&e.payload.match===incoming.payload.match;
  const group=[...mail.filter(same),incoming];
- const latest=group.reduce((a,b)=>a.payload.seq>b.payload.seq?a:b);
- const actions=new Map<number,any>();
+ const latest=group.reduce((a,b)=>Number(a.payload.seq)>Number(b.payload.seq)?a:b);
+ const actions=new Map<number,InputPacket['actions'][number]>();
  for(const e of group)for(const a of (Array.isArray(e.payload.actions)?e.payload.actions:[]).slice(0,16))if(Number.isSafeInteger(a.id)&&!actions.has(a.id))actions.set(a.id,a);
  return [...mail.filter(e=>!same(e)),{...latest,payload:{...latest.payload,actions:[...actions.values()].sort((a,b)=>a.id-b.id).slice(0,16)}}];
 }

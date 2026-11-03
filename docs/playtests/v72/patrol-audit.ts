@@ -1,8 +1,8 @@
 import * as E from '../../../lib/noise/engine.ts';
 function make(n:number,seed:number){const g=E.create('AUDIT72',0,seed);E.add(g,'Human','h');for(let i=1;i<n;i++)E.add(g,'Bot '+i,'b'+i,true);if(n>2)E.configure(g,'duos');E.setup(g);for(const s of g.seats.filter(s=>!s.bot))E.command(g,s.id,{type:'ready'});return g;}
-const cases:any[]=[];
+const cases=[];
 for(const n of [2,4])for(const layout of [0,1,2])for(const policy of ['idle','collector']){
- const seed=Array.from({length:100},(_,i)=>i+1).find(seed=>make(n,seed).layout===layout)!;const g=make(n,seed),hist=new Map<string,{x:number;y:number;at:number}>(),stalls:any[]=[],seen=new Set<string>();let flips=0,sentryHoldTicks=0,activeTicks=0,passes=0;const events=new Set<number>();
+ const seed=Array.from({length:100},(_,i)=>i+1).find(seed=>make(n,seed).layout===layout)!;const g=make(n,seed),hist=new Map<string,{x:number;y:number;at:number}>(),stalls=[],seen=new Set<string>();let flips=0,sentryHoldTicks=0,activeTicks=0,passes=0;const events=new Set<number>();
  while(g.phase==='playing'){
   const before=new Map(g.guards.map(h=>[h.id,{x:h.x,y:h.y,angle:h.angle}]));
   if(policy==='collector'){const s=g.seats[0],l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(a,s)-E.distance(b,s))[0],target=s.hand||!l?E.vanFor(g,0):l,p=E.steer(s,target,E.thiefWalls(g,s)),d=E.distance(s,p)||1;E.command(g,s.id,{type:'input',seq:s.lastSeq+1,dx:(p.x-s.x)/d,dy:(p.y-s.y)/d});if(!s.hand&&l&&E.distance(s,l)<50)E.action(g,s,'grab');}
