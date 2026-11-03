@@ -10,7 +10,9 @@ test('sprite sheet frames fit the atlas and every required crew/state has an ass
  // Keep the existing art budget and give the new menu background its own cap.
  const hideout=statSync('public/art/concept/hideout-planning-v1.webp').size;
  assert.ok(hideout<250_000);
- assert.ok(size('public/art')-hideout<3_000_000);
+ const lobby=statSync('public/art/concept/lobby-desk.webp').size;
+ assert.ok(lobby<150_000);
+ assert.ok(size('public/art')-hideout-lobby<3_000_000);
  // Optional opening is requested only when shown, separately from game art.
  assert.ok(statSync('public/cinematics/velmont-opening.webp').size<350_000);
 });

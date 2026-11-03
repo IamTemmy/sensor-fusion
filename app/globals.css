@@ -1244,41 +1244,105 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 .noise-app .arrival-flow .hero-paint .menu-art{position:absolute;inset:0;opacity:0;pointer-events:none}
 .noise-app .arrival-flow .hero-paint .menu-art.active{opacity:1}
 
-/* The planning desk frames a solid, readable crew folio. */
-.noise-app .planning-room .lobby.crew-folio{display:grid;grid-template-columns:minmax(0,.75fr) minmax(0,1.25fr);grid-template-areas:"title title" "job roster" "foot foot";align-items:start;gap:16px 24px;width:min(1000px,96%);max-height:100%;overflow:auto;padding:clamp(16px,2vw,28px);background:#0e1d29;border:1px solid #a78c5b;border-radius:16px;text-align:left}
-.noise-app .crew-folio .folio-heading{grid-area:title;display:flex;align-items:center;justify-content:space-between;gap:16px;padding-bottom:14px;border-bottom:1px solid #34444e}
-.noise-app .crew-folio h2{margin:0;font-size:clamp(24px,3vw,38px);line-height:1.1}
-.folio-invite{display:flex;align-items:stretch;gap:6px}
-.noise-app .crew-folio .folio-invite button{width:auto;margin:0;padding:8px 12px;font-size:13px;min-height:44px}
-.noise-app .crew-folio .folio-invite small{font-size:10px;margin-left:6px}
-.noise-app .planning-room .crew-folio>.folio-job{grid-area:job;display:grid;gap:16px;min-width:0}
-.noise-app .planning-room .crew-folio>.folio-roster{grid-area:roster;min-width:0}
-.noise-app .folio-roster>h3,.noise-app .setup-fields h4{margin:0;color:#ffebbf}
-.noise-app .folio-roster .team-board{align-items:stretch}
-.noise-app .folio-roster .team-column{display:flex;flex-direction:column;gap:6px}
-.noise-app .folio-roster .team-seat{margin:0}
-.noise-app .folio-roster .team-add{margin: auto 0 0}
-.noise-app .folio-roster .open-seat{display:grid;place-items:center;min-height:68px;margin:0;border:1px dashed #ad98b766;border-radius:8px;color:#ddd3e7}
-.noise-app .museum-photo{margin:0;padding:7px;color:#172029;background:#eedabd;box-shadow:0 4px 10px #0005;position:relative}
-.museum-photo:before{content:'';position:absolute;top:-4px;left:49%;width:11px;height:11px;border-radius:50%;background:radial-gradient(at 35% 25%,#ffdc94,#977036 55%,#402d15);box-shadow:1px 2px 3px #0009}
-.museum-photo img{width:100%;height:clamp(90px,15vh,155px);object-fit:cover;display:block}
-.museum-photo figcaption{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:2px 6px;padding:7px 4px 2px}
-.museum-photo small,.setup-fields h4{text-transform:uppercase;letter-spacing:.08em;font-size:11px}
-.museum-photo small{grid-column:1/-1}.museum-photo strong{font-size:20px}.museum-photo span{font-size:12px}
+/* A single desk surrounds the complete lobby, including its utility bar. */
+.noise-app.is-lobby{height:100dvh;min-height:0;padding:0;background:#24150e}
+.noise-app.is-lobby>.playfield{height:100%;min-height:0;flex:1}
+.noise-app.is-lobby>.playfield>canvas,.noise-app.is-lobby .game-hud{visibility:hidden}
+.noise-app.is-lobby .planning-room{inset:0;padding:24px;display:flex;align-items:center;justify-content:center;overflow:auto;background:#24150e url('/art/concept/lobby-desk.webp') center/cover!important}
+.noise-app .planning-room .lobby.crew-folio{display:grid;grid-template-columns:minmax(0,370px) minmax(0,1fr);grid-template-areas:"chrome chrome" "title title" "job roster" "foot foot";grid-template-rows:auto auto 388px auto;align-items:start;gap:18px 24px;width:min(1080px,100%);max-height:none;overflow:visible;margin:0;padding:20px 24px;background:linear-gradient(125deg,#142633,#0a1823);border:1px solid #ae9665;border-radius:16px;box-shadow:inset 0 0 0 4px #d4b7770b,0 20px 50px #0008;text-align:left}
+.noise-app .planning-room .crew-folio>.folio-chrome{grid-area:chrome;width:100%;margin:0}
+.noise-app .crew-folio .topbar{position:static;width:100%;height:58px;min-height:58px;padding:7px 12px;background:#071622;border:1px solid #31444f;border-radius:10px;box-shadow:none}
+.noise-app .crew-folio .topbar .brand{margin:0}
+.noise-app .crew-folio .topbar .connection{display:none}
+.noise-app .crew-folio .topbar .icon-button{min-height:36px;padding:6px 12px;font-size:12px}
+.noise-app .crew-folio .hosting-notice{position:static;display:block;width:100%;max-width:none;margin:0;padding:9px 0 0;border:0;background:transparent;text-align:center;font:600 11px/1.3 Arial,sans-serif;color:#e5cb94}
+.noise-app .planning-room .crew-folio>.folio-heading{grid-area:title;display:flex;align-items:center;justify-content:space-between;gap:16px;margin:0;padding:0 0 16px;border-bottom:1px solid #34444e}
+.noise-app .crew-folio .folio-heading h2{margin:0;padding:0;font-size:30px;line-height:1.1;white-space:nowrap}
+.noise-app .crew-folio .folio-invite{display:flex;align-items:center;gap:0;flex-shrink:0;padding:4px;border:1px solid #bba16b;border-radius:10px;background:#071622}
+.noise-app .crew-folio .folio-invite button{width:auto;min-height:36px;height:36px;margin:0;padding:6px 12px;font-size:12px;border:0;box-shadow:none;border-radius:6px}
+.noise-app .crew-folio .folio-invite .crew-code{background:transparent;color:#ffebbd}
+.noise-app .crew-folio .folio-invite small{font:9px/1 Arial,sans-serif;color:#bdcbd2;margin-left:8px}
+.noise-app .planning-room .crew-folio>.folio-job{grid-area:job;display:grid;grid-template-rows:211px 1fr;gap:14px;min-width:0;height:388px}
+.noise-app .crew-folio .museum-photo{height:211px;box-sizing:border-box;margin:0;padding:7px;color:#172029;background:#eedabd;box-shadow:0 4px 10px #0005;position:relative}
+.noise-app .crew-folio .museum-photo:before{content:'';position:absolute;top:-5px;left:49%;width:12px;height:12px;border-radius:50%;background:radial-gradient(at 35% 25%,#ffdc94,#977036 55%,#402d15);box-shadow:1px 2px 3px #0009}
+.noise-app .crew-folio .museum-photo img{width:100%;height:153px;object-fit:cover;display:block}
+.noise-app .crew-folio .museum-photo figcaption{display:grid;grid-template-columns:1fr auto;align-items:baseline;gap:1px 6px;padding:7px 4px 2px}
+.noise-app .crew-folio .museum-photo small{grid-column:1/-1;color:#253039;font:700 10px/1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+.noise-app .crew-folio .museum-photo strong{font-size:20px;line-height:1.1;color:#172029}
+.noise-app .crew-folio .museum-photo span{font:12px/1.2 Arial,sans-serif;color:#27323a}
 .noise-app .crew-folio .setup-summary{display:none}
-.setup-fields{display:grid;gap:7px}.setup-fields small,.setup-fields .mode-warning{font-size:12px;line-height:1.35;color:#c2d1da;margin:0}
-.noise-app .planning-room .lobby.crew-folio>.lobby-actions{grid-area:foot;display:flex;justify-content:flex-end;align-items:center;gap:12px;border-top:1px solid #34444e;padding-top:12px}
-@media(max-width:800px){
- .noise-app .planning-room .lobby.crew-folio{display:flex;flex-direction:column;gap:12px;max-height:none;overflow:visible;margin:8px auto;padding:12px}
- .noise-app .crew-folio .folio-heading{flex-direction:column;align-items:stretch;gap:10px;padding-bottom:10px}
- .folio-invite button{flex:1}.folio-roster{order:1}.folio-job{order:2;gap:8px}
- .noise-app .folio-roster .team-board{grid-template-columns:1fr;margin:8px 0 0}
- .noise-app .folio-roster .team-column{padding:8px}
- .noise-app .folio-roster .team-column h3{margin:0}
- .noise-app .folio-roster .seat-move{min-height:44px!important}
- .noise-app .folio-roster .open-seat{min-height:32px}
- .noise-app .crew-folio .setup-summary{display:flex;width:100%;justify-content:space-between;align-items:center;padding:10px;min-height:44px;text-transform:capitalize}
- .setup-fields{display:none}.setup-fields.expanded{display:grid;padding:10px 0}
- .museum-photo{order:1;display:flex;align-items:center;gap:8px}.museum-photo img{width:72px;height:49px}.museum-photo figcaption{flex:1}.museum-photo:before{display:none}
- .noise-app .planning-room .lobby.crew-folio>.lobby-actions{align-items:stretch;gap:6px;background:#0e1d29}
+.noise-app .crew-folio .setup-fields{display:grid;gap:6px}
+.noise-app .crew-folio .setup-fields h4{margin:0;padding:0;color:#ffebbf;font:700 11px/1.1 Arial,sans-serif;text-transform:uppercase;letter-spacing:.08em}
+.noise-app .crew-folio .setup-fields :is(.mode-picker,.difficulty-pills){display:flex;width:100%;box-sizing:border-box;margin:0;padding:3px;gap:4px}
+.noise-app .crew-folio .setup-fields :is(.mode-picker,.difficulty-pills) button{flex:1;min-width:0;width:0;margin:0;height:36px;min-height:36px;padding:6px 2px;font-size:11px}
+.noise-app .crew-folio .setup-fields .mode-warning{display:none}
+.noise-app .crew-folio .setup-fields .difficulty-note{margin:0;padding:0;font:11px/1.35 Arial,sans-serif;color:#b6c8d0}
+.noise-app .planning-room .crew-folio>.folio-roster{grid-area:roster;min-width:0;height:388px;display:grid;grid-template-rows:22px 42px 1fr;gap:10px}
+.noise-app .crew-folio .folio-roster>h3{margin:0;padding:0;color:#ffebbf;font-size:18px;line-height:22px}
+.noise-app .crew-folio .team-presets{display:flex;width:100%;height:42px;gap:8px;margin:0}
+.noise-app .crew-folio .team-presets button{flex:1;height:42px;min-height:42px;margin:0;padding:8px 4px;font-size:11px}
+.noise-app .crew-folio .team-board{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0;height:304px}
+.noise-app .crew-folio .team-board.single-crew{grid-template-columns:1fr}
+.noise-app .crew-folio .team-column{display:grid;grid-template-columns:1fr;grid-template-rows:24px 1fr 36px;gap:8px;box-sizing:border-box;height:304px;min-width:0;padding:12px}
+.noise-app .crew-folio .team-column h3{margin:0;font-size:17px;line-height:24px}
+.noise-app .crew-folio .team-seats{display:flex;flex-direction:column;gap:7px;min-width:0;min-height:0;overflow-y:auto}
+.noise-app .crew-folio .single-crew .team-seats{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-auto-rows:60px;align-content:start}
+.noise-app .crew-folio .team-seat{display:flex;position:relative;margin:0;height:60px;min-height:60px;border:1px solid #7a9a9140;background:#081820b0;border-radius:8px}
+.noise-app .crew-folio .team-seat .seat-move{display:flex;align-items:center;gap:8px;height:58px;min-height:58px;margin:0;padding:5px 27px 5px 7px;background:transparent;border:0;box-shadow:none}
+.noise-app .crew-folio .team-seat .crew-portrait{width:33px;height:42px;flex:none}
+.noise-app .crew-folio .seat-move span{display:grid;gap:2px}
+.noise-app .crew-folio .seat-move b{font-size:12px;line-height:1.1}
+.noise-app .crew-folio .seat-move :is(small,em){font:10px/1.1 Arial,sans-serif}
+.noise-app .crew-folio .seat-remove{position:absolute;right:3px;top:17px;width:24px;height:24px;min-height:24px;margin:0;padding:0;background:transparent;border:0;box-shadow:none;font-size:16px}
+.noise-app .crew-folio .team-add{grid-column:auto;width:100%;height:36px;min-height:36px;margin:0;padding:5px;border:1px dashed #8cc9bb80;box-shadow:none;font-size:12px}
+.noise-app .crew-folio .open-seat{display:grid;place-items:center;box-sizing:border-box;height:60px;min-height:60px;margin:0;border:1px dashed #ad98b766;border-radius:8px;color:#ddd3e7;font:600 12px/1.2 Arial,sans-serif}
+.noise-app .crew-folio .network-stats{display:none}
+.noise-app .planning-room .lobby.crew-folio>.lobby-actions{grid-area:foot;display:flex;position:static;justify-content:flex-end;align-items:center;gap:14px;margin:0;padding:12px 0 0;border-top:1px solid #34444e;box-shadow:none;background:transparent}
+.noise-app .crew-folio .lobby-actions .secondary{margin:0;padding:8px;background:transparent;border:0;box-shadow:none;font-size:11px}
+.noise-app .crew-folio .lobby-actions .primary{margin:0;min-height:46px;padding:10px 22px;font-size:16px}
+@media(max-width:1000px) and (min-width:801px){
+ .noise-app .planning-room .lobby.crew-folio{grid-template-columns:minmax(0,.8fr) minmax(0,1.2fr);padding:16px;gap:14px}
+ .noise-app .crew-folio .folio-heading h2{font-size:24px}
+ .noise-app .crew-folio .folio-invite button{padding:6px 8px;font-size:11px}
+ .noise-app .crew-folio .folio-invite small{display:none}
 }
+@media(max-width:800px){
+ .noise-app.is-lobby .planning-room{padding:10px;align-items:flex-start}
+ .noise-app .planning-room .lobby.crew-folio{display:flex;flex-direction:column;width:100%;gap:12px;margin:0;padding:12px;max-height:none}
+ .noise-app .crew-folio .topbar{height:46px;min-height:46px;padding:4px;gap:6px}
+ .noise-app .crew-folio .topbar .brand-emblem{display:none}
+ .noise-app .crew-folio .topbar .brand{width:94px;min-width:94px}
+ .noise-app .crew-folio .topbar .top-actions{gap:4px}
+ .noise-app .crew-folio .topbar .icon-button{padding:5px 7px;font-size:10px;min-width:28px;min-height:32px}
+ .noise-app .crew-folio .hosting-notice{font-size:10px;line-height:1.3;padding-top:8px}
+ .noise-app .planning-room .crew-folio>.folio-heading{flex-direction:column;align-items:stretch;gap:10px;padding-bottom:10px}
+ .noise-app .crew-folio .folio-heading h2{font-size:23px;white-space:normal}
+ .noise-app .crew-folio .folio-invite{justify-content:space-between}
+ .noise-app .crew-folio .folio-invite button{font-size:11px;padding:5px 8px}
+ .noise-app .crew-folio .folio-invite small{display:none}
+ .noise-app .planning-room .crew-folio>.folio-roster{order:1;height:auto;grid-template-rows:38px auto;gap:8px}
+ .noise-app .crew-folio .folio-roster>h3{display:none}
+ .noise-app .crew-folio .team-presets,.noise-app .crew-folio .team-presets button{height:38px;min-height:38px}
+ .noise-app .crew-folio .team-board{height:auto;grid-template-columns:1fr;gap:8px}
+ .noise-app .crew-folio .team-column{height:224px;grid-template-rows:22px 1fr 30px;padding:8px;gap:5px}
+ .noise-app .crew-folio .team-add{height:30px;min-height:30px}
+ .noise-app .crew-folio .single-crew .team-seats{grid-template-columns:1fr}
+ .noise-app .planning-room .crew-folio>.folio-job{order:2;height:auto;display:flex;flex-direction:column;gap:8px}
+ .noise-app .crew-folio .folio-settings{order:0}
+ .noise-app .crew-folio .setup-summary{display:flex;align-items:center;justify-content:space-between;gap:6px;width:100%;min-height:42px;margin:0;padding:9px;font-size:11px;text-transform:capitalize}
+ .noise-app .crew-folio .setup-fields{display:none}
+ .noise-app .crew-folio .setup-fields.expanded{display:grid;padding-top:10px}
+ .noise-app .crew-folio .museum-photo{order:1;display:flex;align-items:center;gap:8px;height:64px;padding:5px}
+ .noise-app .crew-folio .museum-photo img{width:68px;height:54px}
+ .noise-app .crew-folio .museum-photo figcaption{flex:1;padding:0;grid-template-columns:1fr}
+ .noise-app .crew-folio .museum-photo strong{font-size:17px}
+ .noise-app .crew-folio .museum-photo:before{display:none}
+ .noise-app .planning-room .lobby.crew-folio>.lobby-actions{position:sticky;bottom:0;z-index:2;order:3;align-items:stretch;flex-direction:column;gap:4px;padding:8px 0 0;background:#0c1b27}
+ .noise-app .crew-folio .lobby-actions .secondary{min-height:30px;font-size:10px}
+ .noise-app .crew-folio .lobby-actions .primary{min-height:44px}
+}
+@media(max-height:720px) and (min-width:801px){.noise-app.is-lobby .planning-room{align-items:flex-start;padding:12px}}
+
+.noise-app .planning-room .crew-folio .lobby-actions .secondary{background:transparent;border:0;box-shadow:none}
+@media(max-width:800px){.noise-app .planning-room .lobby.crew-folio>*{flex-shrink:0}.noise-app .planning-room .lobby.crew-folio{flex-shrink:0}}
+@media(max-width:800px){.noise-app .planning-room .crew-folio .folio-invite .crew-code{flex:0 0 88px;min-width:88px;padding:6px}.noise-app .planning-room .crew-folio .folio-invite .crew-code small{display:none}.noise-app .planning-room .crew-folio .folio-invite .invite-button{flex:1;white-space:nowrap}}
