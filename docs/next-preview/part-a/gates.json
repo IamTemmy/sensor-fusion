@@ -1,0 +1,32 @@
+{
+  "tested_merge_commit": "30837f2f14a31dbd43cacf4a4231b8ca192c5be8",
+  "tests_passed": 448,
+  "typecheck": "passed",
+  "lint_errors": 0,
+  "lint_warnings": 158,
+  "preview_isolation": "passed; protected gameplay/network files equal main 9842879",
+  "playability_passed": true,
+  "source_hash": "0a21f4e9408891d64c6bafc3101b8aaa5f4fcdbbcd4775aebc265d72a25fd6bf",
+  "cpu": {
+    "flagship-velmont": {
+      "p95": 5.468294000000242,
+      "max": 26.14226500000001,
+      "passed": true
+    },
+    "night-archive": {
+      "p95": 5.2766499999997905,
+      "max": 28.39179299999998,
+      "passed": true
+    }
+  },
+  "production_build": "passed",
+  "title_hook_at_375": {
+    "font_px": 13,
+    "width_px": 250.46875,
+    "cta_top_px": 638,
+    "cta_height_px": 56
+  },
+  "echo_hint_font_px": 12,
+  "plan_font_px": 12,
+  "screenshots": "375x720 crops of actual frozen presentation fixtures"
+}

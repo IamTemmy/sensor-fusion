@@ -1,6 +1,6 @@
 {
-  "sourceHash": "a11619e74ac1ed3507c5ce032a4f4cd823ef97549a980c4745c9318cf51a17a7",
-  "at": "2026-11-03T09:25:38.475Z",
+  "sourceHash": "0a21f4e9408891d64c6bafc3101b8aaa5f4fcdbbcd4775aebc265d72a25fd6bf",
+  "at": "2026-11-07T04:16:48.261Z",
   "policy": "2026-10-30 Crown access: user approved fast banking after the 1:00 pickup lock; 0:45 banking restriction retired. Rookie/Normal/Pro human Crown 95/70/40%, Echo Normal 50%, Normal solo haul 1500. Win rates informational.",
   "gates": {
     "test": {
@@ -197,8 +197,8 @@
         ]
       },
       "cpu": {
-        "p95": 5.048590000000331,
-        "max": 22.32613999999998,
+        "p95": 5.468294000000242,
+        "max": 26.14226500000001,
         "passed": true
       }
     },
@@ -388,8 +388,8 @@
         ]
       },
       "cpu": {
-        "p95": 4.277691999999661,
-        "max": 36.74551299999999,
+        "p95": 5.2766499999997905,
+        "max": 28.39179299999998,
         "passed": true
       }
     }
