@@ -1,3 +1,9 @@
+# Repository status
+
+Velmont: After Hours is the active game. Sensor Fusion and Last Lift source and the unused `/api/room` endpoint were removed during repository cleanup. Earlier status reports below describe historical versions, not the current checkout. Generated text logs are available through Git history; current checks can be rerun using the README commands.
+
+---
+
 # Velmont: After Hours — architecture update
 
 October 23, 2026. Current candidate: v33 (the requested v32 architecture pass follows the already-shipped v32 rename). See [full map pack, self-check and validation](playtests/v33/README.md).
