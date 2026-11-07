@@ -51,7 +51,7 @@ export default function Page(){
  const [lostCrew,LostCrewState]=useState<LostCrew|null>(null);const recovering=useRef(false);
  const departure=useRef<{key:string;start:number;frozen?:number}|null>(null);const [departed,Departed]=useState('');
  const [recordStatus,RecordStatus]=useState<'first'|'new'|'existing'>('existing');const recordedMatch=useRef('');
- const [overview,Overview]=useState(true);useEffect(()=>{let cleanup:void|(()=>void);const mountFrame=requestAnimationFrame(()=>{cleanup=(()=>{if(matchMedia('(max-width: 700px), (max-width: 960px) and (max-height: 500px)').matches)Overview(false);})();});return()=>{cancelAnimationFrame(mountFrame);if(cleanup)cleanup();};},[]);const overviewRef=useRef(true);useLayoutEffect(()=>{overviewRef.current=overview;},[overview]);
+ const [overview,Overview]=useState(true);const overviewRef=useRef(true);useLayoutEffect(()=>{overviewRef.current=overview;},[overview]);
  const [invite,Invite]=useState<string|null>(null),[inviteOpen,InviteOpen]=useState<boolean|null>(null);
  const [musicOn,MusicOn]=useState(true);const musicEnabled=useRef(true);useLayoutEffect(()=>{musicEnabled.current=musicOn;},[musicOn]);
  const peer=useRef<PeerRoom|null>(null);const [connectionMode,ConnectionMode]=useState('Relay'),[seatModes,SeatModes]=useState<Record<string,string>>({});

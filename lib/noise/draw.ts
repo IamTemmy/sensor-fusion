@@ -13,7 +13,7 @@ import {preloadSprites,sprite,paintedFloor,actorPose,artSpriteKey} from './sprit
 import {artwork,drawArtwork,stackLabel,stackPopLabel,type LabelBox} from './artwork';
 import {exhibitAvailable,isFlagship,vaultReady,emitterPosition,passTarget,isDuel,emptyPost,arenaDefinition,vanFacing,guardSight,nearbyHide,hidden,hidingSpots,guardActive,staffDoors,blackoutActive,tuning,homeSafe,W,H,WALLS,EXIT,SAFE_ZONE,zones,zoneFor,vanFor,sensors,PLATE,plateOpen,interaction,distance,clear,type Game,type View,type Vec} from './engine';
 export {type Camera} from './camera';
-import {museumCamera} from './camera';
+import {museumCamera,offscreenVan} from './camera';
 export const camera=museumCamera;
 export const COLORS=['#8ef2d2','#bdadff','#ffb974','#91c6ff','#f79cbb','#c2e082'];
 export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,height:number,time:number,you:string,positions:Map<string,Vec>,aim:Vec,background=false,reducedMotion=false,overview=true,departureMs?:number,touch=false){
@@ -154,5 +154,16 @@ export function draw(ctx:CanvasRenderingContext2D,g:Game|View,width:number,heigh
  ctx.setTransform(ratio,0,0,ratio,0,0);
  const top=-cam.y*cam.scale,bottom=(600-cam.y)*cam.scale;
  if(overview&&g.arena&&top>65){ctx.textAlign='center';ctx.font="700 12px Arial";ctx.fillStyle='#d8bd83';ctx.fillText(g.arena.name.toUpperCase(),width/2,top-28);ctx.strokeStyle='#d8bd8333';ctx.beginPath();ctx.moveTo(width/2-65,top-17);ctx.lineTo(width/2+65,top-17);ctx.stroke();ctx.font='11px Arial';ctx.fillStyle='#a4b5c3';ctx.fillText('Whole museum · Closer view follows your thief',width/2,Math.min(height-16,bottom+32));}
+ if(touch&&!overview&&!background&&g.phase==='playing'&&me&&!me.escaped){
+  const marker=offscreenVan(cam,vanFor(g,me.team));
+  if(marker){
+   const {x,y,angle}=marker,color=COLORS[me.team];
+   rect(x-33,y-13,66,26,'#0b1828f5',7);
+   ctx.strokeStyle=color;ctx.lineWidth=1;ctx.stroke();
+   ctx.save();ctx.translate(x-18,y);ctx.rotate(angle);ctx.fillStyle=color;
+   ctx.beginPath();ctx.moveTo(6,0);ctx.lineTo(-4,-5);ctx.lineTo(-4,5);ctx.closePath();ctx.fill();ctx.restore();
+   ctx.font='700 11px Arial';ctx.textAlign='center';ctx.fillStyle=color;ctx.fillText('VAN',x+8,y+4);
+  }
+ }
  ctx.setTransform(1,0,0,1,0,0);return cam;
 }

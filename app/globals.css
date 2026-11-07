@@ -1408,6 +1408,17 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
  .noise-app.is-playing>.active-heist>.event-banner>.banner-icon{flex:0 0 auto;margin:0}
 }
 
+/* Portrait controls occupy their own row below the canvas. */
+@media(max-width:800px) and (orientation:portrait){
+ .noise-app.is-playing>.active-heist,
+ .noise-app.is-playing:has(.first-heist)>.active-heist,
+ .noise-app.is-playing>.active-heist:has(>:is(.context-tip,.practice-tip,.event-banner,.museum-placard.visible)){grid-template-rows:94px minmax(0,1fr) auto calc(116px + env(safe-area-inset-bottom))!important}
+ .noise-app.is-playing .active-heist>canvas{overflow:clip}
+ .noise-app.is-playing .bottom-controls{min-height:0;padding:5px 8px calc(5px + env(safe-area-inset-bottom))!important}
+ .noise-app.is-playing .thumbstick{width:68px!important;height:68px!important;flex-basis:68px}
+ .noise-app.is-playing .spectator{bottom:calc(116px + env(safe-area-inset-bottom))!important}
+}
+
 /* Only explanatory copy changes family. No size, spacing, case, or line-height overrides. */
 body:not([data-font-baseline]) .noise-app :is(.plan-helper,.heist-options button>span,.hosting-notice,.lobby-actions>p,.lobby-setup>p,.arena-plan-note>span,.quick-brief-steps li>p,.results-note,.results-goals>span,.guide-cards p,.guide-rule-scroll li,.guide-scroll-hint,.practice-tip>span,.practice-complete>p,.context-tip>span,.secondary-copy),
 body:not([data-font-baseline]) .noise-app :is(.arena-plan-note>span,.quick-brief-steps li>p,.guide-rule-scroll li,.secondary-copy) :is(span,strong,em){font-family:Manrope,Arial,sans-serif!important}

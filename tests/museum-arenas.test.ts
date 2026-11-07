@@ -2,7 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import * as E from './helpers/legacy-engine.ts';
 import {museumArena} from '../lib/noise/arenas.ts';
-import {museumCamera} from '../lib/noise/camera.ts';
+import {flagshipArena} from '../lib/noise/flagship-arena.ts';
+import {archiveArena} from '../lib/noise/archive-arena.ts';
+import {museumCamera,offscreenVan} from '../lib/noise/camera.ts';
 import {routePair} from '../scripts/arena-routes.ts';
 import {packet,unpack,arenaKey} from '../lib/noise/network.ts';
 function job(layout:number,n:number,coop=false,level:E.Difficulty='normal'){
@@ -43,6 +45,19 @@ test('phone camera keeps the full museum in overview and the player body visible
   assert.ok(x>=12&&x<=w-12);assert.ok(y>=12&&y<=h-12);
   if(overview){assert.ok(c.x<=0&&c.y<=0);assert.ok(c.x+c.w>=960&&c.y+c.h>=600);}
   assert.ok(Math.abs(c.x+x/c.scale-p.x)<.001&&Math.abs(c.y+y/c.scale-p.y)<.001,'aim inverse must agree with drawing');
+ }
+});
+
+test('both museums keep the van visible or mark its direction above the phone controls',()=>{
+ for(const arena of [flagshipArena(4),archiveArena(4)])for(const van of [...arena.docks!,arena.coopDock??arena.docks![0]])for(const [width,height] of [[360,300],[393,460],[530,160]]){
+  const far={x:van.x<480?920:40,y:van.y<300?560:40};
+  assert.equal(offscreenVan(museumCamera(width,height,far,true),van),undefined);
+  assert.equal(offscreenVan(museumCamera(width,height,van,false),van),undefined);
+  const close=museumCamera(width,height,far,false),marker=offscreenVan(close,van);
+  assert.ok(marker);
+  assert.ok(marker.x>=38-.001&&marker.x<=width-38+.001);
+  assert.ok(marker.y>=16-.001&&marker.y<=height-16+.001);
+  assert.equal(Math.sign(Math.cos(marker.angle)),Math.sign(van.x-close.x-close.w/2));
  }
 });
 
