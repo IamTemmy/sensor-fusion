@@ -1,6 +1,6 @@
 import {test} from 'node:test';
 import assert from 'node:assert/strict';
-import {prepareNarration,narrationWindow,narratedSegmentSeconds} from '../lib/noise/intro-audio.ts';
+import {prepareNarration,narrationWindow,narratedSegmentSeconds,NARRATION_WINDOWS} from '../lib/noise/intro-audio.ts';
 test('narration begins 300ms after cut and split heist resumes without repeating',()=>{assert.deepEqual(narrationWindow(0,4),{delay:.3,seek:0,remaining:4});assert.deepEqual(narrationWindow(3,4),{delay:0,seek:2.7,remaining:1.2999999999999998});});
 test('long voice extends its final segment, never the first half of the heist',()=>{assert.equal(narratedSegmentSeconds(5,0,5,8),8.9);assert.equal(narratedSegmentSeconds(6,0,3,8),3);assert.equal(narratedSegmentSeconds(6,3,3,8),5.9);assert.equal(narratedSegmentSeconds(5,0,5,0),5);});
 test('silent recording is rejected instead of extending the shot',()=>{assert.equal(prepareNarration([new Float32Array(100)],1000),null);});
@@ -17,6 +17,14 @@ function audioFixture(){
  const context={currentTime:0,sampleRate:1000,destination:node(),createGain:node,createDynamicsCompressor:node,createOscillator:node,createBufferSource:node,createConvolver:node,createBiquadFilter:node,createBuffer:buffer,decodeAudioData:async()=>raw};
  return {sound:new IntroSound(context as unknown as OfflineAudioContext),starts,gains};
 }
-test('live audio scheduler delays voice, ducks ambience by 10dB and retains the full long line',async()=>{const f=audioFixture();await f.sound.prepareVoice(0,new ArrayBuffer(1));const seconds=narratedSegmentSeconds(5,0,5,f.sound.voiceDuration(0));f.sound.scene(0,0,seconds);assert.ok(f.starts.some(s=>s[0]===.3&&s[1]===0&&s[2]===8));assert.ok(f.gains.some(g=>g[0]===Math.pow(10,-10/20)));});
-test('second heist segment resumes the narration at 2.7 seconds',async()=>{const f=audioFixture();await f.sound.prepareVoice(3,new ArrayBuffer(1));f.sound.scene(3,3,narratedSegmentSeconds(6,3,3,8));assert.ok(f.starts.some(s=>s[0]===0&&s[1]===2.7&&s[2]===5.3));});
+test('live audio scheduler delays voice, ducks ambience by 14dB and retains the full long line',async()=>{const f=audioFixture();await f.sound.prepareVoice(0,new ArrayBuffer(1),false);const seconds=narratedSegmentSeconds(5,0,5,f.sound.voiceDuration(0));f.sound.scene(0,0,seconds);assert.ok(f.starts.some(s=>s[0]===.3&&s[1]===0&&s[2]===8));assert.ok(f.gains.some(g=>g[0]===Math.pow(10,-14/20)));});
+test('second heist segment resumes the narration at 2.7 seconds',async()=>{const f=audioFixture();await f.sound.prepareVoice(3,new ArrayBuffer(1),false);f.sound.scene(3,3,narratedSegmentSeconds(6,3,3,8));assert.ok(f.starts.some(s=>s[0]===0&&s[1]===2.7&&s[2]===5.3));});
 test('SFX mute changes the master gain to zero and restores it',()=>{const f=audioFixture();f.sound.mute(true);assert.equal(f.gains.at(-1)?.[0],0);f.sound.mute(false);assert.equal(f.gains.at(-1)?.[0],.65);});
+
+test('mastered narration retains the original speech windows at browser sample rates without a second gain pass',()=>{
+ for(const rate of [44100,48000])for(let shot=0;shot<6;shot++){
+  const pcm=new Float32Array(rate*5);pcm.fill(.18);const edit=prepareNarration([pcm],rate,shot)!;
+  assert.equal(edit.gain,1);assert.equal(edit.start,Math.round(NARRATION_WINDOWS[shot][0]*rate/44100));
+  assert.equal(edit.end,Math.round(NARRATION_WINDOWS[shot][1]*rate/44100));
+ }
+});

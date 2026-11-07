@@ -17,9 +17,9 @@ export class IntroSound {
   }
   mute(muted:boolean){if(!this.closing)this.master.gain.setTargetAtTime(muted?0:.65,this.context.currentTime,.025);}
   async suspend(hidden:boolean){const ctx=this.context;if(!('close' in ctx)||ctx.state==='closed')return;try{if(hidden)await ctx.suspend();else await ctx.resume();}catch{}}
-  async prepareVoice(shot:number,data:ArrayBuffer|null){
+  async prepareVoice(shot:number,data:ArrayBuffer|null,mastered=true){
     if(!data||this.buffers.has(shot))return;
-    try{const raw=await this.context.decodeAudioData(data),channels=Array.from({length:raw.numberOfChannels},(_,i)=>raw.getChannelData(i)),edit=prepareNarration(channels,raw.sampleRate);if(!edit)return;
+    try{const raw=await this.context.decodeAudioData(data),channels=Array.from({length:raw.numberOfChannels},(_,i)=>raw.getChannelData(i)),edit=prepareNarration(channels,raw.sampleRate,mastered?shot:undefined);if(!edit)return;
       const buffer=this.context.createBuffer(raw.numberOfChannels,edit.end-edit.start,raw.sampleRate);
       channels.forEach((data,c)=>{const out=buffer.getChannelData(c);for(let i=0;i<out.length;i++)out[i]=data[edit.start+i]*edit.gain;});this.buffers.set(shot,buffer);
     }catch{/* Invalid/missing recordings leave captions only. */}
@@ -36,13 +36,16 @@ export class IntroSound {
     this.tone(55,now,.32,.035);
     const buffer=this.buffers.get(shot),window=buffer?narrationWindow(offset,buffer.duration):null;
     if(buffer&&window&&window.remaining>0){
-      const source=ctx.createBufferSource();source.buffer=buffer;source.connect(this.master);
+      const source=ctx.createBufferSource(),voice=ctx.createGain();source.buffer=buffer;
+      // Files are mastered to -18 LUFS. Compensate for the effects master,
+      // retaining its mute/fade without applying the old RMS normalization.
+      voice.gain.value=1/.65;source.connect(voice).connect(this.master);
       // A short, low-level synthetic room reflection. Original procedural impulse.
       const reverb=ctx.createConvolver(),wet=ctx.createGain(),impulse=ctx.createBuffer(1,Math.ceil(ctx.sampleRate*.16),ctx.sampleRate),samples=impulse.getChannelData(0);
       for(let i=0;i<samples.length;i++)samples[i]=(Math.sin(i*12.9898)*.5)*Math.pow(1-i/samples.length,3);
       reverb.buffer=impulse;wet.gain.value=.045;source.connect(reverb).connect(wet).connect(this.master);
       const at=now+window.delay,play=Math.min(window.remaining,Math.max(0,duration-window.delay));
-      this.ambience.gain.setValueAtTime(1,now);this.ambience.gain.setTargetAtTime(Math.pow(10,-10/20),Math.max(now,at-.08),.04);
+      this.ambience.gain.setValueAtTime(1,now);this.ambience.gain.setTargetAtTime(Math.pow(10,-14/20),Math.max(now,at-.08),.04);
       this.ambience.gain.setTargetAtTime(1,at+play,.16);
       source.start(at,window.seek,play);this.nodes.push(source);
     }

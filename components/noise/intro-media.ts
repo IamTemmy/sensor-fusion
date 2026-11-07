@@ -51,7 +51,7 @@ export class IntroMedia {
         const url=`${INTRO_ROOT}/vo-${String(shot+1).padStart(2,'0')}.${ext}`;
         if(!listed.has(url.slice(INTRO_ROOT.length+1)))continue;
         const signal=AbortSignal.any([this.controller.signal,AbortSignal.timeout(2000)]);
-        const r=await fetch(url,{signal});if(r.ok)return await r.arrayBuffer();
+        const r=await fetch(url,{signal,cache:'reload'});if(r.ok)return await r.arrayBuffer();
       }catch{if(this.controller.signal.aborted)return null;}
       return null;
     })());

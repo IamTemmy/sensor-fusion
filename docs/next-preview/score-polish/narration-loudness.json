@@ -1,0 +1,80 @@
+[
+  {
+    "file": "vo-01.mp3",
+    "before_lufs": -28.28,
+    "after_lufs": -18.04,
+    "before_dbtp": -10.98,
+    "after_dbtp": -2.63,
+    "duration_seconds": 4.205714,
+    "decoded_samples": 183456,
+    "bitrate": "128000",
+    "bytes": 67752,
+    "normalization_passes": 2,
+    "processing": "gentle peak compression; EBU R128 loudnorm; decoded MP3 verified"
+  },
+  {
+    "file": "vo-02.mp3",
+    "before_lufs": -28.86,
+    "after_lufs": -18.05,
+    "before_dbtp": -9.95,
+    "after_dbtp": -2.58,
+    "duration_seconds": 3.082449,
+    "decoded_samples": 134064,
+    "bitrate": "128000",
+    "bytes": 49780,
+    "normalization_passes": 2,
+    "processing": "gentle peak compression; EBU R128 loudnorm; decoded MP3 verified"
+  },
+  {
+    "file": "vo-03.mp3",
+    "before_lufs": -30.21,
+    "after_lufs": -18.01,
+    "before_dbtp": -13.24,
+    "after_dbtp": -2.61,
+    "duration_seconds": 3.970612,
+    "decoded_samples": 172872,
+    "bitrate": "128000",
+    "bytes": 63990,
+    "normalization_passes": 2,
+    "processing": "gentle peak compression; EBU R128 loudnorm; decoded MP3 verified"
+  },
+  {
+    "file": "vo-04.mp3",
+    "before_lufs": -28.0,
+    "after_lufs": -18.04,
+    "before_dbtp": -10.44,
+    "after_dbtp": -2.65,
+    "duration_seconds": 2.76898,
+    "decoded_samples": 119952,
+    "bitrate": "128000",
+    "bytes": 44764,
+    "normalization_passes": 2,
+    "processing": "gentle peak compression; EBU R128 loudnorm; decoded MP3 verified"
+  },
+  {
+    "file": "vo-05.mp3",
+    "before_lufs": -30.0,
+    "after_lufs": -17.99,
+    "before_dbtp": -12.33,
+    "after_dbtp": -3.08,
+    "duration_seconds": 4.675918,
+    "decoded_samples": 204624,
+    "bitrate": "128000",
+    "bytes": 75275,
+    "normalization_passes": 2,
+    "processing": "gentle peak compression; EBU R128 loudnorm; decoded MP3 verified"
+  },
+  {
+    "file": "vo-06.mp3",
+    "before_lufs": -31.76,
+    "after_lufs": -18.0,
+    "before_dbtp": -9.76,
+    "after_dbtp": -2.61,
+    "duration_seconds": 4.519184,
+    "decoded_samples": 197568,
+    "bitrate": "128000",
+    "bytes": 72767,
+    "normalization_passes": 3,
+    "processing": "gentle peak compression; EBU R128 loudnorm; decoded MP3 verified"
+  }
+]

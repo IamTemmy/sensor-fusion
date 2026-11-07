@@ -5,33 +5,45 @@
   "files": [
     {
       "file": "vo-01.mp3",
-      "bytes": 84878,
-      "duration_seconds": 4.205714
+      "bytes": 67752,
+      "duration_seconds": 4.205714,
+      "lufs_integrated": -18.04,
+      "true_peak_dbtp": -2.63
     },
     {
       "file": "vo-02.mp3",
-      "bytes": 66906,
-      "duration_seconds": 3.082449
+      "bytes": 49780,
+      "duration_seconds": 3.082449,
+      "lufs_integrated": -18.05,
+      "true_peak_dbtp": -2.58
     },
     {
       "file": "vo-03.mp3",
-      "bytes": 81116,
-      "duration_seconds": 3.970612
+      "bytes": 63990,
+      "duration_seconds": 3.970612,
+      "lufs_integrated": -18.01,
+      "true_peak_dbtp": -2.61
     },
     {
       "file": "vo-04.mp3",
-      "bytes": 61890,
-      "duration_seconds": 2.76898
+      "bytes": 44764,
+      "duration_seconds": 2.76898,
+      "lufs_integrated": -18.04,
+      "true_peak_dbtp": -2.65
     },
     {
       "file": "vo-05.mp3",
-      "bytes": 92401,
-      "duration_seconds": 4.675918
+      "bytes": 75275,
+      "duration_seconds": 4.675918,
+      "lufs_integrated": -17.99,
+      "true_peak_dbtp": -3.08
     },
     {
       "file": "vo-06.mp3",
-      "bytes": 89893,
-      "duration_seconds": 4.519184
+      "bytes": 72767,
+      "duration_seconds": 4.519184,
+      "lufs_integrated": -18.0,
+      "true_peak_dbtp": -2.61
     }
   ]
 }

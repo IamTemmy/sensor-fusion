@@ -3,6 +3,15 @@ import {preparePractice} from '../../lib/noise/practice';
 // Development-only, frozen presentation fixtures. These are NOT playtest results.
 import {normalizeCrew,vanFor,hidingSpots,create,add,setup,configure,clear,event,staffDoors,type Game} from '../../lib/noise/engine';
 export function reviewFixture(state:string):Game{
+ if(state.startsWith('polish-brief-')){
+  const g=create('VISUAL',0,42),rivals=state.includes('-rivals-')||state.includes('-duel-'),duel=state.includes('-duel-'),bots=state.endsWith('-bot');
+  const n=duel?2:rivals?4:2;
+  for(let i=0;i<n;i++)add(g,['Ghost','Echo','Raven','Fox'][i],'review'+i,bots&&i>0);
+  configure(g,rivals?'duos':'coop');g.seats.forEach((s,i)=>s.team=rivals?(duel?i:i<2?0:1):0);
+  if(state.includes('-archive-'))g.match=1;
+  setup(g);g.phase='ready';g.now=0;g.events=[];g.jobEvent=undefined;
+  return g;
+ }
  if(state.startsWith('friends-lobby-')){
   const g=create('MKYR5X',0,42);g.friendsLobby=true;
   const n=Number(state.split('-')[2])||2;for(let i=0;i<n;i++)add(g,['Ghost','Raven','Fox','Nyx'][i],'human'+i);
