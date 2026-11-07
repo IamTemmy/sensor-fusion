@@ -25,11 +25,11 @@ export function HeistRecap({v,reduced,record,recordStatus='existing',host,busy,o
  const escape=me?.escaped?(((me.escapedAt||v.finishedAt||v.now)-v.start)/1000).toFixed(1)+'s':'Left behind';
  const escapedCount=crew.filter(s=>s.escaped).length;
  const outcome=escapedCount===crew.length?'Everyone escaped':escapedCount===0?'No one escaped':`${escapedCount} of ${crew.length} escaped`;
- const note=coop?'Each star builds on the last. Collection targets scale with this museum’s loot. The Crown is needed to reach the three-star target: the rest of the collection alone falls short.':'A tie is not an outright win. Three stars require a win, a substantial haul, and your whole crew escaping.';
+ const note=coop?'Targets scale with the museum. Three stars require the Crown and your whole crew escaping.':'Three stars require an outright win, a substantial haul, and your whole crew escaping.';
  return <section className={'heist-recap recap-redesign '+(!won?'heist-recap-loss':'')} role="dialog" aria-modal="true" aria-labelledby="recap-title">
   <div className="results-scroll">
-   <div className="results-backdrop" aria-hidden="true"><img className="results-art" src={won&&team===0?'/art/v34/getaway.webp':'/art/v24/recap.webp'} alt=""/></div>
    <div className="results-hero">
+    <div className="results-backdrop" aria-hidden="true"><img className="results-art" src={won&&team===0?'/art/v34/getaway.webp':'/art/v24/recap.webp'} alt=""/></div>
     <div className="results-victory">
      <div className="results-meta">{coop?'CO-OP':'RIVALS'} · {difficultyOf(v)} · {v.layout<0?'Job not started':(v.arena?.name||LAYOUT_NAMES[v.layout])}</div>
      <h2 id="recap-title" style={{color:coop?COLORS[team]:COLORS[winners[0]?.team||team]}}>{title}</h2>
