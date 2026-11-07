@@ -1,5 +1,5 @@
 {
-  "tested_merge_commit": "30837f2f14a31dbd43cacf4a4231b8ca192c5be8",
+  "tested_merge_commit": "343485a12c76557689e63e6f72535675b6c48aae",
   "tests_passed": 448,
   "typecheck": "passed",
   "lint_errors": 0,
@@ -28,5 +28,7 @@
   },
   "echo_hint_font_px": 12,
   "plan_font_px": 12,
-  "screenshots": "375x720 crops of actual frozen presentation fixtures"
+  "screenshots": "375x720 crops of actual frozen presentation fixtures",
+  "tested_source_tree": "a24c64d29ed8792275161d1c0dcbec02dc917094",
+  "evidence_commit": "7b1a83c6541c64d245bb9bf50474883ce969056f"
 }
