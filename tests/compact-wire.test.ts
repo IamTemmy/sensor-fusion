@@ -6,7 +6,7 @@ import {create,add,setup,command} from '../lib/noise/engine.ts';
 import {packet} from '../lib/noise/network.ts';
 const json=<T>(v:T):T=>JSON.parse(JSON.stringify(v));
 function wire(){const g=create('COMPACT',0,1001);add(g,'Host','secret');add(g,'Guest','other');setup(g);command(g,g.host,{type:'ready'});return packet(g,'p2');}
-const normalized=(w:any):any=>JSON.parse(JSON.stringify(w,(k,v)=>typeof v==='number'&&(k==='x'||k==='y')?Math.round(v):typeof v==='number'&&k==='angle'?Math.round(((v%(2*Math.PI)+2*Math.PI)%(2*Math.PI))*255/(2*Math.PI))*2*Math.PI/255:v));
+const normalized=<T,>(w:T):T=>JSON.parse(JSON.stringify(w,(k,v)=>typeof v==='number'&&(k==='x'||k==='y')?Math.round(v):typeof v==='number'&&k==='angle'?Math.round(((v%(2*Math.PI)+2*Math.PI)%(2*Math.PI))*255/(2*Math.PI))*2*Math.PI/255:v));
 test('compact roundtrip retains every public field, no tokens, deletion and literal marker strings',()=>{
  const s=new CompactSender(),r=new CompactReceiver(),w=wire();
  for(let i=0;i<8;i++){w.view.now+=50;w.view.seats[0].name=i%2?'{}':'[]';w.view.seats[0].x+=.33;if(i===3)w.view.noises=[];if(i===4)w.view.events=[];const e=s.encode(w);if(e.keys)assert.ok(r.keys(json(e.keys)));assert.deepEqual(r.decode(json(e.frame)),normalized(w));s.acknowledge(e.frame.n);assert.ok(!JSON.stringify(e).includes('secret'));}
@@ -20,7 +20,7 @@ test('new stream rejects delayed packets from previous stream',()=>{
 });
 test('HTTP compact recovery survives lost response, lost dictionary, and cold worker',()=>{
  let s=new RelayEncoder();const r=new RelayDecoder(),w=wire();assert.deepEqual(r.decode(json(s.encode('seat',w,r.known))),normalized(w));
- w.view.now+=50;(w.view as any).newField={value:123};s.encode('seat',w,r.known);w.view.now+=50;assert.deepEqual(r.decode(json(s.encode('seat',w,r.known))),normalized(w));
+ w.view.now+=50;(w.view as typeof w.view & {newField:{value:number}}).newField={value:123};s.encode('seat',w,r.known);w.view.now+=50;assert.deepEqual(r.decode(json(s.encode('seat',w,r.known))),normalized(w));
  s=new RelayEncoder();assert.deepEqual(r.decode(json(s.encode('seat',w,r.known))),normalized(w));
 });
 

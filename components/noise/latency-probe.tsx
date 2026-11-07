@@ -5,7 +5,7 @@ import type {PeerRoom} from '../../lib/noise/peer-client';
 /** Local-only acceptance probe. Uses the actual page's keyboard handlers and renderer. */
 export function LatencyProbe({prediction,peer}:{prediction:{current:OnlinePrediction};peer:{current:PeerRoom|null}}){
  const [enabled,enable]=useState(false),[report,R]=useState(''),[connection,C]=useState(''),running=useRef(false);
- useEffect(()=>{enable(process.env.NODE_ENV==='development'&&new URLSearchParams(location.search).has('lag'));return()=>{running.current=false;};},[]);
+ useEffect(()=>{let cleanup:void|(()=>void);const mountFrame=requestAnimationFrame(()=>{cleanup=(()=>{enable(process.env.NODE_ENV==='development'&&new URLSearchParams(location.search).has('lag'));return()=>{running.current=false;};})();});return()=>{cancelAnimationFrame(mountFrame);if(cleanup)cleanup();};},[]);
  useEffect(()=>{if(!enabled)return;const t=setInterval(()=>C([...peer.current?.links.values()||[]].map(l=>`${l.pc.connectionState}/${l.pc.iceConnectionState}/${l.pc.signalingState} local=${l.pc.localDescription?.type} remote=${l.pc.remoteDescription?.type} auth=${l.authenticated} ICE=${l.localIce.length}/${l.remoteIce.size}`).join('; ')),1000);return()=>clearInterval(t);},[enabled]);
  function run(){if(running.current||!peer.current||prediction.current.game?.phase!=='playing'){R('Start a match as a guest first.');return;}running.current=true;
   const p=prediction.current;const x=()=>p.positions().get(p.you)?.x||0;const start=performance.now(),initial=x();let releaseAt=0,releaseX=0,overshoot=0,firstMove=0,firstStop:number|null=null,maxPending=0,taps=0,frames=0;

@@ -30,9 +30,9 @@ if(mode==='geometry'){
 }else if(mode==='idle'){
  const rows=[];
  for(const layout of process.env.MUSEUM_LAYOUT?[Number(process.env.MUSEUM_LAYOUT)]:[0,1,2]){
-  const cases:{seed:number;n:number;level:E.Difficulty;stalls:any[]}[]=[];for(let seed=1001;cases.length<30;seed++){
+  const cases:{seed:number;n:number;level:E.Difficulty;stalls:unknown[]}[]=[];for(let seed=1001;cases.length<30;seed++){
    const index=cases.length,n=[2,4][index%3],level=(['rookie','normal','pro'] as const)[Math.floor(index/3)%3];const g=make(seed,n,level,n===2);if(g.layout!==layout)continue;
-   const history=new Map<string,{x:number;y:number;at:number}>(),stalls:any[]=[],seen=new Set<string>();
+   const history=new Map<string,{x:number;y:number;at:number}>(),stalls=[],seen=new Set<string>();
    while(g.phase==='playing'){
     const s=g.seats[0],l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(s,a)-E.distance(s,b))[0];const target=s.hand||!l||g.end-g.now<7000?E.vanFor(g,0):l;const p=E.steer(s,target,E.thiefWalls(g,s)),dist=E.distance(s,p)||1;E.command(g,s.id,{type:'input',seq:s.lastSeq+1,dx:(p.x-s.x)/dist,dy:(p.y-s.y)/dist});if(!s.hand&&l&&E.distance(s,l)<50)E.action(g,s,'grab');
     E.advance(g,g.now+40);

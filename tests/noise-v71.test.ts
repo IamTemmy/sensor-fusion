@@ -1,3 +1,4 @@
+import {mockChannel,mockLink} from './helpers/peer-mocks.ts';
 import test from 'node:test';import assert from 'node:assert/strict';
 import {create,add,command,view} from '../lib/noise/engine.ts';
 import {HostAuthority,type Envelope} from '../lib/noise/peer-protocol.ts';
@@ -27,8 +28,8 @@ import {PeerRoom} from '../lib/noise/peer-client.ts';
 test('50 actions through authenticated peer state messages carry per-seat ack and prune prediction',()=>{
  const h=fixture(),p=new OnlinePrediction();p.accept(unpack(h.snapshot('p2')));
  const room=new PeerRoom({code:h.game.code,token:'h',view:view(h.game,'p1'),input:()=>({}),onView:()=>{},onStatus:()=>{},onError:()=>{}});room.authority=h;
- const state:any={label:'state',readyState:'open',bufferedAmount:0,send(){},close(){}};
- (room as any).bind({authenticated:true,pc:{close(){}},last:0},'p2',state);
+ const state=mockChannel({label:'state',readyState:'open',bufferedAmount:0,send(){},close(){}});
+ room['bind'](mockLink({authenticated:true,pc:{close(){}},last:0}),'p2',state);
  for(let i=1;i<=50;i++){p.predict('drop');state.onmessage({data:JSON.stringify({kind:'input',message:{id:'tap'+i,seat:'p2',token:'g',payload:{type:'input',protocol:2,match:h.game.match,seq:i,dx:0,dy:0,aim:{x:400,y:300},actions:p.actions()}}})});const snap=h.snapshot('p2');assert.equal(snap.ack,i);p.accept(unpack(snap),snap.ack);assert.equal(p.pending.length,0);assert.equal(h.snapshot('p1').ack,0);}
 });
 test('redundant inputs cannot change another match or resurrect a stale direction',()=>{const h=fixture();h.input({id:'redundant',seat:'p2',token:'g',payload:{type:'input',protocol:2,match:h.game.match,seq:3,dx:0,dy:0,aim:{x:400,y:300},previous:[{seq:1,match:h.game.match,dx:1,dy:0,aim:{x:400,y:300}},{seq:2,match:h.game.match,dx:-1,dy:0,aim:{x:400,y:300}}],actions:[]}});assert.equal(h.game.seats[1].lastSeq,3);assert.equal(h.game.seats[1].dx,0);});

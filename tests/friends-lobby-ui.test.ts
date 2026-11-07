@@ -20,7 +20,7 @@ test('host can remove human guests, guest has no removal controls',()=>{assert.m
 test('seat-lost panel offers rejoin and hideout without host-only waiting text',()=>{const html=renderToStaticMarkup(createElement(CrewRecovery,{code:'MKYR5X',message:'The crew has started or filled up.',busy:false,onRejoin:()=>{},onHome:()=>{}}));assert.match(html,/You left the crew/);assert.match(html,/>Rejoin</);assert.match(html,/>Back to hideout</);assert.doesNotMatch(html,/Waiting for a friend/);});
 test('a guest with a missing seat never sees the host invitation waiting line',()=>{const g=reviewFixture('friends-lobby-1-coop'),v=view(g,'gone');const html=renderToStaticMarkup(createElement(FriendsLobby,{v,host:false,busy:false,copied:null,connectionMode:'Relay',seatModes:{},send:()=>{},onCopy:()=>{}}));assert.doesNotMatch(html,/Waiting for a friend/);assert.match(html,/Waiting for the host/);});
 
-test('host-removed panel has only Back to hideout, never Rejoin',()=>{const html=renderToStaticMarkup(createElement(CrewRecovery,{code:'MKYR5X',message:'The host removed you from this crew.',removed:true,busy:false,onRejoin:()=>{},onHome:()=>{}}));assert.match(html,/The host removed you from the crew/);assert.match(html,/Ask the host for a new invite\./);assert.equal((html.match(/<button/g)||[]).length,1);assert.match(html,/>Back to hideout</);assert.doesNotMatch(html,/>Rejoin</);});
+test('host-removed panel has only Back to hideout, never Rejoin',()=>{const html=renderToStaticMarkup(createElement(CrewRecovery,{code:'MKYR5X',message:'The host removed you from this crew.',removed:true,busy:false,onRejoin:()=>{},onHome:()=>{}}));assert.match(html,/The host removed you from the crew/);assert.match(html,/Ask the host to start a new crew\./);assert.equal((html.match(/<button/g)||[]).length,1);assert.match(html,/>Back to hideout</);assert.doesNotMatch(html,/>Rejoin</);});
 
 test('both museum briefings keep objectives compact and reserve exceptions for More rules',()=>{
  for(const museum of ['velmont','archive'])for(const mode of ['coop','rivals','duel'])for(const crew of ['human','bot']){
@@ -28,6 +28,9 @@ test('both museum briefings keep objectives compact and reserve exceptions for M
   const html=renderToStaticMarkup(createElement(HeistBriefing,{arena:g.arena,training:false,crewMode:g.crewMode,hasCrewBot:crew==='bot'&&mode!=='duel',duel:mode==='duel',touch:true,busy:false,ready:false,onReady:()=>{},onRules:()=>{}}));
   assert.match(html,mode==='coop'?/Bank .*2,600/:/Richest crew wins/);
   assert.match(html,museum==='archive'?/Map Room/:/Security/);
+  const plateRoom=museum==='archive'?'Map Room':'Security';
+  const plain=html.replace(/<[^>]*>/g,'');
+  assert.ok(plain.includes(mode==='duel'?`Crown $1,200 · 1:00 · Step on ${plateRoom} plate to unlock it.`:`Crown $1,200 · 1:00 · Hold ${plateRoom} plate.`));
   assert.equal((html.match(/quick-step-number/g)||[]).length,4);
   assert.doesNotMatch(html,/1v1 exception|Noise on you brings guards|unlocks the Crown permanently/);
   assert.equal(html.includes('Solo? Tell Echo'),crew==='bot'&&mode!=='duel');

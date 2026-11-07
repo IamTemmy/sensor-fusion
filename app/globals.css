@@ -1383,11 +1383,11 @@ body{font-size:15px;font-weight:500;color:var(--ink)}
 /* Compact onboarding copy; the hook uses the existing gap below the tagline. */
 .noise-app .arrival-flow .arrival-tagline{position:relative}
 .noise-app .arrival-flow .arrival-hook{position:absolute;top:100%;left:50%;transform:translateX(-50%);font:500 clamp(10px,1.05vw,14px)/1.5 Manrope,Arial,sans-serif!important;color:#d3e6e8;text-align:center;white-space:nowrap;margin:6px 0 0;letter-spacing:0;text-transform:none}
-.noise-app .quick-brief .compact-plan{display:block}
+.noise-app .quick-brief .compact-plan{display:block;font-size:12px}
 .noise-app .brief-plan-lines>span{display:block}
-.noise-app .quick-brief .brief-echo-hint{font:12px/1.4 Manrope,Arial,sans-serif;margin:-3px 0 9px;color:#c4d2dc}
+.noise-app .quick-brief .brief-echo-hint{font:12px/1.4 Manrope,Arial,sans-serif!important;margin:-3px 0 9px;color:#c4d2dc}
 @media(max-width:800px) and (orientation:portrait){
- .noise-app .arrival-flow .arrival-hook{font-size:11px!important}
+ .noise-app .arrival-flow .arrival-hook{font-size:13px!important}
 }
 @media(max-height:500px) and (orientation:landscape){
  .noise-app .arrival-flow .arrival-hook{margin-top:3px;font-size:10px!important}

@@ -11,7 +11,7 @@ if(process.env.V48_MODE==='escape'){
  const bins=new Map<number,number[]>();let maxReplans=0;
  while(g.phase==='playing'){
  for(const s of g.seats.filter(s=>!s.bot)){const l=g.loot.filter(l=>!l.banked&&!l.holder&&!l.locked&&!l.sealed).sort((a,b)=>E.distance(a,s)-E.distance(b,s))[0];const target=s.hand||!l?E.vanFor(g,s.team):l;const p=E.steer(s,target,E.thiefWalls(g,s)),d=E.distance(s,p)||1;E.command(g,s.id,{type:'input',seq:s.lastSeq+1,dx:(p.x-s.x)/d,dy:(p.y-s.y)/d});if(!s.hand&&l&&E.distance(s,l)<50)E.action(g,s,'grab');}
- const from=Math.floor((g.now-g.start)/10000)*10,t=performance.now();E.advance(g,g.now+40);const ms=performance.now()-t;const bin=bins.get(from)||[];bin.push(ms);bins.set(from,bin);if('guardPathStats'in E)maxReplans=Math.max(maxReplans,(E as any).guardPathStats(g).used);
+ const from=Math.floor((g.now-g.start)/10000)*10,t=performance.now();E.advance(g,g.now+40);const ms=performance.now()-t;const bin=bins.get(from)||[];bin.push(ms);bins.set(from,bin);if('guardPathStats'in E)maxReplans=Math.max(maxReplans,(E as unknown as { [K in 'guardPathStats']: (typeof E)[K] }).guardPathStats(g).used);
  }
  console.log(JSON.stringify({seed:1003,maxReplans,guards:g.guards.length,bins:[...bins].map(([from,a])=>{a.sort((a,b)=>a-b);return{from,to:from+10,ticks:a.length,mean:a.reduce((x,y)=>x+y,0)/a.length,p95:a[Math.floor(a.length*.95)],max:a.at(-1)}})},null,2));
 }

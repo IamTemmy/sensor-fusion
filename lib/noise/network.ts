@@ -4,7 +4,8 @@ export type NetAction={id:number;action:string;aim:Vec};
 type Stored=Game&{net?:{match:number;acks:Record<string,number>}};
 export const arenaKey=(g:Game|View)=>`${g.code}:${g.match}:${g.layout}:${g.crewMode}:${g.crownExitOpen?1:0}`;
 export function actionAck(g:Game,id:string){const n=(g as Stored).net;return n?.match===g.match?n.acks[id]||0:0;}
-export function applyPacket(g:Game,id:string,a:Record<string,any>){
+export type InputPacket={type:string;protocol?:number;match:number;seq:number;dx:number;dy:number;aim:Vec;sneak?:boolean;actions:NetAction[];previous:InputPacket[];};
+export function applyPacket(g:Game,id:string,raw:Record<string,unknown>){const a=raw as InputPacket;
  if(a.type!=='input'||a.protocol!==2){command(g,id,a as Parameters<typeof command>[2]);return;}
  if(a.match!==g.match)return;
  const s=g.seats.find(s=>s.id===id)!;

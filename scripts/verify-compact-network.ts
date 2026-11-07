@@ -5,7 +5,7 @@ import {packet} from '../lib/noise/network.ts';
 import {CompactSender,CompactReceiver} from '../lib/noise/compact-wire.ts';
 import {writeFileSync,mkdirSync} from 'node:fs';
 import assert from 'node:assert/strict';
-const rows:any[]=[];
+const rows=[];
 for(const [museum,arena] of [['Velmont',flagshipArena],['Archive',archiveArena]] as const)for(const humans of [3,4])for(const delay of [200,400]){
  const g=E.create('COMPACT',0,1001);for(let n=0;n<4;n++)E.add(g,n===3&&humans===3?'Echo':'Human '+n,'token'+n,n===3&&humans===3);E.setup(g,(_,n)=>arena(n));for(const s of g.seats)E.command(g,s.id,{type:'ready'});
  const encoder=new CompactSender(),decoder=new CompactReceiver(),acks:{at:number;n:number}[]=[],sizes:number[]=[],raw:number[]=[];let bytes=0,keyBytes=0,decoded=0,reliable=0,heartbeatBytes=0;const encodeMs:number[]=[];

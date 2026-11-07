@@ -5,7 +5,7 @@ import {clear,sight,steer,move,carrySpeed} from '../../lib/noise/engine.ts';
 const m=JSON.parse(readFileSync(new URL('./blueprint.json',import.meta.url),'utf8'));
 const targets=[...m.arts,m.plate,...m.docks,...m.hides,...m.sentries];
 for(const p of targets)assert(clear(p,13,m.walls),`Blocked target ${JSON.stringify(p)}`);
-const segment=(a:any,b:any)=>{const n=Math.ceil(Math.hypot(b.x-a.x,b.y-a.y));for(let i=0;i<=n;i++)assert(clear({x:a.x+(b.x-a.x)*i/n,y:a.y+(b.y-a.y)*i/n},13,m.walls),`Patrol collision ${JSON.stringify([a,b,i/n])}`);};
+const segment=(a:{x:number;y:number},b:{x:number;y:number})=>{const n=Math.ceil(Math.hypot(b.x-a.x,b.y-a.y));for(let i=0;i<=n;i++)assert(clear({x:a.x+(b.x-a.x)*i/n,y:a.y+(b.y-a.y)*i/n},13,m.walls),`Patrol collision ${JSON.stringify([a,b,i/n])}`);};
 let guardSegments=0;
 for(const r of m.guardRoutes)for(let i=1;i<r.length;i++){segment({x:r[i-1][0],y:r[i-1][1]},{x:r[i][0],y:r[i][1]});guardSegments++;}
 assert(!sight(m.plate,m.arts.at(-1),m.walls),'Plate sees Crown');
